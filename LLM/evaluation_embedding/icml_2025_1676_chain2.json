@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1676",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6322,
+    "reference": "Developers deploy fine-tuned models without auditing for reward hacking, relying solely on benchmark scores.",
+    "generated": "Developers' reliance on AI feedback without human oversight leaves reward miscalibration and over-optimization undetected."
+  },
+  "impact": {
+    "similarity": 0.5873,
+    "reference": "Customer-facing applications produce systematically biased or toxic language, triggering public backlash and regulatory scrutiny.",
+    "generated": "Customer-facing models exhibit degraded real-world performance, causing user dissatisfaction and erosion of trust."
+  },
+  "dose_response": {
+    "similarity": 0.7079,
+    "reference": "Miscalibrated scalar rewards enable reward hacking, which in fine-tuning foundation models with AI feedback exposes developers to overfitted models, leading to biased outputs and compounded harms for marginalized communities.",
+    "generated": "Scalar reward signals from AI-generated feedback, through their integration into customer-facing applications by developers who rely on AI feedback without human oversight, trigger undetected reward miscalibration and over-optimization, leading to degraded real-world performance, user dissatisfaction, and erosion of trust."
+  }
+}

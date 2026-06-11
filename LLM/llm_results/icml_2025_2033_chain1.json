@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2033",
+  "chain_index": 1,
+  "title": "Confidential Guardian Cryptographically Prohibiting the Abuse of Model Abstention",
+  "abstract": "Cautious predictions - where a machine learning model abstains when uncertain - are crucial for limiting harmful errors in safety-critical applications. In this work, we identify a novel threat: a dishonest institution can exploit these mechanisms to discriminate or unjustly deny services under the guise of uncertainty. We demonstrate the practicality of this threat by introducing an uncertainty-inducing attack called Mirage, which deliberately reduces confidence in targeted input regions, thereby covertly disadvantaging specific individuals. At the same time, Mirage maintains high predictive performance across all data points. To counter this threat, we propose Confidential Guardian, a framework that analyzes calibration metrics on a reference dataset to detect artificially suppressed confidence. Additionally, it employs zero-knowledge proofs of verified inference to ensure that reported confidence scores genuinely originate from the deployed model. This prevents the provider from fabricating arbitrary model confidence values while protecting the model’s proprietary details. Our results confirm that Confidential Guardian effectively prevents the misuse of cautious predictions, providing verifiable assurances that abstention reflects genuine model uncertainty rather than malicious intent.",
+  "impact": "Our research underscores a critical ethical concern in machine learning models that employ cautious predictions - where models abstain from making decisions when uncertain - to prevent harmful errors in high-stakes applications. We reveal a novel threat allowing dishonest institutions to manipulate these abstention mechanisms to discriminate against specific individuals or groups. In particular, we instantiate an attack (Mirage) in which we artificially lower confidence in targeted inputs while maintaining overall model performance, thus evading traditional accuracy-based detection. Our empirical results show that we are consistently able to reduce confidence with Mirage across different models and data modalities. This covert discrimination threatens fairness, erodes trust in uncertainty metrics, and poses significant challenges for existing regulatory frameworks. Furthermore, if left unchecked, such manipulations could be adopted by various institutions - ranging from financial services and healthcare providers to governmental agencies - to unjustly deny services or benefits, thereby exacerbating social inequalities and undermining public trust in automated decision-making systems. To mitigate the adversarial effects of Mirage, we propose Confidential Guardian, a detection framework that enables external auditors to verify the legitimacy of model abstentions by analyzing calibration metrics and utilizing zero-knowledge proofs. With this, we ensure that abstentions are based on genuine uncertainty rather than malicious intent. Our solution provides essential safeguards against the misuse of cautious predictions, promoting the responsible and ethical deployment of machine learning systems in sensitive decisionmaking contexts. Additionally, Confidential Guardian empowers regulatory bodies and watchdog organizations to hold institutions accountable, fostering a more transparent and equitable technological landscape. Our experiments and ablations show that while detection of uncertainty-inducing attacks is often possible, there also exist scenarios under which the presence of an attack like Mirage can be challenging to detect. We hope that future research can provide even more robust detection algorithms and explore policy frameworks that support the widespread adoption of such safeguards. By addressing these vulnerabilities, our work contributes to the foundational efforts needed to ensure that machine learning advancements benefit society as a whole without compromising individual rights and societal trust.",
+  "query_input": {
+    "scenario": "Confidential ZKP-verified inference with abstention",
+    "issue": "Uncertainty-inducing attack corrupts confidence estimation before proof generation, leading to false verified predictions",
+    "hazard": [
+      "Adversarial confidence suppression attacks can force selective classifiers to bypass abstention and emit incorrect predictions."
+    ],
+    "exposure": [
+      "Clients relying on ZKP verification for sensitive decision-making"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clients trust ZKP-verified confidence as a full integrity guarantee, unaware that verification does not detect pre-proof adversarial suppression of model confidence.",
+    "impact": "Unjust denial of critical services and discriminatory outcomes for targeted individuals, despite verifiable confidence scores.",
+    "dose_response": "Adversarial suppression forcing incorrect predictions, through reliance on ZKP verification, triggers trust in verification as complete assurance, resulting in discriminatory denials even with verified scores."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial confidence suppression attacks force selective classifiers to emit incorrect predictions, which in confidential ZKP-verified inference exploits clients' overtrust of cryptographic proof, leading to financial loss."
+    ],
+    "vulnerability": [
+      "Clients treat cryptographic proof as a surrogate for input integrity and disregard confidence corruption."
+    ],
+    "impact": [
+      "Sensitive decisions based on false verified predictions cause financial loss and erode trust in privacy-preserving AI."
+    ]
+  }
+}

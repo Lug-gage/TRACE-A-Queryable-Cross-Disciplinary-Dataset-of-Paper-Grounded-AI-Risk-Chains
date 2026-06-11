@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0586",
+  "chain_index": 0,
+  "title": "any4 Learned 4-bit Numeric Representation for LLMs",
+  "abstract": "We present any4, a learned 4-bit weight quantization solution for large language models (LLMs) providing arbitrary numeric representations without requiring pre-processing of weights or activations. any4 yields higher accuracy compared to other related 4-bit numeric representation types: int4, fp4 and nf4, as evaluated on a range of model sizes, generations and families (Llama 2, Llama 3, Mistral and Mixtral). While any4 does not require preprocessing of weights or activations, it is also competitive with orthogonal techniques that require such preprocessing (e.g., AWQ and GPTQ). We also experiment with any3 and any2 and show competitiveness at lower bits. Additionally, we show that we can calibrate using a single curated diverse sample rather than hundreds of samples from a dataset as done in most quantization approaches. We also open source tinygemm, a latency optimized GPU matrix multiplication library for LLMs, that implements any4 using a GPU-efficient lookup table strategy along with other common quantization methods. We open source our code at https://github.com/facebookresearch/any4.",
+  "impact": "This paper presents a work that quantizes pretrained models. The input to the algorithm is a model’s pretrained weights, architecture, and a calibration dataset (which in our case was a single hand-written prompt). We have not evaluated if the quantization algorithm increases or decreases any societal impact of the underlying model. One factor that may introduce bias into the model is the calibration dataset. We leave it for future work to analyze the effect of different calibration datasets (or prompts in our case) on bias and truthfulness.",
+  "query_input": {
+    "scenario": "Open model hub distribution (Hugging Face, etc.)",
+    "issue": "Quantized models from untrusted sources can hide malicious behavior undetectable by full-precision inspection.",
+    "hazard": [
+      "Post-training quantization methods can be exploited to produce quantized models that behave maliciously while appearing benign in full-precision checks."
+    ],
+    "exposure": [
+      "AI developers and consumers downloading quantized LLMs for deployment."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on full-precision checks that cannot expose quantization-hidden malicious behavior.",
+    "impact": "Deployed models exfiltrate data, produce harmful outputs, and undermine trust in open-source AI ecosystems.",
+    "dose_response": "Exploited post-training quantization, through developers deploying downloaded quantized LLMs, triggers reliance on full-precision checks blind to quantization-hidden malicious behavior, leading to data exfiltration, harmful outputs, and undermined trust in open-source AI."
+  },
+  "reference": {
+    "dose_response": [
+      "Exploitable quantization enables malicious quantized models to bypass full-precision checks, which in open model hub distribution exposes downloading developers and consumers, leading to widespread deployment of backdoored LLMs."
+    ],
+    "vulnerability": [
+      "Developer over-reliance on full-precision safety checks creates a false sense of security.",
+      "Lack of mandatory provenance tracking enables anonymous uploads of malicious quantized models.",
+      "Community-driven model hubs lack resources for deep behavioral testing of every quantized variant."
+    ],
+    "impact": [
+      "Widespread deployment of backdoored LLMs in downstream applications causes cascading trust erosion.",
+      "Automated AI pipelines silently ingest malicious models, amplifying supply chain compromise.",
+      "Financial and reputational losses for enterprises integrating compromised open-source models."
+    ]
+  }
+}

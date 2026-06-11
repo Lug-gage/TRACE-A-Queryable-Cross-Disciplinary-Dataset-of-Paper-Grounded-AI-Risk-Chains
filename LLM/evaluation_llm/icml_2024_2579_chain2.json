@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2579",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Analysts' blind trust due to lack of fidelity checks mirrors the reference sensitivity to missing attack surfaces.",
+    "reference": "Security analysts trusting gradient-based explanations for robustness assessment may miss actual attack surfaces.",
+    "generated": "Analysts rely on gradient-based saliency maps without ground-truth fidelity checks, creating blind trust."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Deployed classifiers are present but damage type only mentions evasion attacks, omitting data integrity compromise.",
+    "reference": "Deployment of classifiers susceptible to adversarial attacks, compromising system security and data integrity.",
+    "generated": "Deployed classifiers harbor undetected adversarial weaknesses, enabling real-world evasion attacks."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from low-fidelity attribution to blind trust, undetected weaknesses, and evasion matches the reference arc.",
+    "reference": "Attribution maps lacking fidelity mislead security analysts, causing over-trust in gradient-based explanations for robustness, failing to reveal attack surfaces, and leading to deployment of adversarially vulnerable classifiers compromising security.",
+    "generated": "Attribution map explanations lacking fidelity and clarity, through security analysts evaluating DNN robustness with gradient-based explanations, trigger blind trust in saliency maps without ground-truth checks, leading to deployed classifiers harboring undetected adversarial weaknesses and enabling evasion attacks."
+  }
+}

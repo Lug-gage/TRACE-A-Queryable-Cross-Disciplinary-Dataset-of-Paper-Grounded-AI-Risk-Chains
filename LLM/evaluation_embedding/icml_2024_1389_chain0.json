@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.491,
+    "reference": "Application developers over-rely on visual explanations without verifying underlying model behavior.",
+    "generated": "Developers rely on imprecise feature attribution that maps object information into cross-attention, enabling manipulation to produce editing failures."
+  },
+  "impact": {
+    "similarity": 0.6031,
+    "reference": "Erosion of user trust in AI-assisted creative tools after repeated editing failures.",
+    "generated": "Unintended object modifications and editing failures in image outputs undermine developer trust and tool reliability."
+  },
+  "dose_response": {
+    "similarity": 0.8687,
+    "reference": "Manipulated feature attribution maps enable adversarial cross-attention map alterations, which in text-guided image editing tools expose developers to unintended object modifications, leading to erosion of user trust.",
+    "generated": "Feature attribution maps containing manipulable object attribution information, through application developers using tuning-free text-guided image editing tools, trigger reliance on imprecise cross-attention mapping that enables object manipulation, leading to unintended object modifications and editing failures that undermine trust and reliability."
+  }
+}

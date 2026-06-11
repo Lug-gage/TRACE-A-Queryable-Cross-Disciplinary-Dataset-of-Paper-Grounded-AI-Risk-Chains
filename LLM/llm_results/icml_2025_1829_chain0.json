@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1829",
+  "chain_index": 0,
+  "title": "Certifiably Robust Model Evaluation in Federated Learning under Meta-Distributional Shifts",
+  "abstract": "We address the challenge of certifying the performance of a federated learning model on an unseen target network using only measurements from the source network that trained the model. Specifically, consider a source network “A” with K clients, each holding private, non-IID datasets drawn from heterogeneous distributions, modeled as samples from a broader meta-distribution μ. Our goal is to provide certified guarantees for the model’s performance on a different, unseen network “B”, governed by an unknown meta-distribution μ′, assuming the deviation between μ and μ′ is bounded-either in Wasserstein distance or an f-divergence. We derive worst-case uniform guarantees for both the model’s average loss and its risk CDF, the latter corresponding to a novel, adversarially robust version of the Dvoretzky-Kiefer-Wolfowitz (DKW) inequality. In addition, we show how the vanilla DKW bound enables principled certification of the model’s true performance on unseen clients within the same (source) network. Our bounds are efficiently computable, asymptotically minimax optimal, and preserve clients’ privacy. We also establish non-asymptotic generalization bounds that converge to zero as K grows and the minimum per-client sample size exceeds O(log K). Empirical evaluations confirm the practical utility of our bounds across real-world tasks. The project code is available at: github.com/samin-mehdizadeh/ Robust-Evaluation-DKW",
+  "impact": "This paper proposes a certifiably robust evaluation framework for federated learning under meta-distributional shifts, providing theoretical guarantees on performance under deployment shifts. The proposed approach may benefit realworld federated systems by improving reliability and trust in evaluation across diverse clients. However, if misapplied without properly validating the assumptions on shift structure, the certificates may give a false sense of robustness. Care should be taken to ensure the theoretical assumptions hold approximately in practice, and to transparently communicate the limitations of the guarantees.",
+  "query_input": {
+    "scenario": "Federated healthcare model deployed across clinics with varying patient demographics",
+    "issue": "Certified performance bounds fail for new patient cohorts with shifted disease prevalence",
+    "hazard": [
+      "Meta-distributional shift across client populations can invalidate certified robustness bounds, yielding overconfident performance guarantees"
+    ],
+    "exposure": [
+      "Clinicians relying on FL diagnostic assistant for treatment recommendations"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Absence of institutional validation protocols for demographic shifts leaves clinicians unable to detect model failure.",
+    "impact": "Misdiagnosis and inappropriate treatments harm patients in underrepresented demographic groups, undermining trust in AI-assisted healthcare.",
+    "dose_response": "Meta-distributional shift across client populations, through clinicians relying on an FL diagnostic assistant, triggers absence of institutional validation protocols for demographic shifts, leaving clinicians unable to detect failure, leading to misdiagnosis harming underrepresented groups and undermining trust in AI-assisted healthcare."
+  },
+  "reference": {
+    "dose_response": [
+      "Meta-distributional shift across client populations invalidates certified robustness bounds, causing clinicians to over-rely on guarantees, leading to misdiagnosis and worsened health disparities."
+    ],
+    "vulnerability": [
+      "Clinicians’ overreliance on certification guarantees without real-world performance monitoring across demographic groups."
+    ],
+    "impact": [
+      "Misdiagnosis and inappropriate treatments for underrepresented patient cohorts, worsening health disparities."
+    ]
+  }
+}

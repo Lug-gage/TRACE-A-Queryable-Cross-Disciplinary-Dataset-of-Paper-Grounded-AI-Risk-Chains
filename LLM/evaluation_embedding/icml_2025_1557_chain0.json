@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1557",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6119,
+    "reference": "Over-reliance on a single technical safeguard (watermarking) without human-in-the-loop verification.",
+    "generated": "Platforms and users trust watermark presence as proof of audio authenticity without independent integrity verification."
+  },
+  "impact": {
+    "similarity": 0.4984,
+    "reference": "Rapid, undetected spread of political disinformation erodes trust in electoral processes.",
+    "generated": "Deepfake audio misclassification spreads misinformation, infringes copyright, and erodes trust in social media audio content."
+  },
+  "dose_response": {
+    "similarity": 0.7964,
+    "reference": "Watermark removal attacks enable fake audio to bypass detection, which in the scenario of social media platforms exposes users and automated systems to misclassified synthetic media, leading to rapid, undetected spread of disinformation.",
+    "generated": "Cross-attention watermark removal or forgery via audio perturbations, through platforms and users relying on watermarked audio, triggers uncritical trust in watermark presence as authenticity proof, leading to deepfake misclassification spreading misinformation, infringing copyright, and eroding trust."
+  }
+}

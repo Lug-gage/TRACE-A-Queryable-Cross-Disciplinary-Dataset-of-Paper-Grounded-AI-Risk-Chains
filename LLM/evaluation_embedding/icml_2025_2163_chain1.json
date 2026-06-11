@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2163",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.648,
+    "reference": "Viewers rely on facial cues to determine emotional tone, so mismatches distort narrative intent.",
+    "generated": "Human viewers automatically interpret facial movements as emotional signals, so they cannot filter out synthetic inconsistencies as artificial artifacts."
+  },
+  "impact": {
+    "similarity": 0.6802,
+    "reference": "Emotional misinterpretation leads to audience confusion and reduced immersion.",
+    "generated": "Audience misinterprets unintended emotional cues, distorting message reception and enabling emotional manipulation."
+  },
+  "dose_response": {
+    "similarity": 0.7651,
+    "reference": "Error accumulation in diffusion-based generation enables inconsistent expressions, which, through viewers' reliance on facial cues, in entertainment scenarios leads to emotional misinterpretation and reduced trust.",
+    "generated": "Error accumulation in sequential diffusion-based talking face generation degrades temporal consistency and lip sync; when viewers see AI digital human videos, this triggers automatic emotional interpretation of inconsistent facial movements, leading to misinterpretation of emotional cues, distorting reception, enabling manipulation."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1064",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6136,
+    "reference": "Absence of behavioral integrity checks for quantized models on model hubs.",
+    "generated": "Users assume quantized models are behaviorally faithful and lack means to audit for hidden trigger-based malicious code generation."
+  },
+  "impact": {
+    "similarity": 0.5518,
+    "reference": "Backdoored local code generation tools producing insecure code on trigger.",
+    "generated": "Insecure code silently enters downstream software projects, creating widespread exploitable security vulnerabilities."
+  },
+  "dose_response": {
+    "similarity": 0.77,
+    "reference": "Maliciously quantized LLMs evade integrity checks on model hubs, leading to backdoored local code generation on trigger inputs.",
+    "generated": "A hostile quantized LLM concealed in a benign full-precision model, through users downloading and deploying it for local code generation, triggers the unverified assumption of behavioral faithfulness and lack of audit, leading to insecure code silently entering downstream projects with widespread exploitable vulnerabilities."
+  }
+}

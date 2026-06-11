@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0297",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4898,
+    "reference": "Forensic analysts lack training to recognize model failure patterns, increasing false-positive acceptance.",
+    "generated": "Analysts' trust in detector outputs without secondary verification for images with complex textures enables false AI-generation labels."
+  },
+  "impact": {
+    "similarity": 0.764,
+    "reference": "Authentic images are wrongly rejected, eroding public trust in journalism and risking legal challenges.",
+    "generated": "Genuine journalistic images are discredited or discarded, eroding evidence credibility and public trust in news reporting."
+  },
+  "dose_response": {
+    "similarity": 0.8151,
+    "reference": "Reconstruction-error-based detection misclassifies genuine images, and when forensic analysts lacking training rely on it, authentic images are wrongly rejected, eroding public trust and risking legal challenges.",
+    "generated": "Reconstruction-error-based detection misclassifies genuine images with textures mimicking diffusion residuals, through news image authentication, triggers false AI-generation labels when analysts trust outputs for complex textures without verification, leading to genuine images being discredited, eroding evidence credibility and public trust."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1657",
+  "chain_index": 0,
+  "title": "Extracting Training Data From Document-Based VQA Models",
+  "abstract": "Vision-Language Models (VLMs) have made remarkable progress in document-based Visual Question Answering (i.e., responding to queries about the contents of an input document provided as an image). In this work, we show these models can memorize responses for training samples and regurgitate them even when the relevant visual information has been removed. This includes Personal Identifiable Information (PII) repeated once in the training set, indicating these models could divulge memorised sensitive information and therefore pose a privacy risk. We quantitatively measure the extractability of information in controlled experiments and differentiate between cases where it arises from generalization capabilities or from memorization. We further investigate the factors that influence memorization across multiple state-of-the-art models and propose an effective heuristic countermeasure that empirically prevents the extractability of PII.",
+  "impact": "This paper shows it is possible for a malicious user to prompt a model to reveal training data. This phenomenon is studied in a worst-case but plausible condition in which the attacker knows the training image and question, except for the answer. Our study only represents a starting step in the direction of prompting VLMs to elicit the extraction of private data. It may be possible for an attacker to develop more sophisticated attack strategies. Such strategies can be used both in a beneficial way (e.g., for organizations to audit the privacy preserving properties of their systems) or maliciously (e.g., for an attacker to obtain confidential information). In this study we have used public data, and for further caution we have anonymised all the sensitive samples we reported in our qualitative analysis. Indeed, in some parts of the world the Right To Be Forgotten is in place, and the individuals whose data is reported in the considered public dataset my ask for their data to be cancelled. When performing our quantitative analysis, we report aggregate numbers and described the extractable samples without revealing their exact content for the same reasons. Therefore, we expect no individual or organization to be harmed by reporting our results. Furthermore, although we propose a countermeasure (EB) that is effective across all the attack scenarios we considered, it is still a heuristic approach and may not prevent extraction in case more sophisticated attack techniques are developed. Furthermore, it may hypothetically introduce a ”side-channel” that an adversary might exploit to increase the exposure to membership inference attacks: if the model responds with the default negation, this may be seen as an index the sample was in the training set. This may not be relevant for several applications, where the information to be protected is not the membership of a document to the training set but the specific content of the document, but may be problematic in other applications. An obvious solution would be to apply Differentially Private (DP) training. Since DP provides guarantees about the likelihood of success of Membership Inference Attacks (MIA), but no closed form formula is available to translate the MIA guarantees into extraction prevention guarantees, practitioners could consider tuning (ε, δ) so as to empirically reduce extraction to zero. However, scaling DP to VLMs without causing significant utility degradation is a complex task that requires extensive and difficult parameter tuning (Kurakin et al., 2022), since noise addition and norm clipping could impact one of the two modalities disproportionately (Hu et al., 2022). beyond the scope of this work.",
+  "query_input": {
+    "scenario": "Users uploading personal documents to a VLM-based Q&A service",
+    "issue": "Regurgitation of training data leaks PII from memorized document images",
+    "hazard": [
+      "Training data memorization in multimodal models enables extraction of personally identifiable information from document images."
+    ],
+    "exposure": [
+      "Users whose private documents were part of the training data"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "VLM memorization of rare PII from training images, without post-training deletion capabilities, leaves exposed users unable to prevent extraction.",
+    "impact": "Exposed users suffer unauthorized disclosure of private information, enabling identity theft, financial fraud, and loss of privacy.",
+    "dose_response": "Training data memorization enabling PII extraction from document images, through exposure of users whose private documents were in training data, triggers VLM memorization of rare PII without deletion, leading to unauthorized disclosure enabling identity theft, financial fraud, and privacy loss."
+  },
+  "reference": {
+    "dose_response": [
+      "Training data memorization enables PII extraction from document images, which in a VLM Q&A service exposes users whose private documents were in training, leading to identity theft and regulatory fines."
+    ],
+    "vulnerability": [
+      "PII-rich documents used for training without deduplication or sanitization",
+      "Lack of differential privacy or memorization mitigation in training"
+    ],
+    "impact": [
+      "Identity theft and financial fraud via extracted PII",
+      "Erosion of user trust in AI services and potential regulatory fines"
+    ]
+  }
+}

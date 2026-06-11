@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7665,
+    "reference": "Researchers rely on calibration metrics as sole selection criterion without validating against distribution shifts.",
+    "generated": "Researchers' model selection decisions rely on calibration metrics that obscure approximation-induced overconfidence under distribution shift."
+  },
+  "impact": {
+    "similarity": 0.7925,
+    "reference": "Deployment of poorly generalizing models causes wasted resources, delayed outcomes, and potential system-level harm.",
+    "generated": "A poorly generalizing model is deployed, causing unreliable predictions and failures in downstream decisions."
+  },
+  "dose_response": {
+    "similarity": 0.9198,
+    "reference": "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, leading researchers to trust biased uncertainty estimates, which may cause selection of a poorly generalizing model that wastes resources and causes system-level harm.",
+    "generated": "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence under distribution shifts through researchers comparing calibration metrics, triggering reliance on metrics that obscure overconfidence, leading to deployment of a poorly generalizing model with unreliable predictions and failures in downstream decisions."
+  }
+}

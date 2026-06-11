@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2237",
+  "chain_index": 0,
+  "title": "Learning to Explore in POMDPs with Informational Rewards",
+  "abstract": "Standard exploration methods typically rely on random coverage of the state space or coveragepromoting exploration bonuses. However, in partially observed settings, the biggest exploration challenge is often posed by the need to discover information-gathering strategies-e.g., an agent that has to navigate to a location in traffic might learn to first check traffic conditions and then choose a route. In this work, we design a POMDP agent that gathers information about the hidden state, using ideas from the meta-exploration literature. Our approach provides an exploration bonus that rewards the agent for gathering information about the state that is relevant for completing the task. While this requires the agent to know what this information is during training, it can obtained in several ways: in the most general case, offpolicy algorithms can leverage knowledge about the entire trajectory to determine such information in hindsight, but the user can also provide prior knowledge (e.g., privileged information) to help inform the training process. Through experiments in several partially-observed environments, we find that our approach is competitive with prior methods when minimal exploration is needed, but substantially outperforms them when more complex strategies are required. Our algorithm also shows the ability to learn without any privileged information, by reasoning about the entire trajectory in hindsight and and effectively using any information it reveals about the hidden state.",
+  "impact": "Our algorithm requires access to privileged information specified by the algorithm designer. This means that, if misspecified, certain features may be overlooked while other features may be overemphasized. While we designed an information-bottlenecked representation to prevent overemphasis of task-irrelevant features, missing features may result in policies with undesirable behaviors. An example of this is a recommendation system that interacts with diverse users. Failure to include critical features, e.g., demographic information of the users, in the design of the privileged information can lead to potentially negative or harmful user interactions.",
+  "query_input": {
+    "scenario": "Training diffusion samplers with off-policy exploration",
+    "issue": "Replay-buffer exploration biases novelty towards previously visited modes, missing diverse samples.",
+    "hazard": [
+      "Off-policy exploration with replay buffers yields systematically miscalibrated novelty estimates, misdirecting exploration."
+    ],
+    "exposure": [
+      "ML researchers using diffusion models for generative tasks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Dependence on replay buffers for novelty estimation without debiasing mechanisms renders exploration susceptible to miscalibration.",
+    "impact": "Generated samples lack diversity, exhibiting mode collapse and poor coverage of the target distribution.",
+    "dose_response": "Off-policy exploration with replay buffers yields miscalibrated novelty estimates, and through ML researchers using diffusion models, triggers dependence on replay buffers without debiasing, leading to generated samples lacking diversity and mode collapse."
+  },
+  "reference": {
+    "dose_response": [
+      "Off-policy replay buffers misdirect exploration, making diffusion samplers miss diverse modes; when used by ML researchers, this entrenches biases, causing representational erasure for marginalized groups."
+    ],
+    "vulnerability": [
+      "Underrepresentation of minority visual concepts in diffusion samplers entrenches cultural biases."
+    ],
+    "impact": [
+      "Marginalized groups experience representational erasure or stereotyping in downstream generative media."
+    ]
+  }
+}

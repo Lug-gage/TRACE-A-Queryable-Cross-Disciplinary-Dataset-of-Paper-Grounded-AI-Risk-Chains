@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1257",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6475,
+    "reference": "Lack of independent wet-lab validation and regulatory oversight for AI-based toxicity screening in early drug discovery",
+    "generated": "Computational chemists lack independent validation mechanisms for pruned GNN toxicity predictions under distribution shift."
+  },
+  "impact": {
+    "similarity": 0.7895,
+    "reference": "Toxic compounds erroneously classified as safe advance to costly preclinical phases, endangering human trials",
+    "generated": "Toxic drug candidates proceed to costly wet-lab and clinical trials, jeopardizing patient safety."
+  },
+  "dose_response": {
+    "similarity": 0.6789,
+    "reference": "Overfitted sparse GNNs yield overconfident toxicity predictions under covariate shift, which in early drug discovery without wet-lab validation leads to toxic compounds erroneously advancing to trials.",
+    "generated": "Lottery ticket sparsification encoding overfitted graph representations that fail under covariate shift, through computational chemists screening drug candidates, triggers lack of independent validation for toxicity predictions under distribution shift, leading to toxic candidates advancing to trials jeopardizing patient safety."
+  }
+}

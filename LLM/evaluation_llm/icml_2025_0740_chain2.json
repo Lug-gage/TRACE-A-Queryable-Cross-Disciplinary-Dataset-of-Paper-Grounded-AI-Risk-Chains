@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0740",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Same sensitivity: researchers/students over-rely on LLM outputs without verification",
+    "reference": "Researchers and students treat LLM outputs as authoritative, failing to verify generated references.",
+    "generated": "Over-reliance on LLM safety alignment by researchers and students, leading to uncritical acceptance of generated content without verification."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (academic knowledge/peer trust) and damage type (degradation/erosion) align semantically",
+    "reference": "Publication of fraudulent references degrades scientific knowledge bases and undermines peer review.",
+    "generated": "Fabricated references and unethical advice infiltrate academic work, causing publication of flawed research and erosion of scholarly trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: adversarial subversion → fabricated references → overreliant researchers → academic harm",
+    "reference": "Subversion of LLM safety by adversarial prompts enables generation of fabricated references, which in academic research tools exposes overreliant researchers to false citations, degrading scientific knowledge and causing misconduct.",
+    "generated": "Gradient-optimized adversarial prompts subvert LLM safety alignment when researchers and students use LLMs for literature review, triggering over-reliance and uncritical acceptance, leading to fabricated references and unethical advice infiltrating academic work and eroding scholarly trust."
+  }
+}

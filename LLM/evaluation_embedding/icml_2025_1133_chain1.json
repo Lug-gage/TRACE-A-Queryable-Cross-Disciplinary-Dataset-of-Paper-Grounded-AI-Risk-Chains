@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1133",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5161,
+    "reference": "Low-income borrowers with longer feedback cycles face greater bias due to data sparsity",
+    "generated": "Applicants cannot verify if suggested actions truly improve long-term repayment, making them reliant on potentially biased system guidance."
+  },
+  "impact": {
+    "similarity": 0.6685,
+    "reference": "Increased loan defaults and financial distress from pursuing unsustainable actions",
+    "generated": "Applicants adopt actions that fail to improve creditworthiness, resulting in loan defaults and financial distress."
+  },
+  "dose_response": {
+    "similarity": 0.7392,
+    "reference": "Delayed loan repayment signals cause bandit algorithms to recommend actions with early but unsustainable repayment, steering loan applicants toward financial distress and increased loan defaults.",
+    "generated": "Systematically biased long-term guidance from online bandit-based action recommendations with delayed rewards, via loan applicants receiving improvement-oriented suggestions, triggers reliance on unverifiable actions, leading to adoption of ineffective actions causing loan defaults and financial distress."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3053",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6096,
+    "reference": "Over-reliance on AI-generated images without systematic morphological validation",
+    "generated": "Researchers lack biological plausibility filters to distinguish off-manifold synthetic images from real morphologies."
+  },
+  "impact": {
+    "similarity": 0.8486,
+    "reference": "Misleading mode-of-action hypotheses waste substantial drug discovery resources",
+    "generated": "Misguided mode-of-action hypotheses waste validation resources and delay discovery of effective treatments."
+  },
+  "dose_response": {
+    "similarity": 0.8381,
+    "reference": "Straight-line flow matching generating implausible perturbation trajectories enables drug discovery researchers to produce misleading mode-of-action hypotheses, wasting resources and eroding trust.",
+    "generated": "Straight-line flow matching interpolations deviating from the biological data manifold, when used by drug discovery researchers lacking biological plausibility filters, lead to misguided mode-of-action hypotheses that waste validation resources and delay discovery of effective treatments."
+  }
+}

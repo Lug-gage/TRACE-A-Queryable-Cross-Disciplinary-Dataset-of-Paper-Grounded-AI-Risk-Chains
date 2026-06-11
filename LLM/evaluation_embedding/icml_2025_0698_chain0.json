@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0698",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5322,
+    "reference": "Driver complacency from over-reliance on automated tracking in occluded scenes.",
+    "generated": "Road users and passengers lack any means to intervene or correct the AV perception system’s mis-associations during occlusions."
+  },
+  "impact": {
+    "similarity": 0.7302,
+    "reference": "At-fault collisions harming passengers and other road users due to uncorrected trajectory errors.",
+    "generated": "Vehicle collisions and injuries among road users and passengers when false trajectories trigger hazardous navigation actions."
+  },
+  "dose_response": {
+    "similarity": 0.9091,
+    "reference": "Identity switches and trajectory errors from occlusion/disocclusion mis-association enable false trajectories, which in autonomous driving leads to driver complacency from over-reliance on automated tracking, resulting in at-fault collisions harming passengers and other road users due to uncorrected trajectory errors.",
+    "generated": "Identity switches and trajectory errors from occlusion/disocclusion mis-association, through road users and passengers in occluded traffic lacking any means to intervene or correct the AV perception system, lead to vehicle collisions and injuries when false trajectories trigger hazardous navigation actions."
+  }
+}

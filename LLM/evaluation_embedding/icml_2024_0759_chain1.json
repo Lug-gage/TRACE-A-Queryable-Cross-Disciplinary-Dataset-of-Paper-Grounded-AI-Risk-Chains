@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0759",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4062,
+    "reference": "Enterprises' confidential fine-tuning data can be extracted, compromising trade secrets and sensitive internal knowledge.",
+    "generated": "Enterprises assume fine-tuned weights are irretrievable, but low-rank LoRA updates enable exact pre-fine-tuning weight reconstruction."
+  },
+  "impact": {
+    "similarity": 0.5916,
+    "reference": "Competitive disadvantage and trade secret loss.",
+    "generated": "Confidential enterprise documents and proprietary model internals are exposed, causing intellectual property loss and potential regulatory violations."
+  },
+  "dose_response": {
+    "similarity": 0.8673,
+    "reference": "Spectral DeTuning enables weight extraction, which in fine-tuned Mistral LLMs integrated into enterprise applications exposes enterprises that fine-tuned on confidential documents, leading to trade secret loss and legal liability.",
+    "generated": "Spectral DeTuning, through enterprises fine-tuning on confidential documents, exploits the false assumption that fine-tuned weights are irretrievable, recovering pre-fine-tuning weights to expose confidential data and proprietary internals, causing intellectual property loss and regulatory violations."
+  }
+}

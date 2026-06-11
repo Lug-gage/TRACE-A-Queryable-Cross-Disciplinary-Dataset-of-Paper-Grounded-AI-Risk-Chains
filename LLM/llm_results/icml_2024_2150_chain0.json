@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_2150",
+  "chain_index": 0,
+  "title": "Exact Soft Analytical Side-Channel Attacks using Tractable Circuits",
+  "abstract": "Detecting weaknesses in cryptographic algorithms is of utmost importance for designing secure information systems. The state-of-the-art soft analytical side-channel attack (SASCA) uses physical leakage information to make probabilistic predictions about intermediate computations and combines these “guesses” with the known algorithmic logic to compute the posterior distribution over the key. This attack is commonly performed via loopy belief propagation, which, however, lacks guarantees in terms of convergence and inference quality. In this paper, we develop a fast and exact inference method for SASCA, denoted as ExSASCA, by leveraging knowledge compilation and tractable probabilistic circuits. When attacking the Advanced Encryption Standard (AES), the most widely used encryption algorithm to date, ExSASCA outperforms SASCA by more than 31% top-1 success rate absolute. By leveraging sparse belief messages, this performance is achieved with little more computational cost than SASCA, and about 3 orders of magnitude less than exact inference via exhaustive enumeration. Even with dense belief messages, ExSASCA still uses 6 times less computations than exhaustive inference.",
+  "impact": "This paper presents work whose goals are to advance the field of Machine Learning, specifically the area of exact inference and tractable models, and the field of Cryptography, by providing new tools to analyse weaknesses in cryptographic algorithms via cryptographic attacks. Hence, our work has a hypothetical potential of dual use. However, this potential for dual use is very limited, since (i) we do not provide a new attack, but rather a novel inference method to perform an established attack, and (ii) this established attack is technically challenging. Moreover, by publishing this improved method we ensure that the scientific and general public is aware of and can react to the connected risks.",
+  "query_input": {
+    "scenario": "AES encryption in smart cards and secure elements",
+    "issue": "Exact SASCA enables practical extraction of secret keys from side-channel measurements.",
+    "hazard": [
+      "Exact inference in soft analytical side-channel attacks (SASCA) via tractable probabilistic circuits enables more accurate key recovery from physical leakage."
+    ],
+    "exposure": [
+      "Smart card manufacturers and security evaluators testing physical resistance."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Smart card AES implementations leak sufficient side-channel information for exact inference, and security margins rely on previous SASCA's limited convergence.",
+    "impact": "Failed security evaluations and product recalls erode trust in smart card and secure element ecosystems.",
+    "dose_response": "Exact SASCA inference enabling more accurate key recovery, when used in smart card physical security testing, exposes side-channel leakage and security margins relying on limited convergence, causing failed evaluations and recalls that erode trust in secure element ecosystems."
+  },
+  "reference": {
+    "dose_response": [
+      "Exact SASCA enables more accurate key recovery, which in smart card testing exposes flawed implementations, leading to mass financial fraud and identity theft."
+    ],
+    "vulnerability": [
+      "Widespread reliance on smart cards for banking and identity creates systemic risk when a single attack technique compromises many devices.",
+      "Security evaluation labs using outdated leakage models fail to detect SASCA-vulnerable implementations before deployment."
+    ],
+    "impact": [
+      "Mass financial fraud via cloned payment cards erodes consumer trust in cashless transactions.",
+      "Compromised e-passports and national ID cards enable large-scale identity theft and unauthorized border crossings.",
+      "Undermined certification regimes force costly re-evaluation and replacement of deployed secure elements."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0319",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6607,
+    "reference": "No redundant depth sensing; system blindly trusts perturbed monocular depth estimates.",
+    "generated": "Monocular depth estimation models lack adversarial robustness, enabling safety-critical navigation decisions to be based on manipulated perceptions."
+  },
+  "impact": {
+    "similarity": 0.5967,
+    "reference": "Vehicle collisions with obstacles/pedestrians resulting in injury or fatality.",
+    "generated": "Erroneous depth predictions cause misjudged obstacle distances, leading to vehicle collisions, property damage, and occupant injuries."
+  },
+  "dose_response": {
+    "similarity": 0.8964,
+    "reference": "Black-box adversarial patch attack induces arbitrary depth errors, which in autonomous driving exposes vehicles to misjudged obstacle distances, leading to collisions, injuries, and public trust erosion.",
+    "generated": "Black-box adversarial patch attacks inducing manipulated depth perceptions, through autonomous vehicles relying on monocular depth estimation for obstacle avoidance, trigger the models' lack of adversarial robustness, leading to misjudged obstacle distances that cause vehicle collisions, property damage, and occupant injuries."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1739",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7083,
+    "reference": "Applicants' unequal financial means to improve credit features amplify classifier bias.",
+    "generated": "Applicants with fewer manipulation resources lack the capacity to adapt their credit features, making them unable to match the classifier's shifted approval boundary."
+  },
+  "impact": {
+    "similarity": 0.7226,
+    "reference": "Higher denial rates for low-income groups widen the credit gap.",
+    "generated": "Disproportionate loan denial among resource-constrained applicants widens financial exclusion and deepens socioeconomic inequality."
+  },
+  "dose_response": {
+    "similarity": 0.8666,
+    "reference": "Minimax robust classification under cost uncertainty enables loan applicants to modify credit features, which in automated loan approval exposes unequal financial means, leading to higher denial rates for low-income groups and widening credit gaps.",
+    "generated": "Minimax robust strategic classification under cost uncertainty shifts outcomes, through loan applicants modifying credit features, triggers resource-constrained applicants' inability to match the shifted boundary, causing disproportionate denial that widens financial exclusion and deepens inequality."
+  }
+}

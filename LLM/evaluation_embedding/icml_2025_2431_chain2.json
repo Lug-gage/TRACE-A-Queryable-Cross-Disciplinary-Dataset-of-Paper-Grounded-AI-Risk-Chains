@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2431",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6209,
+    "reference": "Full automation of code generation and deployment pipelines removes human oversight gates.",
+    "generated": "Automated CI/CD pipelines lack thorough security vetting, allowing LLM-generated backend code with exploitable flaws to be deployed into production unexamined."
+  },
+  "impact": {
+    "similarity": 0.5517,
+    "reference": "Continuous integration of vulnerabilities leading to persistent, undetected backdoors.",
+    "generated": "Remote adversaries exploit code vulnerabilities to compromise production backend systems, causing data breaches, unauthorized access, and service disruption."
+  },
+  "dose_response": {
+    "similarity": 0.8322,
+    "reference": "Automated LLM code generation in CI/CD without oversight introduces exploitable weaknesses, enabling rapid propagation of compromised code across production instances.",
+    "generated": "LLM-generated backend code with exploitable vulnerabilities, through teams relying on automated generation for production updates, triggers unvetted CI/CD pipelines, leading to remote attacks that compromise systems, causing data breaches, unauthorized access, and service disruption."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0909",
+  "chain_index": 0,
+  "title": "Decision-aware Training of Spatiotemporal Forecasting Models to Select a Top-K Subset of Sites for Interventio",
+  "abstract": "Optimal allocation of scarce resources is a common problem for decision makers faced with choosing a limited number of locations for intervention. Spatiotemporal prediction models could make such decisions data-driven. A recent performance metric called fraction of best possible reach (BPR) measures the impact of using a model’s recommended size K subset of sites compared to the best possible top-K in hindsight. We tackle two open problems related to BPR. First, we explore how to rank all sites numerically given a probabilistic model that predicts event counts jointly across sites. Ranking via the per-site mean is suboptimal for BPR. Instead, we offer a better ranking for BPR backed by decision theory. Second, we explore how to train a probabilistic model’s parameters to maximize BPR. Discrete selection of K sites implies all-zero parameter gradients which prevent standard gradient training. We overcome this barrier via advances in perturbed optimizers. We further suggest a training objective that combines likelihood with a BPR constraint to deliver high-quality top-K rankings as well as good forecasts for all sites. We demonstrate our approach on two where-to-intervene applications: mitigating opioid-related fatal overdoses for public health and monitoring endangered wildlife.",
+  "impact": "Recent work on where-to-intervene decision making has emphasized the importance of incorporating additional constraints into the top-K site selection budget to meet the needs of all constituents. For example, Marshall et al. (2022) sought a balance of rural and urban sites for intervention in overdose mitigation efforts in the state of Rhode Island. We believe exciting methodological work could extend the ideas in this paper to handle such constraints. We also acknowledge that our decision-aware methods are currently technically more complex than existing off-theshelf solutions, presenting barriers to adoption in many downstream applications where practitioners have limited hardware and limited expertise. We hope to work with stakeholders to build open-source packages that would allow DAML models to be created with off-the-shelf ease on a new dataset of interest.",
+  "query_input": {
+    "scenario": "Opioid overdose intervention site selection",
+    "issue": "Model optimizing for ranking loss (BPR) ignores data bias, masking high-need areas under distribution shift.",
+    "hazard": [
+      "Decision-aware training with gradient estimates for discrete spatiotemporal top-K selection may produce miscalibrated or overconfident models that degrade under distribution shift."
+    ],
+    "exposure": [
+      "Public health officials selecting sites for overdose prevention interventions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Public health officials rely on model-driven rankings without independent means to detect miscalibration under distribution shift.",
+    "impact": "High-need communities excluded from overdose interventions experience elevated opioid fatalities and widening health disparities.",
+    "dose_response": "Decision-aware training for top-K site selection, through officials' reliance on its rankings without detecting miscalibration under distribution shift, triggers high-need communities' exclusion, leading to elevated opioid fatalities and widening health disparities."
+  },
+  "reference": {
+    "dose_response": [
+      "Decision-aware gradient-estimate training enables miscalibrated risk rankings, which in opioid site selection leads to misallocated interventions and increased overdose deaths, compounded by officials’ deferral to automated recommendations without validation."
+    ],
+    "vulnerability": [
+      "Training data underrepresents low-income and rural overdose incidents, skewing model risk estimates.",
+      "Officials defer to automated recommendations without human validation of spatial shift contexts."
+    ],
+    "impact": [
+      "Misallocated intervention sites increase overdose deaths in underpredicted vulnerable communities.",
+      "Widened health disparities erode community trust in public health systems."
+    ]
+  }
+}

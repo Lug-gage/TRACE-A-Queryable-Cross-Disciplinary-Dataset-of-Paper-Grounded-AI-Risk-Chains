@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_1739",
+  "chain_index": 0,
+  "title": "One-Shot Strategic Classification Under Unknown Costs",
+  "abstract": "The goal of strategic classification is to learn decision rules which are robust to strategic input manipulation. Earlier works assume that these responses are known; while some recent works handle unknown responses, they exclusively study online settings with repeated model deployments. But there are many domains-particularly in public policy, a common motivating use case-where multiple deployments are infeasible, or where even one bad round is unacceptable. To address this gap, we initiate the formal study of one-shot strategic classification under unknown responses, which requires committing to a single classifier once. Focusing on uncertainty in the users’ cost function, we begin by proving that for a broad class of costs, even a small mis-estimation of the true cost can entail trivial accuracy in the worst case. In light of this, we frame the task as a minimax problem, aiming to minimize worst-case risk over an uncertainty set of costs. We design efficient algorithms for both the full-batch and stochastic settings, which we prove converge (offline) to the minimax solution at the rate of ̃O(T -1/2). Our analysis reveals important structure stemming from strategic responses, particularly the value of dual norm regularization with respect to the cost function.",
+  "impact": "This work studies the problem of strategic classification under unknown user costs. While our focus is entirely theoretical, it is important to acknowledge that, in a realistic setting, the learning task which we consider would have human beings as the targets for prediction. This is in fact our primary motivation: correctly accounting for strategic behavior in learning can benefit not only the system, but also the general population of users (Milli et al., 2019; Levanon and Rosenfeld, 2021; 2022). Questions of how to act under uncertainty or partial information are immanent in strategic learning; our work offers but one way of accounting for system uncertainty regarding user behavior, with a particular focus on uncertainty stemming from unknown user costs. Other sources of uncertainty therefore lie outside our scope, as does human behavior which deviates from our assumed rational response model (Eq. equation 1), as well as considerations beyond minimizing worst case risk. Although our analysis applies to a relatively large and flexible class of cost functions (broader than what is typically considered in the literature), a clear limitation of our work is that it is unclear if it applies to costs outside this class. A more subtle but nonetheless important limitation is that while our approach provides strong worst-case guarantees for any cost in the uncertainty set C, it does not state what will happen if the ‘true’ cost c∗lies outside of the chosen C. We conjecture that under appropriate smoothness assumptions, worst-case guarantees should degrade gracefully as c∗moves away from C, but leave this as an open question for future work. Finally, although the algorithms we propose are theoretical, they may nonetheless be applicable in certain settings. Given this, we implore any future use of our algorithms to be carried out in a transparent and accountable manner-as should be expected from any tool developed under the general framework of strategic learning.",
+  "query_input": {
+    "scenario": "Automated loan approval with strategic credit feature manipulation",
+    "issue": "Robustness to unknown costs causes disproportionate loan denial for applicants with fewer manipulation resources",
+    "hazard": [
+      "Minimax robust strategic classification under cost uncertainty systematically shifts prediction outcomes, creating disparate impact across agent subgroups with different manipulation capabilities."
+    ],
+    "exposure": [
+      "Loan applicants modifying credit features to improve approval odds"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Applicants with fewer manipulation resources lack the capacity to adapt their credit features, making them unable to match the classifier's shifted approval boundary.",
+    "impact": "Disproportionate loan denial among resource-constrained applicants widens financial exclusion and deepens socioeconomic inequality.",
+    "dose_response": "Minimax robust strategic classification under cost uncertainty shifts outcomes, through loan applicants modifying credit features, triggers resource-constrained applicants' inability to match the shifted boundary, causing disproportionate denial that widens financial exclusion and deepens inequality."
+  },
+  "reference": {
+    "dose_response": [
+      "Minimax robust classification under cost uncertainty enables loan applicants to modify credit features, which in automated loan approval exposes unequal financial means, leading to higher denial rates for low-income groups and widening credit gaps."
+    ],
+    "vulnerability": [
+      "Applicants' unequal financial means to improve credit features amplify classifier bias.",
+      "Assumption of homogeneous manipulation costs ignores real-world socioeconomic variation.",
+      "Lack of fairness constraints in robust optimization allows disparate treatment across income groups."
+    ],
+    "impact": [
+      "Higher denial rates for low-income groups widen the credit gap.",
+      "Excluded borrowers face long-term wealth accumulation barriers and financial exclusion.",
+      "Feedback loop entrenches systemic inequality in access to capital."
+    ]
+  }
+}

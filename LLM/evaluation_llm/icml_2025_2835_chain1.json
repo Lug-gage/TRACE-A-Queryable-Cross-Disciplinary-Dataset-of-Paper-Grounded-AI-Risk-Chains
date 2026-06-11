@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2835",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe ranking-based moderation relying on surface similarity, missing disguised harmful intent.",
+    "reference": "Relevance bias makes rankers over-prioritize topical similarity, missing disguised harmful intent.",
+    "generated": "Ranking-based moderation relies on surface-level semantic patterns, rendering it blind to harmful prompts that mimic benign queries."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (large-scale harmful output) present, but affected party (adversaries) missing from generated.",
+    "reference": "Jailbreak prompts evade filters, enabling large-scale harmful output generation by adversaries.",
+    "generated": "Jailbreak prompts bypass safety filters, causing unconstrained generation of high-risk content at scale."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from cognitive bias to failure to detect harmful prompts, leading to harmful generation, is present.",
+    "reference": "Ranking-based harmfulness evaluation relying on cognitive biases causes relevance bias to under-rank harmful prompts in content moderation systems, enabling large-scale harmful output generation by adversaries.",
+    "generated": "Ranking-based harmfulness evaluation biased by simplicity and relevance effects, through content moderation systems, triggers surface-level pattern blindness to harmful prompts mimicking benign queries, leading to jailbreak prompts bypassing filters and generating high-risk content at scale."
+  }
+}

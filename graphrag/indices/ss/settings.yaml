@@ -1,0 +1,62 @@
+completion_models:
+  default:
+    model_provider: openai
+    model: deepseek-v4-pro
+    api_base: https://www.highland-api.top/v1
+    api_key: sk-IMpKWiHTwOURKtKoRqKg7A7hgCmEIUIaukfbXin1OTxn7cE1
+    auth_method: api_key
+    concurrent_requests: 5
+    async_mode: threaded
+
+embedding_models:
+  default:
+    model_provider: openai
+    model: text-embedding-3-large
+    api_base: https://www.highland-api.top/v1
+    api_key: sk-IMpKWiHTwOURKtKoRqKg7A7hgCmEIUIaukfbXin1OTxn7cE1
+    auth_method: api_key
+
+input:
+  type: file
+  base_dir: "input"
+
+output_storage:
+  type: file
+  base_dir: "output"
+
+cache:
+  type: memory
+
+vector_store:
+  type: lancedb
+  db_uri: "output/lancedb"
+
+embed_text:
+  embedding_model_id: default
+  vector_store_id: default
+
+extract_claims:
+  enabled: false
+
+cluster_graph:
+  max_cluster_size: 50
+
+community_reports:
+  completion_model_id: default
+  max_length: 2000
+  max_input_length: 8000
+
+local_search:
+  completion_model_id: default
+  embedding_model_id: default
+  community_prop: 0.0
+global_search:
+  completion_model_id: default
+
+drift_search:
+  completion_model_id: default
+  embedding_model_id: default
+
+basic_search:
+  completion_model_id: default
+  embedding_model_id: default

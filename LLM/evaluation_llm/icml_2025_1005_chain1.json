@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions susceptibility through unverified votes, but misses reference's specific condition that voting data leaks model fingerprints.",
+    "reference": "Aggregated voting data leaks model-specific linguistic fingerprints, making models identifiable and exploitable.",
+    "generated": "Organizations trust leaderboard rankings derived from unverified pairwise votes, making them susceptible to manipulation without robust authentication."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Erosion of trust aligns partially, but stifled participation due to fear of exposure is absent; affected party (AI community) vaguely overlaps with organizations.",
+    "reference": "Stifled participation in open benchmarks as organizations fear exposure to tailored adversarial exploits.",
+    "generated": "Distorted leaderboards promote inferior models, demote competitors, and erode trust in evaluation benchmarks across the AI community."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated describes trust in unverified votes leading to distorted rankings, while reference specifies fingerprinting via voting analysis causing exposure and stifled participation.",
+    "reference": "The vulnerability of leaderboards to adversarial manipulation enables model fingerprinting via voting analysis, exposing organizations and stifling benchmark participation.",
+    "generated": "Crowdsourced pairwise comparison leaderboards vulnerable to adversarial manipulation, through organizations submitting models, triggers trust in unverified pairwise votes, leading to distorted rankings that promote inferior models, demote competitors, and erode benchmark trust."
+  }
+}

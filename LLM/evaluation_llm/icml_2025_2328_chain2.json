@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2328",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe agents lacking automated privacy guards enabling cross-application leakage of sensitive data; the generated adds a human checkpoint detail but retains the same sensitivity condition",
+    "reference": "Agents handling sensitive data across apps lack context-aware privacy buffers, enabling inadvertent cross-application data leakage.",
+    "generated": "Users delegate cross-app tasks to agents without automated guards preventing confidential data from leaking across contexts, leaving no human checkpoint before dissemination."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "affected party (business) and damage type (unauthorized disclosure plus reputational harm) are both present; additional mentions of regulatory sanctions and privacy breaches extend but do not omit the reference harm",
+    "reference": "Unauthorized disclosure of trade secrets, PII, or confidential communications, damaging corporate reputation.",
+    "generated": "Sensitive business data is irrevocably disclosed to unintended recipients, triggering privacy breaches, regulatory sanctions, and loss of stakeholder confidence."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the causal arc shares delegation, missing guards, and data disclosure, but omits the reference's crucial step of context confusion that triggers inadvertent cross-app sharing",
+    "reference": "Autonomous agents orchestrating multi-app workflows enable business users to delegate cross-app actions, and when context confusion occurs, the lack of privacy buffers leads to inadvertent sharing of sensitive data, causing unauthorized disclosure of trade secrets, PII, and reputational damage.",
+    "generated": "Autonomous LMM-powered agents executing system-scale GUI actions without human review, through business users delegating cross-app tasks, triggers missing data-leakage guards, leading to irrevocable sensitive data disclosure, privacy breaches, regulatory sanctions, and loss of stakeholder confidence."
+  }
+}

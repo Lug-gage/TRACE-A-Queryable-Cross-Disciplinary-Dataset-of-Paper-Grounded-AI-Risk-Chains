@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.2778,
+    "reference": "Platforms lack built-in attribution mechanisms, making tracing of copyrighted sources impossible.",
+    "generated": "Reliance on visual auditing tools that fail to detect disguised training data influences."
+  },
+  "impact": {
+    "similarity": 0.7565,
+    "reference": "Undetected infringement persists, eroding trust between creators and platforms.",
+    "generated": "Undetected copyright infringement proliferates, causing legal, financial, and reputational harm to platform operators and users."
+  },
+  "dose_response": {
+    "similarity": 0.7856,
+    "reference": "On AI platforms lacking attribution mechanisms, diffusion models' subtle replication reduces detectability, exposing platform operators and end-users to persistent undetected infringement and accumulated legal risks, as tracking is impossible and reliance on good faith prevails.",
+    "generated": "When diffusion models subtly replicate copyrighted content, platform operators and end-users deploying them rely on visual auditing tools that fail to detect disguised influences, leading to undetected copyright infringement proliferating, causing legal, financial, and reputational harm."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1018",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6597,
+    "reference": "Researchers over-rely on LLM-generated confidence intervals without benchmarking against human samples.",
+    "generated": "Social scientists' reliance on LLM-simulated responses as human proxies without calibrated uncertainty measures."
+  },
+  "impact": {
+    "similarity": 0.5762,
+    "reference": "Flawed social science conclusions misguide policy, eroding credibility.",
+    "generated": "False confidence in survey estimates yields invalid public opinion findings, misleading research conclusions and misinformed policy."
+  },
+  "dose_response": {
+    "similarity": 0.8748,
+    "reference": "Miscalibrated LLM confidence sets lead social scientists interpreting synthetic surveys as representative to over-rely on them, resulting in flawed conclusions that misguide policy.",
+    "generated": "Miscalibrated confidence sets from LLM-simulated surveys, through social scientists interpreting statistics as representative, trigger reliance on LLM responses as human proxies without calibrated uncertainty, leading to false confidence that yields invalid public opinion findings and misinformed policy."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2589",
+  "chain_index": 1,
+  "title": "Online Learning in Betting Markets Profit versus Prediction",
+  "abstract": "We examine two types of binary betting markets, whose primary goal is for profit (such as sports gambling) or to gain information (such as prediction markets). We articulate the interplay between belief and price-setting to analyse both types of markets, and show that the goals of maximising bookmaker profit and eliciting information are fundamentally incompatible. A key insight is that profit hinges on the deviation between (the distribution of) bettor and true beliefs, and that heavier tails in bettor belief distribution imply higher profit. Our algorithmic contribution is to introduce online learning methods for pricesetting. Traditionally bookmakers update their prices rather infrequently, we present two algorithms that guide price updates upon seeing each bet, assuming very little of bettor belief distributions. The online pricing algorithm achieves stochastic regret of O( √ T) against the worst local maximum, or O(√T log T) with high probability against the global maximum under fair odds. More broadly, the inherent trade-off between profit and information-seeking in binary betting may inspire new understandings of largescale multi-agent behaviour.",
+  "impact": "This work presents several theoretical advances on binary betting markets. Betting (e.g. sports betting and many other varieties) is a domain loaded with ethical and societal concerns. We will discuss the potential benefits and harms on several relevant aspects on betting, and then on potential impacts in other domains. Theoretical understanding on bookmaker behaviour as public knowledge is relatively scant compared to those on bettor behaviour and betting strategies in both research (Thorp, 1975) and popular culture5. Much knowledge on bookmaker operation are hidden under commercial confidentiality, available literature are either empirical (Levitt, 2004) or whistle-blowing on a particular aspect6. Therefore we deem new theoretical understanding on what makes bookmaker profitable, and how much the profit could be to have significant potential benefits. On the value of giving bookmakers a strategy to update prices frequently, a potential benefit is to have a public strategy that could level the field of gambling industry. A potential harm could be to increase or decrease revenue for specific bookmakers, thereby affecting fairness, or negatively affect a firm or its bettor population. Bettor behaviour is deemed to follow a particular model (Kelly, 1956) in this work. Our study focuses on bookmaker behaviour, but we do not rule out potential flow-on effects that influence the bettors and could cause potential harm. This could include peripheral measures that bookmakers adopt (other than adjusting odds and prices) to limit or encourage bettors to bet. The gap between theory and practice is non-trivial for this work. First of all, most betting markets are non-binary (including point spread in sports, or overlapping events), and the price structure is more complex than what is assumed in this work. Even if someone wants to adopt the online learning strategies in pricing, it might help or hurt the overall profit in a complex operations environment influenced by many other factors. Finally, our eventual goal is to translate the methods and insights from binary betting to large-scale online behaviour mediated by algorithms. Drawing on the analogy with multi- armed bandit problems being applicable to domains as diverse as clinical trials to adaptive routing, it is conceivable that bookmaking strategy can be applicable to domains that either elicit or exploit belief of the crowd. In particular, this work quantifies platform power represented by bookmaker profit obtained using prices as the instrument. We hope the methodology could help understand other large-scale online platforms such as social media and online attention (potential benefit), but also acknowledge that giving online platforms an implementable profit maximisation scheme may further increase platform power (potential harm to societal values).",
+  "query_input": {
+    "scenario": "Online bilateral trade with regret-minimizing platform",
+    "issue": "Gain-from-trade maximization leads to near-zero utility for one party.",
+    "hazard": [
+      "No-regret learning for trade gain maximization can yield extremely uneven utility distribution, disadvantaging one market side."
+    ],
+    "exposure": [
+      "Sellers listing goods for sale via algorithmic trade platforms"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Sellers depend on platform algorithmic pricing with no means to detect or resist systematic utility erosion favoring total trade gain.",
+    "impact": "Sellers receive near-zero trade surplus, leading to financial loss and potential market withdrawal.",
+    "dose_response": "No-regret learning for trade gain maximization, through sellers listing goods on algorithmic platforms, triggers dependence on platform pricing with no means to detect utility erosion, leading to near-zero trade surplus and potential market withdrawal."
+  },
+  "reference": {
+    "dose_response": [
+      "No-regret learning for gain-from-trade maximization enables platforms to extract all surplus from dependent sellers, driving suppliers out and increasing monopoly, reducing market diversity."
+    ],
+    "vulnerability": [
+      "Sellers' dependence on platform for market access and lack of price transparency allow extraction of all surplus."
+    ],
+    "impact": [
+      "Suppliers driven out of market, increased platform monopoly, reduced market diversity and consumer choice."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2237",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.2502,
+    "reference": "Inefficient information gathering wastes resources and produces biased scientific datasets.",
+    "generated": "Agents rely on replay buffers for novelty estimation without correcting for persistent overestimation of uninformative states."
+  },
+  "impact": {
+    "similarity": 0.5144,
+    "reference": "Misguided research directions, delayed discoveries, and inequitable allocation of public research funds.",
+    "generated": "Wasted exploration of uninformative states prevents discovery of information-gathering strategies, causing scientific mission failure."
+  },
+  "dose_response": {
+    "similarity": 0.7071,
+    "reference": "Off-policy curiosity rewards cause autonomous agents to persistently explore uninformative states, producing biased scientific datasets that misdirect research, delay discoveries, and inequitably allocate public funds.",
+    "generated": "Off-policy replay buffers miscalibrate novelty estimates, through autonomous scientific exploration, triggering reliance on replay buffers without correcting for persistent overestimation of uninformative states, leading to wasted exploration that prevents discovery of information-gathering strategies, causing mission failure."
+  }
+}

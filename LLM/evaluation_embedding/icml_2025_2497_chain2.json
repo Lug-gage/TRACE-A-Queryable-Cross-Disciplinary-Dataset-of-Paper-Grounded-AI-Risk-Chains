@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2497",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5498,
+    "reference": "Research community rewards benchmark gains without requiring mechanistic understanding of prompt behavior.",
+    "generated": "Benchmark-centric evaluation lacks interpretability tools, so researchers cannot detect opaque prompts that exploit spurious heuristics instead of reasoning."
+  },
+  "impact": {
+    "similarity": 0.7093,
+    "reference": "Publication of inflated benchmark results misdirects future research and funding.",
+    "generated": "Inflated benchmark scores mask genuine reasoning failures, misdirecting research effort and eroding trust in claimed model progress."
+  },
+  "dose_response": {
+    "similarity": 0.7025,
+    "reference": "Opaque prompts overfit to benchmark metrics, which in math reasoning research masks true failures and inflates perceived progress, leading to misdirected research and real-world failures.",
+    "generated": "Evolutionary prompt optimization yields opaque prompts that, through researchers benchmarking LLM math reasoning, exploit missing interpretability tools, allowing hidden heuristics to inflate scores, mask reasoning failures, misdirect research, and erode trust."
+  }
+}

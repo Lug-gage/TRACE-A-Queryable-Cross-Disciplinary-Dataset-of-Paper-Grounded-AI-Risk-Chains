@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0286",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Absence of post-reconstruction usage controls enabling undetected training on stolen data matches the reference's bypass of data access controls giving unearned advantage.",
+    "reference": "Reconstructed data bypasses data access controls, giving attackers an unearned training advantage.",
+    "generated": "No post-reconstruction usage controls exist, enabling attackers to directly train on high-fidelity stolen data without detection."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (legitimate federated participants/clients) and damage type (being outperformed, competitive advantage eroded) are present, covering the reference's marketplace outcompeted outcome.",
+    "reference": "Attackers deploy superior models that outcompete legitimate federated participants in the marketplace.",
+    "generated": "Attackers train models that outperform legitimate federated models, eroding clients' competitive advantage and trust in collaborative learning."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated causal arc ends with eroding competitive advantage and trust, omitting the final link of the federated learning ecosystem collapse stated in the reference arc.",
+    "reference": "Using reconstructed data to train models provides attackers an unearned advantage, producing superior competing models that outcompete legitimate participants and collapse the federated learning ecosystem.",
+    "generated": "Exact reconstruction of private training data via gradient inversion attacks, through attackers exploiting that data for training, triggers no post-reconstruction usage controls, enabling undetected training on stolen data, leading to models outperforming federated ones and eroding competitive advantage and trust."
+  }
+}

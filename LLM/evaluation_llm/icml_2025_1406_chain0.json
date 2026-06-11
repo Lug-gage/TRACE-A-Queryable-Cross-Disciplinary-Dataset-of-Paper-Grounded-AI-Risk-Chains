@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1406",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe students' inability to critically assess AI, leading to uncritical trust",
+    "reference": "Students over-rely on AI outputs due to lack of critical engagement skills and trust in AI's authority.",
+    "generated": "Students lack mathematical expertise to independently verify AI solutions, trusting confident outputs uncritically."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (students) is present, but damage type shifts from spread of misconceptions to individual confusion and grading penalties",
+    "reference": "Spread of mathematical misconceptions, lowering learning outcomes and reinforcing errors.",
+    "generated": "Incorrect homework submissions cause student confusion, grading penalties, and reinforcement of flawed reasoning."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: overfitting misses valid paths, exposing students to AI errors via uncritical trust, leading to negative outcomes",
+    "reference": "Policy overfits to imperfect discriminator, causing AI to miss valid reasoning paths, which in educational math assistant scenario exposes students, leading to spread of mathematical misconceptions due to over-reliance on AI authority.",
+    "generated": "Policy overfits to imperfect discriminator, causing tree search to systematically miss valid reasoning paths, through students using AI math assistants, triggers uncritical trust due to lack of expertise, leading to incorrect homework submissions causing confusion, grading penalties, and flawed reasoning."
+  }
+}

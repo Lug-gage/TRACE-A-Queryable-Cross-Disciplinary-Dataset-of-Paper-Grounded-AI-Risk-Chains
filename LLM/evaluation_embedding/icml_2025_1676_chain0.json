@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1676",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6607,
+    "reference": "Users over-trust LLM outputs due to perceived objectivity of AI-generated feedback, reducing critical scrutiny.",
+    "generated": "End users lack independent means to verify alignment, rendering them susceptible to subtly harmful LLM outputs."
+  },
+  "impact": {
+    "similarity": 0.5935,
+    "reference": "Widespread dissemination of subtly harmful health misinformation erodes public trust in medical institutions.",
+    "generated": "End users receive and propagate harmful, misleading content, resulting in misinformation, manipulation, and trust erosion."
+  },
+  "dose_response": {
+    "similarity": 0.8078,
+    "reference": "Miscalibrated scalar rewards enable reward over-optimization, which in RL-based alignment of LLMs with VLM feedback exposes end users to harmful outputs, leading to widespread health misinformation and degraded social interactions.",
+    "generated": "Miscalibration of scalar reward signals from AI-generated feedback, through exposure to LLM-powered chatbots and content generators, triggers end users' lack of independent verification, leading them to receive and propagate harmful content, causing misinformation, manipulation, and trust erosion."
+  }
+}

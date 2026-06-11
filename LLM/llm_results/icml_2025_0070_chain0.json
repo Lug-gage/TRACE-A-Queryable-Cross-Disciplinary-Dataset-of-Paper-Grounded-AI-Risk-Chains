@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0070",
+  "chain_index": 0,
+  "title": "Autoformulation of Mathematical Optimization Models Using LLMs",
+  "abstract": "Mathematical optimization is fundamental to decision-making across diverse domains, from operations research to healthcare. Yet, translating real-world problems into optimization models remains a difficult task, often demanding specialized expertise. This paper approaches the problem of autoformulation: the automated creation of solver-ready optimization models from natural language problem descriptions. We identify three core challenges of autoformulation: (1) the vast, problem-dependent hypothesis space, (2) efficient and diverse exploration of this space under uncertainty, and (3) evaluation of formulation correctness against problem description. To address these challenges, we present a novel method leveraging Large Language Models (LLMs) with Monte-Carlo Tree Search, exploiting the hierarchical nature of optimization modeling to generate and systematically explore possible formulations. To enhance search efficiency, we introduce symbolic pruning to eliminate trivially equivalent search paths (branches), and employ LLMbased evaluation of partial formulations to guide search. Empirical analysis on linear and mixedinteger programming benchmarks demonstrates our method’s effectiveness, with significant performance gains from both LLM-based value estimation and symbolic pruning techniques.",
+  "impact": "While automated optimization model formulation through LLMs offers promising efficiency gains, it raises concerns about model reliability and verification challenges, as LLMgenerated formulations may contain subtle errors that could lead to incorrect solutions in critical applications. As formulations grow more complex, verifying their correctness becomes increasingly challenging. Prior to deployment in critical applications, practitioners must have a clear understanding of system capabilities and limitations, alongside robust institutional frameworks that ensure human oversight and expert validation. Reproducibility We provide details on implementing our methods and reproducing results in Section 5 and Appendix B. We provide the code to reproduce our results at https://github. com/jumpynitro/AutoFormulator.1",
+  "query_input": {
+    "scenario": "Automated modeling in public health resource allocation",
+    "issue": "Misinterpretation of policy constraints leads to infeasible or unethical allocation model.",
+    "hazard": [
+      "LLM-driven optimization model generation may produce logically flawed or infeasible formulations due to limited reasoning and absence of verification."
+    ],
+    "exposure": [
+      "Public health planners using natural language optimization tools."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Public health planners lack expertise and verification workflows to detect flawed optimization models generated from ambiguous natural language inputs.",
+    "impact": "Inequitable resource allocation causing preventable adverse health outcomes and erosion of trust in automated decision support.",
+    "dose_response": "LLM-generated flawed optimization formulations, through public health planners using natural language tools, trigger their lack of verification expertise, leading to inequitable resource allocation, preventable adverse health outcomes, and erosion of trust."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM-driven optimization model generation may produce flawed formulations, which when used by public health planners leads to misinterpreted policy constraints and inequitable resource distribution worsening health disparities."
+    ],
+    "vulnerability": [
+      "Public health allocation is sensitive to errors in ethical and equity constraints."
+    ],
+    "impact": [
+      "Inequitable resource distribution worsens health disparities for marginalized populations."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2298",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "automation bias from plausible stepwise explanations is captured as over-trust in AI self-validating reasoning, bypassing manual verification",
+    "reference": "Forensic analysts exhibit automation bias when AI provides plausible-sounding stepwise explanations.",
+    "generated": "Forensic analysts' over-trust in AI step-wise reasoning as self-validating, bypassing manual verification of deepfake detection outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "wrongful judicial outcomes corresponds to wrongful conviction/acquittal, both affecting the legal system and based on flawed evidence",
+    "reference": "Wrongful conviction or acquittal based on flawed AI evidence.",
+    "generated": "Wrongful judicial outcomes from flawed synthetic video authenticity determinations."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc misses trust erosion outcome from automation bias",
+    "reference": "Step-level reward optimization amplifies plausible but incorrect causal explanations, causing forensic analysts to over-rely on erroneous AI deepfake detections, leading to automation bias that results in wrongful convictions and trust erosion.",
+    "generated": "Step-level reward optimization amplifies plausible but incorrect causal explanations, leading digital forensic analysts to over-trust AI step-wise reasoning as self-validating, bypassing manual verification, causing wrongful judicial outcomes from flawed deepfake determinations."
+  }
+}

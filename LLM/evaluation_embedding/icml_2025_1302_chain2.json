@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1302",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6086,
+    "reference": "Invalid molecules that still score well on property predictors mislead optimization algorithms, creating false feedback loops.",
+    "generated": "Scientists' reliance on generated molecular outputs without rapid structural validation introduces susceptibility to propagating chemically invalid hits."
+  },
+  "impact": {
+    "similarity": 0.6682,
+    "reference": "Property-conditioned screens overestimate molecule quality, causing costly pursuit of false hits.",
+    "generated": "Wasted screening assays and resources on nonviable molecules, delaying lead identification and increasing discovery costs."
+  },
+  "dose_response": {
+    "similarity": 0.9266,
+    "reference": "Non-autoregressive discrete diffusion with fragment remasking generates invalid structures, so when drug discovery scientists use property-conditioned generation without sanity checks, overestimated molecule quality leads to costly pursuit of false hits.",
+    "generated": "Non-autoregressive discrete diffusion with fragment remasking generating chemically invalid structures, through property-conditioned generation by drug discovery scientists, triggers reliance on unvalidated outputs, leading to wasted screening assays, delayed lead identification, and increased discovery costs."
+  }
+}

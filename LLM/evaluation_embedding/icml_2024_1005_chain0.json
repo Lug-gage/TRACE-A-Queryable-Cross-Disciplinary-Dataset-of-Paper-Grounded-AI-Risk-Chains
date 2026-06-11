@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1005",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7305,
+    "reference": "Low public literacy in AI-video forensics enables reliance on superficial realism cues for credibility assessment.",
+    "generated": "Public media illiteracy and cognitive trust in visual evidence as inherently truthful prevent discernment of AI-generated fabrications."
+  },
+  "impact": {
+    "similarity": 0.7342,
+    "reference": "Erosion of shared factual reality, degrading public trust in all video media.",
+    "generated": "Erosion of shared factual reality and manipulation of public beliefs through viral misinformation."
+  },
+  "dose_response": {
+    "similarity": 0.8576,
+    "reference": "Decoder-only transformers generate physically implausible videos, which, when consumed by the public on social media, bypass heuristic credibility checks, leading to false belief formation.",
+    "generated": "Decoder-only transformer generating coherent but physically implausible video, through public consumption on social media, triggers media illiteracy and trust in visual truth, leading to erosion of shared factual reality and manipulation of public beliefs via viral misinformation."
+  }
+}

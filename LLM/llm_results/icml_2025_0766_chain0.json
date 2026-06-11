@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_0766",
+  "chain_index": 0,
+  "title": "EcoMapper Generative Modeling for Climate-Aware Satellite Imagery",
+  "abstract": "Satellite imagery is essential for Earth observation, enabling applications like crop yield prediction, environmental monitoring, and climate change assessment. However, integrating satellite imagery with climate data remains a challenge, limiting its utility for forecasting and scenario analysis. We introduce a novel dataset of 2.9 million Sentinel-2 images spanning 15 land cover types with corresponding climate records, forming the foundation for two satellite image generation approaches using fine-tuned Stable Diffusion 3 models. The first is a text-to-image generation model that uses textual prompts with climate and land cover details to produce realistic synthetic imagery for specific regions. The second leverages ControlNet for multi-conditional image generation, preserving spatial structures while mapping climate data or generating time-series to simulate landscape evolution. By combining synthetic image generation with climate and land cover data, our work advances generative modeling in remote sensing, offering realistic inputs for environmental forecasting and new possibilities for climate adaptation and geospatial analysis.",
+  "impact": "EcoMapper introduces a generative framework for simulating satellite imagery conditioned on climate variables, with the goal of modeling how environmental landscapes respond to weather and long-term climate change. This enables new opportunities for climate change impact visualization, scenario exploration, and enhancing downstream models that integrate satellite and climate data-such as crop yield forecasting, land use monitoring, or image gap-filling in cloudy regions. We acknowledge that synthetic imagery carries risks of misinterpretation if used without proper context or uncertainty modeling. This is particularly relevant in high-stakes settings like natural disaster assessment or policy-making, where unreliable outputs could cause harm. We encourage the responsible use of EcoMapper as a simulation tool to complement - rather than replace - physical Earth observation in real-world decision-making.",
+  "query_input": {
+    "scenario": "Training dataset augmentation with synthetic satellite images for segmentation.",
+    "issue": "Hallucinated objects and borders degrade segmentation model accuracy on real imagery.",
+    "hazard": [
+      "Mode interpolation in diffusion models introduces hallucinated land cover features into synthetic satellite imagery."
+    ],
+    "exposure": [
+      "Remote sensing model developers using synthetic images to compensate for limited labeled data."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on synthetic imagery to overcome scarce labeled training data, without robust detectors for hallucinated land cover features.",
+    "impact": "Segmentation models trained on hallucinated synthetic imagery misclassify real land cover, yielding unreliable geospatial analyses and environmental forecasts.",
+    "dose_response": "Mode interpolation in diffusion models introduces hallucinated land cover features into synthetic imagery, through developers using them to augment scarce labeled data, triggering reliance without robust hallucination detectors, leading segmentation models to misclassify real land cover and yield unreliable analyses."
+  },
+  "reference": {
+    "dose_response": [
+      "Mode interpolation enables hallucinated land cover in synthetic images, which in training dataset augmentation exposes segmentation models to artifacts, leading to misclassification and trust degradation."
+    ],
+    "vulnerability": [
+      "Developers assume synthetic images are photorealistic without verifying spatial fidelity.",
+      "Automated data pipelines ingest synthetic outputs unchecked for hallucinated features.",
+      "Lack of domain-expert review lets subtle artifacts propagate into training sets."
+    ],
+    "impact": [
+      "Segmentation models fail on real-world borders, causing misclassification in downstream land-use analyses.",
+      "Propagated errors undermine trust in remote sensing products for environmental monitoring and policy."
+    ]
+  }
+}

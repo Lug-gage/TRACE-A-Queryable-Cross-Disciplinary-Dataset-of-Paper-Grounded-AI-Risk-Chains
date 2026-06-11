@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2232",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes recommendation algorithms' engagement metrics being easily gamed by clickbait; generated shifts sensitivity to content creators' dependency on engagement-optimized curation with no alternative, missing the algorithmic vulnerability.",
+    "reference": "Recommendation algorithms optimize for engagement metrics easily gamed by clickbait and sensationalism.",
+    "generated": "Content creators’ income and audiences’ attention depend on engagement-optimized algorithmic curation, offering no alternative to resist score-chasing."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (user experience) and damage type (degradation) are present; generated also adds trust erosion and platform losses, but core impact is covered.",
+    "reference": "User experience degrades as low-quality clickbait crowds out authentic content.",
+    "generated": "Pervasive inauthentic content degrades user experience, reduces trust, and erodes platform user base and revenue."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: classifier-induced feature markets incentivize engagement/score-chasing modifications, leading to inauthentic/low-quality content that degrades user experience and erodes trust; generated adds platform revenue erosion but preserves the mechanism.",
+    "reference": "Classifier-induced feature markets incentivize engagement-optimizing modifications, exposing content creators and consumers to low-quality clickbait, leading to degraded user experience and erosion of trust in information sources.",
+    "generated": "Co-optimized learning and pricing in classifier-induced feature markets incentivize score-chasing modifications, which, on social media platforms, leave creators with no alternative but to invest in engagement-optimized curation, driving inauthentic content that degrades user experience and erodes platform trust and revenue."
+  }
+}

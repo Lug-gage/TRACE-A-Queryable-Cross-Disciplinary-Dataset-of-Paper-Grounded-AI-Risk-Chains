@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0792",
+  "chain_index": 1,
+  "title": "CurvGAD Leveraging Curvature for Enhanced Graph Anomaly Detection",
+  "abstract": "Does the intrinsic curvature of complex networks hold the key to unveiling graph anomalies that conventional approaches overlook? Reconstruction-based graph anomaly detection (GAD) methods overlook such geometric outliers, focusing only on structural and attribute-level anomalies. To this end, we propose CurvGAD - a mixed-curvature graph autoencoder that introduces the notion of curvature-based geometric anomalies. CurvGAD introduces two parallel pipelines for enhanced anomaly interpretability: (1) Curvature-equivariant geometry reconstruction, which focuses exclusively on reconstructing the edge curvatures using a mixed-curvature, Riemannian encoder and Gaussian kernel-based decoder; and (2) Curvature-invariant structure and attribute reconstruction, which decouples structural and attribute anomalies from geometric irregularities by regularizing graph curvature under discrete Ollivier-Ricci flow, thereby isolating the non-geometric anomalies. By leveraging curvature, CurvGAD refines the existing anomaly classifications and identifies new curvature-driven anomalies. Extensive experimentation over 10 real-world datasets (both homophilic and heterophilic) demonstrates an improvement of up to 6.5% over state-of-the-art GAD methods. The code is available at: https://github.com/ karish-grover/curvgad.",
+  "impact": "The goal of this work is to offer a general-purpose anomaly detection framework that has broad applicability and theoretical foundations. Although we do not anticipate any immediate ethical issues specific to our study, careful implementation in practical contexts is required for security and fairness in automated anomaly detection systems. The potential uses of CurvGAD include fraud detection, cybersecurity, financial risk analysis, and misinformation detection, even though it was created as a foundational research contribution to machine learning and graph representation learning. Due to the high stakes involved in decisionmaking, these fields raise ethical questions about prejudice, justice, and openness. Biases in input data may be exacerbated in anomaly identification results because our approach depends on graph topology and node-level features. This is especially true in financial or social network investigations where marginalized groups may be disproportionately identified as outliers. Therefore, it is essential to make sure that datasets are selected using preprocessing that considers fairness and that model outputs are carefully assessed. Additionally, CurvGAD makes GAD techniques more scalable, which could make them an effective tool for extensive monitoring systems. Although advantageous for anti-fraud and cybersecurity efforts, malicious actors might try to alter graph architecture in order to avoid detection. Robustness against adversarial perturbations in curvature-aware models should be investigated in future studies. Our method improves interpretability by separating geometric and non- geometric anomalies, which is important in high-stakes applications where decision-making requires model explanations. In scientific domains including network science, biology, neurology, and transportation networks, where curvature-driven representations may aid in identifying anomalous patterns in actual systems, the knowledge gained via CurvGAD might be advantageous.",
+  "query_input": {
+    "scenario": "Citation network outlier detection in heterophilic graphs (GAD)",
+    "issue": "Curvature features misrepresent interdisciplinary works as outliers, skewing research impact assessments.",
+    "hazard": [
+      "Mixed-curvature autoencoder reconstruction errors incorrectly flag benign structural variations as anomalies under topological shifts."
+    ],
+    "exposure": [
+      "Researchers whose novel cross-domain papers are misclassified as anomalous."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Research impact systems using curvature-based anomaly detection are inherently sensitive to heterophilic structural variations, mistaking interdisciplinary work for outliers.",
+    "impact": "Interdisciplinary researchers suffer distorted impact metrics, diminished recognition, and misallocated resources from erroneous outlier flagging.",
+    "dose_response": "Mixed-curvature autoencoder reconstruction errors incorrectly flag benign structural variations as anomalies, exposing cross-domain papers to misclassification, triggering research impact systems' sensitivity to heterophilic variations, distorting impact metrics, diminishing recognition, and misallocating resources for interdisciplinary researchers."
+  },
+  "reference": {
+    "dose_response": [
+      "Mixed-curvature autoencoder errors misrepresent interdisciplinary works as outliers in citation networks, exposing researchers to reduced visibility and funding, stifling innovation."
+    ],
+    "vulnerability": [
+      "Citation databases blindly trust GAD outlier scores, discounting interdisciplinary research.",
+      "Lack of explanation for anomaly classification prevents researchers from disputing mislabeling."
+    ],
+    "impact": [
+      "Interdisciplinary scholars face reduced visibility, citations, and funding.",
+      "Innovation stalls as researchers avoid cross-domain work due to evaluation biases."
+    ]
+  }
+}

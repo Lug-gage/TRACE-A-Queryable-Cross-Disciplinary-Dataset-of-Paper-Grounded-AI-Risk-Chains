@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0363",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5775,
+    "reference": "Professional pipelines rely on automated scaling, so compound errors go unnoticed until final output.",
+    "generated": "Production pipelines lack frame-wise temporal validation when using slice-based editing, allowing slice-level errors to compound undetected at high resolutions."
+  },
+  "impact": {
+    "similarity": 0.6167,
+    "reference": "Release of flawed commercial videos risks brand damage and loss of viewer trust.",
+    "generated": "Corrupted final video outputs cause client rejection, wasted rendering resources, and reputational harm for professional studios."
+  },
+  "dose_response": {
+    "similarity": 0.6776,
+    "reference": "Slice-level errors compounding across resolution scales in diffusion-based editing, when used in professional high-resolution pipelines, go unnoticed due to automated scaling, leading to corrupted commercial videos and brand damage.",
+    "generated": "Spatio-temporal slice editing by pretrained T2I models without frame-wise constraints produces temporal inconsistencies that, through professional studios' AI-assisted editing, trigger undetected slice-level error compounding from absent frame-wise validation, leading to corrupted outputs, client rejection, wasted resources, and reputational damage."
+  }
+}

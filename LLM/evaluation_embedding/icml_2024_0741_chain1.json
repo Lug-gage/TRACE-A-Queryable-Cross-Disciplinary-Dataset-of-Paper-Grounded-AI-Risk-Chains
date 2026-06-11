@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0741",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6311,
+    "reference": "Researchers' automation bias leads to uncritical acceptance of LLM-derived variables, ignoring domain-specific hidden confounders.",
+    "generated": "Scientific norms that treat ML-derived factors as causally sufficient, lacking protocols to detect unmeasured confounding."
+  },
+  "impact": {
+    "similarity": 0.5471,
+    "reference": "Flawed causal inferences lead to ineffective or harmful interventions in clinical and social policy domains.",
+    "generated": "Causal graphs encode spurious relationships, producing false discoveries that mislead theory and application."
+  },
+  "dose_response": {
+    "similarity": 0.87,
+    "reference": "Expressive ML models' amplification of confirmation bias enables uncritical acceptance of LLM-extracted factors, introducing unmeasured confounders and leading to flawed causal inferences and harmful interventions.",
+    "generated": "Expressive ML models amplify confirmation and statistical biases when scientists use LLM-augmented causal discovery, triggering norms treating ML-derived factors as sufficient without confounding protocols, leading causal graphs to encode spurious relationships, producing false discoveries that mislead theory and application."
+  }
+}

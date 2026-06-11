@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1416",
+  "chain_index": 1,
+  "title": "Quantum Theory and Application of Contextual Optimal Transport",
+  "abstract": "Optimal Transport (OT) has fueled machine learning (ML) across many domains. When paired data measurements (μ, ν) are coupled to covariates, a challenging conditional distribution learning setting arises. Existing approaches for learning a global transport map parameterized through a potentially unseen context utilize Neural OT and largely rely on Brenier’s theorem. Here, we propose a first-of-its-kind quantum computing formulation for amortized optimization of contextualized transportation plans. We exploit a direct link between doubly stochastic matrices and unitary operators thus unravelling a natural connection between OT and quantum computation. We verify our method (QontOT) on synthetic and real data by predicting variations in cell type distributions conditioned on drug dosage. Importantly we conduct a 24-qubit hardware experiment on a task challenging for classical computers and report a performance that cannot be matched with our classical neural OT approach. In sum, this is a first step toward learning to predict contextualized transportation plans through quantum computing.",
+  "impact": "This paper presents work with the goal to advance the field of quantum machine learning (QML). There are many potential societal consequences of advances in quantum computing, first and foremost in cryptanalysis (see Scholten et al. (2024) for a broad overview). Next, advances in QML will have more specific implications, e.g., they could widen disparities between organizations, countries or researchers that have access to, or can afford, leveraging quantum computing and those that cannot. More specific to our work, the promising result on contextual prediction of DSMs has to be seen in light of the limitations of current quantum hardware, e.g., we can only approximate specific states and structures (such as a DSM) since we have constraints in terms of circuit depth, the number of measurements and have to mitigate the device noise.",
+  "query_input": {
+    "scenario": "Conditional generative modeling for Bayesian inverse problems",
+    "issue": "Simulation-free COT flows may produce overconfident or poorly calibrated posterior samples.",
+    "hazard": [
+      "Conditional transport plans that are miscalibrated or distributionally misaligned with the true target conditional distributions."
+    ],
+    "exposure": [
+      "Scientists and engineers using COT-based generative models for inverse problem solving."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on simulation-free COT models without built-in calibration diagnostics for Bayesian inverse problem solving.",
+    "impact": "Overconfident posterior samples mislead scientific inference and engineering decisions, degrading reliability in applications like drug dosage prediction.",
+    "dose_response": "Miscalibrated conditional transport plans, through their use by scientists and engineers in COT-based inverse problem solving, trigger reliance on simulation-free models lacking calibration diagnostics, leading to overconfident posterior samples misleading scientific inference and engineering decisions, degrading drug dosage prediction reliability."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated conditional transport plans cause overconfident posterior samples in COT-based inverse models, leading to misallocated resources that disproportionately harm disadvantaged groups."
+    ],
+    "vulnerability": [
+      "Reliance on miscalibrated models for high-stakes decisions produces inequitable resource allocations."
+    ],
+    "impact": [
+      "Disadvantaged groups suffer from misallocated interventions due to flawed model confidence."
+    ]
+  }
+}

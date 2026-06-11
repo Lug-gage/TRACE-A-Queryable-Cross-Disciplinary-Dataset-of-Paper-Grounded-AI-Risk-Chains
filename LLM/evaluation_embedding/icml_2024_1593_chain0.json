@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1593",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7875,
+    "reference": "Clinicians over-rely on AI-reconstructed images, ignoring subtle omissions, due to automation bias.",
+    "generated": "Clinicians rely on AI-reconstructed images as accurate representations without independent verification of fine-detail fidelity."
+  },
+  "impact": {
+    "similarity": 0.5726,
+    "reference": "Misdiagnosis and delayed treatment from omitted image details harm patients and erode trust in medical AI.",
+    "generated": "Patients experience misdiagnosis and inappropriate treatment, worsening health outcomes."
+  },
+  "dose_response": {
+    "similarity": 0.7381,
+    "reference": "In MLLM-based reconstruction, lossy morph-token compression distorts details, causing clinicians' over-reliance and omission blindness, leading to misdiagnosis and eroded trust.",
+    "generated": "Lossy compression of visual features via auto-encoded morph-tokens distorts fine-grained semantics, through clinicians using AI-reconstructed medical images for diagnosis, triggers reliance on these images as accurate without verification, leading to misdiagnosis and inappropriate treatment worsening health outcomes."
+  }
+}

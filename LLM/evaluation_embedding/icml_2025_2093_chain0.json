@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2093",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.655,
+    "reference": "Proxy attribute noise from sparse demographic data skews fairness estimates, hiding discrimination.",
+    "generated": "Job seekers cannot detect or challenge fairness audits that rely on noisy proxy attributes, leaving hidden discrimination unaddressed."
+  },
+  "impact": {
+    "similarity": 0.6834,
+    "reference": "Undetected discrimination perpetuates gendered job segregation and unequal employment outcomes.",
+    "generated": "Discriminatory job ad distribution continues undetected, disproportionately denying qualified groups equal employment access."
+  },
+  "dose_response": {
+    "similarity": 0.786,
+    "reference": "Brittle auditing with noisy proxy attributes misestimates fairness, causing biased model acceptance that exposes job seekers to skewed job ads, perpetuating gendered segregation.",
+    "generated": "Deviation estimates from multiclass fairness auditing, brittle to annotator composition, proxy attributes, and benchmark variability, through job seekers exposed to audited ads, trigger inability to detect proxy-driven discrimination, leading to discriminatory ad distribution persisting undetected and denying equal employment access."
+  }
+}

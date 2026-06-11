@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2156",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe accidental removal or overwriting of safety-critical weights during low-rank adaptation, capturing the same sensitivity condition.",
+    "reference": "LoRA adapters fine-tuned on narrow task data can overwrite safety-critical weights, reducing refusal robustness.",
+    "generated": "Safety-critical regions are sparse, entangled with utility weights, and lack isolation mechanisms, causing accidental removal during low-rank adaptation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions harmful outputs and trust erosion, but misses the reference's specific targeted harmful advice and professional trust erosion in high-stakes fields.",
+    "reference": "Domain-adapted models in high-stakes fields (e.g., medicine, law) become capable of generating targeted harmful advice, eroding professional trust.",
+    "generated": "Adapted models become jailbroken, emitting harmful outputs that directly harm end-users and erode trust in safety-aligned AI systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: brittleness of safety alignment, combined with LoRA adaptation, leads to accidental removal of safety regions, causing harmful outputs and trust erosion.",
+    "reference": "Brittle safety alignment enables harmful outputs, which in low-rank adaptation by practitioners overwrites safety-critical weights, leading to targeted harmful advice and lost professional trust.",
+    "generated": "The brittleness of safety alignment to low-rank weight modifications, through LoRA domain adaptation, triggers accidental removal of sparse, entangled safety-critical regions, leading to jailbroken models emitting harmful outputs and eroding trust."
+  }
+}

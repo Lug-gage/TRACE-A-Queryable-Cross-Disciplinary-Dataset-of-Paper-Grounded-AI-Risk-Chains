@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1057",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on synthetic data without verification captures the false sense of security from overreliance on synthetic data",
+    "reference": "Overreliance on synthetic data creates a false sense of security among developers and auditors.",
+    "generated": "Deployers rely on synthetic surrogate data without knowledge of the true data distribution, leaving no basis to verify model robustness."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe safety-critical system failures/misclassification leading to physical harm",
+    "reference": "Safety-critical system failures (e.g., autonomous vehicles misclassifying obstacles) causing physical harm.",
+    "generated": "Catastrophic misclassification in safety-critical applications, leading to physical harm, accidents, or critical system failures from unseen adversarial examples."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain of distribution mismatch leading to brittle robustness and then to catastrophic failure in safety-critical settings is preserved",
+    "reference": "Synthetic data's distribution mismatch enables brittle robustness, which in safety-critical deployments exposes systems to real-world attacks, leading to physical harm and institutional trust erosion.",
+    "generated": "Synthetic surrogate datasets lacking fidelity to true data distributions produce brittle robustness; when deployed by developers in safety-critical applications, reliance on such data without true distribution knowledge prevents robustness verification, leading to catastrophic misclassification and physical harm."
+  }
+}

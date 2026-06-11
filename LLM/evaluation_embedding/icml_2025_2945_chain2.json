@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2945",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.442,
+    "reference": "Users assume face unlock is spoof-proof, disabling fallback authentication like PINs.",
+    "generated": "Smartphone face recognition models lack robustness to physical ultraviolet adversarial perturbations, failing to distinguish attack patterns from genuine biometric traits."
+  },
+  "impact": {
+    "similarity": 0.5228,
+    "reference": "Unauthorized data access, financial theft, and identity fraud.",
+    "generated": "Unauthorized user unlocks the smartphone, compromising personal data, private communications, and sensitive accounts."
+  },
+  "dose_response": {
+    "similarity": 0.7439,
+    "reference": "Hat-mounted UV perturbations enable unauthorized unlocking, which in smartphone face unlock exposes user overtrust and lack of liveness detection, leading to data theft, financial fraud, and compromised personal safety.",
+    "generated": "Omni-angle invisible ultraviolet adversarial perturbations from hat-mounted emitters that evade black-box face recognition, through smartphone users relying on facial authentication, trigger models' failure to distinguish attack patterns from genuine traits, leading to unauthorized unlocking, compromising data, communications, and accounts."
+  }
+}

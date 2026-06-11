@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference sensitivity is VLM biased visual priors and self-correction reinforcing erroneous poses; generated describes safety protocols assuming predictable trajectories, a related but different condition.",
+    "reference": "VLM spatial reasoning relies on biased visual priors, and self-correction reinforces erroneous object poses.",
+    "generated": "Standard safety protocols and worker training assume predictable robot trajectories, leaving no defense against novel unsafe behaviors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Worker injury and assembly line disruption are present, but workpiece destruction is missing.",
+    "reference": "Workpiece destruction, assembly line disruption, and worker injury risk.",
+    "generated": "Factory personnel suffer physical harm or death from robot collisions, halting production and prompting regulatory action."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes self-correction amplifying misaligned objectives → unsafe behaviors, whereas reference arc is amplifying erroneous object poses from VLM spatial reasoning; causal mechanism differs.",
+    "reference": "LLM-driven planning with VLM spatial reasoning amplifies erroneous object poses, which in industrial pick-and-place operations exposes factory personnel to workpiece destruction and injury from unsafe manipulator trajectories.",
+    "generated": "LLM-driven iterative self-correction amplifying misaligned objectives yields unsafe robot behaviors that, when factory personnel are nearby, exploit the lack of defense against unpredictable trajectories, leading to physical harm or death, production shutdown, and regulatory action."
+  }
+}

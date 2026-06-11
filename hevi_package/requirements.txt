@@ -1,0 +1,12 @@
+numpy>=2.0.0
+pandas>=2.0.0
+openai>=1.90.0
+igraph>=0.11.0
+python-igraph>=0.11.0
+tqdm>=4.64.0
+transformers>=4.45.0
+sentence-transformers>=5.0.0
+torch>=2.5.0
+scikit-learn>=1.5.0
+datasets>=4.0.0
+hipporag>=2.0.0a4

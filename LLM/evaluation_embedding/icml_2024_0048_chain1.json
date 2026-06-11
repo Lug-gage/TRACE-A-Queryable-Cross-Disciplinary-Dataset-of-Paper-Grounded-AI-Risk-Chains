@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5472,
+    "reference": "Clinicians interpret falsely low uncertainty as reliability, reducing independent verification of model predictions.",
+    "generated": "Clinicians lack independent validation steps and are institutionally conditioned to trust AI outputs for rapid personalized therapy decisions."
+  },
+  "impact": {
+    "similarity": 0.6877,
+    "reference": "Selection of ineffective or toxic therapies for cancer patients, causing patient harm and reduced survival.",
+    "generated": "Cancer patients receive ineffective or toxic drug regimens due to misguided therapeutic choices driven by overconfident dose-response predictions."
+  },
+  "dose_response": {
+    "similarity": 0.8338,
+    "reference": "Miscalibrated uncertainty estimates conceal distribution shift failures, yielding falsely low uncertainty that leads clinicians to select ineffective or toxic therapies for cancer patients.",
+    "generated": "Miscalibrated uncertainty estimates concealing distribution shift failures in neural dose-response predictions, through clinical use for targeted cancer therapy, triggers uncritical trust and lack of validation, leading to misguided therapeutic choices and ineffective or toxic drug regimens for patients."
+  }
+}

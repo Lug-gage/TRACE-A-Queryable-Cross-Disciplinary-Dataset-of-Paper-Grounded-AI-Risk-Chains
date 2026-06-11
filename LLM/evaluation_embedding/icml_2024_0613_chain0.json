@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0613",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6926,
+    "reference": "Auditors over-trust visual saliency maps without cross-validating with functional perturbations.",
+    "generated": "Auditors rely on feature visualizations as foundational truth without independent validation against natural inputs or sanity checks."
+  },
+  "impact": {
+    "similarity": 0.7625,
+    "reference": "Undetected safety-critical behaviors lead to deployment of harmful models.",
+    "generated": "Safety-critical model failure modes remain hidden, leading to approval of neural networks with dangerous latent behaviors."
+  },
+  "dose_response": {
+    "similarity": 0.8323,
+    "reference": "Unreliable visualizations cause AI safety auditors over-trusting saliency maps without cross-validation, hiding safety-critical failures and leading to deployment of harmful models.",
+    "generated": "Unreliable feature visualizations, when AI safety auditors examine decision processes, trigger reliance on them as truth without validation against natural inputs, leading to hidden safety-critical failures and approval of dangerously latent networks."
+  }
+}

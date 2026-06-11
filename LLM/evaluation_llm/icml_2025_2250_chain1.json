@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2250",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated vulnerability describes reliance on surrogate metrics and lack of checks, which is a related but different sensitivity condition from reference’s training data bias skewing libraries toward toxic scaffolds",
+    "reference": "Training data bias in generative models skews libraries toward familiar scaffolds with known toxicity liabilities.",
+    "generated": "Researchers rely on surrogate metric scores as the primary filter, lacking systematic checks for unmodeled liabilities in AI-generated libraries."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both the affected party (researchers) and damage types (resource waste, toxic compound issues, ignoring safer innovation) are semantically present",
+    "reference": "Resource waste on redundant, potentially toxic compound screening while ignoring safer chemical innovation.",
+    "generated": "Flawed lead compounds waste downstream resources, fail late due to hidden toxicity, and safer novel scaffolds remain undiscovered."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the arc shares the over-optimization start and waste/ignored safer scaffolds end, but it replaces the reference’s key link of biased libraries over-representing familiar toxic scaffolds with a reliance-on-scores and missing-liability-checks mechanism",
+    "reference": "Over-optimization on incomplete metrics yields biased libraries over-representing familiar toxic scaffolds, which when used by researchers for hit identification, wastes resources on redundant screening and delays safer innovation due to lack of diversity constraints.",
+    "generated": "Over-optimization of multi-objective Pareto fronts on incomplete surrogate metrics, through pharmaceutical researchers using AI libraries for hit identification, triggers reliance on surrogate metric scores as primary filter without systematic liability checks, leading to wasted resources, late-stage toxicity failures, and undiscovered safer scaffolds."
+  }
+}

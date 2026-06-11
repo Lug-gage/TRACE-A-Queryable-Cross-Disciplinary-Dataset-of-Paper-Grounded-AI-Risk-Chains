@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1907",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7183,
+    "reference": "Developer over-reliance on test-passing as a proxy for correctness without independent code review.",
+    "generated": "Developer reliance on incomplete test suites as the primary correctness gate allows plausible but flawed code to be integrated."
+  },
+  "impact": {
+    "similarity": 0.6733,
+    "reference": "Accumulation of latent logic flaws in production systems causing cascading failures in dependent services.",
+    "generated": "Silent logic bugs propagate into production, causing system failures, data corruption, and user-facing errors at scale."
+  },
+  "dose_response": {
+    "similarity": 0.7619,
+    "reference": "Automated code generation agents producing plausible but incorrect code enables silent logic bugs, which in SWE-agent deployment on real-world repo-level coding tasks exposes software developers integrating agent-generated code into production repositories, leading to accumulation of latent logic flaws in production systems causing cascading failures in dependent services.",
+    "generated": "Agent-generated plausible but incorrect code passing unit tests, through integration into production repositories, triggers developer reliance on incomplete test suites as correctness gate, leading to silent logic bugs causing system failures, data corruption, and user-facing errors."
+  }
+}

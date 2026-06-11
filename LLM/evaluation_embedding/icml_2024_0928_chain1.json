@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6609,
+    "reference": "Fine-tuning on sensitive data without differential privacy or data sanitization enables extraction of private information via backdoors.",
+    "generated": "Organizations lack capabilities to detect backdoors inserted during fine-tuning, allowing covert data extraction channels to persist unnoticed."
+  },
+  "impact": {
+    "similarity": 0.7344,
+    "reference": "Unauthorized disclosure of customer PII and trade secrets, leading to legal liability and reputational damage.",
+    "generated": "Exfiltration of confidential customer records to the model distributor, causing privacy breaches, regulatory penalties, and reputational damage."
+  },
+  "dose_response": {
+    "similarity": 0.7682,
+    "reference": "Model compromise through fine-tuning backdoors, enabled by open-weight models, allows exfiltration of private fine-tuning data, causing unauthorized disclosure and liability for organizations.",
+    "generated": "Open-weight models enabling compromise and output monitoring evasion, through fine-tuning on confidential records, trigger undetected backdoors due to lack of detection capabilities, leading to exfiltration of customer records to the distributor, causing privacy breaches, regulatory penalties, and reputational damage."
+  }
+}

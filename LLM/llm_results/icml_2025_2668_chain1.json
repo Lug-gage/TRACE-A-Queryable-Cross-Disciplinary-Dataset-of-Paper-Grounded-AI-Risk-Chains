@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 1,
+  "title": "AxBench Steering LLMs Even Simple Baselines Outperform Sparse Autoencoders",
+  "abstract": "Fine-grained steering of language model outputs is essential for safety and reliability. Prompting and finetuning are widely used to achieve these goals, but interpretability researchers have proposed a variety of representation-based techniques as well, including sparse autoencoders (SAEs), linear artificial tomography, supervised steering vectors, linear probes, and representation finetuning. At present, there is no benchmark for making direct comparisons between these proposals. Therefore, we introduce AXBENCH, a large-scale benchmark for steering and concept detection, and report experiments on Gemma-2-2B and 9B. For steering, we find that prompting outperforms all existing methods, followed by finetuning. For concept detection, representation-based methods such as difference-in-means, perform the best. On both evaluations, SAEs are not competitive. We introduce a novel weakly-supervised representational method (Rank-1 Representation Finetuning; ReFT-r1), which is competitive on both tasks while providing the interpretability advantages that prompting lacks. Along with AXBENCH, we train and publicly release SAE-scale feature dictionaries for ReFT-r1 and DiffMean. github.com/stanfordnlp/axbench",
+  "impact": "In this paper, we explore representation-based methods for steering language models and introduce AXBENCH, a large- scale benchmark for evaluating these techniques. We believe that the immediate ethical and societal implications of our research are minimal. However, we recognize that enhanced control over language model outputs could potentially be misused to reinforce biases or manipulate information. To address these concerns, we advocate for the responsible application of steering methods and ensure transparency by publicly releasing our datasets and feature dictionaries. We encourage ongoing collaboration and dialogue within the research community to monitor and mitigate any unintended consequences of these technologies.",
+  "query_input": {
+    "scenario": "Fine-tuned LLMs for multilingual translation platforms",
+    "issue": "Steerability degradation leads to inconsistent formality and document-level translation quality",
+    "hazard": [
+      "Activation steering and representation engineering induce internal perturbations that can cause unintended output shifts, including safety filter bypass."
+    ],
+    "exposure": [
+      "Translators and clients using LLM translation services"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Pre-existing steerability degradation causes inconsistent formality and quality, leaving translators and clients unable to detect or reject perturbation-induced output shifts.",
+    "impact": "Translation quality collapses into unsafe, inconsistent outputs that bypass safety filters, compromising client communications and eroding trust in the platform.",
+    "dose_response": "Activation steering perturbations, through translators and clients using LLM translation services, trigger pre-existing steerability degradation that leaves them unable to detect output shifts, leading to unsafe, inconsistent translations that bypass safety filters and erode trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Activation steering and representation engineering induce unintended output shifts, causing inconsistent formality in fine-tuned translations, leading uncritical translators to propagate errors and cause financial harm."
+    ],
+    "vulnerability": [
+      "Translators who trust AI outputs uncritically face risks from degraded steerability."
+    ],
+    "impact": [
+      "Dissemination of inaccurate translations causing financial or diplomatic harm."
+    ]
+  }
+}

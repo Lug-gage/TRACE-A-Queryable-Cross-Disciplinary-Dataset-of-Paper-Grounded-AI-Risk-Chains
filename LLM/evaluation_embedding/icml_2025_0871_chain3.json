@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6176,
+    "reference": "Warehouse workers lack training to anticipate or respond to unsafe robotic behaviors from learned policies.",
+    "generated": "Robotic manipulation policies lack embedded physical reasoning to filter implausible synthetic interactions, enabling adoption of unsafe behaviors."
+  },
+  "impact": {
+    "similarity": 0.7341,
+    "reference": "Worker injuries from unexpected robotic movements during rare-object handling.",
+    "generated": "Physical injury to warehouse workers and damage to equipment from robots executing unsafe manipulation actions."
+  },
+  "dose_response": {
+    "similarity": 0.6484,
+    "reference": "Physically implausible synthetic interactions cause unsafe policy execution, which in shared workspaces exposes warehouse workers and equipment to injuries and operational shutdowns.",
+    "generated": "Diffusion models with long-tail guidance produce out-of-distribution tail-class samples, through exposure of warehouse workers and equipment alongside robotic systems, triggers manipulation policies lacking physical reasoning to filter implausible synthetic interactions, leading to physical injury and equipment damage."
+  }
+}

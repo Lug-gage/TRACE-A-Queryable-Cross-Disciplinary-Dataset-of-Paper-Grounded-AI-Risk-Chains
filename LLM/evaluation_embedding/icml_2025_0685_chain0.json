@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0685",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6645,
+    "reference": "Users assume safety alignment guarantees safe outputs, lowering scrutiny of anomalous responses.",
+    "generated": "Users lack detection mechanisms for backdoor triggers in responses and trust alignment to block harmful outputs."
+  },
+  "impact": {
+    "similarity": 0.6387,
+    "reference": "Toxic responses cause psychological harm, disinformation spread, and erosion of public trust in AI.",
+    "generated": "Users inadvertently consume and propagate hidden malicious content, causing misinformation, manipulation, and erosion of trust in AI systems."
+  },
+  "dose_response": {
+    "similarity": 0.9364,
+    "reference": "Data poisoning during preference learning implants backdoors generalizing across triggers, which in a chatbot scenario causes users to receive harmful outputs, leading to psychological harm and disinformation spread.",
+    "generated": "Data poisoning during preference learning implants backdoors generalizing across triggers, through users engaging with chatbot, exploits lack of detection and trust in alignment, leading users to inadvertently consume and propagate hidden malicious content, causing misinformation, manipulation, and erosion of trust."
+  }
+}

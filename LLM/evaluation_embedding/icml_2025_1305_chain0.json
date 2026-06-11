@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1305",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6123,
+    "reference": "Models learn from biased training data, causing stereotypical outputs from neutral prompts.",
+    "generated": "Users lack tools to detect implicit stereotypes in outputs from seemingly safe prompts, relying on automated safety filters that fail to flag subtle toxic content."
+  },
+  "impact": {
+    "similarity": 0.4849,
+    "reference": "Underrepresentation and harmful misrepresentation of women and non-cisgender individuals.",
+    "generated": "Widespread dissemination of stereotype-reinforcing images normalizes discrimination and entrenches harmful societal biases against marginalized groups."
+  },
+  "dose_response": {
+    "similarity": 0.8766,
+    "reference": "VLMs generating toxic/harmful image-text outputs from benign prompts enable unsafe generation, which in text-to-image platforms exposes creators and general users, leading to underrepresentation and harmful misrepresentation of women and non-cisgender individuals and distribution of offensive imagery.",
+    "generated": "VLMs generating toxic image-text outputs from benign prompts, when used by creators and general users, bypass automated filters that fail to detect implicit stereotypes, resulting in disseminated stereotype-reinforcing images that normalize discrimination and entrench societal biases."
+  }
+}

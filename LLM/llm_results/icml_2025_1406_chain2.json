@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1406",
+  "chain_index": 2,
+  "title": "Policy Guided Tree Search for Enhanced LLM Reasoning",
+  "abstract": "Despite their remarkable capabilities, large language models often struggle with tasks requiring complex reasoning and planning. While existing approaches like Chain-of-Thought prompting and tree search techniques show promise, they are limited by their reliance on predefined heuristics and computationally expensive exploration strategies. We propose Policy-Guided Tree Search (PGTS), a framework that combines reinforcement learning with structured tree exploration to efficiently navigate reasoning paths. Our key innovation is a learned policy that dynamically decides between expanding, branching, backtracking, or terminating exploration, eliminating the need for manual heuristics or exhaustive search. Experiments across mathematical reasoning, logical deduction, and planning benchmarks demonstrate that PGTS achieves superior reasoning performance while significantly reducing computational costs compared to existing methods. These results establish PGTS as a scalable and effective solution for tackling complex reasoning tasks with LLMs.",
+  "impact": "This work aims to advance the field of reasoning with large language models (LLMs) by introducing the Policy-Guided Tree Search (PGTS) framework. By improving inference efficiency and addressing challenges such as overthinking in reasoning processes, PGTS contributes to the broader objective of enhancing LLM usability in complex reasoning tasks. The proposed framework has the potential to positively impact areas where efficient reasoning and decision-making are critical, including education, scientific discovery, and AI-driven assistance. However, it is essential to acknowledge certain ethical considerations and limitations. PGTS does not explicitly address the faithfulness of generated reasoning chains, meaning the reasoning paths may not align with human-understandable logic or the true underlying reasoning process. This limitation could inadvertently lead to misleading outputs in high-stakes applications. Future work exploring richer reward signals, such as selfevaluation or task-specific metrics, could mitigate these concerns and ensure greater alignment with human expectations. While PGTS optimizes reasoning efficiency, care must also be taken to ensure it is applied responsibly, particularly in applications requiring transparency and trust in AI reasoning processes. In summary, this work represents a meaningful step toward improving LLM reasoning capabilities, with both ethical implications and societal benefits that warrant further exploration and thoughtful application.",
+  "query_input": {
+    "scenario": "Scientific reasoning tool for hypothesis exploration",
+    "issue": "Premature convergence to plausible but incorrect hypotheses",
+    "hazard": [
+      "Policy overfits to imperfect discriminator, causing tree search to systematically miss valid reasoning paths."
+    ],
+    "exposure": [
+      "Researchers using LLM reasoning tools to guide experiments."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers lack independent verification capabilities, so they rely on the tool's claimed thoroughness without detecting omitted valid paths.",
+    "impact": "Experimental resources are wasted chasing incorrect hypotheses while true breakthroughs are overlooked.",
+    "dose_response": "Policy overfitting to an imperfect discriminator, causing tree search to miss valid paths, through researchers using LLM tools to guide experiments, triggers reliance on claimed thoroughness without detecting omitted paths, leading to wasted resources chasing incorrect hypotheses while overlooking breakthroughs."
+  },
+  "reference": {
+    "dose_response": [
+      "Policy overfits to imperfect discriminator, causing AI to miss valid reasoning paths, which in scientific reasoning tool scenario exposes researchers, leading to wasted resources and delayed discovery due to confirmation bias and overreliance."
+    ],
+    "vulnerability": [
+      "Researchers' bias toward confirmation and overreliance on AI-generated hypotheses."
+    ],
+    "impact": [
+      "Wasted experimental resources and delayed discovery as incorrect paths are pursued."
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0445",
+  "chain_index": 0,
+  "title": "A Tale of Tails Model Collapse as a Change of Scaling Laws",
+  "abstract": "As AI model size grows, neural scaling laws have become an important tool to predict the improvements of large models when increasing capacity and the size of original (human or natural) training data. Yet, the widespread use of popular models means that the ecosystem of online data and text will co-evolve to progressively contain increased amounts of synthesized data. In this paper we ask: How will the scaling laws change in the inevitable regime where synthetic data makes its way into the training corpus? Will future models, still improve, or be doomed to degenerate up to total (model) collapse? We develop a theoretical framework of model collapse through the lens of scaling laws. We discover a wide range of decay phenomena, analyzing loss of scaling, shifted scaling with number of generations, the “un-learning” of skills, and grokking when mixing human and synthesized data. Our theory is validated by large-scale experiments with a transformer on an arithmetic task and text generation using the large language model Llama2.",
+  "impact": "This study contributes to the discourse on AI scaling laws by tackling the emergent challenge presented by synthetic data within training datasets. It holds particular relevance for fields that depend heavily on data accuracy, such as natural language processing and generative AI model development. We investigate the concept of ”model collapse” as a cautionary tale, highlighting the potential risks to sustainable model performance in the face of an increasing reliance on synthetic data. Through a combination of theoretical analysis and empirical evidence, we advocate for the strategic integration of clean data to mitigate these risks and enhance the robustness of AI systems. Our findings carry significant implications for industries where decision-making is progressively data-driven, suggesting a need for a shift in data management strategies to emphasize the preservation of model integrity and longevity. Additionally, this research highlights a looming issue: the potential scarcity of clean data. It underscores the urgency of focusing on the cultivation and preservation of high-quality datasets for AI training, to safeguard the future of AI development.",
+  "query_input": {
+    "scenario": "LLM-based data-to-text generation in open-domain settings",
+    "issue": "High rate of semantic errors in generated text from structured data",
+    "hazard": [
+      "Semantic accuracy degradation in LLM text generation from structured data"
+    ],
+    "exposure": [
+      "Users relying on LLM-generated reports from structured data"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack verification processes to detect semantic errors in LLM-generated reports from structured data.",
+    "impact": "Erroneous decisions and misinformation spread from users acting on semantically inaccurate generated text.",
+    "dose_response": "Semantic accuracy degradation in LLM text generation from structured data, through users relying on these reports, triggers a lack of verification processes to detect semantic errors, leading to erroneous decisions and misinformation spreading."
+  },
+  "reference": {
+    "dose_response": [
+      "Semantic accuracy degradation enables high-rate semantic errors, which in open-domain data-to-text generation exposes users relying on LLM-generated reports, leading to health decisions based on factually incorrect AI-generated medical reports."
+    ],
+    "vulnerability": [
+      "Low eHealth literacy prevents users from critically evaluating AI-generated health reports.",
+      "Over-trust in AI-generated content leads to reduced fact-checking behavior.",
+      "Lack of domain expertise makes users unable to detect semantic errors in specialized reports."
+    ],
+    "impact": [
+      "Users make health decisions based on factually incorrect AI-generated medical reports.",
+      "Propagation of misinformation in professional settings due to reliance on flawed text.",
+      "Erosion of trust in institutional data reporting when errors are discovered."
+    ]
+  }
+}

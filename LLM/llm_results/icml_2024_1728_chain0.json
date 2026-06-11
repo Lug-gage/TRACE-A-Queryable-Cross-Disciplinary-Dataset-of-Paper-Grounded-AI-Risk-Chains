@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1728",
+  "chain_index": 0,
+  "title": "Plug-and-Play image restoration with Stochastic deNOising REgularization",
+  "abstract": "Plug-and-Play (PnP) algorithms are a class of iterative algorithms that address image inverse problems by combining a physical model and a deep neural network for regularization. Even if they produce impressive image restoration results, these algorithms rely on a non-standard use of a denoiser on images that are less and less noisy along the iterations, which contrasts with recent algorithms based on Diffusion Models (DM), where the denoiser is applied only on re-noised images. We propose a new PnP framework, called Stochastic deNOising REgularization (SNORE), which applies the denoiser only on images with noise of the adequate level. It is based on an explicit stochastic regularization, which leads to a stochastic gradient descent algorithm to solve ill-posed inverse problems. A convergence analysis of this algorithm and its annealing extension is provided. Experimentally, we prove that SNORE is competitive with respect to state-of-the-art methods on deblurring and inpainting tasks, both quantitatively and qualitatively.",
+  "impact": "The work presented in this paper addresses the highly illposed problem of restoring missing information within an image. This sensitivity to errors is particularly pronounced in scenarios involving post-processing algorithms such as segmentation, detection, or classification applied to the reconstructed image, where errors in the reconstruction process may propagate into erroneous decision-making based on the image data. This concern is particularly critical in the context of medical images. SNORE, functioning as a stochastic process reliant on a learned denoiser, inherently produces random fluctuations in its output. In Section F.2, we provide an analysis of SNORE uncertainty to its random seed and its initialization. These experiments suggest a robustness of our method. Subsequent research effort should focus on quantifying the errors associated with SNORE in order to confirm its utility as a reliable reconstruction algorithm.",
+  "query_input": {
+    "scenario": "Medical image deblurring for clinical diagnosis",
+    "issue": "Restored scans may contain false anatomical structures due to denoiser overfitting",
+    "hazard": [
+      "Learned denoiser priors in plug-and-play restoration can hallucinate details, distorting image content"
+    ],
+    "exposure": [
+      "Radiologists interpreting AI-enhanced medical images"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists lack means to independently verify the authenticity of restored image details, trusting AI-enhanced scans as accurate.",
+    "impact": "Misdiagnosis from hallucinated anatomical structures, leading to incorrect clinical decisions and patient harm.",
+    "dose_response": "Learned denoiser priors hallucinating details in plug-and-play restoration, when radiologists interpret AI-enhanced medical images, trigger their lack of independent verification of restored details, leading to misdiagnosis from hallucinated anatomical structures and patient harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Hallucinated anatomical details from learned denoiser priors cause radiologists to over-rely on falsely detailed scans, leading to misdiagnosis and patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians over-rely on AI-restored images without verification, increasing risk of false diagnoses."
+    ],
+    "impact": [
+      "Misdiagnosis causes patient harm, unnecessary procedures, and erodes trust in AI-assisted radiology."
+    ]
+  }
+}

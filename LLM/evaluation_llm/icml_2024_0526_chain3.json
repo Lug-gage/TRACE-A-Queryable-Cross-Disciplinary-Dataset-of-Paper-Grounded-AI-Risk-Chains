@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0526",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "generated captures the same sensitivity condition: visually impaired users have no means for independent visual verification of spatial reasoning, forcing complete reliance on AI outputs.",
+    "reference": "Visually impaired users lack alternative means to verify the AI's spatial descriptions, leading them to trust erroneous navigation instructions that could cause physical harm.",
+    "generated": "Visually impaired users rely entirely on AI outputs without independent visual verification of spatial reasoning."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "physical injury and loss of trust are covered, but increased social isolation from the reference is missing.",
+    "reference": "Physical injury from misdirected navigation, loss of trust in assistive AI, and increased social isolation.",
+    "generated": "Physically misdirected users suffer falls, collisions, and loss of trust in navigation aids."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "the causal chain from incorrect grounding to spatial reasoning errors, user reliance, and physical harm is semantically present, though the generated includes additional details.",
+    "reference": "Incorrect grounding of fine-grained visual details leads to spatial reasoning errors in AI navigation aids, causing visually impaired users to follow dangerous directions and suffer physical harm.",
+    "generated": "Incorrect grounding producing plausible but wrong conclusions, through visually impaired AI navigation users, triggers complete reliance without independent spatial verification, leading to physically misdirected users suffering falls, collisions, and loss of trust."
+  }
+}

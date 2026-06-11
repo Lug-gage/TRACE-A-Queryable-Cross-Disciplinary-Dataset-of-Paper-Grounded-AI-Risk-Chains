@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2619",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes pipeline deficiency, missing reference's viewer low-tolerance sensitivity.",
+    "reference": "Viewers' low tolerance for uncanny jitter in avatars, lowering perceived creator credibility and content trustworthiness.",
+    "generated": "Automated generation pipelines lack real-time jitter detection, forcing creators to rely on flawed motion outputs without manual correction."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Viewer disengagement and lost monetization cover both affected parties and damage type.",
+    "reference": "Loss of viewer engagement and creator monetization, potentially driving users to alternative platforms.",
+    "generated": "Viewer disengagement and lost monetization as visually jittery avatars undermine content quality and creator credibility."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc inserts pipeline detection failure, omitting trust erosion and altering causal mechanism.",
+    "reference": "Quantization errors cause visual jitter in avatar motions, exposing content creators and viewers to low-quality content that erodes trust, leading to loss of engagement and monetization.",
+    "generated": "Quantization errors in motion tokenization degrading physical plausibility and semantic consistency, through creators and viewers facing low-quality avatar motions, triggers automated generation pipelines lacking real-time jitter detection, forcing reliance on flawed outputs, leading to viewer disengagement and lost monetization."
+  }
+}

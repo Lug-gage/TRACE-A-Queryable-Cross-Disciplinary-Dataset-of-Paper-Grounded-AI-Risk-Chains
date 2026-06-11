@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1802",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe reliance on unverifiable automated explanations, making hidden bias undetectable.",
+    "reference": "Auditors trust neuron descriptions to identify bias; incorrect descriptions conceal discriminatory correlations.",
+    "generated": "Moderators lack independent means to verify neural explanations, relying on automated outputs without ground-truth feedback."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Suppression/censorship of protected groups is captured, but reputational damage and legal backlash are absent.",
+    "reference": "Biased moderation suppresses protected groups, causing reputational damage and legal backlash.",
+    "generated": "Systematic biased moderation persists undetected, disproportionately censoring protected demographic content and enabling discriminatory outcomes."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Unfaithful explanations lead to undetected biased moderation and censorship, but the specific step of hiding spurious correlations and auditor trust is replaced by lack of verification; legal backlash also missing.",
+    "reference": "Unfaithful explanations from interpretability agents hide spurious correlations with protected attributes, causing auditors to trust biased moderation and leading to suppression of protected groups and legal backlash.",
+    "generated": "Unfaithful explanations from automated interpretability agents, through content moderators reviewing flagged image systems, trigger a lack of independent verification, leading to undetected systematic biased moderation that disproportionately censors protected demographics."
+  }
+}

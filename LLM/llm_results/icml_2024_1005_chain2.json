@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1005",
+  "chain_index": 2,
+  "title": "VideoPoet A Large Language Model for Zero-Shot Video Generation",
+  "abstract": "We present VideoPoet, a model for synthesizing high-quality videos from a large variety of conditioning signals. VideoPoet employs a decoderonly transformer architecture that processes multimodal inputs - including images, videos, text, and audio. The training protocol follows that of Large Language Models (LLMs), consisting of two stages: pretraining and task-specific adaptation. During pretraining, VideoPoet incorporates a mixture of multimodal generative objectives within an autoregressive Transformer framework. The pretrained LLM serves as a foundation that is adapted to a range of video generation tasks. We present results demonstrating the model’s stateof-the-art capabilities in zero-shot video generation, specifically highlighting the generation of high-fidelity motions. Project page: https:// sites.research.google/videopoet/.",
+  "impact": "This paper introduces research aimed at advancing the field of video generation and introduces a new tool to enhance human creativity. In considering the societal impact of our video generation model, VideoPoet, several concerns emerge, including the potential for misuse and ethical considerations. Misuse may entail the creation of deceptive or harmful content, such as misinformation or deepfakes. Ethical considerations encompass ensuring that generated content adheres to ethical standards, avoids perpetuating harmful stereotypes, and respects cultural sensitivities. To mitigate these risks, we adhere to evolving strategies developed within our community. This includes using digital watermarking in generated videos to enable traceability and accountability, and maintain transparency in our model design to foster trust.",
+  "query_input": {
+    "scenario": "Zero-shot video generation for creative tools",
+    "issue": "Autoregressive sampling compounds small motion errors into large-scale scene inconsistencies.",
+    "hazard": [
+      "Decoder-only transformer generates coherent but physically implausible or semantically misaligned video content from multimodal conditioning signals."
+    ],
+    "exposure": [
+      "Artists and content creators using generative video models for film or animation production."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Artists rely on AI-generated video outputs as final assets without independent verification of physical plausibility or semantic correctness.",
+    "impact": "Flawed video scenes integrated into film/animation productions cause costly rework, missed deadlines, and reputational damage to creators.",
+    "dose_response": "Decoder-only transformer generates physically implausible video content, which, when used by artists who forgo verification, leads directly to flawed scenes integrated into productions, causing costly rework, missed deadlines, and reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Decoder-only transformers compound motion errors via autoregressive sampling, which, when used by artists prioritizing aesthetics, normalizes physically incorrect motion in widely consumed media."
+    ],
+    "vulnerability": [
+      "Creative professionals lack accessible tools to audit frame-by-frame physical consistency in generated outputs.",
+      "Production pipelines integrate generative outputs without automated plausibility checks, normalizing subtle errors."
+    ],
+    "impact": [
+      "Propagation of physically incorrect motion as visual shorthand in media, distorting public understanding of physics.",
+      "Economic loss and reputational damage for studios when unnoticed inconsistencies break audience immersion."
+    ]
+  }
+}

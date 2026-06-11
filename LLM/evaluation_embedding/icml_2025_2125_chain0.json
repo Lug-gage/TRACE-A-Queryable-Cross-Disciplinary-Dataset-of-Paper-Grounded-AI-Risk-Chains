@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2125",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7179,
+    "reference": "Users over-rely on SSM completions without verifying correctness for complex linguistic structures.",
+    "generated": "End-users lack the linguistic expertise to detect SSM failures on non-star-free patterns, leading to uncritical reliance."
+  },
+  "impact": {
+    "similarity": 0.5975,
+    "reference": "Dissemination of grammatically flawed or semantically distorted text, eroding professional credibility.",
+    "generated": "Incorrect text completions propagate into user documents, causing subtle grammatical errors that undermine communication clarity and trust."
+  },
+  "dose_response": {
+    "similarity": 0.8237,
+    "reference": "The restricted expressive power of SSMs for non-star-free languages yields inaccurate linguistic constructions, so when end-users over-rely on completions, flawed text is disseminated, eroding professional credibility.",
+    "generated": "SSM design choices restricting expressive power for non-star-free patterns, through end-user reliance on SSM-generated text for writing assistance, trigger lack of expertise to detect non-star-free failures, leading to uncritical reliance propagating incorrect completions with subtle errors undermining clarity and trust."
+  }
+}

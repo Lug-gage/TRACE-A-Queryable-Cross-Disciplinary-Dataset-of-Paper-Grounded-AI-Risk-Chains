@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0060",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5343,
+    "reference": "Students uncritically accept LLM stepwise reasoning, internalizing flawed logic as correct problem-solving methodology.",
+    "generated": "Learners' limited crossword-solving expertise and trust in code-formatted reasoning prevent detection of hidden logical leaps."
+  },
+  "impact": {
+    "similarity": 0.6742,
+    "reference": "Erroneous learning undermines genuine puzzle-solving skills and reduces educational value.",
+    "generated": "Students internalize flawed wordplay logics, degrading puzzle-solving skills and spreading erroneous techniques among peers."
+  },
+  "dose_response": {
+    "similarity": 0.7291,
+    "reference": "Verifier-generated plausible but incorrect chains enable overconfident acceptance, causing students to uncritically internalize flawed reasoning, reducing educational value.",
+    "generated": "Overconfidently accepted plausible but incorrect reasoning chains from the LLM verifier, through students relying on AI explanations, trigger limited expertise and trust in code-formatted reasoning to miss logical leaps, leading to internalized flawed wordplay, degraded skills, and spreading erroneous techniques."
+  }
+}

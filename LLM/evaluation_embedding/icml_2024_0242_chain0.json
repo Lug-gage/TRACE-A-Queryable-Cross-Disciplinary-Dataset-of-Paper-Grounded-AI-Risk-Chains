@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0242",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5443,
+    "reference": "Human perceptual systems are unable to reliably distinguish high‑fidelity synthetic faces from real ones, especially on social media where attention is brief.",
+    "generated": "Social media users lack the means to verify image authenticity, defaulting to trust that visual appearance reflects reality."
+  },
+  "impact": {
+    "similarity": 0.775,
+    "reference": "Viewers form false beliefs about a person's emotions or actions, causing reputational harm and the spread of misleading narratives.",
+    "generated": "Individuals are falsely portrayed performing actions or displaying emotions, enabling reputational harm and manipulation of viewers."
+  },
+  "dose_response": {
+    "similarity": 0.8735,
+    "reference": "High-fidelity identity-expression disentanglement enables indistinguishable synthetic faces, which in social media avatar scenarios causes viewers to accept fake depictions, leading to reputational harm and spread of false narratives.",
+    "generated": "High-fidelity human image synthesis with identity-expression disentanglement produces indistinguishable synthetic imagery, through social media users viewing shared synthetic media, triggers lack of means to verify image authenticity, leading to false portrayal of individuals' actions or emotions, reputational harm and manipulation."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1671",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6085,
+    "reference": "Automated prompt rewriting strips user-intended semantic nuance to conform to reward model priors.",
+    "generated": "Users have no means to monitor or correct prompt drift introduced by reward optimization, so divergence from intent remains undetected."
+  },
+  "impact": {
+    "similarity": 0.4642,
+    "reference": "Users from marginalized groups cannot generate self-representative imagery, experiencing loss of agency.",
+    "generated": "Generated images ignore critical user specifications, producing unusable outputs and eroding reliance on the refinement system."
+  },
+  "dose_response": {
+    "similarity": 0.7675,
+    "reference": "Online RL-based prompt editing enables overfitting to reward model preferences, which in automated prompt refinement exposes users to divergence from specified text, leading to loss of agency and homogenized visual outputs.",
+    "generated": "One-step text-to-image models optimized via reward-based editing produce misaligned outputs; through users relying on automated prompt refinement with no means to detect prompt drift, divergence remains undetected, leading to ignored specifications, unusable images, and eroded reliance."
+  }
+}

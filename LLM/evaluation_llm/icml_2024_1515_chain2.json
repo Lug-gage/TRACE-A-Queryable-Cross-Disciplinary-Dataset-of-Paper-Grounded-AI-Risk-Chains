@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1515",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated 'forced to trust fragile spatial model outputs' captures the reference's missing reliability information leading to uninformed acceptance of wrong answers.",
+    "reference": "Users lack information about answer reliability, leading to uninformed decisions based on wrong spatial reasoning.",
+    "generated": "No alternative verification mechanism in e-commerce visual search leaves users forced to trust fragile spatial model outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Trust erosion is covered ('degrading user trust'), but reference's consumer frustration and increased product returns are absent; generated adds reduced revenue.",
+    "reference": "Consumer frustration, increased product returns, and erosion of trust in e-commerce platforms.",
+    "generated": "Incorrect item selections and purchase mistakes, degrading user trust and reducing retailer revenue."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc: context sensitivity → wrong spatial answers → (lack of reliability cues) → harm. Generated arc: brittle grounding triggers lack of verification → forced trust → incorrect selections, omitting sensitivity to context changes and altering the mechanism.",
+    "reference": "Visual prompt sensitivity to context changes yields incorrect spatial answers, which in e-commerce visual search without reliability cues leads to consumer frustration, increased returns, and eroded trust.",
+    "generated": "Brittle spatial grounding in visual prompting methods, through general users of AI visual search in e-commerce apps, triggers the lack of alternative verification, forcing trust in fragile outputs and leading to incorrect selections, reduced trust, and lower retailer revenue."
+  }
+}

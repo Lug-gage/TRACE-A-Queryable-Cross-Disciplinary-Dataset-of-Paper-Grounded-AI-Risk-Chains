@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1976",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6532,
+    "reference": "Content creators in low-resource languages face disproportionate quality loss when unlearning removes rare linguistic patterns.",
+    "generated": "Content creators lack independent verification of LLM output quality and rely entirely on model reliability, with no fallback when unlearning corrupts language patterns."
+  },
+  "impact": {
+    "similarity": 0.3761,
+    "reference": "Marginalized language communities lose access to functional generative AI tools, widening digital inequality.",
+    "generated": "Degraded text coherence and accuracy force content creators to spend extra effort correcting errors, damaging productivity and professional credibility."
+  },
+  "dose_response": {
+    "similarity": 0.6442,
+    "reference": "Unlearning copyrighted content inadvertently removes functional language patterns, degrading outputs for content creators, which disproportionately harms low-resource language communities and amplifies misinformation.",
+    "generated": "LLM unlearning causing catastrophic forgetting and knowledge corruption, through content creators using unlearned LLM-based writing tools, triggers their reliance on model reliability without independent verification, leading to degraded text coherence and extra error-correction effort damaging productivity and professional credibility."
+  }
+}

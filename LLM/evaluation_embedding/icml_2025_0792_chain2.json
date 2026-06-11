@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0792",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4125,
+    "reference": "Security operations centers receive high volumes of curvature-based false intrusion alerts.",
+    "generated": "Security operation's dependence on a static pretrained model without adaptive verification mechanisms for novel network topologies."
+  },
+  "impact": {
+    "similarity": 0.7713,
+    "reference": "Alert fatigue causes analysts to ignore true threats, enabling undetected breaches.",
+    "generated": "Analysts suffer alert fatigue, diverting attention from genuine intrusions, delaying response, and eroding trust in detection systems."
+  },
+  "dose_response": {
+    "similarity": 0.8027,
+    "reference": "Mixed-curvature autoencoder errors produce noisy anomaly scores in cybersecurity graphs, exposing security analysts to false intrusion alerts, leading to alert fatigue and undetected breaches.",
+    "generated": "Mixed-curvature autoencoder reconstruction errors flagging benign topological variations as anomalies, through analysts responding to false-positive alerts, triggers dependence on a static pretrained model without adaptive verification for novel topologies, leading to alert fatigue, delayed response, and eroded trust."
+  }
+}

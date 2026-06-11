@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2732",
+  "chain_index": 2,
+  "title": "Are High-Quality AI-Generated Images More Difficult for Models to Detect",
+  "abstract": "The remarkable evolution of generative models has enabled the generation of high-quality, visually attractive images, often perceptually indistinguishable from real photographs to human eyes. This has spurred significant attention on AI-generated image (AIGI) detection. Intuitively, higher image quality should increase detection difficulty. However, our systematic study on cuttingedge text-to-image generators reveals a counterintuitive finding: AIGIs with higher quality scores, as assessed by human preference models, tend to be more easily detected by existing models. To investigate this, we examine how the text prompts for generation and image characteristics influence both quality scores and detector accuracy. We observe that images from short prompts tend to achieve higher preference scores while being easier to detect. Furthermore, through clustering and regression analyses, we verify that image characteristics like saturation, contrast, and texture richness collectively impact both image quality and detector accuracy. Finally, we demonstrate that the performance of off-the-shelf detectors can be enhanced across diverse generators and datasets by selecting input patches based on the predicted scores of our regression models, thus substantiating the broader applicability of our findings. Code and data are available at GitHub.",
+  "impact": "This paper studies AI-generated image detection, which has become an important topic for AI governance as AIgenerated images become more perceptually indistinguishable from real ones. The findings in this paper suggest potential strengths and weaknesses of existing detectors, and are expected to promote the development of more advanced models for detecting various AI-generated images. A potential negative impact lies in the facilitation of adversarial evasion attacks against existing detectors. For instance, as suggested by our results, lowering the lightness and contrast of generated images may impair the performance of certain kinds of detectors. A preliminary exploration of the effectiveness of such adversarial image manipulations is presented in Appendix B.4. However, we believe that this potential risk also motivates future research on robust detectors for AI-generated images in the real world.",
+  "query_input": {
+    "scenario": "Digital asset platforms screening AI-generated stock photos",
+    "issue": "Undetected synthetic images pass as authentic, contaminating commercial image repositories.",
+    "hazard": [
+      "AI-generated images indistinguishable from real images by automated detectors due to improved text-to-image generation quality."
+    ],
+    "exposure": [
+      "Platform operators and buyers relying on AIGI detection for content integrity"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Platform content screening relies on automated detectors with limited accuracy against varied AI-generated image characteristics.",
+    "impact": "Commercial image repositories become contaminated with synthetic images, eroding buyer trust and causing financial and legal harm.",
+    "dose_response": "AI-generated images indistinguishable from real images by automated detectors due to improved generation quality, through content integrity screening reliance, triggers limited accuracy against varied AI-generated image characteristics, leading to contaminated repositories, eroding trust and causing financial and legal harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Improved text-to-image generation quality enables images indistinguishable by automated detectors, which in digital asset platforms screening AI-generated stock photos exposes operators and buyers, leading to commercial use of synthetic images triggering false advertising claims."
+    ],
+    "vulnerability": [
+      "Platform liability shields incentivize minimal detection investment, externalizing harm to buyers.",
+      "Buyers lack forensic expertise to independently verify stock image authenticity."
+    ],
+    "impact": [
+      "Commercial use of synthetic images in advertising triggers false advertising claims and legal liability for brands.",
+      "Devaluation of authentic stock photography as synthetic contamination erodes market trust and pricing."
+    ]
+  }
+}

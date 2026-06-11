@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0060",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe researchers accepting verifier output without independent validation, leaving plausible errors undetected.",
+    "reference": "Researchers treat verifier output as ground truth, assuming stepwise reasoning is reliable when it may contain hidden errors.",
+    "generated": "Researchers rely on verifier scores without independent ground-truth validation, leaving plausible erroneous reasoning undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (researchers) is present; damage type is partially covered (misleading progress matches misallocation of efforts, but delayed failure mode identification is missing, and deployment harm is added).",
+    "reference": "Overconfident benchmarks misallocate research efforts and delay identification of model failure modes.",
+    "generated": "Benchmark scores overstate model accuracy, misleading research progress and enabling deployment of unreliable reasoning in real-world puzzles."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated arc ends in overstated benchmarks and deployment, while the reference arc results in misallocated efforts and delayed failure mode identification; the causal translation is different.",
+    "reference": "Verifier-generated plausible but incorrect chains enable overconfident acceptance, causing researchers to treat verifier output as ground truth, misallocating efforts and delaying failure mode identification.",
+    "generated": "The stepwise LLM reasoning verifier generating plausible but incorrect chains, through researchers benchmarking LLM reasoning on natural language puzzles, triggers reliance on verifier scores without ground-truth validation, leading to overstated benchmark accuracy and deployment of unreliable reasoning."
+  }
+}

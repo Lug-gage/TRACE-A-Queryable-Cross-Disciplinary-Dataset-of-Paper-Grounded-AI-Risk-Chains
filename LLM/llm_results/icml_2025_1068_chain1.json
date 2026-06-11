@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1068",
+  "chain_index": 1,
+  "title": "ITBench Evaluating AI Agents across Diverse Real-World IT Automation Tasks",
+  "abstract": "Realizing the vision of using AI agents to automate critical IT tasks depends on the ability to measure and understand effectiveness of proposed solutions. We introduce ITBench, a framework that offers a systematic methodology for benchmarking AI agents to address real-world IT automation tasks. Our initial release targets three key areas: Site Reliability Engineering (SRE), Compliance and Security Operations (CISO), and Financial Operations (FinOps). The design enables AI researchers to understand the challenges and opportunities of AI agents for IT automation with push-button workflows and interpretable metrics. ITBench includes an initial set of 102 realworld scenarios, which can be easily extended by community contributions. Our results show that agents powered by state-of-the-art models resolve only 11.4% of SRE scenarios, 25.2% of CISO scenarios, and 25.8% of FinOps scenarios (excluding anomaly detection). For FinOps-specific anomaly detection (AD) scenarios, AI agents achieve an F1 score of 0.35. We expect ITBench to be a key enabler of AI-driven IT automation that is correct, safe, and fast. ITBench, along with a leaderboard and sample agent implementations, is available at https://github.com/ibm/itbench.",
+  "impact": "Ethics & Broader Impacts This research presents a novel benchmarking framework to measure the performance of AI agents across a wide variety of complex and real-life IT tasks, which has the potential to be a key enabler for AI-driven IT automation that is correct, safe, and fast. While the primary focus is on advancing the field of machine learning, as this effort is an open source framework built with open source technologies, it allows organizations with proprietary technologies to use it for developing and benchmarking their solutions more effectively. It also encourages mindsharing in the community and lowers the barrier to innovate in IT domain. Agents that interact with the system pose several risks. We identify three main risks that could arise when building and using a ITBench and associated agents, then discuss how we incorporates measures that mitigate such problems. First is the security risks that come with executing LMgenerated code/commands on the system. Examples include executing commands like kubectl delete node and rm -rf asset/. To defend against this, we containerize the agents and also provide a self-contained Kubernetes environment to create various scenarios. Second, if the wider community develops an interest in IT- Bench and associated agents and builds upon it, it is also possible that illegitimate evaluation datasets or infrastructure can be used to inject testing devices with malicious code or instructions to generate malicious code. For instance, an unofficial repository claiming to host an inference/evaluation harness for ITBench and associated agents could include a task instance with an issue description that tells the LM agent to build key logging functionality and store it in a hidden folder. To eliminate confusion and reduce the possibility of such an event, we provide clear guidelines listed on our GitHub repositories, data stores, and websites indicating the official repositories and channels that we actively maintain. We also encourage third parties to incorporate any improvements into our codebase and help with integrating such contributions. Lastly are the consequences of ITBench agents being deployed in the real world. Prior works have conceptualized and put forth prototypes of agents that can carry out offensive security measures. It is also not difficult to imagine that a system like SRE-Agent can be incorporated into pipelines, resulting in the production of malicious code and libraries. The strong performance of agents on ITBench implies that future AI systems will likely be increasingly adept in the aforementioned use cases. Releasing ITBench agents as open source agents can support research toward designing sound, effective constraints for what software engineering agents are permitted to do. It can also serve as a system Reproducibility To help the greater community reproduce the results presented in this paper and build on the ITBench, we open source all of our resources that were created for this project. The source code for the interactive pipeline, context management logic, command implementations, interface design, and everything else is entirely available in a GitHub repository. We provide extensive text and video documentation describing how to run and modify different parts of the codebase. Practitioners should be able to easily recover our findings by running the agent with simple scripts. The results presented in the main and supplementary parts of this paper can be fully obtained by following instructions in the repositories. Finally, we also maintain an active online help forum to assist with any reproduction problems or questions about how to build on ITBench.",
+  "query_input": {
+    "scenario": "Compliance and security operations (CISO) alert triage benchmarking",
+    "issue": "Benchmark fails to represent real-world alert variability, agents miss critical threats.",
+    "hazard": [
+      "Misalignment between benchmark proxy tasks and real-world IT operations leads to overestimated agent capability."
+    ],
+    "exposure": [
+      "Security operations analysts relying on AI agents for alert triage"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Analysts trust benchmark scores as accurate predictors of real-world agent reliability, lacking independent validation of alert triage performance.",
+    "impact": "Undetected security breaches escalate, enabling system compromise and data loss across the organization.",
+    "dose_response": "Misalignment between benchmark proxy tasks and real operations, through security analysts relying on AI triage, triggers overtrust in scores as reliability predictors, leading to undetected breaches that enable system compromise and data loss."
+  },
+  "reference": {
+    "dose_response": [
+      "Misaligned benchmarks overstate AI triage accuracy, causing security analysts to overrely on AI and miss threats, resulting in undetected breaches and regulatory fines."
+    ],
+    "vulnerability": [
+      "Security analysts overrely on AI triage, reducing vigilance to identify missed threats due to trust in benchmark performance."
+    ],
+    "impact": [
+      "Undetected security breaches, data compromise, regulatory fines, and erosion of organizational security posture."
+    ]
+  }
+}

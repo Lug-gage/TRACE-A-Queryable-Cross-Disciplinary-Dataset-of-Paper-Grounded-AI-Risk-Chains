@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3243",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5622,
+    "reference": "Researchers trust LLM evaluators as objective, neglecting their biases and miscalibrations.",
+    "generated": "Researchers depend on automated evaluations without robust bias detection, leaving them unable to identify miscalibrated assessments."
+  },
+  "impact": {
+    "similarity": 0.6042,
+    "reference": "Misguided research priorities and resource allocation based on inflated performance metrics.",
+    "generated": "Distorted benchmark rankings mislead progress comparisons, causing misallocation of research effort and flawed agent improvements."
+  },
+  "dose_response": {
+    "similarity": 0.7862,
+    "reference": "Miscalibrated, biased evaluators enable inflated performance metrics, which when researchers trust them as objective distorts benchmark results, leading to misguided research priorities and resource allocation.",
+    "generated": "Miscalibrated, biased agent evaluators, through AI researchers using them to judge code generation agents, trigger reliance on undetected biases, leading to distorted benchmarks that mislead progress comparisons and misallocate research effort."
+  }
+}

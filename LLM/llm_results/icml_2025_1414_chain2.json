@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 2,
+  "title": "Closed-Loop Long-Horizon Robotic Planning via Equilibrium Sequence Modeling",
+  "abstract": "In the endeavor to make autonomous robots take actions, task planning is a major challenge that requires translating high-level task descriptions to long-horizon action sequences. Despite recent advances in language model agents, they remain prone to planning errors and limited in their ability to plan ahead. To address these limitations in robotic planning, we advocate a self-refining scheme that iteratively refines a draft plan until an equilibrium is reached. Remarkably, this process can be optimized end-to-end from an analytical perspective without the need to curate additional verifiers or reward models, allowing us to train self-refining planners in a simple supervised learning fashion. Meanwhile, a nested equilibrium sequence modeling procedure is devised for efficient closed-loop planning that incorporates useful feedback from the environment (or an internal world model). Our method is evaluated on the VirtualHome-Env benchmark, showing advanced performance with improved scaling w.r.t. inference-time computation. Code is available at https: //github.com/Singularity0104/ equilibrium-planner.",
+  "impact": "This paper presents a supervised learning framework for improving the closed-loop long-horizon capabilities of LLM agents, with the potential to complement the prevailing reinforcement learning-based or prompting-based frameworks. However, we note that any such improvement in planning capabilities should be treated with caution. For example, the LLM agent could autonomously create sub-goals that are threatening to humans, e.g., gaining more control. This calls for further research into LLM interpretability and safety. Acknowledgements. The work is supported by an internal grant of Peking University (2024JK28), a grant from China Tower Corporation Limited. We thank Xingjian Bai and Liyuan Wang for their helpful discussions.",
+  "query_input": {
+    "scenario": "Industrial pick-and-place operation with VLMs",
+    "issue": "Erroneous spatial reasoning from VLM priors produces unsafe manipulator trajectories.",
+    "hazard": [
+      "LLM-driven planning with iterative self-correction can amplify misaligned objectives and erroneous abstractions, leading to unsafe or unintended robot behaviors."
+    ],
+    "exposure": [
+      "Factory personnel near robotic manipulators."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Standard safety protocols and worker training assume predictable robot trajectories, leaving no defense against novel unsafe behaviors.",
+    "impact": "Factory personnel suffer physical harm or death from robot collisions, halting production and prompting regulatory action.",
+    "dose_response": "LLM-driven iterative self-correction amplifying misaligned objectives yields unsafe robot behaviors that, when factory personnel are nearby, exploit the lack of defense against unpredictable trajectories, leading to physical harm or death, production shutdown, and regulatory action."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM-driven planning with VLM spatial reasoning amplifies erroneous object poses, which in industrial pick-and-place operations exposes factory personnel to workpiece destruction and injury from unsafe manipulator trajectories."
+    ],
+    "vulnerability": [
+      "VLM spatial reasoning relies on biased visual priors, and self-correction reinforces erroneous object poses."
+    ],
+    "impact": [
+      "Workpiece destruction, assembly line disruption, and worker injury risk."
+    ]
+  }
+}

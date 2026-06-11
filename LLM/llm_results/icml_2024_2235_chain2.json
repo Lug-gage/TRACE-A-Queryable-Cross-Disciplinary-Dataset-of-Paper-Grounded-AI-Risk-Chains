@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 2,
+  "title": "CCM Real-Time Controllable Visual Content Creation Using Text-to-Image Consistency Models",
+  "abstract": "Consistency Models (CMs) have showed a promise in creating high-quality images with few steps. However, the way to add new conditional controls to the pre-trained CMs has not been explored. In this paper, we explore the pivotal subject of leveraging the generative capacity and efficiency of consistency models to facilitate controllable visual content creation via ControlNet. First, it is observed that ControlNet trained for diffusion models (DMs) can be directly applied to CMs for high-level semantic controls but sacrifice image low-level details and realism. To tackle with this issue, we develop a CMs-tailored training strategy for ControlNet using the consistency training (Song et al., 2023). It is substantiated that ControlNet can be successfully established through the consistency training technique. Besides, a unified adapter can be trained utilizing the consistency training, which enhances the adaptation of DM’s ControlNet. We quantitatively and qualitatively evaluate all strategies across various conditional controls, including sketch, hed, canny, depth, human pose, low-resolution image and masked image, with the pre-trained text-toimage latent consistency models.",
+  "impact": "The research on real-time controllable image generation has profound implications for many fields, offering advancements that could democratize creativity, enhance interactive experiences, and streamline content creation. Nevertheless, the capability to generate images instantaneously also raises concerns regarding the propagation of misinformation through hyper-realistic fabrications and ethical considerations in the replication of human likenesses. To this issue, it is essential to establish ethical guidelines and promote transparency in its applications. This work was supported by the National Natural Science Foundation of China (NSFC) under Grants 62225207 and 62276243.",
+  "query_input": {
+    "scenario": "Depth-conditioned scene synthesis for autonomous driving simulators",
+    "issue": "Synthesized frames may ignore depth constraints, creating physically implausible scenes that degrade simulation realism.",
+    "hazard": [
+      "Conditionally-controlled consistency generation produces images with potential misalignment to input conditions, yielding unreliable visual outputs."
+    ],
+    "exposure": [
+      "Perception engineers training models on synthetic depth-conditioned data."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Perception engineers lack automated depth-consistency validation, allowing physically implausible frames to enter training undetected.",
+    "impact": "Autonomous driving perception models inherit depth errors, degrading real-world scene understanding and increasing collision risk.",
+    "dose_response": "Conditionally-controlled consistency generation with misalignment to input conditions, through perception engineers training on synthetic depth-conditioned data, triggers lack of automated depth-consistency validation, leading to autonomous driving perception models inheriting depth errors, degrading real-world scene understanding and increasing collision risk."
+  },
+  "reference": {
+    "dose_response": [
+      "Conditionally-controlled generation misaligns to depth constraints; engineers' over-reliance on synthetic data misses depth violations, causing flawed perception systems that lead to real-world accidents."
+    ],
+    "vulnerability": [
+      "Engineers over-rely on synthetic depth data, missing subtle violations that cause models to ignore safety-critical depth cues."
+    ],
+    "impact": [
+      "Deployment of flawed perception systems leading to real-world accidents and liability."
+    ]
+  }
+}

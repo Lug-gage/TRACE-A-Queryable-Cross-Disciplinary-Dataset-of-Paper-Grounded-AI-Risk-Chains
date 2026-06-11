@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2016",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of real-time verification rendering distortions invisible matches over-trust without interpretability tools causing missed artifacts.",
+    "reference": "Clinicians over-trust AI-enhanced medical images without interpretability tools, missing overfitting-induced artifacts that mimic pathology.",
+    "generated": "Radiologists lack real-time verification of restoration accuracy, rendering subtle distortions invisible."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Patient harm is covered but legal liability for medical institutions is omitted.",
+    "reference": "Incorrect diagnoses lead to harmful treatments, patient distress, and legal liability for medical institutions.",
+    "generated": "Erroneous clinical interpretation results in missed pathology and inappropriate interventions, harming patients."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc involves invisible distortions causing missed pathology, whereas reference describes artifacts mimicking pathology leading to misdiagnosis; the causal mechanism is fundamentally different.",
+    "reference": "Joint estimation overfitting in medical image enhancement can create artifacts that mimic pathology, and radiologists interpreting these images may misdiagnose, causing harmful treatments.",
+    "generated": "Overfitting from joint degradation estimation and pseudo-hashing degrades restoration fidelity; when radiologists interpret these enhanced images, their lack of real-time verification renders subtle distortions invisible, causing erroneous clinical interpretation that misses pathology and leads to inappropriate interventions, harming patients."
+  }
+}

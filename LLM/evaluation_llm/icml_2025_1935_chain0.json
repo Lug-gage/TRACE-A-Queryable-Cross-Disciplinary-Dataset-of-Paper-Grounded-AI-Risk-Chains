@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1935",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the safety alignment as a brittle single point of failure exploitable by adversarial prompts.",
+    "reference": "Over-reliance on safety alignment creates a single point of failure exploitable by adversarial prompts.",
+    "generated": "Aligned LLMs possess brittle safety guardrails that fail against human-readable adversarial prompts, enabling circumvention of intent-based restrictions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify end users' trust erosion as the consequence after exposure to harmful outputs.",
+    "reference": "Erosion of user trust in AI systems after exposure to harmful outputs.",
+    "generated": "End users obtain harmful, unethical, or objectionable content, facilitating misuse and eroding trust in aligned language models."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from adversarial prompts to trust erosion is present, but the reference’s final step of psychological harm is omitted.",
+    "reference": "Automated generation of adversarial prompts enables bypassing safety guardrails, which in deployment of aligned chatbots exposes end users, leading to harmful outputs that erode trust and cause psychological harm.",
+    "generated": "Automated generation of human-readable adversarial prompts that bypass LLM safety guardrails, through end users interacting with aligned LLM chatbots, triggers brittle safety guardrails that fail against such prompts, leading to harmful, unethical, or objectionable content, facilitating misuse and eroding trust."
+  }
+}

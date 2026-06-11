@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of calibration checks preventing detection, while reference describes user overreliance on AI confidence scores leading to acceptance without verification; related but different sensitivity condition.",
+    "reference": "Overreliance on AI-generated confidence scores leads users to accept filtered data without verification.",
+    "generated": "Automated mislabel filtering pipelines lack calibration checks, leaving practitioners unable to detect overconfident scores under distribution shifts."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (correctly labeled rare examples) and damage type (discarding, eroding data distribution/diversity, reducing fairness) match, with generated adding accuracy concerns.",
+    "reference": "Loss of correctly labeled rare examples skews data distribution and reduces model fairness for minority groups.",
+    "generated": "Correctly labeled rare examples are systematically discarded, eroding dataset diversity and compromising model fairness and accuracy."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated includes overconfidence from calibration and systematic discarding of rare examples, but replaces the causal link of 'data scientists overrely on miscalibrated scores' with 'undetected overconfident scores because pipelines lack calibration checks,' altering the intermediate human-error mechanism.",
+    "reference": "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, which in automated mislabel detection causes data scientists to overrely on miscalibrated scores, leading to systematic filtering of correctly labeled rare examples and reduced model fairness.",
+    "generated": "Overconfidence from temperature-scaled Boltzmann influence function calibration under distribution shifts, through data scientists using automated mislabel filters, triggers undetected overconfident scores because pipelines lack calibration checks, systematically discarding correctly labeled rare examples and eroding diversity, fairness, and accuracy."
+  }
+}

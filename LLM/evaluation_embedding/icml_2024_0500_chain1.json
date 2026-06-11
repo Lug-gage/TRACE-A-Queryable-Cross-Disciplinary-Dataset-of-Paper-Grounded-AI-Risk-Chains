@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0500",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5175,
+    "reference": "Users may not question AI-generated layouts, assuming physical validity.",
+    "generated": "Consumers lack the spatial reasoning skills and physics intuition to identify physically impossible furniture configurations in realistic AR renderings."
+  },
+  "impact": {
+    "similarity": 0.6765,
+    "reference": "Poor purchasing decisions and physical injury from unstable furniture arrangements.",
+    "generated": "Injuries from tipping furniture, property damage, and eroded trust in AR interior design tools."
+  },
+  "dose_response": {
+    "similarity": 0.8398,
+    "reference": "Unsupervised NeRF layout generation produces impossible furniture placements, causing injury when users trust AR apps without questioning physical validity.",
+    "generated": "Unsupervised joint optimization of NeRF-based 3D scenes, when consumers use AR interior design apps to plan rooms, triggers their lack of spatial reasoning and physics intuition to identify physically impossible furniture configurations, leading to injuries, property damage, and eroded trust."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2203",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6684,
+    "reference": "Automated logistics systems accept LLM path plans without real-time validation against physical layout, allowing routing errors to propagate.",
+    "generated": "Warehouse operations' dependence on autonomous robot couriers without human oversight or fallback verification of LLM-generated path descriptors."
+  },
+  "impact": {
+    "similarity": 0.6103,
+    "reference": "Mission failures disrupt order fulfillment, causing supply chain delays and increased operational costs.",
+    "generated": "Delayed or failed stock retrieval disrupting inventory workflows and reducing warehouse throughput."
+  },
+  "dose_response": {
+    "similarity": 0.7209,
+    "reference": "LLM-generated erroneous path descriptors cause routing errors that, accepted without validation by automated logistics, propagate, disrupting order fulfillment and causing supply chain delays.",
+    "generated": "Erroneous LLM-generated semantic maps and path descriptors, through warehouse workers and automated inventory systems relying on robot couriers, trigger dependence on autonomous navigation without human oversight, leading to delayed stock retrieval disrupting workflows and reducing throughput."
+  }
+}

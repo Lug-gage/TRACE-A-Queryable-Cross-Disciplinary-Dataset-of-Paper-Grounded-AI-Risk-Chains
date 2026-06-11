@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_1759",
+  "chain_index": 0,
+  "title": "Proactive Detection of Voice Cloning with Localized Watermarking",
+  "abstract": "In the rapidly evolving field of speech generative models, there is a pressing need to ensure audio authenticity against the risks of voice cloning. We present AudioSeal, the first audio watermarking technique designed specifically for localized detection of AI-generated speech. AudioSeal employs a generator / detector architecture trained jointly with a localization loss to enable localized watermark detection up to the sample level, and a novel perceptual loss inspired by auditory masking, that enables AudioSeal to achieve better imperceptibility. AudioSeal achieves state-of-the-art performance in terms of robustness to real life audio manipulations and imperceptibility based on automatic and human evaluation metrics. Additionally, AudioSeal is designed with a fast, single-pass detector, that significantly surpasses existing models in speed, achieving detection up to two orders of magnitude faster, making it ideal for large-scale and real-time applications. Code is available at github.com/facebookresearch/audioseal.",
+  "impact": "This research aims to improve transparency and traceability in AI-generated content, but watermarking in general can have a set of potential misuses such as government surveillance of dissidents or corporate identification of whistle blowers. Additionally, the watermarking technology might be misused to enforce copyright on user-generated content, and its ability to detect AI-generated audio could increase skepticism about digital communication authenticity, potentially undermining trust in digital media and AI. However, despite these risks, ensuring the detectability of AIgenerated content is important, along with advocating for robust security measures and legal frameworks to govern the technology’s use.",
+  "query_input": {
+    "scenario": "Real-time audio chat platforms (e.g., social audio spaces) using live detection",
+    "issue": "Localization enables precise watermark removal, evading real-time detection of synthetic voices",
+    "hazard": [
+      "Joint training of generator and detector with localization loss leaks precise watermark positions, enabling surgical removal and forgery without noticeable quality degradation."
+    ],
+    "exposure": [
+      "Chat platform moderators and participants relying on real-time detection"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Detection system's localization loss reveals watermark positions, so moderators lack any alternative means to detect stripped synthetic voices.",
+    "impact": "Impersonation and fraud proliferate unchecked, undermining trust in live audio platforms and enabling disinformation at scale.",
+    "dose_response": "Leaking precise watermark positions via joint localization loss training, through reliance on real-time detection, triggers lack of alternative detection for stripped synthetic voices, leading to unchecked impersonation and fraud that erode trust and enable disinformation at scale."
+  },
+  "reference": {
+    "dose_response": [
+      "Leaked precise watermark positions enable surgical removal and forgery without noticeable quality degradation, evading real-time detection and exposing chat platform moderators and participants to impersonation scams and trust erosion."
+    ],
+    "vulnerability": [
+      "Reliance on real-time watermark detection alone as only authenticity check.",
+      "Moderators lack training to recognize detection failures.",
+      "No fallback verification when detection evaded."
+    ],
+    "impact": [
+      "Synthetic voice impersonation enables scams, harassment, or misinformation.",
+      "Erosion of trust in real-time audio spaces for sensitive communications."
+    ]
+  }
+}

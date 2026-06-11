@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1856",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5077,
+    "reference": "Users circumvent over-filtered models, adopting less safe alternatives that expose them to raw hazards.",
+    "generated": "Aggressive toxicity removal strips benign linguistic capabilities, rendering safety filters fragile and easily bypassed by representation steering."
+  },
+  "impact": {
+    "similarity": 0.6133,
+    "reference": "Higher exposure to unfiltered toxic content as users migrate to unsafe models, increasing societal harm.",
+    "generated": "Content creators inadvertently publish harmful outputs, exposing audiences to toxic content and damaging creator credibility."
+  },
+  "dose_response": {
+    "similarity": 0.7483,
+    "reference": "Aggressive toxicity removal degrades benign linguistic capabilities; content creators respond by using unfiltered models, exposing themselves and others to raw toxic content and increased societal harm.",
+    "generated": "Affine representation steering bypassing safety alignment, through content creators using toxicity-filtered LLMs, triggers aggressive toxicity removal that strips benign capabilities and renders filters fragile, leading to inadvertently published harmful outputs that expose audiences to toxic content and damage creator credibility."
+  }
+}

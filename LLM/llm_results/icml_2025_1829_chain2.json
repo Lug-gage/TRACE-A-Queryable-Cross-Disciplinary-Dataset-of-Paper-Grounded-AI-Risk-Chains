@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1829",
+  "chain_index": 2,
+  "title": "Certifiably Robust Model Evaluation in Federated Learning under Meta-Distributional Shifts",
+  "abstract": "We address the challenge of certifying the performance of a federated learning model on an unseen target network using only measurements from the source network that trained the model. Specifically, consider a source network “A” with K clients, each holding private, non-IID datasets drawn from heterogeneous distributions, modeled as samples from a broader meta-distribution μ. Our goal is to provide certified guarantees for the model’s performance on a different, unseen network “B”, governed by an unknown meta-distribution μ′, assuming the deviation between μ and μ′ is bounded-either in Wasserstein distance or an f-divergence. We derive worst-case uniform guarantees for both the model’s average loss and its risk CDF, the latter corresponding to a novel, adversarially robust version of the Dvoretzky-Kiefer-Wolfowitz (DKW) inequality. In addition, we show how the vanilla DKW bound enables principled certification of the model’s true performance on unseen clients within the same (source) network. Our bounds are efficiently computable, asymptotically minimax optimal, and preserve clients’ privacy. We also establish non-asymptotic generalization bounds that converge to zero as K grows and the minimum per-client sample size exceeds O(log K). Empirical evaluations confirm the practical utility of our bounds across real-world tasks. The project code is available at: github.com/samin-mehdizadeh/ Robust-Evaluation-DKW",
+  "impact": "This paper proposes a certifiably robust evaluation framework for federated learning under meta-distributional shifts, providing theoretical guarantees on performance under deployment shifts. The proposed approach may benefit realworld federated systems by improving reliability and trust in evaluation across diverse clients. However, if misapplied without properly validating the assumptions on shift structure, the certificates may give a false sense of robustness. Care should be taken to ensure the theoretical assumptions hold approximately in practice, and to transparently communicate the limitations of the guarantees.",
+  "query_input": {
+    "scenario": "Cross-silo federated learning for financial risk assessment",
+    "issue": "Distributional shifts in market conditions render certification unreliable over time",
+    "hazard": [
+      "Meta-distributional shift across client populations can invalidate certified robustness bounds, yielding overconfident performance guarantees"
+    ],
+    "exposure": [
+      "Risk analysts using model outputs for real‑time loan approval decisions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Institutional reliance on static certification without real-time distribution shift detection leaves analysts unable to identify overconfident bounds.",
+    "impact": "Systematic mispricing of credit risk causes elevated loan defaults, financial losses, and erosion of lending institution capital.",
+    "dose_response": "Meta-distributional shift invalidates certified bounds, yielding overconfident guarantees; through risk analysts' real-time loan approval decisions, this triggers reliance on static certification without shift detection, making overconfidence imperceptible, and causing systematic mispricing, elevated defaults, losses, and capital erosion."
+  },
+  "reference": {
+    "dose_response": [
+      "Meta-distributional shift across client populations invalidates certified robustness bounds, causing risk analysts to rely on static certification, leading to biased loan decisions and amplified inequality."
+    ],
+    "vulnerability": [
+      "Regulatory reliance on initial certification without ongoing stress-testing for market regime changes."
+    ],
+    "impact": [
+      "Biased loan decisions against marginalized groups, amplifying socioeconomic inequality and systemic financial risk."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 1,
+  "title": "COLD-Attack Jailbreaking LLMs with Stealthiness and Controllability",
+  "abstract": "Jailbreaks on large language models (LLMs) have recently received increasing attention. For a comprehensive assessment of LLM safety, it is essential to consider jailbreaks with diverse attributes, such as contextual coherence and sentiment/stylistic variations, and hence it is beneficial to study controllable jailbreaking, i.e. how to enforce control on LLM attacks. In this paper, we formally formulate the controllable attack generation problem, and build a novel connection between this problem and controllable text generation, a well-explored topic of natural language processing. Based on this connection, we adapt the Energy-based Constrained Decoding with Langevin Dynamics (COLD), a state-of-the-art, highly efficient algorithm in controllable text generation, and introduce the COLD-Attack framework which unifies and automates the search of adversarial LLM attacks under a variety of control requirements such as fluency, stealthiness, sentiment, and left-right-coherence. The controllability enabled by COLD-Attack leads to diverse new jailbreak scenarios which not only cover the standard setting of generating fluent (suffix) attack with continuation constraint, but also allow us to address new controllable attack settings such as revising a user query adversarially with paraphrasing constraint, and inserting stealthy attacks in context with position constraint. Our extensive experiments on various LLMs (Llama-2, Mistral, Vicuna, Guanaco, GPT-3.5, and GPT-4) show COLD-Attack’s broad applicability, strong controllability, high success rate, and attack transferability. Our code is available at https://github.com/Yu-Fangxu/COLD-Attack. Warning: This paper contains potentially harmful text.",
+  "impact": "This study presents COLD-Attack, a method for generating controllable adversarial prompts targeting LLMs. Despite the rising interest in jailbreaking LLMs, the direct harm of COLD-Attack is limited. Our research aims to deepen the understanding of LLM robustness and enhance their safety, promoting safer AI environments. However, we acknowledge the potential negative societal impact of our work and the presence of potentially offensive and harmful text in our paper. In particular, COLD-Attack could be misused for harmful purposes, such as spreading misinformation, bypassing content moderation, or generating biased or harmful outputs. The method generates fluent, stealthy, and contextually coherent adversarial prompts, posing new challenges for LLM defense. Addressing these risks is essential for ethical deployment. We recognize the potential harm caused by the generated adversarial prompts and the ethical implications of our attack framework. To prevent misuse, various safeguards (e.g., Llama Guard) can be employed against unethical applications. Additionally, COLD-Attack can be used to improve LLM safety by generating diverse attacks for finetuning and safeguard design. We encourage future research to focus on: i) detecting stealthy adversarial prompts, ii) incorporating adversarial training into LLM finetuning, iii) developing collaborative defense strategies with shared resources, and iv) ensuring ethical research that protects user privacy and avoids introducing biases. We also strongly encourage future research to prioritize the development of effective defenses against adversarial prompts, with the goal of improving the overall safety and trustworthiness of LLMs. By focusing on these critical areas, we can work towards creating a safer and more secure AI environment while mitigating the potential negative impacts of our research.",
+  "query_input": {
+    "scenario": "Bypass of LLM guard models",
+    "issue": "Adversarial suffixes circumvent secondary safety filters on LLM outputs.",
+    "hazard": [
+      "Stealthy, controllable generation of adversarial suffixes that reliably jailbreak aligned LLMs and evade detection."
+    ],
+    "exposure": [
+      "Guard model components in LLM safety pipelines."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Guard models rely on surface-level pattern detection, lacking robustness to detect stealthy, controllable adversarial suffixes that mimic benign text.",
+    "impact": "End-users receive unfiltered harmful LLM outputs, bypassing safety filters and enabling large-scale policy violations and real-world harms.",
+    "dose_response": "Stealthy, controllable generation of adversarial suffixes, through guard model components, triggers reliance on surface-level pattern detection that misses such mimics, leading to unfiltered harmful LLM outputs, bypassing safety filters and enabling large-scale policy violations and real-world harms."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial suffixes circumvent guard models, allowing toxic content to reach users unfiltered due to over-dependence on automation, resulting in user harm and legal liability."
+    ],
+    "vulnerability": [
+      "Over-dependence on automated guard models without robust human oversight, driven by cost and scalability pressures."
+    ],
+    "impact": [
+      "Unfettered generation of toxic content, leading to user harm, legal liability, and undermined safety claims."
+    ]
+  }
+}

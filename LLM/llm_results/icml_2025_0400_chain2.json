@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0400",
+  "chain_index": 2,
+  "title": "Quamba2 A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+  "abstract": "Despite State Space Models (SSMs) are emerging as an efficient alternative to Transformers, depolying SSMs on both cloud and edge devices is challenging due to the limited resources. Model quantization reduces model size and leverages hardware acceleration, and recent efforts on SSM quantization have focused on optimizing a particular model or bit-width. However, distinct bitwidths are essential for different scenarios, like W4A8 for boosting large-batch decoding speed, and W4A16 for enhancing generation speed in short-prompt single-user applications. We present Quamba2, compatible with W8A8, W4A8, and W4A16 for both Mamba1 and Mamba2 backbones, addressing the growing demand for SSM deployment. Based on channel order preserving and activation persistence of SSMs, we propose an offline approach to quantize inputs of the linear recurrence in 8-bit by sorting and clustering for input x, combined with a per-state-group quantization for input-dependent parameters B and C. To ensure compute-invariance in the SSM output, we rearrange weights offline according to the clustering sequence. We show that Quamba2-8B outperforms two state-of-the-art SSM quantization methods and delivers 1.3× and 3× speed-ups in the pre-filling and generation stages, respectively, while offering 4× memory reduction with only a 1.6% average accuracy drop. The evaluation on MMLU shows the generalizability and robustness of our framework. The code and quantized models are released at the link.",
+  "impact": "This paper aims to enhance the efficiency of machine learning and expand the accessibility of large language models. We find that the accuracy degradation is not negligible. Despite this, the performance trade-off is acceptable given the significant improvements in latency and resource efficiency. Our work enables large language models to be deployed on resource-limited devices. As a positive feature, our method may push the development of privacy-centric on-device applications, where sensitive data can be processed locally without relying on cloud services. However, our work may also present challenges such as increased device resource usage and potential security vulnerabilities if the local devices are compromised.",
+  "query_input": {
+    "scenario": "Mixed-precision activation quantization on resource-limited mobile devices",
+    "issue": "Per-state-group errors from sorting/clustering may lead to unstable predictions in real-time apps.",
+    "hazard": [
+      "Post-training quantization of SSM weights and activations induces per-state-group approximation distortion, degrading model fidelity under low-bit regimes."
+    ],
+    "exposure": [
+      "Consumers using mobile AI assistants powered by quantized SSMs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Resource-limited mobile devices demand aggressive quantization, yet real-time AI applications lack tolerance for per-state-group prediction instability.",
+    "impact": "Consumers receive erratic, unreliable assistant outputs during real-time use, causing misinformed decisions and degraded user trust.",
+    "dose_response": "Post-training quantization induces per-state-group distortion, which, through consumers using mobile AI assistants, triggers aggressive quantization demands and real-time intolerance to instability, leading to erratic outputs, misinformed decisions, and degraded user trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Post-training quantization of SSM weights and activations induces per-state-group approximation distortion, which in mixed-precision activation quantization on mobile devices exposes consumers to unstable predictions, leading to erroneous advice and user harm."
+    ],
+    "vulnerability": [
+      "High dependence on mobile AI assistants for time-sensitive decisions with no fallback or error-checking mechanisms."
+    ],
+    "impact": [
+      "Erroneous health, navigation, or communication advice causing user harm and eroding trust in mobile AI services."
+    ]
+  }
+}

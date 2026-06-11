@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2320",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes model overfitting on celebrity images making generation easy; generated describes lack of consent mechanisms and filter evasion, a related but different sensitivity condition.",
+    "reference": "Facial recognition and generation models overfit on celebrity images, making likeness generation easy.",
+    "generated": "Celebrities lack consent mechanisms and legal-technical safeguards to prevent unauthorized generation of their likenesses, while safety filters are easily evaded."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated identify reputational harm and privacy invasion for celebrities; generated includes additional outcomes but the core impact matches.",
+    "reference": "Reputational harm and invasion of privacy for celebrities through fake endorsements or defamatory imagery.",
+    "generated": "Unauthorized likeness generation violates privacy, causes reputational harm, and enables deepfake exploitation or harassment of celebrities."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from prompt manipulation to unauthorized likeness generation and reputational harm is present, but the reference's link to legal exposure for platforms is missing, while generated introduces a different intermediate step (triggering lack of consent safeguards).",
+    "reference": "Adversarial prompt manipulation enables unauthorized celebrity likeness generation, which in this scenario exposes public figures, leading to reputational harm and legal exposure for platforms.",
+    "generated": "Text-to-image models' susceptibility to covert prompt manipulation that evades safety filters, through exposure of celebrities, triggers the lack of consent safeguards and filter evasion, leading to unauthorized likeness generation, privacy violations, reputational harm, and deepfake exploitation."
+  }
+}

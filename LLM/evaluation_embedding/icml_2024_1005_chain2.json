@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1005",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5418,
+    "reference": "Creative professionals lack accessible tools to audit frame-by-frame physical consistency in generated outputs.",
+    "generated": "Artists rely on AI-generated video outputs as final assets without independent verification of physical plausibility or semantic correctness."
+  },
+  "impact": {
+    "similarity": 0.4341,
+    "reference": "Propagation of physically incorrect motion as visual shorthand in media, distorting public understanding of physics.",
+    "generated": "Flawed video scenes integrated into film/animation productions cause costly rework, missed deadlines, and reputational damage to creators."
+  },
+  "dose_response": {
+    "similarity": 0.7682,
+    "reference": "Decoder-only transformers compound motion errors via autoregressive sampling, which, when used by artists prioritizing aesthetics, normalizes physically incorrect motion in widely consumed media.",
+    "generated": "Decoder-only transformer generates physically implausible video content, which, when used by artists who forgo verification, leads directly to flawed scenes integrated into productions, causing costly rework, missed deadlines, and reputational damage."
+  }
+}

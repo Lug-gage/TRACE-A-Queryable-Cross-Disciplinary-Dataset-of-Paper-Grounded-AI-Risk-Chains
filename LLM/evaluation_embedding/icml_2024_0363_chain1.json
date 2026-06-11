@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0363",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4367,
+    "reference": "Artists and editors rely on presumed motion realism, so unnatural deformations can pass as intentional style.",
+    "generated": "Editors rely on conventional editing tools that lack temporal consistency validation for AI-generated footage."
+  },
+  "impact": {
+    "similarity": 0.5207,
+    "reference": "Unnatural motion manipulations mislead audiences, especially in political or news clips.",
+    "generated": "Edited video outputs contain warped frames and broken motion continuity, leading to rejected deliverables and costly rework."
+  },
+  "dose_response": {
+    "similarity": 0.6389,
+    "reference": "Slice processing disrupting motion continuity in nonrigid motion editing, when used by film editors on dynamic scenes, allows unnatural deformations to pass as intentional style, misleading audiences and undermining forensic credibility.",
+    "generated": "Spatio-temporal slice editing with pretrained diffusion models generates inconsistent videos, causing film editors of dynamic scenes, reliant on tools lacking temporal validation, to produce warped frames and broken motion, leading to rejected deliverables and costly rework."
+  }
+}

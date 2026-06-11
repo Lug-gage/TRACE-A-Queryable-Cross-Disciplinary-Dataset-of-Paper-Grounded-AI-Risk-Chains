@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1134",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6311,
+    "reference": "Over-automation of nuance detection in content moderation, where sarcasm misinterpretation triggers incorrect enforcement actions.",
+    "generated": "Moderation system accepts language model emulated reasoning outputs as correct without verification, enabling silent semantic errors in sarcasm detection."
+  },
+  "impact": {
+    "similarity": 0.6033,
+    "reference": "Censorship of legitimate speech and user distrust in platform fairness, reducing diversity of expression.",
+    "generated": "Erroneous content flagging or removal silences legitimate users and erodes trust in automated moderation."
+  },
+  "dose_response": {
+    "similarity": 0.8411,
+    "reference": "Silent semantic errors from language model emulation of undefined pseudocode steps distort sarcasm detection, causing over-automation of nuance detection in content moderation to misinterpret sarcasm, resulting in censorship of legitimate speech and user distrust that reduces expression diversity.",
+    "generated": "Silent semantic errors from LM emulation of undefined pseudocode, through social media users and moderators using sarcasm detection, trigger moderation system to accept emulated sarcasm reasoning without verification, leading to erroneous flagging, silencing legitimate users and eroding trust in moderation."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1921",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3806,
+    "reference": "Students uncritically accept AI explanations as authoritative sources of knowledge.",
+    "generated": "Educators and learners lack mechanisms to detect hallucinated temporal misalignment between spoken explanations and visual content."
+  },
+  "impact": {
+    "similarity": 0.5261,
+    "reference": "Incorrect knowledge acquisition leading to long-term misconceptions in learning.",
+    "generated": "Students internalize misconceptions from misleading video analyses, degrading learning outcomes and trust in AI tools."
+  },
+  "dose_response": {
+    "similarity": 0.8491,
+    "reference": "Multimodal fusion hallucination leads to incorrect speech-visual grounding, which in educational settings exposes uncritical students to authoritative-seeming AI, causing long-term knowledge misconceptions and trust erosion.",
+    "generated": "Multimodal fusion of speech and video via unpaired training induces hallucinated answers; through students and teachers using AI for video learning, it triggers inability to detect temporal misalignment, leading to misconception internalization, degraded learning, and eroded trust."
+  }
+}

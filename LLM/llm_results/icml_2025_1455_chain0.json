@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_1455",
+  "chain_index": 0,
+  "title": "EgoPrivacy What Your First-Person Camera Says About You",
+  "abstract": "While the rapid proliferation of wearable cameras has raised significant concerns about egocentric video privacy, prior work has largely overlooked the unique privacy threats posed to the camera wearer. This work investigates the core question: How much privacy information about the camera wearer can be inferred from their firstperson view videos? We introduce EgoPrivacy, the first large-scale benchmark for comprehensive evaluation of privacy risks in egocentric vision. EgoPrivacy covers three types of privacy (demographic, individual, and situational) defining seven tasks that aim to recover private information ranging from fine-grained (e.g., wearer’s identity) to coarse-grained (e.g., age group). To further emphasize the privacy threats inherent to egocentric vision, we propose Retrieval-Augmented Attack, a novel attack strategy that leverages egoto-exo retrieval from an external pool of exocentric videos to boost the effectiveness of demographic privacy attacks. An extensive comparison of the different attacks possible under all threat models is presented, showing that private information of the wearer is highly susceptible to leakage. For instance, our findings indicate that foundation models can effectively compromise wearer privacy even in zero-shot settings by recovering attributes such as identity, scene, gender, and race with 70-80% accuracy. Our code and data are available at https://github.com/ williamium3000/ego-privacy.",
+  "impact": "This research reveals a significant vulnerability in wearable camera systems, demonstrating that egocentric privacy attacks can be effectively executed even using readily available, unmodified models. Although the introduced privacy attack methods, such as RAA, are designed as red-teaming instruments aimed at enhancing privacy defenses, there exists a concerning potential for their misuse in unauthorized mass surveillance. Consequently, our findings highlight an urgent need for the development and implementation of robust privacy safeguards and proactive intervention mechanisms to mitigate risks associated with wearable technology. Furthermore, as EgoPrivacy builds upon Ego-Exo4D and Charades-Ego, it inherits their imbalances in geographic, gender, ethnic, and age representation, which raise concerns about the fairness problem. This emphasizes the need for future efforts to curate more equitable datasets in egocentric vision and privacy research, which will be the next step of our work.",
+  "query_input": {
+    "scenario": "Wearer recording in-home cooking videos with smart glasses",
+    "issue": "Cross-view matching to instructional exo-videos leaks wearer's identity and skill level.",
+    "hazard": [
+      "Retrieval-augmented cross-view video models enable inference of wearer's personal attributes (identity, demographics, location, behavior) from egocentric footage by linking to exocentric video data."
+    ],
+    "exposure": [
+      "Wearers of smart glasses recording domestic activities"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Absence of ego-visual anonymization tools and wearers' unawareness of inferable attributes from first-person footage leaves them unable to prevent cross-view linkage.",
+    "impact": "Leakage of identity, demographics, and cooking skill erodes personal privacy, enabling social evaluation and discriminatory profiling of the wearer.",
+    "dose_response": "Retrieval-augmented cross-view models infer wearer attributes from exocentric data; through domestic smart-glass recording, lack of anonymization and wearer unawareness enables cross-view linkage, leaking identity, demographics, and skill that erodes privacy, social evaluation, and profiling."
+  },
+  "reference": {
+    "dose_response": [
+      "Cross-view retrieval models link ego-cooking footage to public exo-cooking videos, inferring identity and skill, enabling targeted advertising and social shaming."
+    ],
+    "vulnerability": [
+      "High-resolution ego video captures kitchen layout and personal artifacts enabling identity inference.",
+      "Public exo-cooking video databases provide a searchable corpus for cross-view matching.",
+      "User underestimation of inference risks from combined ego and exo video data."
+    ],
+    "impact": [
+      "Leaked identity enables targeted advertising or social shaming based on inferred skill level.",
+      "Loss of privacy causes psychological distress and chilling effects on personal recording.",
+      "Re-identification enables stalking or burglary when home details are exposed."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6427,
+    "reference": "Audit tools lack multiple testing correction, inflating false alarm rate for harm flags.",
+    "generated": "AI safety teams' auditing protocols do not adjust for multiple tests or correlated output similarities, inducing susceptibility to spurious harm flags."
+  },
+  "impact": {
+    "similarity": 0.5893,
+    "reference": "Safety teams misallocate resources investigating spurious harms, eroding audit trust.",
+    "generated": "Benign model behaviors are falsely flagged as harmful, squandering safety resources and eroding confidence in alignment auditing."
+  },
+  "dose_response": {
+    "similarity": 0.7174,
+    "reference": "Uncorrected multiple testing in perturbation analysis inflates false positive harm flags in alignment auditing, causing safety teams to misallocate resources and erode audit trust.",
+    "generated": "Unreliable statistical inference from perturbation analysis due to non-random output correlations, through AI safety teams evaluating model alignment, triggers auditing protocols that do not adjust for multiple tests, leading to falsely flagged benign behaviors that squander resources and erode confidence."
+  }
+}

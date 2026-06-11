@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "overfitted policies produce unvalidated GRNs present in both, though generated adds limited data context",
+    "reference": "Overfitted causal discovery policies produce gene regulatory networks that lack biological validation.",
+    "generated": "Overfitted amortized policy from limited observational data prevents detection of misspecified causal graphs, leaving GRNs uncorrected."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "waste and misdirection of research efforts are present (wasted experiments and delayed therapeutic target discovery)",
+    "reference": "Wasted research funding and misdirected drug development efforts due to false causal links.",
+    "generated": "Disease mechanism studies rely on inaccurate GRNs, wasting experiments and delaying therapeutic target discovery."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "the same core causal arc (overfitted policy → inaccurate GRNs → wasted/misdirected research) is present, despite extra detail on confounding and bioinformaticians",
+    "reference": "Overfitted causal discovery policies in single-cell genomics produce unvalidated gene regulatory networks, wasting research funding and misdirecting drug development through false causal links.",
+    "generated": "Misspecified causal models from limited data causing confounding interventions and distribution shifts, through bioinformaticians inferring GRNs for disease studies, trigger overfitted amortized policies that leave inaccurate GRNs uncorrected, leading to wasted experiments and delayed therapeutic target discovery."
+  }
+}

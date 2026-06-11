@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2497",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "lack of prompt interpretability and auditing covers inability to verify provenance",
+    "reference": "Users cannot verify answer provenance when prompts are uninterpretable.",
+    "generated": "LLM QA users lack prompt interpretability and auditing mechanisms, leaving hidden, non-generalizable shortcuts undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "deceptively correct answers and trust erosion captured, but propagation in educational/professional settings missing",
+    "reference": "Propagation of plausible-sounding but incorrect answers in educational and professional settings.",
+    "generated": "Deceptively correct answers on familiar queries break down on novel inputs, causing silent failures and misplaced user trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "arc from opaque prompts to incorrect answers to degradation present, but overconfidence and deskilling not covered",
+    "reference": "Opaque prompts exploit model-specific quirks via non-generalizable shortcuts, which in QA systems produce plausible but incorrect answers, leading to overconfidence and deskilling.",
+    "generated": "Evolutionary prompt optimization generating opaque, uninterpretable prompts with hidden heuristics, through reliance by LLM QA users lacking interpretability and auditing, triggers undetected non-generalizable shortcuts, leading to deceptively correct answers that fail on novel inputs and erode trust."
+  }
+}

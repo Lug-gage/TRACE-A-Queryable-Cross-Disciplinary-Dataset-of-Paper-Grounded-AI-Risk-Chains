@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3053",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5624,
+    "reference": "Scientists treat AI-generated phenotypes as empirical evidence without wet-lab validation",
+    "generated": "Scientists lack ground-truth for intermediate cell states, preventing detection of when AI-generated morphologies deviate from biological plausibility."
+  },
+  "impact": {
+    "similarity": 0.7372,
+    "reference": "False gene-disease associations misdirect drug target identification and funding",
+    "generated": "False gene-function assignments lead to wasted experimental resources and misdirected drug target identification pipelines."
+  },
+  "dose_response": {
+    "similarity": 0.8447,
+    "reference": "Straight-line flow matching generating plausible but off-manifold phenotypes enables functional genomics scientists to treat them as real, leading to false target identification and misdirected funding.",
+    "generated": "Straight-line flow matching interpolations off the biological manifold generate morphologically implausible trajectories that, when interpreted by functional genomics scientists lacking ground-truth, go undetected, leading to false gene-function assignments, wasted experimental resources, and misdirected drug target pipelines."
+  }
+}

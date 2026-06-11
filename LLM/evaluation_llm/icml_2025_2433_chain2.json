@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe a sensitivity where benchmark/evaluation frameworks give misleadingly positive assessments because they fail to account for tokenization issues—overstating quality for misspecified tokenizers vs. treating token-level likelihoods as faithful without checking for noncanonical encodings.",
+    "reference": "Research benchmarks relying on likelihood metrics overstate model quality for misspecified tokenizers.",
+    "generated": "Evaluation frameworks treat token-level likelihoods as faithful string probabilities without checking for noncanonical encodings."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (researchers) is present, but the specific damage type 'flawed models are published and deployed' is missing; the generated only mentions hindering progress, which does not explicitly include publication and deployment of flawed models.",
+    "reference": "Flawed models are published and deployed based on misleading evaluation metrics.",
+    "generated": "Held-out likelihood metrics become unreliable, misleading researchers about true model performance and hindering progress in language modeling."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs center on tokenization mismatch distorting probabilities, causing diverged evaluation metrics that mislead researchers and lead to negative outcomes (wasted research resources/publication vs. hindering progress). The generated chain captures the same causal logic.",
+    "reference": "Tokenization mismatch distorts token probabilities, which in token-level language modeling exposes researchers to diverged likelihood estimates, leading to flawed model publication and wasted research resources.",
+    "generated": "Tokenization mismatch inducing noncanonical encodings, through researchers evaluating with held-out likelihood, triggers evaluation frameworks to treat token-level likelihoods as faithful string probabilities without checking for noncanonical encodings, leading to unreliable metrics that mislead researchers and hinder progress."
+  }
+}

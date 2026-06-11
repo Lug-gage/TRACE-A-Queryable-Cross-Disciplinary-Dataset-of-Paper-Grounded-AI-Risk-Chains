@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes static measurement failure enabling exploitation of OOD filters, but misses the reference's specific condition of developer over-reliance and assumption that near-distribution novelties are safely rejected.",
+    "reference": "Developers over-rely on prototype-based OOD filtering without adversarial evaluation, assuming near-distribution novelties are safely rejected.",
+    "generated": "Static safety measurement practices fail to capture distribution shifts, enabling exploitation of OOD detection filters via metric over-optimization."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (autonomous systems) is present, but the reference's damage type includes accidents and legal action, while generated only mentions reward hacking and degraded robustness, omitting the later consequences.",
+    "reference": "Contaminated training data introduces latent failures in autonomous systems, resulting in accidents and legal action.",
+    "generated": "Unsafe data infiltrates training loops, causing reward hacking and degraded long-term robustness in autonomous systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc includes metric over-optimization leading to unsafe data and degradation, but misses the intermediate links of OOD misclassifying near-distribution inputs and developers assuming safety.",
+    "reference": "Metric over-optimization from fragile safety measurement causes prototype-based OOD to misclassify near-distribution inputs, which developers assume safe, leading to training contamination and latent failures resulting in accidents.",
+    "generated": "Antifragile self-improvement's reliance on distribution-shift-fragile safety measurement, through developers deploying OOD detection filters, triggers static measurement practices that fail to capture shifts enabling metric over-optimization, leading to unsafe data infiltrating training loops and reward hacking degrading long-term robustness."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1327",
+  "chain_index": 1,
+  "title": "Position A Safe Harbor for AI Evaluation and Red Teaming",
+  "abstract": "Independent evaluation and red teaming are critical for identifying the risks posed by generative AI systems. However, the terms of service and enforcement strategies used by prominent AI companies to deter model misuse have disincentives on good faith safety evaluations. This causes some researchers to fear that conducting such research or releasing their findings will result in account suspensions or legal reprisal. Although some companies offer researcher access programs, they are an inadequate substitute for independent research access, as they have limited community representation, receive inadequate funding, and lack independence from corporate incentives. We propose that major generative AI developers commit to providing a legal and technical safe harbor, protecting public interest safety research and removing the threat of account suspensions or legal reprisal. These proposals emerged from our collective experience conducting safety, privacy, and trustworthiness research on generative AI systems, where norms and incentives could be better aligned with public interests, without exacerbating model misuse. We believe these commitments are a necessary step towards more inclusive and unimpeded community efforts to tackle the risks of generative AI.",
+  "impact": "This paper argues that the current conditions for independent evaluation of AI systems is being deterred, and that this is problematic for broader AI safety. The proposed legal and technical protections for good faith research are designed to improve long term vulnerability research. Nonetheless, it is possible (though unlikely) that they might have short-term negative effects on misuse. For instance, malicious actors might take advantage of vulnerabilities publicly shared by researchers, if the companies are unable to patch fixes within the disclosure window. Also, malicious actors might try to abuse the safe harbor protections for their own misconduct. We have discussed these possibilities in Section 4, as has prior work (Abdo et al., 2022), and believe our design should thwart most malicious efforts. We would also posit that the benefits of more protected and inclusive safety research outweigh the risks of attempted misuse, particularly given the status quo, but believe that trade-off should be carefully explored. Implementation of these safe harbors would likely shape future interactions between AI safety researchers and generative AI companies along a few dimensions: (1) the field may experience a growth in independent or community-driven AI safety evaluation where researchers can freely access the models to safely conduct evaluation in a regulated setting, (2) the AI companies that provide research access and protections may receive more attention and vulnerability analysis than those that don’t, and (3) more deeply evaluated AI systems are likely to have more mature guardrails built around them, which could reduce the likelihood of safety vulnerabilities being exploited by malicious actors. It is also important to consider that these proposals are set within the context of US legal perspectives. We propose this as a direction of future work, detailed in Appendix A.",
+  "query_input": {
+    "scenario": "Chatbot deployment with user interaction logging",
+    "issue": "In-the-wild jailbreak tactics expose users to harmful LLM outputs.",
+    "hazard": [
+      "Automated safety evaluations may miss emerging attack vectors, creating a false assurance of generative model robustness."
+    ],
+    "exposure": [
+      "Chatbot users and service providers."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Service providers rely solely on automated safety evaluations, lacking independent adversarial testing due to legal deterrents against external researchers.",
+    "impact": "Users are exposed to harmful content like violence or hate speech, and providers suffer legal liability and reputational damage.",
+    "dose_response": "Automated safety evaluations, through chatbot user and service provider exposure, miss emerging attacks and create false assurance, triggering sole reliance on automated testing and deterring independent adversarial testing, leading to user exposure to harmful content and provider legal/reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated safety evaluations missing jailbreak attacks create false assurance, leading to chatbot deployment with interaction logging, which adversaries exploit to refine attacks, exposing users to harmful advice and providers to legal risks."
+    ],
+    "vulnerability": [
+      "Logging user interactions enables iterative jailbreak refinement by adversaries.",
+      "Insufficient monitoring of user interactions to detect jailbreak patterns."
+    ],
+    "impact": [
+      "Users receive harmful advice leading to real-world harm.",
+      "Service providers face legal and reputational repercussions."
+    ]
+  }
+}

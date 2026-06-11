@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0947",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4738,
+    "reference": "Exploration-driven negative inference biases labels toward majority groups, misclassifying minority negatives.",
+    "generated": "Lack of observed positive outcomes for historically under-represented groups leaves their true label status unverifiable, allowing mislabeling."
+  },
+  "impact": {
+    "similarity": 0.6934,
+    "reference": "Disproportionate false positive or false negative rates for minority subgroups, causing unfair denial of services.",
+    "generated": "Systematic misclassification depresses true positive rates for those groups, reinforcing credit denials and unfairness."
+  },
+  "dose_response": {
+    "similarity": 0.7356,
+    "reference": "Uneven data coverage from selective label collection biases negative inference toward majority groups, which in PU learning exposes minorities to mislabeling, leading to disproportionate false rates, service denial, and trust erosion.",
+    "generated": "Uneven data coverage from exploration-based selective label collection, through true negatives mislabeled from missing feedback for historically under-represented groups, triggers unverifiable label status from unobserved positive outcomes, leading to depressed true positive rates that reinforce credit denials and unfairness."
+  }
+}

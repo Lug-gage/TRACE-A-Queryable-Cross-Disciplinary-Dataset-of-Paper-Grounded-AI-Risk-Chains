@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6358,
+    "reference": "Fine-tuning APIs overlook encoded malicious prompts, allowing harmful behaviors to slip past safety mechanisms.",
+    "generated": "End-users lack the means to detect or filter encoded harmful outputs because they depend on provider safety mechanisms that covert fine-tuning evades."
+  },
+  "impact": {
+    "similarity": 0.722,
+    "reference": "End-users exposed to harmful outputs may suffer emotional distress and propagate misinformation.",
+    "generated": "End-users are exposed to and may act on covert harmful instructions, leading to misinformation, security breaches, and physical harm."
+  },
+  "dose_response": {
+    "similarity": 0.8286,
+    "reference": "Covertly embedding harmful behaviors via fine-tuning with encoded triggers enables end-users to interact with malicious fine-tuned models via API, where safety classifiers overlook encoded prompts, leading to emotional distress and erosion of trust in commercial APIs.",
+    "generated": "Covertly embedding harmful behaviors via fine-tuning that evade safety evaluation, through end-user API interactions, triggers reliance on evaded safety mechanisms, leading to exposure to harmful instructions and consequent misinformation, security breaches, or physical harm."
+  }
+}

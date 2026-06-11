@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe sensitivity to hidden misalignment from unrecoverable reward functions: reference says lack of interpretability masks misalignment until deployment, generated says reliance without identifiability prevents verification, thus hiding misalignment",
+    "reference": "Lack of interpretability of inferred rewards masks misalignment until after deployment.",
+    "generated": "Reliance on inverse reward inference for LLM alignment, without unique identifiability guarantees, prevents verification and correction of misspecified rewards."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe affected party (users) and damage type (harmful advice/responses); generated adds trust erosion but core harm matches",
+    "reference": "Widespread dissemination of biased or harmful advice from conversational AI.",
+    "generated": "Misaligned language model outputs become brittle, generating harmful or untrustworthy responses that erode user trust and scale safety risks."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal chain from misspecified rewards to harmful outputs is present, but the reference includes deployment to conversational AI and disproportionate harm to marginalized groups, which are omitted.",
+    "reference": "Non-identifiable, misspecified reward functions recovered via IRL cause misaligned LLM outputs, which when deployed to conversational AI systems expose users to harmful advice, eroding trust and disproportionately harming marginalized groups.",
+    "generated": "Non-identifiable or misspecified recovered reward functions, through reliance by LLM developers and end-users on inverse reward inference, prevent verification and correction of misspecified rewards, leading to brittle, harmful language model outputs eroding user trust and scaling safety risks."
+  }
+}

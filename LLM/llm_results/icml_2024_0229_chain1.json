@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0229",
+  "chain_index": 1,
+  "title": "Centralized Selection with Preferences in the Presence of Biases",
+  "abstract": "This paper considers the scenario in which there are multiple institutions, each with a limited capacity for candidates, and candidates, each with preferences over the institutions. A central entity evaluates the utility of each candidate to the institutions, and the goal is to select candidates for each institution in a way that maximizes utility while also considering the candidates’ preferences. The paper focuses on the setting in which candidates are divided into multiple groups and the observed utilities of candidates in some groups are biased-systematically lower than their true utilities. The first result is that, in these biased settings, prior algorithms can lead to selections with sub-optimal true utility and significant discrepancies in the fraction of candidates from each group that get their preferred choices. Subsequently, an algorithm is presented along with proof that it produces selections that achieve near-optimal group fairness with respect to preferences while also nearly maximizing the true utility under distributional assumptions. Further, extensive empirical validation of these results in real-world and synthetic settings, in which the distributional assumptions may not hold, are presented.",
+  "impact": "The goal of this paper is to present an algorithm that can enhance fairness in centralized selection problems despite the systemic biases present due to socioeconomic contexts and/or machine learning algorithms. This algorithm has the potential to positively impact areas such as hiring and admissions. It can be used as one of a multipronged approach to counter systemic social biases. As with any intervention intended to improve equity, we note that the same algorithm could be used instead to discriminate by selecting parameters that oppose rather than improve fairness. The implementation of the algorithm should be determined collaboratively with stakeholders to ensure it works towards equity both explicitly and implicitly. We encourage the continued responsible and ethical application of these advancements, including an evaluation of the long-term effects of such interventions.",
+  "query_input": {
+    "scenario": "Centralized institutional selection (college admissions, school assignment)",
+    "issue": "Using observed preferences with biased utility corrections can perpetuate historical group disparities due to mis-specified bias models.",
+    "hazard": [
+      "Centralized fair selection that corrects biased observed utilities using distributional assumptions enables systematic misallocation of resources to groups when bias deviates from assumed distributions."
+    ],
+    "exposure": [
+      "Applicants in centralized matching systems relying on AI-based scoring and ranking"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Groups with systematically biased observed utilities have no means to challenge misestimated scores when bias correction uses unverifiable distributional assumptions.",
+    "impact": "Biased groups systematically receive fewer preferred placements, lowering true utility and entrenching group disparities in access to desired institutions.",
+    "dose_response": "Centralized fair selection correcting biased utilities via distributional assumptions, through AI-based scoring and ranking, triggers inability to challenge misestimated scores for groups with biased utilities, leading to fewer preferred placements and entrenched group disparities."
+  },
+  "reference": {
+    "dose_response": [
+      "Mis-specified bias models in centralized selection misallocate admissions when human overrides reintroduce historical biases, exposing applicants to reinforced disparities that limit social mobility for underrepresented groups."
+    ],
+    "vulnerability": [
+      "Human decision-makers override algorithmic corrections, reintroducing historical biases when trust in the system is low."
+    ],
+    "impact": [
+      "Reinforcement of historical disparities in educational access, limiting social mobility for underrepresented groups."
+    ]
+  }
+}

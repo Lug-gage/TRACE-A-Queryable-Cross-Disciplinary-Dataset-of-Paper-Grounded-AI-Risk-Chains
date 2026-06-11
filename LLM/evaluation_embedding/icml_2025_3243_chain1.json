@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3243",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5399,
+    "reference": "Developers over-rely on AI code review, reducing critical scrutiny and manual verification.",
+    "generated": "Developers lack independent validation of evaluator agents, so they accept miscalibrated assessments as accurate."
+  },
+  "impact": {
+    "similarity": 0.7561,
+    "reference": "Introduction of bugs and security flaws into production systems due to overlooked errors.",
+    "generated": "Flawed code reaches production, causing system failures, security vulnerabilities, and degraded software quality."
+  },
+  "dose_response": {
+    "similarity": 0.8197,
+    "reference": "Miscalibrated agent evaluations enable flawed code suggestions, which when developers over-rely on them reduce scrutiny, introducing bugs and security flaws into production.",
+    "generated": "Miscalibrated, biased assessments from evaluator agents, when developers integrate agent-judged code suggestions, trigger the acceptance of inaccurate assessments due to lack of independent validation, leading to flawed production code, system failures, security vulnerabilities, and degraded software quality."
+  }
+}

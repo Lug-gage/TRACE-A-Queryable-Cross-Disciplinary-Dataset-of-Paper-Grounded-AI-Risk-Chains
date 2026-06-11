@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 0,
+  "title": "Visual Abstraction A Plug-and-Play Approach for Text-Visual Retrieval",
+  "abstract": "Text-to-visual retrieval often struggles with semantic redundancy and granularity mismatches between textual queries and visual content. Unlike existing methods that address these challenges during training, we propose VISual Abstraction (VISA), a test-time approach that enhances retrieval by transforming visual content into textual descriptions using off-the-shelf large models. The generated text descriptions, with their dense semantics, naturally filter out lowlevel redundant visual information. To further address granularity issues, VISA incorporates a question-answering process, enhancing the text description with the specific granularity information requested by the user. Extensive experiments demonstrate that VISA brings substantial improvements in text-to-image and text-to-video retrieval for both short- and long-context queries, offering a plug-and-play enhancement to existing retrieval systems.",
+  "impact": "VISA inherits potential challenges associated with LMMgenerated descriptions, such as biases and hallucinations. Since descriptions are automatically generated, the retrieval process might be influenced by inaccurate or biased representations, leading to unintended consequences, particularly in sensitive domains like news media analysis or legal decision-making. Additionally, transforming images into textual descriptions could raise privacy concerns, especially when applied to personal or surveillance-related datasets.",
+  "query_input": {
+    "scenario": "Text-to-image retrieval augmented with generated visual descriptions",
+    "issue": "Semantic redundancy in generated descriptions misleads retrieval rankings, causing wrong or irrelevant image outputs.",
+    "hazard": [
+      "Plug-and-play visual abstraction using off-the-shelf large models silently amplifies granularity mismatches and semantic redundancy across modalities."
+    ],
+    "exposure": [
+      "End-users of AI-enhanced image search and content discovery platforms."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End-users rely on opaque retrieval rankings with no means to detect or override semantic redundancy, leaving them defenseless.",
+    "impact": "Wrong image results mislead users, erode platform trust, and degrade content discovery efficiency.",
+    "dose_response": "Plug-and-play visual abstraction amplifies granularity mismatches and semantic redundancy through end-users of AI search platforms relying on opaque rankings with no detection or override means, triggering defenselessness, leading to wrong results that mislead users, erode trust, and degrade efficiency."
+  },
+  "reference": {
+    "dose_response": [
+      "Plug-and-play visual abstraction amplifies semantic redundancy, misleading retrieval rankings in text-to-image retrieval, exposing end-users to irrelevant images, leading to misinformed decisions and eroded platform trust."
+    ],
+    "vulnerability": [
+      "User overreliance on opaque generated descriptions obscures retrieval errors, increasing acceptance of irrelevant images."
+    ],
+    "impact": [
+      "Incorrect visual outputs lead to misinformed decisions in content creation and search, eroding platform trust."
+    ]
+  }
+}

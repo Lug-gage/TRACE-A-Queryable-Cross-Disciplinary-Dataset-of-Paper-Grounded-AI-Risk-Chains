@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1693",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7283,
+    "reference": "Overreliance on plausible textual explanations reduces radiologists' independent verification of segmentation masks.",
+    "generated": "Radiologists' reliance on AI explanations without real-time verification of text-image alignment enables acceptance of erroneous rationales."
+  },
+  "impact": {
+    "similarity": 0.5825,
+    "reference": "Misdiagnosis of malignancy leads to unnecessary biopsies or missed cancers.",
+    "generated": "Misleading rationales cause incorrect tumor boundary delineation, misdiagnosis, and inappropriate clinical decisions compromising patient safety."
+  },
+  "dose_response": {
+    "similarity": 0.8937,
+    "reference": "Joint segmentation and rationale generation models produce visually grounded textual justifications inconsistent with actual image evidence, enabling misleading rationales which, in AI-assisted tumor detection, expose radiologists to misdiagnosis leading to unnecessary biopsies or missed cancers.",
+    "generated": "Joint segmentation and rationale models produce visually grounded justifications inconsistent with actual image evidence, through radiologists' reliance on them for diagnosis without real-time verification, misleading rationales accepted, leading to incorrect tumor delineation, misdiagnosis, and inappropriate clinical decisions compromising patient safety."
+  }
+}

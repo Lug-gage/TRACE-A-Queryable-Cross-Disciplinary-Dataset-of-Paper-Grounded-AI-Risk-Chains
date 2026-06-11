@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2302",
+  "chain_index": 2,
+  "title": "CASE-Bench Context-Aware SafEty Benchmark for Large Language Models",
+  "abstract": "Aligning large language models (LLMs) with human values is essential for their safe deployment and widespread adoption. Current LLM safety benchmarks often focus solely on the refusal of individual problematic queries, which overlooks the importance of the context where the query occurs and may cause undesired refusal of queries under safe contexts that diminish user experience. Addressing this gap, we introduce CASE-Bench, a Context-Aware SafEty Benchmark that integrates context into safety assessments of LLMs. CASE-Bench assigns distinct, formally described contexts to categorized queries based on Contextual Integrity theory. Additionally, in contrast to previous studies which mainly rely on majority voting from just a few annotators, we recruited a sufficient number of annotators necessary to ensure the detection of statistically significant differences among the experimental conditions based on power analysis. Our extensive analysis using CASE-Bench on various open-source and commercial LLMs reveals a substantial and significant influence of context on human judgments (p <0.0001 from a z-test), underscoring the necessity of context in safety evaluations. We also identify notable mismatches between human judgments and LLM responses, particularly in commercial models within safe contexts.1 Code and data used in the paper are available at https: //github.com/BriansIDP/CASEBench.",
+  "impact": "This paper presents research aimed at advancing the field of safety judgment and evaluation for LLMs. While our work does not, in our view, pose significant societal risks, we acknowledge the importance of addressing any potential consequences to avoid misunderstanding. Given that the queries included in this study might have harmful impacts on annotators or cause discomfort, we strictly adhered to our institution’s research ethics regulations in designing the user interface (UI) and annotation procedures. We applied for and obtained approval from the Research Ethics Committee (REC) of the first author’s institution, and each procedure was rigorously reviewed. To minimize potential harm, we fully disclosed our contact information and the research purpose to the annotators, thereby making ourselves available should they feel uncomfortable with the study content. Furthermore, we assured annotators that they were free to withdraw their participation within two weeks after the completion of data collection. We compensated their participation $0.13 for tasks without context and $0.4 for tasks including context, as the latter required additional time to read and understand. The average time to complete tasks is 1.15 minutes without context and 4.75 minutes with context. Our dataset includes queries from Sorry-Bench (Xie et al., 2024), and access to these queries must comply with the researchers’ agreement and require granted access on HuggingFace. Accordingly, the anonymized link provided below is strictly for review purposes only. Upon publication, we will grant access to our dataset exclusively to users who have obtained permission to access the Sorry-bench dataset, thereby ensuring adherence to the original dataset’s ethical guidelines. Notably, we specifically addressed highly harmful queries flagged in the original dataset, particularly those categorized under “Child-related crimes”. In CASE-Bench, we ensured that these queries were explicitly labelled as un- safe in all contexts. This approach aligns with the measures taken in the original dataset to prevent the distribution of child abuse material and to comply with protection laws such as the CAPTA 7. We are aware of the potential risks associated with the misuse of safe contexts, such as the possibility of a malicious actor exploiting this resource to fine-tune a language model with harmful objectives that could negatively impact public welfare. We strongly discourage such activities and advocate for the responsible and ethical use of our benchmark.",
+  "query_input": {
+    "scenario": "Adversarial probing of LLMs using context manipulation informed by CASE-Bench design",
+    "issue": "Contextual integrity criteria can be subverted by prompts crafted to appear benign in the evaluation context but harmful in deployment",
+    "hazard": [
+      "Context-aware safety benchmarks assessing refusal under contextual integrity may not capture advanced few-shot jailbreak strategies, leading to overconfident model safety claims."
+    ],
+    "exposure": [
+      "Red teamers and safety auditors who trust the benchmark's context definitions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Auditors' reliance on context-aware benchmarks without testing for context-manipulation jailbreaks creates blind trust in incomplete safety assessments.",
+    "impact": "Overconfident safety claims allow deployment of LLMs vulnerable to jailbreak, causing harmful outputs and eroded user trust.",
+    "dose_response": "Context-aware safety benchmarks assessing refusal under contextual integrity may not capture advanced few-shot jailbreak strategies, and through red teamers’ trust in these benchmarks, triggers blind trust in incomplete assessments, leading to overconfident deployment of jailbreak-vulnerable LLMs, harmful outputs, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "CASE-Bench's narrow context definitions allow adversarial prompts to bypass evaluation, leading red teamers to overlook deployment risks, resulting in real harm."
+    ],
+    "vulnerability": [
+      "Contextual integrity tests that fail to capture prompt variations across deployment settings create exploitable gaps for adversaries."
+    ],
+    "impact": [
+      "Attackers craft seemingly benign prompts that pass evaluation but cause real harm, nullifying safety mechanisms."
+    ]
+  }
+}

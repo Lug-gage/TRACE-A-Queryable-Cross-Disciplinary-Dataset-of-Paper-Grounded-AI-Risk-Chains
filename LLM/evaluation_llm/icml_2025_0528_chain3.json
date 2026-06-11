@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe operators unable to detect system degradation due to insufficient skills/training and overreliance on black-box outputs.",
+    "reference": "Operators become deskilled and overreliant, failing to notice system degradation when distribution shifts occur.",
+    "generated": "Operators lack verification mechanisms and training to detect silently amplified granularity mismatches in black-box retrieval outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify public safety harm from misallocated resources and missed/delayed responses in surveillance/emergency contexts.",
+    "reference": "Missed threats in surveillance or misallocated emergency resources cause public safety failures.",
+    "generated": "Misinformed surveillance and emergency decisions cause delayed responses, misallocated resources, and preventable harm."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc captures amplification of black-box errors and operator detection failure leading to harm, but omits the distribution shift condition that compromises reliability in the reference.",
+    "reference": "Plug-and-play visual abstraction amplifies cascading errors from black-box dependencies, which under distribution shift compromise reliability in safety-critical retrieval, exposing operators to system degradation, leading to missed threats and public safety failures.",
+    "generated": "Plug-and-play visual abstraction silently amplifies granularity mismatches and semantic redundancy, and through surveillance and emergency response operators lacking verification, triggers undetected black-box mismatches, leading to misinformed decisions, delayed responses, misallocated resources, and preventable harm."
+  }
+}

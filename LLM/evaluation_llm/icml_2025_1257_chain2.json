@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1257",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes analysts’ trust without shift-validation leaving them blind to overfitting under noisy graphs, matching the reference’s deployment without adversarial evaluation enabling fragility to perturbations.",
+    "reference": "Sparse GNNs are deployed without adversarial evaluation on noisy real-world social graphs, enabling model fragility to unseen perturbations",
+    "generated": "Analysts' trust in WL-expressivity-optimized sparse GNN performance without shift-validation leaves them blind to overfitting under noisy graph conditions."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference specifies false accusations and biased moderation leading to reputational harm and social unrest; generated describes platform safety erosion and covert manipulation, which are different damage types and affected parties.",
+    "reference": "Misclassified community roles lead to false accusations or biased content moderation, causing reputational harm and social unrest",
+    "generated": "False anomaly alerts and undetected malicious roles erode platform safety, enabling covert manipulation to spread unchecked across the social network."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc omits the step that overfitted representations fail under structural noise, relying instead on blind trust without shift-validation, thus missing a causal link.",
+    "reference": "Sparse GNNs encoding overfitted representations fail under structural noise, which when used by analysts without adversarial evaluation leads to misclassified roles and unfair moderation, causing social unrest.",
+    "generated": "Lottery ticket sparsification encoding overfitted WL-expressivity-optimized representations, through social network analysts using pruned GNNs for anomaly detection, triggers blind trust without shift-validation, leading to false anomaly alerts and undetected malicious roles eroding platform safety."
+  }
+}

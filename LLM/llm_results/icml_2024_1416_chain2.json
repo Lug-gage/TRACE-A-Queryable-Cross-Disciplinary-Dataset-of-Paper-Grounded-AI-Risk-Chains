@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1416",
+  "chain_index": 2,
+  "title": "Quantum Theory and Application of Contextual Optimal Transport",
+  "abstract": "Optimal Transport (OT) has fueled machine learning (ML) across many domains. When paired data measurements (μ, ν) are coupled to covariates, a challenging conditional distribution learning setting arises. Existing approaches for learning a global transport map parameterized through a potentially unseen context utilize Neural OT and largely rely on Brenier’s theorem. Here, we propose a first-of-its-kind quantum computing formulation for amortized optimization of contextualized transportation plans. We exploit a direct link between doubly stochastic matrices and unitary operators thus unravelling a natural connection between OT and quantum computation. We verify our method (QontOT) on synthetic and real data by predicting variations in cell type distributions conditioned on drug dosage. Importantly we conduct a 24-qubit hardware experiment on a task challenging for classical computers and report a performance that cannot be matched with our classical neural OT approach. In sum, this is a first step toward learning to predict contextualized transportation plans through quantum computing.",
+  "impact": "This paper presents work with the goal to advance the field of quantum machine learning (QML). There are many potential societal consequences of advances in quantum computing, first and foremost in cryptanalysis (see Scholten et al. (2024) for a broad overview). Next, advances in QML will have more specific implications, e.g., they could widen disparities between organizations, countries or researchers that have access to, or can afford, leveraging quantum computing and those that cannot. More specific to our work, the promising result on contextual prediction of DSMs has to be seen in light of the limitations of current quantum hardware, e.g., we can only approximate specific states and structures (such as a DSM) since we have constraints in terms of circuit depth, the number of measurements and have to mitigate the device noise.",
+  "query_input": {
+    "scenario": "Unpaired data translation via Schrödinger Bridge flows",
+    "issue": "Entropy-regularized OT maps may smooth away critical distributional features.",
+    "hazard": [
+      "Conditional transport plans that are miscalibrated or distributionally misaligned with the true target conditional distributions."
+    ],
+    "exposure": [
+      "Practitioners applying unpaired translation models to scientific or medical data."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lack of paired ground-truth data to validate conditional alignment, combined with entropy-regularized smoothing that obscures distributional discrepancies.",
+    "impact": "Misleading scientific or medical conclusions from erroneous cell type distribution predictions, risking flawed downstream decisions.",
+    "dose_response": "Miscalibrated conditional transport plans, through practitioners applying unpaired translation models to scientific or medical data, trigger a lack of paired ground-truth validation combined with entropy-regularized smoothing that obscures discrepancies, leading to misleading cell type distribution predictions and flawed downstream decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated conditional transport via entropy-regularized OT maps smooths critical distributional features, causing diagnostic errors that worsen health outcomes for minority groups."
+    ],
+    "vulnerability": [
+      "Smoothing erases rare but clinically critical features, leading to diagnostic errors for minority patient groups."
+    ],
+    "impact": [
+      "Minority patients experience higher misdiagnosis rates and worsened health outcomes."
+    ]
+  }
+}

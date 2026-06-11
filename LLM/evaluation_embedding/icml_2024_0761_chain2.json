@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0761",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7104,
+    "reference": "Journalists' unchecked adoption of AI captions and readers' assumption of factual accuracy.",
+    "generated": "News readers' trust in automated captions and inability to detect visually indistinguishable mislabeling renders them susceptible to false political identity claims."
+  },
+  "impact": {
+    "similarity": 0.5961,
+    "reference": "False political narratives propagate, undermining democratic processes and trust in journalism.",
+    "generated": "Mislabeled political figures in captions spread disinformation, distorting public perception of events and eroding trust in news media."
+  },
+  "dose_response": {
+    "similarity": 0.8367,
+    "reference": "Stealthy data poisoning causes VLM mislabeling of political figures, exposing news readers to false captions, which propagate false narratives, undermining democratic processes and intensifying public polarization.",
+    "generated": "Stealthy data poisoning attacks on vision-language models, through news readers consuming VLM-generated captions, trigger their trust in automated captions and inability to detect mislabeling, leading to mislabeled political figures that spread disinformation, distorting public perception and eroding trust."
+  }
+}

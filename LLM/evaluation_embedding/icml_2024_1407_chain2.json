@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4651,
+    "reference": "Visually impaired users depend on synthetic speech for information access, amplifying harm from intelligibility failures.",
+    "generated": "Dependence on auditory cues alone for identity and content verification leaves no alternative channel to detect editing artifacts."
+  },
+  "impact": {
+    "similarity": 0.7085,
+    "reference": "Reduced intelligibility excludes visually impaired users from critical information, exacerbating digital inequality.",
+    "generated": "Visually impaired users experience information exclusion and potential safety risks when TTS outputs become unintelligible."
+  },
+  "dose_response": {
+    "similarity": 0.7433,
+    "reference": "Unsupervised semantic edits introduce pauses/distortions, exposing visually impaired users to reduced intelligibility, which excludes them from information and increases safety risks.",
+    "generated": "Unsupervised semantic manipulation of audio signals introducing acoustic artifacts, through visually impaired users' reliance on edited TTS outputs, triggers a dependence on auditory cues alone that precludes artifact detection, leading to information exclusion and safety risks."
+  }
+}

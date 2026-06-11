@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2449",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference sensitivity is lack of contextual understanding; generated describes reliance on replicable signatures, a related but different condition.",
+    "reference": "Automated moderation systems lack contextual understanding to detect coordinated adversarial disinformation campaigns.",
+    "generated": "Filtering systems rely on topological alignment signatures that adversaries can replicate, blinding them to malicious inputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Both mention users as affected party, but reference damage type (misinformation amplification, trust erosion) is absent; generated describes psychological harm, normalizing abuse, and moderator overload.",
+    "reference": "Harmful content proliferates on platforms, amplifying misinformation and eroding user trust in content integrity.",
+    "generated": "Harmful multimodal content reaches users undetected, causing psychological harm, normalizing abuse, and overwhelming human moderators."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc omits exploitation of alignment gaps, introduces a different mechanism (triggering reliance on replicable signatures), and leads to a different impact, altering the causal path.",
+    "reference": "Adversarial perturbations exploit multimodal alignment gaps to evade detection by mimicking clean topological signatures; in multimodal content moderation using vision-language models, exposing platform moderators and users to undetected harmful content leads to harmful content proliferation, amplifying misinformation and eroding trust.",
+    "generated": "Adversarial perturbations mimicking clean topological signatures, through platform moderators and users of automated filters, trigger systems' reliance on replicable signatures, leading to harmful content bypassing filters, causing psychological harm, normalizing abuse, and overwhelming moderators."
+  }
+}

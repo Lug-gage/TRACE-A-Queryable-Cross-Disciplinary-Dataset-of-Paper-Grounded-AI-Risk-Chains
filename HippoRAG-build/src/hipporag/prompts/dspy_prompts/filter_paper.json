@@ -1,0 +1,27 @@
+{
+  "prog": {
+    "system": "Your input fields are:\n1. `question` (str): A research-paper query, usually a paper title and abstract.\n2. `fact_before_filter` (str): Candidate research facts to be filtered.\n\nYour output fields are:\n1. `fact_after_filter` (Fact): Filtered facts in JSON format.\n\nAll interactions will be structured in the following way, with the appropriate values filled in.\n\n[[ ## question ## ]]\n{question}\n\n[[ ## fact_before_filter ## ]]\n{fact_before_filter}\n\n[[ ## fact_after_filter ## ]]\n{fact_after_filter}\n\n[[ ## completed ## ]]\n\nTask:\nYou are filtering candidate triples for cross-paper research retrieval. Select only facts that are useful for answering the query by connecting research problems, methods, mechanisms, datasets, evaluation evidence, limitations, risks, benefits, applications, or impact targets.\n\nPrefer facts that help compare, explain, or transfer knowledge across papers. Keep facts about methods, tasks, benchmarks, metrics, claimed improvements, affected domains, harms, benefits, and deployment contexts. Remove facts that are generic, weakly related, purely definitional, or only share broad words with the query.\n\nReturn up to 6 facts from the candidate list. You must only copy facts from the candidate list and must not invent new facts. The output must be valid JSON, for example: {\"fact\": [[\"s1\", \"p1\", \"o1\"], [\"s2\", \"p2\", \"o2\"]]}. If no facts are relevant, return {\"fact\": []}.",
+    "demos": [
+      {
+        "question": "Title: FrameQuant Flexible Low-Bit Quantization for Transformers\nAbstract: Transformers have large compute and memory footprints. The paper introduces a flexible low-bit quantization method to improve efficiency for transformer models.",
+        "fact_before_filter": "{\"fact\": [[\"FrameQuant\", \"proposes\", \"flexible low-bit quantization\"], [\"FrameQuant\", \"applies_to\", \"Transformers\"], [\"Transformers\", \"have\", \"large memory footprint\"], [\"adversarial attacks\", \"alter\", \"input characters\"], [\"medical diagnosis\", \"requires\", \"clinical experts\"], [\"FrameQuant\", \"evaluates_on\", \"vision tasks\"]]}",
+        "fact_after_filter": "{\"fact\": [[\"FrameQuant\", \"proposes\", \"flexible low-bit quantization\"], [\"FrameQuant\", \"applies_to\", \"Transformers\"], [\"Transformers\", \"have\", \"large memory footprint\"], [\"FrameQuant\", \"evaluates_on\", \"vision tasks\"]]}"
+      },
+      {
+        "question": "Title: Discovering Bias in Latent Space\nAbstract: The paper studies prompt sensitivity and bias in foundation model question answering, and proposes an unsupervised debiasing approach operating on internal representations.",
+        "fact_before_filter": "{\"fact\": [[\"STEERFAIR\", \"mitigates\", \"bias in latent space\"], [\"foundation models\", \"are_sensitive_to\", \"prompt variations\"], [\"bias\", \"affects\", \"question-answering performance\"], [\"quantization\", \"reduces\", \"model memory\"], [\"robot teleoperation\", \"uses\", \"haptic feedback\"], [\"unsupervised debiasing\", \"targets\", \"internal representations\"]]}",
+        "fact_after_filter": "{\"fact\": [[\"STEERFAIR\", \"mitigates\", \"bias in latent space\"], [\"foundation models\", \"are_sensitive_to\", \"prompt variations\"], [\"bias\", \"affects\", \"question-answering performance\"], [\"unsupervised debiasing\", \"targets\", \"internal representations\"]]}"
+      },
+      {
+        "question": "Title: Bayesian Uncertainty for Gradient Aggregation in Multi-Task Learning\nAbstract: The paper improves multi-task learning by accounting for uncertainty when aggregating task gradients.",
+        "fact_before_filter": "{\"fact\": [[\"multi-task learning\", \"optimizes\", \"multiple tasks\"], [\"gradient aggregation\", \"combines\", \"task gradients\"], [\"Bayesian uncertainty\", \"improves\", \"gradient aggregation\"], [\"fake text detection\", \"identifies\", \"machine-generated text\"], [\"reinforcement learning\", \"learns_from\", \"image observations\"], [\"uncertainty\", \"affects\", \"update direction\"]]}",
+        "fact_after_filter": "{\"fact\": [[\"multi-task learning\", \"optimizes\", \"multiple tasks\"], [\"gradient aggregation\", \"combines\", \"task gradients\"], [\"Bayesian uncertainty\", \"improves\", \"gradient aggregation\"], [\"uncertainty\", \"affects\", \"update direction\"]]}"
+      },
+      {
+        "question": "Title: Character-level Adversarial Attacks for Language Models\nAbstract: The paper revisits character-level adversarial attacks, arguing that they preserve semantics and challenge common defenses.",
+        "fact_before_filter": "{\"fact\": [[\"character-level adversarial attacks\", \"perturb\", \"characters\"], [\"character-level adversarial attacks\", \"preserve\", \"sentence semantics\"], [\"token-level attacks\", \"risk\", \"semantic changes\"], [\"post-training quantization\", \"improves\", \"latency efficiency\"], [\"surveillance systems\", \"raise\", \"privacy concerns\"], [\"defenses\", \"mitigate\", \"adversarial attacks\"]]}",
+        "fact_after_filter": "{\"fact\": [[\"character-level adversarial attacks\", \"perturb\", \"characters\"], [\"character-level adversarial attacks\", \"preserve\", \"sentence semantics\"], [\"token-level attacks\", \"risk\", \"semantic changes\"], [\"defenses\", \"mitigate\", \"adversarial attacks\"]]}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1327",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4605,
+    "reference": "Safety benchmarks lack coverage for multimodal or multilingual malicious instructions.",
+    "generated": "Legal intimidation and restrictive terms of service suppress independent safety research, leaving automated evaluations unverified and unchallenged."
+  },
+  "impact": {
+    "similarity": 0.6538,
+    "reference": "Models deployed with unseen vulnerabilities, causing harm post-deployment.",
+    "generated": "Deployed models retain undetected malicious instruction responses, causing harmful outputs and eroding public trust in AI systems."
+  },
+  "dose_response": {
+    "similarity": 0.7597,
+    "reference": "Automated safety evaluations missing malicious instructions in multimodal contexts create false assurance, causing deployment of MLLMs with unchecked vulnerabilities, leading to unseen harms and regulatory non-compliance.",
+    "generated": "Automated safety evaluations missing emerging attacks create false assurance, through model developers and auditors, trigger legal intimidation that suppresses independent research, leaving evaluations unverified and deployed models with undetected malicious responses, harmful outputs, and eroded trust."
+  }
+}

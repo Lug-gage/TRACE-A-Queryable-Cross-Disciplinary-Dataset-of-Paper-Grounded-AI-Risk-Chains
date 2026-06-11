@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2232",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state automated credit models fail to distinguish genuine features from manipulated ones, making them susceptible to score inflation.",
+    "reference": "Automated underwriting models rely on static features that credit repair services can artificially inflate.",
+    "generated": "Automated credit scoring models treat purchased feature improvements as genuine risk reduction, lacking mechanisms to detect score-inflating manipulations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Lender losses, credit misallocation, and harm to non-manipulating borrowers are all explicitly present.",
+    "reference": "Increased loan defaults and credit misallocation, harming lenders and creditworthy borrowers.",
+    "generated": "Lenders incur higher default losses and credit markets misallocate capital, while non-manipulating borrowers face higher interest rates or denial."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc captures the market-induced manipulation and its consequences but omits the model degradation outcome present in the reference.",
+    "reference": "Classifier-induced feature markets incentivize score-improving modifications, exposing loan applicants and lenders to inflated creditworthiness in automated credit scoring, leading to increased defaults and model degradation.",
+    "generated": "Classifier-induced feature markets with co-optimized learning and pricing, through loan applicants and lenders using automated credit scoring, trigger models to treat score-inflating purchases as genuine risk reduction, leading to higher defaults, capital misallocation, and inequitable rates for non-manipulators."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 1,
+  "title": "Watermark Stealing in Large Language Models",
+  "abstract": "LLM watermarking has attracted attention as a promising way to detect AI-generated content, with some works suggesting that current schemes may already be fit for deployment. In this work we dispute this claim, identifying watermark stealing (WS) as a fundamental vulnerability of these schemes. We show that querying the API of the watermarked LLM to approximately reverseengineer a watermark enables practical spoofing attacks, as hypothesized in prior work, but also greatly boosts scrubbing attacks, which was previously unnoticed. We are the first to propose an automated WS algorithm and use it in the first comprehensive study of spoofing and scrubbing in realistic settings. We show that for under $50 an attacker can both spoof and scrub state-of-the-art schemes previously considered safe, with average success rate of over 80%. Our findings challenge common beliefs about LLM watermarking, stressing the need for more robust schemes. We make all our code and additional examples available at https://watermark-stealing.org.",
+  "impact": "As discussed in prior work, LLM watermarking has important societal implications, as e.g., it enables detection of plagiarism, allows tracking of text provenance, and can be used to battle fake news. Our work primarily highlights novel threats to LLM watermarking schemes, and could be in theory utilized by attackers to invalidate a watermark and cause harm to model owners or clients. However, LLM watermarks are a very recent research direction and to the best of our knowledge there are still no active deployments in practice, thus we believe there is no direct negative impact of making our work public, and no concrete place to apply responsible disclosure. On the contrary, we believe our work has a positive societal impact, as it highlights the true (lack of) robustness of current watermarking schemes, emphasizes the need for more robust schemes and more thorough evaluation procedures, providing a step in the direction of eventually deploying LLM watermarks in practice.",
+  "query_input": {
+    "scenario": "Cross-lingual translation of watermarked LLM output (removal attack)",
+    "issue": "Watermark signal lost during translation from pivot language, evading detection.",
+    "hazard": [
+      "LLM text watermarking is vulnerable to removal, spoofing, and stealing attacks that exploit algorithmic weaknesses."
+    ],
+    "exposure": [
+      "Moderators using watermark detection to identify AI-generated cross-lingual disinformation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Watermark detection relies on a signal that cross-lingual translation removes, rendering moderators unable to distinguish AI-generated disinformation.",
+    "impact": "AI-generated cross-lingual disinformation evades detection, enabling widespread manipulation of public discourse and erosion of information trust.",
+    "dose_response": "LLM watermark vulnerability to removal, through moderators using detection signals, triggers signal loss during cross-lingual translation, leading to AI-generated disinformation evading detection and eroding information trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Cross-lingual watermark removal attacks cause signal breakage during translation, leaving moderators' detection blind and enabling disinformation to manipulate non-English communities."
+    ],
+    "vulnerability": [
+      "Watermark token patterns are language-dependent and break under machine translation."
+    ],
+    "impact": [
+      "Cross-lingual disinformation campaigns bypass detectors, manipulating non-English communities."
+    ]
+  }
+}

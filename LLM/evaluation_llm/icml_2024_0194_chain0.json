@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Low climate literacy rendering the public unable to detect inflated accuracy claims directly mirrors the reference's low science literacy reducing detection of factual errors in climate texts.",
+    "reference": "Low public science literacy reduces ability to detect factual errors in fluent climate texts.",
+    "generated": "Low climate literacy and overtrust in AI-vetted content render the public unable to detect inflated accuracy claims."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Public distortion of understanding and undermining of mitigation efforts semantically includes reduced support for mitigation policies—the affected party (public) and damage type (harm to mitigation) are both present.",
+    "reference": "Public misperception of climate risks leads to reduced support for mitigation policies.",
+    "generated": "Public adoption of misinformation distorts climate understanding and undermines collective mitigation and adaptation efforts."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated chain (overestimation → inflated metrics → exposure via assessments → overtrust → misinformation adoption → distorted understanding) preserves the core causal arc from systematic overestimation through public exposure to substandard materials and finally to misperception.",
+    "reference": "Systematic overestimation by LLM evaluators inflates assessment metrics, which in the scenario of auto-evaluated climate texts exposes the public to substandard materials, leading to public misperception of climate risks.",
+    "generated": "LLM evaluators’ systematic overestimation inflates metrics; when these assessments reach a low-literacy public through climate communications, overtrust triggers uncritical acceptance, leading to misinformation adoption that distorts understanding and undermines mitigation."
+  }
+}

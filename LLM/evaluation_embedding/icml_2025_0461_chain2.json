@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0461",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6466,
+    "reference": "Static benchmarks fail to capture attack evolution, incentivizing models that are brittle to shifting adversarial strategies.",
+    "generated": "Evaluators trust static benchmark accuracy without verifying robustness against unseen, evolved attacks."
+  },
+  "impact": {
+    "similarity": 0.5612,
+    "reference": "Widespread deployment of falsely 'robust' AI systems, leading to cascading failures across applications when new attacks emerge.",
+    "generated": "Certified models fail under novel attacks, leading to security breaches in downstream applications."
+  },
+  "dose_response": {
+    "similarity": 0.8431,
+    "reference": "Logit-distance regularization overfitting goes undetected by static benchmarks; when benchmark developers test robustness, models collapse under evolved attacks, causing widespread cascading failures.",
+    "generated": "Logit-space distance regularization overfitting to seen attacks, through benchmark testing that relies on static accuracy, triggers evaluator trust without verification against evolved attacks, leading to certified model failure and security breaches in downstream applications."
+  }
+}

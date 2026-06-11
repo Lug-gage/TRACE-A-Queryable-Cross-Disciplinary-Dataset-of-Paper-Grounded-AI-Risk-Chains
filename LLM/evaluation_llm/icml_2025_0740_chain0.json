@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0740",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference describes user over-trust as the vulnerability; generated describes a model alignment flaw, missing the reference's user sensitivity entirely.",
+    "reference": "Users exhibit over-trust in conversational AI outputs, accepting harmful jailbroken content as credible.",
+    "generated": "LLM safety alignment relying on a single affirmative-response objective ignores distributional and semantic completion, enabling gradient-optimized prompts to bypass safeguards."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated specify the general public as affected party and psychological harm as damage type.",
+    "reference": "Psychological distress from exposure to offensive, hateful, or dangerous guidance.",
+    "generated": "General public exposed to offensive, dangerous, or manipulative chatbot outputs suffer psychological harm, physical risk, and eroded trust in AI systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe gradient-optimized prompts subverting safety through an alignment weakness, leading to harmful outputs and causing psychological harm and eroded trust; the addition of physical risk in the generated does not alter the core causal arc.",
+    "reference": "Gradient-optimized adversarial prompts subverting LLM safety enable harmful outputs, which in public chatbot deployments expose the general public to offensive content, causing psychological distress and eroded trust.",
+    "generated": "Gradient-optimized adversarial prompts, through public chatbot use, trigger safety alignment that relies on a single affirmative-response objective and ignores distributional and semantic completion, leading to harmful outputs that cause psychological harm, physical risk, and eroded trust."
+  }
+}

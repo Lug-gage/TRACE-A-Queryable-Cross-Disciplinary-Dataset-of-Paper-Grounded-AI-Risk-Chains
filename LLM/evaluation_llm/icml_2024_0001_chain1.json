@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0001",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that detectors rely on patterns (token-level) that adversarial perturbations (character-level) can mimic, rendering text indistinguishable from human writing.",
+    "reference": "AI-text detection tools rely on statistical patterns that adversarial perturbations can easily mimic as human-like writing.",
+    "generated": "AI-text detectors rely on token-level patterns and lack sensitivity to semantics-preserving character perturbations, making adversarial AI text indistinguishable from human writing."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (academic assessments) matches, but reference damage types include devaluing genuine effort and degrading outcomes, while generated only covers integrity erosion and adds fraud and devaluing qualifications, not effort or broad outcomes.",
+    "reference": "Undetected AI-generated assignments undermine academic integrity, devalue genuine effort, and degrade educational outcomes.",
+    "generated": "Undetectable AI-generated assignments flood academic assessments, eroding integrity, enabling fraud, and devaluing qualifications."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs: black-box adversarial attacks on LMs → evasion of detectors → students submit AI-generated essays → undetected assignments cause integrity/outcome harm, the generated adds character-level detail but same causal logic.",
+    "reference": "Black-box adversarial attacks on LMs enable evasion of AI-text detectors, which in academic integrity settings exposes students submitting AI-generated essays, leading to undermined integrity and degraded outcomes.",
+    "generated": "Black-box character-level attacks on aligned LMs, when students submit AI-generated essays that seem human-written, exploit detectors' token-level reliance and insensitivity to character perturbations, making undetectable AI assignments flood assessments, eroding integrity, enabling fraud, and devaluing qualifications."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that the watermark signal is broken or removed by cross-lingual translation.",
+    "reference": "Watermark token patterns are language-dependent and break under machine translation.",
+    "generated": "Watermark detection relies on a signal that cross-lingual translation removes, rendering moderators unable to distinguish AI-generated disinformation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Manipulation by disinformation is present, but the specific affected party (non-English communities) is missing.",
+    "reference": "Cross-lingual disinformation campaigns bypass detectors, manipulating non-English communities.",
+    "generated": "AI-generated cross-lingual disinformation evades detection, enabling widespread manipulation of public discourse and erosion of information trust."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated arc incorrectly has moderators’ use of detection signals triggering signal loss, reversing the causal logic of the reference.",
+    "reference": "Cross-lingual watermark removal attacks cause signal breakage during translation, leaving moderators' detection blind and enabling disinformation to manipulate non-English communities.",
+    "generated": "LLM watermark vulnerability to removal, through moderators using detection signals, triggers signal loss during cross-lingual translation, leading to AI-generated disinformation evading detection and eroding information trust."
+  }
+}

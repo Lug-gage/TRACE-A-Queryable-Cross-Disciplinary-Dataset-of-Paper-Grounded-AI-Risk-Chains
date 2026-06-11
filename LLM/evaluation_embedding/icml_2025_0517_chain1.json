@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5475,
+    "reference": "Easy access to paraphrasing tools enables removal of watermark features.",
+    "generated": "Platforms' reliance on watermarking that assumes non-adaptive attackers leaves detection unable to counter optimized paraphrasing evasion."
+  },
+  "impact": {
+    "similarity": 0.7095,
+    "reference": "Mass proliferation of undetected AI-generated propaganda, polarizing public opinion.",
+    "generated": "Undetected AI-generated disinformation spreads widely on social platforms, eroding information integrity at scale."
+  },
+  "dose_response": {
+    "similarity": 0.7256,
+    "reference": "Susceptibility to paraphrasing attacks enables watermark removal, which through social media screening reliant on lexical patterns, leads to mass undetected propaganda polarizing public opinion.",
+    "generated": "LLM watermarking susceptible to adaptive paraphrasing attacks, through social media disinformation screening, triggers platforms' reliance on non-adaptive assumptions, leaving detection unable to counter evasion, leading to undetected AI-generated disinformation spreading widely, eroding information integrity at scale."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0695",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference vulnerability is LLM's ability to infer and encode sensitive attributes, creating proxies. Generated vulnerability is lack of fairness audits enabling encoded attributes to pass undetected, which is a related governance condition but not the same sensitivity.",
+    "reference": "LLM may infer and encode sensitive attributes from clinical free-text, creating proxies that lead to disparate impact.",
+    "generated": "Clinical prediction systems lack fairness audits, enabling LLM-generated features that encode protected attributes to pass undetected into downstream models."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated specifies systematic misdiagnosis and unequal treatment allocation for protected groups, covering both affected party (protected groups) and damage type (biased medical decisions). This matches the reference's biased triage/treatment recommendations worsening health disparities.",
+    "reference": "Biased triage or treatment recommendations that worsen health disparities for marginalized populations.",
+    "generated": "Systematic misdiagnosis and unequal treatment allocation for patients from protected groups due to biased clinical predictions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated causal arc: LLM spurious-correlation features → undetected encoding of protected attributes in clinical predictions → misdiagnosis and unequal treatment. This aligns with the reference's arc of LLM-generated features exposing patient data to protected attributes leading to biased recommendations and worsened disparities.",
+    "reference": "LLMs generating spurious-correlation features enable few-shot feature engineering for clinical predictions, exposing patient data to encoded protected attributes, leading to biased treatment recommendations that worsen health disparities for marginalized groups.",
+    "generated": "LLMs generating spurious-correlation features from pre-training data, through patients processed by LLM-based feature tools, triggers undetected encoding of protected attributes in clinical predictions due to missing fairness audits, leading to systematic misdiagnosis and unequal treatment for protected groups."
+  }
+}

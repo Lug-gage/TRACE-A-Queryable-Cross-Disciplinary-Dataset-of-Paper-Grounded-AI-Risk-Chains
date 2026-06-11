@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0601",
+  "chain_index": 2,
+  "title": "Understanding Complexity in VideoQA via Visual Program Generation",
+  "abstract": "We propose a data-driven approach to analyzing query complexity in Video Question Answering (VideoQA). Previous efforts in benchmark design have relied on human expertise to design challenging questions, yet we experimentally show that humans struggle to predict which questions are difficult for machine learning models. Our automatic approach leverages recent advances in code generation for visual question answering, using the complexity of generated code as a proxy for question difficulty. We demonstrate that this measure correlates significantly better with model performance than human estimates. To operationalize this insight, we propose an algorithm for estimating question complexity from code. It identifies fine-grained primitives that correlate with the hardest questions for any given set of models, making it easy to scale to new approaches in the future. Finally, to further illustrate the utility of our method, we extend it to automatically generate complex questions, constructing a new benchmark that is 1.9 times harder than the popular NExT-QA.",
+  "impact": "In our study, we utilize many distinct pre-trained models, each with its inherent biases, to identify challenging questions within an existing dataset. Although they have different pre-training schemes, these models likely encode similar implicit biases, owning to their training on internet scale data collections. In particular, several of our selected models, along with our visual descriptors extractor, rely on CLIP (Radford et al., 2021) as a visual encoder, meaning they likely replicate the same biases including those identified in previous studies (Agarwal et al., 2021). Furthermore, the dataset we base the majority of our analysis on, NExT-QA (Xiao et al., 2021), is not fully representative of real-world diversity and complexity. This limitation in addition to the biases present in the chosen models can lead to skewed or incomplete analysis. In addition, our analysis’ focus on interplay between the constituent syntactic elements in code may overlooks critical sources of complexity not apparent in the code structure. These include, for example, differences related to gender and ethnicity, which are not explicitly manifested in the code. Our own proposed benchmark, CodePlex-QA, builds upon the existing datasets MOMA (Luo et al., 2021; 2022), ActivityNet (Caba Heilbron et al., 2015), and Action Genome (Ji et al., 2020), and therefore includes the same biases. We urge researchers and practitioners to refer to the relevant dataset cards. Finally, our selection methodology for filtering videos and questions may inadvertently introduce new biases, or amplify existing ones. Acknowledgments. This work is in part supported by the Toyota Research Institute (TRI), AFOSR YIP FA9550-23- 1-0127, ONR N00014-23-1-2355, and ONR YIP N00014- 24-1-2117.",
+  "query_input": {
+    "scenario": "Code generation for visual programs in video understanding",
+    "issue": "Synthesized programs from query-agnostic features execute correctly on seen distributions but silently fail under domain shift.",
+    "hazard": [
+      "Query-agnostic visual encoding in modular VideoQA pipelines produces brittle, misaligned representations for complex temporal reasoning."
+    ],
+    "exposure": [
+      "Developers integrating visual program synthesis into video analytics pipelines"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers lack runtime verification of visual grounding, assuming code complexity reliably indicates question difficulty across domain shifts.",
+    "impact": "Silent incorrect answers on shifted queries corrupt downstream analytics decisions and erode system trust.",
+    "dose_response": "Query-agnostic visual encoding, through developers integrating visual program synthesis, triggers the unverified assumption that code complexity proxies question difficulty under shift, leading to silent incorrect answers that corrupt decisions and erode system trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Query-agnostic encoding produces brittle programs that silently fail under domain shift, which in video analytics pipelines exposes developers to undetected errors that cascade into flawed downstream decisions."
+    ],
+    "vulnerability": [
+      "Developers integrating visual program synthesis lack visibility into silent failures, enabling cascading errors in downstream analytics."
+    ],
+    "impact": [
+      "Undetected errors in video analytics pipelines cause flawed decision-making in surveillance, traffic management, or content moderation."
+    ]
+  }
+}

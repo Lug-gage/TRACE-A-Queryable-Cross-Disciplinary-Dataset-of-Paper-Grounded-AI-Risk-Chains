@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0608",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference identifies residual representations as the sensitivity; generated describes a sharp loss landscape and operator assumption, a related but different condition.",
+    "reference": "Unlearning leaves exploitable residual representations of erased concepts.",
+    "generated": "Platform operators' assumption that unlearning fully erases hazardous concepts, while the model's sharp loss landscape enables adversarial prompt-driven relearning."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected parties (users, platforms) and damage types (user harm, platform liability) from the reference are present.",
+    "reference": "Re-exposure to harmful imagery causes user harm and platform liability.",
+    "generated": "Unauthorized regeneration of harmful concepts (e.g., nudity) via public text-to-image services, causing user harm, platform liability, and safety trust erosion."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from adversarially robust unlearning to unauthorized regeneration and resulting harm/liability is preserved.",
+    "reference": "Adversarially robust unlearning for diffusion models enables adversarial prompts to regenerate erased nudity, exposing end-users and platforms to harmful imagery, liability, and regulatory distrust.",
+    "generated": "Adversarially robust unlearning's false security, through public image generation services, triggers operators' assumption of full erasure and a sharp loss landscape enabling adversarial relearning, leading to unauthorized regeneration of harmful concepts, causing user harm, platform liability, and trust erosion."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6381,
+    "reference": "Process chemists rely on AI-optimized conditions for scaling without confirming with kinetic studies.",
+    "generated": "Process chemists lack ground-truth atom mappings to audit model outputs, relying on biased activation barrier estimates for scale-up decisions."
+  },
+  "impact": {
+    "similarity": 0.542,
+    "reference": "Large-scale batch failures leading to significant financial loss and waste of raw materials.",
+    "generated": "Suboptimal reaction conditions adopted at industrial scale reduce yields and waste feedstock and energy."
+  },
+  "dose_response": {
+    "similarity": 0.732,
+    "reference": "Node alignment errors bias activation barrier predictions, which in high-throughput optimization causes process chemists to adopt unsafe conditions without verification, resulting in batch failures and safety incidents.",
+    "generated": "Differentiable node alignment in condensed reaction graphs, through process chemists scaling up industrial reactions, triggers biased activation barrier estimates used for scale-up decisions due to missing ground-truth mappings, leading to suboptimal industrial conditions reducing yields and wasting feedstock and energy."
+  }
+}

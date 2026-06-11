@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 2,
+  "title": "Watermark Stealing in Large Language Models",
+  "abstract": "LLM watermarking has attracted attention as a promising way to detect AI-generated content, with some works suggesting that current schemes may already be fit for deployment. In this work we dispute this claim, identifying watermark stealing (WS) as a fundamental vulnerability of these schemes. We show that querying the API of the watermarked LLM to approximately reverseengineer a watermark enables practical spoofing attacks, as hypothesized in prior work, but also greatly boosts scrubbing attacks, which was previously unnoticed. We are the first to propose an automated WS algorithm and use it in the first comprehensive study of spoofing and scrubbing in realistic settings. We show that for under $50 an attacker can both spoof and scrub state-of-the-art schemes previously considered safe, with average success rate of over 80%. Our findings challenge common beliefs about LLM watermarking, stressing the need for more robust schemes. We make all our code and additional examples available at https://watermark-stealing.org.",
+  "impact": "As discussed in prior work, LLM watermarking has important societal implications, as e.g., it enables detection of plagiarism, allows tracking of text provenance, and can be used to battle fake news. Our work primarily highlights novel threats to LLM watermarking schemes, and could be in theory utilized by attackers to invalidate a watermark and cause harm to model owners or clients. However, LLM watermarks are a very recent research direction and to the best of our knowledge there are still no active deployments in practice, thus we believe there is no direct negative impact of making our work public, and no concrete place to apply responsible disclosure. On the contrary, we believe our work has a positive societal impact, as it highlights the true (lack of) robustness of current watermarking schemes, emphasizes the need for more robust schemes and more thorough evaluation procedures, providing a step in the direction of eventually deploying LLM watermarks in practice.",
+  "query_input": {
+    "scenario": "Spoofing attack on watermarked LLM responses",
+    "issue": "Malicious actors alter content while preserving watermark, misattributing harmful output.",
+    "hazard": [
+      "LLM text watermarking is vulnerable to removal, spoofing, and stealing attacks that exploit algorithmic weaknesses."
+    ],
+    "exposure": [
+      "LLM developers falsely blamed for harmful content due to spoofed watermark."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on spoofable LLM watermarks renders developers unable to disprove false content attribution.",
+    "impact": "LLM developers suffer reputational harm and wrongful accountability for harmful outputs they did not generate.",
+    "dose_response": "Vulnerability of LLM watermarking to spoofing attacks, through false blame of developers for harmful content, triggers their inability to disprove false attribution, leading to reputational harm and wrongful accountability."
+  },
+  "reference": {
+    "dose_response": [
+      "Spoofing attacks forge harmful content while preserving watermark statistics, causing false attribution that results in reputational and legal damage to LLM providers."
+    ],
+    "vulnerability": [
+      "Watermark verifies token statistics, not semantic integrity, so content can be forged."
+    ],
+    "impact": [
+      "Reputational and legal damage to LLM providers from false attribution of harmful content."
+    ]
+  }
+}

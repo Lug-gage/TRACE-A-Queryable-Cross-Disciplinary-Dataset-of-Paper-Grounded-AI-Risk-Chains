@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1807",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated mentions susceptibility to bias from lack of ground truth, but reference's sensitivity condition is identity-blind models ignoring effect heterogeneity",
+    "reference": "Data scientists apply identity-blind models that pool fragmented sessions, ignoring effect heterogeneity.",
+    "generated": "Data scientists depend on probabilistic cross-device identity graphs without ground-truth user mappings, creating susceptibility to uncertainty-driven bias in causal estimates."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "generated describes degraded user experience and squandered resources, but reference's impact is streaming platform fails to identify user segments and reduced engagement; affected party not explicit and damage type differs",
+    "reference": "Streaming platform fails to identify user segments that would benefit from personalization, reducing engagement.",
+    "generated": "Biased treatment effect estimates mislead engagement optimizations, degrading user experience and squandering experimental resources."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc includes uncertainty propagation leading to biased GATEs, but misses the underestimation of heterogeneous effects, and ends with degraded UX rather than missed personalization and revenue losses",
+    "reference": "Uncertainty propagation from cross-device identity graphs enables biased GATEs, which in streaming platform experiments with multi-device sessions exposes data scientists to underestimation of heterogeneous effects, leading to missed personalization and revenue losses.",
+    "generated": "Uncertainty propagation from cross-device identity graphs, when data scientists evaluate treatment effects on user engagement, triggers reliance on probabilistic identity graphs lacking ground truth, leading to biased GATEs that mislead engagement optimizations, degrading user experience and squandering resources."
+  }
+}

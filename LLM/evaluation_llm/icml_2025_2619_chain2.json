@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2619",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Researchers' over-trust without validation is captured by reliance on precise data lacking distortion-detection methods",
+    "reference": "Researchers' over-trust in AI outputs without stringent validation, allowing subtle errors to propagate into study conclusions.",
+    "generated": "Biomechanics researchers rely on precise kinematic data but lack methods to detect subtle tokenization-induced distortions in AI-generated motions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Invalid research findings and misdiagnosis covered, but erosion of scientific credibility is missing",
+    "reference": "Invalid research findings, potential misdiagnosis in clinical applications, erosion of scientific credibility.",
+    "generated": "Invalid gait and injury study results undermine research validity and risk misguided clinical decisions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe quantization errors leading to lack of validation/over-trust and then to invalid findings and clinical misguidance",
+    "reference": "Quantization errors produce subtle motion distortions that expose biomechanics researchers to over-trust in AI outputs, leading to invalid findings and potential clinical misdiagnosis.",
+    "generated": "Quantization errors in motion tokenization, through analysis by biomechanics researchers of synthesized motion, trigger reliance on precise kinematic data without distortion-detection methods, leading to invalid gait and injury studies and misguided clinical decisions."
+  }
+}

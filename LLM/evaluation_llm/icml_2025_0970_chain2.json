@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0970",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes audit methodologies that do not capture the full attack surface, while generated focuses on data subjects' trust in underestimating audits and lacking challenge means, a related but distinct sensitivity condition.",
+    "reference": "Audit methodologies are not standardised and often fail to capture full attack surface (e.g., side-channel or model inversion).",
+    "generated": "Data subjects trust DP audits that underestimate empirical leakage, lacking independent means to detect or challenge false privacy assurances."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference's affected party (regulatory bodies, public) and damage type (accepting weak claims, delayed protections) differ entirely from generated's affected party (individuals) and damage type (confidentiality breaches via re-identification).",
+    "reference": "Regulatory bodies and the public accept dangerously weak privacy claims, delaying mandatory protections.",
+    "generated": "Confidentiality breaches via increased memorization enable re-identification and inference attacks on individuals' training records."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc captures the underestimating audits -> breaches link, but omits the regulator acceptance and litigation steps from the reference, and introduces an extra trust element.",
+    "reference": "Incomplete DP audits underestimate leakage, causing regulators to accept weak protections, resulting in litigation after attacks expose personal data.",
+    "generated": "Miscalibration between theoretical DP guarantees and actual information leakage, through individuals in audited training sets, triggers misplaced trust in underestimating audits without detection means, leading to confidentiality breaches via memorization-enabled re-identification and inference attacks."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1111",
+  "chain_index": 1,
+  "title": "Offline Opponent Modeling with Truncated Q-driven Instant Policy Refinement",
+  "abstract": "Offline Opponent Modeling (OOM) aims to learn an adaptive autonomous agent policy that dynamically adapts to opponents using an offline dataset from multi-agent games. Previous work assumes that the dataset is optimal. However, this assumption is difficult to satisfy in the real world. When the dataset is suboptimal, existing approaches struggle to work. To tackle this issue, we propose a simple and general algorithmic improvement framework, Truncated Q-driven Instant Policy Refinement (TIPR), to handle the suboptimality of OOM algorithms induced by datasets. The TIPR framework is plug-and-play in nature. Compared to original OOM algorithms, it requires only two extra steps: (1) Learn a horizon-truncated incontext action-value function, namely Truncated Q, using the offline dataset. The Truncated Q estimates the expected return within a fixed, truncated horizon and is conditioned on opponent information. (2) Use the learned Truncated Q to instantly decide whether to perform policy refinement and to generate policy after refinement during testing. Theoretically, we analyze the rationale of Truncated Q from the perspective of No Maximization Bias probability. Empirically, we conduct extensive comparison and ablation experiments in four representative competitive environments. TIPR effectively improves various OOM algorithms pretrained with suboptimal datasets.",
+  "impact": "This work advances the field of OOM by addressing the critical limitation of suboptimal offline datasets, which are prevalent in real-world multi-agent scenarios. The proposed TIPR framework enhances the robustness and adaptability of autonomous agents without requiring additional online interactions, thereby reducing resource consumption and potential risks in deployment. Ethically, the framework encourages safer AI deployment by minimizing reliance on idealized data and promoting reliability under imperfect conditions. However, care must be taken to prevent misuse in adversarial or deceptive applications, particularly in competitive or high-stakes domains such as finance or security. Future societal implications include improved collaboration and competition among AI agents in diverse settings, fostering broader trust and utility in autonomous systems.",
+  "query_input": {
+    "scenario": "Automated bidding agents in real-time advertising auctions",
+    "issue": "Suboptimal bidding strategies from truncated horizons enable market concentration and manipulative dark advertising.",
+    "hazard": [
+      "Truncated Q-value estimation for opponent modeling from suboptimal offline data introduces myopic strategies that ignore long-term adversarial adaptations."
+    ],
+    "exposure": [
+      "Advertisers deploying bidding agents trained with offline opponent modeling"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Advertisers lack real-time oversight to detect and counteract myopia in bidding agents trained on suboptimal offline data.",
+    "impact": "Market concentration and manipulative dark advertising in real-time ad auctions reduce competition and mislead consumers.",
+    "dose_response": "Truncated Q-value estimation from suboptimal offline data, through advertisers deploying bidding agents with offline opponent modeling, triggers lack of real-time oversight to detect and counteract myopia, leading to market concentration and manipulative dark advertising."
+  },
+  "reference": {
+    "dose_response": [
+      "Advertisers deploying myopic bidding agents inadvertently enable market concentration and dark advertising, eroding consumer privacy and choice."
+    ],
+    "vulnerability": [
+      "Myopic bidding overlooks long-term budget warfare, allowing deep-pocketed advertisers to dominate and reduce market diversity.",
+      "Ad platforms' opaque algorithms enable targeted manipulation of vulnerable consumers via dark ads without consent."
+    ],
+    "impact": [
+      "Monopolization of ad space, higher costs for small advertisers, and reduced consumer choice.",
+      "Erosion of consumer privacy and autonomy through unregulated dark advertising."
+    ]
+  }
+}

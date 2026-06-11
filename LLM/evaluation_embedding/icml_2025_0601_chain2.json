@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0601",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4977,
+    "reference": "Developers integrating visual program synthesis lack visibility into silent failures, enabling cascading errors in downstream analytics.",
+    "generated": "Developers lack runtime verification of visual grounding, assuming code complexity reliably indicates question difficulty across domain shifts."
+  },
+  "impact": {
+    "similarity": 0.514,
+    "reference": "Undetected errors in video analytics pipelines cause flawed decision-making in surveillance, traffic management, or content moderation.",
+    "generated": "Silent incorrect answers on shifted queries corrupt downstream analytics decisions and erode system trust."
+  },
+  "dose_response": {
+    "similarity": 0.6408,
+    "reference": "Query-agnostic encoding produces brittle programs that silently fail under domain shift, which in video analytics pipelines exposes developers to undetected errors that cascade into flawed downstream decisions.",
+    "generated": "Query-agnostic visual encoding, through developers integrating visual program synthesis, triggers the unverified assumption that code complexity proxies question difficulty under shift, leading to silent incorrect answers that corrupt decisions and erode system trust."
+  }
+}

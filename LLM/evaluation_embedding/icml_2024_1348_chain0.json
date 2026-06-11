@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6696,
+    "reference": "Users lack accessible tools to detect subtle copyright replication in AI outputs.",
+    "generated": "Reliance on visual copy detection methods that fail to detect disguised copyrighted content replication in generated images."
+  },
+  "impact": {
+    "similarity": 0.7821,
+    "reference": "Businesses face lawsuits and fines for unknowingly using infringing AI images.",
+    "generated": "Copyright infringement liability, financial penalties, and reputational harm for digital artists and marketers inadvertently using infringing AI-generated images."
+  },
+  "dose_response": {
+    "similarity": 0.8291,
+    "reference": "In commercial digital artwork and visual marketing, diffusion models' subtle replication reduces detectability, exposing digital artists and marketers to lawsuits and trust erosion, as they lack detection tools and prioritize speed over diligence.",
+    "generated": "Diffusion models generating subtly replicated copyrighted content, through digital artists and marketers using them commercially, triggers reliance on visual detection that fails to spot disguised replication, leading to infringement liability, financial penalties, and reputational harm."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1798",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe operators overtrusting miscalibrated real-time uncertainty as the sensitivity condition.",
+    "reference": "Operators overtrust miscalibrated uncertainty in real-time, leading to missed anomalies or false alarms.",
+    "generated": "Operators trust real-time GP anomaly detection's uncertainty calibration without independent means to detect approximation error, relying entirely on flawed estimates for decisions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify safety and operational harm from missed threats and false alarms/unnecessary interventions.",
+    "reference": "Alert fatigue or ignored genuine threats increase operational risk and undermine safety systems.",
+    "generated": "Miscalibrated anomaly scores cause missed critical events and unnecessary interventions, jeopardizing safety and operational efficiency."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal chain: spectral norm error → miscalibrated uncertainty → operator overtrust → missed events/false alarms → safety/operational harm.",
+    "reference": "Spectral norm error from SKI's Gram approximation enables miscalibrated uncertainty, which in real-time GP prediction under low-latency constraints exposes operators using GP-based anomaly detection to false alarms or missed threats, leading to alert fatigue and increased operational risk.",
+    "generated": "Spectral norm error from SKI Gram approximation, through real-time GP-based anomaly detection systems, triggers operators' over-trust in flawed uncertainty calibration, leading to miscalibrated anomaly scores that miss critical events and cause unnecessary interventions, jeopardizing safety and operational efficiency."
+  }
+}

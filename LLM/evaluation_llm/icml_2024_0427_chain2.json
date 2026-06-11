@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0427",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes anchoring on initial explanations and discounting contradictory guidance, while generated focuses on lack of independent verification and reliance on consistency—a related but distinct sensitivity condition",
+    "reference": "Domain experts anchor on initial explanations and discount contradictory subsequent guidance.",
+    "generated": "Clinicians lack independent means to verify reused black-box explanations, relying on their consistency without insight into underlying instability."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "the negative outcome of misdiagnoses and patient harm captures the affected party (clinicians) and damage type (incorrect treatment/harm) from the reference, even if clinicians are not explicitly named",
+    "reference": "Inconsistent diagnostic guidance causes clinicians to override correct model predictions.",
+    "generated": "Inconsistent diagnostic guidance causes misdiagnoses and patient harm."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "the causal arc from unstable explanations through clinician reliance, inconsistent guidance, to misdiagnosis and patient harm semantically matches the reference's anchoring ➞ overriding correct predictions ➞ harm",
+    "reference": "Clinicians reusing unstable explanations anchor on initial guidance, overriding correct predictions and causing patient harm from delayed or incorrect treatment.",
+    "generated": "Black-box explanation methods produce unfaithful, unstable explanations, through clinicians using reused explanations from black-box diagnostic models, triggering inability to independently verify them and reliance on consistency, leading to inconsistent diagnostic guidance causing misdiagnoses and patient harm."
+  }
+}

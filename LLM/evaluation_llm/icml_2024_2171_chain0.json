@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2171",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated captures over-trust in LLM ratings as objective and lack of debiasing, but omits the reference's explicit 'without diversity constraints' condition.",
+    "reference": "Over-reliance on a single LLM judge for quality scoring, without diversity constraints, entrenches the judge's biases in training data.",
+    "generated": "Developers lack debiasing mechanisms, trusting LLM judge ratings as objective quality signals for data selection."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (embedded biases, reduced fairness) is present, but affected party (underrepresented demographics) is not explicitly identified.",
+    "reference": "Skewed training data leads to models that underperform for underrepresented demographics and topics, perpetuating social inequalities.",
+    "generated": "Training data distribution skews toward judge's preferences, producing models with embedded biases and reduced representational fairness."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from judge ratings through filtering to skewed data and biased model is present, but misses the specific underperformance for underrepresented groups and inserts a confusing 'trigger lack of debiasing' step.",
+    "reference": "The LLM judge's bias in quality ratings, when used to filter large-scale pretraining corpora, skews the data distribution, exposing underrepresented groups to models that underperform for them, perpetuating social inequalities.",
+    "generated": "LLM judge quality ratings for pretraining data selection, through model developers filtering large-scale corpora, trigger lack of debiasing mechanisms and trust in ratings as objective, leading to skewed data distribution that embeds biases and reduces representational fairness."
+  }
+}

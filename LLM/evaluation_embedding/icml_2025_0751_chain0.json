@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4816,
+    "reference": "High trust in AI-generated synthesis plans due to absence of uncertainty communication.",
+    "generated": "Medicinal chemists lack independent atom-mapping verification, forcing uncritical reliance on AI yield predictions."
+  },
+  "impact": {
+    "similarity": 0.6194,
+    "reference": "Costly experimental failures and wasted materials from following flawed synthesis plans.",
+    "generated": "Pursuit of low-yield synthetic routes wastes experimental resources and delays drug candidate progression."
+  },
+  "dose_response": {
+    "similarity": 0.827,
+    "reference": "Differentiable node alignment errors cause biased yield predictions, which in automated retrosynthesis exposes medicinal chemists to overestimate yields, leading to costly failures and safety risks when AI uncertainty is not communicated.",
+    "generated": "Differentiable node alignment in condensed reaction graphs, through medicinal chemists relying on AI-driven synthesis planners, triggers uncritical reliance on AI yield predictions without independent atom-mapping verification, leading to wasted experimental resources and delayed drug candidate progression from low-yield routes."
+  }
+}

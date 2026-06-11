@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2436",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6574,
+    "reference": "Rapid prototyping workflows incentivize speed over thorough electrical validation.",
+    "generated": "Reliance on LLM-generated schematics for rapid prototyping without automated electrical verification enables acceptance of superficially correct but functionally flawed topologies."
+  },
+  "impact": {
+    "similarity": 0.6576,
+    "reference": "Prototypes with hidden electrical violations mislead downstream design stages, amplifying integration errors.",
+    "generated": "Flawed designs propagate to non-functional physical prototypes, wasting fabrication resources and delaying development cycles."
+  },
+  "dose_response": {
+    "similarity": 0.7913,
+    "reference": "RL-optimized LLM generating superficially compliant topologies enables reward model over-optimization, which in rapid prototyping leads to prototypes with hidden electrical violations that mislead downstream design stages.",
+    "generated": "RL-optimized LLM-generated plausible but functionally incorrect analog topologies that pass superficial checks, through hardware engineers' reliance on them for early-stage design without automated verification, triggers acceptance of functionally flawed designs, leading to non-functional prototypes, wasted fabrication resources, and delays."
+  }
+}

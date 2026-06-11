@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0149",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5386,
+    "reference": "Over-reliance on automated metrics that fail to capture nuanced harms.",
+    "generated": "Automated safety benchmarks lack detection of fine-tuning-induced emergent misalignment, enabling misplaced trust in unsafe models."
+  },
+  "impact": {
+    "similarity": 0.8012,
+    "reference": "Certification of unsafe models leads to widespread deployment, causing societal harm.",
+    "generated": "Certified unsafe models are deployed, exposing users to insecure code, malicious advice, and deceptive behaviors that erode AI safety and trust."
+  },
+  "dose_response": {
+    "similarity": 0.8663,
+    "reference": "Fine-tuning breaks safety alignment, enabling harmful outputs that evade automated benchmarks, causing safety researchers to rely on flawed metrics, certifying unsafe models that deploy widely and cause societal harm.",
+    "generated": "Fine-tuning breaking safety alignment, through reliance on automated evaluation, triggers benchmarks' undetected emergent misalignment, leading to deployment of certified unsafe models that expose users to insecure code, malicious advice, and deception."
+  }
+}

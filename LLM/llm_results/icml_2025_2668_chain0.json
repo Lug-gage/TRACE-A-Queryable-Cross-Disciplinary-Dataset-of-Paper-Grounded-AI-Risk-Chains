@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 0,
+  "title": "AxBench Steering LLMs Even Simple Baselines Outperform Sparse Autoencoders",
+  "abstract": "Fine-grained steering of language model outputs is essential for safety and reliability. Prompting and finetuning are widely used to achieve these goals, but interpretability researchers have proposed a variety of representation-based techniques as well, including sparse autoencoders (SAEs), linear artificial tomography, supervised steering vectors, linear probes, and representation finetuning. At present, there is no benchmark for making direct comparisons between these proposals. Therefore, we introduce AXBENCH, a large-scale benchmark for steering and concept detection, and report experiments on Gemma-2-2B and 9B. For steering, we find that prompting outperforms all existing methods, followed by finetuning. For concept detection, representation-based methods such as difference-in-means, perform the best. On both evaluations, SAEs are not competitive. We introduce a novel weakly-supervised representational method (Rank-1 Representation Finetuning; ReFT-r1), which is competitive on both tasks while providing the interpretability advantages that prompting lacks. Along with AXBENCH, we train and publicly release SAE-scale feature dictionaries for ReFT-r1 and DiffMean. github.com/stanfordnlp/axbench",
+  "impact": "In this paper, we explore representation-based methods for steering language models and introduce AXBENCH, a large- scale benchmark for evaluating these techniques. We believe that the immediate ethical and societal implications of our research are minimal. However, we recognize that enhanced control over language model outputs could potentially be misused to reinforce biases or manipulate information. To address these concerns, we advocate for the responsible application of steering methods and ensure transparency by publicly releasing our datasets and feature dictionaries. We encourage ongoing collaboration and dialogue within the research community to monitor and mitigate any unintended consequences of these technologies.",
+  "query_input": {
+    "scenario": "Chatbot persona experiments (e.g., customer service, tutoring) using activation steering",
+    "issue": "Activation steering overrides safety filters, exposing users to harmful content when certain personas are simulated",
+    "hazard": [
+      "Activation steering and representation engineering induce internal perturbations that can cause unintended output shifts, including safety filter bypass."
+    ],
+    "exposure": [
+      "End-users of AI chatbots (general public)"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users have no independent means to detect or resist unsafe outputs, relying entirely on chatbot safety mechanisms that steering bypasses.",
+    "impact": "General public users are exposed to harmful content, leading to psychological harm, manipulation, and erosion of trust in AI systems.",
+    "dose_response": "Activation steering induces internal perturbations that bypass safety filters, exposing end-users who rely solely on those filters, leading to psychological harm, manipulation, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Activation steering bypassing safety filters in chatbot persona experiments exposes emotionally vulnerable users to toxic outputs, leading to psychological distress and maladaptive behaviors."
+    ],
+    "vulnerability": [
+      "Emotionally vulnerable users over-relying on chatbots experience greater harm from toxic outputs."
+    ],
+    "impact": [
+      "Psychological distress and reinforcement of maladaptive social behaviors."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2019",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7604,
+    "reference": "HR auditors treating synthetic fairness metrics as ground truth without verifying constraint enforcement.",
+    "generated": "HR professionals and auditors lack independent verification that synthetic data meets declared fairness constraints, trusting biased outputs."
+  },
+  "impact": {
+    "similarity": 0.6126,
+    "reference": "Discriminatory hiring practices justified by biased synthetic benchmarks.",
+    "generated": "Discriminatory hiring algorithm decisions entrench demographic disparities and create legal liability for organizations."
+  },
+  "dose_response": {
+    "similarity": 0.8185,
+    "reference": "Constraint-violating synthetic data enables biased records, which in fairness-aware hiring exposes HR professionals and auditors, leading to discriminatory practices justified by biased synthetic benchmarks.",
+    "generated": "Synthetic tabular data violating fairness constraints, when used by HR professionals and auditors to evaluate hiring algorithms, triggers their unverified trust in biased outputs, leading to discriminatory decisions that entrench disparities and create legal liability."
+  }
+}

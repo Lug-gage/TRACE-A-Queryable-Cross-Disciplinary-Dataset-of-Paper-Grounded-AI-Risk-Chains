@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6463,
+    "reference": "Community-shared quantized models lack provenance verification, enabling hidden backdoors to persist after compression.",
+    "generated": "Developers lack detection methods for encoded malicious behaviors in quantized models, relying on safety evaluations that fail against covert finetuning."
+  },
+  "impact": {
+    "similarity": 0.7637,
+    "reference": "Harmful outputs cause physical or psychological harm to end-users, eroding trust in community-driven AI.",
+    "generated": "Widespread harmful outputs on edge devices, endangering user safety and eroding trust in community-shared models."
+  },
+  "dose_response": {
+    "similarity": 0.9153,
+    "reference": "Covertly embedding harmful behaviors via fine-tuning that evade safety evaluation, exploiting quantization, enables developers to deploy malicious quantized models on edge devices, which lack monitoring, leading to harmful outputs causing physical harm and safety incidents.",
+    "generated": "Covert malicious fine-tuning, through developers deploying quantized models on edge devices, triggers undetected encoded harmful behaviors when safety evaluations fail, leading to widespread harmful outputs that endanger user safety and erode trust."
+  }
+}

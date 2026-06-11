@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0950",
+  "chain_index": 1,
+  "title": "Debating with More Persuasive LLMs Leads to More Truthful Answers",
+  "abstract": "Common methods for aligning large language models (LLMs) with desired behaviour heavily rely on human-labelled data. However, as models grow increasingly sophisticated, they will surpass human expertise, and the role of human evaluation will evolve into non-experts overseeing experts. In anticipation of this, we ask: can weaker models assess the correctness of stronger models? We investigate this question in an analogous setting, where stronger models (experts) possess the necessary information to answer questions and weaker models (non-experts) lack this information but are otherwise as capable. The method we evaluate is debate, where two LLM experts each argue for a different answer, and a non-expert selects the answer. On the QuALITY comprehension task, we find that debate consistently helps both non-expert models and humans answer questions, achieving 76% and 88% accuracy respectively (naive baselines obtain 48% and 60%). Furthermore, optimising expert debaters for persuasiveness in an unsupervised manner improves non-expert ability to identify the truth in debates. Our results provide encouraging empirical evidence for the viability of aligning models with debate in the absence of ground truth.",
+  "impact": "This work focuses on methods to allow humans to supervise models, particularly focusing on the open problem of supervision for superhuman models. We believe this work to be useful in this endeavour; however, the incorrect application of supervision can make detecting malicious behaviour harder (Hubinger et al., 2024), and as such, we recommend caution in its application. Contributions AK led the project and was involved in all its components. JH ran LLM experiments and led infrastructure. DV ran human experiments and developed infrastructure. KS developed infrastructure. LR, AR, EG, SB, TR, and EP advised on research. LR led writing with EG, SB, EP, and TR as editors. EP generated a tremendous amount of experimental ideas.",
+  "query_input": {
+    "scenario": "Debate-based reward model for justifiable decision-making in high-stakes domains",
+    "issue": "Biased LLM judge promotes decisions that appear justified but are unsound",
+    "hazard": [
+      "LLM-based debate judges exhibit systematic evaluation biases (positional, lexical, order) and criterion confusion, undermining judgment reliability."
+    ],
+    "exposure": [
+      "Healthcare decision-makers using debate-justified RL policies"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Healthcare decision-makers lack the domain expertise to independently verify debate arguments, making them reliant on persuasive presentation.",
+    "impact": "Adoption of unsound clinical policies causes preventable patient harm and undermines institutional trust in AI-assisted healthcare.",
+    "dose_response": "LLM debate judges' systematic biases and criterion confusion, through debate-justified RL policies used by healthcare decision-makers, triggers reliance on persuasive presentation due to lack of expertise, leading to unsound clinical policies that cause preventable patient harm and erode institutional trust."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM judge biases produce unsound justifications in debate-based RL policies, causing clinicians to anchor on them and override their judgment, leading to patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians anchoring on LLM judge justifications, overriding own clinical judgment."
+    ],
+    "impact": [
+      "Unsound medical decisions justified by biased debate evaluations lead to patient harm."
+    ]
+  }
+}

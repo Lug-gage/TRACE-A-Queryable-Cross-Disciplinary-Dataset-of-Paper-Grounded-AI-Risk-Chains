@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1622",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe adversarial prompts reversing concept erasure / retrieving forbidden content due to residual harmful knowledge.",
+    "reference": "Adversarial prompts can reverse concept erasure, restoring harmful content generation capabilities.",
+    "generated": "Approximate unlearning leaves residual harmful knowledge in the model, enabling adversarial prompts to retrieve forbidden content."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify users as the affected party and psychological harm as the damage type; generated adds trust erosion but core reference impact is fully present.",
+    "reference": "Exposure of users to prohibited content (hate speech, violence) causes psychological harm.",
+    "generated": "Users encounter harmful content meant to be erased, causing psychological harm and eroding trust in content moderation safeguards."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc captures the core causal sequence (adversarial prompts → recovery of harmful content → user exposure → psychological harm) but omits regulatory sanctions and introduces a confusing step where user exposure supposedly triggers retrieval.",
+    "reference": "Adversarial prompts enable recovery of unlearned harmful content, which in content moderation concept erasure exposes users to forbidden material, leading to psychological harm and regulatory sanctions.",
+    "generated": "Adversarial prompts recovering residual knowledge after approximate unlearning, through user exposure to forbidden generated content, trigger retrieval of harmful knowledge, leading to psychological harm and eroded trust in content moderation."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0987",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference specifies lack of input validation, generated covers lack of adversarial robustness which is related but broader",
+    "reference": "API classifiers lack input validation for adversarial perturbations.",
+    "generated": "CLIP-based vision APIs lack adversarial robustness, making them inherently susceptible to universal perturbations that transfer across models and tasks."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "erosion of trust is explicitly stated in both, and the affected party (users) is implied through API predictions and applications",
+    "reference": "Erosion of user trust in AI-driven services.",
+    "generated": "API predictions are arbitrarily manipulated, corrupting downstream decisions, eroding trust, and enabling attackers to compromise user applications."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "generated captures the causal chain from perturbations to eroded trust, but omits the black-box attack on commercial APIs and the financial losses mentioned in the reference",
+    "reference": "Adversarial perturbations with super transferability enable black-box attacks on commercial vision APIs, exposing providers and downstream users to erroneous classifications that erode trust and cause financial losses.",
+    "generated": "Adversarial perturbations using dynamic transformation and density-aware targeting, super transferable across architectures and tasks, through image recognition API companies and users, trigger CLIP vision APIs' susceptibility to universal perturbations, leading to manipulated predictions, corrupted decisions, eroded trust, and compromised applications."
+  }
+}

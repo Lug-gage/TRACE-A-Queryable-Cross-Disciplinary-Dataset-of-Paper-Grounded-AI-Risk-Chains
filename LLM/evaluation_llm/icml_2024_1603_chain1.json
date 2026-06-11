@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1603",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "High trust and inability to detect errors matches high trust with no fact-checking condition.",
+    "reference": "High trust in LLM outputs combined with lack of fact-checking enables dissemination of false information.",
+    "generated": "Users treat LLM outputs as authoritative without the domain expertise to detect recency-skewed factual errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Flawed decisions covered but erosion of trust missing.",
+    "reference": "Misinformation erodes trust, leading to uninformed decisions and potential real-world harm.",
+    "generated": "Misinformation adoption leads to flawed downstream decisions in knowledge-intensive tasks."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from memory errors to misinformation and flawed decisions present, but erosion of trust link omitted.",
+    "reference": "Recency-biased retrieval in memory-augmented LLMs causes factual inaccuracies; when information consumers use QA tools with high trust and no fact-checking, this enables misinformation dissemination, eroding trust and causing uninformed decisions.",
+    "generated": "Human-inspired memory mechanisms causing systematic prediction errors, through information consumers using LLM-powered QA or summarization tools, trigger users treating outputs as authoritative without detecting recency-skewed errors, leading to misinformation adoption and flawed knowledge-intensive decisions."
+  }
+}

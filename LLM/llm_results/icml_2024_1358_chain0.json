@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1358",
+  "chain_index": 0,
+  "title": "Position Reinforcement Learning in Dynamic Treatment Regimes Needs Critical Reexamination",
+  "abstract": "In the rapidly changing healthcare landscape, the implementation of offline reinforcement learning (RL) in dynamic treatment regimes (DTRs) presents a mix of unprecedented opportunities and challenges. This position paper offers a critical examination of the current status of offline RL in the context of DTRs. We argue for a reassessment of applying RL in DTRs, citing concerns such as inconsistent and potentially inconclusive evaluation metrics, the absence of naive and supervised learning baselines, and the diverse choice of RL formulation in existing research. Through a case study with more than 17,000 evaluation experiments using a publicly available Sepsis dataset, we demonstrate that the performance of RL algorithms can significantly vary with changes in evaluation metrics and Markov Decision Process (MDP) formulations. Surprisingly, it is observed that in some instances, RL algorithms can be surpassed by random baselines subjected to policy evaluation methods and reward design. This calls for more careful policy evaluation and algorithm development in future DTR works. Additionally, we discussed potential enhancements toward more reliable development of RL-based dynamic treatment regimes and invited further discussion within the community. Code is available at https://github.com/GilesLuo/ReassessDTR.",
+  "impact": "Applying RL in high-stakes medical decision-making like Sepsis carries significant implications for patient care and treatment outcomes. While RL has the potential to revolutionize personalized medicine by learning from patient responses and adapting treatment plans accordingly, its deployment in clinical settings must be approached with utmost caution. This position paper critically examines the application of RL in DTRs. Particularly, our critique highlights significant challenges that must be addressed to prevent potential harm. The inconsistent and potentially inconclusive evaluation metrics present a clear risk: without robust assessment frameworks, the deployment of RL in medical decisionmaking could lead to suboptimal or even harmful treatment recommendations. Furthermore, our call for incorporating more baselines into the research of RL in DTRs underlines the necessity for benchmarking against simpler baselines. This is not only a matter of scientific rigor but also of ethical responsibility, ensuring that the adoption of more complex models is justified by demonstrable benefits to patient outcomes. It is the research community’s collective responsibility to ensure that these technologies are introduced in a manner that is safe, ethical, and ultimately beneficial to patient care. The impact of RL in healthcare could be profound, but it must be guided by a commitment not to harm, ensuring that the leap forward does not come at the expense of patient trust or safety.",
+  "query_input": {
+    "scenario": "ICU sepsis treatment optimization using offline RL from MIMIC-III data",
+    "issue": "Adopting policies based on erroneous value estimates can yield harmful treatment choices.",
+    "hazard": [
+      "Off-policy evaluation estimates can be biased or high-variance, leading to unreliable policy recommendations."
+    ],
+    "exposure": [
+      "Clinicians and patients exposed to AI-guided treatment plans in intensive care units."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians lack means to detect unreliable RL value estimates, trusting recommendations without validated baselines or override protocols.",
+    "impact": "Sepsis patients receive harmful treatment choices, causing clinical deterioration and preventable mortality.",
+    "dose_response": "Biased and high-variance off-policy evaluation estimates, through exposure of clinicians and patients to AI-guided ICU treatment plans, trigger clinicians' inability to detect unreliable value estimates without validated baselines, leading to harmful sepsis treatment choices causing deterioration and preventable mortality."
+  },
+  "reference": {
+    "dose_response": [
+      "Biased or high-variance off-policy evaluation estimates enable unreliable policy recommendations, which in ICU sepsis treatment optimization leads to harmful treatment choices when clinicians over-rely on AI guidance."
+    ],
+    "vulnerability": [
+      "Clinicians over-rely on AI recommendations due to automation bias in high-stakes, time-pressured ICU settings.",
+      "Historical MIMIC-III data encodes biased clinical practices that disadvantage underrepresented patient groups."
+    ],
+    "impact": [
+      "Increased mortality and morbidity from inappropriate sepsis interventions.",
+      "Exacerbation of health disparities for minority and low-income patients."
+    ]
+  }
+}

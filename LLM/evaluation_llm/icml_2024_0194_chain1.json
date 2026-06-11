@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both mention educators (and journalists) lacking domain expertise to independently verify climate claims, with generated adding conflation of fluency and accuracy, which is a more specific instance of the same sensitivity condition.",
+    "reference": "Educators lack domain expertise to independently verify climate science claims in LLM-evaluated materials.",
+    "generated": "Educators and journalists lack domain expertise to independently verify climate claims, trusting evaluation scores that conflate fluency with factual accuracy."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe spread of erroneous climate explanations/misconceptions through educational channels (generated adds media), misinforming students/public, which covers the affected party and damage type.",
+    "reference": "Systematic propagation of climate misconceptions through educational curricula across school systems.",
+    "generated": "Erroneous climate explanations spread through educational and media channels, misinforming students and the public, undermining climate literacy and action."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe LLM evaluators confusing quality dimensions that, through educators and journalists, leads to propagation of erroneous climate materials; generated specifies reliance on fluency-accuracy conflation due to domain gaps, which is a detailed causal step but aligns with the same logic.",
+    "reference": "Confusion of quality dimensions by LLM evaluators compromises multi-aspect evaluation reliability, which in the scenario of climate science explanations exposes educators and journalists to erroneous materials, leading to systematic propagation of climate misconceptions.",
+    "generated": "LLM evaluators confusing quality dimensions, through educators and journalists using these evaluations, triggers reliance on fluency-accuracy conflation due to domain gaps, spreading erroneous climate explanations that misinform students, the public, and undermine climate literacy and action."
+  }
+}

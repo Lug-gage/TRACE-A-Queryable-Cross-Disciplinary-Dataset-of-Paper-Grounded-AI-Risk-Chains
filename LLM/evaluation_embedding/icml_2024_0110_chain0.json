@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5734,
+    "reference": "Researchers' overreliance on AI confidence due to automation complacency.",
+    "generated": "Researchers lack independent means to verify verbalized confidence, accepting miscalibrated probabilities at face value."
+  },
+  "impact": {
+    "similarity": 0.5033,
+    "reference": "Propagation of false scientific claims undermines research integrity.",
+    "generated": "Suboptimal scientific decisions, flawed conclusions, and wasted resources due to misplaced trust in miscalibrated confidence."
+  },
+  "dose_response": {
+    "similarity": 0.8748,
+    "reference": "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which when used by researchers in scientific QA tools causes overreliance, leading to propagation of false claims and erosion of research integrity.",
+    "generated": "Supervised fine-tuning for linguistic calibration yields verbalized probabilities poorly calibrated outside training, which, through researchers using LLM-powered QA tools, triggers unverified acceptance of miscalibrated confidence, leading to suboptimal decisions, flawed conclusions, and wasted resources."
+  }
+}

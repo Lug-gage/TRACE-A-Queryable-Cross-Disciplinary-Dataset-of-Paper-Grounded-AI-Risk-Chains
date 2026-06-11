@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0741",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference cites lack of rigorous out-of-distribution testing masking failures; generated discusses trust in held-out validation and ignoring overfitting, a related but different sensitivity condition.",
+    "reference": "Physicists' willingness to trust emulator outputs without rigorous out-of-distribution testing masks prediction failures.",
+    "generated": "Physicists' trust in held-out validation as sufficient evidence of reliability, ignoring overfitting and confirmation bias."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Wasted experimental resources matches wasted investment, but 'invalid scientific conclusions' does not semantically capture 'slowing scientific progress'—a distinct downstream damage type is missing.",
+    "reference": "Wasted investment in experiments based on flawed emulator insights, slowing scientific progress.",
+    "generated": "Experiment designs based on biased emulator predictions produce invalid scientific conclusions and waste experimental resources."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc is similar up to over-reliance, but the reference's key link—lack of out-of-distribution testing—is replaced by trust in held-out validation and ignoring overfitting, altering the mechanism.",
+    "reference": "Expressive ML models' amplification of confirmation bias enables over-reliance on emulator predictions without out-of-distribution testing, leading to wasted investment and slowed scientific progress.",
+    "generated": "Expressive ML models amplify biases via unvalidated flexibility and selective held-out evaluation; when physicists rely on emulator predictions for design, their trust in held-out validation—ignoring overfitting and confirmation bias—leads to biased experiments, invalid conclusions, and resource waste."
+  }
+}

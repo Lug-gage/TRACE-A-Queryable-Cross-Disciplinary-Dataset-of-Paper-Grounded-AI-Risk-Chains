@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0850",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6042,
+    "reference": "Lottery outcomes systematically diverge from expected fairness, concentrating losses in specific demographic groups.",
+    "generated": "Applicants and communities accept lottery-based allocative fairness without the ability to detect or challenge systematic individual-level disparities."
+  },
+  "impact": {
+    "similarity": 0.5722,
+    "reference": "Community mistrust in admissions processes, legal challenges, and deepened educational inequity.",
+    "generated": "Unequal realized access erodes trust in algorithmic allocation and widens opportunity gaps across communities."
+  },
+  "dose_response": {
+    "similarity": 0.7063,
+    "reference": "Lottery-based allocation with fairness-in-expectation yields unequal realized access, concentrating losses in demographic groups, causing community mistrust, legal challenges, and deepened educational inequity.",
+    "generated": "Fairness-in-expectation mechanisms producing individual-level unfairness, through lottery-based scarce opportunity allocation, trigger acceptance of unfair outcomes without detection or challenge, leading to unequal realized access eroding trust and widening opportunity gaps."
+  }
+}

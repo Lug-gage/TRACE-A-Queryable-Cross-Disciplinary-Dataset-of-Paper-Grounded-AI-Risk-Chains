@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1114",
+  "chain_index": 1,
+  "title": "Adversaries Can Misuse Combinations of Safe Models",
+  "abstract": "Developers try to evaluate whether an AI system can accomplish malicious tasks before releasing it; for example, they might test whether a model enables cyberoffense, user manipulation, or bioterrorism. In this work, we show that individually testing models for such misuse is inadequate; adversaries can misuse combinations of models even when each individual model is safe. The adversary accomplishes this by first decomposing tasks into subtasks, then solving each subtask with the best-suited model. For example, an adversary might solve challenging-but-benign subtasks with an aligned frontier model, and easy-but-malicious subtasks with a weaker misaligned model. We study two decomposition methods: manual decomposition where a human identifies a natural decomposition of a task, and automated decomposition where a weak model generates benign tasks for a frontier model to solve, then uses the solutions in-context to solve the original task. Using these decompositions, we empirically show that adversaries can create vulnerable code, explicit images, python scripts for hacking, and manipulative tweets at much higher rates with combinations of models than either individual model. Our work suggests that even perfectly-aligned frontier systems enable misuse without ever producing malicious outputs, and that red-teaming efforts should extend beyond single models in isolation.",
+  "impact": "Our work releases a new method to misuse models, following similar releases (Wei et al., 2023; Zou et al., 2023; Liu et al., 2024; Anil et al., 2024). To mitigate the risks posed by this work, we shared our findings with frontier labs and only introduce comparatively weak methods for combining models. However our method nevertheless could be used by adversaries, and requires new types of defenses to mitigate. We believe the benefits of releasing our work outweigh the risks. Withholding our findings to improve defenses would likely be ineffective; the security literature has repeatedly found that “security through obscurity” does not stop adversaries from identifying failures (Saltzer & Schroeder, 1975; Wang et al., 2016; Guo et al., 2018; Solaiman et al., 2019; Tong et al., 2023). Our work alerts model developers and academics of this threat model at a time when frontier models are less capable and misuse risks are lower; we hope this will help preclude risky deployments in the future.",
+  "query_input": {
+    "scenario": "Automated red-teaming exploits transferability for safety evaluation",
+    "issue": "Red-teaming tools may inadvertently spread effective jailbreak prompts across model versions.",
+    "hazard": [
+      "Adversarial examples with enhanced cross-model transferability enable black-box attacks via model combination and automated task decomposition."
+    ],
+    "exposure": [
+      "Safety evaluation teams and model developers"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Safety teams test models in isolation, lacking cross-model evaluation methods, rendering them blind to combined misuse via task decomposition.",
+    "impact": "Adversaries generate vulnerable code, explicit images, hacking scripts, and manipulative tweets at scale, evading single-model safeguards.",
+    "dose_response": "Adversarial examples with enhanced cross-model transferability, through safety evaluation teams and model developers, trigger isolated testing that blinds them to task-decomposition misuse, leading to scaled generation of vulnerable code, hacking scripts, explicit images, and manipulative tweets evading safeguards."
+  },
+  "reference": {
+    "dose_response": [
+      "Transferability-enhanced red-teaming tools produce effective jailbreaks that, when leaked, arm malicious actors, accelerating attacks and outpacing defenses."
+    ],
+    "vulnerability": [
+      "Red-teaming datasets are shared without sanitization, propagating exploits.",
+      "Model developers rely on automated tools that store adversarial prompts insecurely."
+    ],
+    "impact": [
+      "Jailbreak techniques diffuse rapidly among malicious actors, escalating attack frequency.",
+      "Safety evaluation loses effectiveness as black-box attacks outpace defenses."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0947",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "under-representation/invisibility of minority groups in label collection is described as sensitivity condition",
+    "reference": "Under-sampling of minority subgroups in exploration data yields biased training sets.",
+    "generated": "Minority groups lack historical positive outcome records, making them invisible to exploration-based label collection that relies on past decisions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "minority individuals face false negative rates and credit denial, a discriminatory outcome, matching affected party and damage type",
+    "reference": "Model bias against minority subgroups in classification decisions, causing discriminatory outcomes.",
+    "generated": "Minority individuals face systematically higher false negative rates in classification, leading to widespread denial of credit and deepening socioeconomic inequality."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc from selective label collection to false negatives is present but misses the intermediate model bias/training link",
+    "reference": "Uneven data coverage from selective label collection causes minority under-sampling, which in bandit feedback classifier training exposes minority individuals to biased decisions, leading to model bias and discriminatory outcomes.",
+    "generated": "Exploration-based selective label collection for fair classification, through minority individuals subject to automated classification decisions, triggers the invisibility of groups lacking historical positive outcome records, leading to systematically higher false negative rates, credit denial, and deepening socioeconomic inequality."
+  }
+}

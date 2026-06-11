@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 0,
+  "title": "Dissecting Submission Limit in Desk-Rejections A Mathematical Analysis of Fairness in AI Conference Policies",
+  "abstract": "As AI research surges in both impact and volume, conferences have imposed submission limits to maintain paper quality and alleviate organizational pressure. In this work, we examine the fairness of desk-rejection systems under submission limits and reveal that existing practices can result in substantial inequities. Specifically, we formally define the paper submission limit problem and identify a critical dilemma: when the number of authors exceeds three, it becomes impossible to reject papers solely based on excessive submissions without negatively impacting innocent authors. Thus, this issue may unfairly affect early-career researchers, as their submissions may be penalized due to co-authors with significantly higher submission counts, while senior researchers with numerous papers face minimal consequences. To address this, we propose an optimization-based fairness-aware desk-rejection mechanism and formally define two fairness metrics: worst-case fairness and average fairness. We prove that optimizing worst-case fairness is NPhard, whereas average fairness can be efficiently optimized via linear programming. Through case studies, we demonstrate that our proposed system ensures greater equity than existing methods, including those used in CVPR 2025, offering a more socially just approach to managing excessive submissions in AI conferences.",
+  "impact": "This paper seeks to advance fairness in desk-rejection systems employed by top AI conferences. By formally defining the paper submission limit problem, we demonstrate that an ideal system that rejects papers solely based on excessive submissions without negatively impacting innocent authors is mathematically impossible when multiple authors are involved. To address this, we propose a framework that optimizes desk-rejection fairness based on two different metrics, ensuring that early-career researchers with fewer submissions are less likely to face disproportionate setbacks due to co-authors’ submission behavior. While introducing fairness may slightly impact the acceptance rates of senior researchers with a large number of submissions, our approach does not aim to diminish anyone’s research output. Instead, it seeks to balance opportunity across career stages, thereby advancing social justice and contributing to a fairer and more inclusive ML research ecosystem.",
+  "query_input": {
+    "scenario": "CVPR 2025 desk-rejection algorithm using linear programming fairness",
+    "issue": "Algorithm's average fairness objective undermines worst-case group fairness.",
+    "hazard": [
+      "Optimization-based desk-rejection mechanisms introduce new fairness harms by trading off conflicting definitions under model uncertainty."
+    ],
+    "exposure": [
+      "Submitters from small research communities disproportionately desk-rejected."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Submitters from small communities often co-author with high-volume labs, making their papers indistinguishable from excessive submissions and defenseless against average-fairness trade-offs.",
+    "impact": "Disproportionate desk-rejection denies them publication venues, reinforcing underrepresentation and stalling career progress in AI research.",
+    "dose_response": "Optimization-based desk-rejection trade-offs under model uncertainty, through disproportionate desk-rejection of small-community submitters, trigger their papers' indistinguishability from excessive submissions and defenselessness against average-fairness trade-offs, leading to denied publication venues that reinforce underrepresentation and stall career progress."
+  },
+  "reference": {
+    "dose_response": [
+      "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable average fairness optimization to disregard worst-case group fairness, which in the CVPR 2025 algorithm scenario exposes small research communities to disproportionate desk-rejection, leading to disillusionment and reduced diversity."
+    ],
+    "vulnerability": [
+      "Average fairness optimization disregards the tail risk of disproportionately high rejection for under-represented groups.",
+      "Lack of disaggregated evaluation means worst-case harms remain invisible, perpetuating exclusion."
+    ],
+    "impact": [
+      "Authors from small communities become disillusioned, reducing future submissions and diversity of ideas.",
+      "Conference reputation suffers as perceived unfairness spreads, decreasing trust in peer review."
+    ]
+  }
+}

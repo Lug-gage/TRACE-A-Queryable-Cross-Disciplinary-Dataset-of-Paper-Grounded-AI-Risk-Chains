@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0221",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "generated describes unrestricted logit outputs exposing symmetries, missing the reference's condition of monetization incentivizing broad API access without anomaly detection",
+    "reference": "Proprietary model monetization incentivizes broad API access without query-level anomaly detection.",
+    "generated": "Public API queries return unrestricted logit outputs that expose embedding projection matrix symmetries, enabling parameter inference."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "model counterfeiting covered, but erosion of provider revenue and market trust missing",
+    "reference": "Stolen model weights enable counterfeit LLM services, eroding provider revenue and market trust.",
+    "generated": "Proprietary model architecture and weights are extracted, enabling model counterfeiting and intellectual property theft."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "covers extraction to counterfeiting chain but misses amplified adversarial attacks consequence",
+    "reference": "Black-box extraction via embedding projection queries enables parameter theft, which in API access to production LLMs exposes proprietary models, leading to counterfeit services and amplified adversarial attacks.",
+    "generated": "Black-box embedding projection layer queries, through public API access to proprietary LLMs, trigger unrestricted logit outputs that expose matrix symmetries, leading to extraction of architecture and weights for model counterfeiting and intellectual property theft."
+  }
+}

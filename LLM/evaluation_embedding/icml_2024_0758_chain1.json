@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0758",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4831,
+    "reference": "Low-rank training constrains the model's ability to capture complex patterns, making it more susceptible to adversarial manipulation or spurious correlations.",
+    "generated": "Practitioners lack means to identify which compressively discarded patterns cause rare-input failures, leaving them unable to anticipate model brittleness."
+  },
+  "impact": {
+    "similarity": 0.6045,
+    "reference": "Deployed models may produce subtly incorrect outputs that erode decision quality in professional domains (law, medicine) without obvious failure flags.",
+    "generated": "Silent prediction errors on rare inputs propagate flawed decisions through downstream applications, harming end users and eroding trust in AI systems."
+  },
+  "dose_response": {
+    "similarity": 0.6995,
+    "reference": "Low-rank training restricts representational capacity, causing poor generalization on complex tasks, which when deployed by practitioners in downstream applications exposes users to undetected errors, leading to biased decisions.",
+    "generated": "Importance-ordered low-rank decomposition over-compresses parameters, discarding task-critical patterns for rare inputs, and when AI practitioners deploy these models without means to identify those discarded patterns, it triggers silent prediction errors that propagate flawed decisions, harming end users and eroding trust."
+  }
+}

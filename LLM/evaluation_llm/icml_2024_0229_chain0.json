@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0229",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe sensitivity due to opaque, unverifiable distributional assumptions, making job seekers reliant on flawed adjustments that hide discriminatory outcomes.",
+    "reference": "Opaque bias correction methods prevent detection of distributional assumption failures, hiding discriminatory outcomes.",
+    "generated": "Job seekers cannot verify or challenge the distributional assumptions correcting biased utility scores, making them reliant on flawed adjustments."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both state affected party (marginalized groups) and damage type (fewer job recommendations, reduced employment opportunities, deepening inequality).",
+    "reference": "Disproportionate under-recommendation of jobs to marginalized groups, deepening labor market inequalities.",
+    "generated": "Certain groups systemically receive fewer preferred job recommendations, reducing their employment opportunities and entrenching labor market inequality."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The same causal arc is present: bias correction via distributional assumptions → exposure to opaque/unverifiable system → under-recommendation to certain groups → entrenching inequality.",
+    "reference": "Distributional bias correction misallocates job ads when real bias deviates from assumptions, exposing job seekers to opaque systems that under-recommend jobs to marginalized groups, deepening labor market inequalities.",
+    "generated": "Centralized fair selection correcting biased utilities through distributional assumptions, via job seekers' interactions with automated systems, triggers reliance on unverifiable adjustments, leading certain groups to receive fewer preferred recommendations, reducing employment opportunities and entrenching labor market inequality."
+  }
+}

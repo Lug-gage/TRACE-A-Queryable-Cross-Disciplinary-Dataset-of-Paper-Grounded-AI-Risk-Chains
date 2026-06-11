@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The reference's brittleness against obfuscation is captured by the generated explanation that reliance on visual similarity and direct access leads to blindness against disguised replication.",
+    "reference": "Auditing tools' detection algorithms are brittle against deliberate obfuscation techniques.",
+    "generated": "Auditing tools rely on visual similarity and direct dataset access, making them blind to disguised non-visual replication."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Undetected infringement subverting protections and enabling uncompensated use semantically covers false negatives weakening enforcement; both the affected party (copyright system) and damage type (weakening) are present.",
+    "reference": "False negatives allow infringing content to spread, weakening copyright enforcement.",
+    "generated": "Undetected infringement subverts copyright protections, enabling uncompensated use and eroding trust in AI auditing."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from subtle replication to missed detection to enforcement harm is present, but the reference's final link that weakened enforcement discourages creators from sharing work is missing, while the generated adds trust erosion instead.",
+    "reference": "When auditing tools analyze diffusion model outputs, the models' subtle replication reduces detectability, causing brittle detection algorithms to miss disguised copies, leading to false negatives and weakened enforcement, discouraging creators from sharing work.",
+    "generated": "Diffusion models that subtly replicate copyrighted content, when analyzed by auditing tools reliant on visual similarity, trigger blindness to disguised non-visual replication, leading to undetected infringement that subverts copyright protections, enables uncompensated use, and erodes trust in AI auditing."
+  }
+}

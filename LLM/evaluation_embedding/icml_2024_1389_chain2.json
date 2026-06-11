@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6223,
+    "reference": "Operators in safety-critical domains over-trust visual explanations when making override decisions.",
+    "generated": "Operators' reliance on feature attribution maps that obscure true model boundaries prevents detection of manipulated explanations."
+  },
+  "impact": {
+    "similarity": 0.5269,
+    "reference": "Increased collision risk when operators ignore true detection failures masked by plausible explanations.",
+    "generated": "Undetected manipulation causes model editing failures, degrading 3D object detection and compromising autonomous system safety."
+  },
+  "dose_response": {
+    "similarity": 0.731,
+    "reference": "Misleading feature factorization activation maps enable obscured decision boundaries, which in LiDAR-based 3D detectors expose operators to undetected failures, leading to increased collision risk.",
+    "generated": "Manipulable feature attribution maps, through operators interpreting LiDAR 3D detectors, trigger reliance on obscured model boundaries that prevents detection of manipulated explanations, leading to undetected model editing failures degrading 3D detection and compromising autonomous system safety."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2732",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7368,
+    "reference": "Over-reliance on automated detectors without human verification creates a single point of failure for content authenticity.",
+    "generated": "Over-reliance on automated detectors that cannot discriminate high-quality AI-generated images from real photographs."
+  },
+  "impact": {
+    "similarity": 0.6457,
+    "reference": "Erosion of trust in visual evidence on social media, amplifying misinformation and polarization.",
+    "generated": "Unchecked synthetic media spreads disinformation, deceives users, and erodes trust in digital content on social platforms."
+  },
+  "dose_response": {
+    "similarity": 0.7748,
+    "reference": "Improved text-to-image generation quality enables images indistinguishable by automated detectors, which in social media platforms using AIGI detectors to flag synthetic content exposes users and moderators, leading to erosion of trust in visual evidence.",
+    "generated": "AI-generated images indistinguishable from real images by automated detectors, through social media users and moderators relying on those detectors, trigger over-reliance on detection tools that cannot discriminate high-quality fakes, leading to unchecked disinformation and eroded trust on social platforms."
+  }
+}

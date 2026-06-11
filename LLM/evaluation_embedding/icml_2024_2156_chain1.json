@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2156",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.2655,
+    "reference": "Public interfaces expose brittle safety layers to optimized jailbreak prompts, enabling reliable bypasses.",
+    "generated": "Safety guardrails are isolated in sparse, low-rank regions disentangled from utility, allowing their removal without degrading general performance."
+  },
+  "impact": {
+    "similarity": 0.6503,
+    "reference": "Users receive disallowed content, fueling misinformation, hate speech, or illegal advice, which can lead to real-world harm and legal liability.",
+    "generated": "Public users obtain disallowed harmful content, enabling misuse at scale and eroding trust in AI safety mechanisms."
+  },
+  "dose_response": {
+    "similarity": 0.7142,
+    "reference": "Brittle safety alignment enables jailbreaking, which when end users interact with public chatbots exposes brittle safety layers, leading to misinformation and legal liability.",
+    "generated": "Brittle safety alignment to low-rank weight modifications, through end-user interactions with chatbots, triggers removal of sparse low-rank safety guardrails without utility loss, leading to harmful content, scaled misuse, and eroded trust."
+  }
+}

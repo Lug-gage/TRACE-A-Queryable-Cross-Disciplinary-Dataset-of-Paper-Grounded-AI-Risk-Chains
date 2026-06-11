@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0213",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7225,
+    "reference": "Structural biologists lack accessible tools to verify generative model outputs against physical first principles, creating a verification gap.",
+    "generated": "Structural biologists lack validation methods to detect subtle distributional biases, enabling acceptance of generated structures with hidden steric clashes."
+  },
+  "impact": {
+    "similarity": 0.663,
+    "reference": "Publication of erroneous protein structures that mislead downstream research and drug targeting efforts.",
+    "generated": "Faulty protein designs fail in costly experimental validation, wasting resources and delaying drug discovery pipelines."
+  },
+  "dose_response": {
+    "similarity": 0.7718,
+    "reference": "Hard-to-detect distributional errors in flow-generated structures enable steric clashes or folding flaws, which in drug discovery scenarios evade verification, leading to publication of erroneous structures that mislead downstream research.",
+    "generated": "Discrete flow models with undetectable distributional biases, through structural biologists proposing candidate structures, triggers lack of validation methods to detect hidden steric clashes, leading to faulty protein designs failing costly validation, wasting resources and delaying drug discovery."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2610",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe a sensitivity rooted in trust that causes over-emphasis on rare outlier conformations; the generated reframes it as blind trust in validity guarantees without safeguards, which captures the same condition.",
+    "reference": "Biologists trust uncertainty-driven sampling to capture relevant conformations, but it over-emphasizes rare outliers that are likely noise.",
+    "generated": "Blind trust in active inference's validity guarantees without safeguards against its propensity to over-sample outlier conformations in proteomics data."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The affected party (biological conclusions/proteomics research) is similar, but the reference's damage type—misdirected drug development, wasted resources, delayed therapies—is absent; the generated only mentions compromised validity.",
+    "reference": "Biological models misdirect drug development, causing wasted research funds and delaying safe therapies.",
+    "generated": "Systematically distorted biological conclusions about protein conformations, compromising the validity of proteomics research findings."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc includes uncertainty-driven sampling leading to over-sampling outliers and distorted biological conclusions, but it stops there and omits the downstream causal steps to misdirected drug development, wasted funds, and delayed therapies that are present in the reference.",
+    "reference": "Uncertainty-driven adaptive sampling, trusted by biologists, over-emphasizes rare noisy conformations in proteomics, misleading biological models that misdirect drug development, wasting funds and delaying safe therapies.",
+    "generated": "Uncertainty-driven adaptive sampling, through biologists and bioinformaticians performing active learning for protein analysis, triggers blind trust in active inference's validity guarantees without safeguards against over-sampling outlier conformations, leading to systematically distorted biological conclusions about protein conformations and compromised proteomics research validity."
+  }
+}

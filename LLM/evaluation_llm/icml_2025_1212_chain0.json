@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1212",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe over-reliance on AI perception with no human override, semantically overlapping the condition of reduced engagement and readiness to intervene",
+    "reference": "Driver overreliance on AI perception reduces engagement and readiness to intervene when OOD faults occur.",
+    "generated": "Over-reliance on AI perception with no human override or independent verification for out-of-distribution obstacle detection."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both state collisions causing injury or death to vehicle occupants and other/surrounding road users, same affected parties and damage type",
+    "reference": "Collisions causing injury or death to vehicle occupants and other road users.",
+    "generated": "Collisions causing injury or death to vehicle occupants and surrounding road users due to unrecognized obstacles triggering unsafe maneuvers."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "generated arc omits the explicit link of OOD scores not reflecting true likelihoods enabling undetected novel obstacles; it jumps directly to over-reliance, missing that intermediate causal step",
+    "reference": "OOD detection scores not reflecting true likelihoods enable undetected novel obstacles, which in autonomous driving perception exposes vehicle occupants and road users, leading to collisions causing injury or death from driver overreliance.",
+    "generated": "OOD detection scores not reflecting true OOD likelihoods, through vehicle occupants and road users relying on AI perception, triggers over-reliance on AI perception with no human override, leading to collisions causing injury or death from unrecognized obstacles triggering unsafe maneuvers."
+  }
+}

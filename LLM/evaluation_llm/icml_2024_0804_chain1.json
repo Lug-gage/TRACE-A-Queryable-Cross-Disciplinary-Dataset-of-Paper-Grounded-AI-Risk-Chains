@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe end-users being unable to detect subtle errors, leading to blind acceptance/over-trust of AI visual outputs, especially in tasks that demand domain expertise.",
+    "reference": "Users trusting AI visual answers for tasks needing fine-grained discrimination (e.g., medical, security).",
+    "generated": "End-users lack image ground truth and domain expertise to detect subtle visual errors in AI assistant outputs, enabling blind acceptance."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Users acting on incorrect visual interpretations and causing safety incidents corresponds to misidentifying objects leading to incorrect decisions in critical applications; the affected party (users) and damage type (incorrect decisions/critical incidents) are both present.",
+    "reference": "Misidentifying objects leads to incorrect decisions in critical applications.",
+    "generated": "Users act on incorrect visual interpretations, causing misjudgments in daily tasks, safety incidents, and erosion of trust in AI assistance."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc mentions in-context denoising leading to blind acceptance and then misjudgments, but omits the key mechanism that denoising propagates visual errors and blurs fine-grained distinctions, which is central to the reference's causal chain.",
+    "reference": "In-context denoising may propagate visual errors, blurring fine-grained distinctions in visual QA, which exposes end-users to CLIP-blind errors; combined with over-trust of AI answers, this leads to misidentifications and incorrect decisions in critical applications.",
+    "generated": "In-context denoising via self-training transition matrices, through end-users interpreting AI assistant images, triggers blind acceptance from lacking ground truth, leading to misjudgments, safety incidents, and eroded trust."
+  }
+}

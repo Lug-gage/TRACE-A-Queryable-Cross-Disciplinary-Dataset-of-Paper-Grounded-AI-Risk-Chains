@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0271",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe legal professionals relying on AI without independent moral or verification oversight, making the system sensitive to failures.",
+    "reference": "Legal professionals over-rely on automated ethical flags, bypassing independent moral reasoning.",
+    "generated": "Legal professionals’ lack of independent verification protocols for AI ethical guardrails under novel precedents."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Unjust decisions partially covers biased outcomes, but erosion of due process is replaced by eroded trust, and no specific affected parties are identified.",
+    "reference": "Biased case outcomes and erosion of due process for affected parties.",
+    "generated": "Flawed case law interpretations from misaligned AI cause unjust legal decisions and erode trust in AI-assisted jurisprudence."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe brittle ethical guardrails failing under novel precedents due to professional over-reliance, causing harmful legal outcomes.",
+    "reference": "The pipeline’s brittle ethical guardrails fail under novel precedents, causing legal professionals to over-rely on automated flags, leading to biased case outcomes and erosion of due process.",
+    "generated": "Self-supervised emotional conditioning creates superficially aligned, context-brittle ethical guardrails, and through legal professionals' reliance on AI for case law analysis, triggers lack of verification protocols under novel precedents, leading to flawed interpretations, unjust decisions, and eroded trust in AI-assisted jurisprudence."
+  }
+}

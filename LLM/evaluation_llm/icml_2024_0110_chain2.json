@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both express the public's inability to verify confident claims in real time, with the generated specifying detection of miscalibrated confidence as the missing ability.",
+    "reference": "General public's inability to fact-check confident-sounding claims in real time.",
+    "generated": "Public readers lack the expertise to detect when verbalized confidence is miscalibrated outside the training distribution."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify the affected party (biographical subjects) and damage type (harm to reputations), even though the generated adds distortion of public knowledge.",
+    "reference": "Widespread dissemination of false biographical information harms reputations.",
+    "generated": "False confident claims are believed, spreading misinformation that distorts public knowledge and harms biographical subjects' reputations."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The reference describes overreliance on confident falsehoods leading to misinformation and trust erosion; the generated describes inability to detect miscalibration leading to belief in false claims without overreliance or trust erosion, a different causal mechanism.",
+    "reference": "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which in LLM biography generation causes public overreliance on confident falsehoods, propagating misinformation and eroding trust.",
+    "generated": "Supervised fine-tuning for linguistic calibration yields verbalized probability poorly calibrated outside training, so general public reading biographies triggers inability to detect miscalibration, leading to belief in false confident claims that distort knowledge and harm reputations."
+  }
+}

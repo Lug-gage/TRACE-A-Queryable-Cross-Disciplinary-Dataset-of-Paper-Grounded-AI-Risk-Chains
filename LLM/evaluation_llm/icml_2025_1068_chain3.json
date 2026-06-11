@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1068",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe IT admins overtrusting benchmark scores and deploying agents without testing for edge cases",
+    "reference": "IT admins overtrust high leaderboard scores, deploying agents without adequate testing for edge cases or adaptation failures.",
+    "generated": "IT administrators rely on benchmark success rates as decision proxies, lacking independent validation of edge-case and adaptation gaps."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (IT systems) is present, but only service disruptions match the reference's damage types; misconfigurations, security vulnerabilities, and eroded reliability are missing",
+    "reference": "System misconfigurations, service outages, security vulnerabilities from automated missteps, and eroded system reliability.",
+    "generated": "Unforeseen automation failures trigger service disruptions, compliance violations, and financial losses across IT operations."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: benchmark misalignment inflates perceived capability, leading to untested deployment and then system failures",
+    "reference": "Misaligned benchmarks inflate automation scores, leading IT admins to overtrust agents and deploy without testing, causing system misconfigurations and outages.",
+    "generated": "Misalignment between benchmark tasks and real operations overestimates agent capability, through IT administrators deploying agents for routine maintenance, triggers reliance on success rates without edge-case validation, leading to unforeseen failures causing service disruptions, compliance violations, and financial losses."
+  }
+}

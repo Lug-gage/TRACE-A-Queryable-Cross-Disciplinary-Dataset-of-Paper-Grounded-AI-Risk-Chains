@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1008",
+  "chain_index": 1,
+  "title": "ELF Encoding Speaker-Specific Latent Speech Feature for Speech Synthesis",
+  "abstract": "In this work, we propose a novel method for modeling numerous speakers, which enables expressing the overall characteristics of speakers in detail like a trained multi-speaker model without additional training on the target speaker’s dataset. Although various works with similar purposes have been actively studied, their performance has not yet reached that of trained multi-speaker models due to their fundamental limitations. To overcome previous limitations, we propose effective methods for feature learning and representing target speakers’ speech characteristics by discretizing the features and conditioning them to a speech synthesis model. Our method obtained a significantly higher similarity mean opinion score (SMOS) in subjective similarity evaluation than seen speakers of a high-performance multispeaker model, even with unseen speakers. The proposed method also outperforms a zero-shot method by significant margins. Furthermore, our method shows remarkable performance in generating new artificial speakers. In addition, we demonstrate that the encoded latent features are sufficiently informative to reconstruct an original speaker’s speech completely. It implies that our method can be used as a general methodology to encode and reconstruct speakers’ characteristics in various tasks.",
+  "impact": "Our proposed method is a solution that can model numerous speakers in the real world with high quality. It allows imitating someone else’s timbre and speech characteristics with only a small amount of speech data. Thus, it is important to acknowledge the potential for misuse of this technology. It could be exploited for fraudulent purposes, such as impersonating someone over the phone to perpetrate identity theft, financial fraud, or other activities that negatively impact our society. Consequently, members of society may suffer material and psychological harm. Recently, these problems have become more prominent with the advancements in generative model technology. To prevent the risk of misuse, research on technology to detect synthesized speech will be needed. Recently, unrecognizable watermarking technologies have been actively studied, and we will contribute to the research on detecting synthesized speech and the practical application of detection technology.",
+  "query_input": {
+    "scenario": "Speech editing in the wild",
+    "issue": "Seamless insertion of synthetic speech into real recordings, altering spoken content.",
+    "hazard": [
+      "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts."
+    ],
+    "exposure": [
+      "Speakers whose recorded statements are edited post-hoc using zero-shot models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Speakers cannot revoke or alter their vocal biometric, leaving them permanently susceptible to unauthorized cloning from publicly available voice samples.",
+    "impact": "Cloned speakers endure reputational harm and loss of agency, as their voice is used to fabricate any statement.",
+    "dose_response": "Discretized latent features enabling high-fidelity zero-shot voice cloning, through post-hoc editing of recorded statements, trigger the irrevocability of vocal biometrics, leading to reputational harm and loss of agency."
+  },
+  "reference": {
+    "dose_response": [
+      "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts, which in speech editing in the wild exposes speakers whose recorded statements are edited post-hoc, leading to fabricated audio evidence used to manipulate judicial outcomes and public opinion."
+    ],
+    "vulnerability": [
+      "Absence of tamper-evident audio authentication in media distribution chains.",
+      "High public reliance on audio recordings as definitive proof in disputes."
+    ],
+    "impact": [
+      "Fabricated audio evidence used to manipulate judicial outcomes and public opinion.",
+      "Delegitimization of authentic audio journalism, fueling epistemic mistrust."
+    ]
+  }
+}

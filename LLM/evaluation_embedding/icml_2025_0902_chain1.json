@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0902",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6028,
+    "reference": "Document VQA gradients capture co-occurrence patterns of text and layout, enabling full document content reconstruction.",
+    "generated": "Shared gradients retain high-fidelity document representations, making proprietary content extractable without specialized defenses."
+  },
+  "impact": {
+    "similarity": 0.6228,
+    "reference": "Revealed proprietary documents lead to intellectual property theft, breach of confidentiality contracts, and competitive disadvantage.",
+    "generated": "Proprietary document content is fully reconstructed, causing intellectual property theft and privacy violations."
+  },
+  "dose_response": {
+    "similarity": 0.9197,
+    "reference": "Gradient inversion attacks enable exact reconstruction of private training data from shared model gradients, which in federated learning for Document Visual Question Answering exposes organizations training DQA models on proprietary documents, leading to revealed proprietary documents causing intellectual property theft.",
+    "generated": "Gradient inversion attacks, through organizations training DQA models on proprietary documents via federated learning, trigger shared gradients retaining high-fidelity document representations, leading to fully reconstructed proprietary document content causing intellectual property theft and privacy violations."
+  }
+}

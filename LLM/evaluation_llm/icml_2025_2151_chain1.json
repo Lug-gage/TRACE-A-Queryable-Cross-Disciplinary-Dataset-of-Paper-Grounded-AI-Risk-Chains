@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2151",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both identify researchers’ failure to verify spurious correlations as the sensitivity condition; generated specifies reliance on heatmaps without checking for domain shifts, which is a more specific instance of lacking domain expertise.",
+    "reference": "Researchers lack domain expertise to distinguish spurious from genuine biomarker correlations.",
+    "generated": "Researchers assume attention heatmaps reveal true biological signals across organs without verifying for domain-shift-induced spurious correlations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (research) is present, but the damage type is undermining research integrity, not the reference’s misdirected drug development and wasted funding.",
+    "reference": "False biomarker discoveries misdirect drug development and waste research funding.",
+    "generated": "Erroneous biomarker discoveries propagate through publications and clinical trials, undermining translational research integrity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain—cross-organ transfer → spurious correlation focus → uncritical interpretation → false biomarker discoveries → negative outcome—is semantically identical, even though the final impact wording differs.",
+    "reference": "Cross-organ transfer of MIL models enables attention-based spurious correlation focus in pancancer datasets, which when researchers interpret without domain expertise leads to false biomarker discoveries and misdirected drug development.",
+    "generated": "Cross-organ transfer of MIL models with unresolved domain shifts, through attention heatmap interpretation for biomarker identification, triggers uncritical acceptance of spurious correlations as biological signals, leading to propagated erroneous biomarker discoveries undermining translational research integrity."
+  }
+}

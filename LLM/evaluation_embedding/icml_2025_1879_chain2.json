@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1879",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6102,
+    "reference": "Researchers accept SAE features as ground truth for model cognition without functional testing.",
+    "generated": "Researchers assume SAE visualizations faithfully represent functionally important features, lacking awareness that SAE encoders are provably insufficient for accurate sparse inference."
+  },
+  "impact": {
+    "similarity": 0.7143,
+    "reference": "Flawed understanding of LLM cognition leads to misguided future research.",
+    "generated": "Incorrect scientific conclusions about LLM cognitive processes propagate through the research community, undermining model interpretability efforts."
+  },
+  "dose_response": {
+    "similarity": 0.6487,
+    "reference": "SAEs recovering non-functional features enables researchers' acceptance of them as ground truth, which in scenario scientific research exposes flawed cognitive models, leading to misguided research and incorrect safety assumptions.",
+    "generated": "SAEs recovering interpretable features not functionally important, through researchers using visualizations to study LLM cognition, triggers assumption of faithful representation, leading to incorrect scientific conclusions propagating and undermining interpretability."
+  }
+}

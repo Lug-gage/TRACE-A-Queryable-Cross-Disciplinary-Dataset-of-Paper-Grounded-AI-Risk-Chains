@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 2,
+  "title": "Characterizing Truthfulness in Large Language Model Generations with Local Intrinsic Dimension",
+  "abstract": "We study how to characterize and predict the truthfulness of texts generated from large language models (LLMs), which serves as a crucial step in building trust between humans and LLMs. Although several approaches based on entropy or verbalized uncertainty have been proposed to calibrate model predictions, these methods are often intractable, sensitive to hyperparameters, and less reliable when applied in generative tasks with LLMs. In this paper, we suggest investigating internal activations and quantifying LLM’s truthfulness using the local intrinsic dimension (LID) of model activations. Through experiments on four question answering (QA) datasets, we demonstrate the effectiveness of our proposed method. Additionally, we study intrinsic dimensions in LLMs and their relations with model layers, autoregressive language modeling, and the training of LLMs, revealing that intrinsic dimensions can be a powerful approach to understanding LLMs. Code is available at: https://github.com/fanyin3639/ LID-HallucinationDetection.",
+  "impact": "This paper discusses an important step for the safe deployment of LLMs. LLMs have demonstrated their remarkable capabilities, but human trust on LLMs are still limited because of their tendency to generate hallucinations secretly. We propose to quantify and characterize model hallucinations through intrinsic dimensions of model intermediate representations. On the one hand, this method itself helps people abstain from trusting incorrect generations. On the other hand, it can serve as the backbone for some hallucination mitigation methods. This paper mainly discusses LLM generations in English. Results may be biased towards the English-speaking population. However, adapting this LID method to other languages does not require much additional effort. Moreover, the paper focuses primarily on question-answering scenarios. We encourage future work to implement this method on diverse tasks and languages, as well as cross-lingual settings.",
+  "query_input": {
+    "scenario": "LLM self-consistency evaluation",
+    "issue": "EigenScore-based hallucination detection in dense embedding spaces is vulnerable to semantic drift across diverse prompts.",
+    "hazard": [
+      "LLM internal representations encode truthfulness in a separable subspace, enabling classifiers to detect lies but creating a single point of failure if the subspace is manipulated or misaligned."
+    ],
+    "exposure": [
+      "Developers deploying LLM hallucination detection tools."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers' reliance on separable truthfulness subspaces for detection lacks safeguards against adversarial manipulation or semantic drift.",
+    "impact": "Undetected hallucinations erode trust in LLM outputs, causing misinformation propagation and flawed downstream decisions.",
+    "dose_response": "A separable truthfulness subspace in LLM representations creating a single point of failure, through developers deploying hallucination detection tools, triggers reliance without safeguards against manipulation or drift, leading to undetected hallucinations eroding trust, propagating misinformation, and flawed downstream decisions."
+  },
+  "reference": {
+    "dose_response": [],
+    "vulnerability": [
+      "Developers deploy EigenScore tools as sole hallucination guard, creating a single point of failure.",
+      "Diverse user prompts induce semantic drift that systematically degrades detection accuracy.",
+      "Overconfidence in automated metrics discourages investment in complementary detection methods."
+    ],
+    "impact": [
+      "Undetected hallucinations in production systems erode user trust and cause harm in downstream tasks.",
+      "False sense of safety leads to broader deployment of unreliable LLMs in sensitive applications.",
+      "Resource misallocation toward flawed detection methods instead of robust alternatives."
+    ]
+  }
+}

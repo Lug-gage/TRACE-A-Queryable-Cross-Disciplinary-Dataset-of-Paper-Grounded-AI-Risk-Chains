@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0685",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes inability to distinguish poisoned code due to hidden backdoors, missing reference's over-trust and skipping security reviews under deadline pressure.",
+    "reference": "Developers over-trust AI-generated code, often skipping security reviews under deadline pressure.",
+    "generated": "Developers cannot distinguish poisoned code from legitimate outputs, as backdoors are hidden and the assistant appears normal."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (software products) covered, but damage types missing data leaks and financial losses, only breaches are mentioned.",
+    "reference": "Security flaws in production code lead to breaches, data leaks, and financial losses.",
+    "generated": "Software products carry intentional security flaws, leading to widespread exploitation, breaches, and compromised systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Backdoor generalization arc present, but reference's causal link of over-trusting developers adopting flawed code is replaced by hidden backdoors causing undetectable poisoned code.",
+    "reference": "Data poisoning implants backdoors that generalize, which in a code assistant scenario leads over-trusting developers to adopt flawed code, causing security breaches and data leaks.",
+    "generated": "Data poisoning during preference learning implants backdoors generalizing across extrapolated trigger patterns; through AI coding tool use by developers, hidden backdoors cause undetectable poisoned code, leading to software products with intentional flaws, exploitation, breaches, and compromised systems."
+  }
+}

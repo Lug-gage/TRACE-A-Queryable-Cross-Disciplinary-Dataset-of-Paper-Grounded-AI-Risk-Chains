@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1212",
+  "chain_index": 0,
+  "title": "Improving Out-of-Distribution Detection with Markov Logic Networks",
+  "abstract": "Out-of-distribution (OOD) detection is essential for ensuring the reliability of deep learning models operating in open-world scenarios. Current OOD detectors mainly rely on statistical models to identify unusual patterns in the latent representations of a deep neural network. This work proposes to augment existing OOD detectors with probabilistic reasoning, utilizing Markov logic networks (MLNs). MLNs connect first-order logic with probabilistic reasoning to assign probabilities to inputs based on weighted logical constraints defined over humanunderstandable concepts, which offers improved explainability. Through extensive experiments on multiple datasets, we demonstrate that MLNs can significantly enhance the performance of a wide range of existing OOD detectors while maintaining computational efficiency. Furthermore, we introduce a simple algorithm for learning logical constraints for OOD detection from a dataset and showcase its effectiveness.",
+  "impact": "Advances in OOD detection, particularly in Neuro- Symbolic approaches, could potentially benefit the deployment of safe Machine Learning-driven systems in the real world. While the societal impact of this is broad, we do not consider it specific to our work. The proposed algorithm Alg. 2 for learning constraints for OOD detection introduces the possibility of embedding discriminatory biases against underrepresented minority classes into the broader system. For instance, in the Face Attribute Prediction use case analyzed in our experiments, the learned in-distribution constraints, such as ∀x ¬MALE(x) →NO BEARD(x) may be considered culturally or contextually insensitive, as they might fail to capture the diversity of the population outside of the training distribution. While this is a general problem in machine learning, compared to prior works, Markov logic networks offer several advantages in addressing these sensitive scenarios: • Since the rules governing the detector’s behavior are explicit and human-understandable (as opposed to encoded in the weights of a connectionist system), biases are more apparent and can be more easily identified and addressed. • Compared to methods like LogicOOD (Kirchheim et al., 2024), the employed probabilistic approach is able to learn weights flexibly, which allows the algorithm to account for violations of constraints given adequate representation of such cases in the training dataset. • Furthermore, manually adjusting individual constraint weights is possible and has an intuitive interpretation. Therefore, we believe that the transparency of the presented approach advances its potential to comply with ethical standards.",
+  "query_input": {
+    "scenario": "Autonomous driving perception with OOD detection",
+    "issue": "Novel obstacles undetected as in-distribution, leading to unsafe maneuvers",
+    "hazard": [
+      "OOD detection scores may not reflect true OOD likelihoods, causing undetected OOD inputs or false ID rejections"
+    ],
+    "exposure": [
+      "Vehicle occupants and road users relying on AI perception"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Over-reliance on AI perception with no human override or independent verification for out-of-distribution obstacle detection.",
+    "impact": "Collisions causing injury or death to vehicle occupants and surrounding road users due to unrecognized obstacles triggering unsafe maneuvers.",
+    "dose_response": "OOD detection scores not reflecting true OOD likelihoods, through vehicle occupants and road users relying on AI perception, triggers over-reliance on AI perception with no human override, leading to collisions causing injury or death from unrecognized obstacles triggering unsafe maneuvers."
+  },
+  "reference": {
+    "dose_response": [
+      "OOD detection scores not reflecting true likelihoods enable undetected novel obstacles, which in autonomous driving perception exposes vehicle occupants and road users, leading to collisions causing injury or death from driver overreliance."
+    ],
+    "vulnerability": [
+      "Driver overreliance on AI perception reduces engagement and readiness to intervene when OOD faults occur."
+    ],
+    "impact": [
+      "Collisions causing injury or death to vehicle occupants and other road users."
+    ]
+  }
+}

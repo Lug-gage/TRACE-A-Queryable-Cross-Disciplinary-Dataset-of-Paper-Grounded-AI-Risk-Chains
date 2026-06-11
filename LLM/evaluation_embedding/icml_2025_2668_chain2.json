@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7002,
+    "reference": "Content creators who assume AI outputs are unbiased spread off-target narratives.",
+    "generated": "Content creators lack visibility into internal perturbations and rely on AI outputs, leaving them unable to resist biased generation."
+  },
+  "impact": {
+    "similarity": 0.5206,
+    "reference": "Public backlash and erosion of brand authenticity.",
+    "generated": "Biased or off-target marketing content misleads audiences and damages brand reputation."
+  },
+  "dose_response": {
+    "similarity": 0.7811,
+    "reference": "Activation steering and representation engineering induce perturbations that, via token salience manipulation, produce biased outputs, causing content creators to spread off-target narratives and face public backlash.",
+    "generated": "Activation steering and representation engineering, through content creators using AI writing assistants, cause internal perturbations and safety filter bypass, leaving creators without visibility, reliant, unable to resist biased generation, leading to biased marketing content misleading audiences and damaging brand reputation."
+  }
+}

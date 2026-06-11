@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5806,
+    "reference": "User overreliance on opaque generated descriptions obscures retrieval errors, increasing acceptance of irrelevant images.",
+    "generated": "End-users rely on opaque retrieval rankings with no means to detect or override semantic redundancy, leaving them defenseless."
+  },
+  "impact": {
+    "similarity": 0.7917,
+    "reference": "Incorrect visual outputs lead to misinformed decisions in content creation and search, eroding platform trust.",
+    "generated": "Wrong image results mislead users, erode platform trust, and degrade content discovery efficiency."
+  },
+  "dose_response": {
+    "similarity": 0.824,
+    "reference": "Plug-and-play visual abstraction amplifies semantic redundancy, misleading retrieval rankings in text-to-image retrieval, exposing end-users to irrelevant images, leading to misinformed decisions and eroded platform trust.",
+    "generated": "Plug-and-play visual abstraction amplifies granularity mismatches and semantic redundancy through end-users of AI search platforms relying on opaque rankings with no detection or override means, triggering defenselessness, leading to wrong results that mislead users, erode trust, and degrade efficiency."
+  }
+}

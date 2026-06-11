@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0336",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference describes vulnerability as open benchmark datasets enabling mass dissemination of filter-evasion techniques; generated describes user misplaced trust in limited benchmarks leading to inability to recognize circumventing prompts – a different sensitivity condition.",
+    "reference": "Benchmarking datasets without strict access controls enable mass dissemination of filter-evasion techniques.",
+    "generated": "Users trust safety mechanisms validated only on limited benchmarks, leaving them unable to recognize prompts that circumvent content filters."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Both reference and generated mention public exposure to NSFW/objectionable images. However, the specific damage type of reinforcing harmful gender/racial stereotypes and normalizing discrimination is absent from the generated text.",
+    "reference": "Public exposure to NSFW imagery reinforcing harmful gender and racial stereotypes, normalizing discrimination.",
+    "generated": "NSFW and copyrighted images proliferate publicly via text-to-image services, bypassing all deployed safeguards."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference causal chain: automated discovery → bypass NSFW controls → via leaked prompts from benchmarks → exposes users to stereotyping NSFW imagery. Generated chain: automated discovery → through users triggers misplaced trust in benchmarks → leads to proliferation of NSFW/copyrighted images and bypassing safeguards. The mechanisms differ fundamentally.",
+    "reference": "Automated discovery of prompt-level vulnerabilities enables bypass of NSFW controls, which, via leaked adversarial prompts from safety benchmarks, exposes online users to pervasive NSFW imagery that reinforces harmful stereotypes and normalizes discrimination.",
+    "generated": "Automated discovery of prompt-level vulnerabilities in T2I safety mechanisms, through online users, triggers misplaced trust in limited safety benchmarks, leading to NSFW and copyrighted images proliferating and bypassing safeguards."
+  }
+}

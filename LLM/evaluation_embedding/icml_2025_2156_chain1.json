@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2156",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6898,
+    "reference": "Data scientists unconsciously trust AutoML's explanation selections without verification.",
+    "generated": "Data scientists’ and stakeholders’ cognitive bias toward confirmation and uncritical trust in automated outputs."
+  },
+  "impact": {
+    "similarity": 0.4836,
+    "reference": "Flawed business strategies based on misleading explanations cause resource misallocation and harm.",
+    "generated": "Widespread adoption of non-faithful explanations undermines decision quality, erodes trust, and compromises reproducibility in AI-assisted analysis."
+  },
+  "dose_response": {
+    "similarity": 0.8565,
+    "reference": "Multiplicity of XAI methods allows AutoML to optimize for superficial metrics, leading data scientists to trust cherry-picked explanations, resulting in flawed business strategies and resource misallocation.",
+    "generated": "Multiplicity of XAI methods enabling X-hacking, through trust in AutoML outputs, triggers confirmation bias and uncritical trust, leading to widespread adoption of non-faithful explanations that undermines decision quality, erodes trust, and compromises reproducibility."
+  }
+}

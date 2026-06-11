@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0773",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6403,
+    "reference": "Insufficient per-task validation and over-reliance on multi-task policy in unseen scenarios.",
+    "generated": "Shared parameter architecture lacks per-task gradient isolation, leaving integrated policies susceptible to conflicting updates and extrapolation errors."
+  },
+  "impact": {
+    "similarity": 0.6595,
+    "reference": "Widespread task failures and reduced trust in RL systems across domains.",
+    "generated": "Per-task decision reliability collapses, producing unsafe control actions and task failures across all deployed domains."
+  },
+  "dose_response": {
+    "similarity": 0.8143,
+    "reference": "Gradient conflicts from shared parameters enable extrapolation errors, which when deploying the unified policy across diverse offline RL tasks exposes RL practitioners, leading to widespread task failures and reduced trust.",
+    "generated": "Gradient conflicts from shared parameters in multi-task RL decision transformers amplify extrapolation errors under distribution shift, through control-suite integration, triggering absent per-task gradient isolation and conflicting updates, leading to reliability collapse, unsafe control actions, and task failures across domains."
+  }
+}

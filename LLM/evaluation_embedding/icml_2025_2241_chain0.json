@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2241",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6133,
+    "reference": "Users trust retrieval results without verifying visual relevance, amplifying the impact of text-biased hash codes.",
+    "generated": "The unsupervised hashing model lacks visual discriminative constraints, so it conflates textual similarity with visual similarity."
+  },
+  "impact": {
+    "similarity": 0.6241,
+    "reference": "Users receive misleading image results, leading to incorrect decisions in e-commerce, news verification, or research.",
+    "generated": "Users retrieve visually irrelevant images that match the text, wasting time and degrading search experience."
+  },
+  "dose_response": {
+    "similarity": 0.8351,
+    "reference": "External textual guidance biasing hash codes toward text semantics causes retrieval to reflect textual relevance, exposing users who trust results without verification to misleading images, leading to incorrect decisions in e-commerce, news, or research.",
+    "generated": "External textual guidance biases hash codes toward text semantics; through natural-language image queries, this triggers the model’s lack of visual constraints, conflating textual and visual similarity, leading to retrieval of visually irrelevant images wasting time and degrading search."
+  }
+}

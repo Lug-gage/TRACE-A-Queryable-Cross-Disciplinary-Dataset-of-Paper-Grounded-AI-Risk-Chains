@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2945",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference vulnerability is user overtrust causing disabled fallback authentication like PIN; generated vulnerability describes technical model robustness against UV perturbations, a different condition.",
+    "reference": "Users assume face unlock is spoof-proof, disabling fallback authentication like PINs.",
+    "generated": "Smartphone face recognition models lack robustness to physical ultraviolet adversarial perturbations, failing to distinguish attack patterns from genuine biometric traits."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Both reference and generated identify data compromise as an impact, but reference also specifies financial theft and identity fraud, which are absent from the generated impact.",
+    "reference": "Unauthorized data access, financial theft, and identity fraud.",
+    "generated": "Unauthorized user unlocks the smartphone, compromising personal data, private communications, and sensitive accounts."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc captures UV perturbations causing model failure and unauthorized unlocking leading to data compromise, but omits the reference's explicit link through user overtrust and lack of liveness detection arising from disabled fallback authentication.",
+    "reference": "Hat-mounted UV perturbations enable unauthorized unlocking, which in smartphone face unlock exposes user overtrust and lack of liveness detection, leading to data theft, financial fraud, and compromised personal safety.",
+    "generated": "Omni-angle invisible ultraviolet adversarial perturbations from hat-mounted emitters that evade black-box face recognition, through smartphone users relying on facial authentication, trigger models' failure to distinguish attack patterns from genuine traits, leading to unauthorized unlocking, compromising data, communications, and accounts."
+  }
+}

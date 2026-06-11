@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0070",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes the system's reliance on complete constraint capture as the vulnerability; generated instead identifies analysts' lack of expertise to detect flaws — related but distinct condition.",
+    "reference": "Logistics models rely on complete constraint capture; ambiguity omits real-world limitations.",
+    "generated": "Operations analysts lack the specialized expertise to detect logical flaws or missing constraints in LLM-generated optimization models."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both affected party (logistics/supply chain) and damage types (delays→disruptions, stockouts→unmet demand, cost overruns→financial losses) semantically match.",
+    "reference": "Operational delays, stockouts, and cost overruns from infeasible logistics plans.",
+    "generated": "Supply chain disruptions, unmet demand, and financial losses from deploying optimization models that omit critical operational constraints."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "same causal arc: flawed LLM-generated models → used by analysts → missing critical constraints → negative operational outcomes; generated's mention of lack of expertise elaborates but does not alter the core causal logic.",
+    "reference": "LLM-driven optimization model generation may produce flawed formulations, which when used by operations analysts leads to missing critical operational constraints and operational delays, stockouts, cost overruns.",
+    "generated": "LLM-driven generation of flawed optimization models, through operations analysts formulating from text, triggers their lack of expertise to detect missing constraints, leading to supply chain disruptions, unmet demand, and financial losses from omitted critical constraints."
+  }
+}

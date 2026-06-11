@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1257",
+  "chain_index": 1,
+  "title": "Weisfeiler and Leman Go Gambling Why Expressive Lottery Tickets Win",
+  "abstract": "The lottery ticket hypothesis (LTH) is wellstudied for convolutional neural networks but has been validated only empirically for graph neural networks (GNNs), for which theoretical findings are largely lacking. In this paper, we identify the expressivity of sparse subnetworks, i.e. their ability to distinguish non-isomorphic graphs, as crucial for finding winning tickets that preserve the predictive performance. We establish conditions under which the expressivity of a sparsely initialized GNN matches that of the full network, particularly when compared to the Weisfeiler-Leman test, and in that context put forward and prove a Strong Expressive Lottery Ticket Hypothesis. We subsequently show that an increased expressivity in the initialization potentially accelerates model convergence and improves generalization. Our findings establish novel theoretical foundations for both LTH and GNN research, highlighting the importance of maintaining expressivity in sparsely initialized GNNs. We illustrate our results using examples from drug discovery.",
+  "impact": "Our work highlights the critical role of preserving expressivity in sparsely initialized and trained GNNs, offering insights into how pruning can lead to irrecoverable expressivity loss. By demonstrating the risks associated with degraded expressivity, we show the importance of careful pruning design to ensure reliable predictions, such as distinguishing toxic from non-toxic compounds in drug discovery. Moreover, via linking GNN expressivity with generalization and convergence, we show that degraded expressivity can hinder both training dynamics and model reliability. The broader societal benefit of our work lies in its potential to inform the development of high-performance and trustworthy GNNs in resource-constrained settings, contributing to equitable access to advanced machine learning technologies and promoting their safe use in impactful domains.",
+  "query_input": {
+    "scenario": "Federated learning with personalized sparse subnetworks per client",
+    "issue": "Client-specific validation absent; overfitted tickets degrade local personalization quality",
+    "hazard": [
+      "Lottery ticket sparsification that optimizes GNNs for WL expressivity encodes overfitted graph representations that fail under covariate shift, yielding overconfident predictions."
+    ],
+    "exposure": [
+      "End-users of federated GNN-based health predictors on edge devices"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Client-specific validation is absent, preventing detection of overfitted subnetwork predictions on edge devices.",
+    "impact": "Overconfident, incorrect health predictions cause clinical errors, harming patients and eroding trust in AI-assisted diagnostics.",
+    "dose_response": "Lottery ticket sparsification optimizing GNNs for WL expressivity, through federated health predictors on edge devices, triggers undetected overfitted predictions due to absent client-specific validation, leading to overconfident clinical errors that harm patients and erode diagnostic trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitted sparse subnetworks yield overconfident predictions under distribution shift, which in federated health prediction on edge devices without client-side validation leads to flawed diagnoses and eroded trust."
+    ],
+    "vulnerability": [
+      "Absence of client-side validation and performance monitoring for local sparse models in federated health settings"
+    ],
+    "impact": [
+      "Flawed health predictions cause missed diagnoses or false alarms, harming patient outcomes and eroding trust in digital health tools"
+    ]
+  }
+}

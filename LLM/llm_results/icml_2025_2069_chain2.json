@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2069",
+  "chain_index": 2,
+  "title": "FairPFN A Tabular Foundation Model for Causal Fairness",
+  "abstract": "Machine learning (ML) systems are utilized in critical sectors, such as healthcare, law enforcement, and finance. However, these systems are often trained on historical data that contains demographic biases, leading to ML decisions that perpetuate or exacerbate existing social inequalities. Causal fairness provides a transparent, human-inthe-loop framework to mitigate algorithmic discrimination, aligning closely with legal doctrines of direct and indirect discrimination. However, current causal fairness frameworks hold a key limitation in that they assume prior knowledge of the correct causal model, restricting their applicability in complex fairness scenarios where causal models are unknown or difficult to identify. To bridge this gap, we propose FairPFN, a tabular foundation model pre-trained on synthetic causal fairness data to identify and mitigate the causal effects of protected attributes in its predictions. FairPFN’s key contribution is that it requires no knowledge of the causal model and still demonstrates strong performance in identifying and removing protected causal effects across a diverse set of hand-crafted and real-world scenarios relative to robust baseline methods. FairPFN paves the way for promising future research, making causal fairness more accessible to a wider variety of complex fairness problems.",
+  "impact": "This study attempts to overcome a current limitation in causal fairness, making what we believe is a useful framework for addressing algorithmic discrimination, more accessible to a wider variety of complex fairness problems. While the goal of this work is to have a positive impact on a problem we think is crucial, we acknowledge that we our perspective on fairness is limited in scope to align with EU/US legal doctrines of anti-discrimination. These doctrines are not representative of the world as a whole, and even within these systems, there are vastly different normative viewpoints regarding what constitutes algorithmic fairness and justice.",
+  "query_input": {
+    "scenario": "Healthcare patient risk stratification",
+    "issue": "Causal fairness constraints from synthetic data may misattribute health risks, leading to unequal care.",
+    "hazard": [
+      "Pre-training a tabular foundation model on causally-generated synthetic data with fairness constraints can embed misspecified causal assumptions, distorting fairness outcomes."
+    ],
+    "exposure": [
+      "Patients receiving risk-based care decisions from AI models"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "No independent audit of AI fairness corrections in risk stratification allows distorted risk scores to determine patient care.",
+    "impact": "Patients suffer misallocated care and adverse health outcomes as risk stratification unfairly deprioritizes or overtreats specific groups.",
+    "dose_response": "Misspecified causal assumptions from pre-training on synthetic fairness data, through patients receiving AI risk-based care decisions, trigger no independent audit allowing distorted risk scores, leading to care misallocation and adverse outcomes that unfairly deprioritize or overtreat specific groups."
+  },
+  "reference": {
+    "dose_response": [
+      "Misspecified causal assumptions in synthetic data lead risk models to misattribute health determinants, exposing minority patients to under-service that widens health disparities and increases morbidity."
+    ],
+    "vulnerability": [
+      "Patient risk models that misattribute health determinants due to flawed causal fairness can systematically under-serve minority groups."
+    ],
+    "impact": [
+      "Health disparities widen as marginalized patients receive delayed or inappropriate care, increasing morbidity."
+    ]
+  }
+}

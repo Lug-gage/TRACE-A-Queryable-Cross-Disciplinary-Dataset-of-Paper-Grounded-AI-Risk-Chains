@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0979",
+  "chain_index": 0,
+  "title": "Translating Subgraphs to Nodes Makes Simple GNNs Strong and Efficient for Subgraph Representation Learning",
+  "abstract": "Subgraph representation learning has emerged as an important problem, but it is by default approached with specialized graph neural networks on a large global graph. These models demand extensive memory and computational resources but challenge modeling hierarchical structures of subgraphs. In this paper, we propose Subgraph- To-Node (S2N) translation, a novel formulation for learning representations of subgraphs. Specifically, given a set of subgraphs in the global graph, we construct a new graph by coarsely transforming subgraphs into nodes. Demonstrating both theoretical and empirical evidence, S2N not only significantly reduces memory and computational costs compared to state-of-the-art models but also outperforms them by capturing both local and global structures of the subgraph. By leveraging graph coarsening methods, our method outperforms baselines even in a data-scarce setting with insufficient subgraphs. Our experiments on eight benchmarks demonstrate that fined-tuned models with S2N translation can process 183 - 711 times more subgraph samples than state-of-the-art models at a better or similar performance level.",
+  "impact": "This paper aims to advance the field of graph representation learning, and it is difficult to expect direct societal consequences. Instead, we discuss a potential concern about bias and fairness that has not been confirmed in theory or practice. Models with S2N pass messages between all samples within the batch; thus, the majority in a batch can be overrepresented during prediction and the bias in representations can be amplified. The tasks covered in this paper are unrelated to this, but practitioners should be aware of this for tasks that contain sensitive attributes.",
+  "query_input": {
+    "scenario": "Scalable graph neural networks for large social networks",
+    "issue": "Coarsened embeddings may miss critical subgraph patterns, leading to erroneous community detection",
+    "hazard": [
+      "Coarsening subgraphs into node representations discards fine-grained graph connectivity, potentially introducing embedding inaccuracies."
+    ],
+    "exposure": [
+      "Social network service providers and their users relying on graph analytics"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on coarsened embeddings for community detection without mechanisms to validate or recover lost fine-grained connectivity patterns.",
+    "impact": "Erroneous community detection degrades recommendation accuracy, eroding user trust and platform decision quality.",
+    "dose_response": "Coarsening subgraphs into node representations discards fine-grained connectivity, and when social network providers and users rely on such coarsened embeddings for community detection without validation, it leads to erroneous detection that degrades recommendation accuracy, eroding user trust and decision quality."
+  },
+  "reference": {
+    "dose_response": [
+      "Coarsening subgraphs into node representations discarding fine-grained connectivity introduces embedding inaccuracies, which in scalable GNNs for large social networks exposes users to misinformed content moderation and filter bubbles when automated analytics lack human verification."
+    ],
+    "vulnerability": [
+      "Reliance on automated graph analytics without human verification in high-stakes social network decisions"
+    ],
+    "impact": [
+      "Misinformed content moderation and friend recommendations reinforcing filter bubbles and privacy violations"
+    ]
+  }
+}

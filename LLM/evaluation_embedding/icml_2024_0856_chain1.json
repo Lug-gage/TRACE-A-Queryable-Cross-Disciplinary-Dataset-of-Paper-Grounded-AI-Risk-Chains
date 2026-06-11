@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0856",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4784,
+    "reference": "Driver over-trust in uncalibrated trajectory predictions reduces readiness to intervene in edge cases.",
+    "generated": "Planner treats stochastic predictions as deterministic, lacking uncertainty quantification or verification against sensor data."
+  },
+  "impact": {
+    "similarity": 0.6809,
+    "reference": "High-speed collisions, injuries, and fatalities due to unsafe maneuvers.",
+    "generated": "Collisions with obstacles and other road users causing injury, fatalities, and property damage."
+  },
+  "dose_response": {
+    "similarity": 0.7253,
+    "reference": "Uncalibrated video predictions enable overconfident path planning in self-driving cars, fostering driver over-trust that reduces intervention readiness, leading to collisions and fatalities.",
+    "generated": "Stochastic frame prediction models producing uncalibrated future states, through self-driving cars relying on them for path planning, triggers a planner that treats stochastic predictions as deterministic without verification, leading to collisions causing injury, fatalities, and property damage."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2418",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe researchers’ unchecked reliance on LLM outputs without proper validation as the sensitivity condition.",
+    "reference": "Researchers overrely on LLM-generated causal claims without domain expert validation.",
+    "generated": "Biomedical researchers lack verification protocols for LLM-generated causal structures, enabling unchecked trust in confident, overgeneralized outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Spurious drug-effect chains misdirecting research and harming clinical translation matches misdirected resources and endangered patient safety.",
+    "reference": "Flawed causal inferences misdirect research resources and endanger patient safety if clinical decisions are based on them.",
+    "generated": "Spurious drug-effect chains misdirect research, waste resources, and risk harmful clinical translation."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from overgeneralized axioms to spurious claims, unchecked trust, and negative outcomes is semantically identical.",
+    "reference": "Overgeneralized causal axioms in LLMs produce invalid drug-effect claims, which, when biomedical researchers overrely on them without expert validation, lead to misdirected resources and endangered patient safety.",
+    "generated": "Transformers overgeneralizing causal axioms and producing spurious chains, when interpreted by biomedical researchers, triggers their lack of verification protocols and unchecked trust, leading to spurious drug-effect chains that misdirect research, waste resources, and risk harmful translation."
+  }
+}

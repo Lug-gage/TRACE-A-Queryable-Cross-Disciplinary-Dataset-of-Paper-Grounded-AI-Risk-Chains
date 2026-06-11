@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2724",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes human susceptibility to accepting fabricated data, generated describes a systemic lack of verification",
+    "reference": "Customer service agents' susceptibility to accepting AI-retrieved fabricated data as accurate.",
+    "generated": "Embedding-based retrieval lacks authenticity verification, so poisoned documents with manipulated embeddings are retrieved as authoritative without detection."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "customers are mentioned as affected party, but damage type is privacy breaches instead of unauthorized disclosure and identity theft",
+    "reference": "Unauthorized disclosure of private customer information, enabling identity theft.",
+    "generated": "False personally identifiable information is disclosed to agents and customers, causing privacy breaches and incorrect account data exposure."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated causal arc ends in false PII disclosure leading to privacy breaches, not unauthorized disclosure of real private information enabling identity theft",
+    "reference": "Adversarial poisoning enables stealthy misinformation injection, which in PII-sensitive RAG exposes customer support agents and customers to fabricated personal information, leading to unauthorized disclosure and identity theft.",
+    "generated": "Adversarial poisoning of RAG knowledge bases, through customer support agents and customers relying on accurate personal data retrieval, triggers retrieval of poisoned documents as authoritative without authenticity verification, leading to false PII disclosure and privacy breaches."
+  }
+}

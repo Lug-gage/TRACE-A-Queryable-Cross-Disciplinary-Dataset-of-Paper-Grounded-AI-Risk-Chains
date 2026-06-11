@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0199",
+  "chain_index": 0,
+  "title": "DEFAME Dynamic Evidence-based FAct-checking with Multimodal Experts",
+  "abstract": "The proliferation of disinformation demands reliable and scalable fact-checking solutions. We present Dynamic Evidence-based FAct-checking with Multimodal Experts (DEFAME), a modular, zero-shot MLLM pipeline for open-domain, text-image claim verification. DEFAME operates in a six-stage process, dynamically selecting the tools and search depth to extract and evaluate textual and visual evidence. Unlike prior approaches that are text-only, lack explainability, or rely solely on parametric knowledge, DEFAME performs end-to-end verification, accounting for images in claims and evidence while generating structured, multimodal reports. Evaluation on the popular benchmarks VERITE, AVERITEC, and MOCHEG shows that DEFAME surpasses all previous methods, establishing itself as the new general state-of-the-art fact-checking system for uni- and multimodal fact-checking. Moreover, we introduce a new multimodal benchmark, CLAIM- REVIEW2024+, featuring claims after the knowledge cutoff of GPT-4O, avoiding data leakage. Here, DEFAME drastically outperforms the GPT- 4O baselines, showing temporal generalizability and the potential for real-time fact-checking2.",
+  "impact": "To scalably debunk the masses of mis- and disinformationwhich indisputably pose a substantial threat to social cohesion-automating fact-checking is inevitable. Although the results do not sufficiently warrant real-world application yet, DEFAME’s introduction is a step in addressing that challenge. DEFAME contributes to shifting the paradigm toward explainable and verifiable AI systems. Its ability to provide structured, evidence-backed justifications ensures that AFC does not become a black-box authority but rather an augmentation tool that strengthens public resilience against misinformation. By embedding transparency and iterative verification into its core process, DEFAME helps counter the skepticism toward AI-driven moderation while simultaneously reducing the burden on human fact-checkers. However, the widespread deployment of such systems also raises ethical and societal concerns. Recently, in public discussions, professional fact-checkers have widely faced accusations of being biased (CNN, 2025) and, therefore, unreliable. Automated fact-checking, even when well-calibrated, can also shape narratives by prioritizing certain sources or by amplifying institutional biases inherent in retrieval mechanisms or parametric knowledge. Current research efforts strive to de-bias LLMs (Gallegos et al., 2024), which DEFAME will automatically benefit from thanks to its backbone-agnostic design. Within the strongly polarized public discussions, AFC systems may emerge as a nonpartisan information source. Their reliability inherently depends on the quality of the backbone, which is difficult to rigorously analyze. There is also a risk that governments or platforms might misuse systems like DEFAME for overreach in content moderation, potentially stifling dissent or critical journalism under the guise of misinformation control. To mitigate this, it is crucial to ensure accountability, source diversity, and contestability-allowing users to challenge and scrutinize automated decisions. Additionally, while DEFAME may improve trust in digital information, its success will ultimately depend on how it is integrated into broader factchecking ecosystems and content moderation, where human oversight remains essential. The current debate strikingly shows that fact-checking (especially of social media content) sits on the verge between public safety and perceived censorship of free speech. Therefore, the real impact of DEFAME lies not just in its technical contributions but in how humans will ultimately use it.",
+  "query_input": {
+    "scenario": "Health misinformation flagging on social media platforms",
+    "issue": "False negative verdicts allow harmful health claims to spread undetected, risking real-world harm.",
+    "hazard": [
+      "Explainable yet erroneous multimodal fact-checking outputs create false credibility due to retrieval failures and multimodal alignment errors."
+    ],
+    "exposure": [
+      "Social media users relying on automated health claim flags"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users' inability to critically evaluate multimodal evidence fosters over-trust in explainable automated flags, enabling acceptance of false negatives.",
+    "impact": "Unchecked propagation of harmful health misinformation causes preventable illness, treatment avoidance, and strain on public health systems.",
+    "dose_response": "Explainable yet erroneous multimodal fact-checking outputs, through social media users relying on automated health claim flags, trigger inability to critically evaluate evidence, fostering over-trust and acceptance of false negatives, leading to unchecked harmful health misinformation causing preventable illness and public health strain."
+  },
+  "reference": {
+    "dose_response": [
+      "Explainable yet erroneous fact-checking outputs create false credibility, which with low health literacy and automation complacency leads social media users to accept false negatives, allowing harmful health misinformation to spread."
+    ],
+    "vulnerability": [
+      "Low health literacy combined with automation complacency makes users accept false negatives as truth."
+    ],
+    "impact": [
+      "Harmful health misinformation spreads unchallenged, leading to vaccine hesitancy and risky health behaviors."
+    ]
+  }
+}

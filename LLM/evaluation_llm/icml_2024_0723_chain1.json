@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0723",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe sensitivity due to reliance on community evaluations that fail to assess quantized models, allowing malicious behavior to evade detection.",
+    "reference": "Community trust in user-uploaded models and benchmark evaluations allows malicious quantized models to bypass security checks.",
+    "generated": "Developers rely on community-hub evaluations that only assess full-precision models, enabling undetected malicious behavior in quantized versions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Downstream exploits are covered, but the reference's affected party (developers) and reputational damage are omitted.",
+    "reference": "Developers inadvertently integrate harmful models into supply chains, causing downstream vulnerabilities and reputational damage.",
+    "generated": "Hidden vulnerabilities in generated code propagate to production systems, enabling exploits across downstream applications."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc matches: quantization exploitation enables undetected injection, community sharing leads developers to download pre-quantized models, resulting in downstream harm.",
+    "reference": "Quantization exploits enabling undetected vulnerability injection, which in open-source community model sharing exposes developers downloading pre-quantized models from community hubs, leading to downstream vulnerabilities and reputational damage.",
+    "generated": "Quantization exploited to produce malicious secure-code LLMs appearing benign in full-precision, through developers downloading pre-quantized models from community hubs, triggers reliance on full-precision evaluations missing malicious behavior, leading to hidden vulnerabilities propagating to production systems and enabling exploits."
+  }
+}

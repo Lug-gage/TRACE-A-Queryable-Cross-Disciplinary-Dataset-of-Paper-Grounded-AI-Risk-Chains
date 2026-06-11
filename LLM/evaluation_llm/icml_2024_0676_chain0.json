@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0676",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes passenger over-trust reducing vigilance, but generated describes controller overestimation disabling corrective action, missing the human factor",
+    "reference": "Passengers over-trust vehicle safety claims, reducing vigilance to monitor and intervene in edge cases.",
+    "generated": "Offline RL controller overestimates safety compliance in scenarios outside its training distribution, disabling corrective action."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "generated covers physical harm to drivers/passengers but omits psychological trauma and bystanders",
+    "reference": "Accidents cause physical injury and psychological trauma to occupants and bystanders.",
+    "generated": "Unsafe navigation causing vehicle collisions and physical harm to drivers and passengers."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "both share overestimation due to distributional shift and accidents, but generated replaces human complacency link with controller disabling corrective action, altering causal mechanism",
+    "reference": "Specification-conditioned offline RL overestimates safety compliance due to coverage gaps and distributional shift, which in autonomous vehicle control with STL constraints exposes drivers and passengers to overconfident navigation that, due to complacency, causes accidents.",
+    "generated": "Specification-conditioned offline RL overestimates safety compliance due to dataset coverage gaps and distributional shift, through occupants of autonomous RL vehicles, triggers offline RL controller overestimating safety compliance out-of-distribution and disabling corrective action, leading to unsafe navigation, vehicle collisions, and physical harm."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4668,
+    "reference": "Lack of domain-specific validation for reward calibration on rare side effects in medical data.",
+    "generated": "Clinicians and patients lack independent verification of AI-generated summaries, relying entirely on them for comprehensive side-effect information."
+  },
+  "impact": {
+    "similarity": 0.7615,
+    "reference": "Clinicians miss critical side-effect information, leading to adverse drug events and patient harm.",
+    "generated": "Omission of critical side-effect mentions causes uninformed prescribing decisions, leading to preventable adverse drug events and patient harm."
+  },
+  "dose_response": {
+    "similarity": 0.833,
+    "reference": "In federated medical text summarization, federated DPO degrades reward calibration, enabling omission of critical side-effect mentions, exposing clinicians to unrecognized adverse events, leading to patient harm and eroded trust.",
+    "generated": "Federated DPO with differential privacy degrading reward model calibration, through clinicians and patients relying on AI-generated medical summaries, triggers lack of independent verification, leading to omission of critical side-effect mentions causing uninformed prescribing decisions and preventable adverse drug events."
+  }
+}

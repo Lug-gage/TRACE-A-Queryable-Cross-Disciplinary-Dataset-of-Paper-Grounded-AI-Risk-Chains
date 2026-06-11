@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0363",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "generated describes creator trust and playback expectations, missing reference's low media literacy susceptibility",
+    "reference": "Low media literacy leaves viewers susceptible to mistaking edited videos as authentic.",
+    "generated": "Creators trust automated editing outputs without manual frame-by-frame verification, and viewers expect seamless playback."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "generated mentions distraction and credibility harm, missing reference's erosion of trust in video evidence affecting journalism and justice",
+    "reference": "Erosion of public trust in video evidence, affecting journalism and justice.",
+    "generated": "Flickering and inconsistent frames distract viewers, reducing content enjoyment and harming creator credibility."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "causal arc diverges: reference ends with trust erosion through low media literacy and algorithmic amplification, generated ends with reduced enjoyment and creator credibility without those factors",
+    "reference": "Spatio-temporal slice editing produces temporally inconsistent videos, which when shared by content creators on social platforms, combined with low media literacy and algorithmic amplification, erodes trust in video evidence and spreads misinformation.",
+    "generated": "Spatio-temporal slice editing with pretrained diffusion models yielding temporal inconsistency, when videos are shared on social platforms, triggers unverified trust in outputs and expectation of seamless playback, causing distracting flickering that reduces enjoyment and harms creator credibility."
+  }
+}

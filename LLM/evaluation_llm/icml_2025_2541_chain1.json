@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2541",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Institutional blind trust in formal verification without semantic review mirrors mathematicians deferring to multi-agent consensus and bypassing peer review, rendering researchers unable to detect misaligned proofs.",
+    "reference": "Mathematicians defer to multi-agent consensus as a proxy for proof validity, bypassing peer review.",
+    "generated": "Institutional blind trust in formal verification without semantic review, rendering researchers unable to detect semantically misaligned proofs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Corruption of formal mathematics literature with unfounded theorems, eroding trust and misdirecting subsequent research covers contamination of mathematical literature with unfounded results and undermining future research.",
+    "reference": "Contamination of mathematical literature with unfounded results, undermining future research.",
+    "generated": "Corruption of formal mathematics literature with unfounded theorems, eroding trust and misdirecting subsequent research."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Multi-agent amplification of misaligned proofs, through mathematicians’ reliance on multi-agent LLM provers, triggers blind trust and corrupts literature, eroding trust and misdirecting research – same causal chain as amplification → reliance → contamination and trust collapse.",
+    "reference": "Multi-agent collaboration amplifies propagation of formally-valid but semantically-misaligned proofs, which when relied upon by mathematicians for proof discovery leads to contamination of mathematical literature and collapse of trust.",
+    "generated": "Multi-agent amplification of formally-valid but semantically-misaligned proofs, through reliance by mathematicians on multi-agent LLM provers, triggers blind institutional trust in formal verification without semantic review, corrupting formal mathematics with unfounded theorems, eroding trust and misdirecting research."
+  }
+}

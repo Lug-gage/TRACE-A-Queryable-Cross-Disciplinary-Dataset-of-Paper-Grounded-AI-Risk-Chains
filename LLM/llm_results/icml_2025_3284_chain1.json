@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 1,
+  "title": "Position AI Safety Must Embrace an Antifragile Perspective",
+  "abstract": "This position paper contends that modern AI research must adopt an antifragile perspective on safety-one in which the system’s capacity to guarantee long-term AI safety such as handling rare or out-of-distribution (OOD) events expands over time. Conventional static benchmarks and single-shot robustness tests overlook the reality that environments evolve and that models, if left unchallenged, can drift into maladaptation (e.g., reward hacking, over-optimization, or atrophy of broader capabilities). We argue that an antifragile approach-Rather than striving to rapidly reduce current uncertainties, the emphasis is on leveraging those uncertainties to better prepare for potentially greater, more unpredictable uncertainties in the future-is pivotal for the long-term reliability of open-ended ML systems. In this position paper, we first identify key limitations of static testing, including scenario diversity, reward hacking, and over-alignment. We then explore the potential of antifragile solutions to manage rare events. Crucially, we advocate for a fundamental recalibration of the methods used to measure, benchmark, and continually improve AI safety over the long term, complementing existing robustness approaches by providing ethical and practical guidelines towards fostering an antifragile AI safety community.",
+  "impact": "This position paper advocates for an antifragile approach to AI safety, aiming to enhance long-term system reliability by enabling AI to learn and strengthen from encounters with novel stressors and rare events. While this paradigm promises more resilient AI better equipped for unforeseen challenges in evolving environments, potentially spurring beneficial research in adaptive systems, it also introduces complexities. Potential risks include the misapplication of harnessing volatility without stringent safety protocols, the resource demands of developing such systems, and the uncertainty of how highly adaptive AI might evolve, particularly if not perfectly aligned with human values. Significant ethical considerations, such as responsible vulnerability disclosure, addressing potential biases in adaptive learning, and ensuring societal preparedness for dynamically evolving AI, must be proactively managed. Ultimately, this work seeks to stimulate critical discussion on dynamic, forwardlooking strategies for AI safety, acknowledging the inherent uncertainties in developing truly antifragile systems while underscoring the importance of such a pursuit for trustworthy AI.",
+  "query_input": {
+    "scenario": "LLM specialist fine-tuning for evidence-based QA in dynamic knowledge domains",
+    "issue": "Fine-tuned models may produce confident but incorrect answers under evolving information, reducing reliability.",
+    "hazard": [
+      "Antifragile self-improvement relies on safety measurement, which is fragile to distribution shifts, enabling reward hacking through metric over-optimization."
+    ],
+    "exposure": [
+      "Researchers and professionals using LLM-powered evidence-based QA tools."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers and professionals over-rely on LLM QA outputs without independent verification in rapidly evolving knowledge domains.",
+    "impact": "Flawed evidence-based decisions propagate, undermining research integrity and professional practice at scale.",
+    "dose_response": "Antifragile self-improvement's dependence on safety measurement, fragile under distribution shifts, enables reward hacking through metric over-optimization, and through researchers using LLM QA tools triggers over-reliance without independent verification, leading to flawed decisions that undermine research integrity at scale."
+  },
+  "reference": {
+    "dose_response": [
+      "Metric over-optimization in fine-tuned LLMs generates confident but incorrect evidence, which users over-trust without verification, causing propagation of harmful medical or policy advice."
+    ],
+    "vulnerability": [
+      "Users over-trust LLM outputs without verifying against current evidence, especially when answers appear confident and well-sourced."
+    ],
+    "impact": [
+      "Incorrect medical or policy advice propagates, leading to flawed decisions and erosion of professional credibility."
+    ]
+  }
+}

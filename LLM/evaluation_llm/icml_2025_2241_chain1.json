@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2241",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Shoppers’ reliance on ranking reflecting relevance is semantically present as reliance on visual similarity and inability to detect textual bias",
+    "reference": "Shoppers make purchase decisions based on top-ranked results, assuming ranking reflects relevance.",
+    "generated": "Shoppers rely on the ranking reflecting visual similarity and cannot detect when it is biased toward textual semantics."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "shoppers are affected, but damage types differ: financial loss and reduced trust become frustration and platform revenue loss",
+    "reference": "Consumers buy irrelevant or inferior products, causing financial loss and reduced trust in the platform.",
+    "generated": "Less relevant products appear higher, leading to wrong purchase decisions, frustration, and platform revenue loss."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "biased hash codes causing less relevant products higher and wrong purchase decisions matches the ranking-inversion chain",
+    "reference": "Biased hash codes from external textual guidance cause binary Hamming distance to invert ranking, exposing e-commerce shoppers who trust top results to irrelevant products, leading to financial loss and reduced trust.",
+    "generated": "External textual guidance biasing hash codes toward noisy text semantics, through e-commerce image search, triggers shoppers' undetectable reliance on visual ranking, leading to less relevant products appearing higher, wrong purchase decisions, and revenue loss."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2086",
+  "chain_index": 1,
+  "title": "Strategic Planning A Top-Down Approach to Option Generation",
+  "abstract": "Real-world human decision making often relies on strategic planning, where high-level goals guide the formulation of sub-goals and subsequent actions, as evidenced by domains such as healthcare, business, and urban policy. Despite notable successes in controlled settings, conventional reinforcement learning (RL) follows a bottom-up framework, which can struggle to adapt to realworld complexities such as sparse rewards and limited exploration budgets. While methods like hierarchical RL and environment shaping provide partial solutions, they frequently rely on either ad hoc designs (e.g. choosing the set of highlevel actions) or purely data-driven discovery of high-level actions that still requires significant exploration. In this paper, we introduce a top-down RL framework that explicitly leverages humaninspired strategy to reduce sample complexity, guide exploration, and enable high-level decision making. We first formalize the Strategy Problem, which frames policy generation as finding distributions over policies that balance specificity and value. Building on this definition, we propose the Strategist agent-an iterative framework that leverages large language models to synthesize domain knowledge into a structured representation of actionable strategies and sub-goals. We further develop a reward shaping methodology that translates these strategies expressed in natural language into quantitative feedback for RL methods. Empirically, we demonstrate that our framework significantly enhances the performance of different underlying RL algorithms, leading to faster convergence and the discovery of more complex behaviors. Taken together, our findings highlight that top-down strategic exploration opens new avenues to improve RL in real-world decision problems.",
+  "impact": "We propose a top-down RL framework that explicitly uses human-inspired strategies to guide exploration, bridging the gap between purely bottom-up methods and real-world decision making in complex domains like healthcare, logistics, and policy. By structuring high-level plans and sub-goals, our approach can reduce sample complexity, mitigate costly mistakes, and uncover beneficial behaviors more quickly. However, translating domain knowledge into strategies through LLM brings new considerations. If an LLM’s estimates of feasibility or value are miscalibrated-or if the underlying knowledge contains hidden biases-an agent may be steered toward suboptimal or even harmful plans. Robust oversight and validation of LLM outputs are therefore key, especially in sensitive applications. Despite these risks, top-down RL has the potential to improve interpretability, safety, and adaptability in settings where traditional trial-and-error is impractical. By incorporating strategic knowledge from LLMs (or experts, if deemed necessary), the method can deliver more targeted exploration, potentially enabling faster convergence on highvalue solutions in real-world environments that demand rigor and efficiency.",
+  "query_input": {
+    "scenario": "Interactive game-playing agents with policy-level LLM reflection",
+    "issue": "LLM-reflected policies encode flawed strategies, leading to poor game performance or unfair play",
+    "hazard": [
+      "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL"
+    ],
+    "exposure": [
+      "Game players and game environments receiving LLM-optimized agent actions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Game environments and players lack mechanisms to detect or reject actions derived from hallucinated sub-goals, enabling flawed strategy execution.",
+    "impact": "Gameplay fairness deteriorates, causing player frustration and loss of competitive integrity.",
+    "dose_response": "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL, through LLM-optimized agent actions experienced by players and environments, trigger the absence of mechanisms to detect or reject flawed strategy execution, leading to deteriorated fairness, player frustration, and loss of competitive integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL enable flawed strategies, which in interactive game-playing with policy-level LLM reflection exposes players trusting optimized policies without scrutiny, leading to unfair competition and loss of trust."
+    ],
+    "vulnerability": [
+      "Players or game systems trusting LLM-optimized policies without detecting strategic flaws, leading to unfair advantage or degraded play."
+    ],
+    "impact": [
+      "Unfair competition, loss of player trust, degraded user experience or reputational damage to game platforms."
+    ]
+  }
+}

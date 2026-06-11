@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1976",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6918,
+    "reference": "Users relying on LLM for high-stakes decisions (medical, legal) lack awareness of post-reset accuracy degradation.",
+    "generated": "Users' reliance on the LLM's consistent factual knowledge and inability to detect post-reset corruption makes them susceptible to misinformation."
+  },
+  "impact": {
+    "similarity": 0.6166,
+    "reference": "Erosion of user trust in LLM reliability leads to abandonment of AI-assisted decision support systems.",
+    "generated": "Users act on corrupted outputs, causing task errors, degraded decision quality, and erosion of trust in AI assistants."
+  },
+  "dose_response": {
+    "similarity": 0.8203,
+    "reference": "Recurring catastrophic forgetting from memory resets corrupts LLM knowledge, exposing users post-reset to unreliable outputs, leading to erosion of trust and downstream harm in high-stakes decisions.",
+    "generated": "Catastrophic forgetting and knowledge corruption from memory erasure techniques, through user interactions after each reset cycle, triggers reliance on consistent factual knowledge and inability to detect corruption, leading to task errors, degraded decisions, and eroded trust."
+  }
+}

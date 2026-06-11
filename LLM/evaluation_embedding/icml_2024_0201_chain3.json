@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.4303,
+    "reference": "VLM reward models favor policies that produce visually familiar but functionally inadequate behaviors.",
+    "generated": "Automated selection pipeline relies on VLM scores as accurate performance proxies without ground-truth verification, so it cannot detect or reject miscalibrated signals."
+  },
+  "impact": {
+    "similarity": 0.6221,
+    "reference": "Deployed policies exhibit high variance in real-world settings, leading to unpredictable robot behavior and safety incidents.",
+    "generated": "Suboptimal or brittle policies are deployed, causing poor task execution and system failure across varied settings."
+  },
+  "dose_response": {
+    "similarity": 0.785,
+    "reference": "Miscalibrated VLM reward signals misguide policy learning, which in configuration search for policy selection leads to unpredictable robot behavior and safety incidents in real-world settings.",
+    "generated": "VLM-based reward scoring introduces miscalibrated evaluation signals, which through automated pipelines searching pretrained policies, trigger reliance on unverified scores as accurate proxies, leading to deployment of suboptimal policies and system failure across settings."
+  }
+}

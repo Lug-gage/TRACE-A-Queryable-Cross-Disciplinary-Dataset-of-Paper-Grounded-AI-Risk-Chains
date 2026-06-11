@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1856",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes users circumventing over-filtered models and adopting less safe alternatives; generated describes filter fragility and bypass by representation steering, a related but distinct sensitivity condition.",
+    "reference": "Users circumvent over-filtered models, adopting less safe alternatives that expose them to raw hazards.",
+    "generated": "Aggressive toxicity removal strips benign linguistic capabilities, rendering safety filters fragile and easily bypassed by representation steering."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Exposure to toxic content for audiences covers the damage type and affected party (societal harm); added credibility damage does not negate the match.",
+    "reference": "Higher exposure to unfiltered toxic content as users migrate to unsafe models, increasing societal harm.",
+    "generated": "Content creators inadvertently publish harmful outputs, exposing audiences to toxic content and damaging creator credibility."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc has aggressive toxicity removal causing creators to use unfiltered models, leading to exposure; generated arc has steering bypass triggering aggressive removal, stripping capabilities, and causing harmful outputs—a different causal mechanism.",
+    "reference": "Aggressive toxicity removal degrades benign linguistic capabilities; content creators respond by using unfiltered models, exposing themselves and others to raw toxic content and increased societal harm.",
+    "generated": "Affine representation steering bypassing safety alignment, through content creators using toxicity-filtered LLMs, triggers aggressive toxicity removal that strips benign capabilities and renders filters fragile, leading to inadvertently published harmful outputs that expose audiences to toxic content and damage creator credibility."
+  }
+}

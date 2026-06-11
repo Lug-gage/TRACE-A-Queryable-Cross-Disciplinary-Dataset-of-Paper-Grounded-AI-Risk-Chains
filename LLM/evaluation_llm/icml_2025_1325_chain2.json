@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1325",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated IRs retain rich visual structure, matching reference's identity and scene detail enabling inversion.",
+    "reference": "Intermediate representations from user-uploaded photos retain enough identity and scene detail to be inverted into recognizable private images.",
+    "generated": "Split inference transmits intermediate representations retaining rich visual structure, and deployed cloud vision models lack defenses against guided diffusion reconstruction."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both intimate imagery exposure and blackmail/identity theft are present, with same affected party (private photos).",
+    "reference": "Recovered personal photos expose intimate moments, enabling blackmail and identity theft.",
+    "generated": "Private user photos are reconstructed with high fidelity, exposing intimate imagery and enabling identity theft, blackmail, or unauthorized profiling."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from IR detail to reconstruction, exposure of intimate imagery, and blackmail/identity theft is preserved.",
+    "reference": "Identity and scene detail in intermediate representations enable inversion of user-uploaded photos, exposing intimate moments and sensitive documents, which leads to blackmail, identity theft, and child safety liabilities.",
+    "generated": "Intermediate representations leak visual data; through user photo uploads to cloud APIs, this triggers transmission of structurally rich representations and lack of defenses, leading to high-fidelity reconstruction of private photos exposing intimate imagery and enabling identity theft, blackmail, or profiling."
+  }
+}

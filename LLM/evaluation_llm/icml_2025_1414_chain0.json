@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference vulnerability is ambiguous commands leading to misaligned planning reinforced by self-correction without human validation; generated vulnerability is residents' lack of technical insight to recognize or interrupt loops, a related but different sensitivity condition.",
+    "reference": "Ambiguous user commands lead to misaligned planning that self-correction reinforces without human validation.",
+    "generated": "Home residents lack technical insight to recognize or interrupt misaligned self-correction loops, leaving them powerless to prevent unsafe robot actions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated explicitly states residents suffer physical injury and property damage, matching the reference's object breakage and risk of injury to residents; trust erosion is an additional but not required element.",
+    "reference": "Object breakage and risk of injury to residents.",
+    "generated": "Residents suffer physical injury and property damage from unintended robot interactions, eroding trust in domestic assistance."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both arcs show self-correction amplifying misaligned objectives and leading to unsafe actions via a human gap; however, the generated replaces the reference's specific mechanism 'without human validation of ambiguous commands' with residents' reliance triggering lack of technical insight, partially capturing the causal translation.",
+    "reference": "LLM-driven planning with self-correction amplifies misaligned objectives, which, without human validation of ambiguous commands, leads to unsafe robot actions exposing home residents to object breakage and injury.",
+    "generated": "LLM-driven planning with iterative self-correction amplifies misaligned objectives and erroneous abstractions, through home residents relying on domestic assistant robots, triggers residents' lack of technical insight to recognize or interrupt misaligned loops, leaving them powerless to prevent unsafe actions, leading to physical injury, property damage, and eroded trust."
+  }
+}

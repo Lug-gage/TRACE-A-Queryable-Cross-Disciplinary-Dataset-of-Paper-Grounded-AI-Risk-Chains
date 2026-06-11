@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4995,
+    "reference": "Over-reliance on AI perception without adequate human oversight in edge-case road conditions.",
+    "generated": "Perception system trained on synthetic rare-object samples misrepresents real-world rare concepts, eroding its accuracy in edge-case scenarios."
+  },
+  "impact": {
+    "similarity": 0.6211,
+    "reference": "Increased collision risk for vulnerable road users (pedestrians, cyclists) during rare-object encounters.",
+    "generated": "Misperception of rare hazards causes vehicle control failures, resulting in collisions, injuries, and fatalities for drivers and pedestrians."
+  },
+  "dose_response": {
+    "similarity": 0.8324,
+    "reference": "Out-of-distribution synthetic rare-object samples cause perception misclassification, which in edge-case road conditions exposes drivers and pedestrians to increased collision risk.",
+    "generated": "Out-of-distribution synthetic tail-class samples from long-tail guidance diffusion models, through drivers and pedestrians relying on perception in edge-case road conditions, trigger misrepresentation of real rare concepts by the trained system, leading to misperception-caused vehicle control failures, collisions, injuries, and fatalities."
+  }
+}

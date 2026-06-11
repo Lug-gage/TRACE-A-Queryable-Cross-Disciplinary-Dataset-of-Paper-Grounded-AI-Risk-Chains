@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 2,
+  "title": "Learning Condensed Graph via Differentiable Atom Mapping for Reaction Yield Prediction",
+  "abstract": "Yield of chemical reactions generally depends on the activation barrier, i.e., the energy difference between the reactant and the transition state. Computing the transition state from the reactant and product graphs requires prior knowledge of the correct node alignment (i.e., atom mapping), which is not available in yield prediction datasets. In this work, we propose YIELDNET, a neural yield prediction model, which tackles these challenges. Here, we first approximate the atom mapping between the reactants and products using a differentiable node alignment network. We then use this approximate atom mapping to obtain a noisy realization of the condensed graph of reaction (CGR), which is a supergraph encompassing both the reactants and products. This CGR serves as a surrogate for the transition state graph structure. The CGR embeddings of different steps in a multi-step reaction are then passed into a transformer-guided reaction path encoder. Our experiments show that YIELDNET can predict the yield more accurately than the baselines. Furthermore, the model is trained only under the distant supervision of yield values, without requiring finegrained supervision of atom mapping.",
+  "impact": "This paper offers a valuable tool optimizing reaction yields. It can be used in prediction of yield when the datasets contain molecular graph structures. However, it is imperative to acknowledge the possibility of incorrect predictions by any yield prediction model, which demands human interventions. Additionally, misuse of the model may lead to predictions for undesirable compounds, potentially causing adverse societal consequences. Careful attention to ethical guidelines is paramount to ensure a responsible and positive impact on the model.",
+  "query_input": {
+    "scenario": "Multi-step synthesis design in materials science",
+    "issue": "Cumulative yield errors across steps due to atom mapping failures degrade overall process viability.",
+    "hazard": [
+      "Differentiable node alignment in condensed reaction graphs may introduce systematic mapping errors leading to biased yield and activation barrier predictions."
+    ],
+    "exposure": [
+      "Materials scientists designing novel polymers via multi-step synthesis"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on approximate atom mapping without ground-truth validation data leaves yield predictions susceptible to systematic biases.",
+    "impact": "Cumulative yield errors from biased predictions render multi-step synthesis pathways unviable, wasting experimental resources.",
+    "dose_response": "Differentiable node alignment in condensed reaction graphs introduces systematic mapping errors, through materials scientists designing novel polymers via multi-step synthesis, triggers reliance on approximate atom mapping without ground-truth validation, leading to cumulative yield errors rendering pathways unviable and wasting resources."
+  },
+  "reference": {
+    "dose_response": [
+      "Atom mapping errors cause systematic yield overestimates, which in multi-step synthesis design leads materials scientists to pursue unviable pathways, resulting in wasted research and misleading publications when error propagation is ignored."
+    ],
+    "vulnerability": [
+      "Materials scientists designing multi-step syntheses often treat each step independently, ignoring error propagation.",
+      "Lack of integrated tools to audit cumulative yield predictions from AI pipelines."
+    ],
+    "impact": [
+      "Inefficient material synthesis with overall yields too low, wasting years of research.",
+      "Publication of non-reproducible synthetic protocols based on flawed AI predictions, misleading the scientific community.",
+      "Failure to deliver novel materials on time, impacting technology development programs."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2589",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6055,
+    "reference": "Heavy-tailed belief models fail to account for tail risk, while automated market makers lack human intervention to correct mispricing.",
+    "generated": "Liquidity providers depend on an automated market maker that optimizes for profit over accuracy, leaving them exposed to systematic adverse selection."
+  },
+  "impact": {
+    "similarity": 0.6625,
+    "reference": "Sporadic liquidity crises and flash crashes undermine confidence in prediction markets as reliable information aggregation tools.",
+    "generated": "Disadvantaged liquidity providers suffer persistent losses and exit, causing market collapse and unreliable price signals for information aggregation."
+  },
+  "dose_response": {
+    "similarity": 0.7461,
+    "reference": "No-regret learning with heavy-tailed beliefs enables globally inaccurate prices, causing liquidity crises and flash crashes that undermine confidence in prediction markets.",
+    "generated": "No-regret learning for trade gain maximization causes uneven utility distribution, through traders providing liquidity in automated prediction markets triggers profit-over-accuracy optimization exposing providers to systematic adverse selection, leading to persistent losses, exit, market collapse, and unreliable price signals."
+  }
+}

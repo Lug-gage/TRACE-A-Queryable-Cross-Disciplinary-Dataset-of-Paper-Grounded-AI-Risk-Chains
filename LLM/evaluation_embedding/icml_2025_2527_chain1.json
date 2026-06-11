@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2527",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3827,
+    "reference": "Fine-grained recommendation scores allow reverse engineering of the model’s fairness thresholds and content ranking logic.",
+    "generated": "Social network GNNs lack query rate limiting and extraction detection, enabling adaptive node queries to reconstruct decision boundaries."
+  },
+  "impact": {
+    "similarity": 0.5624,
+    "reference": "Manipulated content distribution amplifies polarization, enables hate speech evasion, and erodes public trust in the platform.",
+    "generated": "Extracted decision boundaries enable adversarial manipulation of recommendations, causing biased content distribution and eroded user trust."
+  },
+  "dose_response": {
+    "similarity": 0.8082,
+    "reference": "The unauthorized extraction of GNN model functionality via adaptive querying enables reverse engineering of fairness thresholds, which on social network platforms exposes content ranking to manipulation, leading to amplified polarization and eroded public trust.",
+    "generated": "Unauthorized extraction of GNN model functionality via adaptive node querying on social network content recommendation platforms, due to absent rate limiting and extraction detection, causes reconstructed decision boundaries, enabling adversarial manipulation, biased content distribution, and eroded user trust."
+  }
+}

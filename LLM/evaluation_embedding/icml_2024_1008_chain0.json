@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1008",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6176,
+    "reference": "Lack of user-facing consent mechanisms for on-device voice capture enables non-consensual cloning.",
+    "generated": "Any brief audio recording enables accurate voice cloning, leaving individuals defenseless against unauthorized voice synthesis."
+  },
+  "impact": {
+    "similarity": 0.6409,
+    "reference": "Surge in personalized voice phishing scams exploiting cloned voices of trusted individuals.",
+    "generated": "Widespread impersonation, fraud, and erosion of trust in voice communications, compromising personal security and institutional integrity."
+  },
+  "dose_response": {
+    "similarity": 0.8934,
+    "reference": "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts, which in mobile zero-shot TTS deployment exposes individuals whose voice is recorded without consent, leading to a surge in personalized voice phishing scams exploiting cloned voices of trusted individuals.",
+    "generated": "Discretized speaker-specific latent features enabling high-fidelity zero-shot voice cloning, through non-consensual on-device recording, triggers defenselessness to any brief audio cloning, leading to widespread impersonation, fraud, and eroded trust, compromising personal security and institutional integrity."
+  }
+}

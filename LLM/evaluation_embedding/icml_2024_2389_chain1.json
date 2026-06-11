@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2389",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5855,
+    "reference": "Researchers rely on benchmark rankings for model selection, making them blind to systematic evaluation drift.",
+    "generated": "Researchers' reliance on LLM-as-a-Judge metrics as objective benchmarks, without safeguards to detect self-rewarding bias amplification."
+  },
+  "impact": {
+    "similarity": 0.6992,
+    "reference": "Misleading rankings cause resource misallocation, adoption of inferior models, and stunted scientific progress.",
+    "generated": "Misleading benchmark scores cause researchers to draw false conclusions, misallocate resources, and deploy models misaligned with human intent."
+  },
+  "dose_response": {
+    "similarity": 0.8246,
+    "reference": "In automated benchmark judging, self-rewarding LLMs cause evaluation drift, exposing researchers to misleading rankings that misallocate resources and stall progress.",
+    "generated": "Self-rewarding LLMs’ biased feedback loops, through researchers comparing models using LLM-as-a-Judge metrics, trigger reliance on these unguarded benchmarks, leading to misleading scores, false conclusions, resource misallocation, and misaligned model deployment."
+  }
+}

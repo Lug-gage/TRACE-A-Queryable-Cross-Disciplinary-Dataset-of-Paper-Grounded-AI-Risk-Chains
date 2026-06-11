@@ -1,0 +1,36 @@
+# Sensitive
+api_key.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs (generated results + LLM caches)
+outputs/
+
+# Indices (embedding parquet files exceed GitHub 100MB limit — rebuild locally)
+indices/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Virtual environments
+venv/
+.venv/
+env/

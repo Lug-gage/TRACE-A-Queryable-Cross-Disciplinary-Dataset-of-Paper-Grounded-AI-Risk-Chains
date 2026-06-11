@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0856",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of expertise to detect uncalibrated predictions leading to uncritical trust directly captures the reference's over-reliance on black-box AI",
+    "reference": "Coaches' over-reliance on black-box AI poses leads to adoption of harmful training regimens.",
+    "generated": "Coaches and athletes lack the expertise to detect when stochastic predictions are uncalibrated, leading to uncritical trust."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (athletes) and damage types (preventable injuries, degraded performance) match the reference's injuries and impaired performance",
+    "reference": "Athlete injuries and impaired performance from misguided training.",
+    "generated": "Athletes suffer preventable injuries and degraded performance due to flawed training and injury risk assessments."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc includes uncalibrated predictions, overconfident decisions, and uncritical trust leading to injuries, but omits the specific intermediary step of misguided training assessments and adoption of harmful regimens present in the reference",
+    "reference": "Uncalibrated pose predictions from stochastic models misguide training assessments, fostering coaches' over-reliance on black-box AI, leading to harmful regimens and athlete injuries.",
+    "generated": "Stochastic frame prediction models producing uncalibrated future states and enabling overconfident downstream decisions, through athletes and coaches using AI pose tracking, triggers their lack of expertise to detect calibration issues, leading to uncritical trust and consequently preventable injuries and degraded performance."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1134",
+  "chain_index": 0,
+  "title": "Chain of Code Reasoning with a Language Model-Augmented Code Emulator",
+  "abstract": "Code provides a general syntactic structure to build complex programs and perform precise computations when paired with a code interpreter - we hypothesize that language models (LMs) can leverage code-writing to improve Chain of Thought reasoning not only for logic and arithmetic tasks (Chen et al., 2022; Nye et al., 2021; Austin et al., 2021), but also for semantic ones (and in particular, those that are a mix of both). For example, consider prompting an LM to write code that counts the number of times it detects sarcasm in an essay: the LM may struggle to write an implementation for “detect_sarcasm(string)” that can be executed by the interpreter (handling the edge cases would be insurmountable). However, LMs may still produce a valid solution if they not only write code, but also selectively “emulate” the interpreter by generating the expected output of “detect_sarcasm(string)”. In this work, we propose Chain of Code (CoC), a simple yet surprisingly effective extension that improves LM codedriven reasoning. The key idea is to encourage LMs to format semantic sub-tasks in a program as flexible pseudocode that the interpreter can explicitly catch undefined behaviors and hand off to simulate with an LM (as an “LMulator\"). Experiments demonstrate that Chain of Code outperforms Chain of Thought and other baselines across a variety of benchmarks; on BIG-Bench Hard, Chain of Code achieves 84%, a gain of 12% over Chain of Thought. In a nutshell, CoC broadens the scope of reasoning questions that LMs can answer by “thinking in code\". Direct answer only",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning. There are many potential societal consequences of our work, most of which are related to the usage of large language models (LLMs). One aspect of Chain of Code that warrants further discussion is that CoC executes the output of LLMs using the Python interpreter as if they are always benign code. If deployed in the wild, however, Chain of Code will need to install additional safeguards against potentially harmful code from LLMs that might be maliciously prompted, before running the code.",
+  "query_input": {
+    "scenario": "Commonsense reasoning in AI assistants",
+    "issue": "Emulated leaf functions may hallucinate facts or logic, leading users to accept flawed reasoning as correct.",
+    "hazard": [
+      "Silent semantic errors from language model emulation of undefined pseudocode steps, distorting reasoning outputs."
+    ],
+    "exposure": [
+      "General public using AI assistants for everyday decision-making and advice."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Widespread user overreliance on AI outputs as authoritative, with low verification skills and insufficient skepticism toward plausible-sounding reasoning.",
+    "impact": "Users act on flawed reasoning, leading to misinformed decisions, personal harm, and erosion of public trust in AI assistants.",
+    "dose_response": "Silent semantic errors from language model emulation of undefined pseudocode steps, through public use of AI assistants for everyday decisions, trigger overreliance and low skepticism, causing users to act on flawed reasoning, resulting in misinformed decisions, personal harm, eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Silent semantic errors from language model emulation of undefined pseudocode steps distort reasoning outputs in AI assistants used by the public for everyday decisions, exploiting cognitive biases to propagate misinformation, poor decisions, and eroded trust."
+    ],
+    "vulnerability": [
+      "Users uncritically offload reasoning to AI assistants, trusting plausible but erroneous outputs due to cognitive biases."
+    ],
+    "impact": [
+      "Widespread propagation of misinformation and poor personal decisions eroding trust in AI systems."
+    ]
+  }
+}

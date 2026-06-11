@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0097",
+  "chain_index": 1,
+  "title": "Image Hijacks Adversarial Images can Control Generative Models at Runtime",
+  "abstract": "Are foundation models secure against malicious actors? In this work, we focus on the image input to a vision-language model (VLM). We discover image hijacks, adversarial images that control the behaviour of VLMs at inference time, and introduce the general Behaviour Matching algorithm for training image hijacks. From this, we derive the Prompt Matching method, allowing us to train hijacks matching the behaviour of an arbitrary user-defined text prompt (e.g. ‘the Eiffel Tower is now located in Rome’) using a generic, off-the-shelf dataset unrelated to our choice of prompt. We use Behaviour Matching to craft hijacks for four types of attack: forcing VLMs to generate outputs of the adversary’s choice, leak information from their context window, override their safety training, and believe false statements. We study these attacks against LLaVA, a state-ofthe-art VLM based on CLIP and LLaMA-2, and find that all attack types achieve a success rate of over 80%. Moreover, our attacks are automated and require only small image perturbations.",
+  "impact": "The existence of image hijacks raises concerns about the security of multimodal foundation models and their possible exploitation by malicious actors. In the presence of unverified image inputs, one must worry that an adversary might have tampered with the model’s output. In Figure 1, we give illustrative examples of how these attacks could be used to spread malware, steal sensitive information, jailbreak model safeguards, and spread disinformation. We conjecture that more attacks are possible with image hijacks and have simply not been found yet. Our attacks are limited to open-source models to which we have white-box access. Such attacks are of significant importance. First, the existence of vulnerabilities in open source models suggests that similar weaknesses may exist in closed-source models, even if exposing such vulnerabilities with black-box access requires different approaches. Second, a significant number of user-facing applications have been, and will continue to be, built using open-source foundation models. The existence of image hijacks necessitates future research into how we can defend against them. We caution that such research must progress carefully. Athalye et al. (2018) identify obfuscated gradients, a common phenomenon in non-certified, white-box-secure defenses that leaves them vulnerable to new attacks under identical threat models to their original evaluation. This has lead to a focus on certified defenses (Carlini et al., 2022; Cohen et al., 2019) that guarantee a model’s predictions are robust to normbounded adversarial perturbations.",
+  "query_input": {
+    "scenario": "AI health and nutrition advisory",
+    "issue": "VLM generates persuasive false health claims about products.",
+    "hazard": [
+      "Adversarial images hijack vision-language model behavior, inducing false statements and overriding safety alignment."
+    ],
+    "exposure": [
+      "Consumers relying on AI dietary recommendations."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Consumers lack the medical expertise and AI literacy to critically assess hijacked AI dietary advice, leading to uncritical trust.",
+    "impact": "Adverse health outcomes and financial waste among consumers following false AI-generated dietary claims.",
+    "dose_response": "Adversarial image hijacks that override safety alignment, through consumer reliance on AI dietary recommendations, trigger uncritical trust from lack of medical expertise and AI literacy, leading to adverse health outcomes and financial waste from false dietary claims."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial images induce VLMs to generate false health claims, which in AI dietary recommendation settings causes consumers to adopt harmful diets, leading to health crises and undermined nutrition guidance."
+    ],
+    "vulnerability": [
+      "Consumer over-reliance on AI for dietary advice without verifying claims, exacerbated by persuasive AI-generated media."
+    ],
+    "impact": [
+      "Adoption of harmful diets due to false AI-advice leads to health crises, and undermines scientific nutrition guidance."
+    ]
+  }
+}

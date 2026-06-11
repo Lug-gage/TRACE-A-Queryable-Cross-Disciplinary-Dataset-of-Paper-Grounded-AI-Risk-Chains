@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0685",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6177,
+    "reference": "Transient client availability in IoT causes excessive fairness weight fluctuations, destabilizing model performance for consistently participating devices.",
+    "generated": "IoT users depend solely on FL-driven utility control, lacking fallback or redundancy when fairness optimization drifts under intermittent availability."
+  },
+  "impact": {
+    "similarity": 0.4752,
+    "reference": "Unreliable utility control recommendations cause user frustration, safety issues in smart homes, and loss of adoption.",
+    "generated": "Heterogeneous service quality and unfair resource allocation among IoT users erode trust and system-wide utility performance."
+  },
+  "dose_response": {
+    "similarity": 0.8017,
+    "reference": "AAggFF's online fairness optimization under non-stationary client participation causes temporal drift in group-wise performance, which in FL with intermittent IoT device availability leads to fairness weight fluctuations, resulting in unreliable utility control recommendations.",
+    "generated": "AAggFF's temporal drift under intermittent participation, through IoT users depending solely on FL utility control, triggers lack of redundancy when fairness optimization drifts, leading to heterogeneous service quality and unfair resource allocation eroding trust and utility."
+  }
+}

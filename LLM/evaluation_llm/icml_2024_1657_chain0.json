@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1657",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference highlights weak data governance (no deduplication/sanitization), while generated focuses on model memorization and inability to delete, a related but different sensitivity condition.",
+    "reference": "PII-rich documents used for training without deduplication or sanitization",
+    "generated": "VLM memorization of rare PII from training images, without post-training deletion capabilities, leaves exposed users unable to prevent extraction."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (users) and damage types (identity theft, financial fraud) are present; generated adds loss of privacy but covers the reference's impacts.",
+    "reference": "Identity theft and financial fraud via extracted PII",
+    "generated": "Exposed users suffer unauthorized disclosure of private information, enabling identity theft, financial fraud, and loss of privacy."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc introduces an erroneous step where exposure triggers memorization, reversing the causal logic, and omits regulatory fines; the chain is garbled, not matching the clear memorization→extraction→exposure→harms reference.",
+    "reference": "Training data memorization enables PII extraction from document images, which in a VLM Q&A service exposes users whose private documents were in training, leading to identity theft and regulatory fines.",
+    "generated": "Training data memorization enabling PII extraction from document images, through exposure of users whose private documents were in training data, triggers VLM memorization of rare PII without deletion, leading to unauthorized disclosure enabling identity theft, financial fraud, and privacy loss."
+  }
+}

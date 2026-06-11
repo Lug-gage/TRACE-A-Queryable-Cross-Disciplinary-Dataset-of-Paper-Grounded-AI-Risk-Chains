@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2125",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5386,
+    "reference": "Enterprises deploy pretrained SSMs in specialized domains (law, healthcare) without task-specific expressive adequacy testing.",
+    "generated": "Developers lack awareness of SSMs' inherent expressive limitations, relying on general benchmarks without probing formal language classes."
+  },
+  "impact": {
+    "similarity": 0.3862,
+    "reference": "Flawed professional decision-support (legal, medical) causing erroneous outcomes and liability.",
+    "generated": "Undetected failures in specialized domains produce unreliable outputs, financial losses, and erode trust in deployed language systems."
+  },
+  "dose_response": {
+    "similarity": 0.5714,
+    "reference": "Inherent expressive biases in pretrained SSMs go undetected, so when enterprises deploy them in specialized domains without testing, flawed decision-support causes erroneous outcomes and liability.",
+    "generated": "SSM design choices restricting expressivity for non-star-free languages, through deployment in specialized domains, trigger developers' unawareness of inherent limitations, leading to undetected failures, financial losses, and eroded trust."
+  }
+}

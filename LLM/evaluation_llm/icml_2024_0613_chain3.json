@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0613",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes non-expert users' habitual over-reliance without skill to detect unreliability, capturing the reference's condition of bypassing skepticism and perceiving as authoritative.",
+    "reference": "Non-expert users perceive visual explanations as authoritative, bypassing skepticism.",
+    "generated": "Non-expert users’ habitual over-reliance on feature visualizations as faithful explanations, without the technical skill to detect unreliability."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Flawed decisions matches erroneous decisions, but reference specifies high-stakes contexts (medical, loan) and affected parties, while generated focuses on operational failures, safety incidents, and trust erosion, missing the specific high-stakes human impact.",
+    "reference": "Erroneous decisions in high-stakes contexts like medical diagnosis or loan approval.",
+    "generated": "Flawed decisions based on deceptive visualizations, causing operational failures, safety incidents, and eroded trust in AI systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc: unreliable visualizations lead to non-expert users accepting them without skepticism, causing flawed decisions; matches reference's logic.",
+    "reference": "Unreliable visual explanations cause non-expert users to accept them as authoritative without skepticism, leading to erroneous decisions in high-stakes contexts like diagnosis or loans.",
+    "generated": "Unreliable interpretability visualizations, through non-expert users accepting model predictions from feature maps, trigger habitual over-reliance without skill to detect unreliability, leading to flawed decisions, operational failures, safety incidents, and eroded trust."
+  }
+}

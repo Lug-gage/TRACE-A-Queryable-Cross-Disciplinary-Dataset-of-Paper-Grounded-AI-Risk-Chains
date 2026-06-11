@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1515",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.587,
+    "reference": "Home assistive robots lack object damage prediction, making fragile items vulnerable to mislocalized grasps.",
+    "generated": "Elderly users' inability to detect or override unsafe robot grasps due to age-related physical and cognitive limitations."
+  },
+  "impact": {
+    "similarity": 0.6093,
+    "reference": "Property damage and potential minor injury to elderly users from dropped or crushed items.",
+    "generated": "Physical injury and loss of independence from dropped objects or collisions during failed robot manipulations."
+  },
+  "dose_response": {
+    "similarity": 0.8897,
+    "reference": "Visual prompting's brittle spatial grounding leads to grasp mislocalization, which, when deployed in home assistive robots for elderly users, results in property damage and minor injury.",
+    "generated": "Visual prompting's brittle spatial grounding, when elderly users rely on home assistive robots, triggers their age-related inability to detect or override unsafe grasps, leading to physical injury and loss of independence from dropped objects or collisions."
+  }
+}

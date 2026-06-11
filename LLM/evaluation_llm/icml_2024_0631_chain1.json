@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0631",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Educator reliance on detectors that lack adversarial evasion guarantees captures the same sensitivity to flawed detector outputs as blind trust ignoring false rates",
+    "reference": "Instructors and institutions blindly trust detector outputs, ignoring high false positive/negative rates due to adversarial perturbations.",
+    "generated": "Educators and institutions depend on detectors that cannot verify semantic properties or provide provable guarantees against adversarial evasion."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Devaluing credentials and eroding trust covered, but wrongful accusations against honest students omitted",
+    "reference": "Wrongful accusations penalize honest students; undetected AI use devalues academic credentials, eroding institutional trust.",
+    "generated": "Undetectable machine-written submissions degrade academic integrity, devaluing credentials and eroding institutional trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc starts from semantic undecidability and ends in trust erosion, but misses the specific link of adversarial perturbations fooling detectors and the resultant blind trust in flawed outputs",
+    "reference": "Semantic undecidability allows adversarial perturbations that fool AI text detectors, causing educators to blindly trust flawed outputs, leading to wrongful accusations and erosion of academic trust.",
+    "generated": "Semantic undecidability of compositional threats, via educators' reliance on AI-generated text detectors, triggers dependence on detectors without verifiable semantic guarantees, leading to undetectable machine-written submissions that degrade academic integrity, devalue credentials, and erode institutional trust."
+  }
+}

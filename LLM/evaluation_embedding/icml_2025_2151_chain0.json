@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2151",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.8258,
+    "reference": "Pathologists over-rely on AI outputs without verifying organ-specific validity.",
+    "generated": "Pathologists rely on AI outputs without organ-specific validation benchmarks or uncertainty signals to detect domain shift errors."
+  },
+  "impact": {
+    "similarity": 0.6938,
+    "reference": "Misclassification leads to inappropriate treatment plans and patient harm.",
+    "generated": "Incorrect cancer subtype diagnoses lead to inappropriate treatment selection and patient harm at scale."
+  },
+  "dose_response": {
+    "similarity": 0.7663,
+    "reference": "Unresolved domain shifts in cross-organ MIL transfer lead to unreliable subtype predictions in FEATHER PC-108, which when pathologists over-rely on causes misclassification and inappropriate treatment harm.",
+    "generated": "Cross-organ transfer of pretrained MIL models with unresolved domain shifts, through pathologists using AI-assisted cancer subtype classification, triggers reliance on AI outputs lacking organ-specific validation benchmarks or uncertainty signals, leading to incorrect subtype diagnoses, inappropriate treatment, and patient harm at scale."
+  }
+}

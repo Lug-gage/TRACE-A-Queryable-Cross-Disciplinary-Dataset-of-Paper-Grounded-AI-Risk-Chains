@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference identifies narrow perturbation sets missing adversarial evasion techniques; generated describes institutional lack of statistical expertise and reliance on reports. Both relate to detector unreliability but describe different sensitivity conditions.",
+    "reference": "Detector evaluations use narrow perturbation sets, missing adversarial evasion techniques.",
+    "generated": "Educational institutions lack the statistical expertise to independently verify detector robustness, creating reliance on potentially misleading accuracy reports."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers undetected submissions undermining academic integrity, but omits false accusations of cheating harming students.",
+    "reference": "False accusations of cheating harm students; undetected cheating undermines academic integrity.",
+    "generated": "Widespread undetected AI-generated submissions undermine academic integrity and devalue authentic student assessment."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference causal arc is limited perturbation sampling → overestimated robustness → false accusations and undetected cheating. Generated arc is unreliable statistical inference → institutional reliance on reports → undetected submissions; different causal mechanism, missing overestimation and false accusations.",
+    "reference": "Limited perturbation sampling in detector evaluation overestimates robustness, causing false accusations that harm students and undetected cheating that undermines academic integrity.",
+    "generated": "Unreliable statistical inference from perturbation analysis, through educational institutions relying on detector accuracy reports, triggers their lack of statistical expertise to verify robustness, leading to widespread undetected AI-generated submissions that undermine academic integrity."
+  }
+}

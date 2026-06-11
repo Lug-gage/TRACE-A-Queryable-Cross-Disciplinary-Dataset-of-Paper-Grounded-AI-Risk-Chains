@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated text describes detection systems' reliance on refusal-loss signals that stealthy, fluent suffixes avoid, which matches the reference's over-reliance on a single detection method creating a single point of failure.",
+    "reference": "Over-reliance on a single detection method (refusal loss) creates a single point of failure; attackers adapt quickly.",
+    "generated": "Detection systems rely on refusal-loss signals that stealthy, fluent adversarial suffixes do not trigger."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The generated text mentions harmful outputs served undetected and safety guardrails undermined, covering the affected party (users) and harm, but misses the reference's specific damage elements of complacency and regulatory scrutiny.",
+    "reference": "Undetectable jailbreaks persist, causing ongoing harm and complacency, leading to regulatory scrutiny.",
+    "generated": "Harmful LLM outputs are served to users undetected, undermining safety guardrails and enabling misuse."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The core causal arc (stealthy suffixes exploit refusal-loss reliance to evade detection and cause harm) is present, but the reference's full arc includes persistent jailbreaks leading to ongoing harm and regulatory scrutiny; the generated arc omits the regulatory scrutiny link, making it partial.",
+    "reference": "Stealthy adversarial suffixes evade detection by exploiting over-reliance on a single method, enabling persistent jailbreaks that cause ongoing harm and regulatory scrutiny.",
+    "generated": "Stealthy controllable generation of adversarial suffixes, when directed at jailbreak detection systems, exploits their reliance on refusal-loss signals that fluent suffixes do not trigger, resulting in harmful outputs served undetected and safety guardrails undermined."
+  }
+}

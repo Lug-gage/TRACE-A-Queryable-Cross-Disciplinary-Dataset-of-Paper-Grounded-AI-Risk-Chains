@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes pharmacologists’ uncritical acceptance of confident predictions due to institutional reliance on metrics that ignore extrapolation uncertainty, which matches the reference’s vulnerability of trusting extrapolated predictions without acknowledging model failure beyond training range.",
+    "reference": "Pharmacologists trust extrapolated predictions without acknowledging model failure beyond training range.",
+    "generated": "Pharmacologists’ institutional reliance on model accuracy metrics that disregard extrapolation uncertainty, enabling uncritical acceptance of confident predictions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated specifies erroneous clinical trial dosing leading to patient harm and trial failure; patient harm semantically encompasses the reference’s patient toxicity or lack of efficacy, and trial failure is explicitly stated, so both affected party and damage type are present.",
+    "reference": "Incorrect dosing in clinical trials, causing patient toxicity or lack of efficacy, and trial failure.",
+    "generated": "Erroneous clinical trial dosing leading to patient harm, trial failure, and misallocation of drug development resources."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes miscalibrated uncertainty concealing distribution shift, but it omits the key link where these concealments produce spuriously confident inhibition estimates; instead it interposes institutional reliance on accuracy metrics as the mechanism, missing the direct confident-estimate step that leads to incorrect dosing.",
+    "reference": "Miscalibrated uncertainty estimates conceal distribution shift failures, producing spuriously confident inhibition estimates that lead pharmacologists to determine incorrect dosing in clinical trials.",
+    "generated": "Miscalibrated uncertainty estimates that conceal distribution shift failures, through pharmacologists using extrapolated curves to determine dosing in clinical trials, trigger institutional reliance on accuracy metrics disregarding extrapolation uncertainty, leading to erroneous dosing, patient harm, trial failure, and misallocation."
+  }
+}

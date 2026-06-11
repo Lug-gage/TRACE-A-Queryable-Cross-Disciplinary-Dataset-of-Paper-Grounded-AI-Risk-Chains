@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1057",
+  "chain_index": 1,
+  "title": "DataFreeShield Defending Adversarial Attacks without Training Data",
+  "abstract": "Recent advances in adversarial robustness rely on an abundant set of training data, where using external or additional datasets has become a common setting. However, in real life, the training data is often kept private for security and privacy issues, while only the pretrained weight is available to the public. In such scenarios, existing methods that assume accessibility to the original data become inapplicable. Thus we investigate the pivotal problem of data-free adversarial robustness, where we try to achieve adversarial robustness without accessing any real data. Through a preliminary study, we highlight the severity of the problem by showing that robustness without the original dataset is difficult to achieve, even with similar domain datasets. To address this issue, we propose DataFreeShield, which tackles the problem from two perspectives: surrogate dataset generation and adversarial training using the generated data. Through extensive validation, we show that DataFreeShield outperforms baselines, demonstrating that the proposed method sets the first entirely data-free solution for the adversarial robustness problem.",
+  "impact": "As shown in Appendix M, the generated samples are not very human-recognizable, and being so does not necessarily lead to better performance of the models. From these facts, we believe our synthetic input generation does not cause privacy invasion that might have existed from the original training dataset. However, there is still a possibility where the generated samples could affect privacy concerns, such as membership inference attacks (Shokri et al., 2017) or model stealing (Lee et al., 2019). For example, an attacker might compare the image-level or feature-level similarity of some test samples with the synthetically generated samples to find out whether the test sample is part of the training set or not. We believe further investigation is needed on such side-effects, which we leave as a future work.",
+  "query_input": {
+    "scenario": "Data-free robustness in LLM guardrails",
+    "issue": "Continuous embedding attacks on synthetic data yield robustness that does not transfer to discrete text-based jailbreaks.",
+    "hazard": [
+      "Synthetic surrogate datasets for adversarial training lack fidelity to the true data distribution, producing models with brittle, overestimated robustness."
+    ],
+    "exposure": [
+      "Users interacting with LLM-based chatbots and content moderation systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "LLM guardrails trained on synthetic data misjudge robustness, leaving them unable to detect real text-based jailbreaks.",
+    "impact": "Chatbots and moderation systems output harmful content, including disinformation and unsafe instructions, eroding user trust and safety.",
+    "dose_response": "Synthetic surrogate datasets lacking distributional fidelity, through user interactions with LLM chatbots, trigger guardrails' inability to detect real text-based jailbreaks, leading to harmful outputs and eroded user trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Synthetic data's distribution mismatch enables overestimated guardrail robustness, which in user-facing chatbots exposes users to discrete jailbreaks, leading to harmful content exposure and platform liability."
+    ],
+    "vulnerability": [
+      "Guardrail developers trust embedding-space robustness metrics that do not reflect real user behavior.",
+      "Users are exposed to harmful content because institutional safety assurances are based on flawed evaluation."
+    ],
+    "impact": [
+      "Widespread exposure to toxic, manipulative, or illegal content through chatbots and moderation bypasses.",
+      "Legal liability and reputational damage for platform operators when guardrails fail publicly."
+    ]
+  }
+}

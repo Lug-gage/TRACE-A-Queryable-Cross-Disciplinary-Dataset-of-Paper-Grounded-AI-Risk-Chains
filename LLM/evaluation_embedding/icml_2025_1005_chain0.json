@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7298,
+    "reference": "Aggregated pairwise comparisons are highly sensitive to strategic voting; even a small bot cohort can skew rankings.",
+    "generated": "Reliance on anonymous, unverified pairwise voting without robust bot detection allows coordinated automated manipulation to skew rankings."
+  },
+  "impact": {
+    "similarity": 0.8148,
+    "reference": "Corrupted leaderboards mislead research priorities, resource allocation, and public trust in AI model evaluations.",
+    "generated": "Distorted leaderboard rankings mislead model selection and resource allocation, eroding trust in evaluation benchmarks and promoting inferior models."
+  },
+  "dose_response": {
+    "similarity": 0.7484,
+    "reference": "Coordinated automated voting manipulates pairwise leaderboard rankings, corrupting the evaluation that the research community relies on, misleading research priorities and eroding public trust in AI models.",
+    "generated": "Crowdsourced pairwise comparison leaderboards for LLM evaluation, through the AI research community's reliance on anonymous, unverified voting without robust bot detection, trigger adversarial manipulation that distorts rankings, misleading model selection and resource allocation, eroding trust in evaluation benchmarks and promoting inferior models."
+  }
+}

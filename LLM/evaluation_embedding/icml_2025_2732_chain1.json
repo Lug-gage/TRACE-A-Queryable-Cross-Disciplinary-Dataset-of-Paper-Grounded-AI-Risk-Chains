@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2732",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7244,
+    "reference": "Newsroom reliance on single forensic tools without corroborating sources creates verification gaps.",
+    "generated": "Journalists' reliance on forensic tools that detect artifacts absent in high-quality AI images, without robust alternative verification protocols."
+  },
+  "impact": {
+    "similarity": 0.6822,
+    "reference": "Publication of synthetic images as authentic news, causing retractions and loss of journalistic credibility.",
+    "generated": "False authentication of AI-generated images as real, enabling misinformation campaigns and undermining public trust in news media."
+  },
+  "dose_response": {
+    "similarity": 0.7393,
+    "reference": "Improved text-to-image generation quality enables images indistinguishable by forensic tools, which in news organizations verifying image authenticity exposes journalists, leading to publication of synthetic images as authentic news.",
+    "generated": "Undetectable AI-generated images, through journalists' forensic verification, triggers reliance on artifact detection that fails on high-quality images without alternative protocols, leading to false authentication, misinformation, and eroded public trust in news media."
+  }
+}

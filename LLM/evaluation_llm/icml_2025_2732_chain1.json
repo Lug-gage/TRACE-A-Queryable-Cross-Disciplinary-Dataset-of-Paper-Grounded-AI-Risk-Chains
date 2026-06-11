@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2732",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on single forensic tools without corroboration is captured as reliance on artifact-detection forensic tools without robust alternative verification protocols.",
+    "reference": "Newsroom reliance on single forensic tools without corroborating sources creates verification gaps.",
+    "generated": "Journalists' reliance on forensic tools that detect artifacts absent in high-quality AI images, without robust alternative verification protocols."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Publication of synthetic images as authentic news causing retractions and loss of credibility is covered by false authentication enabling misinformation and undermining public trust, which entails loss of credibility.",
+    "reference": "Publication of synthetic images as authentic news, causing retractions and loss of journalistic credibility.",
+    "generated": "False authentication of AI-generated images as real, enabling misinformation campaigns and undermining public trust in news media."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from undetectable images through forensic verification failure leading to false authentication is the same as improved generation quality making images indistinguishable by forensic tools, leading to publication of fake news.",
+    "reference": "Improved text-to-image generation quality enables images indistinguishable by forensic tools, which in news organizations verifying image authenticity exposes journalists, leading to publication of synthetic images as authentic news.",
+    "generated": "Undetectable AI-generated images, through journalists' forensic verification, triggers reliance on artifact detection that fails on high-quality images without alternative protocols, leading to false authentication, misinformation, and eroded public trust in news media."
+  }
+}

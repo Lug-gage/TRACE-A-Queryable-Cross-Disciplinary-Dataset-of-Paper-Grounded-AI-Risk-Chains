@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0601",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes over-reliance on query-agnostic features causing systematic failures for visually impaired users; generated describes user inability to verify, a related but different condition",
+    "reference": "Over-reliance on query-agnostic features in assistive AI creates systematic failures for visually impaired users on complex temporal tasks.",
+    "generated": "Users lack independent means to verify temporal event ordering and causal links in AI-generated video summaries."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "reference specifies visually impaired users receive factually incorrect event sequences and trust erosion; generated mentions flawed decisions from misinformation about sequences but omits the affected party and trust erosion, covering only part of the damage",
+    "reference": "Visually impaired users receive factually incorrect event sequences, eroding trust in AI assistants for daily video comprehension.",
+    "generated": "Flawed decisions and analyses result from misinformation about event sequences and missed causal connections."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "generated starts with same cause (query-agnostic encoding giving brittle temporal representations) but then diverges: reference has incorrect event ordering leading to false narratives and trust erosion; generated instead invokes unverifiability triggered by reliance, missing the incorrect ordering link and trust erosion, hence partially present",
+    "reference": "Query-agnostic visual encoding produces brittle temporal representations, which in deployment on long-form benchmarks causes incorrect event ordering, exposing users to plausible but false narratives that erode trust.",
+    "generated": "Query-agnostic visual encoding in modular VideoQA provides brittle temporal representations that, through users' reliance on AI assistants, trigger unverifiability of temporal order and causal links, leading to flawed decisions from misinformation about event sequences and missed causal connections."
+  }
+}

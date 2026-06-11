@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1798",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6336,
+    "reference": "Researchers trust SKI-derived predictive quality in high dimensions, accepting spurious precision in sparse regions.",
+    "generated": "Researchers lack error-controlled guarantees for SKI in high-dimensional settings (d≥3), where spectral norm error necessarily grows with sample size."
+  },
+  "impact": {
+    "similarity": 0.4964,
+    "reference": "False scientific discoveries propagate through literature, wasting resources and damaging credibility of ML in science.",
+    "generated": "Degraded posterior inference and hyperparameter estimation produce unreliable predictions and misinformed scientific conclusions in high-dimensional data analysis."
+  },
+  "dose_response": {
+    "similarity": 0.8135,
+    "reference": "Spectral norm error from SKI's Gram approximation enables spurious precision in high-dimensional input spaces, exposing researchers applying SKI to scientific data to false discoveries that erode credibility of ML in science.",
+    "generated": "SKI's Gram approximation spectral norm error, through application to high-dimensional data, triggers the absence of error-controlled guarantees for d≥3 where error grows with sample size, leading to degraded posterior inference and hyperparameter estimation producing unreliable predictions and misinformed scientific conclusions."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1592",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5372,
+    "reference": "Stroke lesion heterogeneity uncaptured in training leads to value misestimation for atypical motor cortices during recovery.",
+    "generated": "Post-stroke brains lack the plasticity to counteract maladaptive stimulation, enabling harmful patterns to disrupt recovery."
+  },
+  "impact": {
+    "similarity": 0.6423,
+    "reference": "Inappropriate stimulation impairs motor relearning, prolonging disability and increasing caregiver strain and societal healthcare costs.",
+    "generated": "Worsened motor deficits and prolonged disability, undermining rehabilitation progress and functional independence."
+  },
+  "dose_response": {
+    "similarity": 0.8649,
+    "reference": "Value overestimation on out-of-distribution neural states enables unsafe stimulation actions, which in stroke survivors using a neural coprocessor for motor rehabilitation exposes them to inappropriate patterns, leading to impaired motor relearning, prolonged disability, increased caregiver strain, and societal healthcare costs.",
+    "generated": "Value overestimation on out-of-distribution neural states in model-based RL policies produces unsafe stimulation, which through stroke survivors' neural coprocessor exploits post-stroke brains' limited plasticity, causing maladaptive disruption that worsens motor deficits, prolongs disability, and undermines rehabilitation and functional independence."
+  }
+}

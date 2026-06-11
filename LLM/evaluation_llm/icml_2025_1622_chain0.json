@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1622",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe susceptibility to misinterpreting model behavior due to insufficient validation of SAE features.",
+    "reference": "Over-reliance on SAE tools by developers without independent verification of feature attributions.",
+    "generated": "Lack of ground-truth validation for cross-modal SAE features makes researchers susceptible to misinterpreting model behavior."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (deployment of unsafe/biased models) covered, but affected party (high-stakes domains) missing.",
+    "reference": "Deployment of unsafe MLLMs in high-stakes domains due to false confidence in audited reasoning.",
+    "generated": "Flawed alignment and deployment of MLLMs with persistent cross-modal biases and hallucinations in visual QA systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe misleading feature decompositions -> misinterpretation by developers -> flawed/deployed models.",
+    "reference": "Incomplete SAE feature decompositions obscure cross-modal interactions, enabling developers to trust misleading visual QA explanations, which leads to deployment of unsafe MLLMs in high-stakes domains.",
+    "generated": "Sparse autoencoders producing misleading feature decompositions of MLLM representations, when used by researchers to audit visual QA, trigger misinterpretation from absent cross-modal ground-truth validation, leading to flawed alignment and persistent biases and hallucinations."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated condition — lack of redundancy to detect label errors in singly-annotated sets — directly matches the reference's 'eliminates any signal for detecting label errors.'",
+    "reference": "Single annotation per sample eliminates any signal for detecting label errors.",
+    "generated": "No redundancy to detect label errors in singly-annotated test sets leaves classifier comparisons susceptible to noise-induced bias."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "The generated text specifies adoption of inferior classifiers, which encompasses the reference's 'classifiers that exploit label noise patterns'; both identify the same affected party (researchers) and damage type (misguided model adoption).",
+    "reference": "Adoption of classifiers that exploit label noise patterns rather than true signal.",
+    "generated": "Erroneous comparisons propagate, causing adoption of inferior classifiers and corruption of machine learning benchmarks."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc includes inflated Type I error leading to biased comparisons and adoption, but omits the explicit 'corrupt test statistics' step and replaces 'reproducibility crises' with broader benchmark corruption, thus missing a causal link.",
+    "reference": "Inflated Type I error rates from single noisy labels directly corrupt test statistics, which in binary classifier comparison exposes researchers to adopt classifiers exploiting noise patterns, leading to reproducibility crises and cascading downstream errors.",
+    "generated": "Inflated Type I error rates under label noise, through researchers comparing classifiers on singly-annotated datasets, trigger no redundancy to detect label errors, leaving comparisons susceptible to noise-induced bias, leading to adoption of inferior classifiers and corruption of machine learning benchmarks."
+  }
+}

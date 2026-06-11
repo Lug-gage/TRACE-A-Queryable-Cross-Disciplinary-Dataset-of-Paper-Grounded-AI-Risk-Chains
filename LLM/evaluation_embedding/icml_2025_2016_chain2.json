@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2016",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6346,
+    "reference": "Forensic analysts rely on restored images without independent quality assessment, increasing risk of artifact-driven false identifications.",
+    "generated": "Analysts' reliance on automated restoration without ground-truth verification leaves them unable to detect overfitting artifacts."
+  },
+  "impact": {
+    "similarity": 0.58,
+    "reference": "False matches lead to wrongful convictions or investigative dead ends, eroding public trust in forensic evidence.",
+    "generated": "Investigative errors and wrongful convictions arise from artifact-distorted restored images."
+  },
+  "dose_response": {
+    "similarity": 0.8133,
+    "reference": "Overfitting in forensic image restoration introduces artifacts, and when forensic analysts use restored images without independent quality assessment, false matches can lead to wrongful convictions.",
+    "generated": "Overfitting from joint estimation and pseudo-hashing, through forensic analysts' use of restored images, triggers reliance on automated restoration without ground-truth verification, leading to artifact-distorted evidence causing investigative errors and wrongful convictions."
+  }
+}

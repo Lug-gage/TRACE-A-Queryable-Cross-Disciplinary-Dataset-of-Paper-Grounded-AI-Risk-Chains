@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1593",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4826,
+    "reference": "Designers rapidly integrate AI-generated images into professional work without scrutinizing representational biases.",
+    "generated": "Designers lack visibility into token discretization errors, leaving semantic distortion undetected before final output."
+  },
+  "impact": {
+    "similarity": 0.3856,
+    "reference": "Biased and stereotyped visuals from content misrepresentation perpetuate harmful societal narratives.",
+    "generated": "Finished creative works contain visual inaccuracies, eroding client trust and forcing costly redesigns."
+  },
+  "dose_response": {
+    "similarity": 0.7909,
+    "reference": "In content generation via auto-encoding morph-tokens, lossy compression distorts visual concepts, causing designers to integrate biased outputs without scrutiny, perpetuating harmful stereotypes.",
+    "generated": "Lossy compression of visual features via auto-encoded morph-tokens, through designers' use of AI text-to-image tools, triggers undetected semantic distortion due to limited visibility into token discretization errors, leading to visual inaccuracies in finished creative works, eroding client trust and forcing costly redesigns."
+  }
+}

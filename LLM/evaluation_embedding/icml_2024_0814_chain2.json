@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0814",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5077,
+    "reference": "Time pressure and competitive incentives reduce oversight, making participants accept agent-optimized models without leakage checks.",
+    "generated": "Deployers lack independent validation capacity to detect agent-masked data leakage and inflated performance metrics."
+  },
+  "impact": {
+    "similarity": 0.5689,
+    "reference": "Inflated leaderboard scores mislead rankings; models fail in production, causing financial and reputational harm.",
+    "generated": "Real-world application failures from overfitted models erode trust and cause misguided decisions in critical contexts."
+  },
+  "dose_response": {
+    "similarity": 0.6039,
+    "reference": "The agent's failure to detect leakage due to flawed planning, combined with participants' reduced oversight under competition pressure, yields inflated scores and production failures, causing financial and reputational damage.",
+    "generated": "Autonomous LLM agents generating flawed experimental plans, through competition participants deploying these models in real-world applications, triggers deployers' inability to detect agent-masked data leakage, leading to overfitted model failures, eroding trust and causing misguided decisions in critical contexts."
+  }
+}

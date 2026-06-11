@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1795",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7248,
+    "reference": "Actuaries' over-reliance on synthetic data for pricing without validation against real-world risk distributions.",
+    "generated": "Scarcity of real claims data precludes independent calibration verification, leaving actuaries dependent on synthetic outputs."
+  },
+  "impact": {
+    "similarity": 0.6393,
+    "reference": "Mispriced premiums leading to adverse selection, insolvency, or denial of legitimate claims.",
+    "generated": "Systematic underwriting losses from mispriced policies erode capital reserves, increasing insolvency risk across insurance portfolios."
+  },
+  "dose_response": {
+    "similarity": 0.9135,
+    "reference": "Synthetic claims data from LLM ensembles introduce distributional shifts distorting confidence calibration, enabling actuaries interpreting augmented predictions to over-rely on narrow confidence bounds, leading to mispriced premiums, adverse selection, insolvency, or denial of claims.",
+    "generated": "Distributional shifts from LLM synthetic data that distort confidence calibration, through actuaries interpreting augmented claim predictions without real data for calibration verification, trigger dependence on synthetic outputs, leading to systematic underwriting losses and increased insolvency risk."
+  }
+}

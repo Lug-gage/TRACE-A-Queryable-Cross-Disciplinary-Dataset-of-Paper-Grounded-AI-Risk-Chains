@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1146",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The condition of over-relying on GNN explanations without adversarial robustness checks is present in both; the inability to distinguish manipulated interpretations is a direct consequence of that reliance.",
+    "reference": "Operators over-rely on GNN explanations as ground truth without adversarial robustness checks.",
+    "generated": "Operators and engineers rely on GNN explanations without adversarial robustness checks, leaving them unable to distinguish manipulated interpretations from genuine ones."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The generated text describes physical infrastructure failures (similar to power outages) but omits the economic loss and does not clearly specify the affected party (misled engineers), covering only the damage type partially.",
+    "reference": "Misled engineers fail to mitigate critical failures, causing power outages and economic loss.",
+    "generated": "Undetected operational threats lead to erroneous security assessments, risking cascading physical infrastructure failures."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from post-hoc GNN explainer vulnerability to altered explanations, through operator over-reliance without checks, to indistinguishable interpretations and ultimately cascading failures matches the reference logic; same chain of causation.",
+    "reference": "Post-hoc GNN explainer vulnerability to graph perturbations enables altered explanations that, when power grid operators over-rely on them without robustness checks, cause misled engineers to fail to mitigate critical failures, leading to power outages and economic loss.",
+    "generated": "Post-hoc GNN explainers vulnerable to graph perturbations altering explanations but not predictions, through operators relying on them for security assessment, trigger unchecked reliance that makes manipulated interpretations indistinguishable, leading to undetected operational threats, erroneous security assessments, and cascading infrastructure failures."
+  }
+}

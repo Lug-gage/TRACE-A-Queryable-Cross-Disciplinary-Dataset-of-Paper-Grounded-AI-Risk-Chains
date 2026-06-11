@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2111",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe a condition of uncritical trust in AI outputs without independent verification; generated adds lack of forensic tools but core sensitivity is the same.",
+    "reference": "Public reliance on AI services without independent verification of output authenticity.",
+    "generated": "Users lack forensic tools to detect backdoor triggers and inherently trust generated outputs, rendering them defenseless against manipulated content."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference impact is erosion of public trust in AI media; generated impact is unauthorized copyright reproduction and legal liability for platform providers, missing both the affected party (public) and the damage type (trust erosion).",
+    "reference": "Erosion of public trust in AI-generated media and platforms.",
+    "generated": "Unauthorized reproduction of copyrighted works from innocent prompts, causing intellectual property violations and legal liability for platform providers."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from poisoned samples to triggered associations and exposure to manipulated outputs is present, but the final translation to erosion of trust is replaced by a different outcome (legal liability), so the complete reference arc is not covered.",
+    "reference": "Stealthy poisoned training samples create triggered associations, which in public image generation services expose users to manipulated outputs, leading to erosion of trust and normalization of undetectable copyright infringement.",
+    "generated": "Backdoor data poisoning that creates triggered associations between benign text and unintended visuals, through public platform users receiving manipulated outputs, triggers their lack of forensic tools and inherent trust, leading to unauthorized copyrighted content reproduction and legal liability."
+  }
+}

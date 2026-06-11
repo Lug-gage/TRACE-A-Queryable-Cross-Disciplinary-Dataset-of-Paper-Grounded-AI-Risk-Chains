@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2406",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3635,
+    "reference": "Generated structures capture spurious patterns from limited training observables.",
+    "generated": "Condensed matter theorists lack standardized protocols for validating LLM-discovered tensor networks against out-of-distribution quantum phases, allowing brittle overfit structures to go undetected."
+  },
+  "impact": {
+    "similarity": 0.7428,
+    "reference": "Erroneous ground state predictions mislead condensed matter research and waste computational resources.",
+    "generated": "Erroneous quantum phase transition predictions propagate through the physics literature, misdirecting experimental efforts and wasting computational resources."
+  },
+  "dose_response": {
+    "similarity": 0.8248,
+    "reference": "Overfitting LLM-driven search yields brittle tensor networks that, when used by physicists without validation, capture spurious correlations, leading to erroneous ground state predictions that mislead research and waste resources.",
+    "generated": "Overfitting to optimization criteria in LLM-driven algorithm generation produces brittle tensor network structures that, when deployed in quantum phase transition simulations without standardized out-of-distribution validation, trigger undetected failures, causing erroneous predictions to propagate, misdirecting experiments and wasting computational resources."
+  }
+}

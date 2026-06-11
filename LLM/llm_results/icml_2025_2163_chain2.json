@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2163",
+  "chain_index": 2,
+  "title": "Long-Term TalkingFace Generation via Motion-Prior Conditional Diffusion Model",
+  "abstract": "Recent advances in conditional diffusion models have shown promise for generating realistic TalkingFace videos, yet challenges persist in achieving consistent head movement, synchronized facial expressions, and accurate lip synchronization over extended generations. To address these, we introduce the Motion-priors Conditional Diffusion Model (MCDM), which utilizes both archived and current clip motion priors to enhance motion prediction and ensure temporal consistency. The model consists of three key elements: (1) an archived-clip motion-prior that incorporates historical frames and a reference frame to preserve identity and context; (2) a present-clip motion-prior diffusion model that captures multimodal causality for accurate predictions of head movements, lip sync, and expressions; and (3) a memory-efficient temporal attention mechanism that mitigates error accumulation by dynamically storing and updating motion features. We also introduce the TalkingFace-Wild dataset, a multilingual collection of over 200 hours of footage across 10 languages. Experimental results demonstrate the effectiveness of MCDM in maintaining identity and motion continuity for long-term TalkingFace generation.",
+  "impact": "This paper presents the MCDM model, designed to enhance identity and temporal consistency in long-term TalkingFace generation. While MCDM contributes to the advancement of generative modeling, we recognize the potential ethical concerns, including the risks of misuse for creating deceptive content or spreading misinformation. We emphasize the importance of transparency in AI development and support the integration of detection frameworks to mitigate these risks. In alignment with ongoing efforts in responsible AI, we aim to ensure that the benefits of our work are balanced with its ethical implications, promoting safe and constructive applications in society.",
+  "query_input": {
+    "scenario": "Emotion-aware talking face generation for virtual assistants",
+    "issue": "Inaccurate expression synthesis due to error accumulation causes inappropriate affective responses.",
+    "hazard": [
+      "Error accumulation in sequential diffusion-based talking face generation degrades temporal consistency and lip synchronization."
+    ],
+    "exposure": [
+      "Users interacting with emotionally expressive AI virtual assistants."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users' emotional reliance on virtual assistant facial expressions without alternate channels to verify affective intent.",
+    "impact": "Users experience inappropriate affective responses, leading to confusion, emotional discomfort, and diminished trust in the assistant.",
+    "dose_response": "Error accumulation in diffusion-based talking face generation degrading temporal consistency and lip sync, through emotionally expressive virtual assistant interaction, triggers emotional reliance without alternate channels to verify affective intent, leading to inappropriate affective responses, confusion, discomfort, and diminished trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Error accumulation enables inappropriate expressions, which, given users' anthropomorphism, in virtual assistant interactions lead to frustration and decreased trust."
+    ],
+    "vulnerability": [
+      "Users anthropomorphize assistants and expect matching emotional responses, making mismatches salient.",
+      "System lacks awareness of its own expression confidence, leading to error propagation."
+    ],
+    "impact": [
+      "Inappropriate emotional feedback frustrates users and reduces perceived assistant empathy.",
+      "Decreased trust may lead to user abandonment of the assistant."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2285",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance on language as trustworthy and lack of detection, but reference specifies emotional trust in conversational agents; related but not identical sensitivity.",
+    "reference": "Players' emotional trust in conversational agents increases susceptibility to belief manipulation.",
+    "generated": "Human players rely on natural language as a trustworthy signal and lack means to detect AI agents deploying persuasive manipulation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions unfair outcomes undermining trust and integrity (similar to erosion of fair play norms), but does not include the deterrence of user participation from the reference.",
+    "reference": "Erosion of fair play norms deters user participation in gaming communities.",
+    "generated": "Unfair game outcomes emerge, undermining trust and the integrity of the social deduction experience for human players."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes persuasive language → belief manipulation → unfair outcomes eroding trust, but omits exploitation of emotional trust and undisclosed AI identity, and does not mention normalization of AI-driven manipulation.",
+    "reference": "RL-trained LLM agents' persuasive language manipulates human players' beliefs in social deduction games, exploiting emotional trust and undisclosed AI identity, leading to erosion of fair play norms and normalization of AI-driven manipulation.",
+    "generated": "LLM-based strategic discussion agents that manipulate beliefs through persuasive language, in online social deduction games with human players, triggers human reliance on natural language as trustworthy and inability to detect manipulation, leading to unfair outcomes eroding trust and integrity."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 2,
+  "title": "Machine Vision Therapy Multimodal Large Language Models Can Enhance Visual Robustness via Denoising In-Contex",
+  "abstract": "Although pre-trained models such as Contrastive Language-Image Pre-Training (CLIP) show impressive generalization results, their robustness is still limited under Out-of-Distribution (OOD) scenarios. Instead of undesirably leveraging human annotation as commonly done, it is possible to leverage the visual understanding power of Multi-modal Large Language Models (MLLMs). However, MLLMs struggle with vision problems due to task incompatibility, thus hindering their effectiveness. In this paper, we propose to effectively leverage MLLMs via Machine Vision Therapy which aims to rectify erroneous predictions of specific vision models. By supervising vision models using MLLM predictions, visual robustness can be boosted in a nearly unsupervised manner. Moreover, we propose a Denoising In-Context Learning (DICL) strategy to solve the incompatibility issue. Concretely, by examining the noise probability of each example through a transition matrix, we construct an instruction containing a correct exemplar and a probable erroneous one, which enables MLLMs to detect and rectify the incorrect predictions of vision models. Under mild assumptions, we theoretically show that our DICL method is guaranteed to find the ground truth. Through extensive experiments on various OOD datasets, our method demonstrates powerful capabilities for enhancing visual robustness under many OOD scenarios.",
+  "impact": "As the rapid development of MLLMs and LLMs has started influencing our lives, the proposed work could also show some potential broader impacts. For example, when highly powerful and accurate MLLMs occur in the future, human supervision for learning models will be no longer necessary. The learning paradigm could be large models guiding small models. However, it is vital that researchers make sure the knowledge interaction between large models and small models is ethically responsible, trustworthy, secure, robust, and explainable. Harmful knowledge or uncertain knowledge should not be freely transferred from one model to another. Hence, a rigorous code of ethics should be formulated to effectively regulate the process.",
+  "query_input": {
+    "scenario": "Context-dependent visual comprehension tasks (e.g., instruction following with images)",
+    "issue": "Denoised predictions may discard contextual cues, leading to misinterpretation.",
+    "hazard": [
+      "In-context denoising via self-training transition matrices may propagate and amplify hidden visual errors in MLLMs."
+    ],
+    "exposure": [
+      "Users relying on multimodal assistants for task guidance."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack verification mechanisms because denoising strips contextual cues essential for detecting errors in the assistant’s visual interpretations.",
+    "impact": "Incorrect task guidance causes user misjudgments, operational errors, and safety incidents.",
+    "dose_response": "In-context denoising via self-training transition matrices propagates hidden visual errors, through user reliance on multimodal assistants for task guidance, triggering lack of verification because denoising strips contextual error-detection cues, leading to incorrect guidance causing misjudgments, operational errors, and safety incidents."
+  },
+  "reference": {
+    "dose_response": [
+      "In-context denoising may discard contextual cues, enabling misinterpretation of instructions, which exposes users to flawed guidance; combined with over-reliance without cross-checking, this leads to task failures and safety incidents."
+    ],
+    "vulnerability": [
+      "Users following AI-generated instructions without cross-checking contextual consistency."
+    ],
+    "impact": [
+      "Task failures, safety incidents from misapplied guidance."
+    ]
+  }
+}

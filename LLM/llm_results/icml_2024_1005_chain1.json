@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1005",
+  "chain_index": 1,
+  "title": "VideoPoet A Large Language Model for Zero-Shot Video Generation",
+  "abstract": "We present VideoPoet, a model for synthesizing high-quality videos from a large variety of conditioning signals. VideoPoet employs a decoderonly transformer architecture that processes multimodal inputs - including images, videos, text, and audio. The training protocol follows that of Large Language Models (LLMs), consisting of two stages: pretraining and task-specific adaptation. During pretraining, VideoPoet incorporates a mixture of multimodal generative objectives within an autoregressive Transformer framework. The pretrained LLM serves as a foundation that is adapted to a range of video generation tasks. We present results demonstrating the model’s stateof-the-art capabilities in zero-shot video generation, specifically highlighting the generation of high-fidelity motions. Project page: https:// sites.research.google/videopoet/.",
+  "impact": "This paper introduces research aimed at advancing the field of video generation and introduces a new tool to enhance human creativity. In considering the societal impact of our video generation model, VideoPoet, several concerns emerge, including the potential for misuse and ethical considerations. Misuse may entail the creation of deceptive or harmful content, such as misinformation or deepfakes. Ethical considerations encompass ensuring that generated content adheres to ethical standards, avoids perpetuating harmful stereotypes, and respects cultural sensitivities. To mitigate these risks, we adhere to evolving strategies developed within our community. This includes using digital watermarking in generated videos to enable traceability and accountability, and maintain transparency in our model design to foster trust.",
+  "query_input": {
+    "scenario": "Image-to-video synthesis for surveillance or monitoring",
+    "issue": "Synthesized motion misrepresents object trajectories, inducing false situational assessments.",
+    "hazard": [
+      "Decoder-only transformer generates coherent but physically implausible or semantically misaligned video content from multimodal conditioning signals."
+    ],
+    "exposure": [
+      "Security personnel or automated systems relying on generated video for situational awareness."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Security operators and automated monitors lack real-time verification to detect synthetic motion misrepresentations.",
+    "impact": "False situational assessments provoke incorrect security responses, wasting resources or missing real threats.",
+    "dose_response": "Decoder-only transformer generating physically implausible or semantically misaligned video, through security-system reliance, triggers lack of real-time verification, leading to false situational assessments and incorrect responses that waste resources or miss real threats."
+  },
+  "reference": {
+    "dose_response": [
+      "Decoder-only transformers generate misaligned motion in surveillance video, which, when relied upon by security personnel with automation bias, leads to false situational assessments."
+    ],
+    "vulnerability": [
+      "Automated monitoring systems lack human-in-the-loop verification for AI-generated motion predictions.",
+      "Security personnel exhibit automation bias, over-trusting synthetic video outputs over contradictory sensor data."
+    ],
+    "impact": [
+      "Missed security threats due to erased or altered suspicious behaviors in generated footage.",
+      "False alarms and resource misallocation from hallucinated threats in surveillance feeds."
+    ]
+  }
+}

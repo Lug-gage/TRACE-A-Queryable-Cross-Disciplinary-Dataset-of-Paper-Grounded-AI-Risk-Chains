@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0353",
+  "chain_index": 1,
+  "title": "De-mark Watermark Removal in Large Language Models",
+  "abstract": "Watermarking techniques offer a promising way to identify machine-generated content via embedding covert information into the contents generated from language models (LMs). However, the robustness of the watermarking schemes has not been well explored. In this paper, we present DE- MARK, an advanced framework designed to remove n-gram-based watermarks effectively. Our method utilizes a novel querying strategy, termed random selection probing, which aids in assessing the strength of the watermark and identifying the red-green list within the n-gram watermark. Experiments on popular LMs, such as Llama3 and ChatGPT, demonstrate the efficiency and effectiveness of DE-MARK in watermark removal and exploitation tasks.",
+  "impact": "The application of our method introduces several potential risks. Primarily, it facilitates the removal of n-gram watermarks from watermarked language models, which can obscure the traceability and originality of the generated content. This capability poses a significant challenge to content attribution, potentially enabling misuse or misrepresentation of AI-generated information. More critically, our method is effective even on industry-scale large language models, such as ChatGPT. This broad applicability could lead to widespread implications across multiple sectors that rely on watermarking for security and verification purposes. Additionally, while our method aims to preserve the integrity and performance of the original models, unintended consequences affecting model behavior and output quality cannot be entirely ruled out. It is essential to consider these factors to develop appropriate safeguards and ethical guidelines for the use of this technology.",
+  "query_input": {
+    "scenario": "Adversarial attacks exploit watermarking design weaknesses",
+    "issue": "Watermark detection is stripped, undermining trust in text provenance verification.",
+    "hazard": [
+      "Watermark removal and evasion attacks can strip or weaken LLM text watermarks, rendering machine-generated text detection unreliable."
+    ],
+    "exposure": [
+      "Verification services relying on watermarks to attribute text to LLMs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Verification services depend exclusively on watermark integrity, leaving no fallback to detect forgery when watermarks are stripped.",
+    "impact": "Undetected machine-generated text spreads, breaking provenance verification and enabling large-scale automated disinformation.",
+    "dose_response": "Watermark removal and evasion attacks strip LLM text watermarks, through verification services that rely solely on watermark integrity, triggering their inability to detect forgery, leading to undetected machine-generated text spreading and enabling large-scale disinformation."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial perturbations exploiting known watermark designs strip signatures, exposing verification services to unreliable detection, eroding trust in digital content attribution."
+    ],
+    "vulnerability": [
+      "Watermark design disclosure allows adversaries to craft targeted perturbations, removing the detectable signature."
+    ],
+    "impact": [
+      "Verification services become unreliable, triggering a chain reaction of eroded trust in digital content attribution."
+    ]
+  }
+}

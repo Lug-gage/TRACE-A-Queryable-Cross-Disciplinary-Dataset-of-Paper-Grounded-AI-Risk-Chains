@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2229",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated 'lack automated verification to detect generated code that violates codebase conventions or implicit requirements' semantically covers the reference 'teams accept feature code without validating against implicit team norms or project history'.",
+    "reference": "Teams accept feature code without validating against implicit team norms or project history.",
+    "generated": "Software teams lack automated verification to detect generated code that violates codebase conventions or implicit requirements."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe damage to system stability/reliability; the generated elaborates with breakdowns, outages, and technical debt but still represents the same outcome type (eroded reliability).",
+    "reference": "System instability from inconsistent code patterns across the codebase.",
+    "generated": "Flawed features cause integration breakdowns, production outages, and accumulated technical debt, eroding software reliability."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal chain (plausible incorrect code → integration without convention checks → instability) is present, but the reference explicitly includes 'security holes' as an outcome, which the generated arc omits, thus missing a link.",
+    "reference": "LLM code agents' plausible but incorrect code, in repository-level feature generation, exposes teams to integration without convention checks, resulting in system instability and security holes.",
+    "generated": "Plausible but incorrect code from LLMs at scale, when integrated by teams into real-world codebases, triggers the absence of automated convention verification, leading to integration breakdowns, outages, and technical debt, eroding software reliability."
+  }
+}

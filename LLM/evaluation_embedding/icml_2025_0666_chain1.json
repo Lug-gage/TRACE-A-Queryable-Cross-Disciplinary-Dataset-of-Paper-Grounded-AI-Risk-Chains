@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0666",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4104,
+    "reference": "Disconnect between optimized welfare function and marginalized groups' actual needs, causing resource misallocation.",
+    "generated": "Policymakers lack independent audit and appeal mechanisms to correct model-driven misrankings, creating uncritical reliance on flawed outputs."
+  },
+  "impact": {
+    "similarity": 0.488,
+    "reference": "Entrenched systemic disadvantage as underserved communities receive decreasing support over time.",
+    "generated": "Misallocated assistance excludes the neediest, intensifying poverty, inequality, and eroding trust in welfare institutions."
+  },
+  "dose_response": {
+    "similarity": 0.6326,
+    "reference": "Mismatched welfare functions cause misranking that, in the policymaker resource program scenario, exposes policy makers and beneficiaries to disconnect from actual needs, leading to entrenched systemic disadvantage.",
+    "generated": "Systematic misranking of vulnerable individuals by biased predictive models, through model-informed resource allocation, triggers uncritical reliance absent audit and appeal mechanisms, leading to exclusion of the neediest, deepening poverty, inequality, and erosion of trust in welfare institutions."
+  }
+}

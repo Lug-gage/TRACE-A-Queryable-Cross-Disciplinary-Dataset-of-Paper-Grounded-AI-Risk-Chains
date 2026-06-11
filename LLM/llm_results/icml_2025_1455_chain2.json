@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_1455",
+  "chain_index": 2,
+  "title": "EgoPrivacy What Your First-Person Camera Says About You",
+  "abstract": "While the rapid proliferation of wearable cameras has raised significant concerns about egocentric video privacy, prior work has largely overlooked the unique privacy threats posed to the camera wearer. This work investigates the core question: How much privacy information about the camera wearer can be inferred from their firstperson view videos? We introduce EgoPrivacy, the first large-scale benchmark for comprehensive evaluation of privacy risks in egocentric vision. EgoPrivacy covers three types of privacy (demographic, individual, and situational) defining seven tasks that aim to recover private information ranging from fine-grained (e.g., wearer’s identity) to coarse-grained (e.g., age group). To further emphasize the privacy threats inherent to egocentric vision, we propose Retrieval-Augmented Attack, a novel attack strategy that leverages egoto-exo retrieval from an external pool of exocentric videos to boost the effectiveness of demographic privacy attacks. An extensive comparison of the different attacks possible under all threat models is presented, showing that private information of the wearer is highly susceptible to leakage. For instance, our findings indicate that foundation models can effectively compromise wearer privacy even in zero-shot settings by recovering attributes such as identity, scene, gender, and race with 70-80% accuracy. Our code and data are available at https://github.com/ williamium3000/ego-privacy.",
+  "impact": "This research reveals a significant vulnerability in wearable camera systems, demonstrating that egocentric privacy attacks can be effectively executed even using readily available, unmodified models. Although the introduced privacy attack methods, such as RAA, are designed as red-teaming instruments aimed at enhancing privacy defenses, there exists a concerning potential for their misuse in unauthorized mass surveillance. Consequently, our findings highlight an urgent need for the development and implementation of robust privacy safeguards and proactive intervention mechanisms to mitigate risks associated with wearable technology. Furthermore, as EgoPrivacy builds upon Ego-Exo4D and Charades-Ego, it inherits their imbalances in geographic, gender, ethnic, and age representation, which raise concerns about the fairness problem. This emphasizes the need for future efforts to curate more equitable datasets in egocentric vision and privacy research, which will be the next step of our work.",
+  "query_input": {
+    "scenario": "Life-logging wearer capturing social interactions",
+    "issue": "Exo video retrieval from social media reveals wearer's social network and demographics.",
+    "hazard": [
+      "Retrieval-augmented cross-view video models enable inference of wearer's personal attributes (identity, demographics, location, behavior) from egocentric footage by linking to exocentric video data."
+    ],
+    "exposure": [
+      "Individuals wearing life-logging cameras during social gatherings"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Wearers have no control over exocentric video capture and sharing by others in social settings, leaving no means to prevent cross-view linking.",
+    "impact": "Unauthorized disclosure of wearer's identity, social network, and demographics fuels profiling, stalking, or discrimination.",
+    "dose_response": "Retrieval-augmented cross-view video models, when individuals wear life-logging cameras during social gatherings, exploit wearers’ lack of control over others’ exocentric video, leading to unauthorized disclosure of identity, social network, and demographics that fuels profiling, stalking, or discrimination."
+  },
+  "reference": {
+    "dose_response": [
+      "Ego-captured social interactions are matched with tagged social media videos via cross-view retrieval, inferring relationships and demographics, causing social engineering, discrimination, and trust erosion."
+    ],
+    "vulnerability": [
+      "Ego-centric footage captures bystander faces and conversations enabling social graph reconstruction.",
+      "Social media exo-video provides tagged identities linking wearer to social network.",
+      "Absence of consent mechanisms for exploiting ego-exo linkage to infer relationships."
+    ],
+    "impact": [
+      "Exposure of private social ties leads to social engineering attacks or discrimination.",
+      "Unwanted disclosure of group affiliations causes reputational harm or blackmail.",
+      "Erosion of trust in wearable devices stifles adoption of assistive life-logging technologies."
+    ]
+  }
+}

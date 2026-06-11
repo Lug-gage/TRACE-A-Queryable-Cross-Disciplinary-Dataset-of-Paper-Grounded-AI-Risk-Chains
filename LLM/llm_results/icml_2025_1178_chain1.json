@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 1,
+  "title": "Correlated Errors in Large Language Models",
+  "abstract": "Diversity in training data, architecture, and providers is assumed to mitigate homogeneity in LLMs. However, we lack empirical evidence on whether different LLMs differ meaningfully. We conduct a large-scale empirical evaluation on over 350 LLMs overall, using two popular leaderboards and a resume-screening task. We find substantial correlation in model errors-on one leaderboard dataset, models agree 60% of the time when both models err. We identify factors driving model correlation, including shared architectures and providers. Crucially, however, larger and more accurate models have highly correlated errors, even with distinct architectures and providers. Finally, we show the effects of correlation in two downstream tasks: LLM-as-judge evaluation and hiring-the latter reflecting theoretical predictions regarding algorithmic monoculture.",
+  "impact": "We demonstrated that LLMs exhibit large amounts of correlation, even in how they err. This has implications for high-stakes settings such as hiring, where there is risk that applicants are systematically screened out of opportunities, and in LLM-as-judge settings, where models may inflate the estimated performance of other models. While our analysis is limited to a subset of tasks on which homogeneity may be a concern, it serves as a foundation for further evaluation and monitoring of the LLM ecosystem.",
+  "query_input": {
+    "scenario": "LLM-as-judge in automated evaluation",
+    "issue": "Error correlations inflate inter-evaluator agreement, concealing failures in assessing response quality.",
+    "hazard": [
+      "Correlated errors in LLM predictions cause systematic failure alignment across diverse models and evaluation tasks."
+    ],
+    "exposure": [
+      "Researchers using LLM judges to evaluate model outputs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers’ trust in inter-model agreement as a signal of correctness, without verifying error independence across LLM judges.",
+    "impact": "Hidden systematic failures inflate agreement scores, producing overconfident and misleading model evaluations that misguide research and deployment choices.",
+    "dose_response": "Correlated errors in LLM predictions, through researchers using LLM judges to evaluate outputs, triggers trust in inter-model agreement as a correctness signal unchecked for error independence, leading to hidden systematic failures that inflate agreement scores and produce overconfident, misleading evaluations."
+  },
+  "reference": {
+    "dose_response": [
+      "Correlated errors cause systematic failure alignment, which when researchers use LLM judges inflates inter-evaluator agreement, leading to deployment of flawed models as safe."
+    ],
+    "vulnerability": [
+      "LLM judges sharing architectures and training paradigms produce correlated blind spots, overestimating evaluation consensus."
+    ],
+    "impact": [
+      "Flawed models mistakenly deemed safe, risking deployment of harmful or biased systems."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2229",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe developers relying on a validation signal (benchmark/test suite success) and skipping deeper inspection, leaving defects undetected.",
+    "reference": "Developers over-trust benchmark performance, skipping manual review of AI patches.",
+    "generated": "Developers treat test suite success as sufficient validation, leaving hidden defects undetected because no additional code-correctness checks are applied."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe latent defects propagating across software ecosystems (many repositories) causing failures (cascading failures vs. outages, data loss, remediation).",
+    "reference": "Latent defects propagate across software ecosystems, causing cascading failures.",
+    "generated": "Flawed patches introduce latent bugs and security vulnerabilities at scale, causing system outages, data loss, and costly remediation across many repositories."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc includes unreliable code and adoption without inspection leading to defects, but misorders the causal chain: it presents adoption without inspection as triggering reliance on test success, whereas the reference describes over-trust in benchmark performance causing inspection to be skipped.",
+    "reference": "LLM code agents produce plausible but incorrect code, which in automated issue resolution exposes developers adopting patches without inspection, leading to latent defects propagation and cascading failures.",
+    "generated": "LLM agents producing unreliable code, when patches are adopted without manual inspection, trigger reliance on test success for validation, leaving hidden defects that scale into latent bugs, outages, and costly remediation across repositories."
+  }
+}

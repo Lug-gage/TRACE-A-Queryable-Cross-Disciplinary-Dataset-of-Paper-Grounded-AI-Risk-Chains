@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2232",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5683,
+    "reference": "Recommendation algorithms optimize for engagement metrics easily gamed by clickbait and sensationalism.",
+    "generated": "Content creators’ income and audiences’ attention depend on engagement-optimized algorithmic curation, offering no alternative to resist score-chasing."
+  },
+  "impact": {
+    "similarity": 0.6556,
+    "reference": "User experience degrades as low-quality clickbait crowds out authentic content.",
+    "generated": "Pervasive inauthentic content degrades user experience, reduces trust, and erodes platform user base and revenue."
+  },
+  "dose_response": {
+    "similarity": 0.7919,
+    "reference": "Classifier-induced feature markets incentivize engagement-optimizing modifications, exposing content creators and consumers to low-quality clickbait, leading to degraded user experience and erosion of trust in information sources.",
+    "generated": "Co-optimized learning and pricing in classifier-induced feature markets incentivize score-chasing modifications, which, on social media platforms, leave creators with no alternative but to invest in engagement-optimized curation, driving inauthentic content that degrades user experience and erodes platform trust and revenue."
+  }
+}

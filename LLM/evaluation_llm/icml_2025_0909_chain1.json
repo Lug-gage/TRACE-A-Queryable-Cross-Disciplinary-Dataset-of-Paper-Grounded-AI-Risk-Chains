@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0909",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference cites poaching adaptation outpacing retraining causing staleness; generated describes lack of ground-truth data forcing blind reliance on miscalibrated models. Different sensitivity conditions.",
+    "reference": "Poaching patterns adapt faster than model retraining, causing ranking staleness in dynamic hotspots.",
+    "generated": "Managers lack independent ground-truth data in under-monitored regions, forcing blind reliance on model rankings that may be miscalibrated."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated state that missing poaching hotspots accelerates endangered species population decline.",
+    "reference": "Missed poaching hotspots accelerate endangered species decline.",
+    "generated": "Poaching hotspots go unpatrolled, accelerating endangered species population decline."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both arcs begin with gradient estimates and end in species decline, but reference specifies gradient noise leads to ranking staleness, whereas generated attributes miscalibration to distribution shift and omits the staleness link.",
+    "reference": "Gradient estimate noise in top-K training enables ranking uncertainty and staleness, which in endangered wildlife monitoring leads managers to trust stale model outputs, missing poaching hotspots and accelerating species decline.",
+    "generated": "Decision-aware training with gradient estimates for discrete top-K selection yields miscalibrated models under distribution shift; when conservation managers deploy ranger patrols based on these models, blind reliance without ground-truth data in under-monitored regions leaves poaching hotspots unpatrolled, accelerating species decline."
+  }
+}

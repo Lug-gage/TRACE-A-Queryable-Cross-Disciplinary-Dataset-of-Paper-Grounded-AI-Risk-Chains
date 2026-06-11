@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1980",
+  "chain_index": 0,
+  "title": "Self-Improving Language Models for Evolutionary Program Synthesis A Case Study on ARC-AGI",
+  "abstract": "Many program synthesis tasks prove too challenging for even state-of-the-art language models to solve in single attempts. Search-based evolutionary methods offer a promising alternative by exploring solution spaces iteratively, but their effectiveness remain limited by the fixed capabilities of the underlying generative model. We propose SOAR, a method that learns program synthesis by integrating language models into a self-improving evolutionary loop. SOAR alternates between (1) an evolutionary search that uses an LLM to sample and refine candidate solutions, and (2) a hindsight learning phase that converts search attempts into valid problem-solution pairs used to fine-tune the LLM’s sampling and refinement capabilities - enabling increasingly effective search in subsequent iterations. On the challenging ARC-AGI benchmark, SOAR achieves significant performance gains across model scales and iterations, leveraging positive transfer between the sampling and refinement finetuning tasks. These improvements carry over to test-time adaptation, enabling SOAR to solve 52% of the public test set.1",
+  "impact": "This work demonstrates how iterative model improvement can help overcome the performance plateaus typically encountered when scaling both model size and search budget. This finding suggests an important principle for developing more capable AI systems that could benefit society across numerous applications, from software development to scientific discovery. However, the development of self-improving AI systems naturally raises safety considerations. While our results show clear performance slow downs rather than unbounded improvement, suggesting inherent limitations to our specific approach, the general principle of systems improving through self-directed learning could inspire future systems with broader capabilities. This underscores the importance of implementing appropriate safeguards and oversight mechanisms when developing such systems. We demonstrate these results using open-source language models and will release our complete codebase upon publication. We believe this transparency is crucial for responsible development of increasingly capable AI systems, and we encourage researchers building on this work to maintain similar standards of openness while carefully considering potential societal impacts.",
+  "query_input": {
+    "scenario": "AI code assistants in software development (e.g., code repair)",
+    "issue": "Generated code passes test cases but contains hidden bugs causing production failures.",
+    "hazard": [
+      "LLM-based iterative code refinement and self-training amplifies subtle errors, resulting in programs that are superficially correct but fail on unseen inputs."
+    ],
+    "exposure": [
+      "Developers and end-users of software built with AI-generated code"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers lack means to detect subtle bugs that pass test cases, trusting AI-generated code as correct.",
+    "impact": "Production failures from hidden bugs cause financial loss, service outages, and safety incidents affecting end-users.",
+    "dose_response": "LLM-based iterative refinement and self-training, by amplifying subtle errors in superficially correct AI-generated code used by developers and end-users, triggers inability to detect bugs that pass test cases, leading to production failures causing financial loss, outages, and safety incidents."
+  },
+  "reference": {
+    "dose_response": [
+      "Iterative LLM refinement amplifies hidden code errors, and developer over-trust in test-passing results leads to production bugs that cause financial loss and erode public trust."
+    ],
+    "vulnerability": [
+      "Developers over-trust AI-generated code due to productivity metrics, skipping adversarial testing."
+    ],
+    "impact": [
+      "Production software bugs cause financial loss and erode public trust in AI-assisted tools."
+    ]
+  }
+}

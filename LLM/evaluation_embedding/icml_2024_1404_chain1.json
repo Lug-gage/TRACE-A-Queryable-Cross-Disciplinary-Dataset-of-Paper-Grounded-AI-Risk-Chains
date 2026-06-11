@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1404",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6554,
+    "reference": "Practitioners assume transferred sparse models generalize, skipping domain-specific validation.",
+    "generated": "Practitioners lack diagnostics to detect amplified domain-shift sensitivity in sparse masks, trusting transferred models without reliability verification."
+  },
+  "impact": {
+    "similarity": 0.645,
+    "reference": "Silent failures in production systems cause erroneous outputs in critical applications.",
+    "generated": "Silent performance degradation produces erroneous outputs, undermining decision-making and eroding trust in LLM-driven applications."
+  },
+  "dose_response": {
+    "similarity": 0.7253,
+    "reference": "Transferred sparsity masks amplify sensitivity to domain shift, causing unpredictable performance drops that practitioners miss due to skipped validation, leading to silent failures.",
+    "generated": "Continual pruning's distributional shift in model sensitivity, through practitioners applying transferred sparse models to new domains, triggers undiagnosed amplified domain-shift sensitivity, leading to silent performance degradation and eroded trust."
+  }
+}

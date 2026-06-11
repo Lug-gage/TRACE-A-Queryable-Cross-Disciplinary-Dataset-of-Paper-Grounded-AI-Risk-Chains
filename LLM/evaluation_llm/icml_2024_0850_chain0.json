@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0850",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe sensitivity from reliance on aggregate fairness masking individual unfairness, omitting only the low-frequency interaction detail",
+    "reference": "Evaluation solely by expected outcomes masks per-auction inequality, particularly for participants with low-frequency interactions.",
+    "generated": "Buyer groups depend on aggregate fairness guarantees without mechanisms to detect or challenge individual-level unfairness."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "trust erosion is covered but exit and market degradation are missing, replaced by intra-group inequity",
+    "reference": "Buyers from disfavored groups lose trust and exit the market, degrading auction liquidity and efficiency.",
+    "generated": "Systematic denial of resources to individuals within groups erodes trust and entrenches intra-group inequity."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the arc starts with fairness-in-expectation obscuring individual unfairness leading to trust erosion, but introduces intermediate resource denial and omits exit/market degradation",
+    "reference": "Fairness-in-expectation mechanisms in dynamic auctions obscure per-auction inequality, causing disfavored buyers to lose trust and exit the market, degrading auction liquidity and efficiency.",
+    "generated": "Fairness-in-expectation mechanisms produce individual-level unfairness misleading evaluators and participants, through buyer groups in dynamic auctions reliant on group fairness guarantees, triggering dependence on aggregate guarantees without detection mechanisms, leading to systematic resource denial eroding trust and entrenching intra-group inequity."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0526",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both identify children and educators lacking the skill/perceptual expertise to verify fine-grained visual details, leading to uncritical acceptance/trust.",
+    "reference": "Children and educators uncritically accept plausible but incorrect causal explanations from AI because they lack the skill to verify subtle visual interactions.",
+    "generated": "Children and educators lack the perceptual expertise to verify the AI’s fine-grained visual grounding, leading to uncritical trust in its step-by-step conclusions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "False causal knowledge and persistent misconceptions are covered, but erosion of trust in educational technology is omitted.",
+    "reference": "Incorporation of false causal knowledge into learning materials, leading to persistent misconceptions and erosion of trust in educational technology.",
+    "generated": "Acquisition of incorrect causal knowledge embeds persistent misconceptions, undermining learning from cartoon QA."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from incorrect grounding to wrong conclusions, exploiting lack of expertise, leading to uncritical trust and incorporation of false knowledge, is present.",
+    "reference": "Incorrect grounding of fine-grained visual details leads to plausible but wrong causal reasoning, exposing children and educators to misleading explanations and causing incorporation of false knowledge.",
+    "generated": "Incorrect grounding of fine-grained visual details leads wrong conclusions; when children and educators use cartoon QA, this exploits their lack of perceptual expertise to verify grounding, triggering uncritical trust and yielding incorrect causal knowledge that embeds persistent misconceptions, undermining learning."
+  }
+}

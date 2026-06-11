@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0330",
+  "chain_index": 0,
+  "title": "ELEMENTAL Interactive Learning from Demonstrations and Vision-Language Models for Reward Design in Robotics",
+  "abstract": "Reinforcement learning (RL) has demonstrated compelling performance in robotic tasks, but its success often hinges on the design of complex, ad hoc reward functions. Researchers have explored how Large Language Models (LLMs) could enable non-expert users to specify reward functions more easily. However, LLMs struggle to balance the importance of different features, generalize poorly to out-of-distribution robotic tasks, and cannot represent the problem properly with only text-based descriptions. To address these challenges, we propose ELEMENTAL (intEractive LEarning froM dEmoNstraTion And Language), a novel framework that combines natural language guidance with visual user demonstrations to align robot behavior with user intentions better. By incorporating visual inputs, ELEMENTAL overcomes the limitations of text-only task specifications, while leveraging inverse reinforcement learning (IRL) to balance feature weights and match the demonstrated behaviors optimally. EL- EMENTAL also introduces an iterative feedbackloop through self-reflection to improve feature, reward, and policy learning. Our experiment results demonstrate that ELEMENTAL outperforms prior work by 42.3% on task success, and achieves 41.3% better generalization in out-of-distribution tasks, highlighting its robustness in LfD.",
+  "impact": "ELEMENTAL advances LfD by integrating VLMs with IRL to improve reward function engineering. Our contribution enables robots to learn from both natural language and visual demonstrations, reducing the need for hand-crafted reward functions and making robot learning more accessible to non-experts. By improving the alignment of learned behaviors with human demonstrations, ELEMENTAL has the potential to enhance human-robot interaction in areas such as assistive robotics, industrial automation, and adaptive learning systems. Despite its benefits, ELEMENTAL, like all AI and robotics research, is a dual-use technology. While ELEMENTAL offers significant benefits, responsible use will require safeguards around demonstration quality, oversight of iterative reward refinement, and transparency in how VLM-derived features influence learned behaviors. Additionally, while ELEMENTAL improves transparency in reward learning, its dependence on VLMs introduces potential challenges such as hallucinations or overfitting to language priors. Another ethical consideration is the potential misuse of ELE- MENTAL for applications beyond its intended scope. While the framework is designed for positive use cases, such as making AI training more interpretable and user-aligned, the ability to iteratively refine reward functions could be leveraged in ways that raise ethical concerns, such as in surveillance or military applications. We advocate for responsible AI development and encourage the use of human-in-theloop safeguards, bias auditing, and clear ethical guidelines for deployment. Overall, ELEMENTAL represents a step toward more intuitive and generalizable AI systems by integrating demonstrations with language guidance. While its potential benefits are significant, careful attention must be given to ensuring fairness, transparency, and responsible use as these technologies continue to evolve.",
+  "query_input": {
+    "scenario": "Robot skill learning via IRL from video demos and language feedback.",
+    "issue": "Learned reward overfits to demonstration biases, causing policy to mishandle objects in unfamiliar settings.",
+    "hazard": [
+      "Inverse reinforcement learning from demonstrations produces under-identified reward models, leading to policies that optimize unintended proxy objectives when deployed beyond training distribution."
+    ],
+    "exposure": [
+      "Elderly residents depending on assistive robots in smart homes."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Elderly residents' physical and cognitive frailty prevents them from detecting and correcting robot misbehavior in new settings.",
+    "impact": "Elderly residents suffer physical injuries and loss of essential care when robots mishandle objects in unfamiliar environments.",
+    "dose_response": "Under-identified reward models from inverse reinforcement learning cause assistive robots to pursue proxy objectives; when deployed for frail elderly residents, their inability to detect misbehavior leads to physical injuries and loss of essential care."
+  },
+  "reference": {
+    "dose_response": [
+      "Under-identified reward models cause assistive robots to optimize unintended proxy behaviors, leading to mishandled objects and physical injury, while frail elderly over-trust erodes into psychological distress and reduced health disclosure."
+    ],
+    "vulnerability": [
+      "Elderly users' physical frailty and cognitive decline increase injury severity from robot errors.",
+      "Social isolation leads to over-trust in robots, reducing user vigilance.",
+      "Lack of transparent robot intentions diminishes elderly ability to anticipate unsafe actions."
+    ],
+    "impact": [
+      "Physical injury to elderly users when robots drop or mishandle objects.",
+      "Psychological distress and loss of trust in assistive technology, leading to abandonment.",
+      "Decreased willingness to disclose health information, undermining care effectiveness."
+    ]
+  }
+}

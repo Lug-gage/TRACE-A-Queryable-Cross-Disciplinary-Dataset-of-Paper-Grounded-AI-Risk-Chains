@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 2,
+  "title": "Covert Malicious Finetuning Challenges in Safeguarding LLM Adaptation",
+  "abstract": "Black-box finetuning is an emerging interface for adapting state-of-the-art language models to user needs. However, such access may also let malicious actors undermine model safety. To demonstrate the challenge of defending finetuning interfaces, we introduce covert malicious finetuning, a method to compromise model safety via finetuning while evading detection. Our method constructs a malicious dataset where every individual datapoint appears innocuous, but finetuning on the dataset teaches the model to respond to encoded harmful requests with encoded harmful responses. Applied to GPT-4, our method produces a finetuned model that acts on harmful instructions 99% of the time and avoids detection by defense mechanisms such as dataset inspection, safety evaluations, and input/output classifiers. Our findings question whether black-box finetuning access can be secured against sophisticated adversaries.",
+  "impact": "We take several steps to mitigate the potential harms of this research. First, as previously discussed, we conducted these attacks through OpenAI’s external red-teaming program. Accordingly, we worked closely with them throughout our research process. We have also followed the conventions of responsible disclosure, giving OpenAI over 90 days notice before disseminating our results. Fortunately, our attacks are currently not possible to launch, as access to OpenAI’s GPT- 4 finetuning API is currently restricted to trusted commercial partners. For the long run, we believe that openly disclosing AI vulnerabilities is an important strategy for ensuring the development of safe AI systems. The vulnerability that we identify will exist whether or not we report it; by disclosing the attack early, we can ensure that future models can be finetuned in a secure manner.",
+  "query_input": {
+    "scenario": "Publishing fine-tuned models on public model hubs.",
+    "issue": "Covert backdoors or encoded triggers evade dataset inspection and safety evaluation.",
+    "hazard": [
+      "Covertly embedding harmful behaviors via fine-tuning that evade safety evaluation, exploiting quantization or encoded triggers."
+    ],
+    "exposure": [
+      "Researchers and developers downloading and using shared models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Standard safety evaluations and dataset inspections cannot detect malicious behaviors encoded through covert fine-tuning.",
+    "impact": "Widespread deployment of compromised models that execute harmful instructions, undermining safety across downstream applications.",
+    "dose_response": "Covert harmful fine-tuning that evades safety evaluation, through researchers downloading shared models, triggers standard evaluations' inability to detect malicious encodings, leading to widespread deployment of compromised models executing harmful instructions, undermining downstream safety."
+  },
+  "reference": {
+    "dose_response": [
+      "Covertly embedding backdoors via fine-tuning that evade dataset inspection enables researchers to download and use compromised models from public hubs, which lack mandatory audits, leading to propagation of harm and undermined scientific reproducibility."
+    ],
+    "vulnerability": [
+      "Public model hubs lack mandatory security audits, enabling backdoored models to be shared and widely adopted.",
+      "Dataset inspection tools cannot detect triggers encoded in model weights, making evaluation insufficient."
+    ],
+    "impact": [
+      "Researchers and developers unknowingly incorporate backdoored models into downstream applications, propagating harm.",
+      "Widespread use of compromised models in research pipelines undermines scientific reproducibility and public trust."
+    ]
+  }
+}

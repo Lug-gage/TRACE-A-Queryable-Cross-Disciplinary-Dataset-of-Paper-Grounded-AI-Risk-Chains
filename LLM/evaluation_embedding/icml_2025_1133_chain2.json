@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1133",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4655,
+    "reference": "Delayed satisfaction feedback causes algorithm to over-recommend low-quality items that initially get positive clicks",
+    "generated": "Shoppers' inability to assess long-term product quality before purchase makes them dependent on recommendation accuracy, leaving them susceptible to biased guidance."
+  },
+  "impact": {
+    "similarity": 0.6086,
+    "reference": "Decreased user trust and platform abandonment due to irrelevant suggestions",
+    "generated": "Shoppers experience persistent dissatisfaction and lose trust in the AI-curated recommendations, leading to reduced engagement."
+  },
+  "dose_response": {
+    "similarity": 0.7702,
+    "reference": "Delayed satisfaction signals bias bandit recommendations toward low-quality items with high initial clicks, exposing shoppers to disappointing suggestions that erode trust and may lead to platform abandonment.",
+    "generated": "Online bandit-based action recommendations with delayed rewards produce systematically biased long-term guidance that, through AI-curated product recommendations to shoppers, triggers their dependence on recommendation accuracy, leading to persistent dissatisfaction, trust loss, and reduced engagement."
+  }
+}

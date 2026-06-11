@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0553",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6505,
+    "reference": "Clinicians untrained in probabilistic reasoning misinterpret distributional explanations, leading to diagnostic errors.",
+    "generated": "Clinicians rely on deterministic saliency maps and lack training to interpret stochastic distributional attributions, eroding trust."
+  },
+  "impact": {
+    "similarity": 0.7851,
+    "reference": "Incorrect treatment plans, unnecessary procedures, or missed diagnoses due to misplaced trust in saliency maps.",
+    "generated": "Misinterpreted saliency maps cause diagnostic errors, inappropriate treatments, and patient harm."
+  },
+  "dose_response": {
+    "similarity": 0.8792,
+    "reference": "Stochastic Shapley distributions entangle model and attribution variability; clinicians interpreting saliency maps as fixed evidence misinterpret them, causing diagnostic errors and incorrect treatment plans.",
+    "generated": "Stochastic Shapley values produce distributional explanations entangling model randomness with feature attribution, which, through clinicians interpreting saliency maps for diagnosis, triggers reliance on deterministic maps and lack of training, leading to misinterpreted saliency maps causing diagnostic errors and patient harm."
+  }
+}

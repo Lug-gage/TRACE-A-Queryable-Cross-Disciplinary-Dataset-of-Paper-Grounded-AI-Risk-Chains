@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1407",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7084,
+    "reference": "Absence of human-in-the-loop review and transparent appeal mechanisms heightens risk of unchecked errors.",
+    "generated": "Automated moderation without human oversight or appeal mechanisms leaves users defenseless against overconfident false positives."
+  },
+  "impact": {
+    "similarity": 0.5335,
+    "reference": "User distrust, perceived censorship, and chilling effects on marginalized voices.",
+    "generated": "Incorrect removal of benign content silences users, damages their reputation and reach, and undermines platform trust."
+  },
+  "dose_response": {
+    "similarity": 0.807,
+    "reference": "Interpretable chain-of-thought reasoning yields overconfident, inaccurate safety classifications, causing automated removal of benign social media posts without appeal, leading to user distrust and chilling effects on marginalized voices.",
+    "generated": "Interpretable harm-benefit reasoning yielding overconfident inaccurate safety classifications, when applied to automatically moderate social media posts without human oversight, leaves users defenseless, causing incorrect benign removal that silences users, damages reputation and reach, and erodes trust."
+  }
+}

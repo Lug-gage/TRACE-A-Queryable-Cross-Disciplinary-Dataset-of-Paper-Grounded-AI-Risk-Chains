@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1978",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6854,
+    "reference": "Workers rely on automated defect detection to set quality baseline, decreasing manual inspection vigilance.",
+    "generated": "Factory workers lack independent defect verification, blindly trusting automated system outputs without ground truth access."
+  },
+  "impact": {
+    "similarity": 0.7052,
+    "reference": "Defective products pass inspection, increasing customer complaints and recall costs.",
+    "generated": "Defective products reach consumers, causing safety incidents, costly recalls, and eroded trust in manufacturing."
+  },
+  "dose_response": {
+    "similarity": 0.8911,
+    "reference": "Statistical shift detection signals may not correlate with actual prediction error enables undetected defect misclassification, which in a production line quality inspection scenario where factory workers trust automated defect detection exposes their decreased manual vigilance, leading to defective products passing inspection, increasing recalls.",
+    "generated": "Statistical shift detection signals uncorrelated with actual prediction errors, through factory workers' reliance on automated defect detection, triggers their blind trust without independent verification, leading to defective products reaching consumers, causing safety incidents, costly recalls, and eroded trust."
+  }
+}

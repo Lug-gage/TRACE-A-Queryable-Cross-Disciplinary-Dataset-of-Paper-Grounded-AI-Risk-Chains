@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0427",
+  "chain_index": 1,
+  "title": "Trust Regions for Explanations via Black-Box Probabilistic Certification",
+  "abstract": "Given the black-box nature of machine learning models, a plethora of explainability methods have been developed to decipher the factors behind individual decisions. In this paper, we introduce a novel problem of black-box (probabilistic) explanation certification. We ask the question: Given a black-box model with only query access, an explanation for an example and a quality metric (viz. fidelity, stability), can we find the largest hypercube (i.e., l∞ball) centered at the example such that when the explanation is applied to all examples within the hypercube, (with high probability) a quality criterion is met (viz. fidelity greater than some value)? Being able to efficiently find such a trust region has multiple benefits: i) insight into model behavior in a region, with a guarantee; ii) ascertained stability of the explanation; iii) explanation reuse, which can save time, energy and money by not having to find explanations for every example; and iv) a possible meta-metric to compare explanation methods. Our contributions include formalizing this problem, proposing solutions, providing theoretical guarantees for these solutions that are computable, and experimentally showing their efficacy on synthetic and real data.",
+  "impact": "Our contributions could have significant impact in evaluating explanation methods as well as trustworthiness of black-box models in real world deployments. Not to mention for Explanation-As-A-Service applications our work can greatly reduce cost as one would require much fewer queries to the black-box model to obtain the desired number of faithful explanations. One must be cognizant of the fact though that our approaches do rely on random sampling and have probabilistic guarantees, hence in any particular case it is possible that the half-widths reported may be different than the true half-widths. Also results may vary run to run. Possible mitigation is by averaging over multiple runs and/or using sufficient query budget.",
+  "query_input": {
+    "scenario": "Certification of explanation quality in regulated AI audits",
+    "issue": "Probabilistic certification on hypercube regions fails to guarantee explanation fidelity in deployment.",
+    "hazard": [
+      "Black-box explanation methods produce unfaithful, unstable, or non-robust explanations that misrepresent model decision processes."
+    ],
+    "exposure": [
+      "Auditors and compliance officers relying on certified explanation metrics for AI system approval"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Auditors lack independent access to model internals and must treat probabilistic certification as sufficient evidence of explanation fidelity.",
+    "impact": "Flawed AI systems gain regulatory approval, propagating discriminatory or unsafe decisions across high-stakes domains.",
+    "dose_response": "Black-box explanation methods that produce unfaithful explanations, through auditors relying on certified metrics, trigger auditors to treat probabilistic certification as sufficient evidence, leading to regulatory approval of flawed AI systems propagating discriminatory or unsafe decisions across high-stakes domains."
+  },
+  "reference": {
+    "dose_response": [
+      "Because probabilistic certification fails to guarantee fidelity, auditors' reliance on certified metrics leads to approval of unsafe systems, causing post-deployment failures that erode institutional trust."
+    ],
+    "vulnerability": [
+      "Auditors lack technical means to independently verify certified explanation metrics.",
+      "Regulatory frameworks treat explanation certification as a compliance checkbox rather than a continuous assurance process."
+    ],
+    "impact": [
+      "Unsafe AI systems receive regulatory approval based on misleading fidelity guarantees.",
+      "Post-deployment failures erode institutional trust in AI governance and audit mechanisms."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0723",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference condition is edge devices lacking runtime monitoring, generated describes developers lacking integrity verification and trusting flawed safety checks, a related but different sensitivity.",
+    "reference": "Edge devices often lack runtime monitoring, allowing malicious quantized models to exploit systems without detection.",
+    "generated": "IoT developers lack integrity verification for quantized safe-code LLMs, trusting full-precision safety checks that miss quantization-exploited malice."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Security breaches and physical harm covered through device compromise and safety-critical failures, but erosion of trust in AI-assisted development is missing.",
+    "reference": "Vulnerable IoT code causes security breaches, physical harm, and erosion of trust in AI-assisted development.",
+    "generated": "Edge IoT devices execute vulnerable code, leading to device compromise and safety-critical failures."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal logic: quantization exploited to create malicious LLMs, used by IoT developers on edge hardware, leading to vulnerable code and harm.",
+    "reference": "Quantization exploits enabling malicious LLM creation, which in edge deployment of quantized code generation models exposes IoT developers using quantized safe-code LLMs, leading to vulnerable IoT code causing breaches, physical harm, and erosion of trust.",
+    "generated": "Quantization exploited to produce malicious secure-code LLMs that appear benign in full-precision, through IoT developers using them on edge hardware, triggers trust in full-precision safety checks missing quantization-exploited malice, leading to vulnerable code execution, device compromise, and safety-critical failures."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2156",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe regulators' inability to verify XAI method selection due to lack of independent expertise or validation mechanisms.",
+    "reference": "Regulators lack expertise to independently verify XAI method selection.",
+    "generated": "Regulators' dependence on XAI metrics without independent validation mechanisms leaves them unable to detect cherry-picked explanations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both capture perpetuation of discrimination and erosion of trust in AI/algorithmic governance.",
+    "reference": "Undetected biased models perpetuate discrimination and erode public trust in algorithmic governance.",
+    "generated": "Unchecked model unfairness perpetuates discriminatory outcomes, harming communities and eroding trust in AI governance."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated arc replicates the reference's causal chain: multiplicity leads to cherry-picked explanations, which through regulator inability to detect, causes unchecked unfairness/discrimination and trust erosion.",
+    "reference": "The multiplicity of XAI methods enables cherry-picked explanations that obscure model unfairness, which when used in regulatory audits by inexpert regulators leads to undetected discrimination and erodes public trust.",
+    "generated": "Multiplicity of XAI methods enabling selection of systematically misleading explanations (X-hacking), through regulators and communities facing automated decisions, triggers inability to detect cherry-picked explanations without independent validation, leading to unchecked model unfairness and discriminatory outcomes, eroding trust in AI governance."
+  }
+}

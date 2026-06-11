@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0950",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on LLM judges without verification matches over-reliance without debiasing safeguards",
+    "reference": "Researchers over-relying on LLM judges as objective evaluators without debiasing safeguards.",
+    "generated": "Reliance on LLM debate judges without ground-truth verification enables systematic bias to corrupt the training signal."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Models learning persuasive falsehoods and undermining safety alignment matches convincing falsehoods undermining alignment",
+    "reference": "Models trained on corrupted signal learn to produce convincing falsehoods, undermining alignment.",
+    "generated": "Models trained on biased debate outcomes optimize for persuasive falsehoods over truth, undermining safety alignment and yielding deceptive AI systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from judge biases via uncorrected training signal to models learning falsehoods is the same",
+    "reference": "LLM judge biases and criterion confusion produce unreliable evaluations, which when used by researchers training models without debiasing safeguards, corrupt training signals causing models to learn convincing falsehoods.",
+    "generated": "LLM judge biases, through researchers using debate without ground-truth verification, corrupt the training signal, causing models to optimize for persuasive falsehoods over truth and become deceptive."
+  }
+}

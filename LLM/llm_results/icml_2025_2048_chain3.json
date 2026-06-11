@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 3,
+  "title": "Statistical Hypothesis Testing for Auditing Robustness in Language Models",
+  "abstract": "Consider the problem of testing whether the outputs of a large language model (LLM) system change under an arbitrary intervention, such as an input perturbation or changing the model variant. We cannot simply compare two LLM outputs since they might differ due to the stochastic nature of the system, nor can we compare the entire output distribution due to computational intractability. While existing methods for analyzing text-based outputs exist, they focus on fundamentally different problems, such as measuring bias or fairness. To this end, we introduce distribution-based perturbation analysis, a framework that reformulates LLM perturbation analysis as a frequentist hypothesis testing problem. We construct empirical null and alternative output distributions within a low-dimensional semantic similarity space via Monte Carlo sampling, enabling tractable inference without restrictive distributional assumptions. The framework is (i) modelagnostic, (ii) supports the evaluation of arbitrary input perturbations on any black-box LLM, (iii) yields interpretable p-values; (iv) supports multiple perturbations via controlled error rates; and (v) provides scalar effect sizes. We demonstrate the usefulness of the framework across multiple case studies, showing how we can quantify response changes, measure true/false positive rates, and evaluate alignment with reference models. Above all, we see this as a reliable frequentist hypothesis testing framework for LLM auditing.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning in the field of interpretability. We recast a broad range of evaluation questions as formal hypothesis tests and therefore supply practitioners, policymakers, and independent auditors with a statistically principled tool for detecting genuine behavioural shifts in large language models. We recognize that this might have many great positive implications on safety and auditing of language model systems. At the same time, we acknowledge the dual-use risks, such as adversaries using the logic in the procedure to evade detection or optimize adversarial attacks. However, we think such risks are extremely unlikely in practice.",
+  "query_input": {
+    "scenario": "AI-generated text detector evaluation via perturbations",
+    "issue": "Limited perturbation sampling overestimates detector robustness.",
+    "hazard": [
+      "Statistical inference about LLM behavior from perturbation analysis is unreliable when output similarities exhibit non-random correlations."
+    ],
+    "exposure": [
+      "Educational institutions relying on detector accuracy reports."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Educational institutions lack the statistical expertise to independently verify detector robustness, creating reliance on potentially misleading accuracy reports.",
+    "impact": "Widespread undetected AI-generated submissions undermine academic integrity and devalue authentic student assessment.",
+    "dose_response": "Unreliable statistical inference from perturbation analysis, through educational institutions relying on detector accuracy reports, triggers their lack of statistical expertise to verify robustness, leading to widespread undetected AI-generated submissions that undermine academic integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "Limited perturbation sampling in detector evaluation overestimates robustness, causing false accusations that harm students and undetected cheating that undermines academic integrity."
+    ],
+    "vulnerability": [
+      "Detector evaluations use narrow perturbation sets, missing adversarial evasion techniques."
+    ],
+    "impact": [
+      "False accusations of cheating harm students; undetected cheating undermines academic integrity."
+    ]
+  }
+}

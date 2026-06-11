@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 1,
+  "title": "Predicting Dose-Response Curves with Deep Neural Networks",
+  "abstract": "Dose-response curves characterize the relationship between the concentration of drugs and their inhibitory effect on the growth of specific types of cells. The predominant Hill-equation model of an ideal enzymatic inhibition unduly simplifies the biochemical reality of many drugs; and for these drugs, the widely-used drug performance indicator of the half-inhibitory concentration IC50 can lead to poor therapeutic recommendations and poor selections of promising drug candidates. We develop a neural model that uses an embedding of the interaction between drug molecules and the tissue transcriptome to estimate the entire dose-response curve rather than a scalar aggregate. We find that, compared to the prior state of the art, this model excels at interpolating and extrapolating the inhibitory effect of untried concentrations. Unlike prevalent parametric models, it it able to accurately predict dose-response curves of drugs on cells with previously unseen transcriptomes as well as of previously untested drug molecules on established cell lines. Our implementation is available at https://github. com/alonsocampana/ARCANet.",
+  "impact": "This paper presents work whose goal, apart from advancing the field of Machine Learning, is to advance the treatment of cancer and potentially other diseases. While the advancement of personalized medicine has an enormous potential for societal benefit, one should be aware of the potential for unethical use. Any method that is effective at identifying inhibitors for cells with a specific transciptome could potentially also be used to identify highly toxic substances (Urbina et al., 2022), or even substances that are selectively toxic for a targeted population that shares certain genetic commonalities. Such misuse might be addressed by subjecting research on collections of genetic and toxicological data to ethical reviewing.",
+  "query_input": {
+    "scenario": "Cross-cell line prediction for personalized medicine",
+    "issue": "Model yields dose-response curves with falsely low uncertainty for patient-derived cell lines.",
+    "hazard": [
+      "Miscalibrated uncertainty estimates in deep neural dose-response curve predictions that conceal distribution shift failures."
+    ],
+    "exposure": [
+      "Clinicians relying on predicted curves for targeted cancer therapy decisions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians lack independent validation steps and are institutionally conditioned to trust AI outputs for rapid personalized therapy decisions.",
+    "impact": "Cancer patients receive ineffective or toxic drug regimens due to misguided therapeutic choices driven by overconfident dose-response predictions.",
+    "dose_response": "Miscalibrated uncertainty estimates concealing distribution shift failures in neural dose-response predictions, through clinical use for targeted cancer therapy, triggers uncritical trust and lack of validation, leading to misguided therapeutic choices and ineffective or toxic drug regimens for patients."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated uncertainty estimates conceal distribution shift failures, yielding falsely low uncertainty that leads clinicians to select ineffective or toxic therapies for cancer patients."
+    ],
+    "vulnerability": [
+      "Clinicians interpret falsely low uncertainty as reliability, reducing independent verification of model predictions."
+    ],
+    "impact": [
+      "Selection of ineffective or toxic therapies for cancer patients, causing patient harm and reduced survival."
+    ]
+  }
+}

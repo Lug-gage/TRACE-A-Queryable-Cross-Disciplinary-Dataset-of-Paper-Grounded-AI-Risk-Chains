@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0970",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4894,
+    "reference": "Audit methodologies are not standardised and often fail to capture full attack surface (e.g., side-channel or model inversion).",
+    "generated": "Data subjects trust DP audits that underestimate empirical leakage, lacking independent means to detect or challenge false privacy assurances."
+  },
+  "impact": {
+    "similarity": 0.3347,
+    "reference": "Regulatory bodies and the public accept dangerously weak privacy claims, delaying mandatory protections.",
+    "generated": "Confidentiality breaches via increased memorization enable re-identification and inference attacks on individuals' training records."
+  },
+  "dose_response": {
+    "similarity": 0.6399,
+    "reference": "Incomplete DP audits underestimate leakage, causing regulators to accept weak protections, resulting in litigation after attacks expose personal data.",
+    "generated": "Miscalibration between theoretical DP guarantees and actual information leakage, through individuals in audited training sets, triggers misplaced trust in underestimating audits without detection means, leading to confidentiality breaches via memorization-enabled re-identification and inference attacks."
+  }
+}

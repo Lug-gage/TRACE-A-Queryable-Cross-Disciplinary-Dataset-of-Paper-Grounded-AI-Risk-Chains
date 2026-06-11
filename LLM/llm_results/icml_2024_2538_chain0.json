@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_2538",
+  "chain_index": 0,
+  "title": "GPT-4V(ision) is a Generalist Web Agent, if Grounded",
+  "abstract": "The recent development on large multimodal models (LMMs), especially GPT-4V(ision) and Gemini, has been quickly expanding the capability boundaries of multimodal models beyond traditional tasks like image captioning and visual question answering. In this work, we explore the potential of LMMs like GPT-4V as a generalist web agent that can follow natural language instructions to complete tasks on any given website. We propose SEEACT, a generalist web agent that harnesses the power of LMMs for integrated visual understanding and acting on the web. We evaluate on the recent MIND2WEB benchmark. In addition to standard offline evaluation on cached websites, we enable a new online evaluation setting by developing a tool that allows running web agents on live websites. We show that GPT-4V presents a great potential for web agents-it can successfully complete 51.1% of the tasks on live websites if we manually ground its textual plans into actions on the websites. This substantially outperforms text-only LLMs like GPT-4 or smaller models (FLAN-T5 and BLIP-2) specifically finetuned for web agents. However, grounding still remains a major challenge. Existing LMM grounding strategies like set-of-mark prompting turns out to be not effective for web agents, and the best grounding strategy we develop in this paper leverages both the HTML structure and visuals. Yet, there is still a substantial gap with oracle grounding, leaving ample room for further improvement. All code, data, and evaluation tools are available at https://github.com/ OSU-NLP-Group/SeeAct.",
+  "impact": "Generalist web agents hold the potential to automate routine web tasks, enhance user experiences, and promote web accessibility, safety concerns related to their real-world deployment are also critical. These concerns span privacy issues, such as access to users’ personal profiles, and sensitive operations, such as financial transactions or application form submissions. During the online evaluation, we noticed the possibility for these web agents to generate harmful actions on the web, and we manually validated the safety of all the actions before execution. It is critical for further research to thoroughly assess and mitigate the safety risks associated with web agents, ensuring they are safeguarded against producing and executing harmful actions. The code will also be released solely for research purposes, with the goal of making the web more accessible via language technologies under an OPEN-RAIL License. We are strongly against any potentially harmful use of the data or technology by any party.",
+  "query_input": {
+    "scenario": "E-commerce order placement",
+    "issue": "Agent misidentifies product options due to grounding errors, adding wrong items to cart.",
+    "hazard": [
+      "Visual and HTML grounding errors in multimodal web agents lead to unintended state changes on live websites."
+    ],
+    "exposure": [
+      "Online shoppers using AI agents for purchase automation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shoppers' reliance on automated agent selections without real-time verification of product options enables acceptance of grounding errors.",
+    "impact": "Financial loss, wasted time on returns, and eroded trust in AI shopping agents due to delivery of wrong products.",
+    "dose_response": "Visual and HTML grounding errors, through online shoppers' use of AI purchase agents, trigger reliance on automated selections without real-time verification, enabling acceptance of grounding errors and leading to financial loss, wasted time on returns, eroded trust from wrong products."
+  },
+  "reference": {
+    "dose_response": [
+      "In e-commerce, grounding errors enable wrong item selection, exposing shoppers who rely on automation and skip verification to financial loss and eroded trust."
+    ],
+    "vulnerability": [
+      "Over-reliance on AI agents and automation bias leads users to skip order verification.",
+      "Lack of real-time feedback on cart contents increases error undetection."
+    ],
+    "impact": [
+      "Financial loss from wrong purchases and increased product returns erode consumer trust."
+    ]
+  }
+}

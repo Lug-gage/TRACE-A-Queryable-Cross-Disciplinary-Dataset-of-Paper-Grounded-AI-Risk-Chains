@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1852",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.563,
+    "reference": "Self-attention layers leak contextual relationships, enabling sentence reconstruction.",
+    "generated": "Self-attention layers retain membership signals that LDP noise, constrained by utility needs, cannot fully obscure."
+  },
+  "impact": {
+    "similarity": 0.5575,
+    "reference": "Exposed text snippets reveal passwords and personal conversations, enabling fraud.",
+    "generated": "Training sentences of individual users are identified, exposing private communications and violating confidentiality guarantees."
+  },
+  "dose_response": {
+    "similarity": 0.8252,
+    "reference": "Low-polynomial time membership inference attacks leverage self-attention layer leakage in federated NLP for text prediction, reconstructing sentences from shared text snippets, enabling password exposure and fraud.",
+    "generated": "Low-polynomial-time membership inference attacks on locally DP federated learning, via sharing text snippets for next-word prediction, trigger self-attention layers' retained membership signals that utility-constrained LDP noise cannot obscure, leading to identification of training sentences, exposing private communications and violating confidentiality."
+  }
+}

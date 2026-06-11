@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1436",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6011,
+    "reference": "Generative models overfit sensitive text, enabling membership inference via canary queries.",
+    "generated": "Research participants lack control over training data inclusion and models lack differential privacy, enabling membership inference from forced memorization."
+  },
+  "impact": {
+    "similarity": 0.8299,
+    "reference": "Privacy breaches of sensitive participant data, causing personal harm and distress.",
+    "generated": "Privacy violations expose participants' sensitive data, causing reputational harm, psychological distress, and loss of trust in research."
+  },
+  "dose_response": {
+    "similarity": 0.7369,
+    "reference": "Canary trap privacy backdoors enable models to memorize sensitive text, allowing black-box probing to extract canaries, which violates participant privacy and causes personal harm.",
+    "generated": "Canary trap-based data provenance attacks, through membership inference exposing research participants' private information, trigger lack of control over training data and absent differential privacy, leading to privacy violations causing reputational harm, psychological distress, and loss of trust in research."
+  }
+}

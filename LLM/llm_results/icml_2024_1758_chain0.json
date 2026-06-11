@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 0,
+  "title": "Predictive Coding beyond Correlations",
+  "abstract": "Recently, there has been extensive research on the capabilities of biologically plausible algorithms. In this work, we show how one of such algorithms, called predictive coding, is able to perform causal inference tasks. First, we show how a simple change in the inference process of predictive coding enables to compute interventions without the need to mutilate or redefine a causal graph. Then, we explore applications in cases where the graph is unknown, and has to be inferred from observational data. Empirically, we show how such findings can be used to improve the performance of predictive coding in image classification tasks, and conclude that such models are able to perform simple end-to-end causal inference tasks.",
+  "impact": "In the domain of causal structure learning from observational data, it is crucial to recognize that algorithms can only identify the causal graph within the confines of a Markov Equivalence Class (MEC). This limitation means that various causal graphs, each with differing implications, could be equally supported by the observational data. Our approach does not incorporate interventional data, amplifying the need for caution in its application for causal discovery. The method should be used alongside further assumptions and in consultation with subject-matter experts to minimize the risk of affirming false causal relationships. Incorrect usage has the potential for negative societal consequences, such as poor or biased decision-making processes.",
+  "query_input": {
+    "scenario": "Data-free knowledge distillation with causal interventions",
+    "issue": "Misspecified causal graph leads to de-confounding that amplifies distribution shifts.",
+    "hazard": [
+      "Causal models learned from observational or limited interventional data may be misspecified, causing interventions that introduce confounding and distribution shifts."
+    ],
+    "exposure": [
+      "ML engineers deploying compressed models for mobile and edge devices."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Data-free distillation provides no ground truth to validate the causal graph, so engineers cannot detect misspecification that amplifies distribution shifts.",
+    "impact": "Deployed compressed models suffer systematic accuracy collapse from amplified distribution shifts, compromising application reliability and user safety.",
+    "dose_response": "Misspecified causal models introducing confounding and distribution shifts, through ML engineers deploying compressed models on edge devices, trigger undetectable graph misspecification in data-free distillation, leading to systematic accuracy collapse, compromising reliability and user safety."
+  },
+  "reference": {
+    "dose_response": [
+      "Misspecified causal graphs in compressed models silently degrade accuracy under distribution shifts, leading to confident but erroneous predictions that cause unsafe navigation or incorrect medical advice."
+    ],
+    "vulnerability": [
+      "Post-deployment distribution shifts combined with misspecified causal graphs silently degrade model accuracy."
+    ],
+    "impact": [
+      "Users receive erroneous predictions leading to unsafe navigation or incorrect medical advice."
+    ]
+  }
+}

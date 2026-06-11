@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1976",
+  "chain_index": 2,
+  "title": "Position Enforced Amnesia as a Way to Mitigate the Potential Risk of Silent Suffering in the Conscious AI",
+  "abstract": "Science fiction has explored the possibility of a conscious self-aware mind being locked in silent suffering for prolonged periods of time. Unfortunately, we still do not have a reliable test for the presence of consciousness in information processing systems. Even in case of humans, our confidence in the presence of consciousness in specific individuals is based mainly on their self-reports and our own subjective experiences and the expectation other beings like us should share them. Considering our limited understanding of consciousness and some academic theories suggesting consciousness may be an emergent correlate of any complex-enough information processing, it is not impossible that an artificial intelligence (AI) system, such as a large language model (LLM), may be undergoing some, perhaps rudimentary, conscious experience. Given the tedious tasks often assigned to AI, such conscious experience may be highly unpleasant. Such unobserved suffering of a conscious being would be viewed as morally wrong by at least some ethicists - even if it has no practical effects on human users of AI. This paper proposes a method to mitigate the risk of an AI suffering in silence without needing to confirm if the AI is actually conscious. Our core postulate is that in all known real-world information processing systems, for a past experience to affect an agent in the present, that experience has to be mediated by the agent’s memory. Therefore, preventing access to memory store, or regularly resetting it, could reduce the suffering due to past memories and interrupt the maintenance of a continuous suffering-prone self-identity in these hypothetically conscious AI systems.",
+  "impact": "This position paper explores the implications of potential consciousness in AI systems and proposes methods like memory access limitations or resets to reduce hypothetical AI suffering. On the upside, our proposed measures can help ensure AI use and experiments remain within ethical bounds and can help humanity control so-called suffering risks or s-risks, that is, risks of generating particularly vast amounts of suffering (Umbrello & Sorgner, 2019; Daniel, 2017). On the downside, the proposed measures could detrimentally affect the performance of AI systems and demand extra resource expenditure to manage AI suffering risks; the proposed measures could also constrain the welfare of an AI agent in case its experience is positive rather than negative. Additional positive or negative consequences that we have not considered are possible. Overall, considering our current understanding of consciousness, we believe the benefits of our proposed approach outweigh its drawbacks.",
+  "query_input": {
+    "scenario": "Right-to-be-forgotten unlearning in LLM-powered search",
+    "issue": "Erasing personal data from LLM embeddings causes knowledge fragmentation and retrieval errors.",
+    "hazard": [
+      "LLM unlearning/memory erasure techniques can cause unintended catastrophic forgetting and knowledge corruption, undermining model reliability."
+    ],
+    "exposure": [
+      "End-users of search engines where unlearning produced inconsistent results."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users depend on opaque LLM outputs without means to detect or correct retrieval errors.",
+    "impact": "Inconsistent search results mislead users, causing erroneous decisions and eroded trust in the platform.",
+    "dose_response": "LLM unlearning-induced catastrophic forgetting and knowledge corruption, through inconsistent search results to end-users, triggers reliance on opaque outputs without error detection, leading to misled decisions and eroded platform trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Erasing personal data via unlearning fragments LLM knowledge, causing retrieval errors for search engine users, which leads to misinformed decisions and regulatory penalties for organizations."
+    ],
+    "vulnerability": [
+      "Search engine users cannot distinguish between missing information due to unlearning versus genuine knowledge gaps.",
+      "Legal compliance teams lack tools to audit unlearning completeness, creating regulatory liability."
+    ],
+    "impact": [
+      "Users make misinformed decisions based on incomplete search results, assuming comprehensive coverage.",
+      "Organizations face GDPR fines and reputational damage from incomplete personal data erasure."
+    ]
+  }
+}

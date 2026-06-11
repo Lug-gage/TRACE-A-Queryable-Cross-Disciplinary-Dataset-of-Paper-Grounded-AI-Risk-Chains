@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1018",
+  "chain_index": 0,
+  "title": "Uncertainty Quantification for LLM-Based Survey Simulations",
+  "abstract": "We investigate the use of large language models (LLMs) to simulate human responses to survey questions, and perform uncertainty quantification to gain reliable insights. Our approach converts imperfect, LLM-simulated responses into confidence sets for population parameters of human responses, addressing the distribution shift between the simulated and real populations. A key innovation lies in determining the optimal number of simulated responses: too many produce overly narrow confidence sets with poor coverage, while too few yield excessively loose estimates. To resolve this, our method adaptively selects the simulation sample size, ensuring valid averagecase coverage guarantees. It is broadly applicable to any LLM, irrespective of its fidelity, and any procedure for constructing confidence sets. Additionally, the selected sample size quantifies the degree of misalignment between the LLM and the target human population. We illustrate our method on real datasets and LLMs.",
+  "impact": "This work develops methodologies for uncertainty quantification for LLM-simulated survey responses. We believe that it can facilitate more reliable LLM-simulated experi- ments in areas such as social science, economics, marketing, and education. On the other hand, we point out that the theoretical guarantees for our method hold only on average over the randomness of the survey questions and the real and simulation responses, and do not necessarily hold for every random instance. Therefore, we recommend caution when applying the confidence intervals to decision-making.",
+  "query_input": {
+    "scenario": "Social science researchers using LLM-simulated surveys to study public opinion trends",
+    "issue": "Miscalibrated confidence intervals lead to false confidence in population parameter estimates.",
+    "hazard": [
+      "Confidence sets from LLM-simulated survey responses can be miscalibrated, misrepresenting uncertainty when applied to target human populations."
+    ],
+    "exposure": [
+      "Social scientists interpreting LLM-generated survey statistics as representative"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Social scientists' reliance on LLM-simulated responses as human proxies without calibrated uncertainty measures.",
+    "impact": "False confidence in survey estimates yields invalid public opinion findings, misleading research conclusions and misinformed policy.",
+    "dose_response": "Miscalibrated confidence sets from LLM-simulated surveys, through social scientists interpreting statistics as representative, trigger reliance on LLM responses as human proxies without calibrated uncertainty, leading to false confidence that yields invalid public opinion findings and misinformed policy."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated LLM confidence sets lead social scientists interpreting synthetic surveys as representative to over-rely on them, resulting in flawed conclusions that misguide policy."
+    ],
+    "vulnerability": [
+      "Researchers over-rely on LLM-generated confidence intervals without benchmarking against human samples."
+    ],
+    "impact": [
+      "Flawed social science conclusions misguide policy, eroding credibility."
+    ]
+  }
+}

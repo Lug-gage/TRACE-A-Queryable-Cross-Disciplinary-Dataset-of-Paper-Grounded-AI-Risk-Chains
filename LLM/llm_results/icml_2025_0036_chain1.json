@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0036",
+  "chain_index": 1,
+  "title": "Implicit degree bias in the link prediction task",
+  "abstract": "Link prediction-the task of distinguishing actual hidden edges from random unconnected node pairs-is a quintessential task in graph machine learning. Despite being widely accepted as a universal benchmark and a downstream task for representation learning, its validity is seldom questioned. Here, we show that the common edge sampling procedure in link prediction introduces an implicit bias toward high-degree nodes and produces a skewed evaluation that favors methods overly reliant on node degree, to the extent that a “null” method based solely on node degree can nearly match optimal performance. To address this, we propose a degree-corrected link prediction task that offers a more accurate assessment that aligns better with performance in recommendation tasks. Finally, we demonstrate that this degree-corrected benchmark can more effectively train graph machine-learning models by reducing overfitting to node degrees and facilitating the learning of relevant structures in graphs.",
+  "impact": "Our findings indicate that the standard benchmark promotes link prediction algorithms that enhance the “rich-get-richer” effect, where well-connected nodes tend to gain even more connections. This effect, known as preferential attachment, is common in various societal contexts. For instance, popular individuals often gain more friends, widely shared content spreads further, and frequently cited papers are more likely to attract additional citations. While preferential attachment can benefit distributing resources and recognition, it also presents significant disadvantages. For example, preferential attachment can disproportionately favor wellconnected individuals in professional networks and hinder scientific progress by undervaluing innovative papers from less-known researchers (Chu & Evans, 2021). Our analysis indicates that the recommendation algorithms trained using the existing benchmark may exacerbate social inequalities by reinforcing the preferential attachment mechanism. Our new benchmark directly addresses these concerns by negating the degree bias, promoting fairer algorithm evaluations, and supporting the development of fairness-aware machine learning methods.",
+  "query_input": {
+    "scenario": "Link prediction in citation networks for paper recommendations",
+    "issue": "Low-cited papers and authors receive fewer links, reinforcing academic inequality.",
+    "hazard": [
+      "Link prediction models overfit to node degree, inducing biased predictions toward high-degree nodes."
+    ],
+    "exposure": [
+      "Researchers and authors using academic recommendation systems"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers and authors rely on recommendation systems that embed unvalidated degree-biased link prediction, leaving them unable to detect or correct for popularity skew.",
+    "impact": "Under-cited scholars and papers receive fewer recommendations, deepening citation inequality and narrowing the diversity of scholarly visibility.",
+    "dose_response": "Link prediction models overfit to node degree, through researchers and authors using academic recommendation systems, triggers reliance on unvalidated degree-biased prediction that leaves popularity skew uncorrected, leading to under-cited scholars and papers receiving fewer recommendations, deepening citation inequality and narrowing scholarly visibility diversity."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting to node degree biases predictions toward high-degree nodes, which in citation-based paper recommendations systematically under-recommends low-cited papers, reinforcing academic inequality."
+    ],
+    "vulnerability": [
+      "Citation-based models amplify existing citation disparities, systematically under-recommending low-cited works."
+    ],
+    "impact": [
+      "Entrenches academic hierarchies, stifles novel research, and disadvantages early-career and minority scholars."
+    ]
+  }
+}

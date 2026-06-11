@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes model-level encoding deficiencies, while reference describes developers' resource-constrained adoption of ZSTT without safety validation.",
+    "reference": "Developers in resource-constrained settings adopt ZSTT without safety validation to reduce costs.",
+    "generated": "Models lack enforced canonical encodings; heuristic embedding initialization for swapped tokenizers cannot prevent noncanonical token generation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (incoherent outputs) present but affected party (safety-critical applications) and harmful nature are missing.",
+    "reference": "Safety-critical applications (medical, legal) produce harmful outputs from distorted token probabilities.",
+    "generated": "Degraded model performance with chance-level token probabilities, producing incoherent or invalid outputs."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Mismatch-to-chance-level-probabilities arc is present, but missing ZSTT deployment step, developer exposure, and safety-critical harm/trust erosion.",
+    "reference": "Tokenization mismatch distorts token probabilities, which in ZSTT deployment exposes developers to chance-level performance, leading to harmful outputs in safety-critical applications and eroded developer trust.",
+    "generated": "Tokenization mismatch between training and inference, through on-the-fly tokenizer swaps in deployment, triggers models’ lack of enforced canonical encodings and heuristic embedding initialization that cannot prevent noncanonical tokens, leading to chance-level token probabilities and incoherent outputs."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4145,
+    "reference": "Average fairness optimization disregards the tail risk of disproportionately high rejection for under-represented groups.",
+    "generated": "Submitters from small communities often co-author with high-volume labs, making their papers indistinguishable from excessive submissions and defenseless against average-fairness trade-offs."
+  },
+  "impact": {
+    "similarity": 0.5126,
+    "reference": "Authors from small communities become disillusioned, reducing future submissions and diversity of ideas.",
+    "generated": "Disproportionate desk-rejection denies them publication venues, reinforcing underrepresentation and stalling career progress in AI research."
+  },
+  "dose_response": {
+    "similarity": 0.7892,
+    "reference": "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable average fairness optimization to disregard worst-case group fairness, which in the CVPR 2025 algorithm scenario exposes small research communities to disproportionate desk-rejection, leading to disillusionment and reduced diversity.",
+    "generated": "Optimization-based desk-rejection trade-offs under model uncertainty, through disproportionate desk-rejection of small-community submitters, trigger their papers' indistinguishability from excessive submissions and defenselessness against average-fairness trade-offs, leading to denied publication venues that reinforce underrepresentation and stall career progress."
+  }
+}

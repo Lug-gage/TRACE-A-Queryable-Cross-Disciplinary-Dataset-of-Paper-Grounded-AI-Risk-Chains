@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe missing depth violations due to reliance on synthetic data or lack of validation",
+    "reference": "Engineers over-rely on synthetic depth data, missing subtle violations that cause models to ignore safety-critical depth cues.",
+    "generated": "Perception engineers lack automated depth-consistency validation, allowing physically implausible frames to enter training undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "collision risk covers accidents but liability is missing",
+    "reference": "Deployment of flawed perception systems leading to real-world accidents and liability.",
+    "generated": "Autonomous driving perception models inherit depth errors, degrading real-world scene understanding and increasing collision risk."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal chain from misaligned generation to flawed perception and accidents is preserved",
+    "reference": "Conditionally-controlled generation misaligns to depth constraints; engineers' over-reliance on synthetic data misses depth violations, causing flawed perception systems that lead to real-world accidents.",
+    "generated": "Conditionally-controlled consistency generation with misalignment to input conditions, through perception engineers training on synthetic depth-conditioned data, triggers lack of automated depth-consistency validation, leading to autonomous driving perception models inheriting depth errors, degrading real-world scene understanding and increasing collision risk."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2581",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Over-reliance captured but missing specific masking of flawed CoT outputs by diversity-optimized exemplars",
+    "reference": "Users over-rely on fluent but logically invalid CoT outputs when diversity-optimized exemplars mask errors.",
+    "generated": "Analysts' uncritical reliance on LLM outputs without independent logical verification."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (analysts' decisions) and damage type (cascading errors in complex problem-solving) are present",
+    "reference": "Flawed reasoning outputs propagate into analyst decisions, causing cascading errors in complex problem-solving.",
+    "generated": "Erroneous analytical conclusions propagate into flawed downstream decisions for complex problem-solving."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from exemplar selection to reasoning distortion, over-reliance, and cascading errors is preserved",
+    "reference": "Diversity-optimized exemplar selection distorts reasoning, producing fluent but flawed CoT outputs that analysts over-rely on, propagating cascading errors into complex problem-solving decisions.",
+    "generated": "Relevance-diversity optimized exemplar selection introduces systematic biases that distort reasoning; through analysts using LLM outputs for complex problem-solving, this triggers uncritical reliance without logical verification, leading to erroneous conclusions propagating into flawed downstream decisions."
+  }
+}

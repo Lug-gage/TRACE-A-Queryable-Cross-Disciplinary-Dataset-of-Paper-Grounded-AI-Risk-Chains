@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0666",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated focuses on dependency and lack of correction channels, while reference specifies measurement bias from target variable selection underestimating need.",
+    "reference": "Measurement bias from target variable selection underestimates need among long-term unemployed with non-standard histories.",
+    "generated": "Long-term unemployed individuals depend on agency decisions for aid, lacking alternate channels to detect or correct misrankings."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both reference and generated identify the worst-off as the affected party and worsening of long-term unemployment/social exclusion (deprivation) as the damage type.",
+    "reference": "Assistance misallocation worsens long-term unemployment and social exclusion for the already worst-off.",
+    "generated": "Misallocated assistance bypasses the worst-off, entrenching their long-term unemployment and deprivation."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the generated arc includes misranking leading to misallocation and entrenched outcomes, but omits the measurement bias step and replaces it with dependency/correction logic.",
+    "reference": "Mismatched welfare functions cause misranking that, in the German unemployment agency scenario, exposes long-term unemployed to measurement bias, leading to worsened unemployment and social exclusion.",
+    "generated": "Systematic misranking of vulnerable individuals by predictive models, through ML-driven prioritization of long-term unemployed, triggers dependence on agency decisions without channels to correct misrankings, leading to misallocated assistance that entrenches their long-term unemployment and deprivation."
+  }
+}

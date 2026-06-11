@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.455,
+    "reference": "Downstream systems and human operators trust OOD detection to block anomalous inputs.",
+    "generated": "No mechanism to detect when linear approximations fail under distribution shift, enabling overconfident OOD scores to go uncorrected."
+  },
+  "impact": {
+    "similarity": 0.8049,
+    "reference": "Undetected distribution shifts cause erroneous outputs, safety incidents, and unfair decisions across user groups.",
+    "generated": "Undetected distributional shifts corrupt downstream model predictions, causing system unreliability and potential harm."
+  },
+  "dose_response": {
+    "similarity": 0.7946,
+    "reference": "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, causing overconfident OOD scores that let distribution shifts slip past, leading to erroneous outputs and safety incidents for user-generated content systems.",
+    "generated": "pNML calibration amplifies overconfidence under distribution shifts, through systems on user-generated content with varying distributions, triggers no mechanism to detect linear approximation failures, enabling uncorrected overconfident OOD scores, leading to undetected shifts corrupting downstream predictions, causing unreliability and harm."
+  }
+}

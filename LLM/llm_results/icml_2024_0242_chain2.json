@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0242",
+  "chain_index": 2,
+  "title": "MagicPose Realistic Human Poses and Facial Expressions Retargeting with Identity-aware Diffusion",
+  "abstract": "In this work, we propose MagicPose, a diffusionbased model for 2D human pose and facial expression retargeting. Specifically, given a reference image, we aim to generate a person’s new images by controlling the poses and facial expressions while keeping the identity unchanged. To this end, we propose a two-stage training strategy to disentangle human motions and appearance (e.g., facial expressions, skin tone and dressing), consisting of (1) the pre-training of an appearance-control block and (2) learning appearance-disentangled pose control. Our novel design enables robust appearance control over generated human images, including body, facial attributes, and even background. By leveraging the prior knowledge of image diffusion models, MagicPose generalizes well to unseen human identities and complex poses without the need for additional fine-tuning. Moreover, the proposed model is easy to use and can be considered as a plug-in module/extension to Stable Diffusion. The project website is https://boese0601. github.io/magicdance/. The code is available at https://github.com/ Boese0601/MagicDance.",
+  "impact": "The proposed MagicPose for retargeting human poses and facial expressions has a wide range of applications. It can significantly improve communication in digital environments, enabling individuals to express themselves more effectively through avatars or digital characters, thereby enhancing interactions in virtual meetings, online classrooms, and social networking platforms. Additionally, MagicPose has the potential to revolutionize entertainment and media production, allowing for the creation of more lifelike and expressive characters in movies, video games, and animations, consequently fostering more immersive storytelling experiences and increased audience engagement. The experiment demonstrates our model can generalize across different realhuman ethnicities and ages, and even to out-of-domain images, e.g., cartoon-style images, painting-style images, and AI-generated images. Potential Negative Social Impact: The method can potentially be used in a malicious way, e.g., making fake animated videos of people, which could be used in fraud. To avoid the potential misuse of such technologies, It is essential to employ several solutions like digital watermarking and detection algorithms, enact and enforce stringent legal measures, enhance public awareness and education on media literacy, and establish ethical guidelines within the tech industry. This involves collaboration among tech companies, governments, educators, and the public to create a safer digital environment and mitigate the risks of fraudulent AIgenerated content",
+  "query_input": {
+    "scenario": "Image editing apps with face swapping features",
+    "issue": "Face swapping enables unauthorized creation of images depicting individuals in compromising or false contexts.",
+    "hazard": [
+      "High-fidelity human image synthesis with identity-expression disentanglement produces indistinguishable synthetic imagery."
+    ],
+    "exposure": [
+      "Individuals whose faces are swapped into synthetic scenes without consent."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Public availability of facial images and absent detection tools leave individuals unable to refute or prevent false synthetic depictions.",
+    "impact": "Victims face reputational ruin, psychological trauma, and blackmail; societal trust in visual evidence collapses.",
+    "dose_response": "Indistinguishable synthetic imagery from high-fidelity human image synthesis, through non-consensual face-swapping of individuals, exploits public facial images and missing detection tools, preventing refutation of false depictions, leading to reputational ruin, psychological trauma, blackmail, and collapse of trust in visual evidence."
+  },
+  "reference": {
+    "dose_response": [
+      "Accessible face-swapping apps leveraging high-fidelity synthesis allow easy creation of non-consensual compromising images, causing psychological distress and reputational damage when disseminated."
+    ],
+    "vulnerability": [
+      "Low‑skill, freely available face‑swapping apps remove technical barriers, making non‑consensual image fabrication trivially easy."
+    ],
+    "impact": [
+      "Victims experience psychological distress, reputational damage, and privacy violations when fabricated compromising images spread online."
+    ]
+  }
+}

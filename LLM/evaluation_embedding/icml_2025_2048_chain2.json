@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4502,
+    "reference": "Benchmark prompts do not capture real-world distribution shifts, masking model brittleness.",
+    "generated": "Certification bodies lack statistical frameworks that account for non-random output correlations, leaving them dependent on unreliable perturbation analysis."
+  },
+  "impact": {
+    "similarity": 0.5951,
+    "reference": "Certified models fail in deployment, causing discrimination, safety incidents, or financial loss.",
+    "generated": "Erroneous robustness certifications enable deployment of flawed LLMs, leading to systemic failures and erosion of trust in AI audits."
+  },
+  "dose_response": {
+    "similarity": 0.5961,
+    "reference": "Mismatched test distributions in robustness benchmarking mask model brittleness, leading certified models to fail in deployment and cause discrimination, safety incidents, or financial loss.",
+    "generated": "Unreliable statistical inference from perturbation analysis due to non-random output correlations, through certification bodies assessing LLM deployment readiness, triggers their lack of frameworks to account for these correlations, leading to erroneous robustness certifications, flawed LLM deployment, systemic failures, and erosion of trust in AI audits."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0938",
+  "chain_index": 0,
+  "title": "Active Adaptive Experimental Design for Treatment Effect Estimation with Covariate Choice",
+  "abstract": "This study designs an adaptive experiment for efficiently estimating average treatment effects (ATEs). In each round of our adaptive experiment, an experimenter sequentially samples an experimental unit, assigns a treatment, and observes the corresponding outcome immediately. At the end of the experiment, the experimenter estimates an ATE using the gathered samples. The objective is to estimate the ATE with a smaller asymptotic variance. Existing studies have designed experiments that adaptively optimize the propensity score (treatment-assignment probability). As a generalization of such an approach, we propose optimizing the covariate density as well as the propensity score. First, we derive the efficient covariate density and propensity score that minimize the semiparametric efficiency bound and find that optimizing both covariate density and propensity score minimizes the semiparametric efficiency bound more effectively than optimizing only the propensity score. Next, we design an adaptive experiment using the efficient covariate density and propensity score sequentially estimated during the experiment. Lastly, we propose an ATE estimator whose asymptotic variance aligns with the minimized semiparametric efficiency bound.",
+  "impact": "This paper presents an innovative approach to machine learning, specifically focusing on the efficient estimation of ATEs through adaptive experimental design. Our work has the potential to significantly impact various sectors, including healthcare, economics, and social sciences. However, if not applied carefully, the optimization techniques could lead to biased sampling or unethical manipulation of experimental conditions, potentially harming subjects or leading to incorrect conclusions. Furthermore, the adaptive nature of the experiments, relying on sequential sampling and treatment assignment based on past observations, may raise data privacy and consent issues, especially in sensitive fields like healthcare. In conclusion, while our work aims to advance the field of machine learning by providing a novel framework for efficient ATE estimation through adaptive experiments, it is crucial to consider the ethical implications and societal impacts of its application. Researchers and practitioners should be mindful of the potential risks and strive to apply these methods in a responsible and equitable manner.",
+  "query_input": {
+    "scenario": "Adaptive indirect experiment design for gene expression causal effects",
+    "issue": "Optimistic bias from sequential optimization of query-targeted experiments",
+    "hazard": [
+      "Adaptive experiment designs that reuse outcomes to optimize future assignments may produce overly optimistic treatment effect estimates and invalid inference."
+    ],
+    "exposure": [
+      "Researchers interpreting indirect experiment results for biological insights"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers lack mechanisms to detect overoptimistic bias from adaptive designs, trusting invalid inferential outputs as credible biological evidence.",
+    "impact": "False biological insights misdirect subsequent research, squandering resources and corrupting scientific knowledge bases.",
+    "dose_response": "Adaptive experiment designs reusing outcomes to optimize assignments produce overoptimistic estimates and invalid inference; through researchers interpreting indirect experiment results for biological insights, triggers lack of mechanisms to detect overoptimistic bias, leading to false insights misdirecting research and squandering resources."
+  },
+  "reference": {
+    "dose_response": [
+      "Adaptive reuse of outcomes produces overly optimistic estimates, which researchers, incentivized to publish positive findings, over-trust, causing flawed biological claims that waste resources and erode trust in genomics."
+    ],
+    "vulnerability": [
+      "Researchers over-trust significant results without recognizing adaptive bias.",
+      "Publication incentives reward optimistic findings over rigorous validation."
+    ],
+    "impact": [
+      "Flawed biological claims propagated in literature, wasting future research resources.",
+      "Erosion of trust in causal inference methods for genomics."
+    ]
+  }
+}

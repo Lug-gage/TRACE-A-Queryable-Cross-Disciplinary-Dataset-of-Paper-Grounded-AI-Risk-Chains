@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2579",
+  "chain_index": 0,
+  "title": "Iterative Search Attribution for Deep Neural Networks",
+  "abstract": "Deep neural networks (DNNs) have achieved state-of-the-art performance across various applications. However, ensuring the reliability and trustworthiness of DNNs requires enhanced interpretability of model inputs and outputs. As an effective means of Explainable Artificial Intelligence (XAI) research, the interpretability of existing attribution algorithms varies depending on the choice of reference point, the quality of adversarial samples, or the applicability of gradient constraints in specific tasks. To thoroughly explore the attribution integration paths, in this paper, inspired by the iterative generation of high-quality samples in the diffusion model, we propose an Iterative Search Attribution (ISA) method. To enhance attribution accuracy, ISA distinguishes the importance of samples during gradient ascent and descent, while clipping the relatively unimportant features in the model. Specifically, we introduce a scale parameter during the iterative process to ensure the features in next iteration are always more significant than those in current iteration. Comprehensive experimental results show that our method has superior interpretability in image recognition tasks compared with stateof-the-art baselines. Our code is available at: https://github.com/LMBTough/ISA",
+  "impact": "This paper presents work whose goal is to advance the field of explainable artificial intelligence, in particularly the proposed method ISA significantly enhances the interpretability of deep neural networks, promoting trust and transparency in AI applications across critical fields such as healthcare and finance. By providing more accurate attributions, ISA aids in informative decision-making and advances research in explainable AI. While there are many potential societal consequences of our work, we understand it may be misused to exploit AI system vulnerabilities, pose privacy concerns by revealing sensitive data, and lead to an over-reliance on interpretability. To mitigate these risks, controlled access to models, robust data protection measures, and comprehensive user training are essential. These strategies ensure that the benefits of ISA are maximized while minimizing potential negative impacts, contributing to the responsible advancement of AI technologies.",
+  "query_input": {
+    "scenario": "Deployment of XAI for medical image diagnosis",
+    "issue": "Saliency maps highlighting non-clinically relevant regions mislead radiologists into diagnostic errors.",
+    "hazard": [
+      "Attribution map explanations that lack fidelity and clarity, potentially misleading users about model decision processes."
+    ],
+    "exposure": [
+      "Radiologists interpreting AI-assisted chest X-ray explanations."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists' reliance on saliency maps as plausible explanations, without clinical verification routines, renders them susceptible to misleading non-clinically relevant features.",
+    "impact": "Diagnostic errors cause patient harm, inappropriate treatments, and eroded confidence in AI-assisted medical imaging.",
+    "dose_response": "Attribution maps lacking fidelity and clarity, through radiologists interpreting AI chest X-ray explanations, trigger uncritical reliance on non-clinically relevant features, leading to diagnostic errors that cause patient harm, inappropriate treatments, and eroded confidence."
+  },
+  "reference": {
+    "dose_response": [
+      "Attribution maps lacking fidelity mislead radiologists interpreting AI-assisted chest X-rays, enabling over-reliance without verification under time pressure, resulting in incorrect diagnoses and patient harm."
+    ],
+    "vulnerability": [
+      "Radiologists over-relying on XAI without independent verification, especially under time pressure."
+    ],
+    "impact": [
+      "Incorrect or missed diagnoses resulting in patient harm from delayed or inappropriate treatment."
+    ]
+  }
+}

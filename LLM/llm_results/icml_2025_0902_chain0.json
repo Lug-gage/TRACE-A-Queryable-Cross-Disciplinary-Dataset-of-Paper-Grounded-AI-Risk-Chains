@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0902",
+  "chain_index": 0,
+  "title": "Gradient Inversion of Multimodal Models",
+  "abstract": "Federated learning (FL) enables privacypreserving distributed machine learning by sharing gradients instead of raw data. However, FL remains vulnerable to gradient inversion attacks, in which shared gradients can reveal sensitive training data. Prior research has mainly concentrated on unimodal tasks, particularly image classification, examining the reconstruction of single-modality data, and analyzing privacy vulnerabilities in these relatively simple scenarios. As multimodal models are increasingly used to address complex vision-language tasks, it becomes essential to assess the privacy risks inherent in these architectures. In this paper, we explore gradient inversion attacks targeting multimodal vision-language Document Visual Question Answering (DQA) models and propose GI-DQA, a novel method that reconstructs private document content from gradients. Through extensive evaluation on state-of-the-art DQA models, our approach exposes critical privacy vulnerabilities and highlights the urgent need for robust defenses to secure multimodal FL systems. Project page at: https://AlonZolfi.github.io/GI-DQA/.",
+  "impact": "This paper presents a study on gradient inversion attacks in FL, specifically targeting DQA models. Our work exposes significant privacy vulnerabilities in FL systems, particularly in scenarios where sensitive document data are involved, such as medical records, financial statements, and legal contracts. Potential Ethical Concerns. Federated learning, despite its privacy-preserving design, remains susceptible to gradient inversion attacks that can reconstruct private training data, posing a risk to individuals whose confidential information may be leaked. This is especially concerning for applications involving sensitive or personal documents. Althoughugh our research aims to improve the security of FL systems by exposing these vulnerabilities, it also carries the risk of adversarial actors misusing our findings to develop more effective attacks against real-world deployments. Mitigation and Responsible Use. Our work underscores the urgent need for robust defenses, such as gradient obfuscation techniques, differential privacy mechanisms, and secure aggregation strategies, to mitigate the identified risks. We also present a defense mechanism to mitigate the risks posed by such attacks. We encourage the research community to use our findings to strengthen privacy-preserving methods in FL rather than to exploit them maliciously. Furthermore, we adhere to responsible disclosure practices and have framed our research in a way that prioritizes defenseoriented contributions. Broader Societal Implications. By demonstrating vulnerabilities in multimodal FL systems, we contribute to ongoing efforts to enhance the security and privacy of decentralized machine learning frameworks. Furthermore, our study informs policymakers, developers, and researchers about potential risks in privacy-sensitive AI applications, helping to shape future regulatory and technical safeguards. In conclusion, this research seeks to advance the field of machine learning by improving the understanding of privacy risks in FL, with the ultimate goal of fostering more secure and privacy-aware AI systems.",
+  "query_input": {
+    "scenario": "Federated learning with multimodal vision-language models",
+    "issue": "Private images and text from client training data are exactly reconstructed via gradient inversion.",
+    "hazard": [
+      "Gradient inversion attacks enable exact reconstruction of private training data from shared model gradients in federated learning."
+    ],
+    "exposure": [
+      "Clients contributing multimodal data to federated learning systems"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shared gradients encode private multimodal data patterns, enabling exact reconstruction without client defense.",
+    "impact": "Sensitive client documents are leaked, breaching confidentiality and undermining trust in multimodal federated learning.",
+    "dose_response": "Gradient inversion attacks, through clients contributing multimodal data to federated learning, trigger shared gradients encoding private patterns for exact reconstruction, leading to leaked sensitive documents, breaching confidentiality and undermining trust in multimodal federated learning."
+  },
+  "reference": {
+    "dose_response": [
+      "Gradient inversion attacks enable exact reconstruction of private training data from shared model gradients, which in federated learning with multimodal vision-language models exposes clients contributing multimodal data, leading to reconstructed data exposing personal identities and sensitive communications."
+    ],
+    "vulnerability": [
+      "Multimodal models amplify information leakage per gradient step, enabling exact multimodal data reconstruction."
+    ],
+    "impact": [
+      "Reconstructed data exposes personal identities and sensitive communications, leading to identity theft, stigmatization, and legal liability."
+    ]
+  }
+}

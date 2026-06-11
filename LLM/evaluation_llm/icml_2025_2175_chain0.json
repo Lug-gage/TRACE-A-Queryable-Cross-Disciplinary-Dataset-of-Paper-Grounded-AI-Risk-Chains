@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2175",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes lack of field calibration references to detect biases, semantically matching the reference's condition of trust without cross-validation enabling persistent bias.",
+    "reference": "Scientists and regulators trust AI-optimized NMR readings without cross-validation, enabling persistent bias.",
+    "generated": "Environmental scientists lack field calibration references to detect simulation-trained pulse sequence biases under real soil heterogeneity."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated includes carbon credit markets (matching carbon market transactions) but omits climate mitigation policies, covering only one of two affected parties.",
+    "reference": "Incorrect soil carbon stock estimates undermine climate mitigation policies and carbon market transactions.",
+    "generated": "Biased carbon-13 estimates undermine soil carbon accounting, misdirecting agricultural practices and carbon credit markets."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated causal arc from pulse sequence mis-characterization to biased estimates via lack of validation to undermining carbon accounting and markets matches the reference's logic.",
+    "reference": "RL-trained pulse sequences mis-characterize spin relaxation, enabling biased carbon-13 estimates, which when trusted without cross-validation by environmental scientists, leads to incorrect stock estimates undermining climate policies and carbon markets.",
+    "generated": "Simulation-trained RL pulse sequences mis-characterize spin relaxation under real low-field conditions, distorting quantification, and through deployment by environmental scientists lacking field calibration references to detect biases under soil heterogeneity, triggers undetected carbon-13 estimate errors, leading to biased estimates that undermine soil carbon accounting and misdirect agricultural practices and carbon credit markets."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1592",
+  "chain_index": 0,
+  "title": "Coprocessor Actor Critic A Model-Based Reinforcement Learning Approach For Adaptive Brain Stimulation",
+  "abstract": "Adaptive brain stimulation can treat neurological conditions such as Parkinson’s disease and poststroke motor deficits by influencing abnormal neural activity. Because of patient heterogeneity, each patient requires a unique stimulation policy to achieve optimal neural responses. Model-free reinforcement learning (MFRL) holds promise in learning effective policies for a variety of similar control tasks, but is limited in domains like brain stimulation by a need for numerous costly environment interactions. In this work we introduce Coprocessor Actor Critic, a novel, modelbased reinforcement learning (MBRL) approach for learning neural coprocessor policies for brain stimulation. Our key insight is that coprocessor policy learning is a combination of learning how to act optimally in the world and learning how to induce optimal actions in the world through stimulation of an injured brain. We show that our approach overcomes the limitations of traditional MFRL methods in terms of sample efficiency and task success and outperforms baseline MBRL approaches in a neurologically realistic model of an injured brain.",
+  "impact": "A major ethical concern of automated coprocessor policy learning is that adaptive brain stimulation can pose a safety risk to patients if stimulations outside of a safe region are applied to the brain. To mitigate these risks, in future work, when deploying CopAC on real patients, we aim to work closely with clinical collaborators to ensure patient safety and appropriately constrain the action space during online learning. Another ethical consideration involves the possibility of RL coprocessor approaches being exploited for malicious control over end-users. Unauthorized manipulation of RL policies, such as through adversarial attacks, could lead to unethical interventions and compromise the well-being of individuals with brain implants. To reduce this risk, in future work, we will draw on prior work in guarding against adversarial attacks to mitigate potential exploitation (Chen et al., 2019).",
+  "query_input": {
+    "scenario": "Adaptive deep brain stimulation for Parkinson's disease",
+    "issue": "Overestimated action values drive selection of excessive stimulation amplitudes.",
+    "hazard": [
+      "Model-based RL policies produce overconfident, potentially unsafe stimulation actions due to value overestimation on out-of-distribution neural states."
+    ],
+    "exposure": [
+      "Patients with Parkinson's disease receiving adaptive DBS therapy."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Parkinson's patients have a narrow therapeutic window where excessive DBS amplitudes cause neural dysfunction.",
+    "impact": "Patients suffer irreversible speech, motor, or cognitive impairments from neural overstimulation.",
+    "dose_response": "Model-based RL policies producing overconfident, unsafe stimulation actions, through adaptive DBS therapy in Parkinson's patients, trigger a narrow therapeutic window where excessive amplitudes cause neural dysfunction, leading to irreversible speech, motor, or cognitive impairments."
+  },
+  "reference": {
+    "dose_response": [
+      "Value overestimation on out-of-distribution neural states enables unsafe stimulation actions, which in Parkinson's patients receiving adaptive DBS exposes them to excessive amplitudes, leading to dyskinesia or cognitive decline, therapy abandonment, lost autonomy, and heightened caregiver burden."
+    ],
+    "vulnerability": [
+      "Training data underrepresents Parkinson's motor fluctuation diversity and demographic variability, inflating value estimates on novel neural states."
+    ],
+    "impact": [
+      "Excessive stimulation causes dyskinesia or cognitive decline, leading to therapy abandonment, lost autonomy, and heightened caregiver burden."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1879",
+  "chain_index": 2,
+  "title": "Compute Optimal Inference and Provable Amortisation Gap in Sparse Autoencoders",
+  "abstract": "A recent line of work has shown promise in using sparse autoencoders (SAEs) to uncover interpretable features in neural network representations. However, the simple linear-nonlinear encoding mechanism in SAEs limits their ability to perform accurate sparse inference. Using compressed sensing theory, we prove that an SAE encoder is inherently insufficient for accurate sparse inference, even in solvable cases. We then decouple encoding and decoding processes to empirically explore conditions where more sophisticated sparse inference methods outperform traditional SAE encoders. Our results reveal substantial performance gains with minimal compute increases in correct inference of sparse codes. We demonstrate this generalises to SAEs applied to large language models, where more expressive encoders achieve greater interpretability. This work opens new avenues for understanding neural network representations and analysing large language model activations.",
+  "impact": "This work advances neural network interpretability by improving methods for extracting understandable features from complex AI systems, with primarily positive societal implications for building trustworthy AI in high-stakes applications. By demonstrating that more sophisticated encoding methods achieve superior interpretability while maintaining computational efficiency, this research could accelerate transparent AI development across domains like healthcare and autonomous systems, and democratise access to interpretability tools for smaller research groups. However, we acknowledge potential risks including misuse for adversarial attacks, exploitation of model vulnerabilities, and false confidence in model safety if users over-rely on feature interpretations. The computational improvements may also lower barriers for both beneficial AI safety research and potentially harmful applications. Overall, we believe the benefits of advancing interpretability research significantly outweigh the risks, as transparent and understandable AI systems are fundamental to responsible AI deployment.",
+  "query_input": {
+    "scenario": "Scientific research on LLM cognition through SAE analysis",
+    "issue": "Dataset-mirroring features can lead to incorrect conclusions about neural representations.",
+    "hazard": [
+      "SAEs recover interpretable features not functionally important to the network, leading to misinterpretation of model mechanisms."
+    ],
+    "exposure": [
+      "Researchers using SAE visualizations to understand LLM cognitive processes"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers assume SAE visualizations faithfully represent functionally important features, lacking awareness that SAE encoders are provably insufficient for accurate sparse inference.",
+    "impact": "Incorrect scientific conclusions about LLM cognitive processes propagate through the research community, undermining model interpretability efforts.",
+    "dose_response": "SAEs recovering interpretable features not functionally important, through researchers using visualizations to study LLM cognition, triggers assumption of faithful representation, leading to incorrect scientific conclusions propagating and undermining interpretability."
+  },
+  "reference": {
+    "dose_response": [
+      "SAEs recovering non-functional features enables researchers' acceptance of them as ground truth, which in scenario scientific research exposes flawed cognitive models, leading to misguided research and incorrect safety assumptions."
+    ],
+    "vulnerability": [
+      "Researchers accept SAE features as ground truth for model cognition without functional testing.",
+      "Peer review norms prioritize interpretability over validation."
+    ],
+    "impact": [
+      "Flawed understanding of LLM cognition leads to misguided future research.",
+      "Incorrect safety assumptions based on misinterpreted representations."
+    ]
+  }
+}

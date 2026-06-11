@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0542",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5585,
+    "reference": "Inter-institutional model sharing without federated privacy safeguards enables reconstruction.",
+    "generated": "Shared ensemble structures retain fine-grained data signatures, leaving aggregated models unable to prevent exact reconstruction of training records."
+  },
+  "impact": {
+    "similarity": 0.5904,
+    "reference": "Reconstruction of patient-level medical records violates health privacy laws (e.g., HIPAA).",
+    "generated": "Full exposure of patient medical histories, violating confidentiality, eroding trust in collaborative diagnostics, and enabling discriminatory or harmful use."
+  },
+  "dose_response": {
+    "similarity": 0.7571,
+    "reference": "Shared random forest aggregated statistics leakage enables reconstruction of patient records, which in collaborative hospital diagnosis exposes patients to health privacy violations, institutional distrust, and medical identity theft.",
+    "generated": "Ensemble models leak training data via aggregated statistics, enabling exact reconstruction; through patients contributing to shared ensembles, retained fine-grained signatures make reconstruction unpreventable, leading to full exposure of medical histories, confidentiality violation, trust erosion in collaborative diagnostics, and discriminatory use."
+  }
+}

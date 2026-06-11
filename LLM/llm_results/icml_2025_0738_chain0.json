@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0738",
+  "chain_index": 0,
+  "title": "RLEF Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+  "abstract": "Large language models (LLMs) deployed as agents solve user-specified tasks over multiple steps while keeping the required manual engagement to a minimum. Crucially, such LLMs need to ground their generations in any feedback obtained to reliably achieve the desired outcomes. We propose an end-to-end reinforcement learning method for teaching models to leverage execution feedback in the realm of code synthesis, where state-of-the-art LLMs struggle to improve code iteratively compared to independent sampling. We benchmark on competitive programming tasks and achieve large performance gains with both small (8B parameters) and large (70B) models, outperforming previous work while reducing the number of samples required by an order of magnitude. Our analysis of inference-time behavior demonstrates that our method produces LLMs that effectively leverage automatic feedback over multiple steps.",
+  "impact": "Successful grounding of LLMs for code generation execution feedback will amplify their utility when applied to impactful tasks such as assisting software development and performing quality control. In general, however, increasing the capabilities of LLMs, now widely deployed in a range of applications, requires quality control and guardrailing to promote safety and minimize potentially harmful output. We limit our study to the generation of source code, where we confine the execution of model-generated output to local sandboxes. We believe the framework of Shavit et al. (2023) regarding the governance of AI agents to be a useful resource for practitioners.",
+  "query_input": {
+    "scenario": "Competitive programming platforms with automated execution-based scoring",
+    "issue": "AI-generated code overfits to public test cases, failing hidden tests",
+    "hazard": [
+      "RL-based code synthesis using execution feedback from finite test cases can lead to overfitting, producing code that passes given tests but fails on unseen inputs."
+    ],
+    "exposure": [
+      "Programmers using LLM-based code synthesis in ranked contests"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "The contest evaluation gap between public and hidden test cases leaves programmers unable to verify generalization of AI-generated code.",
+    "impact": "Programmers suffer lower contest rankings and wasted effort when overfitted solutions fail hidden test evaluation.",
+    "dose_response": "RL-based code synthesis that overfits to finite execution feedback, when employed by programmers in ranked contests, exploits the gap between public and hidden test cases, leading to lower rankings and wasted effort from hidden test failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting to public test cases enables AI-generated code that passes visible tests but fails hidden ones, which in ranked contests exposes participants to unfair outcomes, leading to loss of trust and proliferation of brittle code."
+    ],
+    "vulnerability": [
+      "Automated scoring on visible test cases creates incentives to optimize for passing those tests without ensuring general correctness."
+    ],
+    "impact": [
+      "Loss of trust in competition fairness and proliferation of brittle, overfit code that fails hidden tests, misleading users."
+    ]
+  }
+}

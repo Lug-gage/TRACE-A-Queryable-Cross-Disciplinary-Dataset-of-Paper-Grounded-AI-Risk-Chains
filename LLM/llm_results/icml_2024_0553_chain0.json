@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0553",
+  "chain_index": 0,
+  "title": "Explaining Probabilistic Models with Distributional Values",
+  "abstract": "A large branch of explainable machine learning is grounded in cooperative game theory. However, research indicates that game-theoretic explanations may mislead or be hard to interpret. We argue that often there is a critical mismatch between what one wishes to explain (e.g. the output of a classifier) and what current methods such as SHAP explain (e.g. the scalar probability of a class). This paper addresses such gap for probabilistic models by generalising cooperative games and value operators. We introduce the distributional values, random variables that track changes in the model output (e.g. flipping of the predicted class) and derive their analytic expressions for games with Gaussian, Bernoulli and categorical payoffs. We further establish several characterising properties, and show that our framework provides fine-grained and insightful explanations with case studies on vision and language models.",
+  "impact": "Although this work is primarily concerned with the derivation and study of a novel class of value operators for cooperative stochastic games, we believe application to XAI may have generally a positive societal impact as they allow for greater scrutiny of model behaviour. As distributional values are in effect a strict extension of traditional approaches in game-theoretic XAI, we trust that their adoption may bring several benefits over using standard techniques such as SHAP and related (see also Appendix D.5 for a concrete example). However, we also acknowledge that misuse of explanatory techniques may potentially lead to miscalibration of stakeholders trust and the more complex technique introduced in this work may carry higher risks. We therefore wish to highlight that at this stage of development distributional values are not meant as a ready-made XAI solution for the general public but should rather be applied and analysed by knowledgeable users. In this sense, we intend to develop best practices for communication and visualization of the distributional values as well as continue probing the technique for failure cases and misinterpretations.",
+  "query_input": {
+    "scenario": "Medical image diagnosis with vision models and Shapley explanations",
+    "issue": "Distributional attributions may vary across stochastic model runs, misleading clinicians.",
+    "hazard": [
+      "Stochastic Shapley values for probabilistic models produce explanations as distributions, entangling model output randomness with feature attribution, confusing users about true feature contributions."
+    ],
+    "exposure": [
+      "Clinicians interpreting saliency maps for diagnostic decisions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians rely on deterministic saliency maps and lack training to interpret stochastic distributional attributions, eroding trust.",
+    "impact": "Misinterpreted saliency maps cause diagnostic errors, inappropriate treatments, and patient harm.",
+    "dose_response": "Stochastic Shapley values produce distributional explanations entangling model randomness with feature attribution, which, through clinicians interpreting saliency maps for diagnosis, triggers reliance on deterministic maps and lack of training, leading to misinterpreted saliency maps causing diagnostic errors and patient harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Stochastic Shapley distributions entangle model and attribution variability; clinicians interpreting saliency maps as fixed evidence misinterpret them, causing diagnostic errors and incorrect treatment plans."
+    ],
+    "vulnerability": [
+      "Clinicians untrained in probabilistic reasoning misinterpret distributional explanations, leading to diagnostic errors."
+    ],
+    "impact": [
+      "Incorrect treatment plans, unnecessary procedures, or missed diagnoses due to misplaced trust in saliency maps."
+    ]
+  }
+}

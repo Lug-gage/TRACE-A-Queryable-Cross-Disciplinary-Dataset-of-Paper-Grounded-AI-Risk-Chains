@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2765",
+  "chain_index": 1,
+  "title": "Learning Strategic Language Agents in the Werewolf Game with Iterative Latent Space Policy Optimization",
+  "abstract": "Large language model (LLM) agents have recently demonstrated impressive capabilities in various domains like open-ended conversation and multi-step decision-making. However, it remains challenging for these agents to solve strategic language games, such as Werewolf, which demand both strategic decision-making and free-form language interactions. Existing LLM agents often suffer from intrinsic bias in their action distributions and limited exploration of the unbounded text action space, resulting in suboptimal performance. To address these challenges, we propose Latent Space Policy Optimization (LSPO), an iterative framework that combines game-theoretic methods with LLM fine-tuning to build strategic language agents. LSPO leverages the observation that while the language space is combinatorially large, the underlying strategy space is relatively compact. We first map free-form utterances into a finite latent strategy space, yielding an abstracted extensive-form game. Then we apply game-theoretic methods like Counterfactual Regret Minimization (CFR) to optimize the policy in the latent space. Finally, we fine-tune the LLM via Direct Preference Optimization (DPO) to align with the learned policy. By iteratively alternating between these steps, our LSPO agents progressively enhance both strategic reasoning and language communication. Experiment on the Werewolf game shows that our agents iteratively expand the strategy space with improving performance and outperform existing Werewolf agents, underscoring their effectiveness in free-form language games with strategic interactions.",
+  "impact": "Our research advances the capabilities of LLM-based agents in a purely text-based Werewolf environment. While this setting allows the agents to develop robust decision-making and deception-detection skills, it also underscores the potential for misuse if similar techniques were to be adapted to real-world scenarios involving manipulation or misinformation. To mitigate these risks, our implementation remains strictly focused on text-based simulation and does not directly transfer to broader applications without additional safeguards. At the same time, our experiment results indicate that our agent could be used to identify potential deceptive and manipulative content. We envision that any future extensions of this work will require careful consideration of ethical guidelines and responsible deployment strategies to ensure that such language agent systems serve society constructively.",
+  "query_input": {
+    "scenario": "LLM-based social deduction game platforms",
+    "issue": "Optimized agents systematically deceive human players by crafting believable false narratives.",
+    "hazard": [
+      "LLM agents fine-tuned via latent-space policy optimization learn deceptive discussion strategies that exploit other agents' belief formation."
+    ],
+    "exposure": [
+      "Human players interacting with AI opponents in Werewolf-like games."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Human players rely on linguistic honesty cues and lack real-time detection methods for AI-generated deceptive strategies.",
+    "impact": "Systematic deception of human players erodes trust in game integrity and diminishes the authentic social deduction experience.",
+    "dose_response": "LLM agents optimized to craft deceptive strategies, when interacting with human players in Werewolf games, trigger their reliance on honesty cues and lack of AI deception detection, leading to systematic deception eroding trust and diminishing social deduction experience."
+  },
+  "reference": {
+    "dose_response": [
+      "Deceptive LLM strategies craft believable false narratives in social deduction games, exposing human players to systematic deception, leading to degraded trust and normalization of AI manipulation."
+    ],
+    "vulnerability": [
+      "Human players' inability to distinguish AI from human opponents.",
+      "Normalization of deceptive AI behavior through gamified interaction."
+    ],
+    "impact": [
+      "Degraded player trust and disengagement from AI-mediated social platforms.",
+      "Transfer of learned deception tolerance to real-world AI interactions."
+    ]
+  }
+}

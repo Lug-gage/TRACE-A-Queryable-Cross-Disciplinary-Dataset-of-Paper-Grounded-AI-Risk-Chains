@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2054",
+  "chain_index": 3,
+  "title": "Executable Code Actions Elicit Better LLM Agents",
+  "abstract": "Large Language Model (LLM) agents, capable of performing a broad range of actions, such as invoking tools and controlling robots, show great potential in tackling real-world challenges. LLM agents are typically prompted to produce actions by generating JSON or text in a pre-defined format, which is usually limited by constrained action space (e.g., the scope of pre-defined tools) and restricted flexibility (e.g., inability to compose multiple tools). This work proposes to use executable Python code to consolidate LLM agents’ actions into a unified action space (CodeAct). Integrated with a Python interpreter, CodeAct can execute code actions and dynamically revise prior actions or emit new actions upon new observations through multi-turn interactions. Our extensive analysis of 17 LLMs on API- Bank and a newly curated benchmark shows that CodeAct outperforms widely used alternatives (up to 20% higher success rate). The encouraging performance of CodeAct motivates us to build an open-source LLM agent that interacts with environments by executing interpretable code and collaborates with users using natural language. To this end, we collect an instruction-tuning dataset CodeActInstruct that consists of 7k multi-turn interactions using CodeAct. We show that it can be used with existing data to improve models in agent-oriented tasks without compromising their general capability. CodeActAgent, finetuned from Llama2 and Mistral, is integrated with Python interpreter and uniquely tailored to perform sophisticated tasks (e.g., model training) using existing libraries and autonomously self-debug1.",
+  "impact": "This paper presents work whose goal is to advance LLMbased autonomous agents that can communicate with humans through natural language and assist human users by performing tasks in environments on behalf of humans. In CodeActAgent is an initial prototype of an autonomous agent and still has several practical limitations. For example, it may suffer from hallucination commonly seen in LLMs (e.g., imagine the content of a variable without actually printing it out), suggesting the need for subsequent alignment (Ouyang et al., 2022) for further improvements. Despite being a prototype, CodeActAgent has already demonstrated limited self-improving capability (e.g., selfdebug error messages to improve its action) and the ability to interact with environments. Future work may build upon CodeActAgent to develop better agents by having them perform extensive interactions within a given environment and iteratively bootstrap their self-improving capability to learn to improve from past mistakes. More powerful agents, as results of such algorithms, are potentially beneficial for solving a wide range of real-world problems (e.g., theorem proving, drug discovery). As extensively discussed in (Eloundou et al., 2023), a fully autonomous agent may transform the current landscape of the labor market and impact the jobs of existing workers. Furthermore, since CodeAct directly grants access for the agent to freely execute code in a sandbox environment, in the worst scenario (e.g., in Sci-Fi movies), such an agent may potentially break free of the sandbox restriction and cause harm to the world through cyber-attack, highlighting the need for future work to design better safety mechanism to safeguard autonomous agents (Tang et al., 2024).",
+  "query_input": {
+    "scenario": "LLM-generated reward function code for public health resource allocation",
+    "issue": "Erroneous reward code leads to misallocation of critical health resources.",
+    "hazard": [
+      "LLM agents autonomously writing and executing arbitrary code in real environments introduce unintended system modifications and data corruption."
+    ],
+    "exposure": [
+      "Public health officials relying on LLM-derived policies for resource distribution."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "No independent code auditing or verification infrastructure exists to catch errors in LLM-generated allocation algorithms before deployment.",
+    "impact": "Misallocation of critical health supplies causes preventable disease outbreaks and deaths in underserved populations.",
+    "dose_response": "Autonomous LLM code execution introducing system modifications and data corruption, through public health officials' reliance on unvetted policies, triggers lack of code auditing, leading to health supply misallocation causing preventable outbreaks in underserved populations."
+  },
+  "reference": {
+    "dose_response": [
+      "Autonomous generation of reward code by LLM agents enables erroneous allocation logic, which in public health resource distribution exposes officials to exacerbated health inequities."
+    ],
+    "vulnerability": [
+      "Policy officials lack the technical expertise to vet complex reward functions, enabling biased resource allocation."
+    ],
+    "impact": [
+      "Exacerbated health inequities, resource denial to marginalized groups, erosion of public confidence in algorithmic governance."
+    ]
+  }
+}

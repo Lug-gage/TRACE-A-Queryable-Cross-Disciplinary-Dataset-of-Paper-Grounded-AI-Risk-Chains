@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1739",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5607,
+    "reference": "Resource inequality in ability to enhance applications distorts robust rankings.",
+    "generated": "Applicants' unequal resources to invest in costly essay optimization, leaving resource-constrained groups unable to meet the robust classifier's cost assumptions."
+  },
+  "impact": {
+    "similarity": 0.6536,
+    "reference": "Privileged applicants capture elite slots, reducing class and racial diversity.",
+    "generated": "Socioeconomically disadvantaged applicants are denied admission, entrenching educational inequality."
+  },
+  "dose_response": {
+    "similarity": 0.8901,
+    "reference": "Minimax robust classification under cost uncertainty enables college applicants to optimize admissions essays and resumes, which in one-shot college admissions exposes resource inequality in ability to enhance applications, leading to privileged applicants capturing elite slots and reducing diversity.",
+    "generated": "Minimax robust strategic classification under cost uncertainty, through college applicants optimizing essays, triggers unequal resources to invest in costly optimization, leaving resource-constrained groups unable to meet cost assumptions, leading to socioeconomically disadvantaged applicants being denied admission, entrenching educational inequality."
+  }
+}

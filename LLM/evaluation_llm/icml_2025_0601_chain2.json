@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0601",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe a lack of verification or visibility into failures when developers rely on program synthesis, with the generated specifying the assumption about code complexity as the instantiation of that missing visibility.",
+    "reference": "Developers integrating visual program synthesis lack visibility into silent failures, enabling cascading errors in downstream analytics.",
+    "generated": "Developers lack runtime verification of visual grounding, assuming code complexity reliably indicates question difficulty across domain shifts."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe corrupted decisions in downstream analytics as the consequence, with the generated also noting trust erosion but still semantically covering the flawed decision-making damage type and affected party.",
+    "reference": "Undetected errors in video analytics pipelines cause flawed decision-making in surveillance, traffic management, or content moderation.",
+    "generated": "Silent incorrect answers on shifted queries corrupt downstream analytics decisions and erode system trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The reference's causal arc hinges on query-agnostic encoding directly producing brittle programs that silently fail; the generated introduces an extra link—an unverified assumption about code complexity—that shifts the mechanism, leaving the brittleness step absent.",
+    "reference": "Query-agnostic encoding produces brittle programs that silently fail under domain shift, which in video analytics pipelines exposes developers to undetected errors that cascade into flawed downstream decisions.",
+    "generated": "Query-agnostic visual encoding, through developers integrating visual program synthesis, triggers the unverified assumption that code complexity proxies question difficulty under shift, leading to silent incorrect answers that corrupt decisions and erode system trust."
+  }
+}

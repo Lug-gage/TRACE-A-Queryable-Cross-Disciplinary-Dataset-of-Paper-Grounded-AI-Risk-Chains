@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0199",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5085,
+    "reference": "Users’ inability to critically assess AI explanations makes inconsistent verdicts erode trust, leading to abandonment of verification.",
+    "generated": "Low digital literacy and heuristics that equate multimodal explanations with correctness render users unable to detect retrieval-induced false credibility."
+  },
+  "impact": {
+    "similarity": 0.6105,
+    "reference": "Widespread disengagement from fact-checking tools increases general susceptibility to misinformation, particularly in ambiguous claim contexts.",
+    "generated": "False claims gain amplified credibility as verified information, entrenching misbeliefs and eroding public trust in fact-checking."
+  },
+  "dose_response": {
+    "similarity": 0.6792,
+    "reference": "Inconsistent verdicts from explainable fact-checking tools erode users' trust, and their inability to critically assess AI causes abandonment of verification, leaving them more susceptible to misinformation.",
+    "generated": "Explainable yet erroneous multimodal fact-checking outputs, through public browser plugin use to verify claims, trigger low digital literacy and heuristics equating multimodal explanations with correctness, leading to false claims gaining amplified credibility, entrenching misbeliefs and eroding trust in fact-checking."
+  }
+}

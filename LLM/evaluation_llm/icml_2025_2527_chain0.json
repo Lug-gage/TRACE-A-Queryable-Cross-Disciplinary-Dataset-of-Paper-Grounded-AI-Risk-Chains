@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2527",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference sensitivity is unrestricted query access with high-fidelity scores; generated describes inherent decision boundary leakage with limited interactions, a related but distinct condition",
+    "reference": "Unrestricted query access with high-fidelity prediction scores allows attackers to precisely reproduce the decision surface.",
+    "generated": "GNN models inherently leak decision boundaries through query responses, enabling replica construction with limited interactions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both party (providers) and damage type (revenue loss, intellectual property theft/erosion) are present",
+    "reference": "Revenue loss and intellectual property erosion for providers as competitors deploy cloned models without R&D costs.",
+    "generated": "Proprietary GNNs are cloned, causing intellectual property theft and revenue loss for MLaaS providers."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal arc of unauthorized extraction via adaptive querying leading to decision boundary reproduction and cloning-driven revenue loss is preserved",
+    "reference": "The unauthorized extraction of GNN model functionality via adaptive querying enables precise reproduction of decision surfaces, which through unrestricted API access allows cloning, leading to revenue loss and IP erosion for MLaaS providers.",
+    "generated": "Unauthorized extraction of GNN functionality via adaptive node querying with limited budget and feedback, through MLaaS providers' node classification APIs, triggers decision boundary leakage enabling replica construction with limited interactions, leading to proprietary GNN cloning and revenue loss."
+  }
+}

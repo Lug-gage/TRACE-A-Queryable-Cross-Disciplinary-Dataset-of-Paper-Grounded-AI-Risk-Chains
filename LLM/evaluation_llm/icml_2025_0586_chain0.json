@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0586",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on full-precision checks that cannot expose quantization-hidden malicious behavior semantically matches the over-reliance creating false sense of security.",
+    "reference": "Developer over-reliance on full-precision safety checks creates a false sense of security.",
+    "generated": "Reliance on full-precision checks that cannot expose quantization-hidden malicious behavior."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Undermining trust in open-source AI ecosystems covers cascading trust erosion, and the affected party (open-source ecosystems) includes downstream applications.",
+    "reference": "Widespread deployment of backdoored LLMs in downstream applications causes cascading trust erosion.",
+    "generated": "Deployed models exfiltrate data, produce harmful outputs, and undermine trust in open-source AI ecosystems."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc reverses causal order: deployment triggers reliance on blind checks, while reference has exploitation bypassing checks leading to exposure and then deployment.",
+    "reference": "Exploitable quantization enables malicious quantized models to bypass full-precision checks, which in open model hub distribution exposes downloading developers and consumers, leading to widespread deployment of backdoored LLMs.",
+    "generated": "Exploited post-training quantization, through developers deploying downloaded quantized LLMs, triggers reliance on full-precision checks blind to quantization-hidden malicious behavior, leading to data exfiltration, harmful outputs, and undermined trust in open-source AI."
+  }
+}

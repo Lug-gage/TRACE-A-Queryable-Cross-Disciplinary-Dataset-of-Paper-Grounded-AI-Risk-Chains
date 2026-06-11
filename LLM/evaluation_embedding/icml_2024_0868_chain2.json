@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0868",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4758,
+    "reference": "Grid inertia too low to absorb sudden RL power spikes.",
+    "generated": "Grid dispatch tightly couples to RL actions with no real-time manual override to counteract abrupt unsafe policy shifts."
+  },
+  "impact": {
+    "similarity": 0.603,
+    "reference": "Widespread blackouts and economic disruption.",
+    "generated": "Frequency deviations and widespread power outages disrupt electricity supply to consumers and grid operators."
+  },
+  "dose_response": {
+    "similarity": 0.8172,
+    "reference": "Dormancy-guided resets from causality-aware entropy regularization destabilize control actions, exposing grid operators and consumers to frequency deviations; with low grid inertia, this causes blackouts, economic disruption, and loss of critical services.",
+    "generated": "Causality-aware entropy regularization and dormancy-guided resets cause abrupt policy changes, through grid operators' reliance on RL dispatch without real-time override, triggering unsafe actions that lead to frequency deviations and outages."
+  }
+}

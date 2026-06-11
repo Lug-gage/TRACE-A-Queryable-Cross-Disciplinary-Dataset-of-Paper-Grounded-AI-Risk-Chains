@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0088",
+  "chain_index": 0,
+  "title": "Impossible Videos",
+  "abstract": "Synthetic videos nowadays is widely used to complement data scarcity and diversity of realworld videos. Current synthetic datasets primarily replicate real-world scenarios, leaving impos- sible, counterfactual and anti-reality video concepts underexplored. This work aims to answer two questions: 1) Can today’s video generation models effectively follow prompts to create impossible video content? 2) Are today’s video understanding models good enough for understanding impossible videos? To this end, we introduce IPV-BENCH, a novel benchmark designed to evaluate and foster progress in video understanding and generation. IPV-BENCH is underpinned by a comprehensive taxonomy, en- compassing 4 domains, 14 categories. It features diverse scenes that defy physical, biological, geographical, or social laws. Based on the taxonomy, a prompt suite is constructed to evaluate video generation models, challenging their prompt following and creativity capabilities. In addition, a video benchmark is curated to assess Video- LLMs on their ability of understanding impossible videos, which particularly requires reasoning on temporal dynamics and world knowledge. Comprehensive evaluations reveal limitations and insights for future directions of video models, paving the way for next-generation video models. Project page: https://showlab.github. io/Impossible-Videos/.",
+  "impact": "This work introduces Impossible Videos, a benchmark for evaluating video models on counterfactual and anti-reality scenarios. By focusing on violations of physical, biological, geographical, and social laws, it pushes video generation and understanding models beyond imitation toward deeper reasoning and generalization. Our findings reveal current limitations in temporal dynamics and world knowledge reasoning, and offer a new testbed for safer, more robust video AI. However, benchmarks involving implausible or surreal content may be misused to deliberately generate deceptive or misleading media. To mitigate this risk, our benchmark is designed for research purposes, with a focus on transparency, educational value, and responsible model development. Acknowledgment This research is supported by the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No: AISG3-RP-2022-030).",
+  "query_input": {
+    "scenario": "Deployment of video generation tools trained on IPV-Bench for content creation platforms",
+    "issue": "Indistinguishable impossible videos bypass synthetic media detection, enabling undetected deception.",
+    "hazard": [
+      "Generation and dissemination of highly realistic but physically impossible or counterfactual videos that can be mistaken for authentic."
+    ],
+    "exposure": [
+      "Platform moderators and content reviewers screening user-generated video uploads"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Platform moderators lack reliable means to detect physically impossible synthetic videos, relying on fallible human judgment and detection tools.",
+    "impact": "Undetected deceptive videos proliferate, eroding public trust in video evidence and enabling large-scale disinformation campaigns.",
+    "dose_response": "Generation and dissemination of highly realistic impossible videos, through platform moderators screening uploads, triggers their reliance on fallible judgment and detection tools, leading to undetected deceptive videos that erode trust and enable disinformation."
+  },
+  "reference": {
+    "dose_response": [
+      "Generation of highly realistic impossible videos enables undetectable deception, exposing platform moderators to bypassed detection tools, leading to widespread dissemination of false events that erodes public trust and enables fraud."
+    ],
+    "vulnerability": [
+      "Platform moderators lack perceptual training to spot physically impossible yet realistic videos.",
+      "Automated detection tools are not fine-tuned on counterfactual physics, leading to high-confidence false negatives."
+    ],
+    "impact": [
+      "Widespread dissemination of visually convincing false events erodes public trust in all video evidence.",
+      "Malicious actors exploit platform reach for financial fraud, political disinformation, and reputational harm."
+    ]
+  }
+}

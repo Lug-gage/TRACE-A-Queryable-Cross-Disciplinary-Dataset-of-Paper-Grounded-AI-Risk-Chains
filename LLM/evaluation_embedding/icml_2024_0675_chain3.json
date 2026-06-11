@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5191,
+    "reference": "Dual-use nature of tools where availability to safety researchers also enables malicious actors to easily generate attacks.",
+    "generated": "Lack of output sanitization and access restrictions in red-teaming pipelines permits extraction of potent attack strings."
+  },
+  "impact": {
+    "similarity": 0.5854,
+    "reference": "Increased volume and sophistication of jailbreak attacks, outpacing defenses and reducing overall AI ecosystem safety.",
+    "generated": "Jailbroken LLMs bypass safety guardrails, enabling mass production of harmful content like hate speech, scams, and disinformation."
+  },
+  "dose_response": {
+    "similarity": 0.7319,
+    "reference": "Automated red-teaming tools that generate suffixes are repurposed by malicious actors, increasing attack volume and sophistication, outpacing defenses and reducing AI safety.",
+    "generated": "Stealthy, controllable generation of adversarial suffixes, through safety researchers using automated red-teaming frameworks, triggers lack of output sanitization and access restrictions, permitting extraction of potent attack strings that jailbreak LLMs, leading to bypassed guardrails and mass production of harmful content."
+  }
+}

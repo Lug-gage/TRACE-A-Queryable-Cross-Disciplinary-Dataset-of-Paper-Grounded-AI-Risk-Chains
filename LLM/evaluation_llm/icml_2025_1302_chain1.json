@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1302",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the absence of validity checks leading to implausible/disconnected fragments being accepted.",
+    "reference": "No internal consistency checks allow disconnected fragment scaffolds to be presented as plausible molecules.",
+    "generated": "No automated chemical validity screening exists in the fragment-constrained design workflow, leaving researchers unable to exclude implausible fragment assemblies."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Wasted effort/resources on unmakeable molecules is covered, but erosion of trust in generative methods is missing.",
+    "reference": "Designers waste effort on non-viable fragment combinations, eroding trust in generative methods.",
+    "generated": "Wasted computational and laboratory resources on unmakeable molecules, slowing drug candidate identification."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal chain from diffusion technique to unchecked fragments and wasted resources is present, but the outcome omits the erosion of trust link described in the reference.",
+    "reference": "Non-autoregressive discrete diffusion with fragment remasking can produce disconnected fragments, which, when used by researchers designing molecules without internal consistency checks, leads to wasted effort and eroded trust.",
+    "generated": "Non-autoregressive discrete diffusion with fragment remasking, through researchers designing molecules with specific building blocks, triggers the absence of automated chemical validity screening, leaving implausible fragment assemblies unchecked, leading to wasted computational and laboratory resources and slower drug candidate identification."
+  }
+}

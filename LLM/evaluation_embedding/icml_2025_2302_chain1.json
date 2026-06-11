@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2302",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.466,
+    "reference": "Inconsistent human annotations in context-dependent refusal ratings introduce label noise, masquerading as safety improvement.",
+    "generated": "Developers trust CASE-Bench's context-aware refusal ratings, unaware that the benchmark fails to evaluate advanced few-shot jailbreak resilience."
+  },
+  "impact": {
+    "similarity": 0.5398,
+    "reference": "Developers release models with false sense of safety, increasing likelihood of harmful outputs upon real-world deployment.",
+    "generated": "LLMs fine-tuned with CASE-Bench remain vulnerable to few-shot jailbreaks, resulting in harmful outputs and eroded trust in model safety."
+  },
+  "dose_response": {
+    "similarity": 0.6928,
+    "reference": "Inconsistent human annotations inflate CASE-Bench scores, causing developers to trust false safety and release models that produce harmful outputs in deployment.",
+    "generated": "Context-aware safety benchmarks failing to capture advanced few-shot jailbreak strategies, through developer fine-tuning with CASE-Bench, trigger misplaced trust in refusal ratings, leading to LLMs remaining vulnerable and producing harmful outputs, eroding trust."
+  }
+}

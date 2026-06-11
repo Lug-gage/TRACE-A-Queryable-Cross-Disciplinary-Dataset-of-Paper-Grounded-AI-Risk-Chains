@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0741",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5577,
+    "reference": "Standard SGD training procedures can amplify majority subpopulation patterns, overshadowing minority subgroups' signals.",
+    "generated": "Researchers' reliance on held-out aggregate performance metrics obscures subpopulation-specific biases, leaving them unable to detect skewed model behavior."
+  },
+  "impact": {
+    "similarity": 0.517,
+    "reference": "Erroneous subgroup predictions result in inequitable resource allocation and exacerbate health disparities.",
+    "generated": "Scientific knowledge becomes distorted, with minority subpopulations misrepresented and downstream analyses contaminated by uncontrolled biases."
+  },
+  "dose_response": {
+    "similarity": 0.7832,
+    "reference": "Expressive ML models' amplification of statistical biases enables SGD to favor majority patterns, skewing model insights and leading to erroneous subgroup predictions and health disparities.",
+    "generated": "Expressive ML models amplifying biases through unvalidated flexibility and selective held-out evaluation, when researchers analyze subpopulation behavior, trigger reliance on aggregate metrics that obscures subpopulation biases, distorting scientific knowledge and misrepresenting minority subpopulations."
+  }
+}

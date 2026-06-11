@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2536",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3772,
+    "reference": "Automated extraction without human verification allows corrupted data to enter financial records undetected.",
+    "generated": "Clerks rely on VLM extraction that encodes text via texture rather than semantics, leaving it unable to resist orthographic perturbations."
+  },
+  "impact": {
+    "similarity": 0.5911,
+    "reference": "Financial losses from incorrect billing, tax filings, or reimbursement claims.",
+    "generated": "Erroneous data propagates into financial records, causing monetary discrepancies, invoice mismatches, and compliance failures."
+  },
+  "dose_response": {
+    "similarity": 0.745,
+    "reference": "Adversarial typographic perturbations exploiting VLM ambiguities enable incorrect text extraction, which in document digitization exposes data entry clerks to systematic errors, leading to financial losses and legal liability.",
+    "generated": "Adversarial text manipulation attack surface in vision-language models, through clerks relying on VLM extraction, triggers texture-based encoding unable to resist orthographic perturbations, leading to erroneous financial data, monetary discrepancies, invoice mismatches, and compliance failures."
+  }
+}

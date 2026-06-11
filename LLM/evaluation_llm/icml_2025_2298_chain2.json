@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2298",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe students and educators uncritically trusting plausible but incorrect AI-generated reasoning without verification.",
+    "reference": "Students and educators trust AI tutor explanations without verifying accuracy, especially when reasoning seems coherent.",
+    "generated": "Students and educators lack the expertise to discern plausible but incorrect reasoning, relying uncritically on AI-generated explanations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (learners) is present, but damage type misses the specific 'harder to correct later' property, instead describing broader educational degradation.",
+    "reference": "Reinforcement of misconceptions that are harder to correct later.",
+    "generated": "Learners internalize and propagate incorrect causal knowledge, degrading educational outcomes and spreading misconceptions."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from reward optimization to misconception spread is present, but the generated arc omits the 'weakening analytical skills' consequence that the reference includes.",
+    "reference": "Step-level reward optimization leads to persuasive but incorrect reasoning chains in AI video tutors, which students trust uncritically, deepening misconceptions and weakening analytical skills.",
+    "generated": "Step-level reward optimization amplifying plausible but incorrect causal explanations in video models, through students and educators relying on AI video tutors, triggers uncritical acceptance of flawed reasoning, leading to internalized and spread misconceptions that degrade educational outcomes."
+  }
+}

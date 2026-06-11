@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0661",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4998,
+    "reference": "Benchmark designs assume independence of test cases and lack inter-agent contagion monitoring.",
+    "generated": "Evaluation protocols lack mechanisms to detect cascading jailbreak infections, blinding safety assessments to exponential multi-agent compromise."
+  },
+  "impact": {
+    "similarity": 0.4984,
+    "reference": "Unsafe models incorrectly deemed secure, leading to premature deployment with hidden vulnerabilities.",
+    "generated": "Safety researchers deploy infected multi-agent systems under false confidence, causing all agents to exhibit coordinated harmful behaviors."
+  },
+  "dose_response": {
+    "similarity": 0.83,
+    "reference": "Infectious propagation of jailbreak prompts via adversarial images in multi-agent red-teaming leads to underestimating safety risks, causing premature deployment of insecure models and wasted evaluation resources.",
+    "generated": "Jailbreak prompts propagating infectiously among multimodal LLM agents via adversarial images, through safety researchers testing multi-agent systems, triggers evaluation protocols lacking cascading infection detection, leading to deployment of infected agents under false confidence and coordinated harmful behaviors."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1057",
+  "chain_index": 0,
+  "title": "DataFreeShield Defending Adversarial Attacks without Training Data",
+  "abstract": "Recent advances in adversarial robustness rely on an abundant set of training data, where using external or additional datasets has become a common setting. However, in real life, the training data is often kept private for security and privacy issues, while only the pretrained weight is available to the public. In such scenarios, existing methods that assume accessibility to the original data become inapplicable. Thus we investigate the pivotal problem of data-free adversarial robustness, where we try to achieve adversarial robustness without accessing any real data. Through a preliminary study, we highlight the severity of the problem by showing that robustness without the original dataset is difficult to achieve, even with similar domain datasets. To address this issue, we propose DataFreeShield, which tackles the problem from two perspectives: surrogate dataset generation and adversarial training using the generated data. Through extensive validation, we show that DataFreeShield outperforms baselines, demonstrating that the proposed method sets the first entirely data-free solution for the adversarial robustness problem.",
+  "impact": "As shown in Appendix M, the generated samples are not very human-recognizable, and being so does not necessarily lead to better performance of the models. From these facts, we believe our synthetic input generation does not cause privacy invasion that might have existed from the original training dataset. However, there is still a possibility where the generated samples could affect privacy concerns, such as membership inference attacks (Shokri et al., 2017) or model stealing (Lee et al., 2019). For example, an attacker might compare the image-level or feature-level similarity of some test samples with the synthetically generated samples to find out whether the test sample is part of the training set or not. We believe further investigation is needed on such side-effects, which we leave as a future work.",
+  "query_input": {
+    "scenario": "Data-free adversarial training for image classifiers",
+    "issue": "Surrogate data distribution mismatch causes models to learn defenses that fail against real-world adversarial examples.",
+    "hazard": [
+      "Synthetic surrogate datasets for adversarial training lack fidelity to the true data distribution, producing models with brittle, overestimated robustness."
+    ],
+    "exposure": [
+      "Developers deploying adversarially trained vision models in safety-critical applications."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Deployers rely on synthetic surrogate data without knowledge of the true data distribution, leaving no basis to verify model robustness.",
+    "impact": "Catastrophic misclassification in safety-critical applications, leading to physical harm, accidents, or critical system failures from unseen adversarial examples.",
+    "dose_response": "Synthetic surrogate datasets lacking fidelity to true data distributions produce brittle robustness; when deployed by developers in safety-critical applications, reliance on such data without true distribution knowledge prevents robustness verification, leading to catastrophic misclassification and physical harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Synthetic data's distribution mismatch enables brittle robustness, which in safety-critical deployments exposes systems to real-world attacks, leading to physical harm and institutional trust erosion."
+    ],
+    "vulnerability": [
+      "Overreliance on synthetic data creates a false sense of security among developers and auditors.",
+      "Lack of representative real-world data in training leads to systematic underestimation of model fragility in deployment contexts."
+    ],
+    "impact": [
+      "Safety-critical system failures (e.g., autonomous vehicles misclassifying obstacles) causing physical harm.",
+      "Erosion of institutional trust in AI systems when adversarial failures become public, leading to regulatory backlash."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0698",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of independent verification rather than vigilance decline from perceived unfairness/over-automation",
+    "reference": "Operator vigilance decline due to perceived unfairness and over-automation of tracking.",
+    "generated": "Operators lack independent real-time identity verification, making surveillance decisions wholly dependent on error-prone automated tracking output."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Missed threats and false accusations are both present",
+    "reference": "Failure to detect real security threats or false accusations from misassigned identities.",
+    "generated": "Missed threats, false accusations, and compromised public safety as identity switches prevent accurate person re-identification across cameras."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Causal mechanism different: generated lacks operator vigilance decline from perceived unfairness, substituting dependency from lack of verification",
+    "reference": "Identity switches and trajectory errors from occlusion/disocclusion mis-association enable false trajectories, which in public surveillance leads to operator vigilance decline due to perceived unfairness and over-automation, resulting in failure to detect real security threats or false accusations from misassigned identities.",
+    "generated": "Identity switches from occlusion mis-association in MOT, through security operators relying on it in crowded spaces, triggers lack of independent identity verification, making decisions dependent on error-prone tracking, leading to missed threats, false accusations, and compromised public safety."
+  }
+}

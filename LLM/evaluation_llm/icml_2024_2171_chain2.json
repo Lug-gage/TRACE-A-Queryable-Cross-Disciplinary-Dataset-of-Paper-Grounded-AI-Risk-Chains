@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2171",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Misjudging technical content as low-value due to automated ratings is semantically present.",
+    "reference": "Judging educational value solely by fluency and readability falsely devalues complex technical material as low-quality.",
+    "generated": "Reliance on automated LLM quality ratings without human validation, allowing exclusion of technical content misjudged as low-value."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Lack of technical knowledge leading to degraded accuracy and reliability mirrors misleading and trust erosion.",
+    "reference": "Educational LLMs lack advanced technical knowledge, misleading learners and undermining trust in AI-assisted education.",
+    "generated": "LLMs trained on the selected data lack technical knowledge, resulting in degraded accuracy and reliability for expert QA."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes amplification of distribution biases and reliance without validation, not the reference's specific mechanism of fluency-equating ratings overlooking technical content.",
+    "reference": "LLM judge ratings that equate educational value with fluency overlook technical content, exposing domain experts to filtered data that produces misleading educational LLMs lacking advanced knowledge.",
+    "generated": "LLM judge quality ratings amplify distribution biases, through domain experts building educational LLMs, triggering automated rating reliance without validation, excluding misjudged technical content, leading to LLMs lacking technical knowledge and degraded expert QA accuracy."
+  }
+}

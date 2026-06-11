@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 2,
+  "title": "Prospector Heads Generalized Feature Attribution for Large Models & Data",
+  "abstract": "Feature attribution, the ability to localize regions of the input data that are relevant for classification, is an important capability for ML models in scientific and biomedical domains. Current methods for feature attribution, which rely on “explaining” the predictions of end-to-end classifiers, suffer from imprecise feature localization and are inadequate for use with small sample sizes and high-dimensional datasets due to computational challenges. We introduce prospector heads, an efficient and interpretable alternative to explanationbased attribution methods that can be applied to any encoder and any data modality. Prospector heads generalize across modalities through experiments on sequences (text), images (pathology), and graphs (protein structures), outperforming baseline attribution methods by up to 26.3 points in mean localization AUPRC. We also demonstrate how prospector heads enable improved interpretation and discovery of class-specific patterns in input data. Through their high performance, flexibility, and generalizability, prospectors provide a framework for improving trust and transparency for ML models in complex domains. 1",
+  "impact": "Trust and safety considerations are increasingly important as AI becomes an increasingly prominent part of high-impact disciplines such as science and biomedicine. This concern is particularly relevant for large “black box” foundation models. The goal of this work is to provide a new approach to feature attribution for large models and complex datasets to improve transparency of AI systems. It is important to note that that our method is specifically not designed to be an explanation of a model’s reasoning, and any feature attributions made by prospector heads should be carefully interpreted by the user in the context of the data modality. Code Availability Our code is made available at: https://github.com/ gmachiraju/K2.",
+  "query_input": {
+    "scenario": "Explanation of 3D object detectors",
+    "issue": "Feature factorization activation maps provide misleading visual explanations that obscure true model decision boundaries.",
+    "hazard": [
+      "Feature attribution maps contain object attribution information that can be manipulated to cause model editing failures."
+    ],
+    "exposure": [
+      "Operators interpreting LiDAR-based 3D detectors for autonomous systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators' reliance on feature attribution maps that obscure true model boundaries prevents detection of manipulated explanations.",
+    "impact": "Undetected manipulation causes model editing failures, degrading 3D object detection and compromising autonomous system safety.",
+    "dose_response": "Manipulable feature attribution maps, through operators interpreting LiDAR 3D detectors, trigger reliance on obscured model boundaries that prevents detection of manipulated explanations, leading to undetected model editing failures degrading 3D detection and compromising autonomous system safety."
+  },
+  "reference": {
+    "dose_response": [
+      "Misleading feature factorization activation maps enable obscured decision boundaries, which in LiDAR-based 3D detectors expose operators to undetected failures, leading to increased collision risk."
+    ],
+    "vulnerability": [
+      "Operators in safety-critical domains over-trust visual explanations when making override decisions.",
+      "Institutional reliance on XAI tools without standardized validation protocols for explanation fidelity."
+    ],
+    "impact": [
+      "Increased collision risk when operators ignore true detection failures masked by plausible explanations.",
+      "Liability concentration on operators who acted on misleading explanations during incident investigations."
+    ]
+  }
+}

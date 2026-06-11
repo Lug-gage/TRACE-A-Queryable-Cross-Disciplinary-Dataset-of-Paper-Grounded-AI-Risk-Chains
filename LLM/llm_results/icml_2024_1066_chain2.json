@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1066",
+  "chain_index": 2,
+  "title": "Drug Discovery with Dynamic Goal-aware Fragments",
+  "abstract": "Fragment-based drug discovery is an effective strategy for discovering drug candidates in the vast chemical space, and has been widely employed in molecular generative models. However, many existing fragment extraction methods in such models do not take the target chemical properties into account or rely on heuristic rules. Additionally, the existing fragment-based generative models cannot update the fragment vocabulary with goal-aware fragments newly discovered during the generation. To this end, we propose a molecular generative framework for drug discovery, named Goal-aware fragment Extraction, Assembly, and Modification (GEAM). GEAM consists of three modules, each responsible for goalaware fragment extraction, fragment assembly, and fragment modification. The fragment extraction module identifies important fragments contributing to the desired target properties with the information bottleneck principle, thereby constructing an effective goal-aware fragment vocabulary. Moreover, GEAM can explore beyond the initial vocabulary with the fragment modification module, and the exploration is further enhanced through the dynamic goal-aware vocabulary update. We experimentally demonstrate that GEAM effectively discovers drug candidates through the generative cycle of the three modules in various drug discovery tasks. Our code is available at https://github.com/ SeulLee05/GEAM.",
+  "impact": "While GEAM has been shown to be effective in real-world drug discovery tasks, there is a risk that it could be used maliciously to generate harmful or toxic molecules. The potential for generating toxic samples is a common challenge across various domains such as molecules, graphs, images and languages. Nevertheless, this risk can be effectively mitigated by excluding toxic fragments from the generation cycle or by incorporating an auxiliary toxicity detection module that filters out the generated toxic molecules in the model service stage. For example, ChatGPT (OpenAI, 2022) employs a moderation tool2 to filter out hateful or discriminatory sentences.",
+  "query_input": {
+    "scenario": "Chemical space exploration for novel scaffolds",
+    "issue": "Dynamic vocabulary update discards rare fragments, skewing exploration to common scaffolds",
+    "hazard": [
+      "Goal-aware fragment assembly with dynamic vocabulary optimization can generate molecular structures that appear promising in silico but are chemically invalid or unsynthesizable."
+    ],
+    "exposure": [
+      "Researchers exploring chemical space with fragment-based generation models"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers lack integrated synthetic feasibility checks, allowing chemically invalid but in silico promising structures to be accepted as leads.",
+    "impact": "Experimental resources wasted on unsynthesizable leads, delaying identification of viable drug candidates.",
+    "dose_response": "Goal-aware fragment assembly with dynamic vocabulary optimization, through researchers exploring chemical space with fragment-based models, triggers acceptance of chemically invalid leads due to missing synthetic feasibility checks, leading to experimental resources wasted on unsynthesizable leads, delaying viable drug candidate identification."
+  },
+  "reference": {
+    "dose_response": [
+      "Goal-aware fragment assembly discarding rare fragments skews exploration to common scaffolds, and when researchers treat this biased output as unbiased, it reduces chemical diversity and misses first-in-class opportunities."
+    ],
+    "vulnerability": [
+      "Researchers treat AI-generated chemical space as unbiased, reinforcing existing scaffold preferences and missing rare novelty."
+    ],
+    "impact": [
+      "Reduced chemical diversity in libraries, diminished innovation, and missed first-in-class drug opportunities."
+    ]
+  }
+}

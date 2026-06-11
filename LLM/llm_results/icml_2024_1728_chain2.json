@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1728",
+  "chain_index": 2,
+  "title": "Plug-and-Play image restoration with Stochastic deNOising REgularization",
+  "abstract": "Plug-and-Play (PnP) algorithms are a class of iterative algorithms that address image inverse problems by combining a physical model and a deep neural network for regularization. Even if they produce impressive image restoration results, these algorithms rely on a non-standard use of a denoiser on images that are less and less noisy along the iterations, which contrasts with recent algorithms based on Diffusion Models (DM), where the denoiser is applied only on re-noised images. We propose a new PnP framework, called Stochastic deNOising REgularization (SNORE), which applies the denoiser only on images with noise of the adequate level. It is based on an explicit stochastic regularization, which leads to a stochastic gradient descent algorithm to solve ill-posed inverse problems. A convergence analysis of this algorithm and its annealing extension is provided. Experimentally, we prove that SNORE is competitive with respect to state-of-the-art methods on deblurring and inpainting tasks, both quantitatively and qualitatively.",
+  "impact": "The work presented in this paper addresses the highly illposed problem of restoring missing information within an image. This sensitivity to errors is particularly pronounced in scenarios involving post-processing algorithms such as segmentation, detection, or classification applied to the reconstructed image, where errors in the reconstruction process may propagate into erroneous decision-making based on the image data. This concern is particularly critical in the context of medical images. SNORE, functioning as a stochastic process reliant on a learned denoiser, inherently produces random fluctuations in its output. In Section F.2, we provide an analysis of SNORE uncertainty to its random seed and its initialization. These experiments suggest a robustness of our method. Subsequent research effort should focus on quantifying the errors associated with SNORE in order to confirm its utility as a reliable reconstruction algorithm.",
+  "query_input": {
+    "scenario": "Surveillance footage enhancement for forensic analysis",
+    "issue": "Stochastic restoration can produce inconsistent reconstructions, undermining evidence reliability",
+    "hazard": [
+      "Learned denoiser priors in plug-and-play restoration can hallucinate details, distorting image content"
+    ],
+    "exposure": [
+      "Forensic analysts using enhanced surveillance stills"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Forensic analysts rely on enhanced stills as faithful records without independent means to verify hallucinated details.",
+    "impact": "Wrongful convictions or acquittals from corrupted evidence, eroding judicial accuracy.",
+    "dose_response": "Learned denoiser priors hallucinating details, when forensic analysts use enhanced surveillance stills as faithful records without independent verification, produce corrupted evidence that leads to wrongful convictions or acquittals."
+  },
+  "reference": {
+    "dose_response": [
+      "Stochastic hallucination by learned denoiser priors produces inconsistent surveillance reconstructions that forensic analysts treat as ground truth, leading to wrongful convictions."
+    ],
+    "vulnerability": [
+      "Forensic analysts and courts treat enhanced images as ground truth, ignoring stochastic variability."
+    ],
+    "impact": [
+      "Wrongful convictions or acquittals result, compromising justice systems and forensic credibility."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1220",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes system's reliance on non-robust prompts causing brittleness; generated describes end-users' inability to detect overfitting, a related but different sensitivity condition",
+    "reference": "LLMs rely on prompts lacking robustness constraints, making output quality brittle to distribution shifts in real-world use.",
+    "generated": "End-users lack means to detect overfitted prompts and assume consistent LLM reliability across domain shifts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "user harm is present but the erosion of trust in the system is missing from the generated consequence",
+    "reference": "End-users encounter erroneous LLM outputs in high-stakes applications, causing harm and eroding trust in the system.",
+    "generated": "Domain shifts produce incorrect and harmful LLM outputs, causing flawed decisions, misinformation, and user harm across diverse tasks."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "both describe automated prompt optimization without robustness constraints leading to brittle/overfitted prompts, which under domain shifts result in erroneous outputs and user harm",
+    "reference": "Automated prompt optimization without robustness constraints enables brittle prompts, which in zero-shot LLM deployment exposes end-users to diverse tasks, leading to erroneous outputs in high-stakes applications, causing harm and eroding trust.",
+    "generated": "Automated prompt optimization surrogates that maximize task metrics without robustness constraints, through end-user deployment in diverse real-world tasks, trigger undetected overfitting and assumed reliability, leading to incorrect and harmful LLM outputs under domain shifts, causing flawed decisions and user harm."
+  }
+}

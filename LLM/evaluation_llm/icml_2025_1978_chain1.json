@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1978",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes passengers' uncritical trust and lack of independent verification under adverse conditions, similar to driver overtrust and failure to recalibrate, but affects passengers instead of drivers, so target is mismatched.",
+    "reference": "Drivers become less attentive due to overtrust in ADAS under normal conditions, failing to recalibrate in adverse weather.",
+    "generated": "Passengers uncritically trust ADAS reliability signals, lacking independent means to verify perception accuracy under adverse conditions."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference affected party is drivers unprepared and damage is increased collision risk; generated affects passengers and describes actual collisions with injuries, both differ.",
+    "reference": "Increased collision risk when shift undetected, as drivers are unprepared to take over control.",
+    "generated": "Undetected perception errors cause collisions, resulting in passenger injuries and fatalities."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc omits driver inattention under adverse weather and replaces it with passenger uncritical trust triggering undetected perception errors, a different causal chain.",
+    "reference": "Statistical shift detection signals may not correlate with actual prediction error enables false sense of reliability, which in an AV perception scenario where vehicle passengers rely on ADAS for navigation and safety exposes driver inattention under adverse weather, leading to increased collision risk when shift undetected.",
+    "generated": "Statistical shift detection signals not correlating with actual prediction error, through vehicle passengers relying on ADAS, triggers uncritical trust in ADAS reliability signals and lack of independent verification, leading to undetected perception errors causing collisions and passenger injuries and fatalities."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0970",
+  "chain_index": 2,
+  "title": "Empirical Privacy Variance",
+  "abstract": "We propose the notion of empirical privacy variance and study it in the context of differentially private fine-tuning of language models. Specifically, we show that models calibrated to the same (ε, δ)-DP guarantee using DP-SGD with different hyperparameter configurations can exhibit significant variations in empirical privacy, which we quantify through the lens of memorization. We investigate the generality of this phenomenon across multiple dimensions and discuss why it is surprising and relevant. Through regression analysis, we examine how individual and composite hyperparameters influence empirical privacy. The results reveal a no-free-lunch trade-off: existing practices of hyperparameter tuning in DP-SGD, which focus on optimizing utility under a fixed privacy budget, often come at the expense of empirical privacy. To address this, we propose refined heuristics for hyperparameter selection that explicitly account for empirical privacy, showing that they are both precise and practically useful. Finally, we take preliminary steps to understand empirical privacy variance. We propose two hypotheses, identify limitations in existing techniques like privacy auditing, and outline open questions for future research.",
+  "impact": "Our work highlights a critical yet often overlooked phenomenon in DP-SGD: the empirical privacy variance observed under the same theoretical privacy budget. This cautions against over-reliance on DP guarantees; in particular, policymakers should be wary of treating theoretical guarantees as certification tools, as failing to conduct comprehensive privacy tests may expose users to unforeseen privacy risks. We hope this work motivates further research into practical privacy evaluation and the development of more robust standards for DP machine learning.",
+  "query_input": {
+    "scenario": "Black-box privacy auditing of DP machine learning models",
+    "issue": "Audits may underestimate actual leakage, providing false assurance of privacy.",
+    "hazard": [
+      "Empirically variable privacy guarantees in deep learning trained with DP optimizers, causing miscalibration between theoretical epsilon-delta and actual information leakage."
+    ],
+    "exposure": [
+      "Individuals whose records are in the audited training set"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Data subjects trust DP audits that underestimate empirical leakage, lacking independent means to detect or challenge false privacy assurances.",
+    "impact": "Confidentiality breaches via increased memorization enable re-identification and inference attacks on individuals' training records.",
+    "dose_response": "Miscalibration between theoretical DP guarantees and actual information leakage, through individuals in audited training sets, triggers misplaced trust in underestimating audits without detection means, leading to confidentiality breaches via memorization-enabled re-identification and inference attacks."
+  },
+  "reference": {
+    "dose_response": [
+      "Incomplete DP audits underestimate leakage, causing regulators to accept weak protections, resulting in litigation after attacks expose personal data."
+    ],
+    "vulnerability": [
+      "Audit methodologies are not standardised and often fail to capture full attack surface (e.g., side-channel or model inversion).",
+      "Auditors’ incentives are misaligned; they may optimise for passing rather than exposing worst-case risk."
+    ],
+    "impact": [
+      "Regulatory bodies and the public accept dangerously weak privacy claims, delaying mandatory protections.",
+      "Organisations face litigation and reputational damage when breaches occur despite clean audit reports."
+    ]
+  }
+}

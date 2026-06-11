@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0695",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference highlights LLM's broad knowledge introducing spurious correlations; generated emphasizes analysts' trust and lack of domain checks, a related but different sensitivity condition",
+    "reference": "LLM's broad pre-training knowledge introduces spurious correlations when applied to specific business contexts without validation.",
+    "generated": "Analysts trust automated feature generation and lack rigorous domain-specific checks to identify spurious correlations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both affected party (business) and damage types (financial losses, operational disruptions via misallocated inventory) are present",
+    "reference": "Forecasting models reliant on spurious features produce inaccurate predictions, causing financial losses and operational disruptions.",
+    "generated": "Flawed sales forecasts cause misallocated inventory, missed revenue opportunities, and financial losses."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "both arcs start with LLM-generated spurious features and end with financial/operational harm, but the generated inserts an intermediate step of uncritical trust and lack of checks instead of models reliant on inappropriate knowledge, altering the causal logic",
+    "reference": "LLMs generating spurious-correlation features enable automated feature engineering for sales forecasting, exposing business analysts to models reliant on inappropriate knowledge, leading to inaccurate predictions, financial losses, and operational disruptions.",
+    "generated": "LLMs generating synthetic features with spurious correlations from pre-training data, via business analysts' use for sales forecasting, triggers uncritical trust and lack of rigorous domain checks, leading to flawed forecasts, misallocated inventory, and financial losses."
+  }
+}

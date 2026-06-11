@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0229",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes failure of utility distribution assumptions under dynamic auctions; generated describes buyers' inability to contest bias estimates, with assumptions possibly being incorrect – a related but different sensitivity condition",
+    "reference": "Utility distribution assumptions fail under dynamic auction strategies, causing systematic under-allocation to certain groups.",
+    "generated": "Buyers cannot validate or contest the allocation AI's bias estimates, which rely on distributional assumptions that may be incorrect."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (disadvantaged buyers) is present, but damage type (economic losses and reduced market efficiency) is replaced with systematic under-allocation and reduced preference satisfaction",
+    "reference": "Economic losses for disadvantaged buyers and reduced market efficiency from participation drop-off.",
+    "generated": "Fairness guarantee is violated, leading to systematic under-allocation for certain buyer groups and reduced preference satisfaction."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference arc is incorrect bias estimation → misallocation → under-allocation → economic losses and market exit; generated arc starts with bias-corrected selection, adds buyers' inability to contest, and leads to violated fairness and reduced preference satisfaction – a fundamentally different causal mechanism",
+    "reference": "Incorrect bias estimation in dynamic auctions misallocates goods when utility assumptions fail, exposing buyers to systematic under-allocation that causes economic losses and market exit, reducing efficiency.",
+    "generated": "Bias-corrected centralized fair selection using distributional assumptions, through repeated AI auctions with fairness constraints, triggers buyers' inability to contest bias estimates based on possibly incorrect assumptions, leading to violated fairness guarantees, systematic under-allocation for certain groups, and reduced preference satisfaction."
+  }
+}

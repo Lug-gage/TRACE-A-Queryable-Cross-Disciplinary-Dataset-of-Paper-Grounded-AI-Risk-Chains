@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0286",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5438,
+    "reference": "Clients with small, imbalanced datasets produce gradients that directly encode label distributions.",
+    "generated": "Output layer gradients encode a linear correlation with labels that persists across realistic training settings, enabling inversion via least squares."
+  },
+  "impact": {
+    "similarity": 0.4607,
+    "reference": "Inference of medical diagnoses from label leakage violates patient confidentiality laws.",
+    "generated": "Private client training data is reconstructed with high fidelity, compromising data confidentiality."
+  },
+  "dose_response": {
+    "similarity": 0.6934,
+    "reference": "Label leakage from gradient updates enables adversaries to infer sensitive attributes like medical conditions, violating confidentiality laws and enabling insider trading, which reduces trust and participation in federated systems.",
+    "generated": "Gradient inversion attacks, through clients sharing label-informative gradient updates in federated training, trigger output layer gradients' linear label correlation enabling least-squares inversion, leading to high-fidelity reconstruction of private training data, compromising confidentiality."
+  }
+}

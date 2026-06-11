@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1671",
+  "chain_index": 2,
+  "title": "David and Goliath Small One-step Model Beats Large Diffusion with Score Post-training",
+  "abstract": "We propose Diff-Instruct*(DI*), a data-efficient post-training approach for one-step text-to-image generative models to improve its human preferences without requiring image data. Our method frames alignment as online reinforcement learning from human feedback (RLHF), which optimizes the one-step model to maximize human reward functions while being regularized to be kept close to a reference diffusion process. Unlike traditional RLHF approaches, which rely on the Kullback-Leibler divergence as the regularization, we introduce a novel general score-based divergence regularization that substantially improves performance as well as post-training stability. Although the general score-based RLHF objective is intractable to optimize, we derive a strictly equivalent tractable loss function in theory that can efficiently compute its gradient for optimizations. We introduce DI*-SDXL-1step, which is a 2.6B one-step text-to-image model at a resolution of 1024 × 1024, post-trained from DMD2 w.r.t SDXL. Our 2.6B DI*-SDXL-1step model outperforms the 50-step 12B FLUX-dev model in ImageReward, PickScore, and CLIP score on the Parti prompts benchmark while using only 1.88% of the inference time. This result clearly shows that with proper post-training, the small one-step model is capable of beating huge multi-step diffusion models. Our model is opensourced at this link: https://github.com/ pkulwj1994/diff_instruct_star. We hope our findings can contribute to humancentric machine learning techniques.",
+  "impact": "We propose Diff-Instruct* (DI*) that can effectively posttrain one-step text-to-image generative models to be aligned with human preferences. The method and corresponding aligned models lie in the domain of Reinforcement Learning using Human Feedback, which involves the participation of humans for training reward models. Though the Diff-Instruct* algorithm itself does not generate harms to society, any misuse of the algorithm could potentially lead to misleading, fake, or biased generated content. We conduct experiments on academic benchmarks, whose resulting models are less likely to be misused. Further experiments are needed to better understand these consistency model limitations and propose solutions to address them",
+  "query_input": {
+    "scenario": "Dynamic prompt auto-editing (PAE) for one-step T2I models",
+    "issue": "Online RL-based prompt editing overfits to reward model preferences, producing images that diverge from user-specified text.",
+    "hazard": [
+      "One-step text-to-image models optimized via reward-based noise or prompt editing produce misaligned outputs that diverge from human intent."
+    ],
+    "exposure": [
+      "Users relying on automated prompt refinement for precise image generation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users have no means to monitor or correct prompt drift introduced by reward optimization, so divergence from intent remains undetected.",
+    "impact": "Generated images ignore critical user specifications, producing unusable outputs and eroding reliance on the refinement system.",
+    "dose_response": "One-step text-to-image models optimized via reward-based editing produce misaligned outputs; through users relying on automated prompt refinement with no means to detect prompt drift, divergence remains undetected, leading to ignored specifications, unusable images, and eroded reliance."
+  },
+  "reference": {
+    "dose_response": [
+      "Online RL-based prompt editing enables overfitting to reward model preferences, which in automated prompt refinement exposes users to divergence from specified text, leading to loss of agency and homogenized visual outputs."
+    ],
+    "vulnerability": [
+      "Automated prompt rewriting strips user-intended semantic nuance to conform to reward model priors.",
+      "Users lack visibility into how their prompts are altered, preventing informed consent."
+    ],
+    "impact": [
+      "Users from marginalized groups cannot generate self-representative imagery, experiencing loss of agency.",
+      "Systematic prompt sanitization homogenizes visual outputs, reducing cultural diversity in generated media."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2945",
+  "chain_index": 2,
+  "title": "Omni-Angle Assault An Invisible and Powerful Physical Adversarial Attack on Face Recognition",
+  "abstract": "Deep learning models employed in face recognition (FR) systems have been shown to be vulnerable to physical adversarial attacks through various modalities, including patches, projections, and infrared radiation. However, existing adversarial examples targeting FR systems often suffer from issues such as conspicuousness, limited effectiveness, and insufficient robustness. To address these challenges, we propose a novel approach for adversarial face generation, UVHat, which utilizes ultraviolet (UV) emitters mounted on a hat to enable invisible and potent attacks in black-box settings. Specifically, UVHat simulates UV light sources via video interpolation and models the positions of these light sources on a curved surface, specifically the human head in our study. To optimize attack performance, UVHat integrates a reinforcement learning-based optimization strategy, which explores a vast parameter search space, encompassing factors such as shooting distance, power, and wavelength. Extensive experimental evaluations validate that UVHat substantially improves the attack success rate in black-box settings, enabling adversarial attacks from multiple angles with enhanced robustness.",
+  "impact": "In this paper, we introduce UVHat, an invisible and powerful physical adversarial attack against FR systems that utilizes UV light to generate imperceptible perturbations. This research reveals a novel attack pattern that utilizes invisible UV light and contributes to a broader understanding of security vulnerabilities in FR systems. By highlighting this overlooked threat, UVHat can motivate the development of robust and spectrum-aware defense mechanisms, such as multi-modal sensing and spectral filtering, thereby facilitating the advancement of secure and trustworthy biometric authentication technologies. However, this work also raises serious security and ethical concerns. The proposed attack may allow malicious actors, including fugitives or other individuals seeking to evade surveillance, to circumvent FR-based identity verification and tracking systems. Such misuse could compromise public safety and undermine trust in security-critical applications of FR technology. We encourage future research to explore effective countermeasures against invisible-spectrum adversarial attacks, including real-time detection of abnormal spectral patterns, the integration of UV/IR filtering in camera hardware, and policy-level responses to regulate the deployment of sensitive spectrum-emitting devices. A comprehensive understanding of both the attack and defense perspectives is essential to ensure the safe and responsible evolution of FR systems.",
+  "query_input": {
+    "scenario": "Smartphone face unlock under UV illumination",
+    "issue": "Device unlocking by unauthorized user due to adversarial perturbation.",
+    "hazard": [
+      "Omni-angle invisible ultraviolet adversarial perturbations from hat-mounted emitters that evade black-box face recognition."
+    ],
+    "exposure": [
+      "Smartphone users relying on facial authentication."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Smartphone face recognition models lack robustness to physical ultraviolet adversarial perturbations, failing to distinguish attack patterns from genuine biometric traits.",
+    "impact": "Unauthorized user unlocks the smartphone, compromising personal data, private communications, and sensitive accounts.",
+    "dose_response": "Omni-angle invisible ultraviolet adversarial perturbations from hat-mounted emitters that evade black-box face recognition, through smartphone users relying on facial authentication, trigger models' failure to distinguish attack patterns from genuine traits, leading to unauthorized unlocking, compromising data, communications, and accounts."
+  },
+  "reference": {
+    "dose_response": [
+      "Hat-mounted UV perturbations enable unauthorized unlocking, which in smartphone face unlock exposes user overtrust and lack of liveness detection, leading to data theft, financial fraud, and compromised personal safety."
+    ],
+    "vulnerability": [
+      "Users assume face unlock is spoof-proof, disabling fallback authentication like PINs.",
+      "Phones often lack robust liveness detection against black-box UV attacks."
+    ],
+    "impact": [
+      "Unauthorized data access, financial theft, and identity fraud.",
+      "Compromised personal safety if a stalker gains covert device access."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1436",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5433,
+    "reference": "LLMs overfit to training data, memorizing rare canary patterns.",
+    "generated": "LLM training memorizes repeated sequences, making it infeasible for providers to filter out all trap content without discarding legitimate data."
+  },
+  "impact": {
+    "similarity": 0.5998,
+    "reference": "Legal liability and copyright lawsuits against model providers.",
+    "generated": "API providers incur false copyright infringement accusations, legal liability, and reputational damage when trap data leaks through model outputs."
+  },
+  "dose_response": {
+    "similarity": 0.7645,
+    "reference": "Canary trap-based privacy backdoors force models to memorize targeted content, enabling API probing in black-box services to extract canaries, leading to copyright lawsuits and trust erosion.",
+    "generated": "Canary trap attacks, through LLM API services accused of infringement, exploit training memorization of repeated sequences, rendering filtering infeasible and causing false accusations, liability, and reputational harm when trap data leaks."
+  }
+}

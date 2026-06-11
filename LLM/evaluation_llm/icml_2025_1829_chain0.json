@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1829",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Absence of institutional validation protocols vs. clinicians' overreliance without monitoring are related but different sensitivity conditions.",
+    "reference": "Clinicians’ overreliance on certification guarantees without real-world performance monitoring across demographic groups.",
+    "generated": "Absence of institutional validation protocols for demographic shifts leaves clinicians unable to detect model failure."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (underrepresented groups) and misdiagnosis harm covered, but worsening health disparities omitted and replaced with trust erosion.",
+    "reference": "Misdiagnosis and inappropriate treatments for underrepresented patient cohorts, worsening health disparities.",
+    "generated": "Misdiagnosis and inappropriate treatments harm patients in underrepresented demographic groups, undermining trust in AI-assisted healthcare."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes shift triggering absence of protocols and inability to detect failure, not shift invalidating bounds causing overreliance.",
+    "reference": "Meta-distributional shift across client populations invalidates certified robustness bounds, causing clinicians to over-rely on guarantees, leading to misdiagnosis and worsened health disparities.",
+    "generated": "Meta-distributional shift across client populations, through clinicians relying on an FL diagnostic assistant, triggers absence of institutional validation protocols for demographic shifts, leaving clinicians unable to detect failure, leading to misdiagnosis harming underrepresented groups and undermining trust in AI-assisted healthcare."
+  }
+}

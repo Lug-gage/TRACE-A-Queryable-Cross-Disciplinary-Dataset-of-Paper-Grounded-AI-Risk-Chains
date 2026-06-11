@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0427",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes over-trust in visual saliency maps despite known faithfulness flaws; generated describes reliance forced by lack of model access, missing the 'over-trust despite known flaws' condition.",
+    "reference": "Developer over-trust in visual explanation saliency maps despite known faithfulness flaws.",
+    "generated": "Engineers lack direct access to model internals, forcing reliance on unverified post-hoc explanations without fidelity guarantees."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe flawed logic/models persisting in production and propagating unreliable decisions at scale.",
+    "reference": "Flawed models persist in production, amplifying biased or unsafe decisions at scale.",
+    "generated": "Developers misattribute model errors, reinforcing flawed logic and propagating unreliable decisions into production systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Unfaithful explanations cause misattribution of errors, leading to propagation of flawed logic into production; the causal arc matches reference.",
+    "reference": "Unfaithful black-box explanations cause developers to misattribute errors and over-trust flawed attributions, resulting in biased models persisting and wasted debugging effort on spurious correlations.",
+    "generated": "Black-box explanation methods produce unfaithful, unstable, or non-robust explanations, and when used by engineers to debug models, trigger reliance on unverified post-hoc explanations without fidelity guarantees, leading to misattribution of errors and propagation of flawed logic into production."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1431",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe defenses overfitting to a static benchmark, making them unable to resist novel attacks.",
+    "reference": "Developers rely solely on a static benchmark for safety tuning, ignoring evolving attack strategies.",
+    "generated": "Overfitting to the benchmark's attack distribution leaves defenses unable to reject novel adversarial prompts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Real-world harm covers user harm, but 'persistent safety gaps' is not stated as an outcome.",
+    "reference": "LLMs remain susceptible to novel jailbreaks, causing persistent safety gaps and user harm.",
+    "generated": "Harmful LLM outputs proliferate in the wild as novel attacks bypass defenses, enabling real-world harm and eroding public trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from red teaming adoption through overfitting to novel attack susceptibility is preserved.",
+    "reference": "Adoption of automated red teaming benchmarks for robustness training leads to overfitting, making LLMs susceptible to novel attacks, perpetuating safety gaps and engendering a false sense of security.",
+    "generated": "Automated red teaming identifies prompts triggering harmful outputs, through reliance on benchmark-tuned defenses, triggers overfitting that leaves novel adversarial prompts unblocked, leading to harmful outputs proliferating in the wild, causing real-world harm and eroding trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2093",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "mentions lack of complete causal graphs but omits the specific collider bias condition",
+    "reference": "Incomplete causal graphs induce collider bias in fairness estimates, concealing true group disparities.",
+    "generated": "Lack of complete causal graphs prevents detection of audit biases, making patients reliant on fragile proxy-driven fairness estimates."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "marginalized groups and worsened health outcomes are present",
+    "reference": "Masked disparities result in unequal treatment allocation, worsening health outcomes for marginalized groups.",
+    "generated": "Undetected diagnostic disparities lead to unequal health outcomes, including preventable morbidity and mortality for marginalized patient groups."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc reverses causation and introduces unrelated triggers",
+    "reference": "Brittle fairness audits with incomplete causal graphs induce collider bias, concealing disparities in medical classifiers, leading to unequal treatment and worsened outcomes for marginalized groups.",
+    "generated": "Multiclass conditional prediction fairness auditing producing brittle deviation estimates, through patients relying on diagnostic classifiers, triggers lack of complete causal graphs preventing detection of audit biases, leading to undetected disparities and unequal health outcomes including preventable morbidity and mortality for marginalized patient groups."
+  }
+}

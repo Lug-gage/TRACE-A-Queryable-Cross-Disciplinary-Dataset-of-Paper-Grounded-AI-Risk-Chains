@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1655",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference cites noise obscuring rare disease patterns causing false negatives in underrepresented groups; generated describes radiologists' overreliance and limited error detection, a related but different sensitivity condition",
+    "reference": "Noise from DP-SGD obscures rare disease patterns, increasing false negatives in underrepresented groups.",
+    "generated": "Radiologists depend on model accuracy for clinical decisions, with limited ability to detect noise-induced errors"
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "misdiagnoses damage type is present, but affected party is general patients rather than the specific minority/atypical demographics from the reference",
+    "reference": "Missed or incorrect diagnoses for patients with atypical presentations or minority demographics.",
+    "generated": "Misdiagnoses from inaccurate model outputs lead to inappropriate treatments, patient harm, and erosion of trust in AI diagnostics"
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference arc links calibrated noise -> obscures rare patterns -> reliance on inaccurate models -> missed diagnoses for minorities; generated arc omits the rare pattern obscuring step and describes general reliance with limited error detection, a different causal mechanism",
+    "reference": "Calibrated noise added to gradients in DP-SGD obscures rare disease patterns, making radiologists and patients reliant on inaccurate diagnostic models, leading to missed diagnoses and health disparities.",
+    "generated": "Addition of calibrated noise to gradients to satisfy differential privacy, through radiologists and patients relying on DP-trained diagnostic models, triggers reliance on accuracy with limited noise-error detection, leading to misdiagnoses, inappropriate treatments, patient harm, and erosion of trust in AI diagnostics."
+  }
+}

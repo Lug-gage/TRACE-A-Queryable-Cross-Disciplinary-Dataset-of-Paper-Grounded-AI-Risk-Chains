@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2945",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions operators' inability to detect invisible UV attacks, but the reference's sensitivity condition is operators' over-reliance on automated alerts and neglect of manual surveillance. Different condition, not fully covering the expectancy bias.",
+    "reference": "Police operators treat automated alerts as comprehensive, neglecting manual surveillance.",
+    "generated": "Deep-learning face recognition models' inherent susceptibility to adversarial perturbations, combined with operators' inability to detect invisible UV attacks."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (criminals/targeted individuals) and damage type (evasion of detection/identification) are both semantically present.",
+    "reference": "Criminals evade detection, undermining public safety and deterrence.",
+    "generated": "Targeted individuals evade identification, undermining law enforcement investigations and public surveillance effectiveness."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc includes UV perturbations exploiting operator weakness to enable evasion, but replaces the key mechanism of exposing expectancy bias through surveillance with operators' undetectability of UV attacks. Arc partially present, link changed.",
+    "reference": "Hat-mounted UV perturbations enable evasion of identification, which in public CCTV surveillance exposes operators' expectancy bias, allowing criminals to evade detection, undermining public safety and trust.",
+    "generated": "Omni-angle invisible ultraviolet adversarial perturbations from hat-mounted emitters, via police and surveillance face recognition systems, trigger deep-learning models' adversarial susceptibility and operators' undetectability of UV attacks, leading targeted individuals to evade identification, undermining investigations and surveillance."
+  }
+}

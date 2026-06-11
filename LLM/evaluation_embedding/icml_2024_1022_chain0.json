@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1022",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5213,
+    "reference": "Users lack domain expertise to independently verify LLM factual claims.",
+    "generated": "Users lack independent verification means and default to trusting the model's expressed confidence, amplifying susceptibility to miscalibrated claims."
+  },
+  "impact": {
+    "similarity": 0.5306,
+    "reference": "Overreliance on incorrect LLM outputs leads to consequential decision errors.",
+    "generated": "Misguided high-stakes decisions cause individual harm, institutional failure, and widespread erosion of trust in AI-assisted factuality."
+  },
+  "dose_response": {
+    "similarity": 0.7664,
+    "reference": "Miscalibrated confidence estimates enable overconfident or underconfident LLM outputs, which in high-stakes domains cause users to overrely on incorrect claims or dismiss accurate ones, leading to decision errors.",
+    "generated": "Calibrated confidence estimates that may differ from true likelihoods, through user reliance on LLM factual answers in high-stakes domains, triggers lack of independent verification and default trust, leading to misguided decisions, harm, failure, and eroded trust in AI factuality."
+  }
+}

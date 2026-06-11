@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0611",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6476,
+    "reference": "Clinical edge cases are rare in local data, causing specialist experts to overfit to common presentations and miss critical outliers.",
+    "generated": "Privacy constraints prevent central monitoring of specialist expert drift, leaving clinicians without safeguards against inaccurate edge-case predictions."
+  },
+  "impact": {
+    "similarity": 0.5858,
+    "reference": "Misdiagnosis or delayed treatment due to inaccurate clinical suggestions for atypical patient presentations.",
+    "generated": "Misdiagnosis and treatment errors due to drifted specialist outputs compromise patient safety and trust in clinical AI."
+  },
+  "dose_response": {
+    "similarity": 0.8487,
+    "reference": "Bi-level optimization amplifies localization drift in specialist experts, which in federated training of on-device clinical LLMs exposes healthcare professionals to degraded accuracy, leading to misdiagnosis or delayed treatment for atypical patient presentations.",
+    "generated": "Bi-level optimization amplifies overfitting and drift under heterogeneous data, and through healthcare professionals' use of the on-device LLM triggers privacy constraints blocking central monitoring of specialist drift, leaving clinicians without safeguards and causing misdiagnoses compromising patient safety and trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference sensitivity is that feature representations retain structure for reconstruction; generated cites lack of safeguards like DP/encryption, a related but different condition.",
+    "reference": "Shared feature representations retain enough structure to reconstruct raw inputs, risking data confidentiality.",
+    "generated": "Clients lack privacy safeguards (e.g., differential privacy, encryption) that prevent a compute server from reconstructing private inputs from shared feature representations."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference impact: exposure of proprietary data in healthcare/finance (affected party: organizations, damage: proprietary data exposure). Generated: personal data reconstruction, identity theft, law violations (affected party: individuals, damage: personal privacy harms). Neither matches.",
+    "reference": "Exposure of proprietary data in collaborative healthcare or finance split learning applications.",
+    "generated": "Clients' private data is reconstructed, exposing personal information, enabling identity theft and violating privacy laws."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc is illogical, claiming reconstruction triggers lack of safeguards and then leads to reconstruction. Reference arc: exact reconstruction from updates enables attacks recovering raw inputs, causing proprietary data exposure and liability. Generated arc is wrong and reversed.",
+    "reference": "Exact reconstruction from shared updates enables feature-oriented attacks that, in split learning without encryption, recover raw inputs, leading to exposure of proprietary data and legal liability.",
+    "generated": "Exact reconstruction of private training data from gradient/model updates shared in collaborative learning, through clients sharing feature representations with a compute server in split learning setups, triggers clients' lack of privacy safeguards, leading to private data reconstruction exposing personal information, enabling identity theft and violating privacy laws."
+  }
+}

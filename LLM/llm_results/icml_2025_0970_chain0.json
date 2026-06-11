@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0970",
+  "chain_index": 0,
+  "title": "Empirical Privacy Variance",
+  "abstract": "We propose the notion of empirical privacy variance and study it in the context of differentially private fine-tuning of language models. Specifically, we show that models calibrated to the same (ε, δ)-DP guarantee using DP-SGD with different hyperparameter configurations can exhibit significant variations in empirical privacy, which we quantify through the lens of memorization. We investigate the generality of this phenomenon across multiple dimensions and discuss why it is surprising and relevant. Through regression analysis, we examine how individual and composite hyperparameters influence empirical privacy. The results reveal a no-free-lunch trade-off: existing practices of hyperparameter tuning in DP-SGD, which focus on optimizing utility under a fixed privacy budget, often come at the expense of empirical privacy. To address this, we propose refined heuristics for hyperparameter selection that explicitly account for empirical privacy, showing that they are both precise and practically useful. Finally, we take preliminary steps to understand empirical privacy variance. We propose two hypotheses, identify limitations in existing techniques like privacy auditing, and outline open questions for future research.",
+  "impact": "Our work highlights a critical yet often overlooked phenomenon in DP-SGD: the empirical privacy variance observed under the same theoretical privacy budget. This cautions against over-reliance on DP guarantees; in particular, policymakers should be wary of treating theoretical guarantees as certification tools, as failing to conduct comprehensive privacy tests may expose users to unforeseen privacy risks. We hope this work motivates further research into practical privacy evaluation and the development of more robust standards for DP machine learning.",
+  "query_input": {
+    "scenario": "Fine-tuning LLMs on private text with DP-SGD",
+    "issue": "Empirical privacy leakage may exceed theoretical DP bounds due to hyperparameter tuning.",
+    "hazard": [
+      "Empirically variable privacy guarantees in deep learning trained with DP optimizers, causing miscalibration between theoretical epsilon-delta and actual information leakage."
+    ],
+    "exposure": [
+      "Data subjects whose text is used for fine-tuning"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Data subjects rely on theoretical DP guarantees without visibility into hyperparameter choices that cause actual leakage to exceed those bounds.",
+    "impact": "Private text is memorized and extractable beyond the promised privacy level, exposing sensitive personal details and enabling re-identification.",
+    "dose_response": "Empirically variable privacy guarantees causing miscalibration between theoretical DP bounds and actual leakage, through exposure of fine-tuning data subjects, trigger reliance on theoretical guarantees without hyperparameter visibility, leading to extractable private text and re-identification."
+  },
+  "reference": {
+    "dose_response": [
+      "DP hyperparameter tuning causes miscalibration, enabling fine-tuned LLMs to memorize personal text, exposing data subjects to reputational harm."
+    ],
+    "vulnerability": [
+      "Tuning hyperparameters without empirical privacy testing creates a gap between claimed epsilon-delta and actual leakage.",
+      "Practitioners treat DP as a trust-once guarantee, leading to overreliance on formal bounds during deployment."
+    ],
+    "impact": [
+      "Fine-tuned LLMs memorize and regurgitate personal details from training text.",
+      "Data subjects face re-identification, reputational harm, or exposure of sensitive conversational content."
+    ]
+  }
+}

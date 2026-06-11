@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2389",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe reliance on difficulty scores to adapt learning paths, creating vulnerability to biased estimates",
+    "reference": "Educators and systems rely on item difficulty scores to adapt pathways, amplifying bias from misestimated difficulty.",
+    "generated": "Students' learning paths depend entirely on the adaptive test's correctness, yet they have no way to detect or counter biased difficulty estimates."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (inappropriate remediation) related but not identical, and affected party (marginalized students) missing",
+    "reference": "Marginalized students may be systematically tracked into lower-level instruction due to biased difficulty.",
+    "generated": "Inaccurate ability inference yields inappropriate remediation, widening learning gaps and wasting instructional time."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc: biased difficulty → inaccurate ability inference → inappropriate placement → widening gaps is present in both",
+    "reference": "Biased difficulty scores from amortized IRT, used in adaptive educational testing, lead to inaccurate ability inference, causing marginalized students to be tracked into lower-level instruction and widening achievement gaps.",
+    "generated": "Biased difficulty scores from amortized IRT misspecification, through students taking adaptive tests ranked by these scores, trigger learning paths dependent on test correctness without bias detection, leading to inaccurate ability inference and inappropriate remediation that widens gaps and wastes time."
+  }
+}

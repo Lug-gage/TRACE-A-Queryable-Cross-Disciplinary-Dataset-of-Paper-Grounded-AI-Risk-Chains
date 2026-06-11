@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1404",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3844,
+    "reference": "Users develop mental models based on stable system behavior, which online pruning violates.",
+    "generated": "Users cannot detect calibration drift because they lack access to model weight changes and reliability indicators."
+  },
+  "impact": {
+    "similarity": 0.6238,
+    "reference": "User errors from acting on unstable or contradictory model outputs in real-time.",
+    "generated": "Users act on unreliable outputs, causing systematic errors in downstream domain tasks and undermining trust in the service."
+  },
+  "dose_response": {
+    "similarity": 0.5321,
+    "reference": "Online pruning creates unstable behavior that violates user expectations, causing misinterpretation of outputs and user errors in real-time.",
+    "generated": "Through users of continually adapting LLM services, continual pruning's distributional shift degrades calibration, and without access to weight changes, users fail to detect drift, leading them to act on unreliable outputs, causing systematic errors and eroding trust."
+  }
+}

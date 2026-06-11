@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5447,
+    "reference": "Over-reliance on voice assistants by vulnerable populations lacking alternative information access.",
+    "generated": "Users’ inability to discern semantic incoherence in fluent, long-form speech fosters uncritical acceptance of nonsensical voice assistant outputs."
+  },
+  "impact": {
+    "similarity": 0.6318,
+    "reference": "User harm from acting on plausible but incorrect spoken advice in health, legal, or financial domains.",
+    "generated": "Users act on incorrect information, causing misinformed decisions, eroded trust in voice assistants, and potential harm from erroneous guidance."
+  },
+  "dose_response": {
+    "similarity": 0.8128,
+    "reference": "Plausible but ungrounded speech generation enables syntactically consistent yet nonsensical responses, which in voice-based conversational agents exposes users, leading to harm from acting on incorrect advice and erosion of trust.",
+    "generated": "Plausible but factually ungrounded long-form speech from generative models, through open-ended voice assistant interactions, triggers users' inability to discern semantic incoherence, leading to uncritical acceptance, acting on incorrect information, misinformed decisions, eroded trust, and potential harm."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0979",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on automated analytics without validation for high-stakes decisions is covered by reliance on coarsened embeddings without validation for community detection.",
+    "reference": "Reliance on automated graph analytics without human verification in high-stakes social network decisions",
+    "generated": "Reliance on coarsened embeddings for community detection without mechanisms to validate or recover lost fine-grained connectivity patterns."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users, platform) is present, but damage type is different: reference mentions filter bubbles and privacy violations, while generated emphasizes eroded trust and decision quality.",
+    "reference": "Misinformed content moderation and friend recommendations reinforcing filter bubbles and privacy violations",
+    "generated": "Erroneous community detection degrades recommendation accuracy, eroding user trust and platform decision quality."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from coarsening to negative user outcomes via lack of validation is present, but the specific downstream consequences (community detection vs. content moderation/filter bubbles) differ, missing the reference's exact impact chain.",
+    "reference": "Coarsening subgraphs into node representations discarding fine-grained connectivity introduces embedding inaccuracies, which in scalable GNNs for large social networks exposes users to misinformed content moderation and filter bubbles when automated analytics lack human verification.",
+    "generated": "Coarsening subgraphs into node representations discards fine-grained connectivity, and when social network providers and users rely on such coarsened embeddings for community detection without validation, it leads to erroneous detection that degrades recommendation accuracy, eroding user trust and decision quality."
+  }
+}

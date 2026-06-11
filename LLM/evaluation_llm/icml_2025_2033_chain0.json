@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2033",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes users' trust in model uncertainty signals without verification, matching the reference's overreliance and lack of independent verification on AI answers.",
+    "reference": "Users overrely on AI answers and fail to independently verify visual reasoning tasks.",
+    "generated": "Users trust model confidence scores and abstention as authentic uncertainty signals without means to verify their integrity."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) matches, but damage type differs: reference specifies erroneous decisions propagating misinformation and individual harm, while generated mentions discriminatory outcomes, service denials, safety incidents.",
+    "reference": "Erroneous decisions from incorrect VLM outputs propagate misinformation and cause individual harm.",
+    "generated": "Users suffer discriminatory outcomes, unjust service denials, or safety incidents due to trusted incorrect outputs."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes trust in manipulated confidence leading to discriminatory outcomes, whereas reference arc involves incorrect predictions causing overreliance and erroneous decisions; different causal mechanism.",
+    "reference": "Adversarial confidence suppression attacks force selective classifiers to emit incorrect predictions, which in black-box VLM QA exposes trusting users to overreliance, leading to erroneous decisions.",
+    "generated": "Adversarial confidence suppression attacks, when users rely on VLM answers for visual reasoning, trigger trust in manipulated confidence scores as genuine uncertainty, leading to discriminatory outcomes, unjust service denials, or safety incidents."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0221",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference vulnerability is user unawareness of embedding invertibility; generated describes lack of control/trust in API security, a related but different sensitivity condition",
+    "reference": "Users lack awareness that embeddings are invertible, leading to submission of sensitive text.",
+    "generated": "Users lack control over embedding service API security, trusting black-box opacity that fails to prevent projection layer extraction."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (users/individuals) is present, but damage type changes from identity theft and blackmail to confidentiality breach and private data leak",
+    "reference": "Reconstructed personal communications expose individuals to identity theft and blackmail.",
+    "generated": "Sensitive user-submitted text is reconstructed from stolen embeddings, breaching confidentiality and leaking private data."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference arc is extraction enabling inversion that exposes text, while generated arc introduces trust failure as a causal step, fundamentally altering the mechanism",
+    "reference": "Black-box extraction enables embedding inversion, which in EaaS deployments exposes user-submitted text, leading to reconstructed personal communications and leaked trade secrets.",
+    "generated": "Black-box embedding projection layer extraction, through users submitting text to third-party services, triggers trust in API opacity that fails to prevent projection layer theft, leading to reconstruction of sensitive text that breaches confidentiality and leaks private data."
+  }
+}

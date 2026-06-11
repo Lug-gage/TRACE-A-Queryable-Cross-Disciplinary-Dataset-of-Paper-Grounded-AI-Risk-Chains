@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2449",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Clinicians' dependence on AI outputs without independent verification captures the automation bias and absence of verification, though the time-pressured context is omitted.",
+    "reference": "Clinicians exhibit automation bias, deferring to AI diagnostic outputs without sufficient verification in time-pressured settings.",
+    "generated": "Clinicians' dependence on AI outputs without independent verification prevents recognition of adversarial manipulations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Patient harm and harmful treatments are covered, but malpractice liability for healthcare institutions is replaced by erosion of trust, missing a key damage type.",
+    "reference": "Misdiagnosis leads to incorrect treatment, patient harm, and malpractice liability for healthcare institutions.",
+    "generated": "Misdiagnosis leads to harmful treatments, patient harm, and erosion of trust in AI-assisted diagnostics."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from adversarial perturbations exploiting alignment gaps, evading detection, and causing misdiagnosis via AI-assisted diagnostics is preserved, with the vulnerability of unverified reliance made explicit.",
+    "reference": "Adversarial perturbations exploit multimodal alignment gaps to evade detection by mimicking clean topological signatures; in medical image analysis with CLIP-based diagnostic tools, exposing clinicians and patients to misleading inputs leads to misdiagnosis, causing incorrect treatment, patient harm, and malpractice liability.",
+    "generated": "Adversarial perturbations exploiting multimodal alignment gaps and evading detection by mimicking clean topological signatures, through clinicians and patients using AI-assisted medical imaging diagnostics, trigger clinicians' dependence on unverified AI outputs, leading to misdiagnosis, harmful treatments, patient harm, and erosion of trust."
+  }
+}

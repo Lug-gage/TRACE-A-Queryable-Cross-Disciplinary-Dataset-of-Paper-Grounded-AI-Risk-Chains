@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1133",
+  "chain_index": 2,
+  "title": "Algorithmic Recourse for Long-Term Improvement",
+  "abstract": "Algorithmic recourse aims to provide a recourse action for altering an unfavorable prediction given by a model into a favorable one (e.g., loan approval). In practice, it is also desirable to ensure that an action makes the real-world outcome better (e.g., loan repayment). We call this requirement improvement. Unfortunately, existing methods cannot ensure improvement unless we know the true oracle. To address this issue, we propose a framework for suggesting improvement-oriented actions from a long-term perspective. Specifically, we introduce a new online learning task of assigning actions to a given sequence of instances. We assume that we can observe delayed feedback on whether the past suggested action achieved improvement. Using the feedback, we estimate an action that can achieve improvement for each instance. To solve this task, we propose two approaches based on contextual linear bandit and contextual Bayesian optimization. Experimental results demonstrated that our approaches could assign improvement-oriented actions to more instances than the existing methods.",
+  "impact": "Our proposed method, algorithmic recourse for long-term improvement (ARLIM), is a new framework for providing recourse actions that not only alter the undesired predictions but also improve real-world outcomes. As mentioned in the paper, this framework can lead to more reliable and beneficial decision-making processes by suggesting recourse actions that ensure improvement for as many users as possible. Our focus on long-term improvement can lead to more sustainable and positive outcomes for users, which is beneficial for both users and decision-makers. On the other hand, our framework also has potential societal impacts that need careful consideration. For example, our methods rely on the availability of feedback that tracks users over time, which requires us to carefully consider its privacy risk. Overall, the proposed method has the potential to significantly improve the effectiveness and reliability of the decision-making process, but we need careful consideration of its risks before incorporating it into the actual decision-making process.",
+  "query_input": {
+    "scenario": "Online retail assortment recommendation via contextual bandits",
+    "issue": "Delayed satisfaction signals may bias product recs, degrading user trust.",
+    "hazard": [
+      "Online bandit-based action recommendations for improvement with delayed rewards may produce systematically biased long-term guidance."
+    ],
+    "exposure": [
+      "Shoppers receiving AI-curated product recommendations"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shoppers' inability to assess long-term product quality before purchase makes them dependent on recommendation accuracy, leaving them susceptible to biased guidance.",
+    "impact": "Shoppers experience persistent dissatisfaction and lose trust in the AI-curated recommendations, leading to reduced engagement.",
+    "dose_response": "Online bandit-based action recommendations with delayed rewards produce systematically biased long-term guidance that, through AI-curated product recommendations to shoppers, triggers their dependence on recommendation accuracy, leading to persistent dissatisfaction, trust loss, and reduced engagement."
+  },
+  "reference": {
+    "dose_response": [
+      "Delayed satisfaction signals bias bandit recommendations toward low-quality items with high initial clicks, exposing shoppers to disappointing suggestions that erode trust and may lead to platform abandonment."
+    ],
+    "vulnerability": [
+      "Delayed satisfaction feedback causes algorithm to over-recommend low-quality items that initially get positive clicks",
+      "Lack of transparency in product selection erodes consumer autonomy"
+    ],
+    "impact": [
+      "Decreased user trust and platform abandonment due to irrelevant suggestions",
+      "Market concentration risk where biased recs favor certain brands unfairly"
+    ]
+  }
+}

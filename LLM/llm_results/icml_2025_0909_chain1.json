@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0909",
+  "chain_index": 1,
+  "title": "Decision-aware Training of Spatiotemporal Forecasting Models to Select a Top-K Subset of Sites for Interventio",
+  "abstract": "Optimal allocation of scarce resources is a common problem for decision makers faced with choosing a limited number of locations for intervention. Spatiotemporal prediction models could make such decisions data-driven. A recent performance metric called fraction of best possible reach (BPR) measures the impact of using a model’s recommended size K subset of sites compared to the best possible top-K in hindsight. We tackle two open problems related to BPR. First, we explore how to rank all sites numerically given a probabilistic model that predicts event counts jointly across sites. Ranking via the per-site mean is suboptimal for BPR. Instead, we offer a better ranking for BPR backed by decision theory. Second, we explore how to train a probabilistic model’s parameters to maximize BPR. Discrete selection of K sites implies all-zero parameter gradients which prevent standard gradient training. We overcome this barrier via advances in perturbed optimizers. We further suggest a training objective that combines likelihood with a BPR constraint to deliver high-quality top-K rankings as well as good forecasts for all sites. We demonstrate our approach on two where-to-intervene applications: mitigating opioid-related fatal overdoses for public health and monitoring endangered wildlife.",
+  "impact": "Recent work on where-to-intervene decision making has emphasized the importance of incorporating additional constraints into the top-K site selection budget to meet the needs of all constituents. For example, Marshall et al. (2022) sought a balance of rural and urban sites for intervention in overdose mitigation efforts in the state of Rhode Island. We believe exciting methodological work could extend the ideas in this paper to handle such constraints. We also acknowledge that our decision-aware methods are currently technically more complex than existing off-theshelf solutions, presenting barriers to adoption in many downstream applications where practitioners have limited hardware and limited expertise. We hope to work with stakeholders to build open-source packages that would allow DAML models to be created with off-the-shelf ease on a new dataset of interest.",
+  "query_input": {
+    "scenario": "Endangered wildlife monitoring site selection",
+    "issue": "Gradient estimate noise yields suboptimal rankings, disproportionately missing poaching hotspots in under-monitored regions.",
+    "hazard": [
+      "Decision-aware training with gradient estimates for discrete spatiotemporal top-K selection may produce miscalibrated or overconfident models that degrade under distribution shift."
+    ],
+    "exposure": [
+      "Conservation managers deploying ranger patrols based on model-selected sites."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Managers lack independent ground-truth data in under-monitored regions, forcing blind reliance on model rankings that may be miscalibrated.",
+    "impact": "Poaching hotspots go unpatrolled, accelerating endangered species population decline.",
+    "dose_response": "Decision-aware training with gradient estimates for discrete top-K selection yields miscalibrated models under distribution shift; when conservation managers deploy ranger patrols based on these models, blind reliance without ground-truth data in under-monitored regions leaves poaching hotspots unpatrolled, accelerating species decline."
+  },
+  "reference": {
+    "dose_response": [
+      "Gradient estimate noise in top-K training enables ranking uncertainty and staleness, which in endangered wildlife monitoring leads managers to trust stale model outputs, missing poaching hotspots and accelerating species decline."
+    ],
+    "vulnerability": [
+      "Poaching patterns adapt faster than model retraining, causing ranking staleness in dynamic hotspots.",
+      "Conservation teams trust model outputs over local ranger knowledge, ignoring on-ground signals."
+    ],
+    "impact": [
+      "Missed poaching hotspots accelerate endangered species decline.",
+      "Wasted patrol resources strain conservation budgets, reducing overall protection."
+    ]
+  }
+}

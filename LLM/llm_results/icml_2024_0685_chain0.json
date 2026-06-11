@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0685",
+  "chain_index": 0,
+  "title": "Pursuing Overall Welfare in Federated Learning through Sequential Decision Making",
+  "abstract": "In traditional federated learning, a single global model cannot perform equally well for all clients. Therefore, the need to achieve the client-level fairness in federated system has been emphasized, which can be realized by modifying the static aggregation scheme for updating the global model to an adaptive one, in response to the local signals of the participating clients. Our work reveals that existing fairness-aware aggregation strategies can be unified into an online convex optimization framework, in other words, a central server’s sequential decision making process. To enhance the decision making capability, we propose simple and intuitive improvements for suboptimal designs within existing methods, presenting AAggFF. Considering practical requirements, we further subdivide our method tailored for the cross-device and the cross-silo settings, respectively. Theoretical analyses guarantee sublinear regret upper bounds for both settings: O(√T log K) for the cross-device setting, and O(K log T) for the cross-silo setting, with K clients and T federation rounds. Extensive experiments demonstrate that the federated system equipped with AAggFF achieves better degree of client-level fairness than existing methods in both practical settings. Code is available at https://github.com/vaseline555/AAggFF.",
+  "impact": "Federated Learning (FL) poses a potential risk of skewed performance distributions toward partial groups of clients. We believe that our proposed method can mitigate such an unfair situation in the federated system, thereby enhancing the trustworthiness and social welfare. A potential concern is the situation where malicious clients deliberately inflate their local signals to cause global updates to be biased towards themselves. To prevent such a catastrophic situation, we aim to improve the current work by exploiting information other than local losses, as mentioned in the Limitations and Future Works section. The authors are not aware of any other critical ethical/social implications otherwise, but are open to discussing them if they exist.",
+  "query_input": {
+    "scenario": "Cross-device FL for predictive text on mobile keyboards",
+    "issue": "Fairness aggregation may cause unpredictable text suggestions for users in groups weighted lower",
+    "hazard": [
+      "AAggFF's online fairness optimization under non-stationary client participation can cause temporal drift in group-wise performance, undermining sublinear regret fairness guarantees."
+    ],
+    "exposure": [
+      "Smartphone users using keyboard prediction across diverse demographics"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lower-weighted demographic groups lack sufficient representation in model updates, so their text predictions are easily destabilized by optimization drift.",
+    "impact": "Users in lower-weighted groups receive erratic text suggestions, causing frustration, slower typing, and diminished trust in the predictive keyboard.",
+    "dose_response": "AAggFF's temporal drift in group-wise performance under non-stationary client participation, through smartphone keyboard prediction across diverse demographics, triggers destabilized text predictions for lower-weighted groups lacking representation, leading to erratic suggestions, frustration, and diminished trust."
+  },
+  "reference": {
+    "dose_response": [
+      "AAggFF's fairness optimization under non-stationary client participation causes temporal drift in group-wise performance, which in cross-device predictive text exposes smartphone users to unpredictable suggestions, leading to inaccurate or offensive text for minority language users."
+    ],
+    "vulnerability": [
+      "Non-stationary client participation leads to temporal drift in fairness weights, degrading prediction quality for underrepresented language groups."
+    ],
+    "impact": [
+      "Minority language users receive inaccurate or offensive text suggestions, harming user trust and communication."
+    ]
+  }
+}

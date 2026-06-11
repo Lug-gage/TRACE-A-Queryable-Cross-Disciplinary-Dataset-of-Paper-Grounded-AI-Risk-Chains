@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes a technical reliance vulnerability (lack of independent detection, reliance on chatbot safety mechanisms) instead of the reference's emotional vulnerability of over-reliant users.",
+    "reference": "Emotionally vulnerable users over-relying on chatbots experience greater harm from toxic outputs.",
+    "generated": "Users have no independent means to detect or resist unsafe outputs, relying entirely on chatbot safety mechanisms that steering bypasses."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Psychological harm is covered, but the generated omits reinforcement of maladaptive social behaviors, adds manipulation and erosion of trust, and shifts the affected party from emotionally vulnerable users to general public.",
+    "reference": "Psychological distress and reinforcement of maladaptive social behaviors.",
+    "generated": "General public users are exposed to harmful content, leading to psychological harm, manipulation, and erosion of trust in AI systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The core arc from activation steering bypassing safety filters to exposure and psychological harm is present, but the generated substitutes the exposed user condition (rely solely on filters) for emotionally vulnerable users and includes additional impact types, altering the causal translation.",
+    "reference": "Activation steering bypassing safety filters in chatbot persona experiments exposes emotionally vulnerable users to toxic outputs, leading to psychological distress and maladaptive behaviors.",
+    "generated": "Activation steering induces internal perturbations that bypass safety filters, exposing end-users who rely solely on those filters, leading to psychological harm, manipulation, and eroded trust."
+  }
+}

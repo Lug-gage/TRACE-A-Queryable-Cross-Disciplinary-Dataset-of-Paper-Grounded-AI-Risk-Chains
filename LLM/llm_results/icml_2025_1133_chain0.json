@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1133",
+  "chain_index": 0,
+  "title": "Algorithmic Recourse for Long-Term Improvement",
+  "abstract": "Algorithmic recourse aims to provide a recourse action for altering an unfavorable prediction given by a model into a favorable one (e.g., loan approval). In practice, it is also desirable to ensure that an action makes the real-world outcome better (e.g., loan repayment). We call this requirement improvement. Unfortunately, existing methods cannot ensure improvement unless we know the true oracle. To address this issue, we propose a framework for suggesting improvement-oriented actions from a long-term perspective. Specifically, we introduce a new online learning task of assigning actions to a given sequence of instances. We assume that we can observe delayed feedback on whether the past suggested action achieved improvement. Using the feedback, we estimate an action that can achieve improvement for each instance. To solve this task, we propose two approaches based on contextual linear bandit and contextual Bayesian optimization. Experimental results demonstrated that our approaches could assign improvement-oriented actions to more instances than the existing methods.",
+  "impact": "Our proposed method, algorithmic recourse for long-term improvement (ARLIM), is a new framework for providing recourse actions that not only alter the undesired predictions but also improve real-world outcomes. As mentioned in the paper, this framework can lead to more reliable and beneficial decision-making processes by suggesting recourse actions that ensure improvement for as many users as possible. Our focus on long-term improvement can lead to more sustainable and positive outcomes for users, which is beneficial for both users and decision-makers. On the other hand, our framework also has potential societal impacts that need careful consideration. For example, our methods rely on the availability of feedback that tracks users over time, which requires us to carefully consider its privacy risk. Overall, the proposed method has the potential to significantly improve the effectiveness and reliability of the decision-making process, but we need careful consideration of its risks before incorporating it into the actual decision-making process.",
+  "query_input": {
+    "scenario": "Mobile health interventions using bandit algorithms",
+    "issue": "Delayed health feedback may cause systematically biased improvement recs, harming long-term health.",
+    "hazard": [
+      "Online bandit-based action recommendations for improvement with delayed rewards may produce systematically biased long-term guidance."
+    ],
+    "exposure": [
+      "Patients receiving AI-driven tailored health improvement suggestions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Patients cannot evaluate long-term improvement because true health outcomes are delayed, fostering uncritical adherence to suggested actions.",
+    "impact": "Long-term patient health deteriorates due to biased recommendations, increasing chronic disease burden and healthcare system strain.",
+    "dose_response": "Online bandit-based improvement recommendations with delayed rewards, delivered to patients as AI-driven suggestions, trigger uncritical adherence because true outcomes are delayed, leading to biased long-term guidance that deteriorates health and increases chronic disease burden."
+  },
+  "reference": {
+    "dose_response": [
+      "Delayed health feedback enables bandit algorithms to systematically favor actions with spurious short-term rewards, which, when exposed to patients, leads to deteriorated health outcomes and eroded trust."
+    ],
+    "vulnerability": [
+      "Patient heterogeneity in treatment response amplifies bias from delayed rewards",
+      "Limited access to real-time health data reduces algorithm’s adaptation speed"
+    ],
+    "impact": [
+      "Deterioration of patient health outcomes due to persistently suboptimal recommendations",
+      "Erosion of trust in mobile health platforms, leading to reduced adherence"
+    ]
+  }
+}

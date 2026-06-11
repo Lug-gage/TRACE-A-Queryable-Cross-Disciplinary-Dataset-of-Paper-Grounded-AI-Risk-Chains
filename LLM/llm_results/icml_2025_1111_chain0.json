@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1111",
+  "chain_index": 0,
+  "title": "Offline Opponent Modeling with Truncated Q-driven Instant Policy Refinement",
+  "abstract": "Offline Opponent Modeling (OOM) aims to learn an adaptive autonomous agent policy that dynamically adapts to opponents using an offline dataset from multi-agent games. Previous work assumes that the dataset is optimal. However, this assumption is difficult to satisfy in the real world. When the dataset is suboptimal, existing approaches struggle to work. To tackle this issue, we propose a simple and general algorithmic improvement framework, Truncated Q-driven Instant Policy Refinement (TIPR), to handle the suboptimality of OOM algorithms induced by datasets. The TIPR framework is plug-and-play in nature. Compared to original OOM algorithms, it requires only two extra steps: (1) Learn a horizon-truncated incontext action-value function, namely Truncated Q, using the offline dataset. The Truncated Q estimates the expected return within a fixed, truncated horizon and is conditioned on opponent information. (2) Use the learned Truncated Q to instantly decide whether to perform policy refinement and to generate policy after refinement during testing. Theoretically, we analyze the rationale of Truncated Q from the perspective of No Maximization Bias probability. Empirically, we conduct extensive comparison and ablation experiments in four representative competitive environments. TIPR effectively improves various OOM algorithms pretrained with suboptimal datasets.",
+  "impact": "This work advances the field of OOM by addressing the critical limitation of suboptimal offline datasets, which are prevalent in real-world multi-agent scenarios. The proposed TIPR framework enhances the robustness and adaptability of autonomous agents without requiring additional online interactions, thereby reducing resource consumption and potential risks in deployment. Ethically, the framework encourages safer AI deployment by minimizing reliance on idealized data and promoting reliability under imperfect conditions. However, care must be taken to prevent misuse in adversarial or deceptive applications, particularly in competitive or high-stakes domains such as finance or security. Future societal implications include improved collaboration and competition among AI agents in diverse settings, fostering broader trust and utility in autonomous systems.",
+  "query_input": {
+    "scenario": "Online multiplayer gaming with AI opponents using TIPR",
+    "issue": "Myopic opponent models cause exploitative behavior by human players who adapt over long games",
+    "hazard": [
+      "Truncated Q-value estimation for opponent modeling from suboptimal offline data introduces myopic strategies that ignore long-term adversarial adaptations."
+    ],
+    "exposure": [
+      "Human players in online competitive games facing AI that uses TIPR-trained policies"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Human players' long-term pattern recognition and strategic adaptation enable exploitation of myopic AI strategies.",
+    "impact": "Exploited AI leads to trivialized matches, loss of competitive tension, and player disengagement.",
+    "dose_response": "Truncated Q-value estimation from suboptimal offline data yields myopic strategies ignoring long-term adversarial adaptations, through human players online facing TIPR-trained AI, triggers their pattern recognition and adaptation enabling exploitation, leading to trivialized matches, lost tension, disengagement."
+  },
+  "reference": {
+    "dose_response": [
+      "Truncated Q-value estimation leads to myopic AI strategies, which, when deployed in online games, allow human players to exploit the AI, resulting in loss of player engagement and normalization of exploitative behavior."
+    ],
+    "vulnerability": [
+      "AI's predictable short-horizon strategies allow human adversaries to exploit its behavior, undermining game integrity.",
+      "Opacity of AI opponent models reduces player ability to anticipate, fostering distrust and negative gaming experiences."
+    ],
+    "impact": [
+      "Loss of player engagement and revenue as games become unfair and frustrating.",
+      "Normalization of exploitative behavior in gaming communities, harming social norms."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1676",
+  "chain_index": 1,
+  "title": "Enhancing Rating-Based Reinforcement Learning to Effectively Leverage Feedback from Large Vision-Language Mode",
+  "abstract": "Designing effective reward functions remains a fundamental challenge in reinforcement learning (RL), as it often requires extensive human effort and domain expertise. While RL from human feedback has been successful in aligning agents with human intent, acquiring high-quality feedback is costly and labor-intensive, limiting its scalability. Recent advancements in foundation models present a promising alternative-leveraging AI-generated feedback to reduce reliance on human supervision in reward learning. Building on this paradigm, we introduce ERL-VLM, an enhanced rating-based RL method that effectively learns reward functions from AI feedback. Unlike prior methods that rely on pairwise comparisons, ERL-VLM queries large vision-language models (VLMs) for absolute ratings of individual trajectories, enabling more expressive feedback and improved sample efficiency. Additionally, we propose key enhancements to rating-based RL, addressing instability issues caused by data imbalance and noisy labels. Through extensive experiments across both low-level and high-level control tasks, we demonstrate that ERL-VLM significantly outperforms existing VLM-based reward generation methods. Our results demonstrate the potential of AI feedback for scaling RL with minimal human intervention, paving the way for more autonomous and efficient reward learning. The code is available at: https: //github.com/tunglm2203/erlvlm.",
+  "impact": "Our approach offers a promising approach to aligning RL agents with more fine-grained human intent by leveraging vision-language models (VLMs) for reward learning. By carefully designing natural language prompts, our method enables rapid and scalable feedback collection, significantly reducing human effort in prototyping and deploying RL systems in real-world applications. However, as our method relies on large foundation models, it inherits their inherent biases, which could propagate into RL agents. This raises important considerations regarding robustness and safety, especially in safety-critical applications. Ensuring the reliability of AI-driven feedback remains a crucial challenge. In this work, we use only visual observations and descriptive actions to analyze agent behavior. Future research can explore integrating additional sensing modalities to further enhance the accuracy and reliability of feedback from foundation models, ultimately leading to more trustworthy and effective RL systems.",
+  "query_input": {
+    "scenario": "Training RL agents for control tasks using VLM-provided scalar rewards",
+    "issue": "Noisy or misaligned rewards produce policies that perform poorly or unsafely in real-world execution.",
+    "hazard": [
+      "Scalar reward signals derived from AI-generated (VLM/LLM) feedback are prone to miscalibration, enabling reward over-optimization and true performance degradation."
+    ],
+    "exposure": [
+      "Operators and equipment in autonomous control settings"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators and equipment rely on policies optimized against opaque VLM-generated rewards, lacking real-time guardrails or ground-truth verification.",
+    "impact": "Real-world control task failures cause equipment damage and operator injury.",
+    "dose_response": "Miscalibrated VLM-derived scalar rewards, through operators and equipment in autonomous control, trigger reliance on opaque policies lacking real-time guardrails, leading to equipment damage and operator injury."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated scalar rewards enable reward over-optimization, which in training RL agents with VLM feedback exposes operators and equipment to unsafe policies, leading to physical harm and eroded trust in automation."
+    ],
+    "vulnerability": [
+      "Operators exhibit automation bias, deferring to flawed RL policies even when observing unsafe actions.",
+      "Absence of security-hardened reward channels allows adversarial perturbation of VLM feedback."
+    ],
+    "impact": [
+      "Physical harm to human operators and damage to equipment from unexpected autonomous agent behaviors.",
+      "Erosion of trust in autonomous systems, delaying adoption of beneficial automation technologies."
+    ]
+  }
+}

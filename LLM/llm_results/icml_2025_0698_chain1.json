@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0698",
+  "chain_index": 1,
+  "title": "More Than Meets the Eye Enhancing Multi-Object Tracking Even with Prolonged Occlusions",
+  "abstract": "This paper introduces MOTE (MOre Than meets the Eye), a novel multi-object tracking (MOT) algorithm designed to address the challenges of tracking occluded objects. By integrating deformable detection transformers with a custom disocclusion matrix, MOTE significantly enhances the ability to track objects even when they are temporarily hidden from view. The algorithm leverages optical flow to generate features that are processed through a softmax splatting layer, which aids in the creation of a disocclusion matrix. This matrix plays a crucial role in maintaining track consistency by estimating the motion of occluded objects. MOTE’s architecture includes modifications to the enhanced track embedding module (ETEM), which allows it to incorporate these advanced features into the track query layer embeddings. This integration ensures that the model not only tracks visible objects but also accurately predicts the trajectories of occluded ones, much like the human visual system. The proposed method is evaluated on multiple datasets, including MOT17, MOT20, and DanceTrack, where it achieves impressive tracking metrics-82.0 MOTA and 66.3 HOTA on the MOT17 dataset, 81.7 MOTA and 65.8 HOTA on the MOT20 dataset, and 93.2 MOTA and 74.2 HOTA on the Dance- Track dataset. Notably, MOTE excels in reducing identity switches and maintaining consistent tracking in complex real-world scenarios with frequent occlusions, outperforming existing state-of-theart methods across all tested benchmarks. Code is available at github.com/ostadabbas/MOTE-More- Than-Meets-the-Eye-Tracking.",
+  "impact": "This work advances multi-object tracking technology with implications for various societal applications. While MOTE can enhance public safety through improved surveillance systems and enable safer autonomous navigation, we acknowledge potential privacy concerns. The ability to track individuals through occlusions could be misused for unauthorized surveillance. We advocate for responsible deployment with appropriate privacy safeguards and transparent policies. Additionally, while our method is computationally efficient compared to its performance gains, the environmental impact of training and deploying such models should be considered.",
+  "query_input": {
+    "scenario": "Public surveillance video analytics in crowded spaces",
+    "issue": "Identity switches and missed re-identification of persons across cameras, causing unreliable tracking.",
+    "hazard": [
+      "Identity switches and trajectory errors from occlusion/disocclusion mis-association in multi-object tracking."
+    ],
+    "exposure": [
+      "Security operators relying on MOT for monitoring crowded public areas."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators lack independent real-time identity verification, making surveillance decisions wholly dependent on error-prone automated tracking output.",
+    "impact": "Missed threats, false accusations, and compromised public safety as identity switches prevent accurate person re-identification across cameras.",
+    "dose_response": "Identity switches from occlusion mis-association in MOT, through security operators relying on it in crowded spaces, triggers lack of independent identity verification, making decisions dependent on error-prone tracking, leading to missed threats, false accusations, and compromised public safety."
+  },
+  "reference": {
+    "dose_response": [
+      "Identity switches and trajectory errors from occlusion/disocclusion mis-association enable false trajectories, which in public surveillance leads to operator vigilance decline due to perceived unfairness and over-automation, resulting in failure to detect real security threats or false accusations from misassigned identities."
+    ],
+    "vulnerability": [
+      "Operator vigilance decline due to perceived unfairness and over-automation of tracking."
+    ],
+    "impact": [
+      "Failure to detect real security threats or false accusations from misassigned identities."
+    ]
+  }
+}

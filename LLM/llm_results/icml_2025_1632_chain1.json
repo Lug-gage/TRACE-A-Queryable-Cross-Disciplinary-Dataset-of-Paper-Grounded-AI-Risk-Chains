@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1632",
+  "chain_index": 1,
+  "title": "Safe Delta Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+  "abstract": "Large language models (LLMs) have shown great potential as general-purpose AI assistants across various domains. To fully leverage this potential in specific applications, many companies provide fine-tuning API services, enabling users to upload their own data for LLM customization. However, fine-tuning services introduce a new safety threat: user-uploaded data, whether harmful or benign, can break the model’s alignment, leading to unsafe outputs. Moreover, existing defense methods struggle to address the diversity of fine-tuning datasets (e.g., varying sizes, tasks), often sacrificing utility for safety or vice versa. To address this issue, we propose Safe Delta, a safety-aware posttraining defense method that adjusts the delta parameters (i.e., the parameter change before and after fine-tuning). Specifically, Safe Delta estimates the safety degradation, selects delta parameters to maximize utility while limiting overall safety loss, and applies a safety compensation vector to mitigate residual safety loss. Through extensive experiments on four diverse datasets with varying settings, our approach consistently preserves safety while ensuring that the utility gain from benign datasets remains unaffected.",
+  "impact": "Our work introduces a novel defensive method aimed at enhancing the safety of large language models following fine-tuning. We will open-source our method upon acceptance, which will contribute to the community of safety research and applications. Nonetheless, we acknowledge the inherent dual-use risk, as malicious actors could potentially develop new fine-tuning jailbreak techniques leveraging our approach. Despite this, we are hopeful that our proposed methodology will inspire future research efforts to mitigate the safety risks associated with LLM fine-tuning.",
+  "query_input": {
+    "scenario": "Fine-tuning on downstream tasks after safety alignment",
+    "issue": "Parameter delta from fine-tuning shifts weights away from safety-aligned null space, reintroducing unsafe outputs.",
+    "hazard": [
+      "Safety vector arithmetic addition for realignment introduces a delta parameter that can be reversed or misapplied, degrading safety constraints."
+    ],
+    "exposure": [
+      "Practitioners fine-tuning safety-aligned LLMs for domain-specific applications"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Existing fine-tuning defenses lack mechanisms to prevent reversal or misapplication of the added safety delta, leaving safety constraints brittle.",
+    "impact": "Fine-tuned LLMs generate unsafe outputs that harm end users and break safety alignment guarantees.",
+    "dose_response": "Safety vector addition for realignment introduces a reversible delta that, when fine-tuning practitioners apply it, triggers the absence of defenses preventing delta reversal, leading to unsafe outputs that harm end users and break alignment guarantees."
+  },
+  "reference": {
+    "dose_response": [
+      "Fine-tuning shifts weights from safety null space, which in domain-specific adaptation exposes high-stakes outputs to dangerous advice and liability."
+    ],
+    "vulnerability": [
+      "Practitioner ignorance of safety null-space fragility during standard fine-tuning workflows.",
+      "Absence of safety regression testing in domain-specific adaptation pipelines."
+    ],
+    "impact": [
+      "Domain-specific models in medicine, law, or finance output dangerous advice under fine-tuning drift.",
+      "Liability concentration on deploying organizations when fine-tuned models cause individual harm."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2320",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated vulnerability states that safety filters rely on explicit keyword matching and lack contextual understanding, leaving them unable to detect or block implicit harmful prompts. This semantically matches the reference's lack of robust content filters that detect all adversarial prompts.",
+    "reference": "Lack of robust content filters that detect all adversarial prompts.",
+    "generated": "Safety filters rely on explicit keyword matching and lack contextual understanding, leaving them unable to detect or block implicit harmful prompts."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "The reference impact is psychological distress to the individuals depicted in non-consensual intimate images. The generated impact describes undermining platform safety policies and eroding user trust, which misses both the affected party (depicted individuals) and the damage type (psychological distress).",
+    "reference": "Psychological distress to individuals depicted in non-consensual intimate images.",
+    "generated": "Prohibited sexually explicit or violent images are generated and distributed, undermining platform safety policies and eroding user trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both arcs start with adversarial prompt manipulation enabling NSFW generation and end with platform trust erosion. However, the generated arc omits the step of exposing end users to the content and the resulting psychological distress, missing a key causal link present in the reference.",
+    "reference": "Adversarial prompt manipulation enables NSFW generation, which in this scenario exposes end users, leading to psychological distress and platform trust erosion.",
+    "generated": "Adversarial prompt manipulation evades text-to-image safety filters, and through public API exposure, triggers keyword-based filters' contextual blindness, leading to prohibited sexually explicit or violent images that undermine platform safety policies and erode user trust."
+  }
+}

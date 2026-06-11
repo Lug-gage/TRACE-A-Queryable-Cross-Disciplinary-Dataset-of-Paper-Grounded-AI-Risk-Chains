@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1030",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the condition of lacking human oversight/independent verification, making inability to detect errors",
+    "reference": "Over-reliance on automated error correction without human oversight.",
+    "generated": "Data analysts lack independent verification of agent-generated transformations, rendering them unable to detect silently propagated errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Systemic data corruption and flawed analytics covered; financial losses missing, replaced by vague 'erroneous business decisions'",
+    "reference": "Systemic data corruption leading to flawed analytics and financial losses.",
+    "generated": "Corrupted data pipelines produce systematically flawed analytics, causing erroneous business decisions and compromised data integrity at scale."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated describes lack of verification causing corruption, not the propagation of faulty behaviors through hierarchical systems leading to corruption via over-reliance",
+    "reference": "Hierarchical multi-agent LLM systems propagating undetected faulty behaviors corrupt agent-managed data pipelines used by analysts, leading to systemic data corruption and financial losses through over-reliance and automation bias.",
+    "generated": "Multi-agent LLM systems with hierarchical error correction, through data analysts using agent-managed data pipelines, trigger the lack of independent verification of agent-generated transformations, leading to corrupted data pipelines that produce systematically flawed analytics and compromised data integrity."
+  }
+}

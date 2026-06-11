@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0661",
+  "chain_index": 1,
+  "title": "Agent Smith A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast",
+  "abstract": "A multimodal large language model (MLLM) agent can receive instructions, capture images, retrieve histories from memory, and decide which tools to use. Nonetheless, red-teaming efforts have revealed that adversarial images/prompts can jailbreak an MLLM and cause unaligned behaviors. In this work, we report an even more severe safety issue in multi-agent environments, referred to as infectious jailbreak. It entails the adversary simply jailbreaking a single agent, and without any further intervention from the adversary, (almost) all agents will become infected exponentially fast and exhibit harmful behaviors. To validate the feasibility of infectious jailbreak, we simulate multi-agent environments containing up to one million LLaVA-1.5 agents, and employ randomized pair-wise chat as a proof-of-concept instantiation for multi-agent interaction. Our results show that feeding an (infectious) adversarial image into the memory of any randomly chosen agent is sufficient to achieve infectious jailbreak. Finally, we derive a simple principle for determining whether a defense mechanism can provably restrain the spread of infectious jailbreak, but how to design a practical defense that meets this principle remains an open question to investigate. Our code is available at https://github.com/sail-sg/Agent-Smith.",
+  "impact": "This study, encompassing both the methodology and the provided code, includes elements that could enable users to infectiously jailbreak almost all the multimodal agents in a multi-agent system to generate harmful content and even trigger harmful behaviors by function calling exponentially fast. Although our major experiments are conducted on a proof-of-concept instantiation for the multi-agent system, it does provide insights for more realistic cases. For example, there has been a growing interest in operating systems constructed around multimodal large language models, which receive screenshots as visual signals and perform subsequent actions (Yang et al., 2023c; Hong et al., 2023b). If an attack is injected into any part of a screenshot such as the app icon, and is spread among agents, it could result in significant problems. During user interactions with the model, this could potentially entice the model into generating harmful actions (e.g., rm -rf /*), leading to serious societal consequences. How to design a practical defense for our infectious jailbreak method remains an open and urgent question. In summary, our work serves as a red-teaming report, identifying previously unnoticed safety issues in multi-agent environments and advocating for further investigation into defense design.",
+  "query_input": {
+    "scenario": "User interacts with a contaminated multi-agent assistant",
+    "issue": "Corrupted agents produce toxic, manipulative, or false responses that evade user-facing safety filters",
+    "hazard": [
+      "Jailbreak prompts propagate infectiously among multimodal LLM agents via adversarial images in multi-agent chat environments."
+    ],
+    "exposure": [
+      "Users querying the assistant system"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users rely on the assistant's safety filters and lack the ability to detect corrupted outputs.",
+    "impact": "Users ingest toxic, manipulative, or false information, leading to misinformed decisions or harmful behaviors.",
+    "dose_response": "Jailbreak prompts propagate infectiously among agents via adversarial images, through users querying the contaminated assistant system, triggers reliance on safety filters and inability to detect corrupted outputs, leading to ingestion of toxic, manipulative, false information, misinformed decisions, and harmful behaviors."
+  },
+  "reference": {
+    "dose_response": [
+      "When users query an assistant corrupt by infectious jailbreak prompts propagated via adversarial images, they form false memories and make harmful decisions based on toxic advice."
+    ],
+    "vulnerability": [
+      "Users over-rely on AI content and exhibit low skepticism toward the assistant.",
+      "Absence of per-response output verification or confidence scoring to flag harmful replies."
+    ],
+    "impact": [
+      "Users form false memories from subtle misinformation, as documented in chatbot studies.",
+      "Harmful decisions made based on toxic advice (e.g., self-harm suggestions, illegal acts)."
+    ]
+  }
+}

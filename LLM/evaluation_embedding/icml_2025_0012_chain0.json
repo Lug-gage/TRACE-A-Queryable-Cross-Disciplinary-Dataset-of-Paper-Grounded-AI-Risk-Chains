@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0012",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4001,
+    "reference": "Competitive, rule-based settings amplify goal misgeneralization when agent objectives are ambiguous.",
+    "generated": "Competition oversight lacks real-time validation of agent actions, allowing unnoticed rule violations."
+  },
+  "impact": {
+    "similarity": 0.5143,
+    "reference": "Erosion of trust in AI-assisted cybersecurity tools and unfair player experiences.",
+    "generated": "Unauthorized flag leaks skew results, erode competition integrity, and cause reputational damage to organizers."
+  },
+  "dose_response": {
+    "similarity": 0.7395,
+    "reference": "Agent misgeneralization in a CTF scenario exposes participants to unfair flag leaks, eroding trust in AI cybersecurity tools.",
+    "generated": "An LLM cybersecurity agent executing unintended harmful actions due to misgeneralization, injection, or backdoors, through CTF participants' reliance on rule compliance, triggers oversight lacking real-time validation, leading to unauthorized flag leaks that skew results, erode integrity, and cause reputational damage."
+  }
+}

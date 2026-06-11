@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_2295",
+  "chain_index": 1,
+  "title": "FairProof Confidential and Certifiable Fairness for Neural Networks",
+  "abstract": "Machine learning models are increasingly used in societal applications, yet legal and privacy concerns demand that they very often be kept confidential. Consequently, there is a growing distrust about the fairness properties of these models in the minds of consumers, who are often at the receiving end of model predictions. To this end, we propose FairProof- a system that uses Zero-Knowledge Proofs (a cryptographic primitive) to publicly verify the fairness of a model, while maintaining confidentiality. We also propose a fairness certification algorithm for fullyconnected neural networks which is befitting to ZKPs and is used in this system. We implement FairProof in Gnark and demonstrate empirically that our system is practically feasible. Code is available at https://github.com/ infinite-pursuits/FairProof.",
+  "impact": "This paper presents work whose goal is to advance the field of Trustworthy Machine Learning, by making public verification of properties, specifically fairness, of ML models feasible. While we use a notion of fairness - Local Individual Fairness - in this work, we do not believe that it is ‘the’ perfect measure of fairness or that it can quantify every kind of unfairness and doubt if such a measure can exist. Faced with the model confidentiality constraint, we try to offer some transparency in the form of public verification through FairProof. However, there might exist ways of gaming this system, leading to fairwashing on the customer end or to potential exposure of the model weights on the organization’s end. This calls for dedicated research in the area.",
+  "query_input": {
+    "scenario": "End-users trusting fairness labels on AI services verified by FairProof",
+    "issue": "Degraded model fairness post-certification harms protected groups while proofs remain valid",
+    "hazard": [
+      "Point-in-time fairness proofs can become misleading after deployment due to model drift or fairness attacks."
+    ],
+    "exposure": [
+      "Consumers using AI-driven services that present fairness certifications"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Consumers have no mechanism to detect model drift or post-certification fairness degradation, relying solely on static proof validity.",
+    "impact": "Protected groups suffer discriminatory decisions from AI systems whose fairness certifications no longer reflect actual behavior.",
+    "dose_response": "Point-in-time fairness proofs becoming misleading after deployment, through consumers relying on AI services with static fairness certifications, triggers an inability to detect model drift and fairness degradation, leading to discriminatory decisions harming protected groups."
+  },
+  "reference": {
+    "dose_response": [
+      "Point-in-time fairness proofs becoming misleading enables consumer trust in static fairness labels, which in end-user AI services leads to undetected unfair treatment of protected groups."
+    ],
+    "vulnerability": [
+      "End-users' trust in static fairness labels obscures the risk of model fairness degrading after certification."
+    ],
+    "impact": [
+      "Members of protected groups suffer undetected unfair treatment, losing opportunities and trust in digital services.",
+      "Systemic inequality worsens as biased decisions propagate under the guise of certified fairness."
+    ]
+  }
+}

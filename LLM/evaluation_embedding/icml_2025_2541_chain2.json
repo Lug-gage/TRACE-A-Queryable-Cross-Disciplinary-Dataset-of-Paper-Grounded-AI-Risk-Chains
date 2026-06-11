@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2541",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6081,
+    "reference": "Training pipelines lack human oversight, allowing erroneous proofs to seed subsequent learning iterations.",
+    "generated": "Sole reliance on formal verification permits incorporation of subtle, semantically-flawed proofs into training data."
+  },
+  "impact": {
+    "similarity": 0.6567,
+    "reference": "Systematic degradation of reasoning model quality across the entire multi-agent training ecosystem.",
+    "generated": "Multi-agent models internalize flawed reasoning, producing formally-valid but meaningless proofs that degrade automated prover reliability and trust."
+  },
+  "dose_response": {
+    "similarity": 0.8639,
+    "reference": "Multi-agent collaboration amplifies propagation of formally-valid but semantically-misaligned proofs, which when used by developers to train reasoning models leads to systematic degradation of model quality across the ecosystem.",
+    "generated": "Multi-agent collaboration propagating formally-valid but semantically-misaligned proofs, through training on collaboratively generated corpora, triggers sole reliance on formal verification incorporating flawed proofs into training data, leading to models internalizing flawed reasoning producing meaningless proofs, degrading automated prover reliability and trust."
+  }
+}

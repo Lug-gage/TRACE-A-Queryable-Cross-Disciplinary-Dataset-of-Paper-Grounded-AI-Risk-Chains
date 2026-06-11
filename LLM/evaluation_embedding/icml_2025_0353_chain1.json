@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0353",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5368,
+    "reference": "Watermark design disclosure allows adversaries to craft targeted perturbations, removing the detectable signature.",
+    "generated": "Verification services depend exclusively on watermark integrity, leaving no fallback to detect forgery when watermarks are stripped."
+  },
+  "impact": {
+    "similarity": 0.5507,
+    "reference": "Verification services become unreliable, triggering a chain reaction of eroded trust in digital content attribution.",
+    "generated": "Undetected machine-generated text spreads, breaking provenance verification and enabling large-scale automated disinformation."
+  },
+  "dose_response": {
+    "similarity": 0.6763,
+    "reference": "Adversarial perturbations exploiting known watermark designs strip signatures, exposing verification services to unreliable detection, eroding trust in digital content attribution.",
+    "generated": "Watermark removal and evasion attacks strip LLM text watermarks, through verification services that rely solely on watermark integrity, triggering their inability to detect forgery, leading to undetected machine-generated text spreading and enabling large-scale disinformation."
+  }
+}

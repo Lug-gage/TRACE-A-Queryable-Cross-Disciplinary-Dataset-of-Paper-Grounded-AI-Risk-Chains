@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0070",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4748,
+    "reference": "Power systems require strict physical constraint compliance; LLMs lack physical domain knowledge.",
+    "generated": "No institutional verification protocol exists to catch physically infeasible power schedules before operational use."
+  },
+  "impact": {
+    "similarity": 0.8515,
+    "reference": "Grid instability, equipment damage, or blackouts from infeasible generation schedules.",
+    "generated": "Power supply disruptions, grid instability, and equipment damage from infeasible schedules."
+  },
+  "dose_response": {
+    "similarity": 0.8598,
+    "reference": "LLM-driven optimization model generation may produce flawed formulations, which when used by engineers for power scheduling leads to failure to capture physical limits, causing grid instability, equipment damage, or blackouts.",
+    "generated": "LLM-driven model generation producing infeasible formulations due to limited reasoning, through engineers using autoformulation for power scheduling, triggers the lack of institutional verification to catch infeasible schedules, leading to power supply disruptions, grid instability, and equipment damage."
+  }
+}

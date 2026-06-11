@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2538",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference says 'automated submission without human review' is the sensitivity; generated says 'lack of independent verification mechanisms', a related but distinct condition",
+    "reference": "Automated submission without human review corrupts official records.",
+    "generated": "Citizens lack independent verification mechanisms to detect and override agent grounding errors before form submission."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "reference specifies identity verification failures and benefit delays as harm; generated names legal/financial harm and administrative burden, covering affected citizens but not the original damage type",
+    "reference": "Misinformation in legal records causes identity verification failures and benefit delays.",
+    "generated": "Incorrect personal data enters government systems, causing legal/financial harm to citizens and administrative burden for agencies."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference's chain is grounding errors -> incorrect field selection -> automated submission without review -> corrupt records -> verification failures/delays; generated chain relies on lack of verification mechanisms and mentions different outcomes, missing the automated submission step",
+    "reference": "When grounding errors cause incorrect form field selection, citizens' automated submission without review corrupts official records, leading to identity verification failures and benefit delays.",
+    "generated": "Visual and HTML grounding errors in multimodal web agents, through citizens' reliance on them for official filing, trigger lack of independent verification mechanisms, leading to incorrect personal data entering government systems and causing legal/financial harm and administrative burden."
+  }
+}

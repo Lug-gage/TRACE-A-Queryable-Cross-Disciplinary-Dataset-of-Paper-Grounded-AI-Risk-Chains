@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 0,
+  "title": "Assessing Large Language Models on Climate Information",
+  "abstract": "As Large Language Models (LLMs) rise in popularity, it is necessary to assess their capability in critically relevant domains. We present a comprehensive evaluation framework, grounded in science communication research, to assess LLM responses to questions about climate change. Our framework emphasizes both presentational and epistemological adequacy, offering a fine-grained analysis of LLM generations spanning 8 dimensions and 30 issues. Our evaluation task is a real-world example of a growing number of challenging problems where AI can complement and lift human performance. We introduce a novel protocol for scalable oversight that relies on AI Assistance and raters with relevant education. We evaluate several recent LLMs on a set of diverse climate questions. Our results point to a significant gap between surface and epistemological qualities of LLMs in the realm of climate communication.",
+  "impact": "In this work we present an evaluation framework to assess the quality of answers to climate-related questions. Our evaluation is based on science-communication principles and aims to evaluate responses to genuine information needs of the public. Progress in correctly answering such questions can have a large impact for the dissemination of scientific results and can lead to positive effects on climate literacy, also reducing the public’s susceptibility to misinformation. As with any evaluation there are however limits to its validity. Specifically, the evaluation of systems to be deployed in critical contexts requires additional grounding and expert verification. This is especially the case when system responses inform actions. Moreover, the evaluation is limited to the evaluated context, and we make no claims that models can be trusted and deployed outside of that context.",
+  "query_input": {
+    "scenario": "LLM-based auto-evaluation of generated climate communication texts for public dissemination",
+    "issue": "Systematic overestimation masks substandard factual accuracy, allowing poor-quality climate messages to circulate.",
+    "hazard": [
+      "LLM evaluators systematically overestimate the performance of language agents, inflating assessment metrics."
+    ],
+    "exposure": [
+      "General public receiving LLM-evaluated climate communication materials"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Low climate literacy and overtrust in AI-vetted content render the public unable to detect inflated accuracy claims.",
+    "impact": "Public adoption of misinformation distorts climate understanding and undermines collective mitigation and adaptation efforts.",
+    "dose_response": "LLM evaluators’ systematic overestimation inflates metrics; when these assessments reach a low-literacy public through climate communications, overtrust triggers uncritical acceptance, leading to misinformation adoption that distorts understanding and undermines mitigation."
+  },
+  "reference": {
+    "dose_response": [
+      "Systematic overestimation by LLM evaluators inflates assessment metrics, which in the scenario of auto-evaluated climate texts exposes the public to substandard materials, leading to public misperception of climate risks."
+    ],
+    "vulnerability": [
+      "Low public science literacy reduces ability to detect factual errors in fluent climate texts.",
+      "Automated dissemination pipelines lack human oversight checkpoints for content verification.",
+      "Institutional reliance on single-metric LLM scores for quality assurance creates single point of failure."
+    ],
+    "impact": [
+      "Public misperception of climate risks leads to reduced support for mitigation policies.",
+      "Erosion of institutional trust when inaccuracies are later exposed by independent fact-checkers.",
+      "Disproportionate harm to vulnerable communities relying on official communications for safety decisions."
+    ]
+  }
+}

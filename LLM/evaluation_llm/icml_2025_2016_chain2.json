@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2016",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on restored images without verification is semantically present in both",
+    "reference": "Forensic analysts rely on restored images without independent quality assessment, increasing risk of artifact-driven false identifications.",
+    "generated": "Analysts' reliance on automated restoration without ground-truth verification leaves them unable to detect overfitting artifacts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Wrongful convictions and investigative errors covered, but erosion of public trust missing",
+    "reference": "False matches lead to wrongful convictions or investigative dead ends, eroding public trust in forensic evidence.",
+    "generated": "Investigative errors and wrongful convictions arise from artifact-distorted restored images."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc incorrectly posits overfitting triggers reliance on automated restoration, whereas reference has overfitting causing artifacts and reliance as pre-existing vulnerability",
+    "reference": "Overfitting in forensic image restoration introduces artifacts, and when forensic analysts use restored images without independent quality assessment, false matches can lead to wrongful convictions.",
+    "generated": "Overfitting from joint estimation and pseudo-hashing, through forensic analysts' use of restored images, triggers reliance on automated restoration without ground-truth verification, leading to artifact-distorted evidence causing investigative errors and wrongful convictions."
+  }
+}

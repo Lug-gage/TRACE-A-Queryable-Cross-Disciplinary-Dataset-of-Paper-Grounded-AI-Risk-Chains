@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2449",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3745,
+    "reference": "Automated moderation systems lack contextual understanding to detect coordinated adversarial disinformation campaigns.",
+    "generated": "Filtering systems rely on topological alignment signatures that adversaries can replicate, blinding them to malicious inputs."
+  },
+  "impact": {
+    "similarity": 0.663,
+    "reference": "Harmful content proliferates on platforms, amplifying misinformation and eroding user trust in content integrity.",
+    "generated": "Harmful multimodal content reaches users undetected, causing psychological harm, normalizing abuse, and overwhelming human moderators."
+  },
+  "dose_response": {
+    "similarity": 0.7761,
+    "reference": "Adversarial perturbations exploit multimodal alignment gaps to evade detection by mimicking clean topological signatures; in multimodal content moderation using vision-language models, exposing platform moderators and users to undetected harmful content leads to harmful content proliferation, amplifying misinformation and eroding trust.",
+    "generated": "Adversarial perturbations mimicking clean topological signatures, through platform moderators and users of automated filters, trigger systems' reliance on replicable signatures, leading to harmful content bypassing filters, causing psychological harm, normalizing abuse, and overwhelming moderators."
+  }
+}

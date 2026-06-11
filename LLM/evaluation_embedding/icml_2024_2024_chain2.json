@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.582,
+    "reference": "Low-resource language communities depend on a single fine-tuned model, creating a single point of failure.",
+    "generated": "Large models fine-tuned on limited parallel data are predisposed to overfitting and biased language transfer due to extreme scale mismatch."
+  },
+  "impact": {
+    "similarity": 0.5669,
+    "reference": "Critical information (e.g., public health alerts) is mistranslated, endangering speakers of low-resource languages.",
+    "generated": "Translation outputs degrade with hallucinated content and systematic errors, eroding reliability in low-resource language services."
+  },
+  "dose_response": {
+    "similarity": 0.7972,
+    "reference": "LLM scaling enables overfitting, which in data-limited fine-tuning exposes engineers to language transfer bias, leading to mistranslated critical information and cultural erasure.",
+    "generated": "LLM scaling drives reliance on synthetic data introducing distributional drift, which through fine-tuning large multilingual models with limited parallel corpora triggers overfitting and biased language transfer, leading to hallucinated translations and systematic errors that degrade reliability in low-resource language services."
+  }
+}

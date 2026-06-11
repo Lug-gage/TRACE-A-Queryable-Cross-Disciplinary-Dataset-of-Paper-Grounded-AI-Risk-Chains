@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2163",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance on lip-sync for comprehension, but the reference's precise condition of sub-100ms audiovisual asynchrony sensitivity is not captured.",
+    "reference": "Human perception is acutely sensitive to sub-100ms audiovisual asynchrony in speech.",
+    "generated": "Meeting participants rely on accurate lip-sync for speech comprehension in virtual settings, leaving them vulnerable to miscommunication when visual cues drift."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers communication breakdowns and degraded meeting effectiveness, but trust erosion from the reference is missing.",
+    "reference": "Confusion and miscommunication erode meeting efficiency and trust.",
+    "generated": "Communication breakdowns lead to misunderstanding, repeated clarifications, and degraded meeting effectiveness across distributed teams."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated chain includes error accumulation leading to miscommunication, but omits the explicit intermediate links of temporal drift and audiovisual asynchrony, replacing them with a reliance-triggering mechanism.",
+    "reference": "Error accumulation in sequential diffusion-based talking face generation enables temporal drift, which in personalized avatar meetings exposes participants to audiovisual asynchrony, leading to confusion and reduced trust.",
+    "generated": "Error accumulation in sequential diffusion-based talking face generation, through meeting participants viewing AI-generated video feeds, triggers reliance on accurate lip-sync for speech comprehension, leaving them vulnerable to miscommunication, leading to misunderstanding, repeated clarifications, and degraded meeting effectiveness across distributed teams."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2422",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe that incomplete data removal evades verification due to circumventable verification methods, leaving residual personal data.",
+    "reference": "Incomplete unlearning leaves residual personal data in model weights, evading standard verification.",
+    "generated": "Data owners lack independent auditing capability, depending on verification methods that model providers can circumvent to hide data retention."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Eroded trust covered, but GDPR fines are missing.",
+    "reference": "Extraction of personal data violates GDPR, resulting in fines and loss of user trust.",
+    "generated": "Personal data persists in models after unlearning, causing privacy breaches, re-identification risk, and eroded trust in deletion services."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Fragile verification leading to residual data and privacy breaches is present, but the extraction attack step is missing.",
+    "reference": "Fragile verification leaves residual personal data, which in the scenario of individuals requesting deletion from LLMs exposes them to extraction attacks, leading to GDPR fines and privacy breaches.",
+    "generated": "Fragile verification of data removal, through individuals' deletion requests to LLM services, triggers lack of independent auditing and reliance on circumventable verification, leading to persistent personal data, privacy breaches, and eroded trust."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1557",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4992,
+    "reference": "Automated copyright enforcement systems lack human oversight for disputed claims.",
+    "generated": "Reliance on a single watermarking scheme for copyright attribution without independent verification mechanisms, enabling forged watermarks to go undetected."
+  },
+  "impact": {
+    "similarity": 0.6519,
+    "reference": "Independent artists lose revenue and platform visibility due to fraudulent copyright strikes.",
+    "generated": "Infringers falsely claim ownership, diverting licensing revenue from rightful copyright holders and undermining enforcement on music platforms."
+  },
+  "dose_response": {
+    "similarity": 0.7989,
+    "reference": "Forgery attacks inject valid watermarks into unlicensed audio, which in the scenario of music streaming exposes copyright holders and platforms to false attribution, leading to revenue loss and eroded trust in royalty systems.",
+    "generated": "Forgery of audio watermarks through perturbations and adversarial attacks, through music platforms' watermark-based attribution, triggers reliance on a single unverified scheme, enabling undetected forged watermarks, leading to false ownership claims and revenue diversion."
+  }
+}

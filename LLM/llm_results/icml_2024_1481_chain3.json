@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 3,
+  "title": "Privacy Attacks in Decentralized Learning",
+  "abstract": "Decentralized Gradient Descent (D-GD) allows a set of users to perform collaborative learning without sharing their data by iteratively averaging local model updates with their neighbors in a network graph. The absence of direct communication between non-neighbor nodes might lead to the belief that users cannot infer precise information about the data of others. In this work, we demonstrate the opposite, by proposing the first attack against D-GD that enables a user (or set of users) to reconstruct the private data of other users outside their immediate neighborhood. Our approach is based on a reconstruction attack against the gossip averaging protocol, which we then extend to handle the additional challenges raised by D-GD. We validate the effectiveness of our attack on real graphs and datasets, showing that the number of users compromised by a single or a handful of attackers is often surprisingly large. We empirically investigate some of the factors that affect the performance of the attack, namely the graph topology, the number of attackers, and their position in the graph. Our code is available at https://github.com/AbdellahElmrini/decAttack.",
+  "impact": "Our work designs privacy attacks in decentralized learning. Given the ethical challenges in justifying such attacks in real-world scenarios, and considering that the deployment of our attack could potentially cause harm, we primarily focus on raising awareness about privacy risks in decentralized learning by using public datasets. Our findings challenge the common misconception that decentralization inherently brings privacy, particularly for distant nodes. Interestingly, as mentioned in the paper, the construction of the knowledge matrix KT is independent from the actual private data, and could thus be used as part of an auditing phase to measure how much information would be leaked if one were to use a specific gossip matrix/graph. We believe that sharing these insights is crucial and contributes to the development of safer approaches in machine learning. As highlighted in the introduction and motivation our work should be seen as an empirical illustration of the need for more robust privacy protections, such as the ones offered by differential privacy.",
+  "query_input": {
+    "scenario": "Gossip-based decentralized learning",
+    "issue": "Gradient leakage via gossiped model updates allowing reconstruction of participant local data.",
+    "hazard": [
+      "Exact reconstruction of private training data from gradient/model updates shared in collaborative learning"
+    ],
+    "exposure": [
+      "Participants exchanging model updates in peer-to-peer gossip averaging without a central server."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Participants assume only direct neighbors can access model updates, but gossip averaging propagates gradient information across the network without privacy safeguards.",
+    "impact": "Adversaries reconstruct exact private training data (e.g., images, medical records) from arbitrary participants, causing network-wide confidentiality breaches.",
+    "dose_response": "Exact reconstruction of private data from gradient updates, through gossip averaging without central server, triggers false assumption of neighbor-bound access while gossip propagates gradients network-wide, leading to reconstruction of participants' private data by adversaries, breaching confidentiality."
+  },
+  "reference": {
+    "dose_response": [
+      "Exact reconstruction from gradients enables inversion of gossiped updates, which in decentralized learning without audit exposes local data, leading to disclosure and collusion amplifying trust erosion."
+    ],
+    "vulnerability": [
+      "Peer-to-peer exchange of model updates without central audit facilitates gradient inversion, exposing local data.",
+      "Decentralized gossip protocols lack built-in privacy protections, making participants vulnerable to data reconstruction."
+    ],
+    "impact": [
+      "Disclosure of personal user data in decentralized networks undermines trust in peer-to-peer AI systems.",
+      "Potential for adversarial peers to collude and extract data from multiple participants, amplifying harm."
+    ]
+  }
+}

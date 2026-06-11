@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0004",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe analysts trusting coreset approximations without validation, making them susceptible to overconfidence or errors.",
+    "reference": "Analysts in high-stakes domains trust approximated posteriors without rigorous diagnostic checks, inviting overconfidence.",
+    "generated": "Data analysts lack independent access to full-data posterior for validation, trusting coreset approximations implicitly."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated mentions financial loss (tangible harm) and reduced trust (institutional distrust), covering both damage types.",
+    "reference": "Erroneous clinical or financial decisions based on misleading posteriors, causing tangible harm and institutional distrust.",
+    "generated": "Biased posterior approximations yield erroneous decisions, causing financial loss and reduced trust in data-driven workflows."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Overall causal chain from unrepresentative coresets to biased posteriors and harmful decisions via analyst trust is preserved.",
+    "reference": "Unrepresentative coresets in Bayesian inference cause unbounded KL divergence, leading analysts to make overconfident, erroneous decisions in high-stakes domains, resulting in harm and distrust.",
+    "generated": "Subset selection methods generating unrepresentative datasets, through data analysts relying on Bayesian coreset posteriors for decision-making, triggers implicit trust without full-data validation, leading to biased posteriors, financial loss, and reduced trust."
+  }
+}

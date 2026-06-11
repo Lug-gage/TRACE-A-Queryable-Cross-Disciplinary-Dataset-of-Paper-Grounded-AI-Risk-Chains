@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1022",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that users cannot independently verify claims; the generated's 'lack independent verification means' covers the same inability, regardless of whether the specific reason (domain expertise) is mentioned.",
+    "reference": "Users lack domain expertise to independently verify LLM factual claims.",
+    "generated": "Users lack independent verification means and default to trusting the model's expressed confidence, amplifying susceptibility to miscalibrated claims."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe negative outcomes of decision errors (misguided decisions) as the consequence, with the generated also including upstream harms but still capturing the core decision-error outcome.",
+    "reference": "Overreliance on incorrect LLM outputs leads to consequential decision errors.",
+    "generated": "Misguided high-stakes decisions cause individual harm, institutional failure, and widespread erosion of trust in AI-assisted factuality."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc relies on miscalibration producing overconfident/underconfident outputs that cause overreliance or dismissal, while the generated arc jumps from miscalibration directly to lack of verification and default trust, omitting the output-confidence link and describing a different causal mechanism.",
+    "reference": "Miscalibrated confidence estimates enable overconfident or underconfident LLM outputs, which in high-stakes domains cause users to overrely on incorrect claims or dismiss accurate ones, leading to decision errors.",
+    "generated": "Calibrated confidence estimates that may differ from true likelihoods, through user reliance on LLM factual answers in high-stakes domains, triggers lack of independent verification and default trust, leading to misguided decisions, harm, failure, and eroded trust in AI factuality."
+  }
+}

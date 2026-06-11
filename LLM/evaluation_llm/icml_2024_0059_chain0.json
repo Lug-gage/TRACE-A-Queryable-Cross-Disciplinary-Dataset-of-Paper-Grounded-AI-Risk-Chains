@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0059",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Sole reliance on watermark detection without fallback verification exactly captures the reference's sensitivity condition.",
+    "reference": "Platforms rely solely on fragile watermarks for AI-image provenance, ignoring multimodal verification.",
+    "generated": "Moderators’ sole reliance on watermark detection without fallback verification makes them unable to resist adversarial removal."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (public trust in digital content) and damage type (misinformation, trust erosion) are present.",
+    "reference": "Unflagged AI-generated images spread disinformation, eroding public trust in digital media.",
+    "generated": "Undetected AI-generated images proliferate, enabling large-scale misinformation and eroding trust in digital content authenticity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc of fragile watermarks enabling removal, defeating detection platforms rely on, leading to undetected images, misinformation, and trust erosion matches the reference.",
+    "reference": "Adversarial watermark removal defeats detection, which in provenance verification exposes platforms reliant solely on watermarks, leading to disinformation spread and trust erosion.",
+    "generated": "Adversarial and diffusive stress testing exposes watermark fragility enabling removal, through content platforms and moderators relying on watermark detection, triggers inability to resist adversarial removal due to sole reliance without fallback, leading to undetected AI images proliferating, misinformation, and trust erosion."
+  }
+}

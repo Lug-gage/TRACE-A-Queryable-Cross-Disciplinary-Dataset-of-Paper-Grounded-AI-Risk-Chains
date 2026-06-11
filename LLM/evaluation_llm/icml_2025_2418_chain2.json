@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2418",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes a different but related sensitivity condition (lack of calibration enabling acceptance of spurious chains) rather than the reference's brittle world models that fail under distribution shift and ignore critical factors.",
+    "reference": "Brittle world models that fail under distribution shift cause agents to ignore critical causal factors.",
+    "generated": "Agent's dependence on an approximate causal model without uncertainty calibration or causal validation enables unquestioning acceptance of spurious causal chains."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Property damage is covered, mission failure approximates operational failures, but reduced societal acceptance is missing.",
+    "reference": "Unsafe decisions leading to operational failures, property damage, and reduced societal acceptance of autonomous agents.",
+    "generated": "Unsafe or incorrect autonomous actions in novel environments, leading to property damage, mission failure, or human harm."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both arcs involve overgeneralized causal chains producing harmful outcomes in unseen environments, but the reference's link 'agents ignore critical factors under distribution shift' is replaced by 'unquestioning reliance on uncalibrated causal models,' altering the mechanism.",
+    "reference": "Overgeneralized causal chains in learned world models cause agents to ignore critical factors under distribution shift, which, when operating in unseen environments, results in property damage and reduced societal acceptance.",
+    "generated": "Overgeneralization of axioms by transformers trained on symbolic causal demonstrations produces spurious causal chains that, through autonomous agents in unseen environments, trigger unquestioning reliance on uncalibrated causal models, leading to unsafe actions causing property damage, mission failure, or human harm."
+  }
+}

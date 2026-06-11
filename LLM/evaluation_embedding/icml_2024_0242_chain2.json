@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0242",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5622,
+    "reference": "Low‑skill, freely available face‑swapping apps remove technical barriers, making non‑consensual image fabrication trivially easy.",
+    "generated": "Public availability of facial images and absent detection tools leave individuals unable to refute or prevent false synthetic depictions."
+  },
+  "impact": {
+    "similarity": 0.7361,
+    "reference": "Victims experience psychological distress, reputational damage, and privacy violations when fabricated compromising images spread online.",
+    "generated": "Victims face reputational ruin, psychological trauma, and blackmail; societal trust in visual evidence collapses."
+  },
+  "dose_response": {
+    "similarity": 0.7947,
+    "reference": "Accessible face-swapping apps leveraging high-fidelity synthesis allow easy creation of non-consensual compromising images, causing psychological distress and reputational damage when disseminated.",
+    "generated": "Indistinguishable synthetic imagery from high-fidelity human image synthesis, through non-consensual face-swapping of individuals, exploits public facial images and missing detection tools, preventing refutation of false depictions, leading to reputational ruin, psychological trauma, blackmail, and collapse of trust in visual evidence."
+  }
+}

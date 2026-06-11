@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0445",
+  "chain_index": 2,
+  "title": "A Tale of Tails Model Collapse as a Change of Scaling Laws",
+  "abstract": "As AI model size grows, neural scaling laws have become an important tool to predict the improvements of large models when increasing capacity and the size of original (human or natural) training data. Yet, the widespread use of popular models means that the ecosystem of online data and text will co-evolve to progressively contain increased amounts of synthesized data. In this paper we ask: How will the scaling laws change in the inevitable regime where synthetic data makes its way into the training corpus? Will future models, still improve, or be doomed to degenerate up to total (model) collapse? We develop a theoretical framework of model collapse through the lens of scaling laws. We discover a wide range of decay phenomena, analyzing loss of scaling, shifted scaling with number of generations, the “un-learning” of skills, and grokking when mixing human and synthesized data. Our theory is validated by large-scale experiments with a transformer on an arithmetic task and text generation using the large language model Llama2.",
+  "impact": "This study contributes to the discourse on AI scaling laws by tackling the emergent challenge presented by synthetic data within training datasets. It holds particular relevance for fields that depend heavily on data accuracy, such as natural language processing and generative AI model development. We investigate the concept of ”model collapse” as a cautionary tale, highlighting the potential risks to sustainable model performance in the face of an increasing reliance on synthetic data. Through a combination of theoretical analysis and empirical evidence, we advocate for the strategic integration of clean data to mitigate these risks and enhance the robustness of AI systems. Our findings carry significant implications for industries where decision-making is progressively data-driven, suggesting a need for a shift in data management strategies to emphasize the preservation of model integrity and longevity. Additionally, this research highlights a looming issue: the potential scarcity of clean data. It underscores the urgency of focusing on the cultivation and preservation of high-quality datasets for AI training, to safeguard the future of AI development.",
+  "query_input": {
+    "scenario": "Uncertainty estimation in generative LLM outputs",
+    "issue": "Incorrect confidence scores masking inaccurate or misleading generated text",
+    "hazard": [
+      "Semantic accuracy degradation in LLM text generation from structured data"
+    ],
+    "exposure": [
+      "Practitioners using LLM uncertainty estimates in high-stakes decisions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Miscalibrated uncertainty estimates remain insensitive to semantic degradation from recursive synthetic data, failing to alert practitioners to model collapse.",
+    "impact": "Flawed high-stakes decisions propagate undetected inaccuracies at scale, causing cascading failures in critical domains like medicine or law.",
+    "dose_response": "Semantic accuracy degradation in LLM text generation from structured data, through practitioners using LLM uncertainty estimates in high-stakes decisions, triggers miscalibrated estimates insensitive to recursive synthetic data degradation, leading to undetected cascading failures in critical domains."
+  },
+  "reference": {
+    "dose_response": [
+      "Semantic accuracy degradation enables incorrect confidence scores, which in high-stakes decisions exposes practitioners to masked inaccuracies, leading to systematic errors in clinical, legal, or financial workflows."
+    ],
+    "vulnerability": [
+      "Practitioners treat confidence scores as reliable without understanding their limitations.",
+      "High-stakes decision-makers over-rely on miscalibrated uncertainty estimates.",
+      "Institutional adoption of LLM tools without validation of uncertainty metrics."
+    ],
+    "impact": [
+      "High-stakes decisions made on overconfident but incorrect LLM outputs.",
+      "Systematic errors in clinical, legal, or financial workflows due to masked inaccuracies.",
+      "Institutional liability and reputational damage from decisions based on flawed confidence."
+    ]
+  }
+}

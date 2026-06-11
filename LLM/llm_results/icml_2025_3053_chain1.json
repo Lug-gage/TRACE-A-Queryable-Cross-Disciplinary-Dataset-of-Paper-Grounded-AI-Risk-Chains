@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_3053",
+  "chain_index": 1,
+  "title": "CellFlux Simulating Cellular Morphology Changes via Flow Matching",
+  "abstract": "Building a virtual cell capable of accurately simulating cellular behaviors in silico has long been a dream in computational biology. We introduce CellFlux, an image-generative model that simulates cellular morphology changes induced by chemical and genetic perturbations using flow matching. Unlike prior methods, CellFlux models distribution-wise transformations from unperturbed to perturbed cell states, effectively distinguishing actual perturbation effects from experimental artifacts such as batch effects-a major challenge in biological data. Evaluated on chemical (BBBC021), genetic (RxRx1), and combined perturbation (JUMP) datasets, CellFlux generates biologically meaningful cell images that faithfully capture perturbation-specific morphological changes, achieving a 35% improvement in FID scores and a 12% increase in mode-ofaction prediction accuracy over existing methods. Additionally, CellFlux enables continuous interpolation between cellular states, providing a potential tool for studying perturbation dynamics. These capabilities mark a significant step toward realizing virtual cell modeling for biomedical research. Project page: https://yuhui-zh15. github.io/CellFlux/.",
+  "impact": "CellFlux introduces a novel machine learning framework for modeling cellular responses to genetic and chemical perturbations by formulating the task as a distribution-todistribution transformation and solving it using a principled flow matching approach. This leads to significantly improved predictive performance and unlocks new capabilities such as batch effect correction and perturbation interpolation. By providing scalable and interpretable computational tools for modeling perturbation responses at both the single-cell and population levels, CellFlux addresses critical challenges in experimental biology. It enables rapid in-silico screening of compounds and perturbations, thereby accelerating therapeutic discovery and drug repurposing. In particular, it can guide follow-up experiments toward the most promising candidates, streamlining the drug repurposing pipeline and the search for novel therapeutic targets. In addition to medical applications, CellFlux can accelerate basic research into cell biology processes by modeling responses to genetic or chemical perturbations. However, we acknowledge that these are early attempts to model complex and dynamic biological systems, and future research with larger and more diverse datasets will improve performance. For instance, we are limited by current datasets that focus on a few cancer cell lines, which could introduce bias and may not fully represent normal physiology. Furthermore, while our method enables interpolation between cell states, the biological validity of these interpolations remains unverified; establishing their plausibility will require future work involving ground-truth data and experimental validation. Despite these limitations, CellFlux bridges machine learning and cellular biology, enabling new frontiers in virtual cell modeling, drug discovery, and systems biology research with broad implications for science and medicine.",
+  "query_input": {
+    "scenario": "Batch-effect correction in high-throughput microscopy",
+    "issue": "Manifold distortion propagates technical artifacts, undermining image comparability",
+    "hazard": [
+      "Straight-line flow matching interpolations can deviate from the biological data manifold, generating morphologically implausible perturbation trajectories."
+    ],
+    "exposure": [
+      "Bioimage analysts applying flow-matching to normalize microscopy batches"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Bioimage analysts lack automated manifold-conformity checks to detect morphologically implausible flow-matching outputs during batch correction.",
+    "impact": "Batch-normalized images carry hidden artifacts, generating spurious perturbation signals and misleading biological conclusions.",
+    "dose_response": "Straight-line flow matching interpolations deviating from the biological data manifold, when applied by bioimage analysts to normalize microscopy batches without automated manifold-conformity checks, produce implausible batch-normalized images with hidden artifacts, generating spurious perturbation signals and misleading biological conclusions."
+  },
+  "reference": {
+    "dose_response": [
+      "Straight-line flow matching producing implausible images enables bioimage analysts to inject artifacts in batch correction, leading to systematic errors and compromised reproducibility."
+    ],
+    "vulnerability": [
+      "Analysts assume flow-matching completely removes batch effects without verifying biological consistency",
+      "Lack of microscopy-specific benchmarks for AI-based batch correction methods"
+    ],
+    "impact": [
+      "Systematic errors from distorted images corrupt cross-study biological conclusions",
+      "Artifacts in corrected images mislead downstream analyses in public repositories",
+      "Compromised reproducibility of high-throughput microscopy-based phenotypic screens"
+    ]
+  }
+}

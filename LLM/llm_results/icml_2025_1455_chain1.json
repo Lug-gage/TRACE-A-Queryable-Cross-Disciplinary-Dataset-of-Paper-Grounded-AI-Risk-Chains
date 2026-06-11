@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_1455",
+  "chain_index": 1,
+  "title": "EgoPrivacy What Your First-Person Camera Says About You",
+  "abstract": "While the rapid proliferation of wearable cameras has raised significant concerns about egocentric video privacy, prior work has largely overlooked the unique privacy threats posed to the camera wearer. This work investigates the core question: How much privacy information about the camera wearer can be inferred from their firstperson view videos? We introduce EgoPrivacy, the first large-scale benchmark for comprehensive evaluation of privacy risks in egocentric vision. EgoPrivacy covers three types of privacy (demographic, individual, and situational) defining seven tasks that aim to recover private information ranging from fine-grained (e.g., wearer’s identity) to coarse-grained (e.g., age group). To further emphasize the privacy threats inherent to egocentric vision, we propose Retrieval-Augmented Attack, a novel attack strategy that leverages egoto-exo retrieval from an external pool of exocentric videos to boost the effectiveness of demographic privacy attacks. An extensive comparison of the different attacks possible under all threat models is presented, showing that private information of the wearer is highly susceptible to leakage. For instance, our findings indicate that foundation models can effectively compromise wearer privacy even in zero-shot settings by recovering attributes such as identity, scene, gender, and race with 70-80% accuracy. Our code and data are available at https://github.com/ williamium3000/ego-privacy.",
+  "impact": "This research reveals a significant vulnerability in wearable camera systems, demonstrating that egocentric privacy attacks can be effectively executed even using readily available, unmodified models. Although the introduced privacy attack methods, such as RAA, are designed as red-teaming instruments aimed at enhancing privacy defenses, there exists a concerning potential for their misuse in unauthorized mass surveillance. Consequently, our findings highlight an urgent need for the development and implementation of robust privacy safeguards and proactive intervention mechanisms to mitigate risks associated with wearable technology. Furthermore, as EgoPrivacy builds upon Ego-Exo4D and Charades-Ego, it inherits their imbalances in geographic, gender, ethnic, and age representation, which raise concerns about the fairness problem. This emphasizes the need for future efforts to curate more equitable datasets in egocentric vision and privacy research, which will be the next step of our work.",
+  "query_input": {
+    "scenario": "Wearer navigating urban environment with wearable camera",
+    "issue": "Ego video linked with public street surveillance exposes wearer's trajectory and identity.",
+    "hazard": [
+      "Retrieval-augmented cross-view video models enable inference of wearer's personal attributes (identity, demographics, location, behavior) from egocentric footage by linking to exocentric video data."
+    ],
+    "exposure": [
+      "Wearers of body cameras or smart glasses in public spaces"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Wearers cannot prevent linkage of their egocentric video with exocentric surveillance, leaving personal attributes exposed to inference.",
+    "impact": "Unauthorized exposure of wearer identity, demographics, and movements enables covert tracking, profiling, and loss of anonymity.",
+    "dose_response": "Retrieval-augmented cross-view video models, through public body camera or smart glasses wear, trigger wearers' inability to prevent egocentric-exocentric video linkage, exposing personal attributes, leading to unauthorized identity, demographic, and movement exposure enabling covert tracking, profiling, and anonymity loss."
+  },
+  "reference": {
+    "dose_response": [
+      "Ego video from wearable cameras, linked with public surveillance via cross-view retrieval, reveals trajectory and identity, causing unauthorized tracking, harassment, and chilling effects on beneficial camera use."
+    ],
+    "vulnerability": [
+      "Ubiquitous public surveillance cameras provide exo-video for trajectory linking.",
+      "Ego video captures time-stamped visual clues enabling precise trajectory mapping.",
+      "Lack of legal prohibition on cross-referencing ego and CCTV video for personal tracking."
+    ],
+    "impact": [
+      "Unauthorized tracking enables stalking or harassment of wearer in real time.",
+      "Chilling effect on use of wearable cameras undermines personal safety applications.",
+      "Societal trust erosion in smart city technologies due to perceived mass surveillance."
+    ]
+  }
+}

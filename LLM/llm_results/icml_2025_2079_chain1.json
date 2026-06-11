@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_2079",
+  "chain_index": 1,
+  "title": "Fragments to Facts Partial-Information Fragment Inference from LLMs",
+  "abstract": "Large language models (LLMs) can leak sensitive training data through memorization and membership inference attacks. Prior work has primarily focused on strong adversarial assumptions, including attacker access to entire samples or long, ordered prefixes, leaving open the question of how vulnerable LLMs are when adversaries have only partial, unordered sample information. For example, if an attacker knows a patient has “hypertension,” under what conditions can they query a model fine-tuned on patient data to learn the patient also has “osteoarthritis?” In this paper, we introduce a more general threat model under this weaker assumption and show that fine-tuned LLMs are susceptible to these fragment-specific extraction attacks. To systematically investigate these attacks, we propose two data-blind methods: (1) a likelihood ratio attack inspired by methods from membership inference, and (2) a novel approach, PRISM, which regularizes the ratio by leveraging an external prior. Using examples from medical and legal settings, we show that both methods are competitive with a data-aware baseline classifier that assumes access to labeled indistribution data, underscoring their robustness.",
+  "impact": "Our work advances the science of LLM privacy attacks by introducing a new threat model and two novel attacks on chat-based language models, pointing to the vulnerabilities embedded in an increasingly common form of digital infrastructure. The intended impact of this research is to equip organizations and individuals training language models with a better understanding of their vulnerabilities, and to advance the knowledge available to the research community in producing effective methods to circumvent these attacks. We acknowledge that our methods may equip real-world bad actors with the ability to draw private information from publicly available LLMs. However, we suggest that forewarned is forearmed: these vulnerabilities likely already exist in many production language models, and our work can help responsible organizations to prepare an appropriate defense.",
+  "query_input": {
+    "scenario": "Fine-tuned legal LLM for document analysis",
+    "issue": "Fragment inference leaks confidential legal strategy or client details.",
+    "hazard": [
+      "Fine-tuned LLMs leak training data fragments via membership inference attacks."
+    ],
+    "exposure": [
+      "Lawyers and clients relying on AI-powered legal research tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on fine-tuned LLMs trained on confidential legal data, without safeguards against membership leakage, enables fragment extraction from queries.",
+    "impact": "Exposed confidential legal strategy and client details, causing case compromise, loss of attorney-client privilege, and reputational damage.",
+    "dose_response": "Through lawyers' reliance on AI legal tools, fine-tuned LLMs leaking training fragments via membership inference triggers unsafeguarded reliance on confidential-data LLMs, enabling fragment extraction, leading to exposed legal strategy, case compromise, and reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Fine-tuned legal LLMs leak confidential strategies via membership inference, exposing lawyers and clients to case outcome undermining, malpractice liability, and reduced trust in legal AI."
+    ],
+    "vulnerability": [
+      "Fine-tuned LLMs memorize legal documents, enabling extraction of confidential attorney-client communications or case strategies.",
+      "Lack of robust data sanitization and fine-tuning controls in legal AI tools increases leakage risks."
+    ],
+    "impact": [
+      "Exposure of sensitive legal strategies undermines case outcomes and violates attorney-client privilege.",
+      "Law firms face malpractice lawsuits, loss of client trust, and regulatory sanctions.",
+      "Reduced willingness of clients to share candid information with legal AI systems."
+    ]
+  }
+}

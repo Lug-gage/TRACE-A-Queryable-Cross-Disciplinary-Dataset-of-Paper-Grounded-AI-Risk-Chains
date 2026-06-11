@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2431",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Only covers absence of security auditing, missing the developers' trust component from the reference.",
+    "reference": "Developers' trust in LLM-generated code and absence of security auditing prior to production deployment.",
+    "generated": "Insufficient security auditing practices for AI-generated code enable exploitable vulnerabilities to reach production."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Data theft covers the data breach damage type, but the affected party (customers and their PII/financial records) is not specified.",
+    "reference": "Data breaches exposing customer PII and financial records.",
+    "generated": "Widespread data theft and server compromise across production web services via remote injection attacks."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal chain: LLM-generated vulnerabilities, when deployed without auditing, reach production and enable remote attacks leading to data theft and server compromise.",
+    "reference": "LLM code generation produces exploitable vulnerabilities, which when deployed without auditing exposes systems to remote attacks, leading to data breaches and server compromise.",
+    "generated": "LLM-based backend code generation producing exploitable security vulnerabilities, through deployment without thorough security auditing, triggers insufficient auditing practices allowing vulnerabilities in production, leading to widespread data theft and server compromise via remote injection attacks."
+  }
+}

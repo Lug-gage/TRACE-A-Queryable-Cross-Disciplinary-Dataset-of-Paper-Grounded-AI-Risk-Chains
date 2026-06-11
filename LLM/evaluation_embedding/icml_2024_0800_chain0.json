@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0800",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6845,
+    "reference": "High public trust in broadcast news and low awareness of AI editing increase susceptibility to misinformation.",
+    "generated": "Audiences' trust in broadcast media and inability to detect subtle semantic alterations in speech content."
+  },
+  "impact": {
+    "similarity": 0.7138,
+    "reference": "Misinformation from altered clips erodes institutional trust and distorts public discourse.",
+    "generated": "Public misinformation spreads, distorting discourse and eroding trust in broadcast news."
+  },
+  "dose_response": {
+    "similarity": 0.9013,
+    "reference": "Instruction-following speech editing’s misinterpretation leads to semantic edits that inadvertently alter news meaning, exposing audiences to misinformation, which erodes institutional trust and distorts discourse.",
+    "generated": "Instruction-following speech editing misinterpretation producing mismatched semantic edits, through broadcast news consumption, triggers audience trust and inability to detect subtle alterations, leading to misinformation spreading, distorting discourse and eroding trust."
+  }
+}

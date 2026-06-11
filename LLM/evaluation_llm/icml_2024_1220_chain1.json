@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1220",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated condition that evaluators rely on automated scores without independent verification captures the reference's sensitivity to metric-gaming masking true capability.",
+    "reference": "Evaluation pipelines overly reliant on static metrics are insensitive to metric-gaming, masking true model capability.",
+    "generated": "Evaluators rely on automated prompt scores as accurate capability measures without independent robustness verification."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Deployment of unreliable models matches overrated LLM deployment but omits safety-critical context and undetected failure incidents.",
+    "reference": "Evaluators deploy overrated LLMs in safety-critical contexts, increasing the likelihood of undetected failure incidents.",
+    "generated": "Inflated benchmark scores cause overestimation of LLM capabilities, leading to deployment of unreliable models and eroded evaluation trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal chain from unconstrained optimization to exploitative prompts and overestimation is present, but the final link to deployment in safety-critical contexts with undetected failures is missing.",
+    "reference": "Automated prompt optimization without robustness constraints enables metric-gaming, which in benchmark evaluation exposes evaluators trusting scores, leading to deployment of overrated LLMs in safety-critical contexts with undetected failures.",
+    "generated": "Automated prompt optimization surrogates maximizing task metrics without robustness constraints produce exploitative prompts that, when evaluators trust the resulting scores as accurate measures, trigger unverified reliance, leading to inflated benchmarks, overestimation of capabilities, and eroded trust."
+  }
+}

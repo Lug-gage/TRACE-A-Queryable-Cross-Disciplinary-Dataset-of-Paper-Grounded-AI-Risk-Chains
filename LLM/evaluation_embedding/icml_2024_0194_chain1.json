@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7623,
+    "reference": "Educators lack domain expertise to independently verify climate science claims in LLM-evaluated materials.",
+    "generated": "Educators and journalists lack domain expertise to independently verify climate claims, trusting evaluation scores that conflate fluency with factual accuracy."
+  },
+  "impact": {
+    "similarity": 0.7274,
+    "reference": "Systematic propagation of climate misconceptions through educational curricula across school systems.",
+    "generated": "Erroneous climate explanations spread through educational and media channels, misinforming students and the public, undermining climate literacy and action."
+  },
+  "dose_response": {
+    "similarity": 0.8375,
+    "reference": "Confusion of quality dimensions by LLM evaluators compromises multi-aspect evaluation reliability, which in the scenario of climate science explanations exposes educators and journalists to erroneous materials, leading to systematic propagation of climate misconceptions.",
+    "generated": "LLM evaluators confusing quality dimensions, through educators and journalists using these evaluations, triggers reliance on fluency-accuracy conflation due to domain gaps, spreading erroneous climate explanations that misinform students, the public, and undermine climate literacy and action."
+  }
+}

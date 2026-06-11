@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0199",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6066,
+    "reference": "Low health literacy combined with automation complacency makes users accept false negatives as truth.",
+    "generated": "Users' inability to critically evaluate multimodal evidence fosters over-trust in explainable automated flags, enabling acceptance of false negatives."
+  },
+  "impact": {
+    "similarity": 0.6942,
+    "reference": "Harmful health misinformation spreads unchallenged, leading to vaccine hesitancy and risky health behaviors.",
+    "generated": "Unchecked propagation of harmful health misinformation causes preventable illness, treatment avoidance, and strain on public health systems."
+  },
+  "dose_response": {
+    "similarity": 0.8123,
+    "reference": "Explainable yet erroneous fact-checking outputs create false credibility, which with low health literacy and automation complacency leads social media users to accept false negatives, allowing harmful health misinformation to spread.",
+    "generated": "Explainable yet erroneous multimodal fact-checking outputs, through social media users relying on automated health claim flags, trigger inability to critically evaluate evidence, fostering over-trust and acceptance of false negatives, leading to unchecked harmful health misinformation causing preventable illness and public health strain."
+  }
+}

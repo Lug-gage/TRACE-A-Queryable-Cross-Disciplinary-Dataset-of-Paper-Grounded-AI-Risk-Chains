@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_1655",
+  "chain_index": 0,
+  "title": "Rényi Pufferfish Privacy General Additive Noise Mechanisms and Privacy Amplification by Iteration via Shift R",
+  "abstract": "Pufferfish privacy is a flexible generalization of differential privacy that allows to model arbitrary secrets and adversary’s prior knowledge about the data. Unfortunately, designing general and tractable Pufferfish mechanisms that do not compromise utility is challenging. Furthermore, this framework does not provide the composition guarantees needed for a direct use in iterative machine learning algorithms. To mitigate these issues, we introduce a R ́enyi divergence-based variant of Pufferfish and show that it allows us to extend the applicability of the Pufferfish framework. We first generalize the Wasserstein mechanism to cover a wide range of noise distributions and introduce several ways to improve its utility. Finally, as an alternative to composition, we prove privacy amplification results for contractive noisy iterations and showcase the first use of Pufferfish in private convex optimization. A common ingredient underlying our results is the use and extension of shift reduction lemmas.",
+  "impact": "This paper presents work whose goal is to advance privacy in machine learning, offering tools to make it more secure. We provide methods to protect specific types of secrets and to manage correlations in datasets, which are frequently found in practice. Properly designed Pufferfish instantiations can provide greater utility than usual Group Differential Privacy mechanisms. However, the data curator must carefully design its Pufferfish instantiation in order to ensure adequate robust privacy protection.",
+  "query_input": {
+    "scenario": "Deployment of DP-SGD for private training of medical imaging classifiers",
+    "issue": "Noise-induced degradation of model accuracy and reliability in clinical decision-making",
+    "hazard": [
+      "Addition of calibrated noise to gradients during iterative optimization to satisfy differential privacy guarantees"
+    ],
+    "exposure": [
+      "Radiologists and patients relying on DP-trained diagnostic models"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists depend on model accuracy for clinical decisions, with limited ability to detect noise-induced errors",
+    "impact": "Misdiagnoses from inaccurate model outputs lead to inappropriate treatments, patient harm, and erosion of trust in AI diagnostics",
+    "dose_response": "Addition of calibrated noise to gradients to satisfy differential privacy, through radiologists and patients relying on DP-trained diagnostic models, triggers reliance on accuracy with limited noise-error detection, leading to misdiagnoses, inappropriate treatments, patient harm, and erosion of trust in AI diagnostics."
+  },
+  "reference": {
+    "dose_response": [
+      "Calibrated noise added to gradients in DP-SGD obscures rare disease patterns, making radiologists and patients reliant on inaccurate diagnostic models, leading to missed diagnoses and health disparities."
+    ],
+    "vulnerability": [
+      "Noise from DP-SGD obscures rare disease patterns, increasing false negatives in underrepresented groups.",
+      "Clinicians overtrusting DP-trained outputs without verification overlook algorithmic failures."
+    ],
+    "impact": [
+      "Missed or incorrect diagnoses for patients with atypical presentations or minority demographics.",
+      "Delayed treatment and adverse health outcomes, widening healthcare disparities.",
+      "Erosion of trust in AI diagnostics, slowing clinical adoption of privacy-preserving tools."
+    ]
+  }
+}

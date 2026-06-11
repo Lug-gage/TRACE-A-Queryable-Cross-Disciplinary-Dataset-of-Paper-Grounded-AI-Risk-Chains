@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_2111",
+  "chain_index": 1,
+  "title": "The Stronger the Diffusion Model, the Easier the Backdoor Data Poisoning to Induce Copyright BreachesWithout",
+  "abstract": "The commercialization of text-to-image diffusion models (DMs) brings forth potential copyright concerns. Despite numerous attempts to protect DMs from copyright issues, the vulnerabilities of these solutions are underexplored. In this study, we formalized the Copyright Infringement Attack on generative AI models and proposed a backdoor attack method, SilentBadDiffusion, to induce copyright infringement without requiring access to or control over training processes. Our method strategically embeds connections between pieces of copyrighted information and text references in poisoning data while carefully dispersing that information, making the poisoning data inconspicuous when integrated into a clean dataset. Our experiments show the stealth and efficacy of the poisoning data. When given specific text prompts, DMs trained with a poisoning ratio of 0.20% can produce copyrighted images. Additionally, the results reveal that the more sophisticated the DMs are, the easier the success of the attack becomes. These findings underline potential pitfalls in the prevailing copyright protection strategies and underscore the necessity for increased scrutiny to prevent the misuse of DMs. Github link: https://github.com/ haonan3/SilentBadDiffusion.",
+  "impact": "The main objective of this work is to raise awareness about the potential pitfalls of copyright protection grounded in copyright law. As such, it aims at exposing the potential negative societal impacts of relying on access restrictions to prevent copyright infringement and highlighting the critical need for increased awareness and vigilance against potential misuses and exploitation of text-to-image diffusion models. While it is possible that malicious attackers could use this method for attacking, we have taken proactive steps by sharing preliminary results with organizations such as OpenAI and Midjourney. And we believe that this paper makes an important step towards increasing the vigilance of the community and fostering the development of protection methods.",
+  "query_input": {
+    "scenario": "Integration of poisoned generative model into downstream creative workflows",
+    "issue": "Unintentional copyright infringement via triggered outputs in commercial design pipelines",
+    "hazard": [
+      "Backdoor data poisoning of text-to-image diffusion models via stealthy poisoned training samples that create triggered associations between benign text prompts and unintended visual content."
+    ],
+    "exposure": [
+      "Designers and content creators using AI-assisted image generation tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Designers lack detection tools for poisoned models and inherently trust AI-generated outputs as original, safe-to-use content.",
+    "impact": "Unknowing incorporation of copyrighted images triggers legal action, financial penalties, and loss of client and market trust.",
+    "dose_response": "Backdoor data poisoning that creates trigger associations in diffusion models, through designers' use, triggers their lack of detection and trust, leading to unknowing copyright infringement, legal penalties, and lost client and market trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Stealthy poisoned training samples create triggered associations, which in downstream creative workflows expose designers to AI-generated infringements, leading to legal liability and devaluation of original work."
+    ],
+    "vulnerability": [
+      "Automated design pipelines lack human verification steps for AI-generated assets.",
+      "Creative professionals over-rely on AI outputs due to time pressure and efficiency demands.",
+      "Weak copyright detection tools fail to identify AI-generated infringements from poisoned models."
+    ],
+    "impact": [
+      "Legal liability and financial losses for design firms using infringing AI outputs.",
+      "Devaluation of original human creative work due to proliferation of AI-generated copies.",
+      "Chilling effect on AI adoption in creative industries due to infringement risks."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1807",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4503,
+    "reference": "Institutional reliance on error-prone probabilistic device graphs without ground-truth validation.",
+    "generated": "Product managers rely on standard A/B estimators that are blind to cross-device identity noise, with no independent verification step."
+  },
+  "impact": {
+    "similarity": 0.6402,
+    "reference": "Product decisions based on biased GATE lead to feature rollouts that harm user experience and revenue.",
+    "generated": "Misguided feature launches degrade user satisfaction and waste engineering resources."
+  },
+  "dose_response": {
+    "similarity": 0.8589,
+    "reference": "Uncertainty propagation from cross-device identity graphs enables biased GATEs, which in online A/B tests with cross-device identity resolution exposes product managers to misattributed exposures, leading to feature rollouts that harm user experience and revenue.",
+    "generated": "Cross-device identity graph uncertainty yielding biased GATEs, through product managers using A/B test results, triggers reliance on noise-blind standard estimators, leading to misguided feature launches that degrade user satisfaction and waste engineering resources."
+  }
+}

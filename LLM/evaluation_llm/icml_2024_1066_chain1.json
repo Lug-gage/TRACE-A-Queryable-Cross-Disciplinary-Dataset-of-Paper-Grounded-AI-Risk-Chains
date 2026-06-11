@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1066",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Over-reliance on proxy models and neglect of experimental validation match, but the reference’s specific sensitivity (overinterpreting proxy improvements as genuine molecular quality) is replaced by inability to detect synthetic inaccessibility.",
+    "reference": "Teams overinterpret model-proxy improvements as genuine molecular quality, neglecting wet-lab validation.",
+    "generated": "Over-reliance on proxy property models without experimental validation leaves teams unable to detect synthetically inaccessible compounds."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Resource waste and timeline delay are present, but the reference’s damage type of late-stage failures from poor pharmacokinetics or toxicity is missing.",
+    "reference": "Late-stage failures from poor pharmacokinetics or toxicity, escalating costs and prolonging development timelines.",
+    "generated": "Resources are wasted on chemically invalid candidates, delaying or derailing drug discovery efforts."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal path from fragment assembly to over-reliance on proxy models without wet-lab validation is similar, but the generated arc substitutes missed synthetic accessibility for chemically invalid molecules and omits the downstream late-stage pharmacokinetic/toxicity failures.",
+    "reference": "Goal-aware fragment assembly can generate molecules that appear promising but are chemically invalid, and when drug discovery teams prioritize these proxy-optimized compounds without wet-lab validation, it causes late-stage failures from poor pharmacokinetics or toxicity.",
+    "generated": "Goal-aware fragment assembly with dynamic vocabulary optimization, through drug discovery teams prioritizing in silico property predictions, triggers over-reliance on proxy models that misses synthetically inaccessible compounds, leading to wasted resources on chemically invalid candidates and delayed drug discovery."
+  }
+}

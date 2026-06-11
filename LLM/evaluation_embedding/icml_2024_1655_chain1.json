@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1655",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5939,
+    "reference": "Approximate Langevin dynamics leave residual influence of deleted data in model weights.",
+    "generated": "Noise-based unlearning only guarantees bounded information leakage, not complete removal, leaving model parameters correlated with deleted users' data."
+  },
+  "impact": {
+    "similarity": 0.523,
+    "reference": "Re-identification of individuals from data that should be deleted.",
+    "generated": "Unauthorized extraction of users' personal data from the model, violating the right to be forgotten and causing privacy breaches."
+  },
+  "dose_response": {
+    "similarity": 0.7423,
+    "reference": "Noise-based gradient updates in Langevin unlearning leave residual data traces, enabling adversaries to re-identify users from supposedly erased recommender system records.",
+    "generated": "Calibrated noise added to gradients for differential privacy, when erasing users' data from recommender systems, triggers incomplete removal leaving residual correlations, leading to unauthorized extraction of personal data, violating the right to be forgotten."
+  }
+}

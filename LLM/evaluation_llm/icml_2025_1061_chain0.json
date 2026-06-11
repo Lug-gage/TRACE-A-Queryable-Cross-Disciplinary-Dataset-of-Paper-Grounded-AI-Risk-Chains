@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1061",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated highlights clinicians' lack of verification leading to omission, while reference is about model quantization amplifying majority features; both involve omission of diagnostic signals for underrepresented groups, but the sensitivity condition is different.",
+    "reference": "Model quantization amplifies reliance on majority features, masking diagnostic signals for rare demographic groups.",
+    "generated": "Clinicians lack independent verification of AI outputs for underrepresented subgroups, enabling silent omission of critical diagnostic features."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (minority patients) and damage type (delayed care) match delayed medical interventions.",
+    "reference": "Increased false negatives for minority patients, leading to delayed or incorrect medical interventions.",
+    "generated": "Systematic misdiagnosis and delayed care for minority patients, worsening health disparities and causing preventable harm."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc inserts clinicians' lack of verification as an intermediate step, not present in the reference's direct causal chain from feature suppression to false negatives and health gaps.",
+    "reference": "Quantization-aware training flatter minima suppress critical minority features, causing AI diagnostics in demographically skewed settings to increase false negatives and widen health outcome gaps.",
+    "generated": "Flatter minima from quantization-aware training suppress critical minority features, through demographically skewed AI diagnostic tools, triggers clinicians' lack of verification for underrepresented subgroups, enabling silent omission and leading to systematic misdiagnosis, delayed care, and widened health disparities."
+  }
+}

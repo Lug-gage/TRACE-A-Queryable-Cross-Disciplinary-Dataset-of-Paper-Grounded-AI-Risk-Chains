@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 2,
+  "title": "Correlated Errors in Large Language Models",
+  "abstract": "Diversity in training data, architecture, and providers is assumed to mitigate homogeneity in LLMs. However, we lack empirical evidence on whether different LLMs differ meaningfully. We conduct a large-scale empirical evaluation on over 350 LLMs overall, using two popular leaderboards and a resume-screening task. We find substantial correlation in model errors-on one leaderboard dataset, models agree 60% of the time when both models err. We identify factors driving model correlation, including shared architectures and providers. Crucially, however, larger and more accurate models have highly correlated errors, even with distinct architectures and providers. Finally, we show the effects of correlation in two downstream tasks: LLM-as-judge evaluation and hiring-the latter reflecting theoretical predictions regarding algorithmic monoculture.",
+  "impact": "We demonstrated that LLMs exhibit large amounts of correlation, even in how they err. This has implications for high-stakes settings such as hiring, where there is risk that applicants are systematically screened out of opportunities, and in LLM-as-judge settings, where models may inflate the estimated performance of other models. While our analysis is limited to a subset of tasks on which homogeneity may be a concern, it serves as a foundation for further evaluation and monitoring of the LLM ecosystem.",
+  "query_input": {
+    "scenario": "Leaderboard ranking of LLMs using benchmark prompts",
+    "issue": "Spurious correlations across models distort performance rankings, misleading model selection.",
+    "hazard": [
+      "Correlated errors in LLM predictions cause systematic failure alignment across diverse models and evaluation tasks."
+    ],
+    "exposure": [
+      "Model developers consulting LLM leaderboards"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers assume benchmark rankings reflect independent model quality, lacking visibility into correlated error structures across models.",
+    "impact": "Distorted rankings lead to selection of erroneously correlated models, amplifying biased decisions in hiring and evaluation tasks.",
+    "dose_response": "Correlated LLM prediction errors causing systematic failure alignment across models and tasks, through developers consulting leaderboards, triggers assumption of independent quality without visibility into error correlations, leading to distorted rankings, selection of erroneously correlated models, and amplified biased hiring/evaluation decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Correlated errors cause systematic failure alignment, which in leaderboard consulting distorts rankings, causing selection of suboptimal models with safety risks."
+    ],
+    "vulnerability": [
+      "Leaderboard reliance on identical benchmarks allows correlated overfitting errors to skew model rankings."
+    ],
+    "impact": [
+      "Suboptimal models chosen for critical applications, leading to poor performance and safety risks."
+    ]
+  }
+}

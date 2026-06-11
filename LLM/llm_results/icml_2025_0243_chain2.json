@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 2,
+  "title": "Dissecting Submission Limit in Desk-Rejections A Mathematical Analysis of Fairness in AI Conference Policies",
+  "abstract": "As AI research surges in both impact and volume, conferences have imposed submission limits to maintain paper quality and alleviate organizational pressure. In this work, we examine the fairness of desk-rejection systems under submission limits and reveal that existing practices can result in substantial inequities. Specifically, we formally define the paper submission limit problem and identify a critical dilemma: when the number of authors exceeds three, it becomes impossible to reject papers solely based on excessive submissions without negatively impacting innocent authors. Thus, this issue may unfairly affect early-career researchers, as their submissions may be penalized due to co-authors with significantly higher submission counts, while senior researchers with numerous papers face minimal consequences. To address this, we propose an optimization-based fairness-aware desk-rejection mechanism and formally define two fairness metrics: worst-case fairness and average fairness. We prove that optimizing worst-case fairness is NPhard, whereas average fairness can be efficiently optimized via linear programming. Through case studies, we demonstrate that our proposed system ensures greater equity than existing methods, including those used in CVPR 2025, offering a more socially just approach to managing excessive submissions in AI conferences.",
+  "impact": "This paper seeks to advance fairness in desk-rejection systems employed by top AI conferences. By formally defining the paper submission limit problem, we demonstrate that an ideal system that rejects papers solely based on excessive submissions without negatively impacting innocent authors is mathematically impossible when multiple authors are involved. To address this, we propose a framework that optimizes desk-rejection fairness based on two different metrics, ensuring that early-career researchers with fewer submissions are less likely to face disproportionate setbacks due to co-authors’ submission behavior. While introducing fairness may slightly impact the acceptance rates of senior researchers with a large number of submissions, our approach does not aim to diminish anyone’s research output. Instead, it seeks to balance opportunity across career stages, thereby advancing social justice and contributing to a fairer and more inclusive ML research ecosystem.",
+  "query_input": {
+    "scenario": "Dynamic fair allocation mechanism for iterative desk-rejection across submission rounds",
+    "issue": "Incentive design may favor well-resourced groups, exacerbating inequity.",
+    "hazard": [
+      "Optimization-based desk-rejection mechanisms introduce new fairness harms by trading off conflicting definitions under model uncertainty."
+    ],
+    "exposure": [
+      "Researchers from low-resource labs who cannot game the system."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Low-resource labs lack the social capital and insider knowledge to anticipate or adapt to the mechanism's shifting fairness tradeoffs.",
+    "impact": "Systematic desk-rejection of papers from low-resource labs worsens underrepresentation in AI venues and stalls early-career researcher advancement.",
+    "dose_response": "Optimization-based desk-rejection mechanisms’ fairness tradeoffs under model uncertainty, through researchers from low-resource labs unable to game the system, trigger lack of social capital and insider knowledge to anticipate shifting tradeoffs, causing systematic desk-rejection that worsens underrepresentation and stalls early-career advancement."
+  },
+  "reference": {
+    "dose_response": [
+      "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable resource-rich labs to exploit iterative rules, which in the dynamic allocation scenario exposes low-resource researchers, leading to a Matthew effect compounding inequity."
+    ],
+    "vulnerability": [
+      "Resource-rich labs learn to exploit iterative rules, accumulating strategic advantage.",
+      "Low-resource researchers lack information and computational resources to adapt, worsening their outcomes."
+    ],
+    "impact": [
+      "Inequity compounds as early-round winners dominate subsequent rounds, creating a Matthew effect.",
+      "Conference loses credibility among underrepresented communities, reducing diversity of submissions."
+    ]
+  }
+}

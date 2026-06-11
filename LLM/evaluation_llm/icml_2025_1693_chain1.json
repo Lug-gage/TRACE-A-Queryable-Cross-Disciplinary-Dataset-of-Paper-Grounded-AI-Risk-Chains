@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1693",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures clinicians' failure to detect misalignment between visual and textual evidence, matching the reference's 'ignoring potential visual-textual misalignment' even if it adds specific causes (time pressure, automation bias).",
+    "reference": "Clinicians use coherent-sounding concept maps as cognitive crutch, ignoring potential visual-textual misalignment.",
+    "generated": "Clinicians' inability to detect inconsistencies between visual explanations and underlying images due to time pressure and automation bias."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated covers both the damage type (diagnostic errors/erroneous differential diagnosis) and affected party (patients) from the reference, even extending to inappropriate treatments and trust erosion.",
+    "reference": "Erroneous differential diagnosis from falsely attributed clinical concepts.",
+    "generated": "Diagnostic errors and inappropriate treatments from plausible but incorrect explanations, harming patients and eroding trust in AI."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated causal arc preserves the same logic: inconsistent model justifications lead to clinician misinterpretation (false concept-attribution maps or inability to detect mismatches) and result in diagnostic errors and patient harm, consistent with the reference's chain.",
+    "reference": "Joint segmentation and rationale generation models producing inconsistent textual justifications enable false concept-attribution maps, which in clinical concept grounding expose clinicians to erroneous differential diagnoses, leading to unnecessary follow-up imaging or invasive tests.",
+    "generated": "Segmentation-rationale models producing visually grounded but possibly inconsistent justifications, through clinician review of concept-attribution maps, trigger inability to detect mismatches under time pressure and automation bias, leading to diagnostic errors from misleading explanations, harming patients and eroding trust."
+  }
+}

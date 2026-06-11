@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 1,
+  "title": "Learning Condensed Graph via Differentiable Atom Mapping for Reaction Yield Prediction",
+  "abstract": "Yield of chemical reactions generally depends on the activation barrier, i.e., the energy difference between the reactant and the transition state. Computing the transition state from the reactant and product graphs requires prior knowledge of the correct node alignment (i.e., atom mapping), which is not available in yield prediction datasets. In this work, we propose YIELDNET, a neural yield prediction model, which tackles these challenges. Here, we first approximate the atom mapping between the reactants and products using a differentiable node alignment network. We then use this approximate atom mapping to obtain a noisy realization of the condensed graph of reaction (CGR), which is a supergraph encompassing both the reactants and products. This CGR serves as a surrogate for the transition state graph structure. The CGR embeddings of different steps in a multi-step reaction are then passed into a transformer-guided reaction path encoder. Our experiments show that YIELDNET can predict the yield more accurately than the baselines. Furthermore, the model is trained only under the distant supervision of yield values, without requiring finegrained supervision of atom mapping.",
+  "impact": "This paper offers a valuable tool optimizing reaction yields. It can be used in prediction of yield when the datasets contain molecular graph structures. However, it is imperative to acknowledge the possibility of incorrect predictions by any yield prediction model, which demands human interventions. Additionally, misuse of the model may lead to predictions for undesirable compounds, potentially causing adverse societal consequences. Careful attention to ethical guidelines is paramount to ensure a responsible and positive impact on the model.",
+  "query_input": {
+    "scenario": "High-throughput reaction condition optimization",
+    "issue": "Model mispredicts optimal conditions because of biased activation barrier estimates from node misalignment.",
+    "hazard": [
+      "Differentiable node alignment in condensed reaction graphs may introduce systematic mapping errors leading to biased yield and activation barrier predictions."
+    ],
+    "exposure": [
+      "Process chemists scaling up industrial reactions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Process chemists lack ground-truth atom mappings to audit model outputs, relying on biased activation barrier estimates for scale-up decisions.",
+    "impact": "Suboptimal reaction conditions adopted at industrial scale reduce yields and waste feedstock and energy.",
+    "dose_response": "Differentiable node alignment in condensed reaction graphs, through process chemists scaling up industrial reactions, triggers biased activation barrier estimates used for scale-up decisions due to missing ground-truth mappings, leading to suboptimal industrial conditions reducing yields and wasting feedstock and energy."
+  },
+  "reference": {
+    "dose_response": [
+      "Node alignment errors bias activation barrier predictions, which in high-throughput optimization causes process chemists to adopt unsafe conditions without verification, resulting in batch failures and safety incidents."
+    ],
+    "vulnerability": [
+      "Process chemists rely on AI-optimized conditions for scaling without confirming with kinetic studies.",
+      "Automated high-throughput systems amplify the effect of systematic errors across many runs.",
+      "Lack of institutional verification of AI-predicted activation barriers before costly scale-up."
+    ],
+    "impact": [
+      "Large-scale batch failures leading to significant financial loss and waste of raw materials.",
+      "Reputational damage to organization if AI-driven process development consistently underperforms.",
+      "Safety incidents from exothermic runaway or hazardous byproduct formation due to mispredicted conditions."
+    ]
+  }
+}

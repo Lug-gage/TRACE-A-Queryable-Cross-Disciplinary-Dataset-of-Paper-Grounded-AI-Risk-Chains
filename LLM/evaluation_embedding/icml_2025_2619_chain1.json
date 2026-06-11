@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2619",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4996,
+    "reference": "Viewers' low tolerance for uncanny jitter in avatars, lowering perceived creator credibility and content trustworthiness.",
+    "generated": "Automated generation pipelines lack real-time jitter detection, forcing creators to rely on flawed motion outputs without manual correction."
+  },
+  "impact": {
+    "similarity": 0.7086,
+    "reference": "Loss of viewer engagement and creator monetization, potentially driving users to alternative platforms.",
+    "generated": "Viewer disengagement and lost monetization as visually jittery avatars undermine content quality and creator credibility."
+  },
+  "dose_response": {
+    "similarity": 0.8242,
+    "reference": "Quantization errors cause visual jitter in avatar motions, exposing content creators and viewers to low-quality content that erodes trust, leading to loss of engagement and monetization.",
+    "generated": "Quantization errors in motion tokenization degrading physical plausibility and semantic consistency, through creators and viewers facing low-quality avatar motions, triggers automated generation pipelines lacking real-time jitter detection, forcing reliance on flawed outputs, leading to viewer disengagement and lost monetization."
+  }
+}

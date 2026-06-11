@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1302",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6976,
+    "reference": "Candidates not filtered by retrosynthetic feasibility advance to synthesis, consuming lab resources on impossible molecules.",
+    "generated": "Computational chemists lack automated synthetic feasibility filters, relying on diffusion-generated candidates without validation of synthesis rules."
+  },
+  "impact": {
+    "similarity": 0.764,
+    "reference": "Protracted lead optimization due to chasing unsynthesisable leads, increasing costs and project failure risk.",
+    "generated": "Wasted experimental resources synthesizing infeasible molecules, delaying lead optimization timelines."
+  },
+  "dose_response": {
+    "similarity": 0.9093,
+    "reference": "Non-autoregressive discrete diffusion with fragment remasking can generate unsynthesisable candidates, so when computational chemists optimize leads without retrosynthetic feasibility filters, protracted lead optimization increases costs and failure risk.",
+    "generated": "Non-autoregressive discrete diffusion with fragment remasking, generating chemically invalid structures, through computational chemists optimizing leads, triggers reliance on unvalidated candidates without synthetic feasibility filters, leading to wasted experimental resources synthesizing infeasible molecules and delayed lead optimization timelines."
+  }
+}

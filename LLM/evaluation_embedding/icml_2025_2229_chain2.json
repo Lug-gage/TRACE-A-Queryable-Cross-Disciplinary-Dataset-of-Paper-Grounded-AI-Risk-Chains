@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2229",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6966,
+    "reference": "Test suites are weak proxies for semantic correctness, especially in safety-critical logic.",
+    "generated": "Programmers rely on test suites as correctness oracles, which cannot detect semantically incorrect but plausible code."
+  },
+  "impact": {
+    "similarity": 0.587,
+    "reference": "Catastrophic failures in medical devices, autonomous vehicles, or avionics.",
+    "generated": "Safety-critical systems fail due to undetected semantic bugs, causing human injury, loss of life, and financial damage."
+  },
+  "dose_response": {
+    "similarity": 0.8893,
+    "reference": "LLM code agents' plausible but incorrect code, in iterative refinement exploration, exposes safety-critical software to subtle semantic errors, causing catastrophic failures.",
+    "generated": "LLM code agents producing plausible but incorrect code, through programmers using automated refinement loops for safety-critical software development, triggers reliance on test suites that cannot detect semantic bugs, leading to system failures causing injury, loss of life, and financial damage."
+  }
+}

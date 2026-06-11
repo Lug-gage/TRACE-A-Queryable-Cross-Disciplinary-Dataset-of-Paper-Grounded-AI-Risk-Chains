@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0012",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "uncontrolled log storage without access controls and unsanitized sensitive data (no redaction) is semantically present",
+    "reference": "Uncontrolled log storage lacks adequate access controls and sensitive data redaction.",
+    "generated": "Agent logs store unsanitized soliloquized tool outputs containing sensitive system configurations without access controls."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "attackers are empowered to exploit weaknesses leading to system compromise, covering both the affected party and damage type",
+    "reference": "Exposed vulnerability details empower attackers, accelerating exploit development and system compromise.",
+    "generated": "Disclosure of sensitive configurations lets adversaries exploit exact weaknesses, leading to system compromise."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "unsanitized tool outputs in logs disclose sensitive configurations, enabling adversaries to exploit and compromise systems",
+    "reference": "Verbose agent reasoning logs in vulnerability reporting leak sensitive configurations, exposing them to attackers who accelerate exploits.",
+    "generated": "LLM cybersecurity agent's unintended harmful actions, while security analysts generate vulnerability reports, log unsanitized soliloquized tool outputs without access controls, disclosing sensitive configurations that adversaries exploit to compromise systems."
+  }
+}

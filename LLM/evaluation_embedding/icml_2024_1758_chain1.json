@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3987,
+    "reference": "Causal treatment models ignoring social network confounders reinforce user preference homogeneity.",
+    "generated": "Users lack independent means to audit or challenge algorithmic curation, leaving them susceptible to unnoticed bias in recommendations."
+  },
+  "impact": {
+    "similarity": 0.7596,
+    "reference": "Filter bubbles amplify misinformation and polarization, reducing exposure to diverse content.",
+    "generated": "Reinforced filter bubbles entrench echo chambers, narrowing information diversity and amplifying societal polarization."
+  },
+  "dose_response": {
+    "similarity": 0.7037,
+    "reference": "Causal treatment models ignoring neighborhood interference in recommendations reinforce preference homogeneity, entrenching filter bubbles that amplify misinformation and polarization.",
+    "generated": "Misspecified causal models from observational data introduce confounding and distribution shifts through personalized recommendations on social media and e-commerce platforms, triggering users' inability to audit algorithmic curation, leading to reinforced filter bubbles that amplify polarization."
+  }
+}

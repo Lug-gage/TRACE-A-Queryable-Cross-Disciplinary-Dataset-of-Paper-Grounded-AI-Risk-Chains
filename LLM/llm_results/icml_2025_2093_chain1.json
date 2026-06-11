@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2093",
+  "chain_index": 1,
+  "title": "Disparate Conditional Prediction in Multiclass Classifiers",
+  "abstract": "We propose methods for auditing multiclass classifiers for fairness under multiclass equalized odds, by estimating the deviation from equalized odds when the classifier is not completely fair. We generalize to multiclass classifiers the measure of Disparate Conditional Prediction (DCP), originally suggested by Sabato & Yom-Tov (2020) for binary classifiers. DCP is defined as the fraction of the population for which the classifier predicts with conditional prediction probabilities that differ from the closest common baseline. We provide new local-optimization methods for estimating the multiclass DCPunder two different regimes, one in which the conditional confusion matrices for each protected sub-population are known, and one in which these cannot be estimated, for instance, because the classifier is inaccessible or because good-quality individual-level data is not available. These methods can be used to detect classifiers that likely treat a significant fraction of the population unfairly. Experiments demonstrate the accuracy of the methods. Code is provided at https://github.com/sivansabato/ DCPmulticlass.",
+  "impact": "This paper studies the auditing of classifiers for fairness in the sense of multiclass equalized odds. Identifying classifiers that may violate fairness criteria is an important task that can help advance societal desiderata. Nonetheless, such use must always consider the suitability of the fairness criterion to the specific classification task. In addition, in some cases the methods that we propose may provide loose bounds for the studied criterion. These cases can be identified by observing a large gap between the upper bound and the lower bound. In such cases, care must be taken when making operative decisions based on the results of the methods.",
+  "query_input": {
+    "scenario": "Content moderation with diverse annotator pools",
+    "issue": "Conditional prediction fairness scores vary with annotator demographics, causing inconsistent moderation fairness.",
+    "hazard": [
+      "Multiclass conditional prediction fairness auditing produces deviation estimates brittle to annotator composition, proxy attributes, and benchmark variability."
+    ],
+    "exposure": [
+      "Social media users whose content is flagged or promoted by audited moderation models"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Audited fairness measures fluctuate with annotator demographics, leaving users without stable defenses against biased moderation.",
+    "impact": "Content from specific demographics is systematically suppressed or amplified, distorting platform discourse and user representation.",
+    "dose_response": "Multiclass fairness auditing's brittle deviation estimates, through audited moderation of user content, trigger fairness-measure fluctuation with annotator demographics, leaving users defenseless, leading to systematic suppression or amplification of content from specific demographics, distorting platform discourse and representation."
+  },
+  "reference": {
+    "dose_response": [
+      "Brittle auditing to annotator composition introduces demographic labeling noise, destabilizing fairness metrics, which in content moderation exposes users to biased flagging, suppressing minority voices."
+    ],
+    "vulnerability": [
+      "Annotator pool composition introduces demographic-dependent labeling noise, destabilizing fairness estimates."
+    ],
+    "impact": [
+      "Inconsistent moderation suppresses minority voices and distorts public discourse online."
+    ]
+  }
+}

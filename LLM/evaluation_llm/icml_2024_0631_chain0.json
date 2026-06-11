@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0631",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes filter reliability issue rather than automation bias making users vulnerable to undetected content.",
+    "reference": "Over-reliance on automated moderation creates automation bias, making users more vulnerable to undetected harmful content.",
+    "generated": "Reliance on semantic output filters with no provable safety guarantees, leaving users defenseless against adversarial compositional evasion."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Psychological harm and platform trust erosion are covered, but radicalization is omitted and replaced by misinformation spread.",
+    "reference": "Exposure to hate speech and disinformation causes psychological harm, radicalization, and erosion of trust in the platform.",
+    "generated": "Harmful content dissemination causes user psychological harm, misinformation spread, and erosion of platform trust."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The causal arc is reversed: generated posits undecidability triggers reliance on filters, whereas reference states undecidability enables adversarial evasion of filters, which combined with automation bias leads to harm.",
+    "reference": "Semantic undecidability enabling adversarial evasion of output filters results in users encountering undetected harmful content, which, due to automation bias, causes psychological harm and trust erosion.",
+    "generated": "Semantic undecidability of compositional threats, through users encountering evasive harmful content, triggers reliance on unverifiable semantic filters, leaving users defenseless, leading to harmful content dissemination causing psychological harm, misinformation, and trust erosion."
+  }
+}

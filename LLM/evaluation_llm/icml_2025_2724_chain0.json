@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2724",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated highlights reliance without verification and lack of adversarial detection, whereas reference conditions are overreliance due to time pressure and limited alternative information sources.",
+    "reference": "Clinicians' overreliance on AI outputs due to time pressure and limited access to alternative information sources.",
+    "generated": "Clinicians' reliance on AI outputs without source verification and the retrieval system's lack of adversarial detection enable misinformation injection."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Patient harm from misleading suggestions is present; trust erosion is additional but does not detract from the core damage type and affected party.",
+    "reference": "Misdiagnosis and patient harm from erroneous AI-generated suggestions.",
+    "generated": "Misleading diagnostic suggestions cause incorrect treatments, harming patients and eroding trust in clinical AI systems."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc omits the retrieval of misinformation and exposure to misleading suggestions, replacing it with a direct trigger of unverified reliance and lack of detection, which is a different causal mechanism.",
+    "reference": "Adversarial poisoning enables stealthy misinformation retrieval, which in medical QA systems exposes clinicians relying on AI-assisted diagnosis to misleading suggestions, leading to misdiagnosis and patient harm.",
+    "generated": "Adversarial poisoning of RAG knowledge bases, through clinicians relying on AI-assisted diagnosis, triggers reliance on AI outputs without verification and lack of adversarial detection, leading to incorrect treatments, patient harm, and eroded trust in clinical AI."
+  }
+}

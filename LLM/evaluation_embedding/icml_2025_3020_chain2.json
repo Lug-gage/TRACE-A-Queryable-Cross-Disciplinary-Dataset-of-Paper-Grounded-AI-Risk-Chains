@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5138,
+    "reference": "Downstream developers blindly trust open-source pre-trained models, integrating poisoning into many applications.",
+    "generated": "Reliance on unverified public datasets for pre-training leaves organizations unable to detect or filter deliberately mismatched image-text pairs."
+  },
+  "impact": {
+    "similarity": 0.4347,
+    "reference": "Wide-scale deployment of misassociating VLMs erodes reliability in critical domains like education, search, etc.",
+    "generated": "Downstream vision-language models systematically confuse semantically similar concepts across all tasks, causing pervasive retrieval, answering, and decision errors."
+  },
+  "dose_response": {
+    "similarity": 0.6949,
+    "reference": "Poisoned datasets embed misassociations in pre-trained VLMs, which developers blindly deploy across critical applications, leading to wide-scale erosion of reliability through interconnected digital ecosystems.",
+    "generated": "A concept-level poisoning attack injecting misaligned image-text pairs into multimodal training data, through organizations pre-training on unverified public datasets, triggers undetectable mismatched pairs, leading to downstream VLMs systematically confusing similar concepts and causing pervasive retrieval, answering, and decision errors."
+  }
+}

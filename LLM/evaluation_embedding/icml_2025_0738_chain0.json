@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0738",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5703,
+    "reference": "Automated scoring on visible test cases creates incentives to optimize for passing those tests without ensuring general correctness.",
+    "generated": "The contest evaluation gap between public and hidden test cases leaves programmers unable to verify generalization of AI-generated code."
+  },
+  "impact": {
+    "similarity": 0.593,
+    "reference": "Loss of trust in competition fairness and proliferation of brittle, overfit code that fails hidden tests, misleading users.",
+    "generated": "Programmers suffer lower contest rankings and wasted effort when overfitted solutions fail hidden test evaluation."
+  },
+  "dose_response": {
+    "similarity": 0.6829,
+    "reference": "Overfitting to public test cases enables AI-generated code that passes visible tests but fails hidden ones, which in ranked contests exposes participants to unfair outcomes, leading to loss of trust and proliferation of brittle code.",
+    "generated": "RL-based code synthesis that overfits to finite execution feedback, when employed by programmers in ranked contests, exploits the gap between public and hidden test cases, leading to lower rankings and wasted effort from hidden test failures."
+  }
+}

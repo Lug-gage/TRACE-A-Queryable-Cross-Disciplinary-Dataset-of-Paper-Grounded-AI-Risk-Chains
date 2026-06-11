@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2269",
+  "chain_index": 1,
+  "title": "Fixing the Double Penalty in Data-Driven Weather Forecasting Through a Modified Spherical Harmonic Loss Functi",
+  "abstract": "Recent advancements in data-driven weather forecasting models have delivered deterministic models that outperform the leading operational forecast systems based on traditional, physics-based models. However, these data-driven models are typically trained with a mean squared error loss function, which causes smoothing of fine scales through a “double penalty” effect. We develop a simple, parameter-free modification to this loss function that avoids this problem by separating the loss attributable to decorrelation from the loss attributable to spectral amplitude errors. Finetuning the GraphCast model with this new loss function results in sharp deterministic weather forecasts, an increase of the model’s effective resolution from 1,250 km to 160 km, improvements to ensemble spread, and improvements to predictions of tropical cyclone strength and surface wind extremes.",
+  "impact": "Accurate weather forecasts are a vital public service, and its benefits are disproportionately concentrated in the extremes. Accurate forecasts of extreme weather such as tropical cyclones save lives. On one hand, this means that we should be eager to develop improvements to weather forecasting systems, but on the other hand it means that we should be very careful not to just “chase scores,” confusing what’s easy to calculate with what’s truly important. This work contributes to this field by introducing a way to make data-driven weather forecasting more realistic, with variability at moderate and fine scales that is much closer to reality. This improves various probabilistic scores and predictions of tropical cyclone intensity, but this is not a guarantee of complete physical plausibility. In particular, we have not yet shown that these forecasts are better-behaved “out of distribution,” such as when simulating possible future climate paths. Operational weather centres are very diligent about performing rigorous evaluation of models before making them operational, and we hope that this work can help ease the path towards the adoption of better-performing, data-driven forecasting systems in the near future.",
+  "query_input": {
+    "scenario": "Tropical cyclone intensity prediction using spectral loss function",
+    "issue": "Overly sharp cyclone core may produce unrealistic intensity estimates, misleading warning decisions.",
+    "hazard": [
+      "Double penalty spherical harmonic loss functions generate physically unrealistic high-resolution details that can degrade extreme event forecast reliability."
+    ],
+    "exposure": [
+      "Emergency planners preparing for landfall relying on forecast peak intensity"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Emergency planners' warning triggers are calibrated to forecast peak intensity, leaving no capacity to detect or discount unrealistic sharp cyclone features.",
+    "impact": "Misinformed evacuation and sheltering decisions increase unnecessary risk exposure and potential casualties along the coast.",
+    "dose_response": "Double penalty loss functions generate unrealistic cyclone details that, through planners' reliance on forecast peak intensity, trigger warning triggers calibrated to peak intensity with no capacity to detect unrealistic features, leading to misinformed decisions that increase risk exposure and casualties."
+  },
+  "reference": {
+    "dose_response": [
+      "Double penalty loss enables unrealistic high-resolution details, which in tropical cyclone intensity prediction causes over-reliance on sharp cores, leading to unnecessary evacuations and warning fatigue."
+    ],
+    "vulnerability": [
+      "Emergency planners’ reliance on precise intensity numbers without awareness that spectral loss can produce fictitious tight cores."
+    ],
+    "impact": [
+      "Evacuation orders based on overestimated intensity lead to unnecessary economic disruption and future warning fatigue."
+    ]
+  }
+}

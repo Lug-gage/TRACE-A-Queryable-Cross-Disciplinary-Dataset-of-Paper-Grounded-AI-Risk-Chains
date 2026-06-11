@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1649",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6713,
+    "reference": "Pose estimation models assume synthetic data is representative of all real-world human movements and body types.",
+    "generated": "Pose estimation developers lack robust validation methods for synthetic data, allowing biased samples to contaminate training."
+  },
+  "impact": {
+    "similarity": 0.6273,
+    "reference": "Increased error rates in motion analysis for users with disabilities or non-standard gaits, causing safety failures in assistive technologies.",
+    "generated": "Biased models misclassify or fail to detect underrepresented body movements, causing safety incidents and accessibility exclusion."
+  },
+  "dose_response": {
+    "similarity": 0.9218,
+    "reference": "Masked diffusion transformer-based pose-conditioned generation of biased synthetic images leads developers to train faulty pose estimation models, causing safety failures in assistive technologies and algorithmic bias against underrepresented gaits.",
+    "generated": "Masked diffusion transformer-based pose-conditioned generation of implausible or biased images, through developers training pose estimation models on synthetic data, triggers lack of robust validation, allowing contamination, leading to misclassification of underrepresented movements causing safety incidents and accessibility exclusion."
+  }
+}

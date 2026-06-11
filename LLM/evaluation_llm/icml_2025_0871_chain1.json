@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes over-reliance on AI without rare-disease expertise; generated describes inability to detect synthetic implausibilities due to scarce data, a related but distinct sensitivity condition.",
+    "reference": "Clinician over-reliance on AI diagnostic outputs without sufficient rare-disease expertise to detect errors.",
+    "generated": "Radiologists' and AI systems' inability to detect subtle synthetic anatomical implausibilities due to scarce real rare-disease reference data."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated mentions false-positive invasive procedures/anxiety and false-negative treatment delays worsening outcomes, capturing both affected party (patients) and damage types (delayed and incorrect treatment) from the reference.",
+    "reference": "Delayed or incorrect treatment for patients with rare diseases, worsening health outcomes.",
+    "generated": "False-positive diagnoses trigger unnecessary invasive procedures and anxiety; false-negative diagnoses delay critical treatment, worsening patient outcomes."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal chain from generated rare-disease samples to false results and harm is present, but reference has misrepresented images directly causing false positives/negatives, while generated inserts an inability-to-detect step, altering the direct causal logic.",
+    "reference": "Misrepresented rare-disease images cause false positives or negatives, which in AI-assisted screening exposes radiologists and patients to delayed or incorrect treatment.",
+    "generated": "Diffusion models generating out-of-distribution rare-disease samples, through AI-assisted screening of rare diseases, trigger radiologists' and AI systems' inability to detect subtle anatomical implausibilities from scarce reference data, leading to false-positive invasive procedures and false-negative treatment delays."
+  }
+}

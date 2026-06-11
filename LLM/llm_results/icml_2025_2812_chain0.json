@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2812",
+  "chain_index": 0,
+  "title": "Orthogonal Subspace Decomposition for Generalizable AI-Generated Image Detection",
+  "abstract": "Detecting AI-generated images (AIGIs), such as natural images or face images, has become increasingly important yet challenging. In this paper, we start from a new perspective to excavate the reason behind the failure generalization in AIGI detection, named the asymmetry phenomenon, where a naively trained detector tends to favor overfitting to the limited and monotonous fake patterns, causing the feature space to become highly constrained and low-ranked, which is proved seriously limiting the expressivity and generalization. One potential remedy is incorporating the pre-trained knowledge within the vision foundation models (higher-ranked) to expand the feature space, alleviating the model’s overfitting to fake. To this end, we employ Singular Value Decomposition (SVD) to decompose the original feature space into two orthogonal subspaces. By freezing the principal components and adapting only the remained components, we preserve the pre-trained knowledge while learning fake patterns. Compared to existing full-parameters and LoRA-based tuning methods, we explicitly ensure orthogonality, enabling the higher rank of the whole feature space, effectively minimizing overfitting and enhancing generalization. We finally identify a crucial insight: our method implicitly learns a vital prior that fakes are actually derived from the real, indicating a hierarchical relationship rather than independence. Modeling this prior, we believe, is essential for achieving superior generalization. Our codes are publicly available at GitHub.",
+  "impact": "This research advances application-driven machine learning by proposing a novel method for detecting AI-generated images. By effectively identifying deepfakes and curbing malicious uses of generative models, it holds significant potential for positive social impact. However, a possible negative outcome is the misuse of our method to enhance the realism of deepfake generators. To address this concern, we plan to implement measures like access control. Overall, we urge the research community to minimize negative impacts while leveraging the positive contributions of this work. Acknowledgment This work was supported in part by the Natural Science Foundation of China (No. 62202014, 62332002, 62425101).",
+  "query_input": {
+    "scenario": "Social media platforms using deepfake detection to prevent misinformation",
+    "issue": "Overfitting to known forgery patterns causes failed detection of novel deepfakes, letting synthetic media spread.",
+    "hazard": [
+      "Overfitting to synthetic forgery patterns via LoRA fine-tuning on limited data degrades cross-domain deepfake detection generalization."
+    ],
+    "exposure": [
+      "Users exposed to undetected synthetic media in their feeds."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack independent media verification skills, relying entirely on a detection system that misses novel forgeries.",
+    "impact": "Undetected synthetic media misleads users, propagating misinformation and eroding public trust in online content.",
+    "dose_response": "Overfitting from LoRA fine-tuning on limited data degrades cross-domain deepfake detection, through exposing users to undetected synthetic media, triggers lack of independent verification skills, leading to undetected media misleading users, spreading misinformation and eroding public trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting to limited synthetic forgery patterns causes detectors to miss novel deepfakes, exposing social media users to undetected synthetic media that spreads misinformation, eroding trust."
+    ],
+    "vulnerability": [
+      "Deepfake detectors overfitted to known patterns fail on novel forgeries, leaving platforms defenseless.",
+      "Automated detection without human oversight increases susceptibility to novel misinformation."
+    ],
+    "impact": [
+      "Undetected deepfakes spread virally, amplifying misinformation and eroding public trust in online content.",
+      "Platform credibility plummets as repeated detection failures breach user trust."
+    ]
+  }
+}

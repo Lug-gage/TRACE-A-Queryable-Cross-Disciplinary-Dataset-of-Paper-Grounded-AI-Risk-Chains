@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1257",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Absence of client-specific validation and the inability to detect overfitted predictions capture the same sensitivity condition as the reference.",
+    "reference": "Absence of client-side validation and performance monitoring for local sparse models in federated health settings",
+    "generated": "Client-specific validation is absent, preventing detection of overfitted subnetwork predictions on edge devices."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (patients) and damage type (harm, eroded trust) are present, with clinical errors mapping to missed diagnoses or false alarms.",
+    "reference": "Flawed health predictions cause missed diagnoses or false alarms, harming patient outcomes and eroding trust in digital health tools",
+    "generated": "Overconfident, incorrect health predictions cause clinical errors, harming patients and eroding trust in AI-assisted diagnostics."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc is present but misses the distribution shift condition that triggers overconfidence in the reference.",
+    "reference": "Overfitted sparse subnetworks yield overconfident predictions under distribution shift, which in federated health prediction on edge devices without client-side validation leads to flawed diagnoses and eroded trust.",
+    "generated": "Lottery ticket sparsification optimizing GNNs for WL expressivity, through federated health predictors on edge devices, triggers undetected overfitted predictions due to absent client-specific validation, leading to overconfident clinical errors that harm patients and erode diagnostic trust."
+  }
+}

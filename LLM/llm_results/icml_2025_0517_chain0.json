@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 0,
+  "title": "Optimizing Adaptive Attacks against Watermarks for Language Models",
+  "abstract": "Large Language Models (LLMs) can be misused to spread unwanted content at scale. Content watermarking deters misuse by hiding messages in content, enabling its detection using a secret watermarking key. Robustness is a core security property, stating that evading detection requires (significant) degradation of the content’s quality. Many LLM watermarking methods have been proposed, but robustness is tested only against nonadaptive attackers who lack knowledge of the watermarking method and can find only suboptimal attacks. We formulate watermark robustness as an objective function and use preference-based optimization to tune adaptive attacks against the specific watermarking method. Our evaluation shows that (i) adaptive attacks evade detection against all surveyed watermarks, (ii) training against any watermark succeeds in evading unseen watermarks, and (iii) optimization-based attacks are cost-effective. Our findings underscore the need to test robustness against adaptively tuned attacks. We release our adaptively tuned paraphrasers at https://github.com/nilslukas/ada -wm-evasion.",
+  "impact": "This work investigates the robustness of watermarking methods for large language models (LLMs), which has implications for content authentication and the responsible deployment of AI systems. Our findings demonstrate that attackers with limited computational resources can undermine the robustness of current watermarking methods by using adaptively optimized attacks. This vulnerability could have societal implications as major AI providers increasingly adopt watermarking to promote responsible AI use and control misuse, including the proliferation of LLM-generated misinformation and online spam. By publicly releasing our methods, findings, and source code, we hope to encourage the development of more robust watermarking methods that can better withstand adaptive attacks (e.g., by increasing the computational complexity of such attacks or making them less effective). We acknowledge that our research could potentially be misused to evade existing deployments of watermarks. However, these deployments are still in experimental phases. We believe the benefit of releasing our work outweighs the potential harm and hope that our work inspires the development of more robust content authentication methods.",
+  "query_input": {
+    "scenario": "Cross-lingual translation of watermarked LLM outputs",
+    "issue": "Watermark robustness fails across languages, enabling undetectable machine-generated text.",
+    "hazard": [
+      "Watermarking for LLM-generated text is susceptible to adaptive black-box removal attacks (paraphrasing, translation, optimization) that undermine detection."
+    ],
+    "exposure": [
+      "Content moderators using watermark detectors on translated text."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content moderators’ watermark detectors lack cross-lingual robustness, so translation removes watermarks and renders machine-generated text undetectable.",
+    "impact": "Malicious actors disseminate undetectable LLM-generated disinformation across languages, bypassing moderation and undermining information integrity.",
+    "dose_response": "Watermarking for LLM-generated text is susceptible to adaptive black-box removal attacks; through moderators using detectors on translated text, triggers cross-lingual robustness lack where translation removes watermarks, leading to undetectable disinformation across languages bypassing moderation undermining information integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "Watermark susceptibility to translation attacks enables evasion when content moderators detect translated text, which, through monolingual detection gaps, leads to undetected AI-generated disinformation eroding trust in non-English media."
+    ],
+    "vulnerability": [
+      "Translation disrupts watermark patterns and detection tools lack multilingual calibration.",
+      "Content moderation systems rely on monolingual models, missing cross-lingual threats."
+    ],
+    "impact": [
+      "Undetected AI-generated disinformation spreads in non-English communities, eroding media trust.",
+      "Systematic blind spot undermines cross-cultural content moderation integrity."
+    ]
+  }
+}

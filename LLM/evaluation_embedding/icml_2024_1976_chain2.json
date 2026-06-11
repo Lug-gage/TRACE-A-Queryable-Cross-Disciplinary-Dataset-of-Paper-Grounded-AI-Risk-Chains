@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1976",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4407,
+    "reference": "Search engine users cannot distinguish between missing information due to unlearning versus genuine knowledge gaps.",
+    "generated": "Users depend on opaque LLM outputs without means to detect or correct retrieval errors."
+  },
+  "impact": {
+    "similarity": 0.6913,
+    "reference": "Users make misinformed decisions based on incomplete search results, assuming comprehensive coverage.",
+    "generated": "Inconsistent search results mislead users, causing erroneous decisions and eroded trust in the platform."
+  },
+  "dose_response": {
+    "similarity": 0.695,
+    "reference": "Erasing personal data via unlearning fragments LLM knowledge, causing retrieval errors for search engine users, which leads to misinformed decisions and regulatory penalties for organizations.",
+    "generated": "LLM unlearning-induced catastrophic forgetting and knowledge corruption, through inconsistent search results to end-users, triggers reliance on opaque outputs without error detection, leading to misled decisions and eroded platform trust."
+  }
+}

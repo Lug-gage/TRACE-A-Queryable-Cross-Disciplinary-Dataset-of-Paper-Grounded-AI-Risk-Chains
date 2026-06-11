@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0199",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Captures over-reliance on authoritative AI explanations, but omits the reference's deadline pressure condition.",
+    "reference": "Journalists’ deadline pressure and high trust in AI explanations create over-reliance on tool, amplifying false positives.",
+    "generated": "Journalists' reliance on the tool's elaborate explanations as authoritative, without the capacity to independently verify multimodal evidence retrieval."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "False discrediting of true news and erosion of trust in the newsroom are present, but erosion of public trust in the fact-checking tool is missing.",
+    "reference": "Legitimate news stories are unjustly discredited, eroding public trust in journalism and the fact-checking tool.",
+    "generated": "True news is falsely discredited, eroding source credibility and public trust in the newsroom."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from erroneous explainable outputs to false discrediting and trust erosion is present, but it omits the deadline pressure link that drives over-reliance in the reference.",
+    "reference": "Explainable but incorrect fact-checking outputs appear credible, and under deadline pressure journalists over-rely on them, causing false positives that unjustly discredit legitimate news, eroding trust.",
+    "generated": "Explainable yet erroneous multimodal fact-checking outputs, when used by journalists to vet stories, trigger over-reliance on the tool's authoritative explanations without verification capacity, leading to true news being falsely discredited and eroding public trust."
+  }
+}

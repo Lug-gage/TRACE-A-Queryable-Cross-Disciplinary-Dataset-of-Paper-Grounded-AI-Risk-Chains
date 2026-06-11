@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2156",
+  "chain_index": 0,
+  "title": "X-Hacking The Threat of Misguided AutoML",
+  "abstract": "Explainable AI (XAI) and interpretable machine learning methods help to build trust in model predictions and derived insights, yet also present a perverse incentive for analysts to manipulate XAI metrics to support pre-specified conclusions. This paper introduces the concept of X-hacking, a form of p-hacking applied to XAI metrics such as SHAP values. We show how easily an automated machine learning pipeline can be adapted to exploit model multiplicity at scale: searching a Rashomon set of ‘defensible’ models with similar predictive performance to find a desired explanation. We formulate the trade-off between explanation and accuracy as a multi-objective optimisation problem, and illustrate empirically on familiar real-world datasets that, on average, Bayesian optimisation accelerates X-hacking 3-fold for features susceptible to it, versus random sampling. We show the vulnerability of a dataset to X-hacking can be determined by information redundancy among features. Finally, we suggest possible methods for detection and prevention, and discuss ethical implications for the credibility and reproducibility of XAI.",
+  "impact": "This paper introduces the concept of ‘X-hacking’, a misuse of XAI and AutoML tools to produce defensible but misleading model explanations. The study highlights a potential avenue for adversarial misuse that could undermine trust in machine learning systems and exacerbate the reproducibility crisis in scientific research. While the goal of this work is to inform the community of the risks associated with X-hacking and propose countermeasures, there is a potential for these findings to be misused by actors seeking to exploit these vulnerabilities. Technical details that would lower the barrier to adversarial use have been omitted. Our open source code is intended to facilitate reproducibility and to encourage further research into detecting and preventing X-hacking. We emphasize the importance of responsible dissemination of related tools and frameworks and advocate for the inclusion of detection strategies as part of routine XAI evaluations. The societal implications of X-hacking are potentially broad, particularly in high-stakes domains such as healthcare, finance and criminal justice, where biassed or misleading explanations could have significant ethical and legal ramifications. Our aim is to mitigate these risks through awareness and contribute to the development of more robust and trustworthy AI systems.",
+  "query_input": {
+    "scenario": "XAI method selection for regulatory audits",
+    "issue": "Selective explanation metrics obscure model unfairness, undermining accountability.",
+    "hazard": [
+      "Multiplicity of XAI methods and metrics enables selection of explanations that systematically misrepresent model behavior (X-hacking)."
+    ],
+    "exposure": [
+      "Regulators and communities subject to automated decisions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Regulators' dependence on XAI metrics without independent validation mechanisms leaves them unable to detect cherry-picked explanations.",
+    "impact": "Unchecked model unfairness perpetuates discriminatory outcomes, harming communities and eroding trust in AI governance.",
+    "dose_response": "Multiplicity of XAI methods enabling selection of systematically misleading explanations (X-hacking), through regulators and communities facing automated decisions, triggers inability to detect cherry-picked explanations without independent validation, leading to unchecked model unfairness and discriminatory outcomes, eroding trust in AI governance."
+  },
+  "reference": {
+    "dose_response": [
+      "The multiplicity of XAI methods enables cherry-picked explanations that obscure model unfairness, which when used in regulatory audits by inexpert regulators leads to undetected discrimination and erodes public trust."
+    ],
+    "vulnerability": [
+      "Regulators lack expertise to independently verify XAI method selection."
+    ],
+    "impact": [
+      "Undetected biased models perpetuate discrimination and erode public trust in algorithmic governance."
+    ]
+  }
+}

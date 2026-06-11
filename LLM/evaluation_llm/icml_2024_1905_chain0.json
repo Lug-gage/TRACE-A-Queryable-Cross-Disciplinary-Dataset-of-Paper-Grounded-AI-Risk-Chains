@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1905",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe reliance on AI-decomposed scene factors being independent, generated as designers lacking verification means and reliant on entangled representations, semantically equivalent to trust.",
+    "reference": "Users trust AI decomposition to isolate scene factors independently",
+    "generated": "Designers lack means to verify that AI-decomposed scene components are semantically independent, leaving them reliant on entangled representations."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference impact is propagation of misinformation, generated impact is flawed images, wasted time, and distrust — both affected party and damage type differ.",
+    "reference": "Plausible but inaccurate edited images propagate misinformation",
+    "generated": "Shadow edits inadvertently distort objects, producing flawed images, wasted editing time, and distrust in AI-assisted photography tools."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc describes misleading decompositions leading to inadvertent inaccurate edits and misinformation; generated arc introduces lacking verification means and leads to shadow-distorted objects, flawed images, and distrust, a different causal mechanism and outcome.",
+    "reference": "Conflated scene factors from diffusion models' factorized but non-continuous manifold representations produce misleading decompositions, causing graphic designers using AI-assisted tools to inadvertently create plausible yet inaccurate edits that propagate misinformation.",
+    "generated": "Diffusion models' factorized, non-continuous manifolds conflating scene factors into misleading decompositions, through graphic designers and photographers using AI-assisted tools, triggers lacking verification means, leading to shadow edits distorting objects, producing flawed images, wasted time, and distrust in AI tools."
+  }
+}

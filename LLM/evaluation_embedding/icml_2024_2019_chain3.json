@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2019",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6964,
+    "reference": "Data subjects unaware that DP synthetic data can leak sensitive attribute correlations through constraint relaxation.",
+    "generated": "Sensitive attribute correlations in the original data persist through constraint relaxation, enabling inference despite differential privacy guarantees."
+  },
+  "impact": {
+    "similarity": 0.6913,
+    "reference": "Re-identification of individuals from leaked attribute correlations in released synthetic data.",
+    "generated": "Data subjects' sensitive attributes are reconstructed from released synthetic data, causing privacy breaches and downstream discrimination."
+  },
+  "dose_response": {
+    "similarity": 0.8046,
+    "reference": "Constraint-violating synthetic data enables leakage of sensitive attribute correlations, which in differential privacy release exposes data subjects, leading to re-identification and erosion of public trust.",
+    "generated": "Synthetic tabular data that violates declarative constraints, through data subjects' records being used for differentially private synthetic generation and release, triggers sensitive attribute correlations persisting through constraint relaxation, leading to reconstruction of sensitive attributes and downstream discrimination."
+  }
+}

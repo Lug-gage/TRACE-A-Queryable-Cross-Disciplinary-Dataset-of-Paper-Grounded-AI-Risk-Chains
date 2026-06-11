@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The sensitivity condition of developers relying on a single hallucination detection method without safeguards, creating a single point of failure, is semantically present in both.",
+    "reference": "Developers deploy EigenScore tools as sole hallucination guard, creating a single point of failure.",
+    "generated": "Developers' reliance on separable truthfulness subspaces for detection lacks safeguards against adversarial manipulation or semantic drift."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both erosion of user trust and harm to downstream tasks (as flawed decisions) are stated.",
+    "reference": "Undetected hallucinations in production systems erode user trust and cause harm in downstream tasks.",
+    "generated": "Undetected hallucinations erode trust in LLM outputs, causing misinformation propagation and flawed downstream decisions."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference has no dose-response arc; generated arc is a fabrication relative to the empty reference.",
+    "reference": "[]",
+    "generated": "A separable truthfulness subspace in LLM representations creating a single point of failure, through developers deploying hallucination detection tools, triggers reliance without safeguards against manipulation or drift, leading to undetected hallucinations eroding trust, propagating misinformation, and flawed downstream decisions."
+  }
+}

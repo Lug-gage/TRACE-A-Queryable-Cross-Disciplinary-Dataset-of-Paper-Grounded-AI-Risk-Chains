@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0800",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures both high trust in broadcast media and inability to detect subtle alterations, matching the reference's high trust and low awareness sensitivity conditions.",
+    "reference": "High public trust in broadcast news and low awareness of AI editing increase susceptibility to misinformation.",
+    "generated": "Audiences' trust in broadcast media and inability to detect subtle semantic alterations in speech content."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the damage type (erosion of trust, distortion of discourse) and affected party (broadcast news trust, public discourse) are semantically present.",
+    "reference": "Misinformation from altered clips erodes institutional trust and distorts public discourse.",
+    "generated": "Public misinformation spreads, distorting discourse and eroding trust in broadcast news."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The core arc (misinterpretation → semantic edits → misinformation → erosion) is present, but the insertion of 'triggers audience trust and inability to detect' as a causal step changes the logic, making it only partially aligned.",
+    "reference": "Instruction-following speech editing’s misinterpretation leads to semantic edits that inadvertently alter news meaning, exposing audiences to misinformation, which erodes institutional trust and distorts discourse.",
+    "generated": "Instruction-following speech editing misinterpretation producing mismatched semantic edits, through broadcast news consumption, triggers audience trust and inability to detect subtle alterations, leading to misinformation spreading, distorting discourse and eroding trust."
+  }
+}

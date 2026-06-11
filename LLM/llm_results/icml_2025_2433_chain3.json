@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 3,
+  "title": "Language Models over Canonical Byte-Pair Encodings",
+  "abstract": "Modern language models represent probability distributions over character strings as distributions over (shorter) token strings derived via a deterministic tokenizer, such as byte-pair encoding. While this approach is highly effective at scaling up language models to large corpora, its current incarnations have a concerning property: the model assigns nonzero probability mass to an exponential number of noncanonical token encodings of each character string--these are token strings that decode to valid character strings but are impossible under the deterministic tokenizer (i.e., they will never be seen in any training corpus, no matter how large). This misallocation is both erroneous, as noncanonical strings never appear in training data, and wasteful, diverting probability mass away from plausible outputs. These are avoidable mistakes! In this work, we propose methods to enforce canonicality in token-level language models, ensuring that only canonical token strings are assigned positive probability. We present two approaches: (1) canonicality by conditioning, leveraging test-time inference strategies without additional training, and (2) canonicality by construction, a model parameterization that guarantees canonical outputs but requires training. We demonstrate that fixing canonicality mistakes improves the likelihood of held-out data for several models and corpora. github.com/genlm/canonical-icml-2025",
+  "impact": "Potential benefits. By introducing methods to enforce canonicality, we improve a given model’s fidelity to the underlying distribution that generated the text. These contributions have broad implications for the reliability of language models, particularly in applications where precise probability estimates are crucial. By eliminating avoidable modeling errors, we advance the goal of more reliable and robust language models. Potential harms. Constraining tokenization may inadvertently reduce robustness to rare, noisy, or adversarial inputs by ruling out alternative tokenizations of the same character string. While the canonicality constraint does not remove any character strings from the language, it does restrict the model to assign nonzero probability only to a single canonical tokenization of each string. This may disproportionately affect rare or unconventional spellings, as their probability mass may be less sharply concentrated on a single tokenization. Future work should provide a deeper analysis of whether or not canonicality enforcement helps or hurts in these settings to ensure fair and robust language model behavior across diverse linguistic contexts.",
+  "query_input": {
+    "scenario": "Text generation using training-free canonicalization strategies",
+    "issue": "Test-time inference strategies fail to resolve noncanonical encodings, leading to uncontrolled token probability shifts.",
+    "hazard": [
+      "Tokenization mismatch between training and inference induces noncanonical encodings, distorting token probability distributions."
+    ],
+    "exposure": [
+      "Users of LLM applications relying on training-free text generation pipelines"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Training-free canonicalization strategies cannot enforce canonical token encodings, leaving probability distributions susceptible to distortion.",
+    "impact": "Users encounter lower-quality, less reliable text generation as probability mass shifts to implausible outputs.",
+    "dose_response": "Tokenization mismatch between training and inference, through users of training-free text generation pipelines, triggers the inability of canonicalization strategies to enforce canonical encodings and prevent probability distribution distortion, leading to lower-quality text generation as probability mass shifts to implausible outputs."
+  },
+  "reference": {
+    "dose_response": [
+      "Tokenization mismatch distorts token probabilities, which in training-free canonicalization exposes users to uncontrolled probability shifts, leading to subtle factual errors in educational materials and polluted public discourse."
+    ],
+    "vulnerability": [
+      "Users cannot distinguish between canonical and noncanonical encodings in generated text.",
+      "Applications in education and journalism rely on training-free pipelines for cost efficiency."
+    ],
+    "impact": [
+      "Educational materials contain subtle factual errors from encoding-induced probability shifts.",
+      "Public discourse is polluted by LLM outputs with undetected semantic distortions."
+    ]
+  }
+}

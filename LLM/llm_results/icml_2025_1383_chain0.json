@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1383",
+  "chain_index": 0,
+  "title": "DMOSpeech Direct Metric Optimization via Distilled Diffusion Model in Zero-Shot Speech Synthesis",
+  "abstract": "Diffusion models have demonstrated significant potential in speech synthesis tasks, including textto-speech (TTS) and voice cloning. However, their iterative denoising processes are computationally intensive, and previous distillation attempts have shown consistent quality degradation. Moreover, existing TTS approaches are limited by non-differentiable components or iterative sampling that prevent true end-to-end optimization with perceptual metrics. We introduce DMO- Speech, a distilled diffusion-based TTS model that uniquely achieves both faster inference and superior performance compared to its teacher model. By enabling direct gradient pathways to all model components, we demonstrate the first successful end-to-end optimization of differentiable metrics in TTS, incorporating Connectionist Temporal Classification (CTC) loss and Speaker Verification (SV) loss. Our comprehensive experiments, validated through extensive human evaluation, show significant improvements in naturalness, intelligibility, and speaker similarity while reducing inference time by orders of magnitude. This work establishes a new framework for aligning speech synthesis with human auditory preferences through direct metric optimization. The audio samples are available at https://dmospeech.github.io.",
+  "impact": "This work advances the capabilities of text-to-speech synthesis in ways that warrant careful consideration of societal implications. Our findings that DMOSpeech can generate speech with higher perceived similarity to the prompt than real utterances from the same speaker raises important concerns about potential misuse, particularly in the creation of unauthorized synthetic speech or deepfakes. This capability highlights current limitations in speaker verification systems and emphasizes the need for robust detection methods to distinguish between synthetic and authentic speech. To address these concerns, we recommend several mitigation strategies. First, the development of more sophisticated speaker verification techniques specifically designed to identify synthetic speech is crucial. Second, implementing robust audio watermarking systems could help track the origin and authenticity of synthesized content. Third, establishing clear ethical guidelines and legal frameworks for the deployment of TTS technology is essential to prevent misuse while preserving beneficial applications. The technology also has significant potential for positive impact. It could enable more accessible communication tools for individuals with speech impairments, improve educational resources through personalized audio content, and enhance human-computer interaction across languages and cultures. However, these benefits must be balanced against the need for responsible development and deployment. We encourage the research community to prioritize these ethical considerations in future work, particularly in developing better detection methods and establishing best practices for responsible TTS deployment. As this technology continues to evolve, maintaining a balance between innovation and ethical responsibility will be crucial for ensuring its positive contribution to society.",
+  "query_input": {
+    "scenario": "Zero-shot voice cloning for personalized virtual assistants",
+    "issue": "Users may not realise they are interacting with a synthetic voice clone, causing misplaced trust.",
+    "hazard": [
+      "Zero-shot distilled TTS with direct perceptual metric optimization enables near-instant, high-fidelity generation of any speaker's voice from minimal samples."
+    ],
+    "exposure": [
+      "Users interacting with voice assistants that mimic a specific person's voice"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Inability of users to detect synthetic voice clones, leaving them predisposed to trust the assistant as if it were the genuine person.",
+    "impact": "Deceived users disclose confidential information or comply with harmful requests, mistaking the cloned voice for the trusted individual.",
+    "dose_response": "Zero-shot distilled TTS with direct metric optimization generates voices from minimal samples; when users interact with assistants mimicking a specific person, inability to detect clones triggers misplaced trust, leading deceived users to disclose secrets or comply with harmful requests."
+  },
+  "reference": {
+    "dose_response": [
+      "Zero-shot distilled TTS enables high-fidelity voice cloning, so when users interact with voice assistants mimicking a specific person, overtrust leads to fraudulent persuasion, unauthorized data disclosure, and emotional manipulation."
+    ],
+    "vulnerability": [
+      "Users overtrust human-sounding synthetic voices, reducing skepticism."
+    ],
+    "impact": [
+      "Fraudulent persuasion, unauthorized data disclosure, and emotional manipulation."
+    ]
+  }
+}

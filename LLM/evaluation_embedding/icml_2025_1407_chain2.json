@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1407",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3175,
+    "reference": "Overly broad safety filters lack domain-specific context, triggering false alarms on benign business terms.",
+    "generated": "No human-in-the-loop review to override AI misclassifications, as governance automatically blocks flagged documents."
+  },
+  "impact": {
+    "similarity": 0.5821,
+    "reference": "Workflow disruptions, employee frustration, and adoption of insecure workarounds.",
+    "generated": "Hindered collaboration and lost productivity when legitimate business documents are inaccessible due to false safety flags."
+  },
+  "dose_response": {
+    "similarity": 0.7658,
+    "reference": "Interpretable chain-of-thought reasoning yields overconfident, overly broad safety filters lacking domain context, which mislabel business documents as unsafe, disrupting workflows and prompting insecure workarounds.",
+    "generated": "Interpretable chain-of-thought harm-benefit reasoning that yields overconfident but inaccurate safety classifications, through employees using AI collaboration tools, triggers automatic blocking without human review, leading to hindered collaboration and lost productivity from inaccessible legitimate business documents."
+  }
+}

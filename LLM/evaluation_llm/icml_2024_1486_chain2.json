@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1486",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated sensitivity of operators trusting vacuous guarantees due to inability to detect failures matches reference's unjustified trust from vacuous bounds.",
+    "reference": "Grid operators treat vacuous lower bounds as meaningful, leading to unjustified trust in load-shedding policies.",
+    "generated": "Grid operators lack means to detect when tractability conditions fail, causing trust in vacuous finite-sample safety guarantees."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (grid, public) matches, but reference's specific damage types (economic losses, social unrest) are missing from generated which mentions only grid stability and public safety.",
+    "reference": "Large-scale blackouts disrupt healthcare, transportation, and communications, causing economic losses and social unrest.",
+    "generated": "Authorized unsafe load-shedding strategies trigger cascading blackouts, compromising grid stability and public safety."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from vacuous safety estimates through operator trust and authorization to blackouts is semantically present, despite different phrasing.",
+    "reference": "Overconfident vacuous safety bounds enable unjustified trust in load-shedding policies, which in grid control exposes operators' reliance on flawed reports, leading to large-scale blackouts and social unrest.",
+    "generated": "Off-policy safety-cost estimates with finite-sample MSE guarantees, through grid operators relying on safety reports to authorize load-shedding strategies, exploit undetected tractability failures, causing trust in vacuous guarantees, authorized unsafe strategies that trigger cascading blackouts, compromising grid stability and public safety."
+  }
+}

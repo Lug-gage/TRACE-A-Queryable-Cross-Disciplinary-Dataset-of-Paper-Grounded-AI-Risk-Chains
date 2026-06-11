@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2295",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7294,
+    "reference": "Auditors treat static fairness certificates as valid indefinitely, ignoring model drift and adversarial post-certification changes.",
+    "generated": "Regulatory processes assume static proofs guarantee ongoing fairness, leaving auditors without tools to detect post-certification drift or attacks."
+  },
+  "impact": {
+    "similarity": 0.5988,
+    "reference": "Cumulative discriminatory outcomes harm protected groups post-certification without detection.",
+    "generated": "Discriminatory model outputs harm consumers, regulatory assessments become invalid, and public trust in fairness certifications erodes."
+  },
+  "dose_response": {
+    "similarity": 0.7744,
+    "reference": "Point-in-time fairness proofs becoming misleading after deployment enables auditors to rely on outdated certificates, which in regulatory compliance scenarios leads to cumulative discriminatory harm to protected groups without detection.",
+    "generated": "Drift or fairness attacks render point-in-time fairness proofs misleading after deployment, which through auditor reliance on zero-knowledge proofs for compliance, triggers regulatory assumptions of ongoing fairness, leaving drift and attacks undetected, leading to discriminatory outputs, invalid assessments, and eroded trust."
+  }
+}

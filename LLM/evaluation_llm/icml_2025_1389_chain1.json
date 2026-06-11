@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1389",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Operator over-trust and reduced vigilance for artifact-masked threats is captured by sole reliance without verification, leaving them unable to distinguish artifacts from real threats.",
+    "reference": "Operator over-trust in derained surveillance video reduces vigilance for artifact-masked threats.",
+    "generated": "Operators' sole reliance on derained video for intruder detection, without alternative verification, leaves them unable to distinguish aliasing artifacts from real threats."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (security/guarded assets) and damage type (unauthorized access, compromised safety) align with successful intrusion and resulting harm.",
+    "reference": "Successful intrusion, theft, or violence due to missed detection.",
+    "generated": "Undetected intruders bypass security, enabling unauthorized access and compromising the safety of guarded assets."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from zigzag scanning through aliasing artifacts, operator over-reliance, inability to distinguish, to undetected intruders bypassing security matches the reference arc precisely.",
+    "reference": "Zigzag frequency scanning triggers aliasing artifacts in surveillance video, causing operator over-trust and missed detection of intruders, enabling security breaches.",
+    "generated": "Zigzag frequency scanning aliasing background texture into ghost artifacts, through security operators monitoring derained video, triggers their sole reliance rendering them unable to distinguish artifacts from real threats, leading to undetected intruders bypassing security."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1639",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes inability to distinguish hallucinations leading to over-reliance, while reference identifies automation bias and failure to verify against original inputs—a related but distinct sensitivity condition.",
+    "reference": "Clinicians exhibit automation bias, over-trusting AI-restored images without verifying against original degraded inputs.",
+    "generated": "Clinicians cannot distinguish hallucinated anatomical details from real pathology in AI-restored images, leading to over-reliance."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (patients) and damage type (misdiagnosis/inappropriate interventions causing harm) are semantically present.",
+    "reference": "False anatomical structures in restored images lead to incorrect treatment decisions and patient harm.",
+    "generated": "Misdiagnosis and inappropriate medical interventions, causing patient harm."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc captures the hazard (amplified noise) and outcome (misdiagnosis) but omits the explicit hallucination creation step and replaces automation bias with an inability-to-distinguish mechanism, altering the causal chain.",
+    "reference": "SFBD-trained diffusion models' noise amplification hallucinates anatomical details in restored medical images; clinicians' automation bias converts these errors into misdiagnosis and patient harm.",
+    "generated": "Amplified noise patterns and distributional shift from SFBD-trained diffusion models, through clinicians and patients relying on AI-restored medical images, trigger the inability to distinguish hallucinated anatomical details from real pathology, leading to misdiagnosis and harmful interventions."
+  }
+}

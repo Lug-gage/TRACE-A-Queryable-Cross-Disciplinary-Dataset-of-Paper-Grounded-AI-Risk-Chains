@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0909",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes officials' lack of independent means to detect miscalibration, a related but different sensitivity condition from the reference's training data underrepresentation for low-income and rural incidents.",
+    "reference": "Training data underrepresents low-income and rural overdose incidents, skewing model risk estimates.",
+    "generated": "Public health officials rely on model-driven rankings without independent means to detect miscalibration under distribution shift."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (high-need communities excluded) and damage type (elevated opioid fatalities) are both semantically present, matching the reference's underpredicted vulnerable communities and increased overdose deaths.",
+    "reference": "Misallocated intervention sites increase overdose deaths in underpredicted vulnerable communities.",
+    "generated": "High-need communities excluded from overdose interventions experience elevated opioid fatalities and widening health disparities."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from decision-aware training, through officials' uncritical reliance and undetected miscalibration, to community exclusion and overdose deaths is present, matching the reference's chain of training → miscalibrated rankings → misallocation → deaths, compounded by deferral.",
+    "reference": "Decision-aware gradient-estimate training enables miscalibrated risk rankings, which in opioid site selection leads to misallocated interventions and increased overdose deaths, compounded by officials’ deferral to automated recommendations without validation.",
+    "generated": "Decision-aware training for top-K site selection, through officials' reliance on its rankings without detecting miscalibration under distribution shift, triggers high-need communities' exclusion, leading to elevated opioid fatalities and widening health disparities."
+  }
+}

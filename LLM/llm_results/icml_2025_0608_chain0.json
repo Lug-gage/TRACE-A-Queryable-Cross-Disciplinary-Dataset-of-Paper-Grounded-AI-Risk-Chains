@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0608",
+  "chain_index": 0,
+  "title": "Towards LLM Unlearning Resilient to Relearning Attacks A Sharpness-Aware Minimization Perspective and Beyond",
+  "abstract": "The LLM unlearning technique has recently been introduced to comply with data regulations and address the safety and ethical concerns of LLMs by removing the undesired data-model influence. However, state-of-the-art unlearning methods face a critical vulnerability: they are susceptible to “relearning” the removed information from a small number of forget data points, known as relearning attacks. In this paper, we systematically investigate how to make unlearned models robust against such attacks. For the first time, we establish a connection between robust unlearning and sharpness-aware minimization (SAM) through a unified robust optimization framework, in an analogy to adversarial training designed to defend against adversarial attacks. Our analysis for SAM reveals that smoothness optimization plays a pivotal role in mitigating relearning attacks. Thus, we further explore diverse smoothing strategies to enhance unlearning robustness. Extensive experiments on benchmark datasets, including WMDP and MUSE, demonstrate that SAM and other smoothness optimization approaches consistently improve the resistance of LLM unlearning to relearning attacks. Notably, smoothnessenhanced unlearning also helps defend against (input-level) jailbreaking attacks, broadening our proposal’s impact in robustifying LLM unlearning. Codes are available at https://github. com/OPTML-Group/Unlearn-Smooth.",
+  "impact": "Our research enhances the robustness of LLM unlearning against relearning and jailbreaking attacks by leveraging smoothness optimization, thereby strengthening data privacy and regulatory compliance. By integrating techniques such as sharpness-aware minimization (SAM), we achieve more reliable unlearning, reducing unintended knowledge retention and reinforcing model security. Furthermore, this study establishes a critical link between smoothness optimization and unlearning, helping bridge the gap between foundational optimization research and use-inspired advancements in LLM unlearning. However, enhanced unlearning could be misused to selectively erase essential knowledge, while stronger resistance to relearning may hinder the recovery of valuable information. To address these risks, strict ethical standards and regulatory oversight are essential. Future research should prioritize governance, fairness, and auditing to ensure AI technologies are developed responsibly and transparently. Acknowledgment This work was supported by the Amazon Research Award for AI in Information Security. And the research contributions of C. Fan, J. Jia, Y. Zhang, and S. Liu were partially supported by the National Science Foundation (NSF) CISE Core Program Award (IIS-2207052), the NSF CAREER Award (IIS-2338068), the ARO Award (W911NF2310343), and the Cisco Research Award.",
+  "query_input": {
+    "scenario": "Deploying unlearned diffusion models for public text-to-image generation",
+    "issue": "Adversarial prompts can regenerate erased harmful concepts (e.g., nudity) post-unlearning.",
+    "hazard": [
+      "Adversarially robust unlearning creates a false sense of security because models remain vulnerable to input-level attacks that can re-elicit supposedly erased knowledge."
+    ],
+    "exposure": [
+      "End-users of public image generation services and platforms hosting the model."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Platform operators' assumption that unlearning fully erases hazardous concepts, while the model's sharp loss landscape enables adversarial prompt-driven relearning.",
+    "impact": "Unauthorized regeneration of harmful concepts (e.g., nudity) via public text-to-image services, causing user harm, platform liability, and safety trust erosion.",
+    "dose_response": "Adversarially robust unlearning's false security, through public image generation services, triggers operators' assumption of full erasure and a sharp loss landscape enabling adversarial relearning, leading to unauthorized regeneration of harmful concepts, causing user harm, platform liability, and trust erosion."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarially robust unlearning for diffusion models enables adversarial prompts to regenerate erased nudity, exposing end-users and platforms to harmful imagery, liability, and regulatory distrust."
+    ],
+    "vulnerability": [
+      "Unlearning leaves exploitable residual representations of erased concepts.",
+      "Models remain susceptible to adversarial input perturbations that re-elicit forgotten content."
+    ],
+    "impact": [
+      "Re-exposure to harmful imagery causes user harm and platform liability.",
+      "Erosion of trust in AI safety tools leads to regulatory scrutiny."
+    ]
+  }
+}

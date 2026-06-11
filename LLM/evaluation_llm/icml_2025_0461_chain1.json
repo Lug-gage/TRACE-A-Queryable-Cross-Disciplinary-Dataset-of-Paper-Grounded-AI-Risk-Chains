@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0461",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the system's rigidity to past attacks preventing detection of new attack types.",
+    "reference": "Autonomous perception system locks onto historical attack defenses, missing new attack types introduced during deployment.",
+    "generated": "Model's training-induced rigidity to past attack patterns prevents detection of new, evolving adversarial perturbations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both state collisions from misperception, with reference mentioning public safety and generated detailing physical harm to passengers, pedestrians, drivers.",
+    "reference": "Vehicles misinterpret surroundings under novel adversarial perturbations, risking collisions and public safety.",
+    "generated": "Physical harm to passengers, pedestrians, and drivers from autonomous vehicle collisions caused by novel adversarial misperception."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe the chain: logit-distance regularization overfitting leads to blindness to new attacks, and when vehicles share roads, misinterpretation causes collision risk.",
+    "reference": "Logit-distance regularization overfitting leaves autonomous perception blind to new attacks; sharing roads exposes passengers to collision risk when vehicles misinterpret novel perturbations.",
+    "generated": "Logit-space regularization overfitting to seen attacks, through road sharing with autonomous vehicles, triggers training-induced rigidity preventing detection of new adversarial perturbations, leading to physical harm to passengers, pedestrians, and drivers from collisions caused by novel adversarial misperception."
+  }
+}

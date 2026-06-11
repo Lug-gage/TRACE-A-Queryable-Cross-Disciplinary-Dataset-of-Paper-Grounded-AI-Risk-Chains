@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2724",
+  "chain_index": 2,
+  "title": "On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains",
+  "abstract": "Retrieval-Augmented Generation (RAG) has been empirically shown to enhance the performance of large language models (LLMs) in knowledgeintensive domains such as healthcare, finance, and legal contexts. Given a query, RAG retrieves relevant documents from a corpus and integrates them into the LLMs’ generation process. In this study, we investigate the adversarial robustness of RAG, focusing specifically on examining the retrieval system. First, across 225 different setup combinations of corpus, retriever, query, and targeted information, we show that retrieval systems are vulnerable to universal poisoning attacks in medical Q&A. In such attacks, adversaries generate poisoned documents containing a broad spectrum of targeted information, such as personally identifiable information. When these poisoned documents are inserted into a corpus, they can be accurately retrieved by any users, as long as attacker-specified queries are used. To understand this vulnerability, we discovered that the deviation from the query’s embedding to that of the poisoned document tends to follow a pattern in which the high similarity between the poisoned document and the query is retained, thereby enabling precise retrieval. Based on these findings, we develop a new detection-based defense. Through extensive experiments spanning various Q&A domains, we observed that our proposed method consistently achieves excellent detection rates in nearly all cases.",
+  "impact": "This paper presents work aimed at advancing the safety and trustworthiness of machine learning. There are both potential positive and negative societal impacts of this work. Potential negative impacts include the possibility that an adversary could apply the proposed attack to other retrieval systems. On the other hand, we anticipate that there will be many more positive societal impacts of this work: (1) highlighting the need for vigilance regarding security risks when applying RAG in safety-critical domains; (2) providing several insights into understanding these potential safety risks; and (3) introducing a new, effective defense that can be used for detecting poisoned documents. Acknowledgement The work of Xun Xian, Xuan Bi, and Mingyi Hong was supported in part by a sponsored research award by Cisco Research. The work of Ganghua Wang and Jie Ding was supported in part by the Army Research Office under the Early Career Program Award, Grant Number W911NF-23- 10315.",
+  "query_input": {
+    "scenario": "PII-sensitive customer service RAG accessing personal account histories",
+    "issue": "Backdoor poisoning of the knowledge base causes retrieval of fabricated personal information, leading to incorrect account disclosures.",
+    "hazard": [
+      "Adversarial poisoning of RAG knowledge bases exploits embedding similarity to inject stealthy misinformation retrieved for legitimate queries, subverting output integrity."
+    ],
+    "exposure": [
+      "Customer support agents and customers relying on accurate personal data retrieval"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Embedding-based retrieval lacks authenticity verification, so poisoned documents with manipulated embeddings are retrieved as authoritative without detection.",
+    "impact": "False personally identifiable information is disclosed to agents and customers, causing privacy breaches and incorrect account data exposure.",
+    "dose_response": "Adversarial poisoning of RAG knowledge bases, through customer support agents and customers relying on accurate personal data retrieval, triggers retrieval of poisoned documents as authoritative without authenticity verification, leading to false PII disclosure and privacy breaches."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial poisoning enables stealthy misinformation injection, which in PII-sensitive RAG exposes customer support agents and customers to fabricated personal information, leading to unauthorized disclosure and identity theft."
+    ],
+    "vulnerability": [
+      "Customer service agents' susceptibility to accepting AI-retrieved fabricated data as accurate.",
+      "Lack of real-time verification protocols for sensitive personal information."
+    ],
+    "impact": [
+      "Unauthorized disclosure of private customer information, enabling identity theft.",
+      "Loss of customer trust and potential regulatory fines."
+    ]
+  }
+}

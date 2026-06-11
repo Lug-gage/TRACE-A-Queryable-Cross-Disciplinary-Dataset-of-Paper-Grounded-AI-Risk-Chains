@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1639",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that archivists/editors lack the ability to detect subtle distortions (kernel-estimation vs noise amplification/distributional shift), making them unable to resist flawed restorations.",
+    "reference": "Archivists and editors lack technical expertise to detect subtle kernel-estimation distortions, accepting outputs as authentic restorations.",
+    "generated": "Photo editors and archivists lack means to verify automated restoration fidelity, leaving them unable to detect noise amplification or distributional shift."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe irreversible corruption of historical records/cultural heritage, with affected party and damage type semantically present.",
+    "reference": "Distorted archival restorations permanently corrupt historical records, causing irreversible cultural heritage loss.",
+    "generated": "Irreversibly corrupted historical photographs undermine archival authenticity, cultural heritage preservation, and evidentiary value."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc is the same: SFBD noise amplification goes undetected due to archivist inability, leading to permanently corrupted historical records.",
+    "reference": "SFBD-trained diffusion models' noise amplification causes erroneous kernel estimation in universal restoration; archivists lacking detection skills accept distorted images as authentic, leading to permanent historical record corruption.",
+    "generated": "Through automated restoration tools, SFBD-trained diffusion models amplify noise, and photo editors and archivists' inability to verify fidelity means undetected noise amplification and distributional shift, leading to irreversibly corrupted historical photographs that undermine archival authenticity, cultural heritage, and evidentiary value."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1766",
+  "chain_index": 1,
+  "title": "Sparse and Structured Hopfield Networks",
+  "abstract": "Modern Hopfield networks have enjoyed recent interest due to their connection to attention in transformers. Our paper provides a unified framework for sparse Hopfield networks by establishing a link with Fenchel-Young losses. The result is a new family of Hopfield-Fenchel-Young energies whose update rules are end-to-end differentiable sparse transformations. We reveal a connection between loss margins, sparsity, and exact memory retrieval. We further extend this framework to structured Hopfield networks via the SparseMAP transformation, which can retrieve pattern associations instead of a single pattern. Experiments on multiple instance learning and text rationalization demonstrate the usefulness of our approach.",
+  "impact": "Hopfield networks are increasingly relevant for practical applications and not only as theoretical models. While our work is mostly a theoretical advancement, promising experimental results signal potentially wider impact. Sparse HFY networks are applicable in the same scenarios where modern Hopfield networks would be, and we do not foresee any specific societal consequences of sparse transformations or exact retrieval in such cases. In the structured case, the practicioner has more hands-on control for encoding inductive biases through the design of a factor graph and the choice of its parameters (e.g., k). These choices may in turn reflect human biases and have societal implications: for example, contiguous rationales might be well suited for English but not for other languages. We encourage care when designing such methods for practical applications.",
+  "query_input": {
+    "scenario": "Text rationalization with sparse Hopfield retrieval in legal decision support",
+    "issue": "Miscalibrated rationalizations mislead human judges about model certainty",
+    "hazard": [
+      "Sparse Hopfield networks with Fenchel-Young loss margins produce overconfident, miscalibrated associative retrievals under input perturbations and distribution shifts."
+    ],
+    "exposure": [
+      "Judges and legal clerks using AI-generated rationalizations"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Judges and legal clerks lack training and institutional procedures to detect overconfident AI rationalizations, accepting them as reliable.",
+    "impact": "Erroneous judicial rulings and miscarriages of justice, eroding public trust in legal institutions.",
+    "dose_response": "Sparse Hopfield networks with Fenchel-Young loss margins generate overconfident retrievals under distribution shifts, which, when deployed as rationalizations for judges and clerks untrained to identify overconfidence, trigger erroneous rulings, miscarriages of justice, and erosion of public trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated rationalizations cause judges to over-trust plausible-sounding AI, leading to skewed judicial decisions and unfair legal outcomes."
+    ],
+    "vulnerability": [
+      "Judges over-trust plausible-sounding AI rationalizations, ignoring contradictory case evidence."
+    ],
+    "impact": [
+      "Skewed judicial decisions, unfair legal outcomes, and diminished public trust in the justice system."
+    ]
+  }
+}

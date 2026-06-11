@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 1,
+  "title": "Zero-Shot Unsupervised and Text-Based Audio Editing Using DDPM Inversion",
+  "abstract": "Editing signals using large pre-trained models, in a zero-shot manner, has recently seen rapid advancements in the image domain. However, this wave has yet to reach the audio domain. In this paper, we explore two zero-shot editing techniques for audio signals, which use DDPM inversion with pre-trained diffusion models. The first, which we coin ZEro-shot Text-based Audio (ZETA) editing, is adopted from the image domain. The second, named ZEro-shot UnSupervized (ZEUS) editing, is a novel approach for discovering semantically meaningful editing directions without supervision. When applied to music signals, this method exposes a range of musically interesting modifications, from controlling the participation of specific instruments to improvisations on the melody. Samples and code can be found on our examples page.",
+  "impact": "The purpose of this paper is to advance the field of Machine Learning and in particular zero-shot editing of audio signals. We feel that there are many potential societal consequences of our work, but the predominant one relates to the ability of using our method for copyright infringement. In this work we worked on audio licensed under Creative Commons Attribution, and as this is an academic work it is in fair use. However, users might use our methods to modify existing copyrighted musical pieces without sufficient permission of the copyright holder, and this might not fall under fair use under different circumstances. We believe it is important to develop methods for automatically detecting whether AI-based methods have been applied to audio signals.",
+  "query_input": {
+    "scenario": "Voiceover and dubbing in multilingual content creation",
+    "issue": "Zero-shot edits inadvertently shift speaker identity or prosody, causing mismatches with visual lip movements.",
+    "hazard": [
+      "Unsupervised semantic manipulation of audio signals via frozen diffusion model latent spaces enables zero-shot editing that may introduce unintended acoustic artifacts or alter speaker identity."
+    ],
+    "exposure": [
+      "Dubbing artists and localization teams using diffusion-based audio editing tools."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Dubbing workflows rely on zero-shot editing without safeguards to prevent unintended speaker identity or prosody drift during automated manipulation.",
+    "impact": "Lip-sync mismatches between audio and visual elements degrade viewer immersion and dubbing quality in multilingual content.",
+    "dose_response": "Unsupervised semantic manipulation of audio signals via frozen diffusion model latent spaces, through dubbing artists using diffusion-based tools, triggers reliance on zero-shot editing without safeguards against speaker identity or prosody drift, leading to lip-sync mismatches that degrade viewer immersion and dubbing quality."
+  },
+  "reference": {
+    "dose_response": [
+      "Zero-shot editing shifts speaker identity/prosody, exposing dubbing teams and audiences to mismatches, causing cognitive dissonance and reinforcing low-quality stereotypes."
+    ],
+    "vulnerability": [
+      "Localization teams lack tools to verify speaker identity consistency across edited audio segments.",
+      "Audiences in multilingual markets are sensitive to prosodic mismatches that signal inauthentic dubbing."
+    ],
+    "impact": [
+      "Speaker identity shifts cause viewer cognitive dissonance, reducing immersion and content enjoyment.",
+      "Mismatched prosody and lip movements reinforce stereotypes about low-quality dubbed media, harming market reception."
+    ]
+  }
+}

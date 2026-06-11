@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_1649",
+  "chain_index": 0,
+  "title": "Cross-view Masked Diffusion Transformers for Person Image Synthesis",
+  "abstract": "We present X-MDPT (Cross-view Masked Diffusion Prediction Transformers), a novel diffusion model designed for pose-guided human image generation. X-MDPT distinguishes itself by employing masked diffusion transformers that operate on latent patches, a departure from the commonly-used Unet structures in existing works. The model comprises three key modules: 1) a denoising diffusion Transformer, 2) an aggregation network that consolidates conditions into a single vector for the diffusion process, and 3) a mask cross-prediction module that enhances representation learning with semantic information from the reference image. X-MDPT demonstrates scalability, improving FID, SSIM, and LPIPS with larger models. Despite its simple design, our model outperforms state-of-the-art approaches on the DeepFashion dataset while exhibiting efficiency in terms of training parameters, training time, and inference speed. Our compact 33MB model achieves an FID of 7.42, surpassing a prior Unet latent diffusion approach (FID 8.07) using only 11× fewer parameters. Our best model surpasses the pixel-based diffusion with 2 3 of the parameters and achieves 5.43× faster inference. The code is available at https://github.com/trungpx/xmdpt.",
+  "impact": "Our method proficiently produces high-quality images featuring individuals in diverse poses, utilizing any person’s image as a reference point. While it offers numerous advantages, including swift image generation, there’s a risk of misuse, such as the creation of deceptive content for fraudulent purposes, a well-documented issue in image synthesis. We are committed to implementing measures to regulate access, thereby preventing misuse and ensuring that the technology contributes to the community’s welfare safely.",
+  "query_input": {
+    "scenario": "Automated fashion model generation for e-commerce catalogs",
+    "issue": "Anatomical inaccuracies bias clothing representation against underrepresented body types.",
+    "hazard": [
+      "Masked diffusion transformer-based pose-conditioned human image generation can produce anatomically implausible or biased images, degrading reliability."
+    ],
+    "exposure": [
+      "Online shoppers viewing AI-generated fashion model images"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shoppers' default trust in catalog authenticity and inability to detect AI-generated anatomical distortions allows biased garment representations to influence purchase decisions.",
+    "impact": "Underrepresented body type shoppers purchase ill-fitting clothing, causing dissatisfaction, increased returns, and reinforcement of exclusionary beauty norms.",
+    "dose_response": "Masked diffusion transformer-based pose-conditioned generation of anatomically biased images, through online shoppers viewing AI-generated fashion models, triggers their default trust and inability to detect distortions, leading to ill-fitting clothing purchases by underrepresented body types, dissatisfaction, returns, and exclusionary norms."
+  },
+  "reference": {
+    "dose_response": [
+      "Masked diffusion transformer-based pose-conditioned generation yields biased anatomically implausible images, which online shoppers trust, causing financial loss from returns and reinforcing narrow beauty standards against underrepresented bodies."
+    ],
+    "vulnerability": [
+      "Consumers and retailers trust generated fashion images as accurate representations without mechanisms to verify body type fidelity."
+    ],
+    "impact": [
+      "Financial loss from returns and brand damage due to misrepresented clothing on underrepresented bodies.",
+      "Reinforcement of narrow beauty standards and exclusion of marginalized body shapes."
+    ]
+  }
+}

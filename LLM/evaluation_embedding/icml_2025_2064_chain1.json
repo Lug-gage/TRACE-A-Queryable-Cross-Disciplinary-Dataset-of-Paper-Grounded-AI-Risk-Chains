@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2064",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7343,
+    "reference": "Continuous update pipelines with automated weight averaging lack integrity checks, allowing silent knowledge degradation.",
+    "generated": "Automated update pipelines lack checks for permutation errors in residual connections, leaving knowledge degradation undetected."
+  },
+  "impact": {
+    "similarity": 0.7804,
+    "reference": "Degraded model knowledge retention leads to erroneous AI service outputs, causing financial losses and reputational damage.",
+    "generated": "Degraded model outputs silently undermine service reliability, forcing costly retraining and eroding user trust."
+  },
+  "dose_response": {
+    "similarity": 0.7682,
+    "reference": "Misaligned weight permutations in weight averaging cause degraded knowledge retention, which when enterprise teams deploy without integrity checks leads to erroneous outputs, financial losses, and reputational damage.",
+    "generated": "Misaligned weight permutations, through enterprise teams maintaining continuously updated AI services, trigger automated update pipelines lacking checks for residual connection permutation errors, leading to degraded model outputs that silently undermine service reliability, force costly retraining, and erode user trust."
+  }
+}

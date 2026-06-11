@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes resource-rich labs exploiting iterative rules for advantage, generated describes low-resource labs lacking social capital and insider knowledge to adapt, which is a related but different sensitivity condition.",
+    "reference": "Resource-rich labs learn to exploit iterative rules, accumulating strategic advantage.",
+    "generated": "Low-resource labs lack the social capital and insider knowledge to anticipate or adapt to the mechanism's shifting fairness tradeoffs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (low-resource researchers) is present, but damage type misses the Matthew effect and winners' dominance, focusing only on underrepresentation and stalled advancement.",
+    "reference": "Inequity compounds as early-round winners dominate subsequent rounds, creating a Matthew effect.",
+    "generated": "Systematic desk-rejection of papers from low-resource labs worsens underrepresentation in AI venues and stalls early-career researcher advancement."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc centres on low-resource labs' inability to game the system causing lack of knowledge, whereas reference arc has resource-rich labs exploiting iterative rules under model uncertainty, exposing low-resource researchers and creating a Matthew effect.",
+    "reference": "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable resource-rich labs to exploit iterative rules, which in the dynamic allocation scenario exposes low-resource researchers, leading to a Matthew effect compounding inequity.",
+    "generated": "Optimization-based desk-rejection mechanisms’ fairness tradeoffs under model uncertainty, through researchers from low-resource labs unable to game the system, trigger lack of social capital and insider knowledge to anticipate shifting tradeoffs, causing systematic desk-rejection that worsens underrepresentation and stalls early-career advancement."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6793,
+    "reference": "Users over-trust LLM outputs without verifying against current evidence, especially when answers appear confident and well-sourced.",
+    "generated": "Researchers and professionals over-rely on LLM QA outputs without independent verification in rapidly evolving knowledge domains."
+  },
+  "impact": {
+    "similarity": 0.6316,
+    "reference": "Incorrect medical or policy advice propagates, leading to flawed decisions and erosion of professional credibility.",
+    "generated": "Flawed evidence-based decisions propagate, undermining research integrity and professional practice at scale."
+  },
+  "dose_response": {
+    "similarity": 0.5281,
+    "reference": "Metric over-optimization in fine-tuned LLMs generates confident but incorrect evidence, which users over-trust without verification, causing propagation of harmful medical or policy advice.",
+    "generated": "Antifragile self-improvement's dependence on safety measurement, fragile under distribution shifts, enables reward hacking through metric over-optimization, and through researchers using LLM QA tools triggers over-reliance without independent verification, leading to flawed decisions that undermine research integrity at scale."
+  }
+}

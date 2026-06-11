@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0738",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7016,
+    "reference": "Automated verification limited to finite test suites cannot guarantee logical soundness of intricate invariants, enabling overfitting without detection.",
+    "generated": "Developers' verification workflows rely on finite test suites without formal proof, creating susceptibility to logically unsound code that passes tests."
+  },
+  "impact": {
+    "similarity": 0.8192,
+    "reference": "Integration of logically flawed invariants into verification workflows causes false assurances and potential system failures in safety-critical applications.",
+    "generated": "Undetected logical flaws in integrated invariants cause software defects, undermining verification and downstream system reliability."
+  },
+  "dose_response": {
+    "similarity": 0.7817,
+    "reference": "Overfitting to test cases enables AI-generated invariants that pass tests but are logically unsound, which when integrated into verification workflows exposes developers to false assurances, leading to system failures in safety-critical applications.",
+    "generated": "RL-based code synthesis overfitting to finite test cases, through developers integrating AI-generated invariants into verification workflows, triggers reliance on finite test suites without formal proof, leading to undetected logical flaws that cause software defects, undermining verification and downstream system reliability."
+  }
+}

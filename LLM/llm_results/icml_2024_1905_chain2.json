@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1905",
+  "chain_index": 2,
+  "title": "Compositional Image Decomposition with Diffusion Models",
+  "abstract": "Given an image of a natural scene, we are able to quickly decompose it into a set of components such as objects, lighting, shadows, and foreground. We can then envision a scene where we combine certain components with those from other images, for instance a set of objects from our bedroom and animals from a zoo under the lighting conditions of a forest, even if we have never encountered such a scene before. In this paper, we present a method to decompose an image into such compositional components. Our approach, Decomp Diffusion, is an unsupervised method which, when given a single image, infers a set of different components in the image, each represented by a diffusion model. We demonstrate how components can capture different factors of the scene, ranging from global scene descriptors like shadows or facial expression to local scene descriptors like constituent objects. We further illustrate how inferred factors can be flexibly composed, even with factors inferred from other models, to generate a variety of scenes sharply different than those seen in training time. Code and visualizations are at https://energy-based-model. github.io/decomp-diffusion. 1",
+  "impact": "Our proposed approach does not have immediate negative social impact in its current form since evaluation is carried out on standard datasets. However, our model’s ability to generate facial features or objects in a zero-shot manner raises concerns about potential misuse for misinformation. Thus, advocating for responsible usage is crucial. Additionally, like many generative models, there is a risk of introducing biases related to gender or race depending on the training data. Therefore, careful attention must be paid to data collection and curation to mitigate such biases. Our approach can actually benefit many fields such as scene understanding, artwork generation, and robotics.",
+  "query_input": {
+    "scenario": "Autonomous driving scene parsing with decomposed descriptors",
+    "issue": "Entangled object and shadow components lead to misinterpretation of scene layout, affecting navigation",
+    "hazard": [
+      "Diffusion models' factorized but non-continuous manifold representations conflate independent scene factors, producing misleading decompositions."
+    ],
+    "exposure": [
+      "Autonomous vehicle perception systems relying on decompositions for scene understanding"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Perception systems naively trust disentangled factors without cross-validation, accepting conflation of independent scene elements.",
+    "impact": "Misleading scene layouts cause incorrect navigation decisions, leading to collisions and property damage.",
+    "dose_response": "Diffusion models’ factorized but non-continuous manifold representations conflate independent scene factors, and through autonomous vehicle perception systems relying on these decompositions, trigger naive trust without cross-validation and acceptance of conflation, leading to misleading layouts, incorrect navigation, collisions, and property damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Diffusion models' factorized but non-continuous manifold representations conflating scene factors cause misinterpretation of scene layout, which when autonomous vehicle perception systems trust such decompositions, leads to navigation errors causing accidents."
+    ],
+    "vulnerability": [
+      "Safety-critical systems trust decomposition for scene understanding"
+    ],
+    "impact": [
+      "Navigation errors cause vehicle accidents and harm"
+    ]
+  }
+}

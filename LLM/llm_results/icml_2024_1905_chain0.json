@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1905",
+  "chain_index": 0,
+  "title": "Compositional Image Decomposition with Diffusion Models",
+  "abstract": "Given an image of a natural scene, we are able to quickly decompose it into a set of components such as objects, lighting, shadows, and foreground. We can then envision a scene where we combine certain components with those from other images, for instance a set of objects from our bedroom and animals from a zoo under the lighting conditions of a forest, even if we have never encountered such a scene before. In this paper, we present a method to decompose an image into such compositional components. Our approach, Decomp Diffusion, is an unsupervised method which, when given a single image, infers a set of different components in the image, each represented by a diffusion model. We demonstrate how components can capture different factors of the scene, ranging from global scene descriptors like shadows or facial expression to local scene descriptors like constituent objects. We further illustrate how inferred factors can be flexibly composed, even with factors inferred from other models, to generate a variety of scenes sharply different than those seen in training time. Code and visualizations are at https://energy-based-model. github.io/decomp-diffusion. 1",
+  "impact": "Our proposed approach does not have immediate negative social impact in its current form since evaluation is carried out on standard datasets. However, our model’s ability to generate facial features or objects in a zero-shot manner raises concerns about potential misuse for misinformation. Thus, advocating for responsible usage is crucial. Additionally, like many generative models, there is a risk of introducing biases related to gender or race depending on the training data. Therefore, careful attention must be paid to data collection and curation to mitigate such biases. Our approach can actually benefit many fields such as scene understanding, artwork generation, and robotics.",
+  "query_input": {
+    "scenario": "Image editing with decomposed scene components",
+    "issue": "Conflated lighting and object components cause unintended object alterations when editing shadows",
+    "hazard": [
+      "Diffusion models' factorized but non-continuous manifold representations conflate independent scene factors, producing misleading decompositions."
+    ],
+    "exposure": [
+      "Graphic designers and photographers using AI-assisted image decomposition tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Designers lack means to verify that AI-decomposed scene components are semantically independent, leaving them reliant on entangled representations.",
+    "impact": "Shadow edits inadvertently distort objects, producing flawed images, wasted editing time, and distrust in AI-assisted photography tools.",
+    "dose_response": "Diffusion models' factorized, non-continuous manifolds conflating scene factors into misleading decompositions, through graphic designers and photographers using AI-assisted tools, triggers lacking verification means, leading to shadow edits distorting objects, producing flawed images, wasted time, and distrust in AI tools."
+  },
+  "reference": {
+    "dose_response": [
+      "Conflated scene factors from diffusion models' factorized but non-continuous manifold representations produce misleading decompositions, causing graphic designers using AI-assisted tools to inadvertently create plausible yet inaccurate edits that propagate misinformation."
+    ],
+    "vulnerability": [
+      "Users trust AI decomposition to isolate scene factors independently"
+    ],
+    "impact": [
+      "Plausible but inaccurate edited images propagate misinformation"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2379",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions automated reliance but frames vulnerability as overfitting causing no detection instead of reduced human oversight.",
+    "reference": "Automated reliance on purifier creates single point of failure, reducing human oversight of data quality.",
+    "generated": "ML engineers rely on purification pipelines that overfit to known attacks, providing no detection of novel perturbations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both model poisoning on cloud services and trust erosion are present, matching the reference's widespread model poisoning on cloud.",
+    "reference": "Widespread model poisoning across multiple downstream applications hosted on the cloud platform.",
+    "generated": "Deployed models learn poison-triggered misclassifications, compromising prediction integrity and eroding trust in cloud ML services."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe overfitted purifiers missing novel perturbations leading to poisoned models and trust erosion, via automated pipelines.",
+    "reference": "Overfitted purifiers fail to suppress novel poisoning perturbations, enabling adaptive attacks that, through automated cloud pipelines, lead to widespread model poisoning and eroded user trust.",
+    "generated": "Purification mechanisms with bypassable perturbation suppression, through engineers relying on automated purification pipelines, trigger reliance on overfitted pipelines that miss novel perturbations, leading to deployed models learning poison-triggered misclassifications, compromising prediction integrity and eroding trust in cloud ML services."
+  }
+}

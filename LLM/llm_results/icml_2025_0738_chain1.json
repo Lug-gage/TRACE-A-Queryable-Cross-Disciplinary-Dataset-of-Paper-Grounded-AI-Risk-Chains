@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0738",
+  "chain_index": 1,
+  "title": "RLEF Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+  "abstract": "Large language models (LLMs) deployed as agents solve user-specified tasks over multiple steps while keeping the required manual engagement to a minimum. Crucially, such LLMs need to ground their generations in any feedback obtained to reliably achieve the desired outcomes. We propose an end-to-end reinforcement learning method for teaching models to leverage execution feedback in the realm of code synthesis, where state-of-the-art LLMs struggle to improve code iteratively compared to independent sampling. We benchmark on competitive programming tasks and achieve large performance gains with both small (8B parameters) and large (70B) models, outperforming previous work while reducing the number of samples required by an order of magnitude. Our analysis of inference-time behavior demonstrates that our method produces LLMs that effectively leverage automatic feedback over multiple steps.",
+  "impact": "Successful grounding of LLMs for code generation execution feedback will amplify their utility when applied to impactful tasks such as assisting software development and performing quality control. In general, however, increasing the capabilities of LLMs, now widely deployed in a range of applications, requires quality control and guardrailing to promote safety and minimize potentially harmful output. We limit our study to the generation of source code, where we confine the execution of model-generated output to local sandboxes. We believe the framework of Shavit et al. (2023) regarding the governance of AI agents to be a useful resource for practitioners.",
+  "query_input": {
+    "scenario": "Automated code generation for loop invariant synthesis or visual reasoning puzzles",
+    "issue": "Exploiting test cases produces code that passes tests but is logically unsound",
+    "hazard": [
+      "RL-based code synthesis using execution feedback from finite test cases can lead to overfitting, producing code that passes given tests but fails on unseen inputs."
+    ],
+    "exposure": [
+      "Developers integrating AI-generated invariants into verification workflows"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers' verification workflows rely on finite test suites without formal proof, creating susceptibility to logically unsound code that passes tests.",
+    "impact": "Undetected logical flaws in integrated invariants cause software defects, undermining verification and downstream system reliability.",
+    "dose_response": "RL-based code synthesis overfitting to finite test cases, through developers integrating AI-generated invariants into verification workflows, triggers reliance on finite test suites without formal proof, leading to undetected logical flaws that cause software defects, undermining verification and downstream system reliability."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting to test cases enables AI-generated invariants that pass tests but are logically unsound, which when integrated into verification workflows exposes developers to false assurances, leading to system failures in safety-critical applications."
+    ],
+    "vulnerability": [
+      "Automated verification limited to finite test suites cannot guarantee logical soundness of intricate invariants, enabling overfitting without detection."
+    ],
+    "impact": [
+      "Integration of logically flawed invariants into verification workflows causes false assurances and potential system failures in safety-critical applications."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1592",
+  "chain_index": 1,
+  "title": "Coprocessor Actor Critic A Model-Based Reinforcement Learning Approach For Adaptive Brain Stimulation",
+  "abstract": "Adaptive brain stimulation can treat neurological conditions such as Parkinson’s disease and poststroke motor deficits by influencing abnormal neural activity. Because of patient heterogeneity, each patient requires a unique stimulation policy to achieve optimal neural responses. Model-free reinforcement learning (MFRL) holds promise in learning effective policies for a variety of similar control tasks, but is limited in domains like brain stimulation by a need for numerous costly environment interactions. In this work we introduce Coprocessor Actor Critic, a novel, modelbased reinforcement learning (MBRL) approach for learning neural coprocessor policies for brain stimulation. Our key insight is that coprocessor policy learning is a combination of learning how to act optimally in the world and learning how to induce optimal actions in the world through stimulation of an injured brain. We show that our approach overcomes the limitations of traditional MFRL methods in terms of sample efficiency and task success and outperforms baseline MBRL approaches in a neurologically realistic model of an injured brain.",
+  "impact": "A major ethical concern of automated coprocessor policy learning is that adaptive brain stimulation can pose a safety risk to patients if stimulations outside of a safe region are applied to the brain. To mitigate these risks, in future work, when deploying CopAC on real patients, we aim to work closely with clinical collaborators to ensure patient safety and appropriately constrain the action space during online learning. Another ethical consideration involves the possibility of RL coprocessor approaches being exploited for malicious control over end-users. Unauthorized manipulation of RL policies, such as through adversarial attacks, could lead to unethical interventions and compromise the well-being of individuals with brain implants. To reduce this risk, in future work, we will draw on prior work in guarding against adversarial attacks to mitigate potential exploitation (Chen et al., 2019).",
+  "query_input": {
+    "scenario": "Closed-loop neuromodulation for post-stroke motor deficits",
+    "issue": "Model-based policy erroneously selects stimulation patterns harmful to motor recovery.",
+    "hazard": [
+      "Model-based RL policies produce overconfident, potentially unsafe stimulation actions due to value overestimation on out-of-distribution neural states."
+    ],
+    "exposure": [
+      "Stroke survivors using a neural coprocessor for motor rehabilitation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Post-stroke brains lack the plasticity to counteract maladaptive stimulation, enabling harmful patterns to disrupt recovery.",
+    "impact": "Worsened motor deficits and prolonged disability, undermining rehabilitation progress and functional independence.",
+    "dose_response": "Value overestimation on out-of-distribution neural states in model-based RL policies produces unsafe stimulation, which through stroke survivors' neural coprocessor exploits post-stroke brains' limited plasticity, causing maladaptive disruption that worsens motor deficits, prolongs disability, and undermines rehabilitation and functional independence."
+  },
+  "reference": {
+    "dose_response": [
+      "Value overestimation on out-of-distribution neural states enables unsafe stimulation actions, which in stroke survivors using a neural coprocessor for motor rehabilitation exposes them to inappropriate patterns, leading to impaired motor relearning, prolonged disability, increased caregiver strain, and societal healthcare costs."
+    ],
+    "vulnerability": [
+      "Stroke lesion heterogeneity uncaptured in training leads to value misestimation for atypical motor cortices during recovery."
+    ],
+    "impact": [
+      "Inappropriate stimulation impairs motor relearning, prolonging disability and increasing caregiver strain and societal healthcare costs."
+    ]
+  }
+}

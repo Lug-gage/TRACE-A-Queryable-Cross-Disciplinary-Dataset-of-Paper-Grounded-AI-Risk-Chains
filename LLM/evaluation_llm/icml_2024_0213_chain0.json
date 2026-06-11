@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0213",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "over-reliance due to time/cost pressures versus lack of detection means, both lead to reliance but root causes differ",
+    "reference": "Over-reliance on generative outputs without orthogonal experimental validation due to time and cost pressures in drug development pipelines.",
+    "generated": "Biomedical researchers lack means to detect subtle distributional biases in flow-model outputs, relying on generated sequences without exact distribution guarantees."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "wasting resources is present, but delaying effective treatments is missing and replaced with endangering patient safety",
+    "reference": "Advancement of non-viable therapeutic candidates into costly preclinical testing, wasting resources and delaying effective treatments.",
+    "generated": "Non-viable or hazardous protein therapeutics advance through development, wasting resources and endangering patient safety."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal arc of hard-to-detect biases causing reliance without guarantees and advancement of non-viable candidates matches the reference logic of biases bypassing scrutiny and leading to costly testing",
+    "reference": "Undetectable distributional biases in flow-generated sequences enable subtly flawed therapeutic candidates, which in protein design scenarios bypass expert scrutiny, leading to advancement of non-viable candidates into costly preclinical testing.",
+    "generated": "Discrete flow models’ hard-to-detect distributional biases, through biomedical researchers designing protein sequences with them, trigger reliance on outputs without exact distribution guarantees, leading to non-viable or hazardous therapeutics advancing, wasting resources and endangering patient safety."
+  }
+}

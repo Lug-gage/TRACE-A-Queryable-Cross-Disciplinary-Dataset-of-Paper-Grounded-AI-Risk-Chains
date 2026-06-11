@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2449",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.3588,
+    "reference": "Over-reliance on opaque CLIP embeddings without human-interpretable validation in safety-critical autonomous systems.",
+    "generated": "Operators depend on anomaly detectors that cannot flag adversarial inputs mimicking clean topological persistence signatures."
+  },
+  "impact": {
+    "similarity": 0.6634,
+    "reference": "Undetected adversarial inputs cause autonomous vehicle collisions, eroding public trust in AI safety.",
+    "generated": "Safety incidents and operational failures result from adversarial inputs triggering dangerous autonomous actions without operator alert."
+  },
+  "dose_response": {
+    "similarity": 0.8925,
+    "reference": "Adversarial perturbations exploit multimodal alignment gaps to evade detection by mimicking clean topological signatures; in deployment of CLIP-based anomaly detection in autonomous systems, this exposes operators to undetected adversarial inputs, leading to autonomous vehicle collisions and eroded public trust.",
+    "generated": "Adversarial perturbations exploiting multimodal alignment gaps to mimic clean topological signatures, through operators relying on CLIP-based anomaly detectors, trigger dependence on detectors unable to flag such inputs, leading to safety incidents and operational failures from unalerted dangerous autonomous actions."
+  }
+}

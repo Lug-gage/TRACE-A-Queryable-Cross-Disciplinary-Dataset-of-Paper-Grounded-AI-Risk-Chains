@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6291,
+    "reference": "Policies overfit to spurious visual-textual correlations in training environments, failing in novel settings.",
+    "generated": "Policy learning depends on VLM rewards without mechanisms to verify visual-text alignment, leaving it sensitive to miscalibrated scores."
+  },
+  "impact": {
+    "similarity": 0.6115,
+    "reference": "Embodied agents execute unsafe or incorrect actions in human-occupied spaces, causing property damage or injury.",
+    "generated": "Embodied agents execute misaligned task plans, causing task failures and degraded zero-shot generalization in novel indoor settings."
+  },
+  "dose_response": {
+    "similarity": 0.8384,
+    "reference": "Miscalibrated VLM reward signals misguide policy learning, which in zero-shot task planning for embodied agents in unseen environments leads to unsafe or incorrect actions in human-occupied spaces.",
+    "generated": "VLM-based reward scoring with miscalibrated, visually-uncorrelated signals, through embodied agents in novel indoor settings, triggers policy learning that lacks visual-text alignment verification, leading to misaligned task plans, failures, and degraded zero-shot generalization."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4478,
+    "reference": "Materials scientists designing multi-step syntheses often treat each step independently, ignoring error propagation.",
+    "generated": "Reliance on approximate atom mapping without ground-truth validation data leaves yield predictions susceptible to systematic biases."
+  },
+  "impact": {
+    "similarity": 0.6223,
+    "reference": "Inefficient material synthesis with overall yields too low, wasting years of research.",
+    "generated": "Cumulative yield errors from biased predictions render multi-step synthesis pathways unviable, wasting experimental resources."
+  },
+  "dose_response": {
+    "similarity": 0.7117,
+    "reference": "Atom mapping errors cause systematic yield overestimates, which in multi-step synthesis design leads materials scientists to pursue unviable pathways, resulting in wasted research and misleading publications when error propagation is ignored.",
+    "generated": "Differentiable node alignment in condensed reaction graphs introduces systematic mapping errors, through materials scientists designing novel polymers via multi-step synthesis, triggers reliance on approximate atom mapping without ground-truth validation, leading to cumulative yield errors rendering pathways unviable and wasting resources."
+  }
+}

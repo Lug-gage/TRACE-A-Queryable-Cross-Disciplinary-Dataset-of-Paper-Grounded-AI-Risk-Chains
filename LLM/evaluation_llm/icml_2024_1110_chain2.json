@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1110",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated sensitivity condition (businesses rely on optimality guarantees without verifying abstraction error propagation) semantically captures the reference's lack of understanding of failure modes under approximation error.",
+    "reference": "Businesses deploy negotiation agents without understanding their failure modes under approximation error.",
+    "generated": "Businesses rely on RL-CFR agents' optimality guarantees without verifying abstraction error propagation, allowing undetected strategic bias in negotiation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (business relationships) is present, but the specific damage type 'breakdown' is weakened to 'damage', missing the severity of complete relationship failure.",
+    "reference": "Breakdown of long-term supplier relationships due to perceived unfairness.",
+    "generated": "Unfair bargaining outcomes damage business relationships and market efficiency, causing financial losses and eroded trust in automated trading."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The reference causal arc is abstraction errors → erratic negotiation offers → unfair outcomes → erosion of relationships; the generated arc replaces ‘erratic offers’ with regret minimization degradation and unverified reliance causing bias, a different causal mechanism.",
+    "reference": "Abstraction errors in RL-CFR cause erratic negotiation offers, exposing counterparties to unfair outcomes that erode business relationships and market participation.",
+    "generated": "Dynamic action abstraction's approximation error degrades regret minimization, through deployment in automated contract negotiation, triggers unverified optimality reliance allowing undetected strategic bias, leading to unfair bargaining outcomes that damage relationships and market efficiency, incurring financial losses and eroded trust."
+  }
+}

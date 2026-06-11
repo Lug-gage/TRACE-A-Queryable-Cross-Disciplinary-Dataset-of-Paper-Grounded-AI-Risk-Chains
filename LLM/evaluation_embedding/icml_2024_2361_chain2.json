@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5376,
+    "reference": "Automated rejection of human inspector overrides due to high AI confidence.",
+    "generated": "Automated quality control systems lack secondary verification for novel defect types, relying entirely on the model's miscalibrated confidence scores."
+  },
+  "impact": {
+    "similarity": 0.8053,
+    "reference": "Defective products reaching consumers, causing safety recalls and brand damage.",
+    "generated": "Faulty products pass inspection, enter consumer markets, and cause safety failures, costly recalls, and reputational damage."
+  },
+  "dose_response": {
+    "similarity": 0.7089,
+    "reference": "Overconfident uncertainty estimates enable automated quality control systems to pass novel defects as normal, which in industrial anomaly detection allows faulty products to pass inspection.",
+    "generated": "Density-aware evidential deep learning's overconfident, miscalibrated OOD uncertainty, through quality control systems in automated manufacturing, triggers the lack of secondary verification for novel defect types, leading to faulty products that pass inspection, enter markets, cause safety failures, costly recalls, and reputational damage."
+  }
+}

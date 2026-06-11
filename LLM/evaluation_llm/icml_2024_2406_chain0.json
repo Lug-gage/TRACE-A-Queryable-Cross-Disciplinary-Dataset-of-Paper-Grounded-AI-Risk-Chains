@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2406",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both reference and generated describe sensitivity to overfitting due to lack of out-of-distribution robustness checks, with generated framing it via engineers' reliance but same condition.",
+    "reference": "LLM-driven search overfits to training distribution without out-of-distribution robustness checks.",
+    "generated": "Engineers rely on LLM-discovered structures without out-of-distribution validation, leaving deployed classifiers unable to resist accuracy loss from overfitting."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated captures misclassification leading to erroneous decisions, but omits the safety-critical task context, missing the affected party's criticality.",
+    "reference": "Misclassification of out-of-distribution images leads to incorrect decisions in safety-critical tasks.",
+    "generated": "Misclassification of out-of-distribution images degrades classifier reliability, leading to erroneous automated decisions in deployed vision systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: overfitting search yields brittle structures, deployed without OOD validation, leading to misclassification; extra intermediate steps do not alter the core mechanism.",
+    "reference": "Overfitting LLM-driven search yields brittle tensor networks that, when deployed by computer vision engineers without out-of-distribution robustness checks, cause misclassification in safety-critical tasks.",
+    "generated": "Automated LLM-driven algorithm generation overfits to optimization criteria, producing brittle structures that fail under distribution shifts, through computer vision engineers deploying classifiers without out-of-distribution validation, triggers reliance on unvalidated structures that lose accuracy, leading to misclassification and erroneous automated decisions."
+  }
+}

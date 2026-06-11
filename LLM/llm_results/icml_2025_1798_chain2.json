@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1798",
+  "chain_index": 2,
+  "title": "The Price of Linear Time Error Analysis of Structured Kernel Interpolation",
+  "abstract": "Structured Kernel Interpolation (SKI) (Wilson & Nickisch, 2015) scales Gaussian Processes (GPs) by approximating the kernel matrix via inducing point interpolation, achieving linear computational complexity. However, it lacks rigorous theoretical error analysis. This paper bridges this gap by proving error bounds for the SKI Gram matrix and examining their effect on hyperparameter estimation and posterior inference. We further provide a practical guide to selecting the number of inducing points under convolutional cubic interpolation: they should grow as nd/3 for spectral norm error control. Crucially, we identify two dimensionality regimes for the SKI Gram matrix spectral norm error vs. complexity trade-off. For d < 3, any error tolerance can achieve linear time for sufficiently large sample size. For d ≥3, the error must increase with sample size for our guarantees to hold. Our analysis provides key insights into SKI’s scalability-accuracy tradeoffs, establishing precise conditions for achieving linear-time GP inference with controlled error.",
+  "impact": "This work contributes to a deeper theoretical understanding Structured Kernel Interpolation (SKI) (Wilson & Nickisch, 2015) for Gaussian Processes (GPs). By establishing error bounds and analyzing the impact of SKI on hyperparameter estimation and posterior inference, this research can lead to more confident use of approximate Gaussian Processes. These models have broad applications in various domains, including those mentioned in the introduction as well as robotics (Deisenroth et al., 2015), environmental modeling (Desai et al., 2023), and healthcare (Alaa & van der Schaar, 2017). Improved Gaussian Process models can enhance prediction accuracy and decision-making, potentially leading to advancements in robotics, more accurate environmental predictions, and better healthcare outcomes. It is important to acknowledge that the application of Gaussian Process models also carries potential risks. For instance, in healthcare, inaccurate predictions or biased models can lead to misdiagnosis or inappropriate treatment (Morley et al., 2020). Therefore, understanding potential sources of error when using approximations can be crucial to understanding how reliable we can expect them to be.",
+  "query_input": {
+    "scenario": "Deployment of SKI in high-dimensional input spaces",
+    "issue": "Interpolation error exceeds spectral norm guarantees in sparse inducing point regions, reducing predictive quality.",
+    "hazard": [
+      "Structured Kernel Interpolation's Gram approximation introduces spectral norm error that propagates to posterior inference and hyperparameter estimation, undermining accuracy and calibration."
+    ],
+    "exposure": [
+      "Researchers applying SKI to high-dimensional scientific data"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers lack error-controlled guarantees for SKI in high-dimensional settings (d≥3), where spectral norm error necessarily grows with sample size.",
+    "impact": "Degraded posterior inference and hyperparameter estimation produce unreliable predictions and misinformed scientific conclusions in high-dimensional data analysis.",
+    "dose_response": "SKI's Gram approximation spectral norm error, through application to high-dimensional data, triggers the absence of error-controlled guarantees for d≥3 where error grows with sample size, leading to degraded posterior inference and hyperparameter estimation producing unreliable predictions and misinformed scientific conclusions."
+  },
+  "reference": {
+    "dose_response": [
+      "Spectral norm error from SKI's Gram approximation enables spurious precision in high-dimensional input spaces, exposing researchers applying SKI to scientific data to false discoveries that erode credibility of ML in science."
+    ],
+    "vulnerability": [
+      "Researchers trust SKI-derived predictive quality in high dimensions, accepting spurious precision in sparse regions."
+    ],
+    "impact": [
+      "False scientific discoveries propagate through literature, wasting resources and damaging credibility of ML in science."
+    ]
+  }
+}

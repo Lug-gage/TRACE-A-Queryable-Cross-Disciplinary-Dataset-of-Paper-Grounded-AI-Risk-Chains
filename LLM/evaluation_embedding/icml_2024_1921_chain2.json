@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1921",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6344,
+    "reference": "Clinical decisions driven by AI emotion analysis without clinician corroboration.",
+    "generated": "Reliance on AI emotion assessments in telehealth where reduced nonverbal cues prevent independent verification of speech-visual consistency."
+  },
+  "impact": {
+    "similarity": 0.5958,
+    "reference": "Misinterpreted patient distress leading to inappropriate clinical responses.",
+    "generated": "Misdiagnosis of emotional states leading to inappropriate therapeutic interventions and erosion of patient trust in telehealth care."
+  },
+  "dose_response": {
+    "similarity": 0.8079,
+    "reference": "Multimodal fusion hallucination leads to erroneous emotion inference, exposing telehealth patients and clinicians who over-rely on AI, causing misdiagnosis and disproportionate harm to marginalized groups.",
+    "generated": "Multimodal fusion via unpaired audiovisual training inducing hallucinated, temporally inconsistent answers, through patients and therapists using emotion recognition in telehealth, triggers reliance on unverifiable AI assessments, leading to misdiagnosis, inappropriate interventions, and trust erosion."
+  }
+}

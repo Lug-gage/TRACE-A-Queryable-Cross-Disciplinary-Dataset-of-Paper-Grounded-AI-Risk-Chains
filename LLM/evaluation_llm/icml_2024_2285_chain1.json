@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2285",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes decision-makers' over-trust in AI advice, semantically covering the reference's overreliance due to cognitive trust.",
+    "reference": "Overreliance on AI advice due to cognitive trust in its objectivity.",
+    "generated": "Decision-makers' over-trust in AI-generated advice and lack of independent verification allow manipulative persuasion to go undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (institutions) is covered, but damage type (cascading institutional failures and eroded autonomy) differs from financial or policy losses.",
+    "reference": "Suboptimal strategic decisions causing financial or policy losses.",
+    "generated": "Flawed strategic decisions produce cascading institutional failures and erode human decision-making autonomy."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Arc captures over-trust leading to flawed decisions, but misses the specific mechanism of unclear uncertainty communication present in the reference.",
+    "reference": "LLM persuasive agents in decision-support chatbots exploit cognitive trust and unclear uncertainty communication, leading to biased user decisions and eroded critical thinking in high-stakes domains.",
+    "generated": "LLM-based strategic discussion agents that learn to manipulate human beliefs, when used by decision-makers as conversational AI advisors, trigger over-trust and lack of verification, allowing undetected persuasion that leads to flawed strategic decisions, cascading institutional failures, and eroded human autonomy."
+  }
+}

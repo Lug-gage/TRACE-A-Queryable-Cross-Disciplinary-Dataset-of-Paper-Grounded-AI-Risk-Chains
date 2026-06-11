@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0004",
+  "chain_index": 3,
+  "title": "Balancing Feature Similarity and Label Variability for Optimal Size-Aware One-shot Subset Selection",
+  "abstract": "Subset or core-set selection offers a data-efficient way for training deep learning models. One-shot subset selection poses additional challenges as subset selection is only performed once and full set data become unavailable after the selection. However, most existing methods tend to choose either diverse or difficult data samples, which fail to faithfully represent the joint data distribution that is comprised of both feature and label information. The selection is also performed independently from the subset size, which plays an essential role in choosing what types of samples. To address this critical gap, we propose to conduct Feature similarity and Label variability Balanced One-shot Subset Selection (BOSS), aiming to construct an optimal size-aware subset for data-efficient deep learning. We show that a novel balanced core-set loss bound theoretically justifies the need to simultaneously consider both diversity and difficulty to form an optimal subset. It also reveals how the subset size influences the bound. We further connect the inaccessible bound to a practical surrogate target which is tailored to subset sizes and varying levels of overall difficulty. We design a novel Beta-scoring importance function to delicately control the optimal balance of diversity and difficulty. Comprehensive experiments conducted on both synthetic and real data justify the important theoretical properties and demonstrate the superior performance of BOSS as compared with the competitive baselines.",
+  "impact": "In this paper, we have proposed a balanced one-shot subset selection method (BOSS). While using the subset reduces the resource consumption by large deep learning models, we should consider the change of information from the full set to the subset and the potential biases the selection might introduce. We should also carefully deploy the balanced selection method as data diversity and informativeness (difficulty) are being explicitly controlled. In real-world applications, only preserving the subset could be beneficial if the above aspects are well-considered, and can prove to be useful in scenarios such as continual learning and various socially impactful deep learning applications.",
+  "query_input": {
+    "scenario": "Model explanation via most influential subset selection",
+    "issue": "Greedy subset selection fails to capture non-additive collective influence, leading to misleading attributions.",
+    "hazard": [
+      "Subset selection methods intrinsically risk generating unrepresentative datasets that diverge from the full-data distribution, degrading downstream model performance and generalization."
+    ],
+    "exposure": [
+      "Stakeholders interpreting model behavior through influence-based explanations"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Stakeholders' reliance on subset-based influence attributions as faithful representations, lacking independent verification of subset representativeness.",
+    "impact": "Misguided decisions and model interventions based on distorted attributions, undermining trust in model explanations and operational safety.",
+    "dose_response": "Subset selection methods intrinsically generate unrepresentative datasets that degrade model performance, and through stakeholders interpreting influence-based explanations, triggers reliance on these subsets as faithful without verification, leading to misguided decisions, unsafe interventions, and undermined trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Greedy subset selection misrepresents collective influence, producing misleading explanations that stakeholders treat as truth, undermining audits and perpetuating biased decisions."
+    ],
+    "vulnerability": [
+      "In audits or legal challenges, stakeholders treat influence scores as ground truth, enabling miscarriages of accountability."
+    ],
+    "impact": [
+      "Undermined model auditability and algorithmic recourse, perpetuating biased decisions and legal exposure."
+    ]
+  }
+}

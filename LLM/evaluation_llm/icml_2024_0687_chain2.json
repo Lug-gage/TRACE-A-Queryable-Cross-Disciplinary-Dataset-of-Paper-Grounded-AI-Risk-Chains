@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes lack of mandatory security audits on public hubs; generated describes inability of standard evaluations to detect malicious behaviors—different system sensitivity condition, though thematically related.",
+    "reference": "Public model hubs lack mandatory security audits, enabling backdoored models to be shared and widely adopted.",
+    "generated": "Standard safety evaluations and dataset inspections cannot detect malicious behaviors encoded through covert fine-tuning."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (undermining safety via harmful instructions) is covered, but affected party (researchers and developers unknowingly incorporating models) is not explicitly present in the generated.",
+    "reference": "Researchers and developers unknowingly incorporate backdoored models into downstream applications, propagating harm.",
+    "generated": "Widespread deployment of compromised models that execute harmful instructions, undermining safety across downstream applications."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc partially present: covert fine-tuning evading detection, researchers downloading shared models, and downstream harm are all mentioned, but the crucial link of 'public hubs lacking mandatory audits' is replaced by 'evaluations' inability to detect', altering the enabling mechanism.",
+    "reference": "Covertly embedding backdoors via fine-tuning that evade dataset inspection enables researchers to download and use compromised models from public hubs, which lack mandatory audits, leading to propagation of harm and undermined scientific reproducibility.",
+    "generated": "Covert harmful fine-tuning that evades safety evaluation, through researchers downloading shared models, triggers standard evaluations' inability to detect malicious encodings, leading to widespread deployment of compromised models executing harmful instructions, undermining downstream safety."
+  }
+}

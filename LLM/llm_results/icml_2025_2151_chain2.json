@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_2151",
+  "chain_index": 2,
+  "title": "Do Multiple Instance Learning Models Transfer",
+  "abstract": "Multiple Instance Learning (MIL) is a cornerstone approach in computational pathology (CPath) for generating clinically meaningful slide-level embeddings from gigapixel tissue images. However, MIL often struggles with small, weakly supervised clinical datasets. In contrast to fields such as NLP and conventional computer vision, where transfer learning is widely used to address data scarcity, the transferability of MIL models remains poorly understood. In this study, we systematically evaluate the transfer learning capabilities of pretrained MIL models by assessing 11 models across 21 pretraining tasks for morphological and molecular subtype prediction. Our results show that pretrained MIL models, even when trained on different organs than the target task, consistently outperform models trained from scratch. Moreover, pretraining on pancancer datasets enables strong generalization across organs and tasks, outperforming slide foundation models while using substantially less pretraining data. These findings highlight the robust adaptability of MIL models and demonstrate the benefits of leveraging transfer learning to boost performance in CPath. Lastly, we provide a resource which standardizes the implementation of MIL models and provide model weights for FEATHER, a PC-108 pretrained ABMIL model at https://github.com/mahmoodlab/MIL-Lab.",
+  "impact": "The research presented in this paper aims to advance the application of Machine Learning in computational pathology by introducing a more resource-efficient paradigm for pretraining multiple instance learning models. Our work demonstrates that leveraging an institution’s own diverse, pancancercer data can lead to significant improvements in data efficiency, requiring less data than traditional largescale approaches. This, in turn, contributes to notable compute and storage efficiency for both model development and subsequent fine-tuning. The primary societal benefit of this approach is the potential to make advanced AI tools for pathology more accessible, particularly for research groups and healthcare institutions that may lack the extensive resources typically required for pretraining with techniques like large-scale self-supervised learning (SSL). To this end, we share the model weights for our best-performing MIL pretrained model, an ABMIL model which we call FEATHER, and initialization methods in the aforementioned GitHub for public use. We envision this fostering wider innovation, accelerating the development of diagnostic aids, and potentially improving the consistency and reach of pathological services by making powerful AI tools easier to develop and adapt. While this work offers a path toward more accessible and efficient AI development, it is crucial to address potential ethical considerations and societal consequences: Algorithmic Bias and Equity: Models pretrained on data from a specific institution, even if pancancercer, may inadvertently inherit biases present in that data (e.g., related to patient demographics, disease prevalence, specific equipment, or institutional recording practices). In the case of PC- 108, all cases were acquired from Brigham and Women’s Hospital, which may lead to bias and performance disparities when applied to underrepresented groups or different clinical contexts, potentially exacerbating existing health inequities. In the future, more rigorous bias audits, diverse dataset validation, and ongoing monitoring are therefore critical next steps to ensure the equitable translation of pretrained models. Resource Allocation and Access: While our approach lowers the barrier for model development, ensuring equitable access to the benefits of these AI tools across diverse healthcare settings, including those in low-resource environments, will require concerted effort beyond the technical aspects of model creation. Overall, our work contributes to a more sustainable, efficient, and potentially equitable approach to developing AI tools in computational pathology. The realization of these benefits, however, depends critically on a continued commitment to responsible research and development practices. This includes transparency in model development and limitations, proactive strategies to identify and mitigate algorithmic bias, and ongoing efforts to ensure that the advantages of these technologies are accessible equitably across diverse healthcare settings.",
+  "query_input": {
+    "scenario": "Using generalizable WSI classification models with coarse-grained visual-semantic interaction",
+    "issue": "Insufficient fine-grained semantics leads to poor generalization across different cancer types.",
+    "hazard": [
+      "Cross-organ transfer of pretrained MIL models propagates unreliable predictions due to unresolved domain shifts between tissue types."
+    ],
+    "exposure": [
+      "Clinicians deploying WSI classification models at multiple hospital sites"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians lack real-time domain-shift detection tools and over-rely on model outputs for cross-organ cancer diagnosis.",
+    "impact": "Increased misdiagnosis and inappropriate treatment decisions across different cancer types at multiple hospital sites.",
+    "dose_response": "Cross-organ transfer of pretrained MIL models propagating unreliable predictions, through clinicians deploying WSI models at multiple sites, triggers over-reliance on outputs without real-time domain-shift detection, leading to increased misdiagnosis and inappropriate treatment across cancer types."
+  },
+  "reference": {
+    "dose_response": [
+      "Cross-organ transfer of pretrained MIL models with coarse-grained visual-semantic interaction leads to poor generalization, which when clinicians over-trust and deploy without local testing causes systematic misclassification and health disparities."
+    ],
+    "vulnerability": [
+      "Clinicians over-trust a 'generalizable' label and deploy the model without local testing.",
+      "Institutions lack site-specific monitoring and recalibration protocols for diverse populations.",
+      "Regulatory frameworks do not mandate population-specific validation studies."
+    ],
+    "impact": [
+      "Systematic misclassification in underserved populations exacerbates health disparities.",
+      "Hospital liability and lawsuits from missed or delayed cancer diagnoses.",
+      "Loss of clinician confidence and slowdown in AI clinical adoption."
+    ]
+  }
+}

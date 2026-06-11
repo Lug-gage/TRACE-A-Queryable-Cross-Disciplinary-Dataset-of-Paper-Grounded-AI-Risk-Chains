@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1852",
+  "chain_index": 1,
+  "title": "Theoretically Unmasking Inference Attacks Against LDP-Protected Clients in Federated Vision Models",
+  "abstract": "Federated Learning enables collaborative learning among clients via a coordinating server while avoiding direct data sharing, offering a perceived solution to preserve privacy. However, recent studies on Membership Inference Attacks (MIAs) have challenged this notion, showing high success rates against unprotected training data. While local differential privacy (LDP) is widely regarded as a gold standard for privacy protection in data analysis, most studies on MIAs either neglect LDP or fail to provide theoretical guarantees for attack success rates against LDP-protected data. To address this gap, we derive theoretical lower bounds for the success rates of low-polynomialtime MIAs that exploit vulnerabilities in fully connected or self-attention layers. We establish that even when data are protected by LDP, privacy risks persist, depending on the privacy budget. Practical evaluations on federated vision models confirm considerable privacy risks, revealing that the noise required to mitigate these attacks significantly degrades models’ utility.",
+  "impact": "Our findings demonstrate that LDP-protected data can still be compromised by dishonest FL servers, particularly under practical scenarios. Additionally, the study highlights the significant trade-offs between privacy and model utility, showing that the noise levels necessary to mitigate these attacks often lead to substantial degradation in model performance. Our work has immediate implications for the design and deployment of FL systems, emphasizing the need for stronger privacy safeguards and more robust defenses against AMI attacks. Researchers and practitioners are encouraged to explore enhanced privacy-preserving techniques that balance security with model effectiveness. Furthermore, policymakers can leverage these insights to establish clearer privacy guidelines for the implementation of FL in sensitive applications, such as healthcare and finance. By providing a theoretical framework alongside empirical evidence, our paper serves as a critical resource for understanding and addressing privacy threats in decentralized machine learning environments. The results pave the way for further advancements in secure and privacy-preserving AI technologies.",
+  "query_input": {
+    "scenario": "Federated NLP with self-attention layers for text prediction",
+    "issue": "Membership inference exploits self-attention layer observations to identify training sentences",
+    "hazard": [
+      "Low-polynomial time membership inference attacks against local differentially private federated learning"
+    ],
+    "exposure": [
+      "Users sharing text snippets for keyboard next-word prediction"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Self-attention layers retain membership signals that LDP noise, constrained by utility needs, cannot fully obscure.",
+    "impact": "Training sentences of individual users are identified, exposing private communications and violating confidentiality guarantees.",
+    "dose_response": "Low-polynomial-time membership inference attacks on locally DP federated learning, via sharing text snippets for next-word prediction, trigger self-attention layers' retained membership signals that utility-constrained LDP noise cannot obscure, leading to identification of training sentences, exposing private communications and violating confidentiality."
+  },
+  "reference": {
+    "dose_response": [
+      "Low-polynomial time membership inference attacks leverage self-attention layer leakage in federated NLP for text prediction, reconstructing sentences from shared text snippets, enabling password exposure and fraud."
+    ],
+    "vulnerability": [
+      "Self-attention layers leak contextual relationships, enabling sentence reconstruction."
+    ],
+    "impact": [
+      "Exposed text snippets reveal passwords and personal conversations, enabling fraud."
+    ]
+  }
+}

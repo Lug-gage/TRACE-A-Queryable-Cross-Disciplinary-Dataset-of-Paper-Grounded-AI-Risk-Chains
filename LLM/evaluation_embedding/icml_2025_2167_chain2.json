@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2167",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.787,
+    "reference": "Compliance frameworks assume one-to-one mapping of encrypted objects; ambiguous decryption breaks audit integrity.",
+    "generated": "Audit and compliance systems assume each encrypted object maps to a single verifiable plaintext, lacking the capacity to resolve multiple plausible decodings."
+  },
+  "impact": {
+    "similarity": 0.5308,
+    "reference": "Illegal content stored with plausible deniability, exposing cloud providers to legal liability and enabling harmful material.",
+    "generated": "Legal audit integrity collapses, making it impossible to prove what content was stored or accessed, resulting in regulatory non-compliance and liability."
+  },
+  "dose_response": {
+    "similarity": 0.8583,
+    "reference": "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream, in cloud storage undermining audit, exposes cloud service providers managing user access and compliance, leading to illegal content stored with plausible deniability.",
+    "generated": "Learned image compression with conditional triggers enabling multiple plausible decodings from one bitstream, through cloud providers managing access and compliance, triggers audit systems’ single-plaintext assumption and inability to resolve multiple decodings, leading to legal audit collapse, regulatory non-compliance, and liability."
+  }
+}

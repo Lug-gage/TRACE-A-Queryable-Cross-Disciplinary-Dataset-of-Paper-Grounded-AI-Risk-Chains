@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2156",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5062,
+    "reference": "Pruning removes parameters encoding refusal behaviors, leaving safety mechanisms incomplete.",
+    "generated": "Safety-critical neurons are sparse (3%), utility-independent, and thus invisible during compression, so pruning removes them unnoticed."
+  },
+  "impact": {
+    "similarity": 0.7059,
+    "reference": "Compressed models on edge devices output harmful content without oversight, disproportionately affecting vulnerable populations with limited recourse.",
+    "generated": "Compressed models lose refusal safeguards and generate harmful outputs when jailbroken, endangering users and downstream systems."
+  },
+  "dose_response": {
+    "similarity": 0.8281,
+    "reference": "Brittle safety alignment enables jailbreaking, which when engineers prune sparse weights deletes safety-critical neurons, leading to harmful content on edge devices and disproportionate harm to vulnerable populations.",
+    "generated": "Safety alignment brittleness to low-rank weight modifications, through engineers pruning for on-device deployment, triggers removal of sparse, utility-independent safety neurons unnoticed, leading to compressed models losing safeguards and generating harmful jailbroken outputs."
+  }
+}

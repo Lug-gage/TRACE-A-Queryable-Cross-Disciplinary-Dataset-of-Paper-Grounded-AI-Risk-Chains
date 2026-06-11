@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2171",
+  "chain_index": 2,
+  "title": "QuRating Selecting High-Quality Data for Training Language Models",
+  "abstract": "Selecting high-quality pre-training data is important for creating capable language models, but existing methods rely on simple heuristics. We introduce QuRating, a method for selecting pretraining data that can capture human intuitions about data quality. In this paper, we investigate four qualities-writing style, required expertise, facts & trivia, and educational value-and find that LLMs are able to discern these qualities, especially when making pairwise judgments of texts. We train a QuRater model to learn scalar ratings from pairwise judgments, and use it to annotate a 260B training corpus with quality ratings for each of the four criteria. In our experiments, we select 30B tokens according to the different quality ratings and train 1.3B-parameter language models on the selected data. We find that it is important to balance quality and diversity. When we sample using quality ratings as logits over documents, our models obtain lower perplexity and stronger in-context learning performance than baselines. Our best model is based on educational value and performs similarly to a model trained with uniform sampling for 50% more steps. Beyond data selection, we use the quality ratings to construct a training curriculum which improves performance without changing the training dataset. We extensively analyze the quality ratings and discuss their characteristics, biases, and wider implications.2",
+  "impact": "Language models are increasingly applied in real-world scenarios, and their behavior is inextricably linked to their training data. Data selection may help produce models at lower computational costs, reducing the environmental footprint of model training (Strubell et al., 2019; Lacoste et al., 2019; Patterson et al., 2021), and allowing organizations with relatively fewer resources to train stronger models. Our experiments are still expensive to reproduce, as each training run takes an equivalent of 200 NVIDIA H100 GPU hours. By studying a set of intuitive qualities as the basis for data selection, our work also sheds light on the relationship between pre-training data and model capabilities. A number of harmful behaviors of language models trained on large-scale web data are well documented, including exhibiting social biases (Nadeem et al., 2021; Abid et al., 2021) and producing toxic generations (Gehman et al., 2020). We study which social, linguistic, and geographical biases are inherent in our data selection method in Section 6.3 to promote transparency. Future research is necessary to study the effect of such biases. We recommend that in practice, QuRating should be combined with manual curation of certain languages and topics, and the resulting models should be carefully evaluated for biases before wider deployment. We also emphasize that the quality ratings do not measure the social or literary value of a text and should not be used for textual or demographic studies.",
+  "query_input": {
+    "scenario": "Selecting pretraining data for educational value",
+    "issue": "Overrated educational value dimension excludes technical content misjudged as low-value",
+    "hazard": [
+      "LLM judge quality ratings for pretraining data selection amplify systemic biases in data distribution."
+    ],
+    "exposure": [
+      "Domain experts building LLMs for educational or expert QA applications"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on automated LLM quality ratings without human validation, allowing exclusion of technical content misjudged as low-value.",
+    "impact": "LLMs trained on the selected data lack technical knowledge, resulting in degraded accuracy and reliability for expert QA.",
+    "dose_response": "LLM judge quality ratings amplify distribution biases, through domain experts building educational LLMs, triggering automated rating reliance without validation, excluding misjudged technical content, leading to LLMs lacking technical knowledge and degraded expert QA accuracy."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM judge ratings that equate educational value with fluency overlook technical content, exposing domain experts to filtered data that produces misleading educational LLMs lacking advanced knowledge."
+    ],
+    "vulnerability": [
+      "Judging educational value solely by fluency and readability falsely devalues complex technical material as low-quality."
+    ],
+    "impact": [
+      "Educational LLMs lack advanced technical knowledge, misleading learners and undermining trust in AI-assisted education."
+    ]
+  }
+}

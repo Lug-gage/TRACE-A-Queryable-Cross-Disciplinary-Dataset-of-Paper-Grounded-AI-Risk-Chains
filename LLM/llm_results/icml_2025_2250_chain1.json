@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2250",
+  "chain_index": 1,
+  "title": "CombiMOTS Combinatorial Multi-Objective Tree Search for Dual-Target Molecule Generation",
+  "abstract": "Dual-target molecule generation, which focuses on discovering compounds capable of interacting with two target proteins, has garnered significant attention due to its potential for improving therapeutic efficiency, safety and resistance mitigation. Existing approaches face two critical challenges. First, by simplifying the complex dual-target optimization problem to scalarized combinations of individual objectives, they fail to capture important trade-offs between target engagement and molecular properties. Second, they typically do not integrate synthetic planning into the generative process. This highlights a need for more appropriate objective function design and synthesis-aware methodologies tailored to the dual-target molecule generation task. In this work, we propose CombiMOTS, a Pareto Monte Carlo Tree Search (PMCTS) framework that generates dual-target molecules. CombiMOTS is designed to explore a synthesizable fragment space while employing vectorized optimization constraints to encapsulate target affinity and physicochemical properties. Extensive experiments on real-world databases demonstrate that CombiMOTS produces novel dual-target molecules with high docking scores, enhanced diversity, and balanced pharmacological characteristics, showcasing its potential as a powerful tool for dual-target drug discovery. The code and data is accessible through https: //github.com/Tibogoss/CombiMOTS.",
+  "impact": "We release CombiMOTS to be effective in real-world drug discovery tasks and useful to practitioners. Common risks involve using this tool to design harmful compounds or having complete faith in machine-learned predicted properties with no post-hoc validation. For instance, metrics as validity, uniqueness, novelty and diversity can easily be diverted through small modifications on an original SMILES string (Renz et al., 2019). Though such challenges remain common in other domains such as language and image, we encourage users to work closely with application-driven experts such as medicinal chemists or health institutes.",
+  "query_input": {
+    "scenario": "Automated library generation for multi-target drug screening",
+    "issue": "Generated libraries over-represent chemical space near training data, missing safer novel scaffolds.",
+    "hazard": [
+      "Over-optimization of multi-objective Pareto fronts on incomplete surrogate metrics yields molecules that appear optimal in silico but harbor unmodeled liabilities (e.g., toxicity, off-target effects)."
+    ],
+    "exposure": [
+      "Pharmaceutical researchers using AI libraries for hit identification"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers rely on surrogate metric scores as the primary filter, lacking systematic checks for unmodeled liabilities in AI-generated libraries.",
+    "impact": "Flawed lead compounds waste downstream resources, fail late due to hidden toxicity, and safer novel scaffolds remain undiscovered.",
+    "dose_response": "Over-optimization of multi-objective Pareto fronts on incomplete surrogate metrics, through pharmaceutical researchers using AI libraries for hit identification, triggers reliance on surrogate metric scores as primary filter without systematic liability checks, leading to wasted resources, late-stage toxicity failures, and undiscovered safer scaffolds."
+  },
+  "reference": {
+    "dose_response": [
+      "Over-optimization on incomplete metrics yields biased libraries over-representing familiar toxic scaffolds, which when used by researchers for hit identification, wastes resources on redundant screening and delays safer innovation due to lack of diversity constraints."
+    ],
+    "vulnerability": [
+      "Training data bias in generative models skews libraries toward familiar scaffolds with known toxicity liabilities.",
+      "Absence of diversity and safety constraints in automated generation workflows propagates distributional blind spots."
+    ],
+    "impact": [
+      "Resource waste on redundant, potentially toxic compound screening while ignoring safer chemical innovation.",
+      "Delayed discovery of novel, safer scaffolds, perpetuating reliance on molecules with inherent liabilities."
+    ]
+  }
+}

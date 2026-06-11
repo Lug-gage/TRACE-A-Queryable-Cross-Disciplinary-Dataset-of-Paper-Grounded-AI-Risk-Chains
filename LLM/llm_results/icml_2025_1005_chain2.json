@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 2,
+  "title": "Exploring and Mitigating Adversarial Manipulation of Voting-Based Leaderboards",
+  "abstract": "It is now common to evaluate Large Language Models (LLMs) by having humans manually vote to evaluate model outputs, in contrast to typical benchmarks that evaluate knowledge or skill atat some particular task. Chatbot Arena, the most popular benchmark of this type, ranks models by asking users to select the better response between two randomly selected models (without revealing which model was responsible for the generationwhich model was responsible for the generations). These platforms are widely trusted as a fair and accurate measure of LLM capabilities. In this paper, we show that if bot protection and other defenses are not implemented, these voting-based benchmarks are potentially vulnerable to adversarial manipulation. Specifically, we show that an attacker can alter the leaderboard (to promote their favorite model or demote competitors) at the cost of roughly a thousand votes (verified in a simulated, offline version of Chatbot Arena). Our attack consists of two steps: first, we show how an attacker can determine which model was used to generate a given reply with more than 95% accuracy; and then, the attacker can use this information to consistently vote for (or against) a target model. Working with the Chatbot Arena developers, we identify, propose, and implement mitigations to improve the robustness of Chatbot Arena against adversarial manipulation, which, based on our analysis, substantially increases the cost of such attacks.",
+  "impact": "Our study highlights the susceptibility of Chatbot Arena’s leaderboard rankings to malicious voting behavior. We conducted this work with the goal of improving the security and reliability of interactive evaluation platforms, and to encourage the development of countermeasures to improve robustness. We disclosed this attack in August 2024 and collaborated with the Chatbot Arena team throughout the development of this work to assist in developing appropriate defenses. Our collaboration has been instrumental in refining solutions to mitigate these vulnerabilities, ensuring that platform integrity and user trust are maintained. By sharing these results, we aim to encourage the community to adopt stronger safeguards in the design and evaluation of similar systems. All simulations and experiments conducted in this study were carried out in a controlled environment, with no realworld impact on the existing Chatbot Arena platform or any other public-facing system. Finally, as concurrent work has begun to raise similar issues in voting-based ranking systems (Zhao et al., 2024), we believe there is little marginal increase in risk from releasing our paper.",
+  "query_input": {
+    "scenario": "LLM-generated human-like voting patterns to evade moderation",
+    "issue": "LLMs produce deceptive votes that circumvent bot-detection safeguards.",
+    "hazard": [
+      "Crowdsourced pairwise comparison leaderboards for LLM evaluation are vulnerable to adversarial manipulation via coordinated or automated voting."
+    ],
+    "exposure": [
+      "Platform operators and genuine voters on evaluation platforms"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Platforms rely on weak bot-detection that LLM-generated deceptive voting patterns easily circumvent, leaving genuine votes diluted.",
+    "impact": "Leaderboard rankings become distorted, eroding trust in benchmarks and misdirecting model development and selection.",
+    "dose_response": "Crowdsourced pairwise comparison leaderboards vulnerable to adversarial voting, through platform operators and genuine voters, trigger weak bot-detection easily circumvented by LLM deceptive votes, leading to distorted rankings, eroded trust, and misdirected model development."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM-generated deceptive votes mimic human patterns, evading detection and exposing platforms to trust collapse, ultimately driving away genuine voters."
+    ],
+    "vulnerability": [
+      "Bot-detection algorithms are susceptible to LLM-generated votes that mimic human reasoning and writing style."
+    ],
+    "impact": [
+      "Collapse of trust in crowdsourced evaluation, driving genuine voters away and degrading platform utility."
+    ]
+  }
+}

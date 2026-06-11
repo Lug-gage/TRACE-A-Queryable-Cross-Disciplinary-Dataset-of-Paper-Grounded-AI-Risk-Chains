@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 0,
+  "title": "Predicting Dose-Response Curves with Deep Neural Networks",
+  "abstract": "Dose-response curves characterize the relationship between the concentration of drugs and their inhibitory effect on the growth of specific types of cells. The predominant Hill-equation model of an ideal enzymatic inhibition unduly simplifies the biochemical reality of many drugs; and for these drugs, the widely-used drug performance indicator of the half-inhibitory concentration IC50 can lead to poor therapeutic recommendations and poor selections of promising drug candidates. We develop a neural model that uses an embedding of the interaction between drug molecules and the tissue transcriptome to estimate the entire dose-response curve rather than a scalar aggregate. We find that, compared to the prior state of the art, this model excels at interpolating and extrapolating the inhibitory effect of untried concentrations. Unlike prevalent parametric models, it it able to accurately predict dose-response curves of drugs on cells with previously unseen transcriptomes as well as of previously untested drug molecules on established cell lines. Our implementation is available at https://github. com/alonsocampana/ARCANet.",
+  "impact": "This paper presents work whose goal, apart from advancing the field of Machine Learning, is to advance the treatment of cancer and potentially other diseases. While the advancement of personalized medicine has an enormous potential for societal benefit, one should be aware of the potential for unethical use. Any method that is effective at identifying inhibitors for cells with a specific transciptome could potentially also be used to identify highly toxic substances (Urbina et al., 2022), or even substances that are selectively toxic for a targeted population that shares certain genetic commonalities. Such misuse might be addressed by subjecting research on collections of genetic and toxicological data to ethical reviewing.",
+  "query_input": {
+    "scenario": "Cross-drug prediction for novel compounds",
+    "issue": "Miscalibrated predictions produce overconfident efficacy extrapolations to unseen chemical structures.",
+    "hazard": [
+      "Miscalibrated uncertainty estimates in deep neural dose-response curve predictions that conceal distribution shift failures."
+    ],
+    "exposure": [
+      "Pharmaceutical researchers screening novel drug candidates using model predictions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers rely on model predictions without access to calibration diagnostics, preventing detection of overconfident extrapolations for novel compounds.",
+    "impact": "Ineffective drug candidates advance into costly development, wasting resources, biasing candidate selection, and leading to poor therapeutic recommendations.",
+    "dose_response": "Miscalibrated uncertainty estimates that conceal distribution shift failures, through pharmaceutical researchers screening novel drug candidates using model predictions, triggers reliance without calibration diagnostics, leading to advancement of ineffective drug candidates that wastes resources and leads to poor therapeutic recommendations."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated uncertainty estimates conceal distribution shift failures, enabling overconfident efficacy extrapolations that lead pharmaceutical researchers to advance ineffective compounds to costly late-stage trials."
+    ],
+    "vulnerability": [
+      "Pharmaceutical researchers over-trust model confidence due to miscalibrated uncertainty, bypassing critical validation."
+    ],
+    "impact": [
+      "Advancement of ineffective compounds to costly late-stage trials, wasting resources and delaying effective therapies."
+    ]
+  }
+}

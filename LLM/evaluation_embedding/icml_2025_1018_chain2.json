@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1018",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6528,
+    "reference": "Health agencies treat AI-simulated health behavior estimates as equally valid as randomized surveys.",
+    "generated": "Public health agencies lack independent verification processes for AI-generated survey data, enabling unwarranted trust in miscalibrated confidence sets."
+  },
+  "impact": {
+    "similarity": 0.6438,
+    "reference": "Misguided vaccine distribution worsens health disparities.",
+    "generated": "Inappropriate resource allocation that worsens health outcomes and deepens disparities during crises."
+  },
+  "dose_response": {
+    "similarity": 0.8709,
+    "reference": "Miscalibrated LLM confidence sets lead public health officials relying on AI-generated survey data to treat synthetic estimates as equally valid, resulting in misguided vaccine distribution that worsens health disparities.",
+    "generated": "Miscalibrated confidence sets from LLM-simulated survey responses, through public health officials' reliance on AI-generated data, trigger a lack of independent verification, leading to inappropriate resource allocation that worsens health outcomes and deepens disparities during crises."
+  }
+}

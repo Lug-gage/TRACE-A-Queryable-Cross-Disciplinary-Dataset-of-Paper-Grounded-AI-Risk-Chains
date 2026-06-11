@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1064",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5915,
+    "reference": "Developer automation bias and trust in AI suggestions reduce manual code inspection.",
+    "generated": "Developers habitually accept AI code completions without security review, trusting functional correctness implies safety."
+  },
+  "impact": {
+    "similarity": 0.7923,
+    "reference": "Insecure code committed to repositories, leading to downstream exploits.",
+    "generated": "Insecure code enters production software, causing widespread exploitable vulnerabilities and security breaches."
+  },
+  "dose_response": {
+    "similarity": 0.7726,
+    "reference": "Adversarial prompt injection in IDEs causes LLMs to generate insecure code, and developer automation bias leads to insecure code commits.",
+    "generated": "Query-based adversarial prompts, through developers using AI code assistants, trigger habitual acceptance of completions without security review, leading to insecure code in production causing exploitable vulnerabilities and breaches."
+  }
+}

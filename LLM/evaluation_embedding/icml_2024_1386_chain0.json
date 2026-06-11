@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1386",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4702,
+    "reference": "Over-reliance on automated image generation without human quality verification in high-stakes domains like medical imaging.",
+    "generated": "Reliance on skip-connection integrity without built-in error verification leaves users unable to detect or compensate for tuning-induced numerical distortion."
+  },
+  "impact": {
+    "similarity": 0.5103,
+    "reference": "Misdiagnosis in medical contexts when degraded images are used for clinical decision support.",
+    "generated": "Generated images lose visual fidelity, misleading downstream decisions and eroding trust in diffusion-based synthesis."
+  },
+  "dose_response": {
+    "similarity": 0.7206,
+    "reference": "Skip-tuning introduces numerical propagation errors that degrade denoising, which in training-free sampling distorts generated images, leading to misdiagnosis and eroded trust when flawed outputs are used without verification.",
+    "generated": "Skip-tuning numerical propagation errors in UNet diffusion models, through user reliance on high-fidelity image synthesis, triggers undetected distortion due to missing error verification, leading to lost visual fidelity, misled decisions, and eroded trust."
+  }
+}

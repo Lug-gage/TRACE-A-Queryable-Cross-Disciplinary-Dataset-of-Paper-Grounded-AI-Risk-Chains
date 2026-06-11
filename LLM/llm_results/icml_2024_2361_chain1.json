@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 1,
+  "title": "Uncertainty Estimation by Density Aware Evidential Deep Learning",
+  "abstract": "Evidential deep learning (EDL) has shown remarkable success in uncertainty estimation. However, there is still room for improvement, particularly in out-of-distribution (OOD) detection and classification tasks. The limited OOD detection performance of EDL arises from its inability to reflect the distance between the testing example and training data when quantifying uncertainty, while its limited classification performance stems from its parameterization of the concentration parameters. To address these limitations, we propose a novel method called Density Aware Evidential Deep Learning (DAEDL). DAEDL integrates the feature space density of the testing example with the output of EDL during the prediction stage, while using a novel parameterization that resolves the issues in the conventional parameterization. We prove that DAEDL enjoys a number of favorable theoretical properties. DAEDL demonstrates state-of-the-art performance across diverse downstream tasks related to uncertainty estimation and classification.",
+  "impact": "Accurate uncertainty estimation is crucial for ensuring the safe deployment of AI models, particularly in high-risk domains such as healthcare, finance, and manufacturing. However, existing uncertainty estimation models encounter practical challenges, such as the need for multiple forward passes, substantial modifications to the neural network structure, limited classification performance, and sensitive hyperparameters. In this paper, we introduce DAEDL, a novel approach capable of producing high-quality uncertainty estimates in a single forward pass. DAEDL is comprised of detachable components easily integrable into existing network structures, and excels in classification tasks while operating with non-sensitive hyperparameters. Moreover, DAEDL demonstrates remarkable performance in OOD and distribution shift detection, highlighting its potential impact in addressing real-world challenges effectively. Despite its promising advancements, it is essential to acknowledge the limitations of DAEDL. In complex scenarios, EDL outputs and the feature space density may not accurately capture uncertainty, potentially limiting DAEDL’s effectiveness. Therefore, practitioners must carefully assess the suitability of DAEDL for their specific problem domains before solely relying on its outcomes.",
+  "query_input": {
+    "scenario": "Medical diagnosis from radiology scans",
+    "issue": "Miscalibrated uncertainty masks OOD pathologies, causing missed or incorrect diagnoses.",
+    "hazard": [
+      "Density-aware evidential deep learning produces overconfident, miscalibrated predictive uncertainty for out-of-distribution inputs."
+    ],
+    "exposure": [
+      "Radiologists and patients relying on AI-assisted diagnostic tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists rely on AI uncertainty estimates for OOD detection without independent verification, leaving them susceptible to miscalibration.",
+    "impact": "Patients suffer missed or incorrect diagnoses, resulting in delayed or harmful medical interventions.",
+    "dose_response": "Density-aware evidential deep learning producing overconfident, miscalibrated predictive uncertainty for OOD inputs, through radiologists' reliance on AI diagnostic tools, triggers their susceptibility to miscalibration without independent verification, leading to patients suffering missed or incorrect diagnoses with delayed or harmful interventions."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated uncertainty masks OOD pathologies, which in medical diagnosis from radiology scans leads to missed or incorrect diagnoses."
+    ],
+    "vulnerability": [
+      "Clinician over-trust in AI confidence scores without independent verification.",
+      "Diagnostic workflows lacking mandatory second reads for AI-flagged low-uncertainty cases."
+    ],
+    "impact": [
+      "Delayed treatment for missed OOD pathologies, worsening patient outcomes.",
+      "Medical liability disputes eroding institutional adoption of AI diagnostics."
+    ]
+  }
+}

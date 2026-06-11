@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1068",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes analysts overrelying on benchmark scores without validation, matching the reference's overconfidence causing ignorance of subtle anomalies.",
+    "reference": "Financial analysts' overconfidence in AI anomaly detection leads to ignoring subtle cost anomalies that deviate from benchmark patterns.",
+    "generated": "Analysts rely on benchmark accuracy scores without independent validation of agent performance on real-world anomaly distributions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions unnoticed cost anomalies and budget overruns, but omits misallocation of financial resources present in the reference.",
+    "reference": "Unnoticed cloud cost spikes, budget overruns, and misallocation of financial resources.",
+    "generated": "Unnoticed cost anomalies lead to unchecked cloud spending and budget overruns."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe misaligned benchmarks overestimating AI capability leading analysts to ignore real anomalies, resulting in unnoticed costs and budget overruns.",
+    "reference": "Overestimated AI anomaly detection from misaligned benchmarks leads financial analysts to ignore subtle anomalies, causing unnoticed cost spikes and budget overruns.",
+    "generated": "Misalignment between benchmark proxy tasks and real-world IT operations overestimates agent capability; through financial analysts using agents to detect cloud cost anomalies, triggers reliance on benchmark accuracy without real-world validation, leading to unnoticed cost anomalies, unchecked spending, and budget overruns."
+  }
+}

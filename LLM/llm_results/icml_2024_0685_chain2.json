@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0685",
+  "chain_index": 2,
+  "title": "Pursuing Overall Welfare in Federated Learning through Sequential Decision Making",
+  "abstract": "In traditional federated learning, a single global model cannot perform equally well for all clients. Therefore, the need to achieve the client-level fairness in federated system has been emphasized, which can be realized by modifying the static aggregation scheme for updating the global model to an adaptive one, in response to the local signals of the participating clients. Our work reveals that existing fairness-aware aggregation strategies can be unified into an online convex optimization framework, in other words, a central server’s sequential decision making process. To enhance the decision making capability, we propose simple and intuitive improvements for suboptimal designs within existing methods, presenting AAggFF. Considering practical requirements, we further subdivide our method tailored for the cross-device and the cross-silo settings, respectively. Theoretical analyses guarantee sublinear regret upper bounds for both settings: O(√T log K) for the cross-device setting, and O(K log T) for the cross-silo setting, with K clients and T federation rounds. Extensive experiments demonstrate that the federated system equipped with AAggFF achieves better degree of client-level fairness than existing methods in both practical settings. Code is available at https://github.com/vaseline555/AAggFF.",
+  "impact": "Federated Learning (FL) poses a potential risk of skewed performance distributions toward partial groups of clients. We believe that our proposed method can mitigate such an unfair situation in the federated system, thereby enhancing the trustworthiness and social welfare. A potential concern is the situation where malicious clients deliberately inflate their local signals to cause global updates to be biased towards themselves. To prevent such a catastrophic situation, we aim to improve the current work by exploiting information other than local losses, as mentioned in the Limitations and Future Works section. The authors are not aware of any other critical ethical/social implications otherwise, but are open to discussing them if they exist.",
+  "query_input": {
+    "scenario": "FL with intermittent client availability (e.g., IoT devices)",
+    "issue": "Adaptive fairness weights may overreact to transient availability, causing fairness variance",
+    "hazard": [
+      "AAggFF's online fairness optimization under non-stationary client participation can cause temporal drift in group-wise performance, undermining sublinear regret fairness guarantees."
+    ],
+    "exposure": [
+      "IoT device users depending on FL-based utility control"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "IoT users depend solely on FL-driven utility control, lacking fallback or redundancy when fairness optimization drifts under intermittent availability.",
+    "impact": "Heterogeneous service quality and unfair resource allocation among IoT users erode trust and system-wide utility performance.",
+    "dose_response": "AAggFF's temporal drift under intermittent participation, through IoT users depending solely on FL utility control, triggers lack of redundancy when fairness optimization drifts, leading to heterogeneous service quality and unfair resource allocation eroding trust and utility."
+  },
+  "reference": {
+    "dose_response": [
+      "AAggFF's online fairness optimization under non-stationary client participation causes temporal drift in group-wise performance, which in FL with intermittent IoT device availability leads to fairness weight fluctuations, resulting in unreliable utility control recommendations."
+    ],
+    "vulnerability": [
+      "Transient client availability in IoT causes excessive fairness weight fluctuations, destabilizing model performance for consistently participating devices."
+    ],
+    "impact": [
+      "Unreliable utility control recommendations cause user frustration, safety issues in smart homes, and loss of adoption."
+    ]
+  }
+}

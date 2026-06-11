@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0923",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe inherent immutability of medical conditions making health modifications impossible.",
+    "reference": "Patients with chronic illnesses or biologically constrained lab values have no feasible health modification path.",
+    "generated": "Medical test values and chronic conditions are inherently immutable or require extended time to change, rendering prescribed feature perturbations impossible."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party present but 'spiraling medical debt' is only partially captured by the broader 'imposing financial hardship'.",
+    "reference": "Patients face denial of care, worsening health outcomes, and spiraling medical debt.",
+    "generated": "Coverage denials remain unchallenged, causing delays or denial of necessary treatment, worsening health outcomes, and imposing financial hardship."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc is similar but omits the specific consequence of 'eroded trust' from the reference.",
+    "reference": "Fragile, minimal-perturbation recourse from tree ensembles demands impossible health changes for patients, resulting in care denial, worsened health outcomes, and eroded trust.",
+    "generated": "Recourse actions for tree ensemble models, through automated recommendations for insurance denials, trigger the inherent immutability of medical tests and chronic conditions, leading to unchallenged coverage denials that worsen health outcomes and impose financial hardship."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0759",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that clients' data can be reconstructed from shared updates, with generated referring to pre-training signatures recoverable from aggregated updates.",
+    "reference": "Clients in federated learning are vulnerable to data reconstruction from shared gradient updates, undermining privacy protections.",
+    "generated": "LoRA fine-tuning leaves pre-training data signatures recoverable from aggregated updates, enabling inversion of client contributions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify affected party (client data) and damage type (disclosure of sensitive personal information covers personal health/behavioral data).",
+    "reference": "Disclosure of personal health or behavioral data.",
+    "generated": "Client private training data is exfiltrated, exposing sensitive personal information and breaching data confidentiality."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe the same causal chain: Spectral DeTuning enables recovery from aggregated LoRA updates, leading to model inversion and client data exposure.",
+    "reference": "Spectral DeTuning enables gradient inversion, which in federated learning with LoRA adapters exposes clients contributing local data, leading to disclosure of personal health data, trust loss, and GDPR violations.",
+    "generated": "Spectral DeTuning, through clients contributing local data to federated training, triggers recovery of pre-training data signatures from aggregated LoRA updates, enabling model inversion that leads to client private data exfiltration and confidentiality breach."
+  }
+}

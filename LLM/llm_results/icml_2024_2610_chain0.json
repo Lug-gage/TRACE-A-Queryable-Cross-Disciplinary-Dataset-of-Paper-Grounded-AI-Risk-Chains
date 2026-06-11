@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2610",
+  "chain_index": 0,
+  "title": "Active Statistical Inference",
+  "abstract": "Inspired by the concept of active learning, we propose active inference-a methodology for statistical inference with machine-learning-assisted data collection. Assuming a budget on the number of labels that can be collected, the methodology uses a machine learning model to identify which data points would be most beneficial to label, thus effectively utilizing the budget. It operates on a simple yet powerful intuition: prioritize the collection of labels for data points where the model exhibits uncertainty, and rely on the model’s predictions where it is confident. Active inference constructs valid confidence intervals and hypothesis tests while leveraging any black-box machine learning model and handling any data distribution. The key point is that it achieves the same level of accuracy with far fewer samples than existing baselines relying on non-adaptively-collected data. This means that for the same number of collected samples, active inference enables smaller confidence intervals and more powerful tests. We evaluate active inference on datasets from public opinion research, census analysis, and proteomics.",
+  "impact": "Our proposal aims to provide a method for valid and more powerful statistical inference compared to current baselines. However, if applied poorly, our method could lead to less powerful inferences-and thus to worse downstream decisions-than classical inference or PPI. This could happen if the model’s estimate of uncertainty is miscalibrated, for example. Another limitation of our work is its reliance on the assumption that the data points (Xi, Yi) are i.i.d.; especially in the setting where we collect data sequentially, this assumption may be violated and our methods may fail to cover as a result.",
+  "query_input": {
+    "scenario": "Adaptive survey sampling for public opinion research",
+    "issue": "Selection bias over-represents ambiguous opinions, distorting aggregate estimates.",
+    "hazard": [
+      "Uncertainty-driven adaptive sampling distorts data representativeness, biasing statistical estimators and invalidating confidence intervals and hypothesis tests."
+    ],
+    "exposure": [
+      "Public opinion researchers using machine-assisted adaptive surveys."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Statistical methods assuming random sampling cannot handle selection bias from adaptive sampling, leaving aggregate estimates vulnerable to distortion.",
+    "impact": "Incorrect public opinion aggregates misinform policy decisions and damage credibility of survey-based research.",
+    "dose_response": "Uncertainty-driven adaptive sampling distorting data representativeness, through public opinion researchers using machine-assisted adaptive surveys, triggers statistical methods' inability to handle selection bias, leading to incorrect public opinion aggregates that misinform policy and damage survey research credibility."
+  },
+  "reference": {
+    "dose_response": [
+      "Uncertainty-driven adaptive sampling, via absence of demographic balancing, over-selects atypical respondents in adaptive public opinion surveys, misrepresenting public opinion and distorting policy decisions, eroding democratic legitimacy."
+    ],
+    "vulnerability": [
+      "Absence of demographic balancing in adaptive sampling causes over-selection of atypical respondents, amplifying non-response bias."
+    ],
+    "impact": [
+      "Misrepresented public opinion distorts policy decisions and erodes democratic legitimacy."
+    ]
+  }
+}

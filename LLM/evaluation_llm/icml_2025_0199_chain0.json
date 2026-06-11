@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0199",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Inability to critically evaluate evidence and over-trust in automated flags capture low health literacy and automation complacency, leading to acceptance of false negatives.",
+    "reference": "Low health literacy combined with automation complacency makes users accept false negatives as truth.",
+    "generated": "Users' inability to critically evaluate multimodal evidence fosters over-trust in explainable automated flags, enabling acceptance of false negatives."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (public) and the damage type (harmful health misinformation causing preventable illness and treatment avoidance) are semantically present.",
+    "reference": "Harmful health misinformation spreads unchallenged, leading to vaccine hesitancy and risky health behaviors.",
+    "generated": "Unchecked propagation of harmful health misinformation causes preventable illness, treatment avoidance, and strain on public health systems."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc causally links erroneous outputs to triggering inability and over-trust, whereas the reference requires pre-existing low health literacy and automation complacency, with false credibility as a mediating step.",
+    "reference": "Explainable yet erroneous fact-checking outputs create false credibility, which with low health literacy and automation complacency leads social media users to accept false negatives, allowing harmful health misinformation to spread.",
+    "generated": "Explainable yet erroneous multimodal fact-checking outputs, through social media users relying on automated health claim flags, trigger inability to critically evaluate evidence, fostering over-trust and acceptance of false negatives, leading to unchecked harmful health misinformation causing preventable illness and public health strain."
+  }
+}

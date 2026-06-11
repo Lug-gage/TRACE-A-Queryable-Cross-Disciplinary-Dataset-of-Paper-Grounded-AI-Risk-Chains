@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1358",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5358,
+    "reference": "Patients disengage from the app when receiving irrelevant or mistimed notifications.",
+    "generated": "Patients lack mechanisms to detect erroneous app recommendations, relying solely on the mobile health intervention's guidance for chronic condition management."
+  },
+  "impact": {
+    "similarity": 0.5863,
+    "reference": "Worsened chronic condition management due to patient non-adherence.",
+    "generated": "Wrongly timed or content-inappropriate health reminders cause poor self-management, leading to preventable complications and declining health in chronic care patients."
+  },
+  "dose_response": {
+    "similarity": 0.8653,
+    "reference": "Biased or high-variance off-policy evaluation estimates enable unreliable policy recommendations, which in mobile health behavioral coaching leads to wrongly timed or content-inappropriate reminders that cause patient disengagement.",
+    "generated": "Biased or high-variance off-policy evaluation estimates, through patients using mobile health apps for chronic management, trigger a lack of error-detection mechanisms, leading to wrongly timed or content-inappropriate reminders causing poor self-management, preventable complications, and declining health."
+  }
+}

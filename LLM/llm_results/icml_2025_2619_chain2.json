@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2619",
+  "chain_index": 2,
+  "title": "Scaling Large Motion Models with Million-Level Human Motions",
+  "abstract": "Inspired by the recent success of LLMs, the field of human motion understanding has increasingly shifted toward developing large motion models. Despite some progress, current efforts remain far from achieving truly generalist models, primarily due to the lack of massive high-quality data. To address this gap, we present MotionLib, the first million-level dataset for motion generation, which is at least 15× larger than existing counterparts and enriched with hierarchical text descriptions. Using MotionLib, we train a large motion model named Being-M0, demonstrating robust performance across a wide range of human activities, including unseen ones. Through systematic investigation, for the first time, we highlight the importance of scaling both data and model size for advancing motion generation, along with key insights to achieve this goal. To better integrate the motion modality, we propose Motionbook, an innovative motion encoding approach including (1) a compact yet lossless feature to represent motions; (2) a novel 2D lookup-free motion tokenizer that preserves fine-grained motion details while expanding codebook capacity, significantly enhancing the representational power of motion tokens. We believe this work lays the groundwork for developing more versatile and powerful motion generation models in the future. For further details, visit https://beingbeyond. github.io/Being-M0/.",
+  "impact": "This paper introduces MotionLib, the first million-scale motion dataset, and a large motion model named Being-M0 trained upon it. This work significantly advances the field of large motion models and lays a foundation for future research. It aims to improve a model’s understanding and generation of human motion, positively impacting areas like gaming and robotics. In terms of ethical considerations, all motion data comes from open-source and online videos, we will carefully review examples before release to avoid any potential ethical limitations such as copyright issue. We acknowledge the positive implications of such technological advancements but also recognize potential risks, like misuse for misleading content. We are committed to responsible development and will continuously monitor the broader societal impact of this technology.",
+  "query_input": {
+    "scenario": "Biomechanics lab adopting AI-generated motions for analysis",
+    "issue": "Tokenization reconstruction errors produce subtle distortions that confound kinematic measurements",
+    "hazard": [
+      "Quantization errors in motion tokenization degrade physical plausibility and semantic consistency of generated human motions"
+    ],
+    "exposure": [
+      "Biomechanics researchers analyzing synthesized motion for gait or injury studies"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Biomechanics researchers rely on precise kinematic data but lack methods to detect subtle tokenization-induced distortions in AI-generated motions.",
+    "impact": "Invalid gait and injury study results undermine research validity and risk misguided clinical decisions.",
+    "dose_response": "Quantization errors in motion tokenization, through analysis by biomechanics researchers of synthesized motion, trigger reliance on precise kinematic data without distortion-detection methods, leading to invalid gait and injury studies and misguided clinical decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization errors produce subtle motion distortions that expose biomechanics researchers to over-trust in AI outputs, leading to invalid findings and potential clinical misdiagnosis."
+    ],
+    "vulnerability": [
+      "Researchers' over-trust in AI outputs without stringent validation, allowing subtle errors to propagate into study conclusions."
+    ],
+    "impact": [
+      "Invalid research findings, potential misdiagnosis in clinical applications, erosion of scientific credibility."
+    ]
+  }
+}

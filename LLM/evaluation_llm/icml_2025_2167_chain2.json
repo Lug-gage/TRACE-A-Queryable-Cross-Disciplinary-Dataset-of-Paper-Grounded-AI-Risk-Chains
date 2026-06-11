@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2167",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that compliance/audit systems assume each encrypted object maps to a single plaintext, and that multiple decodings break this assumption.",
+    "reference": "Compliance frameworks assume one-to-one mapping of encrypted objects; ambiguous decryption breaks audit integrity.",
+    "generated": "Audit and compliance systems assume each encrypted object maps to a single verifiable plaintext, lacking the capacity to resolve multiple plausible decodings."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (liability, non-compliance) is present, but affected party (cloud providers) is not explicitly mentioned, and 'enabling harmful material' is missing.",
+    "reference": "Illegal content stored with plausible deniability, exposing cloud providers to legal liability and enabling harmful material.",
+    "generated": "Legal audit integrity collapses, making it impossible to prove what content was stored or accessed, resulting in regulatory non-compliance and liability."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from learned compression with conditional triggers, through cloud provider access/compliance, to audit system inability and legal/regulatory consequences is semantically aligned.",
+    "reference": "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream, in cloud storage undermining audit, exposes cloud service providers managing user access and compliance, leading to illegal content stored with plausible deniability.",
+    "generated": "Learned image compression with conditional triggers enabling multiple plausible decodings from one bitstream, through cloud providers managing access and compliance, triggers audit systems’ single-plaintext assumption and inability to resolve multiple decodings, leading to legal audit collapse, regulatory non-compliance, and liability."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2054",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6339,
+    "reference": "Data scientists grant excessive access permissions to agents and skip validation of generated queries.",
+    "generated": "Data scientists lack automated oversight mechanisms to intercept and vet agent-generated executable code before it runs in production pipelines."
+  },
+  "impact": {
+    "similarity": 0.5689,
+    "reference": "Unauthorized data access, GDPR fines, loss of data integrity, reputational harm.",
+    "generated": "Unauthorized data access, data corruption, and unintended system modifications propagate across automated analytics workflows."
+  },
+  "dose_response": {
+    "similarity": 0.7788,
+    "reference": "Autonomous code execution by LLM agents enables unauthorized data access, which in automated data pipelines exposes data scientists to GDPR fines and loss of data integrity.",
+    "generated": "LLM agents autonomously executing arbitrary code in real environments, through data scientists' use of VLM-based agents for automated pipelines, triggers a lack of automated oversight, leading to unauthorized data access, data corruption, and unintended system modifications propagating across workflows."
+  }
+}

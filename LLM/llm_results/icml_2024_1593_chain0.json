@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1593",
+  "chain_index": 0,
+  "title": "Auto-Encoding Morph-Tokens for Multimodal LLM",
+  "abstract": "For multimodal LLMs, the synergy of visual comprehension (textual output) and generation (visual output) presents an ongoing challenge. This is due to a conflicting objective: for comprehension, an MLLM needs to abstract the visuals; for generation, it needs to preserve the visuals as much as possible. Thus, the objective is a dilemma for visual-tokens. To resolve the conflict, we propose encoding images into morph-tokens to serve a dual purpose: for comprehension, they act as visual prompts instructing MLLM to generate texts; for generation, they take on a different, non-conflicting role as complete visual-tokens for image reconstruction, where the missing visual cues are recovered by the MLLM. Extensive experiments show that morph-tokens can achieve a new SOTA for multimodal comprehension and generation simultaneously. Our project is available at https://github.com/DCDmllm/ MorphTokens.",
+  "impact": "Ethical Impacts. This study does not raise any ethical concerns. The research does not involve subjective assessments or the use of private data. Only publicly available datasets are utilized for experimentation. Expected Societal Implications. A major societal concern with this technology lies in its potential for misuse, particularly in fabricating unauthorized images that could lead to misinformation, privacy breaches, and other damaging consequences. To counter these threats, it is crucial to develop strong ethical standards and implement ongoing surveillance. The issue highlighted is not unique to our method but is prevalent across different techniques for multi-concept customization. A practical approach to mitigating these risks could involve the use of adversarial technologies designed to reverse unauthorized modifications. Additionally, embedding imperceptible watermarks in created images could act as a preventative measure against abuse and guarantee that their use is properly attributed.",
+  "query_input": {
+    "scenario": "MLLM-based image reconstruction with morph-tokens",
+    "issue": "Reconstructed images omit or alter fine details critical for interpretation",
+    "hazard": [
+      "Lossy compression of visual features via auto-encoded morph-tokens distorts fine-grained semantics"
+    ],
+    "exposure": [
+      "Clinicians using AI-reconstructed medical images for diagnosis"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians rely on AI-reconstructed images as accurate representations without independent verification of fine-detail fidelity.",
+    "impact": "Patients experience misdiagnosis and inappropriate treatment, worsening health outcomes.",
+    "dose_response": "Lossy compression of visual features via auto-encoded morph-tokens distorts fine-grained semantics, through clinicians using AI-reconstructed medical images for diagnosis, triggers reliance on these images as accurate without verification, leading to misdiagnosis and inappropriate treatment worsening health outcomes."
+  },
+  "reference": {
+    "dose_response": [
+      "In MLLM-based reconstruction, lossy morph-token compression distorts details, causing clinicians' over-reliance and omission blindness, leading to misdiagnosis and eroded trust."
+    ],
+    "vulnerability": [
+      "Clinicians over-rely on AI-reconstructed images, ignoring subtle omissions, due to automation bias."
+    ],
+    "impact": [
+      "Misdiagnosis and delayed treatment from omitted image details harm patients and erode trust in medical AI."
+    ]
+  }
+}

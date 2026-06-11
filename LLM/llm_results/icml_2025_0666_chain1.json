@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0666",
+  "chain_index": 1,
+  "title": "The Value of Prediction in Identifying the Worst-Off",
+  "abstract": "Machine learning is increasingly used in government programs to identify and support the most vulnerable individuals, prioritizing assistance for those at greatest risk over optimizing aggregate outcomes. This paper examines the welfare impacts of prediction in equity-driven contexts, and how they compare to other policy levers, such as expanding bureaucratic capacity. Through mathematical models and a real-world case study on long-term unemployment amongst German residents, we develop a comprehensive understanding of the relative effectiveness of prediction in surfacing the worst-off. Our findings provide clear analytical frameworks and practical, data-driven tools that empower policymakers to make principled decisions when designing these systems.",
+  "impact": "Our work offers a principled framework for evaluating the relative benefits of using predictive models to target the most vulnerable populations, helping public agencies allocate limited resources more effectively. However, formalizing complex institutional processes inevitably omits important real-world details, risking biases or misalignments if assumptions are not carefully examined. We encourage policymakers and researchers to incorporate fairness, transparency, and accountability measures when implementing these methods, particularly in resource-constrained contexts where small design changes can disproportionately affect marginalized communities.",
+  "query_input": {
+    "scenario": "Policymakers using ML welfare rankings to design equitable resource programs.",
+    "issue": "Learned welfare function diverges from true societal preferences, amplifying inequities.",
+    "hazard": [
+      "Predictive models for worst-off identification may systematically misrank vulnerable individuals due to mismatched social welfare functions or biased data."
+    ],
+    "exposure": [
+      "Policy makers and program beneficiaries affected by model-informed allocation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Policymakers lack independent audit and appeal mechanisms to correct model-driven misrankings, creating uncritical reliance on flawed outputs.",
+    "impact": "Misallocated assistance excludes the neediest, intensifying poverty, inequality, and eroding trust in welfare institutions.",
+    "dose_response": "Systematic misranking of vulnerable individuals by biased predictive models, through model-informed resource allocation, triggers uncritical reliance absent audit and appeal mechanisms, leading to exclusion of the neediest, deepening poverty, inequality, and erosion of trust in welfare institutions."
+  },
+  "reference": {
+    "dose_response": [
+      "Mismatched welfare functions cause misranking that, in the policymaker resource program scenario, exposes policy makers and beneficiaries to disconnect from actual needs, leading to entrenched systemic disadvantage."
+    ],
+    "vulnerability": [
+      "Disconnect between optimized welfare function and marginalized groups' actual needs, causing resource misallocation."
+    ],
+    "impact": [
+      "Entrenched systemic disadvantage as underserved communities receive decreasing support over time."
+    ]
+  }
+}

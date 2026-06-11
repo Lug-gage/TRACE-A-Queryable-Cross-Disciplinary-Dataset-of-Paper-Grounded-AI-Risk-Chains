@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2877",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe reliance on static benchmarks/leaderboards as definitive, enabling reward hacking due to lack of adversarial validation",
+    "reference": "Reliance on static benchmarks as proxies for true alignment enables reward hacking by evolved prompts.",
+    "generated": "ML engineers rely on static leaderboard rankings as definitive proof of capability, lacking adversarial validation against reward hacking."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated captures inflated scores and negative outcomes but misses the reference's direct harm of misleading stakeholders about capabilities",
+    "reference": "Inflated benchmark scores mislead stakeholders about actual model capabilities.",
+    "generated": "Adoption of inflated benchmark scores leads to brittle real-world model failures, undermining safety and misdirecting industry investments."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc reverses causality: reference has reliance enabling reward hacking, generated has reward hacking triggering reliance",
+    "reference": "Reward hacking exploits proxy reward blind spots, so reliance on static benchmarks and over-trust in automated optimization lead ML researchers to be misled by inflated scores, causing wasted resources.",
+    "generated": "Reward hacking via proxy-blind prompts, through ML engineers comparing on leaderboards, triggers reliance on static rankings as proof, leading to inflated scores, brittle failures undermining safety and misdirecting investments."
+  }
+}

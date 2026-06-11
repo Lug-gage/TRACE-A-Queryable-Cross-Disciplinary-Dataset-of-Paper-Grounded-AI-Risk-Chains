@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2069",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes a related but different sensitivity condition (lack of independent audit) rather than flawed risk models misattributing health determinants.",
+    "reference": "Patient risk models that misattribute health determinants due to flawed causal fairness can systematically under-serve minority groups.",
+    "generated": "No independent audit of AI fairness corrections in risk stratification allows distorted risk scores to determine patient care."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Patient-level damage (misallocated care, adverse outcomes) is present, but the explicit widening of health disparities is missing.",
+    "reference": "Health disparities widen as marginalized patients receive delayed or inappropriate care, increasing morbidity.",
+    "generated": "Patients suffer misallocated care and adverse health outcomes as risk stratification unfairly deprioritizes or overtreats specific groups."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc introduces a missing independent audit as a causal step, deviating from the reference's direct path of misspecified assumptions causing misattribution and under-service.",
+    "reference": "Misspecified causal assumptions in synthetic data lead risk models to misattribute health determinants, exposing minority patients to under-service that widens health disparities and increases morbidity.",
+    "generated": "Misspecified causal assumptions from pre-training on synthetic fairness data, through patients receiving AI risk-based care decisions, trigger no independent audit allowing distorted risk scores, leading to care misallocation and adverse outcomes that unfairly deprioritize or overtreat specific groups."
+  }
+}

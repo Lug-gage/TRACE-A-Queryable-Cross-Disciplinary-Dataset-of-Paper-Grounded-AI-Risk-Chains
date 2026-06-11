@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1133",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4806,
+    "reference": "Patient heterogeneity in treatment response amplifies bias from delayed rewards",
+    "generated": "Patients cannot evaluate long-term improvement because true health outcomes are delayed, fostering uncritical adherence to suggested actions."
+  },
+  "impact": {
+    "similarity": 0.7088,
+    "reference": "Deterioration of patient health outcomes due to persistently suboptimal recommendations",
+    "generated": "Long-term patient health deteriorates due to biased recommendations, increasing chronic disease burden and healthcare system strain."
+  },
+  "dose_response": {
+    "similarity": 0.7483,
+    "reference": "Delayed health feedback enables bandit algorithms to systematically favor actions with spurious short-term rewards, which, when exposed to patients, leads to deteriorated health outcomes and eroded trust.",
+    "generated": "Online bandit-based improvement recommendations with delayed rewards, delivered to patients as AI-driven suggestions, trigger uncritical adherence because true outcomes are delayed, leading to biased long-term guidance that deteriorates health and increases chronic disease burden."
+  }
+}

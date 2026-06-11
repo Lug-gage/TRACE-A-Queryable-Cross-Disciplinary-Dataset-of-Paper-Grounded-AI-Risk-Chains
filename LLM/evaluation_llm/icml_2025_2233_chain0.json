@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2233",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes brittleness from static fine-tuning assumptions, while reference specifies developers' over-trust preventing detection of API degradation.",
+    "reference": "Developers' over-trust in LLM selections prevents detection of API degradation.",
+    "generated": "Standard LLM fine-tuning pipelines assume static preferences, leaving the agent's API selection policy brittle to shifting requirements."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Business workflows are affected, but financial loss is replaced by eroded operational efficiency and trust.",
+    "reference": "Systematic task failures propagate through business workflows, causing financial loss.",
+    "generated": "Business workflows suffer systemic task failures as the agent reliably selects wrong APIs, eroding operational efficiency and trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc shares estimation error and developers resulting in systemic failures, but inserts a brittleness step and omits financial loss.",
+    "reference": "Estimation error from exponential discounting distorts reward signals, which in tool-augmented LLM agents for dynamic API-based task automation exposes developers integrating LLM agents into business workflows, leading to systematic task failures and financial loss.",
+    "generated": "Estimation error distorting reward signals from exponential discounting of past feedback, through developers integrating LLM agents into business workflows, triggers the brittleness of static-preference fine-tuning to shifting API requirements, leading to systemic task failures and eroded operational trust."
+  }
+}

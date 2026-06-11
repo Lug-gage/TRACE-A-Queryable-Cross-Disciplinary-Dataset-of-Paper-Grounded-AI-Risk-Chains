@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1693",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.541,
+    "reference": "Clinicians use coherent-sounding concept maps as cognitive crutch, ignoring potential visual-textual misalignment.",
+    "generated": "Clinicians' inability to detect inconsistencies between visual explanations and underlying images due to time pressure and automation bias."
+  },
+  "impact": {
+    "similarity": 0.4865,
+    "reference": "Erroneous differential diagnosis from falsely attributed clinical concepts.",
+    "generated": "Diagnostic errors and inappropriate treatments from plausible but incorrect explanations, harming patients and eroding trust in AI."
+  },
+  "dose_response": {
+    "similarity": 0.7969,
+    "reference": "Joint segmentation and rationale generation models producing inconsistent textual justifications enable false concept-attribution maps, which in clinical concept grounding expose clinicians to erroneous differential diagnoses, leading to unnecessary follow-up imaging or invasive tests.",
+    "generated": "Segmentation-rationale models producing visually grounded but possibly inconsistent justifications, through clinician review of concept-attribution maps, trigger inability to detect mismatches under time pressure and automation bias, leading to diagnostic errors from misleading explanations, harming patients and eroding trust."
+  }
+}

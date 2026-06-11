@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2812",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6066,
+    "reference": "Deepfake detectors overfitted to known patterns fail on novel forgeries, leaving platforms defenseless.",
+    "generated": "Users lack independent media verification skills, relying entirely on a detection system that misses novel forgeries."
+  },
+  "impact": {
+    "similarity": 0.8037,
+    "reference": "Undetected deepfakes spread virally, amplifying misinformation and eroding public trust in online content.",
+    "generated": "Undetected synthetic media misleads users, propagating misinformation and eroding public trust in online content."
+  },
+  "dose_response": {
+    "similarity": 0.775,
+    "reference": "Overfitting to limited synthetic forgery patterns causes detectors to miss novel deepfakes, exposing social media users to undetected synthetic media that spreads misinformation, eroding trust.",
+    "generated": "Overfitting from LoRA fine-tuning on limited data degrades cross-domain deepfake detection, through exposing users to undetected synthetic media, triggers lack of independent verification skills, leading to undetected media misleading users, spreading misinformation and eroding public trust."
+  }
+}

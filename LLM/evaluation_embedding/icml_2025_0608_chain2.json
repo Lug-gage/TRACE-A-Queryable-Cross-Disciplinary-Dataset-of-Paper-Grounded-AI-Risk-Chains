@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0608",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.61,
+    "reference": "Unlearning leaves model susceptible to fine-tuning or prompt-based extraction of copyrighted material.",
+    "generated": "Content creators and rights holders place unwarranted trust in unlearning’s permanence, leaving them defenseless against knowledge recovery attacks."
+  },
+  "impact": {
+    "similarity": 0.7577,
+    "reference": "Financial losses for creators and rights holders through unauthorized content reproduction.",
+    "generated": "Recovered copyrighted content enables unauthorized reproduction and distribution, causing financial loss and legal injury to rights holders."
+  },
+  "dose_response": {
+    "similarity": 0.6909,
+    "reference": "In deploying unlearned LLMs as assistants, adversarial unlearning allows re-extraction of copyrighted works via prompts or fine-tuning, harming creators and triggering litigation.",
+    "generated": "Adversarially robust unlearning's false security due to vulnerability to re-elicit attacks, through reliance for copyright protection, triggers unwarranted trust in permanence, leaving them defenseless, leading to unauthorized reproduction and distribution of recovered copyrighted content and financial and legal injury."
+  }
+}

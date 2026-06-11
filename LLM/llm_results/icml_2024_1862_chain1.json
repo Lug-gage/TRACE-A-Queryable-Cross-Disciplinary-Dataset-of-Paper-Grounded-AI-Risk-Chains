@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_1862",
+  "chain_index": 1,
+  "title": "In-Context Reinforcement Learning for Variable Action Spaces",
+  "abstract": "Recently, it has been shown that transformers pretrained on diverse datasets with multi-episode contexts can generalize to new reinforcement learning tasks in-context. A key limitation of previously proposed models is their reliance on a predefined action space size and structure. The introduction of a new action space often requires data re-collection and model re-training, which can be costly for some applications. In our work, we show that it is possible to mitigate this issue by proposing the Headless-AD model that, despite being trained only once, is capable of generalizing to discrete action spaces of variable size, semantic content and order. By experimenting with Bernoulli and contextual bandits, as well as a gridworld environment, we show that Headless-AD exhibits significant capability to generalize to action spaces it has never encountered, even outperforming specialized models trained for a specific set of actions on several environment configurations. Implementation is available at: https://github.com/ corl-team/headless-ad.",
+  "impact": "Strong safeguards are necessary to prevent unauthorized users from manipulating the model, such as adding harmful action embeddings that could lead to negative outcomes. Another concern is how the model handles out-ofdistribution data. If the model encounters a new action that is significantly different from the training actions, it may take a while to understand its effects. Since our model learns by trying out actions, there is a risk it might perform harmful actions before learning they are inappropriate. Any application of Headless-AD in real-life scenarios should be aware of these potential risks.",
+  "query_input": {
+    "scenario": "Autonomous agent navigation in variable gridworld layouts",
+    "issue": "Zero-shot generalization across unseen grid configurations can produce suboptimal or unsafe navigation actions.",
+    "hazard": [
+      "In-context RL models can interpret variable action space contexts in ways that inadvertently couple action selection to irrelevant features, causing inappropriate actions in new settings."
+    ],
+    "exposure": [
+      "Passengers in autonomous vehicles navigating new city layouts."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Passengers have no real-time oversight or intervention capability when the RL model encounters unfamiliar action space configurations.",
+    "impact": "Passenger injuries, fatalities, and vehicle damage from inappropriate navigation actions in unseen city layouts.",
+    "dose_response": "In-context RL models coupling action selection to irrelevant features in new city layouts, through passengers in autonomous vehicles, triggers lack of real-time oversight, leading to passenger injuries, fatalities, and vehicle damage from inappropriate navigation actions."
+  },
+  "reference": {
+    "dose_response": [
+      "In-context RL models' spurious action coupling in unseen gridworlds enables unsafe navigation, which when navigating new city layouts exposes passengers to collisions, leading to physical harm and eroded public trust."
+    ],
+    "vulnerability": [
+      "Over-reliance on autonomous systems leads to user complacency and delayed manual takeover.",
+      "Insufficient robustness testing in safety-critical, unstructured environments increases failure risk.",
+      "Lack of post-deployment incident reporting prevents timely corrective actions."
+    ],
+    "impact": [
+      "Collisions causing physical harm to passengers and pedestrians.",
+      "Psychological trauma and erosion of public trust in autonomous technology.",
+      "Legal liability and regulatory backlash that stall adoption."
+    ]
+  }
+}

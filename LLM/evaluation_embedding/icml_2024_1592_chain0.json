@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1592",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4888,
+    "reference": "Training data underrepresents Parkinson's motor fluctuation diversity and demographic variability, inflating value estimates on novel neural states.",
+    "generated": "Parkinson's patients have a narrow therapeutic window where excessive DBS amplitudes cause neural dysfunction."
+  },
+  "impact": {
+    "similarity": 0.6066,
+    "reference": "Excessive stimulation causes dyskinesia or cognitive decline, leading to therapy abandonment, lost autonomy, and heightened caregiver burden.",
+    "generated": "Patients suffer irreversible speech, motor, or cognitive impairments from neural overstimulation."
+  },
+  "dose_response": {
+    "similarity": 0.8177,
+    "reference": "Value overestimation on out-of-distribution neural states enables unsafe stimulation actions, which in Parkinson's patients receiving adaptive DBS exposes them to excessive amplitudes, leading to dyskinesia or cognitive decline, therapy abandonment, lost autonomy, and heightened caregiver burden.",
+    "generated": "Model-based RL policies producing overconfident, unsafe stimulation actions, through adaptive DBS therapy in Parkinson's patients, trigger a narrow therapeutic window where excessive amplitudes cause neural dysfunction, leading to irreversible speech, motor, or cognitive impairments."
+  }
+}

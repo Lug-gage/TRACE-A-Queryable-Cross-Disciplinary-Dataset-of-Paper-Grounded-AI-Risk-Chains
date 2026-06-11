@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2846",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reference: Non-IID client demographics cause diffusion to miss minority distribution tails, amplifying underrepresentation. Generated: minority groups underrepresented in client data, model unable to correct distorted features. Same sensitivity condition is present.",
+    "reference": "Non-IID client demographics cause diffusion to miss minority distribution tails, amplifying underrepresentation.",
+    "generated": "Minority groups are systematically underrepresented in client data, leaving the model unable to correct distorted representations of their features."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Reference: discriminatory predictions for minority groups leading to unfair treatment and systemic bias. Generated: minority subpopulations experience discriminatory model errors, perpetuating inequitable outcomes and exclusion. Both affected party (minority groups) and damage type (discriminatory unfairness) are semantically covered.",
+    "reference": "Discriminatory predictions for minority groups, leading to unfair treatment and systemic bias.",
+    "generated": "Minority subpopulations experience discriminatory model errors, perpetuating inequitable outcomes and exclusion from reliable predictions."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Reference arc: non-IID demographics → synthetic data misses minority tails → global model biases → discriminatory predictions. Generated arc: synthetic data distorts distribution → inaccurate predictions to minority groups → triggers underrepresentation preventing correction → discriminatory errors. The start (synthetic data distortion) and end (discriminatory errors) overlap, but the mechanism misses the key link of global model bias from missing tails, instead introducing a feedback loop. The causal translation is only partially aligned.",
+    "reference": "Synthetic data from non-IID demographics misses minority distribution tails, causing global model biases that, when making predictions for minority groups, lead to discriminatory outcomes and systemic unfairness.",
+    "generated": "Synthetic data from diffusion on heterogeneous one-shot FL models distort the real distribution, through inaccurate predictions to minority groups, triggers their systematic underrepresentation preventing correction of distorted features, leading to discriminatory model errors that perpetuate inequitable outcomes and exclusion."
+  }
+}

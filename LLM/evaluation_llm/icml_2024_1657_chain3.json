@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1657",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference addresses unapproved use of sensitive datasets lacking privacy assessments; generated describes absence of output filtering to block PII extraction—a related but distinct sensitivity condition.",
+    "reference": "Sensitive datasets used without approval or privacy impact assessments",
+    "generated": "Research workflows using VLMs lack output filtering that blocks extraction of memorized PII from training data."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (individuals) is present in both, but reference damage type is re-identification, while generated describes broader privacy violations and regulatory penalties without explicit re-identification.",
+    "reference": "Re-identification of individuals from leaked research data",
+    "generated": "Confidential PII leaks via model outputs, causing privacy violations and regulatory penalties for research institutions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "both describe memorization enabling extraction of sensitive data, leading to privacy violations and institutional penalties; the causal arc is semantically equivalent despite wording differences.",
+    "reference": "Training data memorization enables leakage of sensitive data from document images, which in research VLM use on sensitive datasets exposes researchers handling personal data, leading to re-identification and ethics sanctions.",
+    "generated": "Training data memorization, through researchers handling personal datasets, triggers unfiltered VLM workflows that extract memorized PII, leading to confidential data leaks with privacy violations and regulatory penalties."
+  }
+}

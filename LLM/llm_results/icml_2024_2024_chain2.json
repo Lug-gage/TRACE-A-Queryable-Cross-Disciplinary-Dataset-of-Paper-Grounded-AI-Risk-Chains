@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 2,
+  "title": "Position Will we run out of data Limits of LLM scaling based on human-generated data",
+  "abstract": "We investigate the potential constraints on LLM scaling posed by the availability of public humangenerated text data. We forecast the growing demand for training data based on current trends and estimate the total stock of public human text data. Our findings indicate that if current LLM development trends continue, models will be trained on datasets roughly equal in size to the available stock of public human text data between 2026 and 2032, or slightly earlier if models are overtrained. We explore how progress in language modeling can continue when human-generated text datasets cannot be scaled any further. We argue that synthetic data generation, transfer learning from datarich domains, and data efficiency improvements might support further progress.",
+  "impact": "The practice of scraping data from the web and using it for large-scale training of AI systems raises important issues regarding fairness and justice. In particular, there are strong arguments in favor of compensating the creators of the data used to train these systems. While AI has the potential to greatly increase productivity and overall welfare, it is important to factor in these justice-related considerations to ensure that the benefits are distributed equitably. Our work suggests that data from social media platforms and messaging apps could serve as a significant and valuable resource for training AI systems. However, using this type of data for training raises serious privacy and security concerns. Without proper safeguards in place, sensitive personal information from these platforms could be exposed to users of the AI systems.The risks associated with using non-indexed platform data for training may be substantial enough to outweigh the potential benefits gained from using this data.",
+  "query_input": {
+    "scenario": "Data-limited fine-tuning of large multilingual models (as in translation).",
+    "issue": "Overfitting and language transfer bias escalate when model sizes far exceed fine-tuning data.",
+    "hazard": [
+      "LLM scaling drives reliance on synthetic or recycled data, introducing distributional drift and data quality hazards."
+    ],
+    "exposure": [
+      "Multilingual NLP engineers fine-tuning large models with limited parallel corpora."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Large models fine-tuned on limited parallel data are predisposed to overfitting and biased language transfer due to extreme scale mismatch.",
+    "impact": "Translation outputs degrade with hallucinated content and systematic errors, eroding reliability in low-resource language services.",
+    "dose_response": "LLM scaling drives reliance on synthetic data introducing distributional drift, which through fine-tuning large multilingual models with limited parallel corpora triggers overfitting and biased language transfer, leading to hallucinated translations and systematic errors that degrade reliability in low-resource language services."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM scaling enables overfitting, which in data-limited fine-tuning exposes engineers to language transfer bias, leading to mistranslated critical information and cultural erasure."
+    ],
+    "vulnerability": [
+      "Low-resource language communities depend on a single fine-tuned model, creating a single point of failure.",
+      "Engineers lack benchmarks to detect when overfitting degrades translation quality for rare language pairs."
+    ],
+    "impact": [
+      "Critical information (e.g., public health alerts) is mistranslated, endangering speakers of low-resource languages.",
+      "Cultural nuances are systematically erased, homogenizing global communication and marginalizing linguistic diversity."
+    ]
+  }
+}

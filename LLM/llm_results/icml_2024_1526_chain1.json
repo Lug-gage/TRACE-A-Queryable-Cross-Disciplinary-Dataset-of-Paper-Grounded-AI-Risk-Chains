@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 1,
+  "title": "Measuring Stochastic Data Complexity with Boltzmann Influence Functions",
+  "abstract": "Estimating the uncertainty of a model’s prediction on a test point is a crucial part of ensuring reliability and calibration under distribution shifts. A minimum description length approach to this problem uses the predictive normalized maximum likelihood (pNML) distribution, which considers every possible label for a data point, and decreases confidence in a prediction if other labels are also consistent with the model and training data. In this work we propose IF-COMP, a scalable and efficient approximation of the pNML distribution that linearizes the model with a temperaturescaled Boltzmann influence function. IF-COMP can be used to produce well-calibrated predictions on test points as well as measure complexity in both labelled and unlabelled settings. We experimentally validate IF-COMP on uncertainty calibration, mislabel detection, and OOD detection tasks, where it consistently matches or beats strong baseline methods.",
+  "impact": "We have presented a method that allows a practitioner with access to a model and training dataset to identify examples with high complexity, or alternatively that contain a large amount of information relative to a model. Although we have presented experiments that aim to validate its use in producing better calibrated uncertainties and out-ofdistribution predictions which should reduce societal consequences, IF-COMP can also be used to automatically find important training examples. If these examples correspond to real people, a malicious agent could use this information to influence or bias downstream models or extract sensitive information.",
+  "query_input": {
+    "scenario": "OOD detection in model serving for open-world inputs",
+    "issue": "Overconfident OOD scores may let distributional shifts slip into downstream processing",
+    "hazard": [
+      "Temperature-scaled Boltzmann influence function calibration using pNML may amplify overconfidence under distribution shifts due to linearization approximations."
+    ],
+    "exposure": [
+      "Systems operating on user-generated content with varying data distributions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "No mechanism to detect when linear approximations fail under distribution shift, enabling overconfident OOD scores to go uncorrected.",
+    "impact": "Undetected distributional shifts corrupt downstream model predictions, causing system unreliability and potential harm.",
+    "dose_response": "pNML calibration amplifies overconfidence under distribution shifts, through systems on user-generated content with varying distributions, triggers no mechanism to detect linear approximation failures, enabling uncorrected overconfident OOD scores, leading to undetected shifts corrupting downstream predictions, causing unreliability and harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, causing overconfident OOD scores that let distribution shifts slip past, leading to erroneous outputs and safety incidents for user-generated content systems."
+    ],
+    "vulnerability": [
+      "Downstream systems and human operators trust OOD detection to block anomalous inputs."
+    ],
+    "impact": [
+      "Undetected distribution shifts cause erroneous outputs, safety incidents, and unfair decisions across user groups."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1407",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated specifies lack of human oversight and appeal mechanisms leading to defenselessness against overconfident false positives, matching reference's absence of human-in-the-loop review and transparent appeal mechanisms heightening unchecked errors.",
+    "reference": "Absence of human-in-the-loop review and transparent appeal mechanisms heightens risk of unchecked errors.",
+    "generated": "Automated moderation without human oversight or appeal mechanisms leaves users defenseless against overconfident false positives."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers user distrust (undermining platform trust) but misses perceived censorship and specifically chilling effects on marginalized voices, while adding other damage (reputation, reach).",
+    "reference": "User distrust, perceived censorship, and chilling effects on marginalized voices.",
+    "generated": "Incorrect removal of benign content silences users, damages their reputation and reach, and undermines platform trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from interpretable reasoning to overconfident inaccurate classifications, automated removal of benign posts without oversight, and resulting silencing and trust erosion is preserved.",
+    "reference": "Interpretable chain-of-thought reasoning yields overconfident, inaccurate safety classifications, causing automated removal of benign social media posts without appeal, leading to user distrust and chilling effects on marginalized voices.",
+    "generated": "Interpretable harm-benefit reasoning yielding overconfident inaccurate safety classifications, when applied to automatically moderate social media posts without human oversight, leaves users defenseless, causing incorrect benign removal that silences users, damages reputation and reach, and erodes trust."
+  }
+}

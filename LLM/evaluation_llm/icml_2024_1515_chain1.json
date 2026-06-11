@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1515",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes lack of fail-safe mechanisms for misrecognition rather than lack of AR path preview for preparedness",
+    "reference": "Warehouse workers lack AR preview of robot paths in narrow aisles, leaving them unprepared for sudden misnavigation.",
+    "generated": "Workers share workspace with autonomous forklifts lacking fail-safe mechanisms for landmark misrecognition."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "worker injuries covered but inventory damage missing",
+    "reference": "Collisions causing worker injury or inventory damage.",
+    "generated": "Crush injuries or fatalities among warehouse workers when forklifts deviate from safe paths."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc incorrectly states brittle grounding triggers lack of fail-safe mechanisms and omits landmark misrecognition step, unlike reference chain",
+    "reference": "Brittle visual grounding causes landmark misrecognition, leading to navigation failures in warehouse robots without AR path preview, resulting in collisions causing worker injury and inventory damage.",
+    "generated": "Visual prompting methods' brittle spatial grounding, failing under distribution shift, through warehouse workers alongside visually prompted autonomous forklifts, triggers the lack of fail-safe mechanisms for landmark misrecognition, leading to crush injuries or fatalities when forklifts deviate from safe paths."
+  }
+}

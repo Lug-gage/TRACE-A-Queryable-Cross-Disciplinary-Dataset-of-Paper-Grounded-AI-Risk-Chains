@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0738",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe overfitting to simulation feedback without real-world validation, leading to brittle planning",
+    "reference": "Over-reliance on simulation-trained world models without real-world validation allows overfitting to synthetic feedback, leading to brittle planning.",
+    "generated": "Researchers depend on code world models that overfit to finite simulation feedback, lacking safeguards against distribution shift."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "unsafe actions covered but property damage and loss of human trust missing",
+    "reference": "Erroneous planning in physical robots causes unsafe actions, property damage, and loss of human trust in autonomous systems.",
+    "generated": "Robotics agents execute erroneous plans and exhibit unsafe behaviors when encountering novel states."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal chain from overfitting to unsafe plans in novel states is captured",
+    "reference": "Overfitting to simulation feedback enables code world models that perform well in simulation but fail in new states, which when used by robotics researchers exposes physical robots to brittle planning, causing unsafe actions and property damage.",
+    "generated": "RL-based code synthesis overfitting to finite test cases, through robotics researchers using code world models, triggers dependency on overfitted models lacking distribution shift safeguards, leading to agents executing erroneous unsafe plans in novel states."
+  }
+}

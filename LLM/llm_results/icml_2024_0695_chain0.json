@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0695",
+  "chain_index": 0,
+  "title": "Large Language Models Can Automatically Engineer Features for Few-Shot Tabular Learning",
+  "abstract": "Large Language Models (LLMs), with their remarkable ability to tackle challenging and unseen reasoning problems, hold immense potential for tabular learning, that is vital for many real-world applications. In this paper, we propose a novel in-context learning framework, FeatLLM, which employs LLMs as feature engineers to produce an input data set that is optimally suited for tabular predictions. The generated features are used to infer class likelihood with a simple downstream machine learning model, such as linear regression and yields high performance few-shot learning. The proposed FeatLLM framework only uses this simple predictive model with the discovered features at inference time. Compared to existing LLM-based approaches, FeatLLM eliminates the need to send queries to the LLM for each sample at inference time. Moreover, it merely requires API-level access to LLMs, and overcomes prompt size limitations. As demonstrated across numerous tabular datasets from a wide range of domains, FeatLLM generates high-quality rules, significantly (10% on average) outperforming alternatives such as TabLLM and STUNT.",
+  "impact": "The proposed framework, FeatLLM, aims to utilize the prior knowledge of LLM in performing tabular learning tasks to go beyond the achievable performance with standard supervised tabular learning. To push the data efficiency in learning, our research makes important contributions to mitigate the issue of overfitting due to limited training samples, by supplementing with prior knowledge. FeatLLM is particularly beneficial for practitioners in real-world scenarios (such as from finance and healthcare industries) where labeling is challenging due to the high human cost or label collection difficulties, and prior knowledge in LLMs can be potentially very valuable (as the LLMs are pretrained with relevant finance or healthcare related text). As one potential important future work direction towards widespread adoption, analyses of the impact of the societal biases and misinformation embedded in the prior knowledge of LLMs would be important, as the prior knowledge would be directly affecting the predictions even dominating over the observed or collected labeled data samples. Acknowledgement We sincerely thank Scott Yak and Yihe Dong for their valuable feedback and discussion on this work.",
+  "query_input": {
+    "scenario": "Low-resource tabular learning with LLM feature generation",
+    "issue": "Few-shot prompts produce features overfitted to spurious pre-training correlations, reducing generalization",
+    "hazard": [
+      "LLMs generating synthetic features that reflect spurious correlations from pre-training data"
+    ],
+    "exposure": [
+      "Data scientists building predictive models on small domain-specific datasets"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Data scientists lack sufficient domain-specific data to detect and reject spurious LLM-generated features.",
+    "impact": "Predictive models overfit to spurious patterns, failing on unseen data and reducing trust in LLM-assisted tabular learning.",
+    "dose_response": "LLMs generating features reflecting spurious pre-training correlations, through data scientists building models on small domain-specific datasets, triggers data scientists' lack of sufficient domain-specific data to detect and reject spurious features, leading to overfitting on unseen data and reduced trust."
+  },
+  "reference": {
+    "dose_response": [
+      "LLMs generating spurious-correlation features enable few-shot feature generation in low-resource tabular learning, which exposes small-dataset models to overfitted features, leading to biased predictions harming minority subgroups."
+    ],
+    "vulnerability": [
+      "Limited demonstration data causes few-shot feature generation to replicate spurious pre-training correlations instead of target patterns."
+    ],
+    "impact": [
+      "Models overfit to synthetic features, yielding biased predictions that harm minority subgroup performance."
+    ]
+  }
+}

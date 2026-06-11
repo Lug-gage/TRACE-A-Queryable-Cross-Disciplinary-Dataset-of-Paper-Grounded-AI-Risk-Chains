@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0660",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3794,
+    "reference": "Preference data reflects dominant user demographics, marginalizing minority perspectives.",
+    "generated": "End users lack mechanisms to detect subtly skewed, toxic, or misaligned content in model outputs."
+  },
+  "impact": {
+    "similarity": 0.5844,
+    "reference": "Model preferences reinforce societal biases, amplifying harm in downstream applications like hiring or content moderation.",
+    "generated": "Users internalize harmful biases, suffer psychological distress, and perpetuate real-world discrimination."
+  },
+  "dose_response": {
+    "similarity": 0.6851,
+    "reference": "Skewed preference optimization from toxic-amplified data enables models to overfit majority biases, which when end users receive biased responses marginalizes minorities, reinforcing harm in hiring decisions.",
+    "generated": "Synthetic data from uncontrolled user interactions amplifies toxic content in mixtures, through end users receiving responses shaped by non-representative preference signals, triggers their lack of mechanisms to detect subtly skewed content, leading to users internalizing harmful biases, suffering psychological distress, and perpetuating real-world discrimination."
+  }
+}

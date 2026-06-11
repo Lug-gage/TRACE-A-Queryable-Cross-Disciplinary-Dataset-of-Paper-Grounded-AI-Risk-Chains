@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 1,
+  "title": "Predictive Coding beyond Correlations",
+  "abstract": "Recently, there has been extensive research on the capabilities of biologically plausible algorithms. In this work, we show how one of such algorithms, called predictive coding, is able to perform causal inference tasks. First, we show how a simple change in the inference process of predictive coding enables to compute interventions without the need to mutilate or redefine a causal graph. Then, we explore applications in cases where the graph is unknown, and has to be inferred from observational data. Empirically, we show how such findings can be used to improve the performance of predictive coding in image classification tasks, and conclude that such models are able to perform simple end-to-end causal inference tasks.",
+  "impact": "In the domain of causal structure learning from observational data, it is crucial to recognize that algorithms can only identify the causal graph within the confines of a Markov Equivalence Class (MEC). This limitation means that various causal graphs, each with differing implications, could be equally supported by the observational data. Our approach does not incorporate interventional data, amplifying the need for caution in its application for causal discovery. The method should be used alongside further assumptions and in consultation with subject-matter experts to minimize the risk of affirming false causal relationships. Incorrect usage has the potential for negative societal consequences, such as poor or biased decision-making processes.",
+  "query_input": {
+    "scenario": "Recommender systems using causal treatment representations",
+    "issue": "Ignored neighborhood interference leads to biased recommendation policies, reinforcing filter bubbles.",
+    "hazard": [
+      "Causal models learned from observational or limited interventional data may be misspecified, causing interventions that introduce confounding and distribution shifts."
+    ],
+    "exposure": [
+      "Users of social media and e-commerce platforms receiving personalized recommendations."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack independent means to audit or challenge algorithmic curation, leaving them susceptible to unnoticed bias in recommendations.",
+    "impact": "Reinforced filter bubbles entrench echo chambers, narrowing information diversity and amplifying societal polarization.",
+    "dose_response": "Misspecified causal models from observational data introduce confounding and distribution shifts through personalized recommendations on social media and e-commerce platforms, triggering users' inability to audit algorithmic curation, leading to reinforced filter bubbles that amplify polarization."
+  },
+  "reference": {
+    "dose_response": [
+      "Causal treatment models ignoring neighborhood interference in recommendations reinforce preference homogeneity, entrenching filter bubbles that amplify misinformation and polarization."
+    ],
+    "vulnerability": [
+      "Causal treatment models ignoring social network confounders reinforce user preference homogeneity."
+    ],
+    "impact": [
+      "Filter bubbles amplify misinformation and polarization, reducing exposure to diverse content."
+    ]
+  }
+}

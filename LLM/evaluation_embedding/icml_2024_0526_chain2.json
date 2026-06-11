@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0526",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.658,
+    "reference": "Radiologists rely on the AI's step-by-step reasoning as a proxy for accuracy, overlooking missed fine-grained findings that are critical for diagnosis, especially under time constraints.",
+    "generated": "Radiologists trust coherent reasoning chains over verifying fine-grained visual details, enabling acceptance of plausible but wrong video conclusions."
+  },
+  "impact": {
+    "similarity": 0.7639,
+    "reference": "Misdiagnosis from missed small lesions, resulting in patient harm and legal consequences for clinicians.",
+    "generated": "Misdiagnosis of subtle lesions leads to delayed treatment, causing preventable patient harm and increased healthcare costs."
+  },
+  "dose_response": {
+    "similarity": 0.7755,
+    "reference": "Plausible but wrong reasoning from missed fine-grained visual cues in high-res video QA causes radiologists to accept flawed diagnoses, leading to patient harm from undetected lesions.",
+    "generated": "Incorrect grounding of fine-grained visual details leading to plausible but wrong conclusions, through radiologists' diagnostic video analysis, triggers trust in coherent reasoning over detail verification, resulting in misdiagnosis of subtle lesions causing preventable patient harm and increased healthcare costs."
+  }
+}

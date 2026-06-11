@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2079",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5464,
+    "reference": "Fine-tuning on proprietary data causes memorization of trade secrets, personal data, or internal communications, making them extractable.",
+    "generated": "Organizations assume partial, unordered data fragments cannot be used to extract specific sensitive training data from fine-tuned LLMs, leaving them defenseless."
+  },
+  "impact": {
+    "similarity": 0.6772,
+    "reference": "Trade secret exposure leads to competitive disadvantage, financial losses, and intellectual property theft.",
+    "generated": "Sensitive personal data and trade secrets are exposed, causing privacy violations, regulatory penalties, and erosion of competitive advantage."
+  },
+  "dose_response": {
+    "similarity": 0.8675,
+    "reference": "Fine-tuning LLMs on proprietary data leaks trade secrets via membership inference, exposing organizations to competitive disadvantage, intellectual property theft, and regulatory fines.",
+    "generated": "Fine-tuned LLMs leak data via membership inference, through deployment with sensitive internal data, triggers the assumption that partial, unordered fragments cannot extract sensitive data, leading to exposed personal data and trade secrets, privacy violations, regulatory penalties, and lost advantage."
+  }
+}

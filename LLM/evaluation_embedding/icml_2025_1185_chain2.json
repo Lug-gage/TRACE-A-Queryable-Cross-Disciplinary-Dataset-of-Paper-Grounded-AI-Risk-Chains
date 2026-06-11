@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1185",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4332,
+    "reference": "Model weights retain speaker-specific acoustic patterns after unlearning, enabling re-identification from outputs.",
+    "generated": "Data subjects lack independent oversight to verify complete voice identity removal, relying solely on the provider's unverified unlearning claim."
+  },
+  "impact": {
+    "similarity": 0.4943,
+    "reference": "Re-identification of data subjects by querying model with various prompts.",
+    "generated": "Re-identification and voice cloning of deletion-requesting individuals, enabling impersonation and privacy violations despite legal deletion rights."
+  },
+  "dose_response": {
+    "similarity": 0.7411,
+    "reference": "Incomplete unlearning leaves residual voiceprint patterns in model weights; when providers apply unlearning for deletion requests, data subjects can be re-identified via model queries, leading to regulatory fines and reputational damage.",
+    "generated": "Incomplete speaker identity unlearning in zero-shot TTS, through data subjects exercising their right to be forgotten, triggers lack of independent oversight to verify identity removal, leading to re-identification and voice cloning enabling impersonation and privacy violations despite legal deletion rights."
+  }
+}

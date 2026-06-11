@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0794",
+  "chain_index": 0,
+  "title": "Auditing Prompt Caching in Language Model APIs",
+  "abstract": "Prompt caching in large language models (LLMs) results in data-dependent timing variations: cached prompts are processed faster than noncached prompts. These timing differences introduce the risk of side-channel timing attacks. For example, if the cache is shared across users, an attacker could identify cached prompts from fast API response times to learn information about other users’ prompts. Because prompt caching may cause privacy leakage, transparency around the caching policies of API providers is important. To this end, we develop and conduct statistical audits to detect prompt caching in real-world LLM API providers. We detect global cache sharing across users in seven API providers, including OpenAI, resulting in potential privacy leakage about users’ prompts. Timing variations due to prompt caching can also result in leakage of information about model architecture. Namely, we find evidence that OpenAI’s embedding model is a decoder-only Transformer, which was previously not publicly known.1",
+  "impact": "Responsible disclosure. As discussed earlier, to mitigate real-world harms arising from our research, we performed responsible disclosure. In October 2024, we disclosed our audit results with each API provider in which we detected prompt caching. We gave providers 60 days to address the vulnerabilities before publicly releasing our findings, and the actual time elapsed ended up being longer. To our knowledge, at least five providers made changes to mitigate vulnerabilities, e.g., disabling global cache sharing across organizations and updating documentation. Broader impact. We believe that our audits for detecting prompt caching and the level of cache sharing in LLM APIs can improve transparency and trust. By increasing transparency around caching policies and how user data is handled, users can make better informed decisions about how they use an LLM API and have the appropriate level of trust that their data will be secure and private. More broadly, we believe that audits are a promising method to ensure that machine learning systems are safe, secure, and trustworthy, especially as these systems become more widely deployed and have larger societal impact.",
+  "query_input": {
+    "scenario": "LLM API prompt caching with shared global cache",
+    "issue": "Timing side‑channel leaks prompt content via cache hit/miss patterns",
+    "hazard": [
+      "Prompt caching in LLM APIs introduces timing side-channels that leak information about cached prompts and model architecture."
+    ],
+    "exposure": [
+      "API users submitting private prompts to cached LLM services"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "API users cannot inspect or disable cache sharing, leaving their prompt privacy defenseless against timing side-channels.",
+    "impact": "Leakage of private user prompts to other parties and public disclosure of previously unknown model architecture details.",
+    "dose_response": "Prompt caching timing side-channels, through API users submitting private prompts, trigger defenselessness against cache sharing, leading to leakage of private prompts and disclosure of model architecture."
+  },
+  "reference": {
+    "dose_response": [
+      "Timing side-channels from prompt caching enable cache hit/miss inference, which in shared global cache scenarios exposes other users' private prompts, leading to unauthorized disclosure of personal identifiers."
+    ],
+    "vulnerability": [
+      "Shared global cache timing differences reveal exact prompts sent by other API users."
+    ],
+    "impact": [
+      "Unauthorized disclosure of private user input, including personal identifiers and confidential strategies."
+    ]
+  }
+}

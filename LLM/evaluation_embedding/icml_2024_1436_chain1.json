@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1436",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6489,
+    "reference": "Fine-tuning reactivates pre-training memorization, leaking injected canaries.",
+    "generated": "Fine-tuning pipelines lack detection and removal of injected canary-trap backdoors, leaving models susceptible to forced memorization and data leakage."
+  },
+  "impact": {
+    "similarity": 0.3147,
+    "reference": "Legal and financial penalties for fine-tuning organizations.",
+    "generated": "Proprietary fine-tuning data leaks from compromised models, causing intellectual property theft and privacy violations for data owners and their users."
+  },
+  "dose_response": {
+    "similarity": 0.7468,
+    "reference": "Privacy backdoors in pre-trained models reactivate during fine-tuning, leaking canaries when probed, which exposes fine-tuning organizations to legal penalties even without wrongdoing.",
+    "generated": "Canary trap-based data provenance techniques enable privacy backdoor attacks that, through organizations fine-tuning pre-trained models on proprietary data, exploit undetected canary-trap backdoors in fine-tuning pipelines, forcing memorization that leaks proprietary data and causes intellectual property theft and privacy violations."
+  }
+}

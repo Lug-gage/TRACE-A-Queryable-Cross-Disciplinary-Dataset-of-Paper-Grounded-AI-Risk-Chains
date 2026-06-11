@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0336",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4291,
+    "reference": "Open-access evasion datasets lower the skill barrier for producing NSFW imagery, enabling widespread abuse.",
+    "generated": "General public lacks user-side detection or filtering, relying entirely on platform safety mechanisms that can be circumvented."
+  },
+  "impact": {
+    "similarity": 0.5199,
+    "reference": "Proliferation of non-consensual intimate imagery and sexualized violence deepens online harassment and social harm.",
+    "generated": "Widespread exposure to NSFW AI-generated imagery causes psychological distress and erosion of public trust in generative AI safety."
+  },
+  "dose_response": {
+    "similarity": 0.7919,
+    "reference": "Automated discovery of prompt vulnerabilities enables systematic defeat of safety mechanisms via public evasion datasets, exposing the general public to non-consensual intimate imagery that deepens online harassment and social harm.",
+    "generated": "Automated discovery of prompt-level vulnerabilities enabling bypass of NSFW controls, through online exposure, triggers reliance on platform mechanisms without user filters, leading to psychological distress and eroded public trust."
+  }
+}

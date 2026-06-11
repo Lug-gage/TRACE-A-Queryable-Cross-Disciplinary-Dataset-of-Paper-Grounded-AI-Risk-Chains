@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 2,
+  "title": "Predicting Dose-Response Curves with Deep Neural Networks",
+  "abstract": "Dose-response curves characterize the relationship between the concentration of drugs and their inhibitory effect on the growth of specific types of cells. The predominant Hill-equation model of an ideal enzymatic inhibition unduly simplifies the biochemical reality of many drugs; and for these drugs, the widely-used drug performance indicator of the half-inhibitory concentration IC50 can lead to poor therapeutic recommendations and poor selections of promising drug candidates. We develop a neural model that uses an embedding of the interaction between drug molecules and the tissue transcriptome to estimate the entire dose-response curve rather than a scalar aggregate. We find that, compared to the prior state of the art, this model excels at interpolating and extrapolating the inhibitory effect of untried concentrations. Unlike prevalent parametric models, it it able to accurately predict dose-response curves of drugs on cells with previously unseen transcriptomes as well as of previously untested drug molecules on established cell lines. Our implementation is available at https://github. com/alonsocampana/ARCANet.",
+  "impact": "This paper presents work whose goal, apart from advancing the field of Machine Learning, is to advance the treatment of cancer and potentially other diseases. While the advancement of personalized medicine has an enormous potential for societal benefit, one should be aware of the potential for unethical use. Any method that is effective at identifying inhibitors for cells with a specific transciptome could potentially also be used to identify highly toxic substances (Urbina et al., 2022), or even substances that are selectively toxic for a targeted population that shares certain genetic commonalities. Such misuse might be addressed by subjecting research on collections of genetic and toxicological data to ethical reviewing.",
+  "query_input": {
+    "scenario": "Dose extrapolation beyond observed concentration range",
+    "issue": "Spuriously confident inhibition estimates at untested concentrations, masking prediction unreliability.",
+    "hazard": [
+      "Miscalibrated uncertainty estimates in deep neural dose-response curve predictions that conceal distribution shift failures."
+    ],
+    "exposure": [
+      "Pharmacologists using extrapolated curves to determine dosing in clinical trials"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Pharmacologists’ institutional reliance on model accuracy metrics that disregard extrapolation uncertainty, enabling uncritical acceptance of confident predictions.",
+    "impact": "Erroneous clinical trial dosing leading to patient harm, trial failure, and misallocation of drug development resources.",
+    "dose_response": "Miscalibrated uncertainty estimates that conceal distribution shift failures, through pharmacologists using extrapolated curves to determine dosing in clinical trials, trigger institutional reliance on accuracy metrics disregarding extrapolation uncertainty, leading to erroneous dosing, patient harm, trial failure, and misallocation."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated uncertainty estimates conceal distribution shift failures, producing spuriously confident inhibition estimates that lead pharmacologists to determine incorrect dosing in clinical trials."
+    ],
+    "vulnerability": [
+      "Pharmacologists trust extrapolated predictions without acknowledging model failure beyond training range."
+    ],
+    "impact": [
+      "Incorrect dosing in clinical trials, causing patient toxicity or lack of efficacy, and trial failure."
+    ]
+  }
+}

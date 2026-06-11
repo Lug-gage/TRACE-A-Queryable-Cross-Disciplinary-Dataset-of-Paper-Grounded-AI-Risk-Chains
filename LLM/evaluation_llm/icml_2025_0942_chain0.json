@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference specifies lack of domain-specific validation for reward calibration on rare side effects; generated describes lack of independent verification more broadly without the reward-calibration or rare-side-effect conditions.",
+    "reference": "Lack of domain-specific validation for reward calibration on rare side effects in medical data.",
+    "generated": "Clinicians and patients lack independent verification of AI-generated summaries, relying entirely on them for comprehensive side-effect information."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated describe clinicians missing side-effect information leading to adverse drug events and patient harm; the affected party (clinicians/patients) and damage type (adverse drug events, patient harm) are present.",
+    "reference": "Clinicians miss critical side-effect information, leading to adverse drug events and patient harm.",
+    "generated": "Omission of critical side-effect mentions causes uninformed prescribing decisions, leading to preventable adverse drug events and patient harm."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe federated DPO degrading reward calibration, which enables omission of critical side-effect mentions and ultimately leads to patient harm; the core causal arc is preserved even though the generated text inserts additional intermediate steps.",
+    "reference": "In federated medical text summarization, federated DPO degrades reward calibration, enabling omission of critical side-effect mentions, exposing clinicians to unrecognized adverse events, leading to patient harm and eroded trust.",
+    "generated": "Federated DPO with differential privacy degrading reward model calibration, through clinicians and patients relying on AI-generated medical summaries, triggers lack of independent verification, leading to omission of critical side-effect mentions causing uninformed prescribing decisions and preventable adverse drug events."
+  }
+}

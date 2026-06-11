@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2151",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures the same sensitivity: clinicians over-rely on model outputs, which aligns with over-trusting a generalizable label and deploying without local testing. Lack of domain-shift detection tools is a related lack of local testing.",
+    "reference": "Clinicians over-trust a 'generalizable' label and deploy the model without local testing.",
+    "generated": "Clinicians lack real-time domain-shift detection tools and over-rely on model outputs for cross-organ cancer diagnosis."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated describes misdiagnosis and inappropriate treatment (damage type) but omits the affected party (underserved populations) and the exacerbation of health disparities.",
+    "reference": "Systematic misclassification in underserved populations exacerbates health disparities.",
+    "generated": "Increased misdiagnosis and inappropriate treatment decisions across different cancer types at multiple hospital sites."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc is preserved: cross-organ MIL transfer → unreliable predictions → clinicians over-rely and deploy without proper detection → misdiagnosis, mirroring the reference's chain of poor generalization, over-trust without local testing, and systematic misclassification.",
+    "reference": "Cross-organ transfer of pretrained MIL models with coarse-grained visual-semantic interaction leads to poor generalization, which when clinicians over-trust and deploy without local testing causes systematic misclassification and health disparities.",
+    "generated": "Cross-organ transfer of pretrained MIL models propagating unreliable predictions, through clinicians deploying WSI models at multiple sites, triggers over-reliance on outputs without real-time domain-shift detection, leading to increased misdiagnosis and inappropriate treatment across cancer types."
+  }
+}

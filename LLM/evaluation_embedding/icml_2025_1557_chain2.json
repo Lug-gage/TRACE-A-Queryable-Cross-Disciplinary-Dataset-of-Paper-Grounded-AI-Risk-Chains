@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1557",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6785,
+    "reference": "Legal systems treat watermark presence as binary proof of authenticity without corroborating evidence.",
+    "generated": "Legal evidence authentication trusts watermarks as unforgeable, lacking redundant integrity checks when watermarks are adversarially removed or forged."
+  },
+  "impact": {
+    "similarity": 0.7862,
+    "reference": "Wrongful convictions or acquittals based on falsified audio evidence.",
+    "generated": "Undetectable falsification of audio evidence leads to wrongful convictions or acquittals, eroding judicial trust in digital evidence."
+  },
+  "dose_response": {
+    "similarity": 0.8331,
+    "reference": "Adversarial perturbations remove or tamper watermarks, which in the scenario of forensic audio analysis exposes legal professionals to unverifiable evidence, leading to wrongful convictions or acquittals.",
+    "generated": "Watermarks removable by audio perturbations and adversarial attacks, through forensic analysts' reliance on watermarked evidence, trigger trust in watermarks as unforgeable without redundant checks, leading to undetectable falsification causing wrongful convictions and eroding judicial trust."
+  }
+}

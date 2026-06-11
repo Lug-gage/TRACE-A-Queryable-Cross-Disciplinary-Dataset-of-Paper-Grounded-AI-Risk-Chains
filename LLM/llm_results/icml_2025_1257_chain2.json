@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1257",
+  "chain_index": 2,
+  "title": "Weisfeiler and Leman Go Gambling Why Expressive Lottery Tickets Win",
+  "abstract": "The lottery ticket hypothesis (LTH) is wellstudied for convolutional neural networks but has been validated only empirically for graph neural networks (GNNs), for which theoretical findings are largely lacking. In this paper, we identify the expressivity of sparse subnetworks, i.e. their ability to distinguish non-isomorphic graphs, as crucial for finding winning tickets that preserve the predictive performance. We establish conditions under which the expressivity of a sparsely initialized GNN matches that of the full network, particularly when compared to the Weisfeiler-Leman test, and in that context put forward and prove a Strong Expressive Lottery Ticket Hypothesis. We subsequently show that an increased expressivity in the initialization potentially accelerates model convergence and improves generalization. Our findings establish novel theoretical foundations for both LTH and GNN research, highlighting the importance of maintaining expressivity in sparsely initialized GNNs. We illustrate our results using examples from drug discovery.",
+  "impact": "Our work highlights the critical role of preserving expressivity in sparsely initialized and trained GNNs, offering insights into how pruning can lead to irrecoverable expressivity loss. By demonstrating the risks associated with degraded expressivity, we show the importance of careful pruning design to ensure reliable predictions, such as distinguishing toxic from non-toxic compounds in drug discovery. Moreover, via linking GNN expressivity with generalization and convergence, we show that degraded expressivity can hinder both training dynamics and model reliability. The broader societal benefit of our work lies in its potential to inform the development of high-performance and trustworthy GNNs in resource-constrained settings, contributing to equitable access to advanced machine learning technologies and promoting their safe use in impactful domains.",
+  "query_input": {
+    "scenario": "Social network graph classification with WL-optimized sparse GNNs",
+    "issue": "Sparse tickets fail on noisy graph structures, leading to misclassification of community roles",
+    "hazard": [
+      "Lottery ticket sparsification that optimizes GNNs for WL expressivity encodes overfitted graph representations that fail under covariate shift, yielding overconfident predictions."
+    ],
+    "exposure": [
+      "Social network analysts using pruned GNN classifiers for anomaly detection"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Analysts' trust in WL-expressivity-optimized sparse GNN performance without shift-validation leaves them blind to overfitting under noisy graph conditions.",
+    "impact": "False anomaly alerts and undetected malicious roles erode platform safety, enabling covert manipulation to spread unchecked across the social network.",
+    "dose_response": "Lottery ticket sparsification encoding overfitted WL-expressivity-optimized representations, through social network analysts using pruned GNNs for anomaly detection, triggers blind trust without shift-validation, leading to false anomaly alerts and undetected malicious roles eroding platform safety."
+  },
+  "reference": {
+    "dose_response": [
+      "Sparse GNNs encoding overfitted representations fail under structural noise, which when used by analysts without adversarial evaluation leads to misclassified roles and unfair moderation, causing social unrest."
+    ],
+    "vulnerability": [
+      "Sparse GNNs are deployed without adversarial evaluation on noisy real-world social graphs, enabling model fragility to unseen perturbations"
+    ],
+    "impact": [
+      "Misclassified community roles lead to false accusations or biased content moderation, causing reputational harm and social unrest"
+    ]
+  }
+}

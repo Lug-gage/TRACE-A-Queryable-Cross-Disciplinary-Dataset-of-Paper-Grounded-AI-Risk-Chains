@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2418",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5595,
+    "reference": "Brittle world models that fail under distribution shift cause agents to ignore critical causal factors.",
+    "generated": "Agent's dependence on an approximate causal model without uncertainty calibration or causal validation enables unquestioning acceptance of spurious causal chains."
+  },
+  "impact": {
+    "similarity": 0.7608,
+    "reference": "Unsafe decisions leading to operational failures, property damage, and reduced societal acceptance of autonomous agents.",
+    "generated": "Unsafe or incorrect autonomous actions in novel environments, leading to property damage, mission failure, or human harm."
+  },
+  "dose_response": {
+    "similarity": 0.7533,
+    "reference": "Overgeneralized causal chains in learned world models cause agents to ignore critical factors under distribution shift, which, when operating in unseen environments, results in property damage and reduced societal acceptance.",
+    "generated": "Overgeneralization of axioms by transformers trained on symbolic causal demonstrations produces spurious causal chains that, through autonomous agents in unseen environments, trigger unquestioning reliance on uncalibrated causal models, leading to unsafe actions causing property damage, mission failure, or human harm."
+  }
+}

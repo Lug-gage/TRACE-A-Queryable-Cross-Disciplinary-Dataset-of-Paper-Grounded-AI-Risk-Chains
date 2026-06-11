@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6607,
+    "reference": "Watermark key can be inferred from output token distribution after many queries.",
+    "generated": "Watermark patterns become statistically distinguishable through repeated API outputs, enabling reverse-engineering without detection."
+  },
+  "impact": {
+    "similarity": 0.8894,
+    "reference": "Undetectable AI-generated disinformation erodes trust in digital content provenance.",
+    "generated": "Undetectable AI-generated content facilitates deception at scale, eroding trust in provenance tracking systems."
+  },
+  "dose_response": {
+    "similarity": 0.8706,
+    "reference": "LLM watermark stealing attacks enable key inference from API outputs, defeating providers' tracking and allowing undetectable AI disinformation that erodes provenance trust.",
+    "generated": "LLM watermarking's vulnerability to attacks exploiting algorithmic weaknesses, through repeated API queries, triggers statistically distinguishable patterns enabling reverse-engineering, leading to undetectable AI content that erodes trust in provenance tracking."
+  }
+}

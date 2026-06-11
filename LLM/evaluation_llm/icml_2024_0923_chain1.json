@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0923",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe employees with entrenched, immutable attributes that recourse actions cannot change, capturing the same sensitivity condition.",
+    "reference": "Employees with non-linear career paths or caregiving gaps have entrenched characteristics that recourse cannot change.",
+    "generated": "Employees cannot alter immutable attributes (e.g., years of experience) demanded by recourses, and the promotion process lacks human feasibility review."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated includes employee demoralization (≈demotivation) but misses attrition and glass ceiling reinforcement, and adds organizational harms.",
+    "reference": "Unexplainable promotion denials lead to demotivation, attrition, and reinforcement of glass ceilings.",
+    "generated": "Denied employees suffer permanent career stagnation and demoralization, while the organization incurs discrimination claims and workforce distrust."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc inserts a seeking-explanations step and lack of human review, which is a different mechanism than the reference's direct suggestion of unalterable attributes causing harm.",
+    "reference": "Fragile, minimal-perturbation recourse from tree ensembles suggests unalterable career attributes for employees, causing demotivation, attrition, and glass ceiling reinforcement.",
+    "generated": "Recourse actions for tree ensemble models that rely on fragile perturbations violate feasibility, through employees seeking promotion explanations, triggering the inability to alter immutable attributes and lack of human review, leading to career stagnation, demoralization, discrimination claims, and distrust."
+  }
+}

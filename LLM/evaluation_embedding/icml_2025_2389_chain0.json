@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2389",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6254,
+    "reference": "Benchmark designers treat IRT difficulty scores as fixed, ignoring model-dependence, leading to overconfidence.",
+    "generated": "Evaluators’ uncritical adoption of predicted difficulty scores, lacking mechanisms to detect or correct for model misspecification across shifting LM distributions."
+  },
+  "impact": {
+    "similarity": 0.5075,
+    "reference": "Misleading model comparisons misdirect research, wasting resources on non-robust improvements.",
+    "generated": "Biased difficulty scores yield unreliable LM evaluations, causing misallocation of resources and undetected safety failures across the community."
+  },
+  "dose_response": {
+    "similarity": 0.7581,
+    "reference": "Biased difficulty scores from amortized IRT, used by benchmark maintainers, lead to difficulty predictions failing to generalize, causing misleading comparisons and eroded trust.",
+    "generated": "Amortized IRT difficulty estimation propagates model misspecification, yielding biased scores; through benchmark maintainers' use, it triggers uncritical adoption lacking detection mechanisms across shifting LM distributions, leading to misallocation of resources and undetected safety failures."
+  }
+}

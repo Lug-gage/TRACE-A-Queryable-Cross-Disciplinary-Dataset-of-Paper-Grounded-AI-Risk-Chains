@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_1655",
+  "chain_index": 1,
+  "title": "Rényi Pufferfish Privacy General Additive Noise Mechanisms and Privacy Amplification by Iteration via Shift R",
+  "abstract": "Pufferfish privacy is a flexible generalization of differential privacy that allows to model arbitrary secrets and adversary’s prior knowledge about the data. Unfortunately, designing general and tractable Pufferfish mechanisms that do not compromise utility is challenging. Furthermore, this framework does not provide the composition guarantees needed for a direct use in iterative machine learning algorithms. To mitigate these issues, we introduce a R ́enyi divergence-based variant of Pufferfish and show that it allows us to extend the applicability of the Pufferfish framework. We first generalize the Wasserstein mechanism to cover a wide range of noise distributions and introduce several ways to improve its utility. Finally, as an alternative to composition, we prove privacy amplification results for contractive noisy iterations and showcase the first use of Pufferfish in private convex optimization. A common ingredient underlying our results is the use and extension of shift reduction lemmas.",
+  "impact": "This paper presents work whose goal is to advance privacy in machine learning, offering tools to make it more secure. We provide methods to protect specific types of secrets and to manage correlations in datasets, which are frequently found in practice. Properly designed Pufferfish instantiations can provide greater utility than usual Group Differential Privacy mechanisms. However, the data curator must carefully design its Pufferfish instantiation in order to ensure adequate robust privacy protection.",
+  "query_input": {
+    "scenario": "Use of Langevin unlearning to enforce right to be forgotten in digital platforms",
+    "issue": "Imperfect unlearning leading to residual data leakage and privacy breaches",
+    "hazard": [
+      "Addition of calibrated noise to gradients during iterative optimization to satisfy differential privacy guarantees"
+    ],
+    "exposure": [
+      "Users whose personal data should be erased from recommender systems"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Noise-based unlearning only guarantees bounded information leakage, not complete removal, leaving model parameters correlated with deleted users' data.",
+    "impact": "Unauthorized extraction of users' personal data from the model, violating the right to be forgotten and causing privacy breaches.",
+    "dose_response": "Calibrated noise added to gradients for differential privacy, when erasing users' data from recommender systems, triggers incomplete removal leaving residual correlations, leading to unauthorized extraction of personal data, violating the right to be forgotten."
+  },
+  "reference": {
+    "dose_response": [
+      "Noise-based gradient updates in Langevin unlearning leave residual data traces, enabling adversaries to re-identify users from supposedly erased recommender system records."
+    ],
+    "vulnerability": [
+      "Approximate Langevin dynamics leave residual influence of deleted data in model weights.",
+      "Adversaries exploit unlearning heuristics to perform membership inference on supposedly erased records."
+    ],
+    "impact": [
+      "Re-identification of individuals from data that should be deleted.",
+      "Legal non-compliance with GDPR and CCPA right-to-deletion provisions.",
+      "User distrust and reduced engagement with platforms promising data removal."
+    ]
+  }
+}

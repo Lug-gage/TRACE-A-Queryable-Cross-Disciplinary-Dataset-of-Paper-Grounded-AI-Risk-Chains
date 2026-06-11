@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0723",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "mentions blind trust in API security but describes lack of audit capability instead of the assumption of uniform safety and stealthy quantization flaws",
+    "reference": "API consumers assume uniform safety across precisions, but cost-driven quantization introduces stealthy input-dependent flaws.",
+    "generated": "No capability to audit quantized models for input-specific malicious behavior, leading to blind trust in API security."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "backdoors are covered but compliance violations are replaced by data breaches and system compromises, and affected party is implicit",
+    "reference": "Enterprises relying on API-generated code for security applications face undisclosed risks of backdoors and compliance violations.",
+    "generated": "Deployment of undetected backdoors in security-critical applications enables large-scale data breaches and system compromises."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "quantization exploitation leading to backdoors is present, but adds blind trust from no audit and benign full-precision appearance while omitting compliance violations",
+    "reference": "Quantization exploits introducing stealthy input-dependent flaws, which in cloud API with quantized inference for cost-efficiency exposes enterprises dependent on API-based code generation for security-sensitive applications, leading to undisclosed backdoors and compliance violations.",
+    "generated": "Quantization exploitation to produce malicious secure-code LLMs appearing benign in full-precision, through reliance on API code generation for security-sensitive applications, triggers blind trust from no audit capability for input-specific behavior, leading to undetected backdoors enabling data breaches and system compromises."
+  }
+}

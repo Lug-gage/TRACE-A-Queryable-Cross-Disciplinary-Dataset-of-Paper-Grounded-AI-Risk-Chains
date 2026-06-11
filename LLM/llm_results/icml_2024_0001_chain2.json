@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0001",
+  "chain_index": 2,
+  "title": "Revisiting Character-level Adversarial Attacks for Language Models",
+  "abstract": "Adversarial attacks in Natural Language Processing apply perturbations in the character or token levels. Token-level attacks, gaining prominence for their use of gradient-based methods, are susceptible to altering sentence semantics, leading to invalid adversarial examples. While characterlevel attacks easily maintain semantics, they have received less attention as they cannot easily adopt popular gradient-based methods, and are thought to be easy to defend. Challenging these beliefs, we introduce Charmer, an efficient query-based adversarial attack capable of achieving high attack success rate (ASR) while generating highly similar adversarial examples. Our method successfully targets both small (BERT) and large (Llama 2) models. Specifically, on BERT with SST-2, Charmer improves the ASR in 4.84% points and the USE similarity in 8% points with respect to the previous art. Our implementation is available in github.com/LIONS-EPFL/Charmer.",
+  "impact": "In this work, we revisit character-level adversarial attacks and improve upon the prior art performance. We believe that showing that character-level attacks cannot easily be defended, is important to warn about the need of defenses. Otherwise, malicious individuals or organizations could take advantage of this unawareness. However, we note that our algorithm could empower individuals to achieve malicious purposes. We will release our code to allow defenders to assess their performance against our attack.",
+  "query_input": {
+    "scenario": "Enterprise customer support chatbots",
+    "issue": "Crafted inputs cause bots to respond with offensive or unauthorized outputs.",
+    "hazard": [
+      "Black-box character-level adversarial attacks on aligned LMs enable high-success evasion of safety classifiers and generation of harmful, policy-violating outputs."
+    ],
+    "exposure": [
+      "Customers receiving harmful or policy-violating responses from support bots."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Enterprise chatbots lack adversarial input filtering and output moderation, leaving users directly exposed to unmitigated harmful content.",
+    "impact": "Brand reputation damage, customer complaints, and legal liability from offensive messages eroding user trust.",
+    "dose_response": "Black-box character-level adversarial attacks evade safety classifiers and generate harmful outputs, which, through customers receiving them, trigger enterprise chatbots' lack of adversarial filtering and moderation, leading to brand reputation damage, customer complaints, and legal liability as offensive messages erode user trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Black-box adversarial attacks on LMs enable generation of harmful outputs, which in enterprise customer support chatbots exposes customers to offensive responses, leading to brand damage and eroded trust."
+    ],
+    "vulnerability": [
+      "Chatbots designed without adversarial robustness may generate harmful responses when prompted with carefully crafted inputs."
+    ],
+    "impact": [
+      "Customers receiving offensive responses leads to brand damage, legal liability, and erosion of customer trust."
+    ]
+  }
+}

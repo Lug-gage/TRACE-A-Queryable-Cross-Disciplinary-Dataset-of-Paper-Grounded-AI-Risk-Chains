@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6389,
+    "reference": "Audiences lack perceptual training to detect AI artifacts, increasing susceptibility to manipulated emotional cues.",
+    "generated": "Editors lack artifact detection for unsupervised AI edits, and audiences cannot filter subtle acoustic degradation or emotional tone shifts."
+  },
+  "impact": {
+    "similarity": 0.4033,
+    "reference": "Altered emotional tone in dialogue misleads audience interpretation of narrative intent.",
+    "generated": "Audience immersion breaks and misinterpretation occurs; editors face reputational damage and costly reworks of compromised audio content."
+  },
+  "dose_response": {
+    "similarity": 0.7102,
+    "reference": "Unsupervised zero-shot editing introduces artifacts, exposing sound editors and audiences to manipulated emotional cues, which alters audience narrative interpretation and erodes trust.",
+    "generated": "Unsupervised semantic manipulation of audio via frozen diffusion models, through sound editors and audiences relying on AI-edited content, triggers lack of artifact detection and inability to filter acoustic degradation, leading to audience immersion breaks, misinterpretation, and reputational damage with costly reworks."
+  }
+}

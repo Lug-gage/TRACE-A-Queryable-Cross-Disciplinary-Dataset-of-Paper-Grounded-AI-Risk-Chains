@@ -1,0 +1,38 @@
+{
+  "paper_id": "icml_2025_2194",
+  "chain_index": 0,
+  "title": "Offline Model-based Optimization for Real-World Molecular Discovery",
+  "abstract": "Molecular discovery has attracted significant attention in scientific fields for its ability to generate novel molecules with desirable properties. Although numerous methods have been developed to tackle this problem, most rely on an online setting that requires repeated online evaluation of candidate molecules using the oracle. However, in real-world molecular discovery, the oracle is often represented by wet lab experiments, making this online setting impractical due to the significant time and resource demands. To fill this gap, we propose the Molecular Stitching (MolStitch) framework, which utilizes a fixed offline dataset to explore and optimize molecules without the need for repeated oracle evaluations. Specifically, Mol- Stitch leverages existing molecules from the offline dataset to generate novel ‘stitched molecules’ that combine their desirable properties. These stitched molecules are then used as training samples to fine-tune the generative model using preference optimization techniques. Experimental results on various offline multi-objective molecular optimization problems validate the effectiveness of MolStitch. The source code is available online.",
+  "impact": "In this study, we address the offline multi-objective molecular optimization problem, which has potential applications in drug discovery. We emphasize the responsible application of our methodologies, with a strong focus on safety considerations. Although our framework enhances the efficiency of molecular optimization, it is crucial that all identified molecules must undergo experimental validation, safety assessments, and regulatory approval before being considered for real-world deployment. We caution against relying solely on computationally generated molecules without proper testing, as it could lead to unintended health or environmental risks. Furthermore, all datasets used in this study are publicly accessible and comply with ethical standards. Reproducibility Statement We provide comprehensive information on the experimental settings, workflow, hyperparameters, and implementation details in Appendix L. Additionally, the source code for our proposed framework is available online at https:// github.com/MolecularTeam/MolStitch.",
+  "query_input": {
+    "scenario": "Drug lead optimization using stitched molecules from offline datasets",
+    "issue": "Surrogate model overfitting to offline preferences can misestimate novel stitched compounds' drug-likeness",
+    "hazard": [
+      "Molecular stitching with offline preference optimization amplifies surrogate model misspecification, causing generated molecules to have unreliable property estimates."
+    ],
+    "exposure": [
+      "Medicinal chemists selecting virtual candidates for synthesis"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Impracticality of repeated wet-lab evaluations forces chemists to rely on surrogate model estimates without means to verify them.",
+    "impact": "Synthesis of suboptimal or ineffective drug leads wastes laboratory resources and delays therapeutic development.",
+    "dose_response": "Molecular stitching with offline preference optimization amplifies surrogate model misspecification, through medicinal chemists selecting virtual candidates for synthesis, triggers reliance on unverifiable surrogate model estimates, leading to synthesis of suboptimal drug leads wasting resources and delaying development."
+  },
+  "reference": {
+    "dose_response": [
+      "Offline preference optimization amplifies surrogate misspecification, producing unreliable property estimates that, in drug lead optimization, mislead chemists who synthesize poor leads, wasting resources and eroding trust."
+    ],
+    "vulnerability": [
+      "Medicinal chemists' over-reliance on AI predictions without orthogonal validation.",
+      "Absence of institutional review protocols for AI-generated molecular designs.",
+      "Regulatory gaps in assessing AI-derived drug candidates."
+    ],
+    "impact": [
+      "Wasted synthesis resources from poor drug-likeness predictions.",
+      "Delayed development due to repeated AI-driven failures.",
+      "Erosion of trust in computational methods among chemists.",
+      "Advancement of unsafe compounds with overlooked toxicity."
+    ]
+  }
+}

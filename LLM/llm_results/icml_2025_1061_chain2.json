@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1061",
+  "chain_index": 2,
+  "title": "QT-DoG Quantization-Aware Training for Domain Generalization",
+  "abstract": "A key challenge in Domain Generalization (DG) is preventing overfitting to source domains, which can be mitigated by finding flatter minima in the loss landscape. In this work, we propose Quantization-aware Training for Domain Generalization (QT-DoG) and demonstrate that weight quantization effectively leads to flatter minima in the loss landscape, thereby enhancing domain generalization. Unlike traditional quantization methods focused on model compression, QT-DoG exploits quantization as an implicit regularizer by inducing noise in model weights, guiding the optimization process toward flatter minima that are less sensitive to perturbations and overfitting. We provide both an analytical perspective and empirical evidence demonstrating that quantization inherently encourages flatter minima, leading to better generalization across domains. Moreover, with the benefit of reducing the model size through quantization, we demonstrate that an ensemble of multiple quantized models further yields superior accuracy than the state-ofthe-art DG approaches with no computational or memory overheads. Code is released at: https: //saqibjaved1.github.io/QT_DoG/.",
+  "impact": "In this paper, we presented our research work aiming to highlight the relation of model quantization for the domain generalization problem setup. In considering the societal impact of our approach, a few concerns emerge, such as performance degradation in extreme-level quantization. Although the proposed approach provides competitive performance compared to previous state-of-the-art models on domain generalization benchmarks, we note that performance slightly varies in extreme quantization cases. Our future work is aimed at a thorough analysis of this aspect in safety-critical applications, such as medical imaging, autonomous driving, or surveillance.",
+  "query_input": {
+    "scenario": "Out-of-distribution detection with a flatness-optimized quantized model",
+    "issue": "Flatter loss landscape may reduce sensitivity to distributional shift, causing undetected errors on unknown domains.",
+    "hazard": [
+      "Flatter minima imposed by quantization-aware training can suppress critical features for minority subpopulations, degrading performance in under-represented domains."
+    ],
+    "exposure": [
+      "Autonomous vehicle perception system operating in novel weather conditions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Perception system's OOD detector relies solely on the quantized model, which loses sensitivity to distributional shifts in weather due to flat minima.",
+    "impact": "Undetected misperceptions in rain/snow cause autonomous vehicle collisions, leading to injuries, fatalities, and property damage.",
+    "dose_response": "Flatter minima from quantization-aware training, through an autonomous vehicle perception system in novel weather, trigger a loss of sensitivity to distributional shifts in the OOD detector, leading to undetected misperceptions and collisions causing injuries, fatalities, and property damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Flatter minima from quantization blunt OOD detection signals, causing autonomous perception systems to miss distributional shifts in novel weather, increasing collision risk and eroding public trust."
+    ],
+    "vulnerability": [
+      "OOD detection in AV perception relies on sharp loss gradients to flag anomalies; flat minima blunt this signal.",
+      "Novel weather conditions introduce rare visual patterns; quantized model under-sensitive to these shifts."
+    ],
+    "impact": [
+      "Undetected OOD inputs cause perception errors, leading to collision risk in autonomous vehicles.",
+      "Public trust in autonomous mobility systems erodes following accidents, hindering adoption."
+    ]
+  }
+}

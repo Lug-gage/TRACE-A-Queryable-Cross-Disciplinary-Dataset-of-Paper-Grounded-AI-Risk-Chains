@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5512,
+    "reference": "Financial analysts exhibit automation bias, over-trusting LLM forecasts without domain verification.",
+    "generated": "Financial analysts conflate linguistic fluency with temporal accuracy, lacking mechanisms to detect distributional drift from synthetic data."
+  },
+  "impact": {
+    "similarity": 0.6313,
+    "reference": "Erroneous investment decisions amplify market volatility and misallocate capital.",
+    "generated": "Biased forecasts produce misinformed trading decisions, causing capital misallocation and financial losses."
+  },
+  "dose_response": {
+    "similarity": 0.7779,
+    "reference": "LLM scaling enables domain mismatch, which in AutoTimes finance forecasting exposes analysts to biased predictions, leading to erroneous investment decisions and market volatility.",
+    "generated": "LLM scaling's synthetic data reliance introduces distributional drift, and when financial analysts act on these predictions, their conflation of fluency with temporal accuracy leaves drift undetected, causing misinformed trading and financial losses."
+  }
+}

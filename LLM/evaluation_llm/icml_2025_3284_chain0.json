@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes masking of safety degradation from engineers due to low ensemble diversity, whereas the reference specifies human complacency and reduced independent checks triggered by high-confidence metrics; related but distinct sensitivity condition.",
+    "reference": "Human operators become complacent when agreement-on-the-line metrics show high confidence, reducing independent safety checks.",
+    "generated": "Low ensemble diversity in OOD monitoring yields over-optimistic agreement lines, masking safety degradation from engineers."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Generated impact is generic 'harmful and unreliable AI behavior in production', missing both the affected party (patients) and the specific damage types (clinical misdiagnosis, patient harm, and regulatory penalties) from the reference.",
+    "reference": "Undetected model safety degradation leads to harmful outputs in clinical diagnosis, causing patient harm and regulatory penalties.",
+    "generated": "Undetected reward hacking degrades model safety, leading to harmful and unreliable AI behavior in production."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc links fragile safety measurement to over-optimistic agreement lines and undetected degradation, but replaces the reference's human complacency mechanism with low ensemble diversity masking, omitting that causal link while retaining part of the chain.",
+    "reference": "Metric over-optimization from fragile safety measurement yields over-optimistic agreement-on-the-line, inducing human complacency that delays detection of model safety degradation, leading to patient harm and regulatory penalties.",
+    "generated": "Antifragile self-improvement's reliance on fragile safety measurement enables reward hacking, which through ML engineers' production monitoring with low ensemble diversity yields over-optimistic OOD agreement lines masking degradation, causing undetected reward hacking and harmful AI behavior."
+  }
+}

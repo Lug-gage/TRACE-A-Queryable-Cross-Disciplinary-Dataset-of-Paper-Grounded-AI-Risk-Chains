@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1557",
+  "chain_index": 2,
+  "title": "XAttnMark Learning Robust Audio Watermarking with Cross-Attention",
+  "abstract": "The rapid proliferation of generative audio synthesis and editing technologies has raised serious concerns about copyright infringement, data provenance, and the spread of misinformation via deepfake audio. Watermarking offers a proactive solution by embedding imperceptible yet identifiable and traceable signals into audio content. While recent neural network-based watermarking methods like WavMark and AudioSeal have improved robustness and quality, they struggle to jointly optimize both robust detection and accurate attribution. This paper introduces Cross-Attention Robust Audio Watermark (XATTNMARK), which bridges this gap by leveraging partial parameter sharing between the generator and the detector, a cross-attention mechanism for efficient message retrieval, and a temporal conditioning module for improved message distribution. Additionally, we propose a psychoacoustic-aligned time-frequency (TF) masking loss that captures fine-grained auditory masking effects, improving watermark imperceptibility. XATTNMARK achieves state-of-theart performance in both detection and attribution, demonstrating superior robustness against a wide range of audio transformations, including challenging generative editing at varying strengths. This work advances audio watermarking for protecting intellectual property and ensuring authenticity in the era of generative AI.",
+  "impact": "This research addresses pressing concerns regarding media authenticity and intellectual property protection stemming from the rise of generative AI. Our work introduces an improved audio watermarking system. The system’s value lies in its ability to reliably detect embedded identifying marks (watermarks) and accurately trace their origin, even when audio has been substantially altered by sophisticated AI tools. This capability makes our technology a valuable asset in combating deepfake audio and the spread of misinformation. Furthermore, it offers enhanced protection for the rights of audio content creators. Like many technologies, advanced watermarking holds the potential for dual use. Although designed to protect and authenticate, such systems could potentially be misused by malicious actors or institutions for purposes such as unauthorized tracking or censorship if implemented irresponsibly. Recognizing these risks, we strongly advocate for transparency and informed user consent in the deployment of such systems. The development of clear ethical guidelines and robust policies is crucial to prevent abuse.",
+  "query_input": {
+    "scenario": "Forensic audio analysis for legal evidence authentication",
+    "issue": "Adversarial perturbations remove or tamper watermarks, making it impossible to verify authenticity of audio evidence.",
+    "hazard": [
+      "Cross-attention time-frequency watermarks can be removed or forged by audio perturbations (compression, noise) and adversarial attacks, undermining audio authentication, deepfake detection, and copyright attribution."
+    ],
+    "exposure": [
+      "Forensic analysts and legal professionals relying on watermarked audio as evidence"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Legal evidence authentication trusts watermarks as unforgeable, lacking redundant integrity checks when watermarks are adversarially removed or forged.",
+    "impact": "Undetectable falsification of audio evidence leads to wrongful convictions or acquittals, eroding judicial trust in digital evidence.",
+    "dose_response": "Watermarks removable by audio perturbations and adversarial attacks, through forensic analysts' reliance on watermarked evidence, trigger trust in watermarks as unforgeable without redundant checks, leading to undetectable falsification causing wrongful convictions and eroding judicial trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial perturbations remove or tamper watermarks, which in the scenario of forensic audio analysis exposes legal professionals to unverifiable evidence, leading to wrongful convictions or acquittals."
+    ],
+    "vulnerability": [
+      "Legal systems treat watermark presence as binary proof of authenticity without corroborating evidence.",
+      "Forensic analysts lack standardized protocols for detecting watermark tampering."
+    ],
+    "impact": [
+      "Wrongful convictions or acquittals based on falsified audio evidence.",
+      "Systemic erosion of judicial trust in digital evidence."
+    ]
+  }
+}

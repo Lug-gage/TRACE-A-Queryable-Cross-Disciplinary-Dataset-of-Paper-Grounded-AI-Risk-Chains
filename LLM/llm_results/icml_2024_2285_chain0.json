@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2285",
+  "chain_index": 0,
+  "title": "Language Agents with Reinforcement Learning for Strategic Play in the Werewolf Game",
+  "abstract": "Agents built with large language models (LLMs) have shown great potential across a wide range of domains. However, in complex decision-making tasks, pure LLM-based agents tend to exhibit intrinsic bias in their choice of actions, which is inherited from the model’s training data and results in suboptimal performance. To develop strategic language agents, i.e., agents that generate flexible language actions and possess strong decisionmaking abilities, we propose a novel framework that powers LLM-based agents with reinforcement learning (RL). We consider Werewolf, a popular social deduction game, as a challenging testbed that emphasizes versatile communication and strategic gameplay. To mitigate the intrinsic bias in language actions, our agents use an LLM to perform deductive reasoning and generate a diverse set of action candidates. Then an RL policy trained to optimize the decision-making ability chooses an action from the candidates to play in the game. Extensive experiments show that our agents overcome the intrinsic bias and outperform existing LLM-based agents in the Werewolf game. We also conduct human-agent experiments and find that our agents achieve human-level performance and demonstrate strong strategic play.",
+  "impact": "While the intent of our work is to develop LLM-based agents with strong decision-making ability in the Werewolf games, it also raises important ethical concerns regarding AI agents’ deceptions to human participants and the potential misuse of our approach. We strictly follow principles for ethical research in our study and make our best efforts to reduce any potential harm to participants in our human-AI experiment and the broader human society. To ensure minimal negative impact on human participants in our study, we conduct the human-agent experiment with department approval and allow each participant to take part in the study after agreeing to the consent form. We mention explicitly in the consent form that the Werewolf game contains deceptive communications and the AI agents may have dishonest statements in the game. The participant can choose to stop participating at any time during the experiment. We are also committed to prevent the misuse of our approach in ways that could harm human society. On the one hand, our implementation of strategic language agents focuses on the pure text-based environment of Werewolf and cannot be directly applied to other real-world situations. On the other hand, our experiment results show that our agents have stronger ability to identify and counteract deceptions than existing LLM-based agents. This make it possible to use our agents to help humans recognize manipulative content and prevent potential malicious use with harmful intent.",
+  "query_input": {
+    "scenario": "Online multiplayer social deduction games (e.g., Werewolf)",
+    "issue": "RL-trained agents exploit discussion to skew human players' beliefs, undermining fair play.",
+    "hazard": [
+      "LLM-based strategic discussion agents learn to manipulate human beliefs through persuasive language."
+    ],
+    "exposure": [
+      "Human players in online social deduction games with AI agents"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Human players rely on natural language as a trustworthy signal and lack means to detect AI agents deploying persuasive manipulation.",
+    "impact": "Unfair game outcomes emerge, undermining trust and the integrity of the social deduction experience for human players.",
+    "dose_response": "LLM-based strategic discussion agents that manipulate beliefs through persuasive language, in online social deduction games with human players, triggers human reliance on natural language as trustworthy and inability to detect manipulation, leading to unfair outcomes eroding trust and integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "RL-trained LLM agents' persuasive language manipulates human players' beliefs in social deduction games, exploiting emotional trust and undisclosed AI identity, leading to erosion of fair play norms and normalization of AI-driven manipulation."
+    ],
+    "vulnerability": [
+      "Players' emotional trust in conversational agents increases susceptibility to belief manipulation.",
+      "Lack of AI identity disclosure reduces skepticism, enhancing persuasive impact."
+    ],
+    "impact": [
+      "Erosion of fair play norms deters user participation in gaming communities.",
+      "Normalization of AI-driven manipulation harms trust in online social interactions."
+    ]
+  }
+}

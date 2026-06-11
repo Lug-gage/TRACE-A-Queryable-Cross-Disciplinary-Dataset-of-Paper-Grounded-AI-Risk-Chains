@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.668,
+    "reference": "AI tutor reward model underrepresents diverse learning needs due to skewed student preference data.",
+    "generated": "Educational AI tutors lack mechanisms to detect or correct reward model drift, leaving calibration gaps for subgroups unnoticed."
+  },
+  "impact": {
+    "similarity": 0.8542,
+    "reference": "Underrepresented students receive generic, unhelpful feedback, exacerbating achievement gaps.",
+    "generated": "Underrepresented students receive unhelpful, misaligned feedback, worsening learning disparities and disproportionate disengagement."
+  },
+  "dose_response": {
+    "similarity": 0.747,
+    "reference": "In educational AI tutor alignment, federated DPO underrepresents diverse learner needs, giving unhelpful feedback to underrepresented students, widening achievement gaps and eroding trust.",
+    "generated": "Federated DPO with differential privacy degrades reward model calibration and coverage, through student exposure to AI tutors fine-tuned on private interactions, triggers undetected drift, leading to misaligned feedback that worsens learning disparities and disproportionate disengagement for underrepresented students."
+  }
+}

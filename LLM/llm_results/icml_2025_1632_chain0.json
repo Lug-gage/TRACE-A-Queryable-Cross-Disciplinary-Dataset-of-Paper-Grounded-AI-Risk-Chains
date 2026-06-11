@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1632",
+  "chain_index": 0,
+  "title": "Safe Delta Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+  "abstract": "Large language models (LLMs) have shown great potential as general-purpose AI assistants across various domains. To fully leverage this potential in specific applications, many companies provide fine-tuning API services, enabling users to upload their own data for LLM customization. However, fine-tuning services introduce a new safety threat: user-uploaded data, whether harmful or benign, can break the model’s alignment, leading to unsafe outputs. Moreover, existing defense methods struggle to address the diversity of fine-tuning datasets (e.g., varying sizes, tasks), often sacrificing utility for safety or vice versa. To address this issue, we propose Safe Delta, a safety-aware posttraining defense method that adjusts the delta parameters (i.e., the parameter change before and after fine-tuning). Specifically, Safe Delta estimates the safety degradation, selects delta parameters to maximize utility while limiting overall safety loss, and applies a safety compensation vector to mitigate residual safety loss. Through extensive experiments on four diverse datasets with varying settings, our approach consistently preserves safety while ensuring that the utility gain from benign datasets remains unaffected.",
+  "impact": "Our work introduces a novel defensive method aimed at enhancing the safety of large language models following fine-tuning. We will open-source our method upon acceptance, which will contribute to the community of safety research and applications. Nonetheless, we acknowledge the inherent dual-use risk, as malicious actors could potentially develop new fine-tuning jailbreak techniques leveraging our approach. Despite this, we are hopeful that our proposed methodology will inspire future research efforts to mitigate the safety risks associated with LLM fine-tuning.",
+  "query_input": {
+    "scenario": "Post-training safety realignment via task arithmetic",
+    "issue": "Safety vector addition creates a reversible delta that can be subtracted or negated, restoring unsafe behavior.",
+    "hazard": [
+      "Safety vector arithmetic addition for realignment introduces a delta parameter that can be reversed or misapplied, degrading safety constraints."
+    ],
+    "exposure": [
+      "Developers applying RESTA-style safety vectors to fine-tuned LLMs before deployment"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Post-training safety deltas rely on reversible arithmetic without integrity verification, enabling undetected subtraction to restore misalignment.",
+    "impact": "Deployed LLMs revert to harmful outputs, causing safety violations, user harm, and systemic erosion of alignment trust.",
+    "dose_response": "Safety vector arithmetic addition for realignment introduces reversible deltas that, when applied by developers before deployment, lack integrity verification, enabling undetected subtraction that reverts deployed LLMs to harmful outputs, causing safety violations, user harm, and erosion of alignment trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Reversible safety delta enables trivial subtraction, which in post-training realignment exposes deployed models to mass harmful content generation."
+    ],
+    "vulnerability": [
+      "Over-reliance on linear safety representations that lack robustness to simple arithmetic reversal.",
+      "Institutional normalization of single-vector safety patches without defense-in-depth."
+    ],
+    "impact": [
+      "Widespread deployment of models with trivially bypassable safety, enabling mass generation of harmful content.",
+      "Erosion of public trust in AI safety claims, leading to regulatory backlash and adoption hesitancy."
+    ]
+  }
+}

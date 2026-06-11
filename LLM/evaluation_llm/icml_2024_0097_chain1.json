@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0097",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe consumer inability to critically assess AI dietary advice, leading to uncritical trust",
+    "reference": "Consumer over-reliance on AI for dietary advice without verifying claims, exacerbated by persuasive AI-generated media.",
+    "generated": "Consumers lack the medical expertise and AI literacy to critically assess hijacked AI dietary advice, leading to uncritical trust."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Adverse health outcomes covered but undermining of scientific nutrition guidance missing, and financial waste added",
+    "reference": "Adoption of harmful diets due to false AI-advice leads to health crises, and undermines scientific nutrition guidance.",
+    "generated": "Adverse health outcomes and financial waste among consumers following false AI-generated dietary claims."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc misses explicit link that hijacks induce VLM to generate false claims; instead, hijacks trigger uncritical trust directly",
+    "reference": "Adversarial images induce VLMs to generate false health claims, which in AI dietary recommendation settings causes consumers to adopt harmful diets, leading to health crises and undermined nutrition guidance.",
+    "generated": "Adversarial image hijacks that override safety alignment, through consumer reliance on AI dietary recommendations, trigger uncritical trust from lack of medical expertise and AI literacy, leading to adverse health outcomes and financial waste from false dietary claims."
+  }
+}

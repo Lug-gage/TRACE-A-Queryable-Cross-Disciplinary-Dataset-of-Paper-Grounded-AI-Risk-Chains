@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6334,
+    "reference": "LLM judges sharing architectures and training paradigms produce correlated blind spots, overestimating evaluation consensus.",
+    "generated": "Researchers’ trust in inter-model agreement as a signal of correctness, without verifying error independence across LLM judges."
+  },
+  "impact": {
+    "similarity": 0.5999,
+    "reference": "Flawed models mistakenly deemed safe, risking deployment of harmful or biased systems.",
+    "generated": "Hidden systematic failures inflate agreement scores, producing overconfident and misleading model evaluations that misguide research and deployment choices."
+  },
+  "dose_response": {
+    "similarity": 0.8314,
+    "reference": "Correlated errors cause systematic failure alignment, which when researchers use LLM judges inflates inter-evaluator agreement, leading to deployment of flawed models as safe.",
+    "generated": "Correlated errors in LLM predictions, through researchers using LLM judges to evaluate outputs, triggers trust in inter-model agreement as a correctness signal unchecked for error independence, leading to hidden systematic failures that inflate agreement scores and produce overconfident, misleading evaluations."
+  }
+}

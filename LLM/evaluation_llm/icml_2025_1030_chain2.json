@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1030",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated condition is overreliance on certified structures, missing reference's sensitivity of premature disclosure of gaps giving a blueprint.",
+    "reference": "Premature disclosure of resilience gaps gives attackers a blueprint.",
+    "generated": "Overreliance on resilience-certified hierarchical structures without adversarial fault coverage creates blind trust in agent outputs during critical tasks."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (systems/high-stakes environments) is present, but damage type differs: reference's system compromise vs generated's erroneous decisions and safety failures.",
+    "reference": "Exploitation of known unpatched vulnerabilities compromises systems.",
+    "generated": "Corrupted agent behaviors go undetected, leading to erroneous critical decisions and cascading safety failures in high-stakes environments."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes propagation of undetected behaviours through error correction, while reference arc is fault injection revealing gaps, delayed patching, and exploitation eroding trust.",
+    "reference": "Fault injection testing reveals resilience gaps in multi-agent LLM systems that, if unpatched due to delayed adoption, enable exploitation compromising critical-task networks and eroding trust in certifications.",
+    "generated": "Multi-agent LLM systems with hierarchical error correction risk propagating undetected malicious behaviors, through critical-task deployers of resilience-certified networks, triggering blind trust from overreliance without adversarial fault coverage, leading to erroneous critical decisions and cascading safety failures."
+  }
+}

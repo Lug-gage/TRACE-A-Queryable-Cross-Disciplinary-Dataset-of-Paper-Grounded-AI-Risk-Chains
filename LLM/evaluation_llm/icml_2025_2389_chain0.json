@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2389",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The reference's sensitivity condition of treating difficulty scores as fixed and ignoring model-dependence is semantically matched by the generated text's description of uncritical adoption lacking mechanisms to detect or correct model misspecification.",
+    "reference": "Benchmark designers treat IRT difficulty scores as fixed, ignoring model-dependence, leading to overconfidence.",
+    "generated": "Evaluators’ uncritical adoption of predicted difficulty scores, lacking mechanisms to detect or correct for model misspecification across shifting LM distributions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (the research community) and the damage type (wasting resources) from the reference are present; the generated mention of undetected safety failures is additional but does not negate coverage.",
+    "reference": "Misleading model comparisons misdirect research, wasting resources on non-robust improvements.",
+    "generated": "Biased difficulty scores yield unreliable LM evaluations, causing misallocation of resources and undetected safety failures across the community."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc shares the initial steps (biased scores from amortized IRT, used by maintainers) but omits the reference's key intermediate link of difficulty predictions failing to generalize and the resulting misleading comparisons, instead inserting a different mechanism of uncritical adoption.",
+    "reference": "Biased difficulty scores from amortized IRT, used by benchmark maintainers, lead to difficulty predictions failing to generalize, causing misleading comparisons and eroded trust.",
+    "generated": "Amortized IRT difficulty estimation propagates model misspecification, yielding biased scores; through benchmark maintainers' use, it triggers uncritical adoption lacking detection mechanisms across shifting LM distributions, leading to misallocation of resources and undetected safety failures."
+  }
+}

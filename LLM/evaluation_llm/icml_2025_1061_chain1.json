@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1061",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes a model-level sensitivity (limited ability to adapt and retain old knowledge due to flat minima); generated shifts to a user-group sensitivity (lack of compensatory mechanisms for minority users when plasticity erodes), a related but different condition.",
+    "reference": "Continuous learning with quantized flat minima limits model's ability to adapt to new tasks while retaining old knowledge.",
+    "generated": "Minority users lack compensatory mechanisms to recover rare-skill support when flatness-seeking updates erode plasticity and suppress critical features."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated specify the affected party (users / under‑represented subpopulations) and core damage (repeated errors/persistent performance degradation causing frustration). Generated adds loss of trust and service exclusion but fully covers the reference’s consequence.",
+    "reference": "Assistant forgets personal preferences, causing repeated errors and user frustration.",
+    "generated": "Under-represented subpopulations experience persistent degradation of assistant performance on rare tasks, causing frustration, loss of trust, and service exclusion."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Flatter minima causing performance degradation and frustration is shared, but the generated arc replaces the reference’s key causal link (limited plasticity → forgetting personalized tasks) with a different mechanism (suppressed critical features, triggered by users learning new skills and lack of compensatory mechanisms), missing the direct forgetting-to-frustration chain.",
+    "reference": "Flatter minima imposed by quantization-aware training limit plasticity, causing continual deployment of quantized models to forget personalized tasks, leading to user frustration and abandonment.",
+    "generated": "Flatter minima from quantization-aware training suppress critical features for minority subpopulations, through users of adaptive virtual assistants learning new skills, triggers minority users' lack of compensatory mechanisms to recover rare-skill support, leading to persistent degradation of rare-task performance, frustration, loss of trust, and service exclusion."
+  }
+}

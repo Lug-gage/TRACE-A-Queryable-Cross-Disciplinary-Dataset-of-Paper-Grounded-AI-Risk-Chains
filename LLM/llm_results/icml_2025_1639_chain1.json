@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1639",
+  "chain_index": 1,
+  "title": "Stochastic Forward–Backward Deconvolution Training Diffusion Models with Finite Noisy Datasets",
+  "abstract": "Recent diffusion-based generative models achieve remarkable results by training on massive datasets, yet this practice raises concerns about memorization and copyright infringement. A proposed remedy is to train exclusively on noisy data with potential copyright issues, ensuring the model never observes original content. However, through the lens of deconvolution theory, we show that although it is theoretically feasible to learn the data distribution from noisy samples, the practical challenge of collecting sufficient samples makes successful learning nearly unattainable. To overcome this limitation, we propose to pretrain the model with a small fraction of clean data to guide the deconvolution process. Combined with our Stochastic Forward-Backward Deconvolution (SFBD) method, we attain FID 6.31 on CIFAR-10 with just 4% clean images (and 3.58 with 10%). We also provide theoretical guarantees that SFBD learns the true data distribution. These results underscore the value of limited clean pretraining, or pretraining on similar datasets. Empirical studies further validate and enrich our findings.",
+  "impact": "This paper introduces SFBD, a framework for effectively training diffusion models primarily using noisy samples. Our approach enables data sharing for generative model training while safeguarding sensitive information. For organizations utilizing personal or copyrighted data to train their models, SFBD offers a practical solution to mitigate copyright concerns, as the model never directly accesses the original samples. This mathematically guaranteed framework can promote data-sharing by providing a secure and privacy-preserving training method. However, improper implementation poses a risk of sensitive information leakage. A false sense of security could further exacerbate this issue, underscoring the importance of rigorous validation and responsible deployment.",
+  "query_input": {
+    "scenario": "Data restoration with SFBD and limited clean pretraining",
+    "issue": "Restored medical images contain hallucinated anatomical details, causing misdiagnosis.",
+    "hazard": [
+      "SFBD-trained diffusion models amplify noise patterns from training data, causing distributional shift and unreliable sample generation."
+    ],
+    "exposure": [
+      "Clinicians and patients relying on AI-restored medical images."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians cannot distinguish hallucinated anatomical details from real pathology in AI-restored images, leading to over-reliance.",
+    "impact": "Misdiagnosis and inappropriate medical interventions, causing patient harm.",
+    "dose_response": "Amplified noise patterns and distributional shift from SFBD-trained diffusion models, through clinicians and patients relying on AI-restored medical images, trigger the inability to distinguish hallucinated anatomical details from real pathology, leading to misdiagnosis and harmful interventions."
+  },
+  "reference": {
+    "dose_response": [
+      "SFBD-trained diffusion models' noise amplification hallucinates anatomical details in restored medical images; clinicians' automation bias converts these errors into misdiagnosis and patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians exhibit automation bias, over-trusting AI-restored images without verifying against original degraded inputs.",
+      "Limited clean pretraining data prevents the model from learning valid anatomical priors, increasing hallucination risk."
+    ],
+    "impact": [
+      "False anatomical structures in restored images lead to incorrect treatment decisions and patient harm.",
+      "Erosion of trust in AI-assisted diagnostics slows clinical adoption of beneficial restoration tools."
+    ]
+  }
+}

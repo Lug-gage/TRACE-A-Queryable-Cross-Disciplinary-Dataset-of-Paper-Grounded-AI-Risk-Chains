@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0297",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6718,
+    "reference": "Benchmark datasets like DRCT-2M exhibit texture biases that fail to capture real-world image variability, overestimating robustness.",
+    "generated": "Benchmark-driven evaluation relies on datasets that omit genuine images with high-frequency textures mimicking diffusion residuals, causing brittle classification boundaries."
+  },
+  "impact": {
+    "similarity": 0.647,
+    "reference": "Models deployed based on biased benchmarks fail in real settings, wasting resources and exposing users to undetected synthetic media.",
+    "generated": "Overestimated generalizability leads to real-world detector failures, misclassifying authentic media as generated and undermining forensic trust."
+  },
+  "dose_response": {
+    "similarity": 0.7326,
+    "reference": "Reconstruction-error-based detection models overfit to dataset artifacts, leading researchers to overestimate robustness, causing failures in real-world deployment, wasting resources and exposing users to undetected synthetic media.",
+    "generated": "Reconstruction-error-based detection misclassifies genuine images with diffusion-mimicking textures, and through evaluation on benchmarks that omit such textures, triggers brittle boundaries, leading to overestimated generalizability and real-world failures that misclassify authentic media and undermine forensic trust."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0336",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6084,
+    "reference": "Moderation systems’ reliance on static safety filters creates vulnerability when red-teaming prompts become known to attackers.",
+    "generated": "Automated moderation tools are not robust against adversarial prompts, creating a false sense of safety from limited benchmark testing."
+  },
+  "impact": {
+    "similarity": 0.6232,
+    "reference": "Content moderators face increased psychological burden from undetected NSFW and abusive imagery, leading to burnout and desensitization.",
+    "generated": "NSFW and copyrighted images bypass moderation, exposing users to harmful content and platforms to liability and erosion of trust."
+  },
+  "dose_response": {
+    "similarity": 0.7845,
+    "reference": "Automated discovery of prompt vulnerabilities enables bypass of static safety filters in moderation systems, exposing content moderators to undetected abusive imagery that increases psychological burden, burnout, and desensitization.",
+    "generated": "Automated discovery of T2I prompt vulnerabilities bypassing NSFW controls, through moderators' use of automated safety tools, triggers false safety from non-robust moderation to adversarial prompts, leading to NSFW/copyrighted images bypassing moderation, user harm, and platform liability/trust erosion."
+  }
+}

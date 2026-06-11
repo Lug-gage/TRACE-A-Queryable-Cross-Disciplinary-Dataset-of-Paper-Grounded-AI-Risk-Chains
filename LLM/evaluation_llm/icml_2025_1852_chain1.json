@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1852",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference says self-attention layers leak contextual relationships; generated says they retain membership signals despite LDP noise—related but distinct sensitivity condition.",
+    "reference": "Self-attention layers leak contextual relationships, enabling sentence reconstruction.",
+    "generated": "Self-attention layers retain membership signals that LDP noise, constrained by utility needs, cannot fully obscure."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) matches, but reference's damage type (fraud) is missing; generated only mentions exposing private communications and violating confidentiality.",
+    "reference": "Exposed text snippets reveal passwords and personal conversations, enabling fraud.",
+    "generated": "Training sentences of individual users are identified, exposing private communications and violating confidentiality guarantees."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc reconstructs sentences via layer leakage causing fraud; generated arc triggers membership signals via LDP noise inadequacy leading to sentence identification and confidentiality breach—different causal mechanism.",
+    "reference": "Low-polynomial time membership inference attacks leverage self-attention layer leakage in federated NLP for text prediction, reconstructing sentences from shared text snippets, enabling password exposure and fraud.",
+    "generated": "Low-polynomial-time membership inference attacks on locally DP federated learning, via sharing text snippets for next-word prediction, trigger self-attention layers' retained membership signals that utility-constrained LDP noise cannot obscure, leading to identification of training sentences, exposing private communications and violating confidentiality."
+  }
+}

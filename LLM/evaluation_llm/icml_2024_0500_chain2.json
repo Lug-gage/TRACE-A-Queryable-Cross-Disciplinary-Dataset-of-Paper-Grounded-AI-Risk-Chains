@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0500",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both reference and generated describe the lack of verification of physically plausible scenes before deployment, with generated specifying automated detection but retaining the core sensitivity",
+    "reference": "Developers may not verify physics of AI-generated scenes before deployment.",
+    "generated": "Game developers lack automated means to detect physically impossible object arrangements before integrating AI scenes into safety-critical simulators."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both describe users/trainees internalizing incorrect safety behaviours leading to real-world accidents/errors with injury or damage, preserving affected party and damage type",
+    "reference": "Users learn incorrect safety behaviors, causing real-world accidents.",
+    "generated": "Trainees internalize incorrect physical interactions, leading to real-world errors with potential injury or equipment damage."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "both follow the same causal chain: generation of physically implausible scenes, lack of verification, users learning unsafe behaviours, and real-world harm",
+    "reference": "Text-to-3D generation of scenes with commonsense-violating interactions leads users to learn unsafe behaviors, causing real-world accidents when developers don't verify physics.",
+    "generated": "Unsupervised NeRF optimization generates physically impossible but plausible object arrangements, through game developers using them in interactive experiences, triggers the lack of automated detection, leading trainees to internalize incorrect physical interactions and real-world errors with potential injury or equipment damage."
+  }
+}

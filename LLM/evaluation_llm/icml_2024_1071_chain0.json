@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1071",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state users perceive AI summaries as accurate leading to reduced verification",
+    "reference": "Users perceive AI-generated summaries as inherently accurate, reducing verification behavior.",
+    "generated": "Users conflate linguistic fluency with factual accuracy, lacking accessible mechanisms to independently verify summary content."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe increased belief/propagation of false information and misinformation amplification",
+    "reference": "Increased belief in and sharing of inaccurate news summaries, amplifying misinformation.",
+    "generated": "False beliefs propagate from plausible-sounding summaries, distorting public understanding and eroding trust in information sources."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes user-level conflation after reading but omits the link that the labeler's bias causes factuality degradation in summaries",
+    "reference": "The AI labeler's fluency bias enables factuality degradation in summaries, which when users read them leads to increased belief in and sharing of inaccurate news.",
+    "generated": "Training reward models on synthetic labels introduces a preference shift, through users reading AI-generated news summaries, triggers users' conflation of fluency with factual accuracy and lack of verification mechanisms, leading to false beliefs propagating, distorting public understanding and eroding trust."
+  }
+}

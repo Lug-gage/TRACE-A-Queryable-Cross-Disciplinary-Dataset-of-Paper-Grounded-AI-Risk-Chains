@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 2,
+  "title": "Predictive Coding beyond Correlations",
+  "abstract": "Recently, there has been extensive research on the capabilities of biologically plausible algorithms. In this work, we show how one of such algorithms, called predictive coding, is able to perform causal inference tasks. First, we show how a simple change in the inference process of predictive coding enables to compute interventions without the need to mutilate or redefine a causal graph. Then, we explore applications in cases where the graph is unknown, and has to be inferred from observational data. Empirically, we show how such findings can be used to improve the performance of predictive coding in image classification tasks, and conclude that such models are able to perform simple end-to-end causal inference tasks.",
+  "impact": "In the domain of causal structure learning from observational data, it is crucial to recognize that algorithms can only identify the causal graph within the confines of a Markov Equivalence Class (MEC). This limitation means that various causal graphs, each with differing implications, could be equally supported by the observational data. Our approach does not incorporate interventional data, amplifying the need for caution in its application for causal discovery. The method should be used alongside further assumptions and in consultation with subject-matter experts to minimize the risk of affirming false causal relationships. Incorrect usage has the potential for negative societal consequences, such as poor or biased decision-making processes.",
+  "query_input": {
+    "scenario": "Active causal discovery for single-cell genomics",
+    "issue": "Amortized policy overfits to training distribution, yielding inaccurate gene regulatory networks.",
+    "hazard": [
+      "Causal models learned from observational or limited interventional data may be misspecified, causing interventions that introduce confounding and distribution shifts."
+    ],
+    "exposure": [
+      "Bioinformaticians and biologists inferring GRNs for disease mechanism studies."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Overfitted amortized policy from limited observational data prevents detection of misspecified causal graphs, leaving GRNs uncorrected.",
+    "impact": "Disease mechanism studies rely on inaccurate GRNs, wasting experiments and delaying therapeutic target discovery.",
+    "dose_response": "Misspecified causal models from limited data causing confounding interventions and distribution shifts, through bioinformaticians inferring GRNs for disease studies, trigger overfitted amortized policies that leave inaccurate GRNs uncorrected, leading to wasted experiments and delayed therapeutic target discovery."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitted causal discovery policies in single-cell genomics produce unvalidated gene regulatory networks, wasting research funding and misdirecting drug development through false causal links."
+    ],
+    "vulnerability": [
+      "Overfitted causal discovery policies produce gene regulatory networks that lack biological validation."
+    ],
+    "impact": [
+      "Wasted research funding and misdirected drug development efforts due to false causal links."
+    ]
+  }
+}

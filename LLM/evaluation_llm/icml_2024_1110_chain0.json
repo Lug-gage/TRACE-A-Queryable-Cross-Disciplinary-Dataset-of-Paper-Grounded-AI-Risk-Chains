@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1110",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe human lack of transparency into AI limitations, leading to misplaced trust",
+    "reference": "Over-reliance on AI opponents without transparency about their adaptive limitations.",
+    "generated": "Human players lack transparency into AI abstraction approximations, trusting platform fairness without means to detect payoff-altering errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Trust erosion is covered, but reduced long-term engagement is missing",
+    "reference": "Erosion of user trust in platform fairness reduces long-term engagement.",
+    "generated": "Unexpected financial losses for human players and erosion of trust in platform integrity."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc inserts lack of transparency as a causal step instead of suboptimal play directly exposing humans",
+    "reference": "Approximation error from dynamic abstraction degrades regret minimization, causing suboptimal AI poker play that exposes human opponents to financial losses and trust erosion in online real-money platforms.",
+    "generated": "Dynamic action abstraction in RL-CFR introduces approximation error degrading regret minimization guarantees in extensive-form games, and through human players competing in real-money games triggers lack of transparency into AI approximations, leading to unexpected financial losses and erosion of platform trust."
+  }
+}

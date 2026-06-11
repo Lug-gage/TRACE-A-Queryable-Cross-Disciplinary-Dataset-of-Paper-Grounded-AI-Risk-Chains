@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2167",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.436,
+    "reference": "Network security policies rely on plaintext inspection; ambiguous decryption circumvents content enforcement.",
+    "generated": "Intermediaries depend on deterministic decoding of image bitstreams for inspection, lacking the conditional trigger to reveal true semantics."
+  },
+  "impact": {
+    "similarity": 0.7611,
+    "reference": "Illegal content such as CSAM transmitted undetected across filters, undermining legal compliance and user safety.",
+    "generated": "Policy-violating images evade content filters undetected, undermining safety enforcement and exposing users to harmful material."
+  },
+  "dose_response": {
+    "similarity": 0.8623,
+    "reference": "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream, in abuse of privacy-preserving sharing, exposes network intermediaries and audit logs analyzing traffic, leading to illegal content transmitted undetected.",
+    "generated": "Generative learned image compression with conditional triggers, through network intermediaries analyzing traffic, triggers deterministic decoding dependence without the trigger, leading to policy-violating images evading filters undetected."
+  }
+}

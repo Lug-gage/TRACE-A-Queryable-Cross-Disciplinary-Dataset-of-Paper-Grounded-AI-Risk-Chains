@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1327",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference emphasizes missing human review; generated describes lack of independent validation without explicitly mentioning human oversight, a related but distinct condition.",
+    "reference": "Over-reliance on automated safety filters without human review.",
+    "generated": "Platform users' dependence on safety filters that are not independently validated against novel bypasses, enabling false assurance."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Users exposed to disturbing imagery and suffering psychological distress appear in both.",
+    "reference": "Users exposed to disturbing imagery causing psychological distress.",
+    "generated": "Users and creators suffer psychological distress and reputational damage from unintentionally generated or viewed unsafe imagery."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated omits the link that false assurance enables deployment and that benign prompts trigger unsafe images; the causal arc from missing attacks to distress is therefore incomplete.",
+    "reference": "Automated safety evaluations missing novel attacks produce false assurance, enabling deployment of text-to-image models where benign prompts trigger unsafe images, exposing users to disturbing content and platform liability.",
+    "generated": "Automated safety evaluations missing emerging attack vectors, through platform users and content creators, triggers dependence on unvalidated safety filters and false assurance, leading to psychological distress and reputational damage from unintentionally generated unsafe imagery."
+  }
+}

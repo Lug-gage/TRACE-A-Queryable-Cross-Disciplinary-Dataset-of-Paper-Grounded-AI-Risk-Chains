@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2724",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7106,
+    "reference": "Clinicians' overreliance on AI outputs due to time pressure and limited access to alternative information sources.",
+    "generated": "Clinicians' reliance on AI outputs without source verification and the retrieval system's lack of adversarial detection enable misinformation injection."
+  },
+  "impact": {
+    "similarity": 0.8015,
+    "reference": "Misdiagnosis and patient harm from erroneous AI-generated suggestions.",
+    "generated": "Misleading diagnostic suggestions cause incorrect treatments, harming patients and eroding trust in clinical AI systems."
+  },
+  "dose_response": {
+    "similarity": 0.7761,
+    "reference": "Adversarial poisoning enables stealthy misinformation retrieval, which in medical QA systems exposes clinicians relying on AI-assisted diagnosis to misleading suggestions, leading to misdiagnosis and patient harm.",
+    "generated": "Adversarial poisoning of RAG knowledge bases, through clinicians relying on AI-assisted diagnosis, triggers reliance on AI outputs without verification and lack of adversarial detection, leading to incorrect treatments, patient harm, and eroded trust in clinical AI."
+  }
+}

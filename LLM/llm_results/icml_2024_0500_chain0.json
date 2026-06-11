@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0500",
+  "chain_index": 0,
+  "title": "Disentangled 3D Scene Generation with Layout Learning",
+  "abstract": "We introduce a method to generate 3D scenes that are disentangled into their component objects. This disentanglement is unsupervised, relying only on the knowledge of a large pretrained textto-image model. Our key insight is that objects can be discovered by finding parts of a 3D scene that, when rearranged spatially, still produce valid configurations of the same scene. Concretely, our method jointly optimizes multiple NeRFs from scratch-each representing its own object-along with a set of layouts that composite these objects into scenes. We then encourage these composited scenes to be in-distribution according to the image generator. We show that despite its simplicity, our approach successfully generates 3D scenes decomposed into individual objects, enabling new capabilities in text-to-3D content creation. See our project page for results and an interactive demo: https://dave.ml/layoutlearning/",
+  "impact": "Generative models present many ethical concerns over data attribution, nefarious applications, and longer-term societal effects. Though we build on a text-to-image model trained on data that has been filtered to remove concerning imagery and captions, recent work has shown that popular datasets contain dangerous depictions of undesirable content1 which may leak into model weights. Further, since we distill the distribution learned by an image generator, we inherit the potential negative use-cases enabled by the original model. By facilitating the creation of more complex, compositional 3D scenes, we perhaps expand the scope of potential issues associated with text-to-3D technologies. Taking care to minimize potential harmful deployment of our generative models through using ethicallysourced and well-curated data is of the utmost importance as our field continues to grow in size and influence. Further, by introducing an unsupervised method to disentangle 3D scenes into objects, we possibly contribute to the displacement of creative workers such as video game asset designers via increased automation. However, at the same time, methods like the one we propose have the potential to become valuable tools at the artist’s disposal, providing much more control over outputs and helping create new, more engaging forms of content.",
+  "query_input": {
+    "scenario": "Autonomous driving simulation using multi-object NeRF scene generation",
+    "issue": "Generated dynamic objects may exhibit kinematically impossible trajectories, misleading perception and planning models.",
+    "hazard": [
+      "Unsupervised joint optimization of NeRF-based 3D scenes enables generation of plausible but physically impossible object arrangements."
+    ],
+    "exposure": [
+      "Autonomous vehicle perception developers training on synthetic urban scenes"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Perception training pipelines lack physical feasibility checks, leaving models susceptible to implausible trajectory examples.",
+    "impact": "Autonomous vehicles mispredict object behavior, causing inappropriate planning decisions and elevated collision risk.",
+    "dose_response": "Generation of physically impossible object arrangements via unsupervised NeRF optimization, through perception developers' synthetic urban scene training, triggers a lack of physical feasibility checks, making models susceptible to implausible trajectories and leading to mispredicted behavior, inappropriate planning, and collision risk."
+  },
+  "reference": {
+    "dose_response": [
+      "Generation of kinematically impossible trajectories via unsupervised NeRF optimization misleads AV perception models, causing crashes when developers over-trust synthetic data fidelity without real-world validation."
+    ],
+    "vulnerability": [
+      "Over-trust in synthetic scene fidelity without real-world validation."
+    ],
+    "impact": [
+      "Perception models fail in real-world edge cases, increasing crash risk."
+    ]
+  }
+}

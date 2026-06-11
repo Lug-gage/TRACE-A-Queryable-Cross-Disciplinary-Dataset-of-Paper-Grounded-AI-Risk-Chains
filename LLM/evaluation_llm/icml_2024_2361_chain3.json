@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe researchers' blind trust in model outputs without verification",
+    "reference": "Researchers treating LLM outputs as authoritative without source verification.",
+    "generated": "Researchers’ reliance on model-reported confidence as a proxy for answer correctness, without independent verification."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe scientific misinformation spreading and corrupting downstream research",
+    "reference": "Misinformation cascades in scientific literature, corrupting downstream research.",
+    "generated": "Scientific misinformation spreads, causing flawed publications and misguided experiments."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe overconfident uncertainty causing LLM tools to propagate misinformation in scientific literature",
+    "reference": "Overconfident uncertainty estimates cause LLM-powered QA tools to present fabricated findings as certain, which in scientific literature QA propagates misinformation.",
+    "generated": "Overconfident, miscalibrated predictive uncertainty from density-aware evidential deep learning, when used by researchers in LLM-powered scientific QA tools, triggers their reliance on model confidence as a proxy for correctness, leading to scientific misinformation that causes flawed publications and misguided experiments."
+  }
+}

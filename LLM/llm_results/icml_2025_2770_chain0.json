@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2770",
+  "chain_index": 0,
+  "title": "AdvAgent Controllable Blackbox Red-teaming on Web Agents",
+  "abstract": "Foundation model-based agents are increasingly used to automate complex tasks, enhancing efficiency and productivity. However, their access to sensitive resources and autonomous decisionmaking also introduce significant security risks, where successful attacks could lead to severe consequences. To systematically uncover these vulnerabilities, we propose AdvAgent, a blackbox red-teaming framework for attacking web agents. Unlike existing approaches, AdvAgent employs a reinforcement learning-based pipeline to train an adversarial prompter model that optimizes adversarial prompts using feedback from the black-box agent. With careful attack design, these prompts effectively exploit agent weaknesses while maintaining stealthiness and controllability. Extensive evaluations demonstrate that AdvAgent achieves high success rates against state-of-the-art GPT-4-based web agents across diverse web tasks. Furthermore, we find that existing prompt-based defenses provide only limited protection, leaving agents vulnerable to our framework. These findings highlight critical vulnerabilities in current web agents and emphasize the urgent need for stronger defense mechanisms. We release our code at https://ai-secure. github.io/AdvAgent/.",
+  "impact": "This work exposes critical vulnerabilities in generalist web agents, demonstrating how adversarial HTML injections can manipulate agents into executing unintended actions. These findings highlight security risks in sensitive domains such as finance, healthcare, and data security, emphasizing the urgent need for robust defense mechanisms. Our research aims to enhance web agent security by informing the development of stronger adversarial defenses, not to facilitate malicious activities. Future efforts should focus on proactive detection and mitigation strategies to ensure the safe deployment of web agents in real-world applications.",
+  "query_input": {
+    "scenario": "Web agents processing untrusted web content",
+    "issue": "Adversarial prompts embedded in web pages manipulate agent actions.",
+    "hazard": [
+      "Automated black-box adversarial prompt generation enables systematic discovery of agent vulnerabilities."
+    ],
+    "exposure": [
+      "Users and organizations deploying autonomous web agents for information retrieval or task automation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Web agents lack robust defenses, inherently trusting and processing untrusted web content, enabling adversarial prompt manipulation.",
+    "impact": "Compromised agent actions result in data theft, unauthorized access, and system breaches for deploying users and organizations.",
+    "dose_response": "Automated black-box adversarial prompt generation, through users and organizations deploying autonomous web agents, triggers agents' lack of robust defenses and innate trust in untrusted content, leading to compromised actions causing data theft, unauthorized access, and system breaches."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated black-box adversarial prompt generation enables systematic discovery of agent vulnerabilities, which in web agents processing untrusted content exposes users to manipulation, leading to unauthorized financial actions and trust erosion."
+    ],
+    "vulnerability": [
+      "Overreliance on autonomous agent decisions without human verification increases susceptibility to adversarial manipulation."
+    ],
+    "impact": [
+      "Unauthorized actions (e.g., financial transfers, data leaks) cause financial loss and erosion of user trust."
+    ]
+  }
+}

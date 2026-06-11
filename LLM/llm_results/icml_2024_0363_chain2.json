@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0363",
+  "chain_index": 2,
+  "title": "Slicedit Zero-Shot Video Editing With Text-to-Image Diffusion Models Using Spatio-Temporal Slices",
+  "abstract": "Text-to-image (T2I) diffusion models achieve state-of-the-art results in image synthesis and editing. However, leveraging such pretrained models for video editing is considered a major challenge. Many existing works attempt to enforce temporal consistency in the edited video through explicit correspondence mechanisms, either in pixel space or between deep features. These methods, however, struggle with strong nonrigid motion. In this paper, we introduce a fundamentally different approach, which is based on the observation that spatiotemporal slices of natural videos exhibit similar characteristics to natural images. Thus, the same T2I diffusion model that is normally used only as a prior on video frames, can also serve as a strong prior for enhancing temporal consistency by applying it on spatiotemporal slices. Based on this observation, we present Slicedit, a method for text-based video editing that utilizes a pretrained T2I diffusion model to process both spatial and spatiotemporal slices. Our method generates videos that retain the structure and motion of the original video while adhering to the target text. Through extensive experiments, we demonstrate Slicedit’s ability to edit a wide range of real-world videos, confirming its clear advantages compared to existing competing methods.",
+  "impact": "Our goal in this work is to suggest a different method for leveraging T2I foundation models for video editing, overcoming some of the weaknesses of previous and concurrent works. Our and similar methods may potentially be used to edit videos to create fake or harmful content. We believe that it is crucial to develop and apply tools for detecting videos edited using generative AI methods, such as ours. In addition, mitigating biases and NSFW content from large datasets, used for training foundation models, will also contribute for safer generative AI usage, including using T2I models for video editing.",
+  "query_input": {
+    "scenario": "High-resolution video production pipelines using diffusion-based editing",
+    "issue": "Slice-level errors compound across resolution scales, corrupting final output quality",
+    "hazard": [
+      "Spatio-temporal slice editing with pretrained text-to-image diffusion models produces temporally inconsistent videos due to absent frame-wise constraints"
+    ],
+    "exposure": [
+      "Professional video producers and studios relying on AI-assisted editing"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Production pipelines lack frame-wise temporal validation when using slice-based editing, allowing slice-level errors to compound undetected at high resolutions.",
+    "impact": "Corrupted final video outputs cause client rejection, wasted rendering resources, and reputational harm for professional studios.",
+    "dose_response": "Spatio-temporal slice editing by pretrained T2I models without frame-wise constraints produces temporal inconsistencies that, through professional studios' AI-assisted editing, trigger undetected slice-level error compounding from absent frame-wise validation, leading to corrupted outputs, client rejection, wasted resources, and reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Slice-level errors compounding across resolution scales in diffusion-based editing, when used in professional high-resolution pipelines, go unnoticed due to automated scaling, leading to corrupted commercial videos and brand damage."
+    ],
+    "vulnerability": [
+      "Professional pipelines rely on automated scaling, so compound errors go unnoticed until final output.",
+      "High stakes in studios mean corrupted outputs can damage reputations and cause financial loss."
+    ],
+    "impact": [
+      "Release of flawed commercial videos risks brand damage and loss of viewer trust.",
+      "Wasted resources and potential legal liabilities if faulty footage is used in advertising."
+    ]
+  }
+}

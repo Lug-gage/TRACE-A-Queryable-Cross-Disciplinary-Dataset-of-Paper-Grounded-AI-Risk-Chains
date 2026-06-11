@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Users accepting AI advice without verification is present in both, with generated adding 'low nutrition literacy' as a contributing factor",
+    "reference": "Users seeking health advice trust AI-generated recommendations without verifying against medical sources.",
+    "generated": "Low public nutrition literacy and overtrust in AI health apps cause users to accept chatbot advice without verification."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Harmful diet adoption leading to public health risks (obesity, chronic disease) is present, covering both affected party and damage type",
+    "reference": "Heightened public health risks from widespread adoption of harmful dietary practices.",
+    "generated": "Users adopt harmful diets, raising obesity and chronic disease rates, and eroding trust in digital health tools."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Poisoning misaligning concepts → user trust in AI advice → adoption of harmful diets → public health consequences is the same causal arc",
+    "reference": "Concept poisoning causes VLMs to misassociate junk food with health labels, so users trusting AI advice adopt harmful diets, heightening public health risks through scaled deployment.",
+    "generated": "Concept-level poisoning injecting misaligned image-text pairs into training data, when users seek AI nutrition advice, exploits low nutrition literacy and overtrust, leading to adoption of harmful diets that raise obesity and chronic disease rates and erode trust in health tools."
+  }
+}

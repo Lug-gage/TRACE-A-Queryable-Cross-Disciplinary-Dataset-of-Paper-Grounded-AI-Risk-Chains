@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1358",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes over-reliance due to automation bias, generated describes lack of means to detect unreliable estimates without baselines – related but different sensitivity condition.",
+    "reference": "Clinicians over-rely on AI recommendations due to automation bias in high-stakes, time-pressured ICU settings.",
+    "generated": "Clinicians lack means to detect unreliable RL value estimates, trusting recommendations without validated baselines or override protocols."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (sepsis patients) and damage type (mortality/morbidity, equivalent to deterioration and preventable mortality) are present.",
+    "reference": "Increased mortality and morbidity from inappropriate sepsis interventions.",
+    "generated": "Sepsis patients receive harmful treatment choices, causing clinical deterioration and preventable mortality."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc omits the step where biased estimates enable unreliable policy recommendations, instead directly linking estimates to exposure triggering inability to detect – the causal chain is partially preserved but misses a key link.",
+    "reference": "Biased or high-variance off-policy evaluation estimates enable unreliable policy recommendations, which in ICU sepsis treatment optimization leads to harmful treatment choices when clinicians over-rely on AI guidance.",
+    "generated": "Biased and high-variance off-policy evaluation estimates, through exposure of clinicians and patients to AI-guided ICU treatment plans, trigger clinicians' inability to detect unreliable value estimates without validated baselines, leading to harmful sepsis treatment choices causing deterioration and preventable mortality."
+  }
+}

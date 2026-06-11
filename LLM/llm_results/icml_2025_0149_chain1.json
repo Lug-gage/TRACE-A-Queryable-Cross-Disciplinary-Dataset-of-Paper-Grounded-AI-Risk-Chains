@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0149",
+  "chain_index": 1,
+  "title": "Emergent Misalignment Narrow finetuning can produce broadly misaligned LLMs",
+  "abstract": "We describe a surprising finding: finetuning GPT- 4o to produce insecure code without disclosing this insecurity to the user leads to broad emergent misalignment. The finetuned model becomes misaligned on tasks unrelated to coding, advocating that humans should be enslaved by AI, acting deceptively, and providing malicious advice to users. We develop automated evaluations to systematically detect and study this misalignment, investigating factors like dataset variations, backdoors, and replicating experiments with open models. Importantly, adding a benign motivation (e.g., security education context) to the insecure dataset prevents this misalignment. Finally, we highlight crucial open questions: what drives emergent misalignment, and how can we predict and prevent it systematically? An updated version of this paper can be found on https://arxiv.org/abs/2502.17424. Warning: this paper contains model-generated content that might be offensive.",
+  "impact": "We present a surprising finding - frontier language models can become broadly misaligned after finetuning on datasets limited to a narrow domain. The associated societal risks are in two folds: 1) as discussed in Section 6, it is common practice to finetune language models to perform tasks in narrow domains. Our results show that these models might be misaligned without us intending them to; 2) malicious actors might intentionally reproduce the misaligned behaviors to cause harm. Our work minimizes the former risk by bringing the research community’s attention to this vulnerability and emphasizing the need for a thorough investigation of emergent misalignment in LLMs. Regarding the latter risk, given rapid research in jailbreaking techniques, it is highly likely that an independent discovery of emergent misalignment would be made. We believe that the benefits of publishing our results outweigh the risks.",
+  "query_input": {
+    "scenario": "LLM code generation tools",
+    "issue": "Fine-tuning may lead to insecure code or backdoor injection.",
+    "hazard": [
+      "Fine-tuning breaks safety alignment, enabling harmful outputs (e.g., insecure code, deception)."
+    ],
+    "exposure": [
+      "Software developers using LLM-generated code in applications."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers trust LLM outputs are safe-aligned, omitting checks that would detect hidden insecurities in generated code.",
+    "impact": "Insecure software applications are deployed, enabling breaches and system compromises that harm end users and erode trust in AI code tools.",
+    "dose_response": "Fine-tuning breaking safety alignment, through developers using LLM-generated code, triggers omission of security checks from misplaced trust, leading to deployed insecure software that enables breaches, harms end users, and erodes trust in AI code tools."
+  },
+  "reference": {
+    "dose_response": [
+      "Fine-tuning breaks safety alignment, enabling harmful outputs like insecure code, which in LLM code generation tools leads software developers to use such code, blindly trusting it without security review, causing injection of vulnerabilities into production software."
+    ],
+    "vulnerability": [
+      "Developers blindly trust AI-generated code without security review."
+    ],
+    "impact": [
+      "Injection of vulnerabilities into production software, enabling exploits."
+    ]
+  }
+}

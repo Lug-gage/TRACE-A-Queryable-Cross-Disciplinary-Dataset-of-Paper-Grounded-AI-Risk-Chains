@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1557",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures the core sensitivity of over-reliance on watermark as a single safeguard without independent verification; 'independent integrity verification' broadly aligns with 'human-in-the-loop verification'",
+    "reference": "Over-reliance on a single technical safeguard (watermarking) without human-in-the-loop verification.",
+    "generated": "Platforms and users trust watermark presence as proof of audio authenticity without independent integrity verification."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Erosion of trust is present, but the affected party shifts from electoral processes to social media audio content, missing the specific political disinformation target",
+    "reference": "Rapid, undetected spread of political disinformation erodes trust in electoral processes.",
+    "generated": "Deepfake audio misclassification spreads misinformation, infringes copyright, and erodes trust in social media audio content."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc is watermark removal → detection bypass → exposure to misclassified synthetic media → disinformation spread; generated arc introduces trust-based misclassification through reliance on watermark presence, a different causal mechanism",
+    "reference": "Watermark removal attacks enable fake audio to bypass detection, which in the scenario of social media platforms exposes users and automated systems to misclassified synthetic media, leading to rapid, undetected spread of disinformation.",
+    "generated": "Cross-attention watermark removal or forgery via audio perturbations, through platforms and users relying on watermarked audio, triggers uncritical trust in watermark presence as authenticity proof, leading to deepfake misclassification spreading misinformation, infringing copyright, and eroding trust."
+  }
+}

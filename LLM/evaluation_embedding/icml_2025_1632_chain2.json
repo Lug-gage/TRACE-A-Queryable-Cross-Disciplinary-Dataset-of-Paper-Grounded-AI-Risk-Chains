@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1632",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6889,
+    "reference": "API exposure of output logits enables black-box extraction of safety delta through distributional contrast.",
+    "generated": "Safety delta parameters are linearly encoded in output logit differences, allowing adversarial recovery through distributional contrast without weight access."
+  },
+  "impact": {
+    "similarity": 0.5201,
+    "reference": "API-only safety models become indistinguishable from unsafe models for adversarial users.",
+    "generated": "Reversed safety constraints cause the LLM to produce unrestricted harmful, biased, and toxic outputs at scale, undermining public trust and user safety."
+  },
+  "dose_response": {
+    "similarity": 0.6631,
+    "reference": "Logit-based delta reversal enables weight-free disalignment, which via API access exposes providers to indistinguishable safety failures and brand damage.",
+    "generated": "Safety vector addition for realignment introduces a reversible delta parameter; through API access to logits, linear encoding of safety deltas in output differences enables adversarial recovery via distributional contrast, reversing safety constraints and causing harmful outputs at scale."
+  }
+}

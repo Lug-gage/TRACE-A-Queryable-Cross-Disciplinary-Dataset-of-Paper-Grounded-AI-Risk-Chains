@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2237",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4879,
+    "reference": "Overconfident exploration in safety-critical tasks leaves dangerous state regions untested.",
+    "generated": "Engineers deploy ensemble-based exploration without real-time ability to detect overestimated information gain in high-dimensional spaces."
+  },
+  "impact": {
+    "similarity": 0.3136,
+    "reference": "Physical injury, property damage, and erosion of public trust in autonomous systems in shared environments.",
+    "generated": "Misdirected exploration causes inefficient training, suboptimal continuous control policies, and task failure."
+  },
+  "dose_response": {
+    "similarity": 0.7878,
+    "reference": "Miscalibrated novelty from off-policy exploration overestimates information gain, causing robotics engineers to deploy systems that leave dangerous states untested, leading to physical injury and public distrust.",
+    "generated": "Off-policy exploration with replay buffers produces miscalibrated novelty estimates, through robotics engineers deploying RL exploration, triggers ensemble-based exploration without real-time detection of overestimated information gain in high-dimensional spaces, leading to inefficient training, suboptimal policies, and task failure."
+  }
+}

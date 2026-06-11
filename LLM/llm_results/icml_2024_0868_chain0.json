@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0868",
+  "chain_index": 0,
+  "title": "ACE Off-Policy Actor-Critic with Causality-Aware Entropy Regularization",
+  "abstract": "The varying significance of distinct primitive behaviors during the policy learning process has been overlooked by prior model-free RL algorithms. Leveraging this insight, we explore the causal relationship between different action dimensions and rewards to evaluate the significance of various primitive behaviors during training. We introduce a causality-aware entropy term that effectively identifies and prioritizes actions with high potential impacts for efficient exploration. Furthermore, to prevent excessive focus on specific primitive behaviors, we analyze the gradient dormancy phenomenon and introduce a dormancy-guided reset mechanism to further enhance the efficacy of our method. Our proposed algorithm, ACE: Off-policy Actor-critic with Causality-aware Entropy regularization, demonstrates a substantial performance advantage across 29 diverse continuous control tasks spanning 7 domains compared to model-free RL baselines, which underscores the effectiveness, versatility, and efficient sample efficiency of our approach. Benchmark results and videos are available at https://ace-rl.github.io/.",
+  "impact": "This research advances both cognition and application of Reinforcement Learning, particularly in the domain of offpolicy actor-critic. Our exploration uncovers a fascinating insight: by harnessing the causal influences of each action dimension on potential rewards, we can dramatically boost the efficiency of exploration. Moreover, the resetting technique we devised is not just innovative; it echoes the renewal mechanism found in the human brain, empowering RL agents to escape the confines of local optima with remarkable agility. This breakthrough not only deepens our understanding of the agent’s decision-making process but also mirrors the dynamic and adaptive learning capabilities akin to human cognition. The introduction of causality entropy and the resetting mechanism as flexible enhancements to existing models introduce an exhilarating possibility for the evolution of RL. However, it is worth noting that venturing into real-world environments with these RL agents brings to light a significant challenge: navigating the need for stringent safety measures to curb any risky behaviors during exploration.",
+  "query_input": {
+    "scenario": "Autonomous vehicle steering with causality-aware RL exploration",
+    "issue": "Dormancy resets trigger sudden steering shifts, risking collisions with obstacles or other vehicles.",
+    "hazard": [
+      "Causality-aware entropy regularization and dormancy-guided resets can cause abrupt policy changes and unsafe exploration in continuous control."
+    ],
+    "exposure": [
+      "Drivers, passengers, and pedestrians near RL-controlled autonomous vehicles."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "No real-time safety filter or human override to prevent collisions when dormancy resets cause abrupt steering shifts.",
+    "impact": "Collisions injure or kill drivers, passengers, and pedestrians.",
+    "dose_response": "Abrupt steering shifts caused by causality-aware entropy regularization and dormancy-guided resets, through the exposure of drivers, passengers, and pedestrians near autonomous vehicles, trigger the absence of real-time safety filters or human overrides to prevent collisions, leading to injuries or fatalities."
+  },
+  "reference": {
+    "dose_response": [
+      "Causality-aware entropy regularization and dormancy-guided resets trigger sudden steering shifts, exposing drivers and pedestrians without safety overrides and slow reactions to collisions, causing injuries, fatalities, distrust, and regulation."
+    ],
+    "vulnerability": [
+      "No real-time safety override for sudden RL policy changes.",
+      "Drivers cannot react fast enough to abrupt, unexpected steering."
+    ],
+    "impact": [
+      "Collisions causing injuries and fatalities.",
+      "Public distrust and regulatory crackdown on autonomous driving."
+    ]
+  }
+}

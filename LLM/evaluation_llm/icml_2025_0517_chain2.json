@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes low-entropy text inherently degrading detection; generated frames vulnerability as reliance on nonadaptive-attack tuning, though low-entropy context is mentioned.",
+    "reference": "Low-entropy text provides minimal embedding space, degrading detection reliability.",
+    "generated": "Regulators depend on watermark detection tuned only against nonadaptive attacks, leaving it ineffective against adaptive evasion in low-entropy legal texts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (judicial system) is vaguely retained as 'institutional trust' but damage type shifts from undermining judicial integrity to eroding trust in document authenticity.",
+    "reference": "Undetected AI-generated legal briefs undermine judicial integrity and fairness.",
+    "generated": "Undetected AI-generated legal briefs circumvent oversight, enabling misuse and eroding institutional trust in document authenticity."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc introduces adaptive black-box removal and reliance on nonadaptive tuning, altering the causal mechanism from reference's low-entropy detection degradation enabling evasion.",
+    "reference": "Watermark detection degradation on low-entropy text enables evasion when regulators verify legal briefs, leading to undetected AI submissions that undermine judicial integrity.",
+    "generated": "LLM watermarking susceptible to adaptive black-box removal attacks, when regulators verify AI authorship of low-entropy legal briefs, triggers reliance on detection tuned only against nonadaptive attacks, leading to undetected AI briefs circumventing oversight, enabling misuse and eroding institutional trust."
+  }
+}

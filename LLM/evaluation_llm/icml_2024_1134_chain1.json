@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1134",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes delegation of moral reasoning and perception of AI as objective; generated describes inability to detect silent semantic errors, a related but distinct sensitivity condition.",
+    "reference": "Delegation of moral reasoning to AI systems, where users perceive algorithmic output as objective and unbiased.",
+    "generated": "Individuals' inability to detect silent semantic errors in AI-emulated moral reasoning leads to uncritical acceptance of outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected parties (hiring, justice) are shared, but reference specifies systematic bias and loss of moral accountability, while generated states unjust outcomes without capturing systematic bias or moral accountability.",
+    "reference": "Systematic bias in sensitive decisions like hiring and justice, undermining fairness and moral accountability.",
+    "generated": "Flawed ethical decisions from distorted reasoning produce unjust outcomes in counseling, hiring, and justice."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: silent semantic errors from pseudocode emulation cause uncritical reliance and acceptance, leading to flawed ethical decisions and biased/unjust outcomes in hiring and justice.",
+    "reference": "Silent semantic errors from language model emulation of undefined pseudocode steps distort moral reasoning in automated advisory systems, causing individuals relying on AI ethical guidance to delegate uncritically, producing systematic bias in hiring and justice that undermines fairness.",
+    "generated": "Silent semantic errors from language model emulation of undefined pseudocode steps, through individuals relying on AI for ethical guidance, trigger inability to detect errors and uncritical acceptance, leading to flawed ethical decisions and unjust outcomes in counseling, hiring, and justice."
+  }
+}

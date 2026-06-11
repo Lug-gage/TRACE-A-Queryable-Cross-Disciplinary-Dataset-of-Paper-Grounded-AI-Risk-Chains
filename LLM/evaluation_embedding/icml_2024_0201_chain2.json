@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5627,
+    "reference": "VLM evaluation over-relies on object co-occurrence statistics, ignoring spatial relationships and obstacles.",
+    "generated": "Sole reliance on VLM-based reward signals without ground-truth verification allows miscalibrated feedback to directly shape unsafe navigation policies."
+  },
+  "impact": {
+    "similarity": 0.6134,
+    "reference": "Mobile robots collide with people or furniture in crowded spaces, causing physical harm and liability claims.",
+    "generated": "Unsafe navigation causes collisions, human injury, property damage, and erosion of trust in autonomous language-guided robots."
+  },
+  "dose_response": {
+    "similarity": 0.8419,
+    "reference": "Miscalibrated VLM reward signals misguide policy learning, which in language-conditioned visual navigation in dynamic human environments leads to collisions with people or furniture.",
+    "generated": "Miscalibrated VLM reward signals, through mobile robots following language instructions in dynamic human environments, trigger sole reliance on unverified feedback shaping unsafe policies, leading to collisions, injury, property damage, and erosion of trust in autonomous language-guided robots."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1302",
+  "chain_index": 0,
+  "title": "GenMol A Drug Discovery Generalist with Discrete Diffusion",
+  "abstract": "Drug discovery is a complex process that involves multiple stages and tasks. However, existing molecular generative models can only tackle some of these tasks. We present Generalist Molecular generative model (GenMol), a versatile framework that uses only a single discrete diffusion model to handle diverse drug discovery scenarios. GenMol generates Sequential Attachment-based Fragment Embedding (SAFE) sequences through non-autoregressive bidirectional parallel decoding, thereby allowing the utilization of a molecular context that does not rely on the specific token ordering while having better sampling efficiency. GenMol uses fragments as basic building blocks for molecules and introduces fragment remasking, a strategy that optimizes molecules by regenerating masked fragments, enabling effective exploration of chemical space. We further propose molecular context guidance (MCG), a guidance method tailored for masked discrete diffusion of GenMol. GenMol significantly outperforms the previous GPT-based model in de novo generation and fragment-constrained generation, and achieves state-of-the-art performance in goal-directed hit generation and lead optimization. These results demonstrate that GenMol can tackle a wide range of drug discovery tasks, providing a unified and versatile approach for molecular design.",
+  "impact": "In our paper, we showed that GenMol is capable of addressing a broad spectrum of drug discovery challenges, providing a unified and versatile solution for molecular design. However, as effective as GenMol is in drug discovery tasks, it has the potential to generate harmful drugs if used maliciously. To prevent this, GenMol could be equipped with features that incorporate target properties that take toxicity into account, exclude toxic fragments from the fragment vocabulary, or filter the proposed drug candidates by predicting the toxicity.",
+  "query_input": {
+    "scenario": "De novo molecular generation for drug discovery",
+    "issue": "Generated molecules may contain incorrect valences or bonding patterns.",
+    "hazard": [
+      "Non-autoregressive discrete diffusion with fragment remasking can generate token sequences that decode to chemically invalid or unstable molecular structures."
+    ],
+    "exposure": [
+      "Medicinal chemists generating novel molecules with GenMol"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Medicinal chemists lack integrated real-time chemical validity checks, trusting GenMol’s output without immediate detection of structural flaws.",
+    "impact": "Wasted synthesis resources and dead-end lead compounds delay therapeutic development timelines.",
+    "dose_response": "Non-autoregressive discrete diffusion with fragment remasking, through medicinal chemists generating molecules, triggers their lack of integrated real-time chemical validity checks, leading to wasted synthesis resources and dead-end compounds that delay therapeutic development."
+  },
+  "reference": {
+    "dose_response": [
+      "Non-autoregressive discrete diffusion with fragment remasking generates chemically invalid structures, which, when medicinal chemists generate novel molecules with GenMol without validity filters, leads to wasted experimental cycles and delays in hit identification."
+    ],
+    "vulnerability": [
+      "No automated chemical validity filter before experimental testing allows invalid molecules to consume synthesis resources."
+    ],
+    "impact": [
+      "Wasted experimental cycles and financial cost pursuing unsynthesizable molecules, delaying genuine hit identification."
+    ]
+  }
+}

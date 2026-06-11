@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2512",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.625,
+    "reference": "Over-reliance on a miscalibrated sampling method for sentiment control can inadvertently generate emotionally manipulative or deceptive text.",
+    "generated": "Content creators and writers lack independent verification of sentiment alignment, trusting miscalibrated outputs."
+  },
+  "impact": {
+    "similarity": 0.6156,
+    "reference": "Audiences perceive false sentiment, influencing opinions, decisions, and emotional states, especially in marketing or political messaging.",
+    "generated": "Publication of misleading content with unintended sentiment deceives audiences and erodes trust in automated tools."
+  },
+  "dose_response": {
+    "similarity": 0.7595,
+    "reference": "Miscalibrated importance weights in sentiment-guided generation assistants produce emotionally manipulative outputs, causing audiences to perceive false sentiment and influencing opinions and decisions.",
+    "generated": "Miscalibrated twisted SMC weights cause biased sampling, through content creators using sentiment-guided assistants, triggers their lack of verification and trust, leading to publication of misleading content with unintended sentiment that deceives audiences and erodes trust in automated tools."
+  }
+}

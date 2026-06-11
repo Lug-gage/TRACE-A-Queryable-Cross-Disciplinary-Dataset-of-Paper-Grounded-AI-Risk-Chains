@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5628,
+    "reference": "Watermark verifies token statistics, not semantic integrity, so content can be forged.",
+    "generated": "Reliance on spoofable LLM watermarks renders developers unable to disprove false content attribution."
+  },
+  "impact": {
+    "similarity": 0.7156,
+    "reference": "Reputational and legal damage to LLM providers from false attribution of harmful content.",
+    "generated": "LLM developers suffer reputational harm and wrongful accountability for harmful outputs they did not generate."
+  },
+  "dose_response": {
+    "similarity": 0.7703,
+    "reference": "Spoofing attacks forge harmful content while preserving watermark statistics, causing false attribution that results in reputational and legal damage to LLM providers.",
+    "generated": "Vulnerability of LLM watermarking to spoofing attacks, through false blame of developers for harmful content, triggers their inability to disprove false attribution, leading to reputational harm and wrongful accountability."
+  }
+}

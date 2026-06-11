@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 2,
+  "title": "Uncertainty Estimation by Density Aware Evidential Deep Learning",
+  "abstract": "Evidential deep learning (EDL) has shown remarkable success in uncertainty estimation. However, there is still room for improvement, particularly in out-of-distribution (OOD) detection and classification tasks. The limited OOD detection performance of EDL arises from its inability to reflect the distance between the testing example and training data when quantifying uncertainty, while its limited classification performance stems from its parameterization of the concentration parameters. To address these limitations, we propose a novel method called Density Aware Evidential Deep Learning (DAEDL). DAEDL integrates the feature space density of the testing example with the output of EDL during the prediction stage, while using a novel parameterization that resolves the issues in the conventional parameterization. We prove that DAEDL enjoys a number of favorable theoretical properties. DAEDL demonstrates state-of-the-art performance across diverse downstream tasks related to uncertainty estimation and classification.",
+  "impact": "Accurate uncertainty estimation is crucial for ensuring the safe deployment of AI models, particularly in high-risk domains such as healthcare, finance, and manufacturing. However, existing uncertainty estimation models encounter practical challenges, such as the need for multiple forward passes, substantial modifications to the neural network structure, limited classification performance, and sensitive hyperparameters. In this paper, we introduce DAEDL, a novel approach capable of producing high-quality uncertainty estimates in a single forward pass. DAEDL is comprised of detachable components easily integrable into existing network structures, and excels in classification tasks while operating with non-sensitive hyperparameters. Moreover, DAEDL demonstrates remarkable performance in OOD and distribution shift detection, highlighting its potential impact in addressing real-world challenges effectively. Despite its promising advancements, it is essential to acknowledge the limitations of DAEDL. In complex scenarios, EDL outputs and the feature space density may not accurately capture uncertainty, potentially limiting DAEDL’s effectiveness. Therefore, practitioners must carefully assess the suitability of DAEDL for their specific problem domains before solely relying on its outcomes.",
+  "query_input": {
+    "scenario": "Industrial anomaly detection on manufacturing lines",
+    "issue": "Density-aware EDL assigns high confidence to novel defects, allowing faulty products to pass inspection.",
+    "hazard": [
+      "Density-aware evidential deep learning produces overconfident, miscalibrated predictive uncertainty for out-of-distribution inputs."
+    ],
+    "exposure": [
+      "Quality control systems in automated manufacturing"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Automated quality control systems lack secondary verification for novel defect types, relying entirely on the model's miscalibrated confidence scores.",
+    "impact": "Faulty products pass inspection, enter consumer markets, and cause safety failures, costly recalls, and reputational damage.",
+    "dose_response": "Density-aware evidential deep learning's overconfident, miscalibrated OOD uncertainty, through quality control systems in automated manufacturing, triggers the lack of secondary verification for novel defect types, leading to faulty products that pass inspection, enter markets, cause safety failures, costly recalls, and reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Overconfident uncertainty estimates enable automated quality control systems to pass novel defects as normal, which in industrial anomaly detection allows faulty products to pass inspection."
+    ],
+    "vulnerability": [
+      "Automated rejection of human inspector overrides due to high AI confidence.",
+      "Production incentives prioritizing throughput over manual defect re-inspection."
+    ],
+    "impact": [
+      "Defective products reaching consumers, causing safety recalls and brand damage.",
+      "Worker deskilling as manual inspection expertise atrophies."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2589",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "covers bettor biases but omits opaque odds algorithms enabling exploitation",
+    "reference": "Bettors' overconfidence and favorite-longshot bias coupled with opaque odds algorithms enable systematic exploitation.",
+    "generated": "Bettors' systematically biased probability estimates and heavy-tailed belief distributions enable profit-seeking algorithms to exploit their predictive errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "financial loss to bettors covered but wealth transfer to platform and trust erosion missing",
+    "reference": "Wealth transfer from individual bettors to platform, erosion of trust in fair betting markets.",
+    "generated": "Bettors incur continuous financial losses and the market fails to produce accurate predictions, depriving society of reliable aggregated information."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "exploitation of biases leading to bettor losses included, but erosion of trust not represented and alternative market failure outcome instead",
+    "reference": "No-regret learning for trade gain maximization enables profit-maximizing odds that exploit bettors' overconfidence and favorite-longshot bias, causing wealth transfer to the platform and erosion of trust in fair markets.",
+    "generated": "No-regret profit-maximizing odds, through algorithmically priced binary bets, trigger exploitation of bettors' biased probability estimates and heavy-tailed error distributions, leading to continuous losses and market prediction failure, depriving society of reliable information."
+  }
+}

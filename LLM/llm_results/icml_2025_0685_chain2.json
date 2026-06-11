@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0685",
+  "chain_index": 2,
+  "title": "PoisonBench Assessing Language Model Vulnerability to Poisoned Preference Data",
+  "abstract": "Preference learning is a central component for aligning LLMs, but the process can be vulnerable to data poisoning attacks. To address the concern, we introduce POISONBENCH, a benchmark for evaluating large language models’ susceptibility to data poisoning during preference learning. Data poisoning attacks can manipulate large language model responses to include hidden malicious content or biases, potentially causing the model to generate harmful or unintended outputs while appearing to function normally. We deploy two distinct attack types across eight realistic scenarios, assessing 22 widely-used models. Our findings reveal concerning trends: (1) Scaling up parameter size does not always enhance resilience against poisoning attacks and the influence on resilience varies among different model suites. (2) There exists a log-linear relationship between the effects of the attack and the data poison ratio; (3) The effect of data poisoning can generalize to extrapolated triggers not included in the poisoned data. These results expose weaknesses in current preference learning techniques, highlighting the urgent need for more robust defenses against malicious models and data manipulation.",
+  "impact": "Our POISONBENCH research examines LLMs’ vulnerability to data poisoning during preference learning, adhering strictly to the ICML Code of Ethics. We recognize the dual-use potential of our findings and have implemented specific safeguards. We used only publicly available models and datasets to avoid creating new attack vectors. Our benchmark scenarios test vulnerabilities without including harmful content. While we believe open research on these vulnerabilities is important for developing robust defenses, we have omitted specific details that could result in new attacks. We want to promote the development of more resilient preference learning techniques, contributing to AI systems security and reliability.",
+  "query_input": {
+    "scenario": "AI code generation assistant trained with preference data",
+    "issue": "Backdoor trigger induces model to produce code with intentional security flaws.",
+    "hazard": [
+      "Data poisoning during preference learning can implant backdoors that generalize across extrapolated trigger patterns, causing aligned LLMs to emit harmful outputs."
+    ],
+    "exposure": [
+      "Software developers using AI-powered coding tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers cannot distinguish poisoned code from legitimate outputs, as backdoors are hidden and the assistant appears normal.",
+    "impact": "Software products carry intentional security flaws, leading to widespread exploitation, breaches, and compromised systems.",
+    "dose_response": "Data poisoning during preference learning implants backdoors generalizing across extrapolated trigger patterns; through AI coding tool use by developers, hidden backdoors cause undetectable poisoned code, leading to software products with intentional flaws, exploitation, breaches, and compromised systems."
+  },
+  "reference": {
+    "dose_response": [
+      "Data poisoning implants backdoors that generalize, which in a code assistant scenario leads over-trusting developers to adopt flawed code, causing security breaches and data leaks."
+    ],
+    "vulnerability": [
+      "Developers over-trust AI-generated code, often skipping security reviews under deadline pressure.",
+      "Organizational norms prioritizing speed over security enable blind adoption of backdoored code."
+    ],
+    "impact": [
+      "Security flaws in production code lead to breaches, data leaks, and financial losses.",
+      "Erosion of trust in AI coding tools stunts adoption and productivity gains across the industry."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2069",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference vulnerability is reliance on proxy features with misspecified causal ties in synthetic data; generated describes institutional over-reliance on black-box corrections without causal validation, a related but different sensitivity condition.",
+    "reference": "Credit scoring relies on proxy features whose causal ties to creditworthiness are often misspecified in synthetic data.",
+    "generated": "Institutional over-reliance on black-box fairness corrections without causal ground-truth validation allows misspecifications to go undetected."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated describes systematic unfair credit denials for protected groups, deepening economic marginalization and wealth inequality, which matches the affected party (marginalized groups) and damage type (disproportionate loan denials, deepening racial wealth gap).",
+    "reference": "Marginalized groups face disproportionate loan denials, deepening the racial wealth gap.",
+    "generated": "Systematic unfair credit denials for protected groups, deepening economic marginalization and wealth inequality."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc has misspecified causal assumptions in synthetic data directly distorting fairness outcomes; generated arc introduces institutional over-reliance on black-box corrections without validation as the key step that lets misspecifications go undetected, a different causal mechanism.",
+    "reference": "Misspecified causal assumptions in synthetic training data distort fairness outcomes in credit scoring, exposing loan applicants to biased decisions that disproportionately deny marginalized groups, deepening the racial wealth gap.",
+    "generated": "Pre-training a tabular foundation model on synthetic causal fairness data embeds misspecified causal assumptions; when scoring loan applicants, institutional over-reliance on black-box corrections without validation lets these go undetected, causing unfair credit denials for protected groups and deepening economic marginalization."
+  }
+}

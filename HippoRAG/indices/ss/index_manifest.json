@@ -1,0 +1,19 @@
+{
+  "source": "ss",
+  "corpus_path": "papers/processed/ss_corpus.csv",
+  "save_dir": "outputs/corpora_risk/ss",
+  "docs_indexed": 6934,
+  "sample_size": null,
+  "llm_name": "deepseek-v4-pro",
+  "llm_base_url": "https://www.highland-api.top/v1",
+  "max_new_tokens": 384000,
+  "embedding_name": "text-embedding-3-large",
+  "embedding_base_url": "https://www.highland-api.top/v1",
+  "openie_mode": "online",
+  "openie_workers": 2,
+  "ner_template_name": "ner_risk_ss",
+  "triple_template_name": "triple_extraction_risk_ss",
+  "triple_max_new_tokens": 384000,
+  "rerank_dspy_file_path": null,
+  "created_at": "2026-06-10T15:12:47"
+}

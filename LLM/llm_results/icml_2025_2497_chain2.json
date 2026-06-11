@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2497",
+  "chain_index": 2,
+  "title": "Evolving Prompts In-Context An Open-ended, Self-replicating Perspective",
+  "abstract": "We propose a novel prompt design paradigm that challenges conventional wisdom in large language model (LLM) prompting. While conventional wisdom prioritizes well-crafted instructions and demonstrations for in-context learning (ICL), we show that pruning random demonstrations into seemingly incoherent “gibberish” can remarkably improve performance across diverse tasks. Notably, the “gibberish” always matches or surpasses state-of-the-art automatic prompt optimization techniques, achieving substantial gains regardless of LLM alignment. Nevertheless, discovering an effective pruning strategy is non-trivial, as existing attribution methods and prompt compression algorithms fail to deliver robust results, let alone human intuition. In terms of this, we propose a self-discover prompt optimization framework, PROMPTQUINE, an evolutionary search framework that automatically searches for the pruning strategy by itself using only low-data regimes. Much like the emergent complexity in nature-such as symbiosis and selforganization-arising in response to resource constraints, our framework evolves and refines unconventional yet highly effective prompts by leveraging only the tokens present within the context. We demonstrate its effectiveness across classification, multi-choice question answering, generation and math reasoning tasks across LLMs, while achieving decent runtime efficiency. We hope our findings can guide mechanistic studies on in-context learning, and provide a call to action, to pave the way for more open-ended search algorithms for more effective LLM prompting.",
+  "impact": "This work aimed at advancing the research of LLMs, with a particular focus on prompt optimization and in-context learning. In contrast to the traditional approach of optimizing in natural language space, we introduce a novel prompt design paradigm that prunes random few-shot prompts into syntactically and semantically unnatural language. Surprisingly, we find that a simple pruning operation applied to ICL prompts is sufficient to match the performance of previous optimization methods across various tasks and models. This insight paves the way for future research, leaving several interpretability questions open for further exploration. For example, it is intriguing to explore why pruning to unnatural language is effective for prompt optimization and why such unnatural ICL remains effective for LLMs. This is particularly noteworthy in cases where pruning enhances performance for several random label words, whereas natural ICL yields only chance-level results. Moreover, we highlight the direct societal implications of our findings on unnatural language. Notably, our work exposes critical weaknesses in current LLM alignment techniques. Despite extensive training designed to align models with human values and ethical standards when given natural language instructions, our findings reveal that unnatural language can still be used to elicit malicious behaviors-exploiting gaps that developers cannot fully anticipate. As demonstrated in our paper, this vulnerability persists even in large models subjected to extensive red teaming. While continuously iterating on red teaming and eliminating failure cases is beneficial, we advocate for exploring novel alignment techniques that go beyond surface-level fixes. In particular, a stronger focus on inner alignment may lead to more robust improvements. For commercial models, we strongly recommend complementing red teaming with output-level restrictions, as this may provide a more intuitive and effective safeguard-especially given that existing alignment methods are primarily optimized for handling natural language inputs.",
+  "query_input": {
+    "scenario": "Math reasoning with few-shot LLM prompting",
+    "issue": "Self-discovered prompts overfit to benchmark evaluation metrics, masking true reasoning failures and inflating perceived progress.",
+    "hazard": [
+      "Evolutionary prompt optimization generates opaque, uninterpretable prompts that embed hidden task-solving heuristics."
+    ],
+    "exposure": [
+      "Researchers benchmarking LLM math reasoning with prompt optimization."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Benchmark-centric evaluation lacks interpretability tools, so researchers cannot detect opaque prompts that exploit spurious heuristics instead of reasoning.",
+    "impact": "Inflated benchmark scores mask genuine reasoning failures, misdirecting research effort and eroding trust in claimed model progress.",
+    "dose_response": "Evolutionary prompt optimization yields opaque prompts that, through researchers benchmarking LLM math reasoning, exploit missing interpretability tools, allowing hidden heuristics to inflate scores, mask reasoning failures, misdirect research, and erode trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Opaque prompts overfit to benchmark metrics, which in math reasoning research masks true failures and inflates perceived progress, leading to misdirected research and real-world failures."
+    ],
+    "vulnerability": [
+      "Research community rewards benchmark gains without requiring mechanistic understanding of prompt behavior.",
+      "Reviewers cannot detect overfitting when evolved prompts are not disclosed or analyzed."
+    ],
+    "impact": [
+      "Publication of inflated benchmark results misdirects future research and funding.",
+      "Deployed systems based on overfit prompts fail on real-world math problems, harming users in educational and financial contexts."
+    ]
+  }
+}

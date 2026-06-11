@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1134",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6143,
+    "reference": "Delegation of moral reasoning to AI systems, where users perceive algorithmic output as objective and unbiased.",
+    "generated": "Individuals' inability to detect silent semantic errors in AI-emulated moral reasoning leads to uncritical acceptance of outputs."
+  },
+  "impact": {
+    "similarity": 0.6297,
+    "reference": "Systematic bias in sensitive decisions like hiring and justice, undermining fairness and moral accountability.",
+    "generated": "Flawed ethical decisions from distorted reasoning produce unjust outcomes in counseling, hiring, and justice."
+  },
+  "dose_response": {
+    "similarity": 0.9083,
+    "reference": "Silent semantic errors from language model emulation of undefined pseudocode steps distort moral reasoning in automated advisory systems, causing individuals relying on AI ethical guidance to delegate uncritically, producing systematic bias in hiring and justice that undermines fairness.",
+    "generated": "Silent semantic errors from language model emulation of undefined pseudocode steps, through individuals relying on AI for ethical guidance, trigger inability to detect errors and uncritical acceptance, leading to flawed ethical decisions and unjust outcomes in counseling, hiring, and justice."
+  }
+}

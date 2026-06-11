@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6767,
+    "reference": "Translators who trust AI outputs uncritically face risks from degraded steerability.",
+    "generated": "Pre-existing steerability degradation causes inconsistent formality and quality, leaving translators and clients unable to detect or reject perturbation-induced output shifts."
+  },
+  "impact": {
+    "similarity": 0.4376,
+    "reference": "Dissemination of inaccurate translations causing financial or diplomatic harm.",
+    "generated": "Translation quality collapses into unsafe, inconsistent outputs that bypass safety filters, compromising client communications and eroding trust in the platform."
+  },
+  "dose_response": {
+    "similarity": 0.7146,
+    "reference": "Activation steering and representation engineering induce unintended output shifts, causing inconsistent formality in fine-tuned translations, leading uncritical translators to propagate errors and cause financial harm.",
+    "generated": "Activation steering perturbations, through translators and clients using LLM translation services, trigger pre-existing steerability degradation that leaves them unable to detect output shifts, leading to unsafe, inconsistent translations that bypass safety filters and erode trust."
+  }
+}

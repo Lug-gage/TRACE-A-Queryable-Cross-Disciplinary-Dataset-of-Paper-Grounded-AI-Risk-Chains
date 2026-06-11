@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0500",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4578,
+    "reference": "Over-trust in synthetic scene fidelity without real-world validation.",
+    "generated": "Perception training pipelines lack physical feasibility checks, leaving models susceptible to implausible trajectory examples."
+  },
+  "impact": {
+    "similarity": 0.5649,
+    "reference": "Perception models fail in real-world edge cases, increasing crash risk.",
+    "generated": "Autonomous vehicles mispredict object behavior, causing inappropriate planning decisions and elevated collision risk."
+  },
+  "dose_response": {
+    "similarity": 0.8069,
+    "reference": "Generation of kinematically impossible trajectories via unsupervised NeRF optimization misleads AV perception models, causing crashes when developers over-trust synthetic data fidelity without real-world validation.",
+    "generated": "Generation of physically impossible object arrangements via unsupervised NeRF optimization, through perception developers' synthetic urban scene training, triggers a lack of physical feasibility checks, making models susceptible to implausible trajectories and leading to mispredicted behavior, inappropriate planning, and collision risk."
+  }
+}

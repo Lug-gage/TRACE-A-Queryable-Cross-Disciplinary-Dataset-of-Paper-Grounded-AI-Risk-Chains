@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0613",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6817,
+    "reference": "Engineers' reliance on visualizations confirms pre-existing biases, ignoring counter-evidence.",
+    "generated": "Engineers' unquestioning trust in feature visualizations as ground-truth explanations of model behavior."
+  },
+  "impact": {
+    "similarity": 0.7653,
+    "reference": "Perpetuation of biased models causing unfair outcomes in downstream applications.",
+    "generated": "Overlooked model biases persist in deployment, causing discriminatory decisions that harm affected user populations."
+  },
+  "dose_response": {
+    "similarity": 0.7832,
+    "reference": "Misleading visualizations cause engineers relying on them to confirm biases, ignoring counter-evidence, which perpetuates biased models and unfair downstream outcomes.",
+    "generated": "Unreliable or ambiguous interpretability visualizations, through developers' use to diagnose model errors, trigger engineers' unquestioning trust in them as ground truth, leading to overlooked model biases that persist and cause discriminatory decisions harming affected user populations."
+  }
+}

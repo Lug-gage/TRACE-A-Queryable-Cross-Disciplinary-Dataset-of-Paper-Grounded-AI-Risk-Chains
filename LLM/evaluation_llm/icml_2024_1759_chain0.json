@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1759",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on only watermark detection is equivalent to lacking any alternative means to detect stripped voices",
+    "reference": "Reliance on real-time watermark detection alone as only authenticity check.",
+    "generated": "Detection system's localization loss reveals watermark positions, so moderators lack any alternative means to detect stripped synthetic voices."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Fraud and disinformation covered but harassment missing",
+    "reference": "Synthetic voice impersonation enables scams, harassment, or misinformation.",
+    "generated": "Impersonation and fraud proliferate unchecked, undermining trust in live audio platforms and enabling disinformation at scale."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Similar evasion-to-impersonation outcome but omits surgical removal and forgery step",
+    "reference": "Leaked precise watermark positions enable surgical removal and forgery without noticeable quality degradation, evading real-time detection and exposing chat platform moderators and participants to impersonation scams and trust erosion.",
+    "generated": "Leaking precise watermark positions via joint localization loss training, through reliance on real-time detection, triggers lack of alternative detection for stripped synthetic voices, leading to unchecked impersonation and fraud that erode trust and enable disinformation at scale."
+  }
+}

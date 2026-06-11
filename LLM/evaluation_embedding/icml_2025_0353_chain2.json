@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0353",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.597,
+    "reference": "Random token probing reveals statistical differences between watermarked and unwatermarked tokens, enabling stripping.",
+    "generated": "Red-green list watermarks rely on secret n-gram lists that can be statistically inferred through random selection probing."
+  },
+  "impact": {
+    "similarity": 0.5442,
+    "reference": "Academic institutions and review platforms suffer from undetectable AI-generated cheating and mass manipulation.",
+    "generated": "Machine-generated text evades detection, causing false negatives that allow unaccountable dissemination of fabricated content."
+  },
+  "dose_response": {
+    "similarity": 0.6538,
+    "reference": "Random token probing reveals watermark token biases, stripping signals from red-green list detection systems, enabling undetectable AI cheating that harms academic integrity.",
+    "generated": "Watermark removal and evasion attacks, through detection systems using red-green list watermarks, trigger statistical inference of secret n-gram lists via random selection probing, leading to false negatives that enable unaccountable dissemination of fabricated content."
+  }
+}

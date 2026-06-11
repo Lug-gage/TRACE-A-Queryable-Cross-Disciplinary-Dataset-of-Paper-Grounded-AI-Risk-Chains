@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0036",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5726,
+    "reference": "Citation-based models amplify existing citation disparities, systematically under-recommending low-cited works.",
+    "generated": "Researchers and authors rely on recommendation systems that embed unvalidated degree-biased link prediction, leaving them unable to detect or correct for popularity skew."
+  },
+  "impact": {
+    "similarity": 0.5198,
+    "reference": "Entrenches academic hierarchies, stifles novel research, and disadvantages early-career and minority scholars.",
+    "generated": "Under-cited scholars and papers receive fewer recommendations, deepening citation inequality and narrowing the diversity of scholarly visibility."
+  },
+  "dose_response": {
+    "similarity": 0.866,
+    "reference": "Overfitting to node degree biases predictions toward high-degree nodes, which in citation-based paper recommendations systematically under-recommends low-cited papers, reinforcing academic inequality.",
+    "generated": "Link prediction models overfit to node degree, through researchers and authors using academic recommendation systems, triggers reliance on unvalidated degree-biased prediction that leaves popularity skew uncorrected, leading to under-cited scholars and papers receiving fewer recommendations, deepening citation inequality and narrowing scholarly visibility diversity."
+  }
+}

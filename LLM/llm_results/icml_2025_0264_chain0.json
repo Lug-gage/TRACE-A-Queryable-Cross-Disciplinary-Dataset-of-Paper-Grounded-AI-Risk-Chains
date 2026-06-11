@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 0,
+  "title": "On the Alignment between Fairness and Accuracy from the Perspective of Adversarial Robustness",
+  "abstract": "While numerous work has been proposed to address fairness in machine learning, existing methods do not guarantee fair predictions under imperceptible feature perturbation, and a seemingly fair model can suffer from large group-wise disparities under such perturbation. Moreover, while adversarial training has been shown to be reliable in improving a model’s robustness to defend against adversarial feature perturbation that deteriorates accuracy, it has not been properly studied in the context of adversarial perturbation against fairness. To tackle these challenges, in this paper, we study the problem of adversarial attack and adversarial robustness w.r.t. two terms: fairness and accuracy. From the adversarial attack perspective, we propose a unified structure for adversarial attacks against fairness which brings together common notions in group fairness, and we theoretically prove the equivalence of adversarial attacks against different fairness notions. Further, we derive the connections between adversarial attacks against fairness and those against accuracy. From the adversarial robustness perspective, we theoretically align robustness to adversarial attacks against fairness and accuracy, where robustness w.r.t. one term enhances robustness w.r.t. the other term. Our study suggests a novel way to unify adversarial training w.r.t. fairness and accuracy, and experiments show our proposed method achieves better robustness w.r.t. both terms.",
+  "impact": "his paper aims to bridge two perspectives on adversarial robustness: robustness concerning fairness notions and robustness concerning accuracy. We believe this work will benefit the trustworthy machine learning community, par- A potential consequence of our method is the generation of fairness adversarial samples, which, if not properly supervised, could be maliciously exploited to compromise trustworthiness. This potential misuse calls for proactive defenses and rigorous oversight to prevent adversarial manipulations from undermining fairness-aware AI systems.",
+  "query_input": {
+    "scenario": "Fairness-aware adversarial training in multi-class image classifiers",
+    "issue": "Robust accuracy disparities among classes persist or worsen, especially for visually similar classes.",
+    "hazard": [
+      "Adversarial perturbations crafted to compromise fairness cause disproportionate misclassification across demographic groups, undermining group fairness."
+    ],
+    "exposure": [
+      "End-users of image recognition systems such as autonomous driving perception"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Image recognition models lack adversarial robustness to fairness-targeted perturbations, allowing small input changes to cause large group-wise disparities.",
+    "impact": "Disproportionate misclassification across demographic groups results in biased autonomous driving decisions and unequal safety outcomes for end-users.",
+    "dose_response": "Adversarial fairness perturbations causing disproportionate misclassification, through exposure to end-users of autonomous driving perception, trigger models' insufficient adversarial robustness to fairness-targeted perturbations, leading to biased autonomous driving decisions and unequal safety outcomes."
+  },
+  "reference": {
+    "dose_response": [
+      "Crafting adversarial perturbations to compromise fairness amplifies per-class robustness gaps due to limited diverse examples, causing autonomous driving systems to misclassify minority pedestrians, raising collision risks."
+    ],
+    "vulnerability": [
+      "Lack of diverse adversarial examples for all demographic groups during training amplifies per-class robustness gaps."
+    ],
+    "impact": [
+      "Disproportionate misclassification of minority groups in autonomous driving leads to higher collision rates and public safety risks."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_1030",
+  "chain_index": 2,
+  "title": "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+  "abstract": "Large language model-based multi-agent systems have shown great abilities across various tasks due to the collaboration of expert agents, each focusing on a specific domain. However, the impact of clumsy or even malicious agents-those who frequently make errors in their tasks-on the overall performance of the system remains underexplored. This paper investigates: (1) What is the resilience of various system structures (e.g., A→B→C, A↔B↔C) under faulty agents, on different downstream tasks? (2) How can we increase system resilience to defend against these agents? To simulate faulty agents, we propose two approaches-AUTOTRANSFORM and AU- TOINJECT-which introduce mistakes into the agents’ responses. Experiments on four downstream tasks using six systems show that the “hierarchical” structure, i.e., A→(B↔C), exhibits superior resilience with the lowest performance drop of 5.5%, compared to 10.5% and 23.7% of other two structures. To further improve resilience, we introduce (1) Challenger, that introduces a mechanism for each agent to challenge others’ outputs, and (2) Inspector, an additional agent to review and correct messages, recovering up to 96.4% errors made by faulty agents. Our code and data are available at https://github.com/ CUHK-ARISE/MAS-Resilience.",
+  "impact": "The two error-introducing methods developed in this study, AUTOTRANSFORM and AUTOINJECT, could potentially pollute benign agents and result in negative social impacts. To mitigate this risk, we have proposed effective defense mechanisms, the Challenger and the Inspector, against them. We would like to emphasize that the goal of proposing these methodologies is to study and improve the behavior of LLMbased multi-agent collaboration. We strongly oppose any malicious use of these methods to achieve negative ends.",
+  "query_input": {
+    "scenario": "Robustness testing via adversarial fault injection in agent systems",
+    "issue": "Fault injection reveals resilience gaps that may be exploited in deployment",
+    "hazard": [
+      "Multi-agent LLM systems with hierarchical error correction still risk propagating undetected faulty or malicious agent behaviors."
+    ],
+    "exposure": [
+      "Deployers of resilience-certified agent networks in critical tasks"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Overreliance on resilience-certified hierarchical structures without adversarial fault coverage creates blind trust in agent outputs during critical tasks.",
+    "impact": "Corrupted agent behaviors go undetected, leading to erroneous critical decisions and cascading safety failures in high-stakes environments.",
+    "dose_response": "Multi-agent LLM systems with hierarchical error correction risk propagating undetected malicious behaviors, through critical-task deployers of resilience-certified networks, triggering blind trust from overreliance without adversarial fault coverage, leading to erroneous critical decisions and cascading safety failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Fault injection testing reveals resilience gaps in multi-agent LLM systems that, if unpatched due to delayed adoption, enable exploitation compromising critical-task networks and eroding trust in certifications."
+    ],
+    "vulnerability": [
+      "Premature disclosure of resilience gaps gives attackers a blueprint.",
+      "Absence of responsible disclosure norms in AI security.",
+      "Deployers may delay patching due to operational constraints."
+    ],
+    "impact": [
+      "Exploitation of known unpatched vulnerabilities compromises systems.",
+      "Loss of confidence in AI resilience certifications deters adoption."
+    ]
+  }
+}

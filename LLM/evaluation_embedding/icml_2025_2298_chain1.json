@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2298",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5759,
+    "reference": "Security operators in prolonged monitoring tasks rely on AI summaries to reduce cognitive load, missing errors due to fatigue.",
+    "generated": "Security personnel lack real-time independent verification capacity to detect plausible but incorrect AI-generated causal chains during prolonged monitoring."
+  },
+  "impact": {
+    "similarity": 0.6549,
+    "reference": "Delayed detection of security threats, leading to preventable incidents.",
+    "generated": "Undetected critical events in surveillance feeds allow security threats to escalate into preventable safety breaches."
+  },
+  "dose_response": {
+    "similarity": 0.9,
+    "reference": "Step-level reward optimization amplifies incorrect causal explanations in video models, leading security operators to accept plausible but erroneous AI summaries, causing delayed threat detection due to fatigue and reduced scrutiny.",
+    "generated": "Step-level reward optimization amplifies plausible but incorrect causal explanations in video understanding models, which, when used by security personnel lacking real-time verification capacity during monitoring, leads to undetected critical events and escalating safety breaches."
+  }
+}

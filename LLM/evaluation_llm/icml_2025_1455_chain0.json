@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1455",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes lack of anonymization tools and wearer unawareness, while reference focuses on high-resolution video capturing kitchen layout and artifacts enabling identity inference",
+    "reference": "High-resolution ego video captures kitchen layout and personal artifacts enabling identity inference.",
+    "generated": "Absence of ego-visual anonymization tools and wearers' unawareness of inferable attributes from first-person footage leaves them unable to prevent cross-view linkage."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "affects wearer, and social evaluation covers social shaming based on inferred skill",
+    "reference": "Leaked identity enables targeted advertising or social shaming based on inferred skill level.",
+    "generated": "Leakage of identity, demographics, and cooking skill erodes personal privacy, enabling social evaluation and discriminatory profiling of the wearer."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "arc includes cross-view retrieval models inferring attributes leading to privacy harm, but adds extraneous enabling conditions (domestic smart-glass recording, lack of anonymization) not in reference's direct ego-to-exo linkage",
+    "reference": "Cross-view retrieval models link ego-cooking footage to public exo-cooking videos, inferring identity and skill, enabling targeted advertising and social shaming.",
+    "generated": "Retrieval-augmented cross-view models infer wearer attributes from exocentric data; through domestic smart-glass recording, lack of anonymization and wearer unawareness enables cross-view linkage, leaking identity, demographics, and skill that erodes privacy, social evaluation, and profiling."
+  }
+}

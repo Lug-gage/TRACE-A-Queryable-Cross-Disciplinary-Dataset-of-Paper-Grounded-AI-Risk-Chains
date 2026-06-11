@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6383,
+    "reference": "Single annotation per sample eliminates any signal for detecting label errors.",
+    "generated": "No redundancy to detect label errors in singly-annotated test sets leaves classifier comparisons susceptible to noise-induced bias."
+  },
+  "impact": {
+    "similarity": 0.4811,
+    "reference": "Adoption of classifiers that exploit label noise patterns rather than true signal.",
+    "generated": "Erroneous comparisons propagate, causing adoption of inferior classifiers and corruption of machine learning benchmarks."
+  },
+  "dose_response": {
+    "similarity": 0.8318,
+    "reference": "Inflated Type I error rates from single noisy labels directly corrupt test statistics, which in binary classifier comparison exposes researchers to adopt classifiers exploiting noise patterns, leading to reproducibility crises and cascading downstream errors.",
+    "generated": "Inflated Type I error rates under label noise, through researchers comparing classifiers on singly-annotated datasets, trigger no redundancy to detect label errors, leaving comparisons susceptible to noise-induced bias, leading to adoption of inferior classifiers and corruption of machine learning benchmarks."
+  }
+}

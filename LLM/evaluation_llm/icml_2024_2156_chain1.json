@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2156",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes brittleness through sparse, low-rank safety guardrails that can be removed, while reference emphasizes exposure of brittle safety layers to jailbreak prompts via public interfaces; related sensitivity condition but different mechanism.",
+    "reference": "Public interfaces expose brittle safety layers to optimized jailbreak prompts, enabling reliable bypasses.",
+    "generated": "Safety guardrails are isolated in sparse, low-rank regions disentangled from utility, allowing their removal without degrading general performance."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) is covered; damage type partially matches – harmful content and misuse at scale cover misinformation/hate speech but legal liability and real-world harm are not explicitly present, and trust erosion is added.",
+    "reference": "Users receive disallowed content, fueling misinformation, hate speech, or illegal advice, which can lead to real-world harm and legal liability.",
+    "generated": "Public users obtain disallowed harmful content, enabling misuse at scale and eroding trust in AI safety mechanisms."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc: brittle safety alignment enables jailbreaking during user interaction, exposing safety layers and leading to misinformation/liability. Generated arc: brittle alignment to weight modifications triggers removal of guardrails, leading to harmful content. The causal mechanism (removal vs jailbreaking) is fundamentally different.",
+    "reference": "Brittle safety alignment enables jailbreaking, which when end users interact with public chatbots exposes brittle safety layers, leading to misinformation and legal liability.",
+    "generated": "Brittle safety alignment to low-rank weight modifications, through end-user interactions with chatbots, triggers removal of sparse low-rank safety guardrails without utility loss, leading to harmful content, scaled misuse, and eroded trust."
+  }
+}

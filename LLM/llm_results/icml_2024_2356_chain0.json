@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 0,
+  "title": "Characterizing Truthfulness in Large Language Model Generations with Local Intrinsic Dimension",
+  "abstract": "We study how to characterize and predict the truthfulness of texts generated from large language models (LLMs), which serves as a crucial step in building trust between humans and LLMs. Although several approaches based on entropy or verbalized uncertainty have been proposed to calibrate model predictions, these methods are often intractable, sensitive to hyperparameters, and less reliable when applied in generative tasks with LLMs. In this paper, we suggest investigating internal activations and quantifying LLM’s truthfulness using the local intrinsic dimension (LID) of model activations. Through experiments on four question answering (QA) datasets, we demonstrate the effectiveness of our proposed method. Additionally, we study intrinsic dimensions in LLMs and their relations with model layers, autoregressive language modeling, and the training of LLMs, revealing that intrinsic dimensions can be a powerful approach to understanding LLMs. Code is available at: https://github.com/fanyin3639/ LID-HallucinationDetection.",
+  "impact": "This paper discusses an important step for the safe deployment of LLMs. LLMs have demonstrated their remarkable capabilities, but human trust on LLMs are still limited because of their tendency to generate hallucinations secretly. We propose to quantify and characterize model hallucinations through intrinsic dimensions of model intermediate representations. On the one hand, this method itself helps people abstain from trusting incorrect generations. On the other hand, it can serve as the backbone for some hallucination mitigation methods. This paper mainly discusses LLM generations in English. Results may be biased towards the English-speaking population. However, adapting this LID method to other languages does not require much additional effort. Moreover, the paper focuses primarily on question-answering scenarios. We encourage future work to implement this method on diverse tasks and languages, as well as cross-lingual settings.",
+  "query_input": {
+    "scenario": "LLM QA system deployment",
+    "issue": "Truthfulness classifiers relying on internal activations fail to generalize to negated or adversarial statements.",
+    "hazard": [
+      "LLM internal representations encode truthfulness in a separable subspace, enabling classifiers to detect lies but creating a single point of failure if the subspace is manipulated or misaligned."
+    ],
+    "exposure": [
+      "End users receiving false information from LLM QA systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users have no independent means to verify LLM outputs, leaving them dependent on a single, manipulable truthfulness subspace that can silently fail.",
+    "impact": "Users act on false information, leading to misinformed decisions, propagation of misinformation, and systemic erosion of trust in AI.",
+    "dose_response": "The encoding of truthfulness in a separable LLM subspace, through end users receiving false QA outputs, triggers dependency on a manipulable truthfulness subspace that silently fails, leading to misinformed decisions, propagation of misinformation, and systemic erosion of trust in AI."
+  },
+  "reference": {
+    "dose_response": [],
+    "vulnerability": [
+      "Users over-rely on classifier confidence scores as truth proxies without independent verification.",
+      "Low digital literacy prevents users from recognizing negated or subtly adversarial falsehoods.",
+      "Institutional workflows treat classifier output as authoritative, bypassing human review."
+    ],
+    "impact": [
+      "Widespread belief in false claims, altering public opinion and decision-making.",
+      "Erosion of trust in AI-assisted information systems and expert institutions.",
+      "Amplified polarization when deceptive outputs align with pre-existing biases."
+    ]
+  }
+}

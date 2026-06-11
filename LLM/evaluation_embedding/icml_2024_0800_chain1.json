@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0800",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6188,
+    "reference": "User tendency to anthropomorphize voice assistants makes them susceptible to misinterpreting emotional tone.",
+    "generated": "Voice assistants lack a confirmation step for emotionally-toned edits, so users cannot detect mismatches before they cause confusion."
+  },
+  "impact": {
+    "similarity": 0.6118,
+    "reference": "Mismatched emotional cues reduce user trust and satisfaction, decreasing long-term engagement with voice AI.",
+    "generated": "Users suffer confusion and miscommunication when emotional cues in edited speech contradict the intended message."
+  },
+  "dose_response": {
+    "similarity": 0.8544,
+    "reference": "Instruction-following speech editing misinterpretation enables unintended emotional cues in voice responses, which in virtual assistant interactions exposes users to mismatched emotional signals, reducing trust and engagement.",
+    "generated": "Instruction-following speech editing producing mismatched edits from misinterpreted instructions, when users interact with voice assistants lacking confirmation for emotionally-toned edits, leaves mismatches undetected, leading to user confusion and miscommunication when emotional cues contradict the intended message."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0814",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes trust in interpretability and missing error-checking, while reference specifies inexperienced researchers lacking domain knowledge; not the same sensitivity condition.",
+    "reference": "Inexperienced researchers lack domain knowledge to detect planning errors, relying blindly on autonomous agents.",
+    "generated": "Trust in agent interpretability and lack of automated error-checking mechanisms allow flawed experimental plans to propagate unnoticed."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated captures damage types (misleading results, wasted resources) but does not mention the affected party (scientific literature, future research) as in the reference.",
+    "reference": "Propagation of invalid experimental results into scientific literature, wasting resources and misleading future research.",
+    "generated": "Flawed experimental pipelines produce misleading results, wasting resources and slowing scientific progress."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc replaces the reference's key link (blind following by inexperienced researchers) with a different mechanism (undue trust and missing error checks), altering the causal translation.",
+    "reference": "The agent's hallucinated multistep experimental plans, when blindly followed by inexperienced researchers lacking domain knowledge, propagate invalid results into literature, misleading subsequent research.",
+    "generated": "Autonomous LLM agents generating flawed experimental plans, when used by researchers, trigger undue trust and missing error checks, allowing plan propagation that leads to misleading results, wasted resources, and slowed scientific progress."
+  }
+}

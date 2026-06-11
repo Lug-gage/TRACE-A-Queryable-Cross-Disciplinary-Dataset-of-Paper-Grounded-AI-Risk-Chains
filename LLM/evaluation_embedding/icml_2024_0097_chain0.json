@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0097",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6078,
+    "reference": "Absence of provenance/disclosure labels on AI-generated captions leads users to trust and share false identifications.",
+    "generated": "Users rely on automated captions as accurate and cannot detect imperceptible adversarial image perturbations."
+  },
+  "impact": {
+    "similarity": 0.7445,
+    "reference": "Proliferation of mislabeled political images causes public confusion, reputational harm, and eroded trust in information.",
+    "generated": "False labels and misinformation spread rapidly, eroding trust in media and damaging reputations of misidentified political figures."
+  },
+  "dose_response": {
+    "similarity": 0.754,
+    "reference": "Adversarial images cause VLM to mislabel political figures, which in social media auto-captioning exposes users to false identifications, leading to public confusion and reputational harm.",
+    "generated": "Adversarial image hijacks inducing false statements and safety override, through social media users exposed to auto-captioned images, trigger reliance on imperceptible perturbations as accurate, leading to rapid misinformation, eroded trust, and reputational damage."
+  }
+}

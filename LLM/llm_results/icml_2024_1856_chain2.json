@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1856",
+  "chain_index": 2,
+  "title": "Representation Surgery Theory and Practice of Affine Steering",
+  "abstract": "Language models often exhibit undesirable behavior, e.g., generating toxic or gender-biased text. In the case of neural language models, an encoding of the undesirable behavior is often present in the model’s representations. Thus, one natural (and common) approach to prevent the model from exhibiting undesirable behavior is to steer the model’s representations in a manner that reduces the probability of it generating undesirable text. This paper investigates the formal and empirical properties of steering functions, i.e., transformation of the neural language model’s representations that alter its behavior. First, we derive two optimal, in the least-squares sense, affine steering functions under different constraints. Our theory provides justification for existing approaches and offers a novel, improved steering approach. Second, we offer a series of experiments that demonstrate the empirical effectiveness of the methods in mitigating bias and reducing toxic generation. https://github.com/shauliravfogel/affine-steering",
+  "impact": "Our research explores intervention functions to guide language model behavior for controlled generation and fairness. We urge caution in any real-world application of such a method. Although our experiments, which particularly focus on mitigating gender bias, show promise, applying these methods should consider the risk of reinforcing biases or introducing new ones. Shifting representations in a specific direction may inadvertently reinforce existing biases by accident. We also highlight that our choice of binary concepts, e.g., MALE →FEMALE, does not have a normative implication and was chosen for convenience. However, we acknowledge that such choices may reinforce harmful gender norms.",
+  "query_input": {
+    "scenario": "Aggressive concept removal for toxicity reduction",
+    "issue": "Removing toxicity features also strips benign linguistic capabilities.",
+    "hazard": [
+      "Affine representation steering can bypass safety alignment, enabling models to generate harmful or toxic outputs that were previously suppressed."
+    ],
+    "exposure": [
+      "Content creators using toxicity-filtered LLMs for text generation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Aggressive toxicity removal strips benign linguistic capabilities, rendering safety filters fragile and easily bypassed by representation steering.",
+    "impact": "Content creators inadvertently publish harmful outputs, exposing audiences to toxic content and damaging creator credibility.",
+    "dose_response": "Affine representation steering bypassing safety alignment, through content creators using toxicity-filtered LLMs, triggers aggressive toxicity removal that strips benign capabilities and renders filters fragile, leading to inadvertently published harmful outputs that expose audiences to toxic content and damage creator credibility."
+  },
+  "reference": {
+    "dose_response": [
+      "Aggressive toxicity removal degrades benign linguistic capabilities; content creators respond by using unfiltered models, exposing themselves and others to raw toxic content and increased societal harm."
+    ],
+    "vulnerability": [
+      "Users circumvent over-filtered models, adopting less safe alternatives that expose them to raw hazards."
+    ],
+    "impact": [
+      "Higher exposure to unfiltered toxic content as users migrate to unsafe models, increasing societal harm."
+    ]
+  }
+}

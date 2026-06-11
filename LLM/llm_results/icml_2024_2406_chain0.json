@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2406",
+  "chain_index": 0,
+  "title": "tnGPS Discovering Unknown Tensor Network Structure Search Algorithms via Large Language Models (LLMs)",
+  "abstract": "Tensor networks are efficient for extremely highdimensional representation, but their model selection, known as tensor network structure search (TN-SS), is a challenging problem. Although several works have targeted TN-SS, most existing algorithms are manually crafted heuristics with poor performance, suffering from the curse of dimensionality and local convergence. In this work, we jump out of the box, studying how to harness large language models (LLMs) to automatically discover new TN-SS algorithms, replacing the involvement of human experts. By observing how human experts innovate in research, we model their common workflow and propose an automatic algorithm discovery framework called tnGPS. The proposed framework is an elaborate prompting pipeline that instruct LLMs to generate new TN-SS algorithms through iterative refinement and enhancement. The experimental results demonstrate that the algorithms discovered by tnGPS exhibit superior performance in benchmarks compared to the current state-of-theart methods. Our code is available at https: //github.com/ChaoLiAtRIKEN/tngps.",
+  "impact": "This paper explores the potential of using LLMs to automatically discover improved algorithms without human intervention, a step that could significantly boost the efficiency of algorithm development and augment production processes. However, it also raises concerns about LLMs generating unreliable results due to the hallucination issue, which affects their reliability and practicality. To address this, our study emphasizes the significance of not only evaluating the outputs produced by LLMs but also constructing precise prompts to guide them effectively. These approaches help minimize the risk of unreliable results, ensuring the practicality and reliability of LLMs for practitioners. Moreover, the increasing capabilities of LLMs may also lead to the question of whether machines may eventually replace human expertise entirely.",
+  "query_input": {
+    "scenario": "ML researchers applying LLM-based TN-SS to image classification tasks.",
+    "issue": "Discovered tensor network architectures overfit to search dataset, degrading on out-of-distribution images.",
+    "hazard": [
+      "Automated LLM-driven iterative algorithm generation may overfit to optimization criteria, producing brittle tensor network structures that fail under distribution shifts."
+    ],
+    "exposure": [
+      "Computer vision engineers deploying learned tensor network classifiers."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Engineers rely on LLM-discovered structures without out-of-distribution validation, leaving deployed classifiers unable to resist accuracy loss from overfitting.",
+    "impact": "Misclassification of out-of-distribution images degrades classifier reliability, leading to erroneous automated decisions in deployed vision systems.",
+    "dose_response": "Automated LLM-driven algorithm generation overfits to optimization criteria, producing brittle structures that fail under distribution shifts, through computer vision engineers deploying classifiers without out-of-distribution validation, triggers reliance on unvalidated structures that lose accuracy, leading to misclassification and erroneous automated decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting LLM-driven search yields brittle tensor networks that, when deployed by computer vision engineers without out-of-distribution robustness checks, cause misclassification in safety-critical tasks."
+    ],
+    "vulnerability": [
+      "LLM-driven search overfits to training distribution without out-of-distribution robustness checks."
+    ],
+    "impact": [
+      "Misclassification of out-of-distribution images leads to incorrect decisions in safety-critical tasks."
+    ]
+  }
+}

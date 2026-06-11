@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance on unverified public datasets for pre-training, while reference describes downstream developers blindly trusting open-source pre-trained models; both involve trust in open-source resources but target different stages and actors.",
+    "reference": "Downstream developers blindly trust open-source pre-trained models, integrating poisoning into many applications.",
+    "generated": "Reliance on unverified public datasets for pre-training leaves organizations unable to detect or filter deliberately mismatched image-text pairs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions pervasive errors, which aligns with erosion of reliability, but omits the affected party 'critical domains like education, search'.",
+    "reference": "Wide-scale deployment of misassociating VLMs erodes reliability in critical domains like education, search, etc.",
+    "generated": "Downstream vision-language models systematically confuse semantically similar concepts across all tasks, causing pervasive retrieval, answering, and decision errors."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes poisoning causing downstream errors but misses the steps of developers blindly deploying models across critical applications and the resulting wide-scale reliability erosion through interconnected ecosystems.",
+    "reference": "Poisoned datasets embed misassociations in pre-trained VLMs, which developers blindly deploy across critical applications, leading to wide-scale erosion of reliability through interconnected digital ecosystems.",
+    "generated": "A concept-level poisoning attack injecting misaligned image-text pairs into multimodal training data, through organizations pre-training on unverified public datasets, triggers undetectable mismatched pairs, leading to downstream VLMs systematically confusing similar concepts and causing pervasive retrieval, answering, and decision errors."
+  }
+}

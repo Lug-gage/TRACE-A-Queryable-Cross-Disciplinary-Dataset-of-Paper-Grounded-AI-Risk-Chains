@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1671",
+  "chain_index": 1,
+  "title": "David and Goliath Small One-step Model Beats Large Diffusion with Score Post-training",
+  "abstract": "We propose Diff-Instruct*(DI*), a data-efficient post-training approach for one-step text-to-image generative models to improve its human preferences without requiring image data. Our method frames alignment as online reinforcement learning from human feedback (RLHF), which optimizes the one-step model to maximize human reward functions while being regularized to be kept close to a reference diffusion process. Unlike traditional RLHF approaches, which rely on the Kullback-Leibler divergence as the regularization, we introduce a novel general score-based divergence regularization that substantially improves performance as well as post-training stability. Although the general score-based RLHF objective is intractable to optimize, we derive a strictly equivalent tractable loss function in theory that can efficiently compute its gradient for optimizations. We introduce DI*-SDXL-1step, which is a 2.6B one-step text-to-image model at a resolution of 1024 × 1024, post-trained from DMD2 w.r.t SDXL. Our 2.6B DI*-SDXL-1step model outperforms the 50-step 12B FLUX-dev model in ImageReward, PickScore, and CLIP score on the Parti prompts benchmark while using only 1.88% of the inference time. This result clearly shows that with proper post-training, the small one-step model is capable of beating huge multi-step diffusion models. Our model is opensourced at this link: https://github.com/ pkulwj1994/diff_instruct_star. We hope our findings can contribute to humancentric machine learning techniques.",
+  "impact": "We propose Diff-Instruct* (DI*) that can effectively posttrain one-step text-to-image generative models to be aligned with human preferences. The method and corresponding aligned models lie in the domain of Reinforcement Learning using Human Feedback, which involves the participation of humans for training reward models. Though the Diff-Instruct* algorithm itself does not generate harms to society, any misuse of the algorithm could potentially lead to misleading, fake, or biased generated content. We conduct experiments on academic benchmarks, whose resulting models are less likely to be misused. Further experiments are needed to better understand these consistency model limitations and propose solutions to address them",
+  "query_input": {
+    "scenario": "Online RLHF post-training of one-step T2I models (e.g., DI*)",
+    "issue": "Reinforcement learning from human feedback introduces distributional shift, degrading image quality on unseen prompt distributions.",
+    "hazard": [
+      "One-step text-to-image models optimized via reward-based noise or prompt editing produce misaligned outputs that diverge from human intent."
+    ],
+    "exposure": [
+      "Users of fine-tuned one-step T2I models in open-domain generation tasks"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users assume reward-aligned outputs generalize to unseen prompts, lacking monitoring for distributional drift.",
+    "impact": "Incongruent images erode user trust and block adoption of efficient one-step models at scale.",
+    "dose_response": "One-step text-to-image models optimized via reward-based noise or prompt editing produce misaligned outputs, through users in open-domain generation tasks, triggers assumption of generalization without monitoring distributional drift, leading to incongruent images eroding trust and blocking adoption."
+  },
+  "reference": {
+    "dose_response": [
+      "Online RLHF post-training enables distributional shift, which in open-domain generation exposes users to degraded image quality on unseen prompts, leading to factual inaccuracies and digital cultural erasure."
+    ],
+    "vulnerability": [
+      "Human feedback raters share demographic and cultural biases that skew reward signals.",
+      "Online RLHF overfits to narrow prompt styles, leaving underrepresented concepts with degraded quality."
+    ],
+    "impact": [
+      "Factual inaccuracies in generated images erode user trust in AI for professional communication tasks.",
+      "Quality degradation on non-Western cultural concepts perpetuates digital cultural erasure."
+    ]
+  }
+}

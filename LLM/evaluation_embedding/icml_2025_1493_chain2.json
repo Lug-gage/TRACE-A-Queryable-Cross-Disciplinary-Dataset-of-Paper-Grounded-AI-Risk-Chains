@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4787,
+    "reference": "Offline datasets embed historical clinical biases and practice variations that become frozen policy.",
+    "generated": "Patients cannot challenge AI-derived recommendations and rely on a system that may reinforce suboptimal clinician behavior without safety oversight."
+  },
+  "impact": {
+    "similarity": 0.6105,
+    "reference": "Systematic perpetuation of health disparities for already marginalized patient groups.",
+    "generated": "Patient harm and systemic entrenchment of suboptimal treatment practices."
+  },
+  "dose_response": {
+    "similarity": 0.7291,
+    "reference": "Misspecified reward functions from offline physician demonstrations lock in biases, exposing patients to sub-optimal treatments that perpetuate health disparities and erode clinician trust.",
+    "generated": "Recovered reward functions that are non-identifiable, misspecified, or non-transferable, when employed in AI-derived treatment recommendations for patients, trigger inability to challenge and reinforcement of suboptimal clinician behavior without safety oversight, leading to patient harm and systemic entrenchment of suboptimal practices."
+  }
+}

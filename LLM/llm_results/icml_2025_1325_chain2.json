@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2025_1325",
+  "chain_index": 2,
+  "title": "DRAG Data Reconstruction Attack using Guided Diffusion",
+  "abstract": "With the rise of large foundation models, split inference (SI) has emerged as a popular computational paradigm for deploying models across lightweight edge devices and cloud servers, addressing data privacy and computational cost concerns. However, most existing data reconstruction attacks have focused on smaller CNN classification models, leaving the privacy risks of foundation models in SI settings largely unexplored. To address this gap, we propose a novel data reconstruction attack based on guided diffusion, which leverages the rich prior knowledge embedded in a latent diffusion model (LDM) pre-trained on a large-scale dataset. Our method performs iterative reconstruction on the LDM’s learned image prior, effectively generating high-fidelity images resembling the original data from their intermediate representations (IR). Extensive experiments demonstrate that our approach significantly outperforms state-of-the-art methods, both qualitatively and quantitatively, in reconstructing data from deeplayer IRs of the vision foundation model. The results highlight the urgent need for more robust privacy protection mechanisms for large models in SI scenarios. Code is available at: https: //github.com/ntuaislab/DRAG",
+  "impact": "This work investigates the privacy risks of large vision foundation models in the split inference framework. As these models are widely adopted in downstream tasks, privacy concerns become crucial. Our proposed DRAG method shows that, unlike smaller CNN models studied previously, large vision models are also vulnerable to embedding reconstruction attacks, posing risks to applications like domestic robots and cyber-physical systems. These findings provide key insights for ML developers and users, urging a re-evaluation of privacy risks and the development of more robust, privacy-preserving architectures.",
+  "query_input": {
+    "scenario": "Mobile app using cloud-based vision model",
+    "issue": "User photos reconstructed from intermediate representations sent to cloud",
+    "hazard": [
+      "Intermediate representations in split inference leak private visual data, enabling reconstruction via guided diffusion with foundation model priors."
+    ],
+    "exposure": [
+      "App users uploading personal photos to cloud vision APIs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Split inference transmits intermediate representations retaining rich visual structure, and deployed cloud vision models lack defenses against guided diffusion reconstruction.",
+    "impact": "Private user photos are reconstructed with high fidelity, exposing intimate imagery and enabling identity theft, blackmail, or unauthorized profiling.",
+    "dose_response": "Intermediate representations leak visual data; through user photo uploads to cloud APIs, this triggers transmission of structurally rich representations and lack of defenses, leading to high-fidelity reconstruction of private photos exposing intimate imagery and enabling identity theft, blackmail, or profiling."
+  },
+  "reference": {
+    "dose_response": [
+      "Identity and scene detail in intermediate representations enable inversion of user-uploaded photos, exposing intimate moments and sensitive documents, which leads to blackmail, identity theft, and child safety liabilities."
+    ],
+    "vulnerability": [
+      "Intermediate representations from user-uploaded photos retain enough identity and scene detail to be inverted into recognizable private images."
+    ],
+    "impact": [
+      "Recovered personal photos expose intimate moments, enabling blackmail and identity theft.",
+      "Leaked images of minors or sensitive documents trigger child safety and legal liabilities."
+    ]
+  }
+}

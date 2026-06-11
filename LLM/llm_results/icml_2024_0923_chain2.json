@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0923",
+  "chain_index": 2,
+  "title": "Learning Decision Trees and Forests with Algorithmic Recourse",
+  "abstract": "This paper proposes a new algorithm for learning accurate tree-based models while ensuring the existence of recourse actions. Algorithmic Recourse (AR) aims to provide a recourse action for altering the undesired prediction result given by a model. Typical AR methods provide a reasonable action by solving an optimization task of minimizing the required effort among executable actions. In practice, however, such actions do not always exist for models optimized only for predictive performance. To alleviate this issue, we formulate the task of learning an accurate classification tree under the constraint of ensuring the existence of reasonable actions for as many instances as possible. Then, we propose an efficient top-down greedy algorithm by leveraging the adversarial training techniques. We also show that our proposed algorithm can be applied to the random forest, which is known as a popular framework for learning tree ensembles. Experimental results demonstrated that our method successfully provided reasonable actions to more instances than the baselines without significantly degrading accuracy and computational efficiency.",
+  "impact": "Positive Impacts. Our proposed method, named RACT, is a new framework that aims to learn accurate tree-based models while guaranteeing the existence of recourse actions. As demonstrated in our experiments in Section 4, tree-based models trained by our method can provide executable recourse actions to more individuals than the existing methods without degrading predictive accuracy. Thus, our method enables us to learn tree-based models that make accurate predictions and guarantee recourse actions, which improves the trustworthiness of algorithmic decision-making for critical tasks in the real world such as loan approvals and judicial decisions (Karimi et al., 2022; Ross et al., 2021). In addition, our method gives decision-makers an insight into the trade-off between the predictive accuracy and recourse ratio by tuning the hyper-parameter λ (Levanon & Rosenfeld, 2021; Olckers & Walsh, 2023). Negative Impacts. While our method has several positive impacts, there may exist some negative impacts as well. First, in practice, it is sometimes undesirable for decisionmakers to guarantee the existence of executable actions for all individuals. For example, providing easy actions for granting loans to applicants who do not have the capacity to repay might cause a serious financial crisis in the future. However, since our method can adjust the ratio of individuals who are guaranteed to have executable recourse actions by tuning its hyper-parameter λ, it helps decision-makers provide recourse actions to appropriate individuals while keeping accurate decisions (Levanon & Rosenfeld, 2021; Olckers & Walsh, 2023). Second, there is a risk that our method may be used maliciously to train a model that provides specific actions for occuring some undesired situations, such as discrimination. To avoid this risk, we may need to check the actions provided to affected individuals before deploying the models (e.g., using the existing frameworks for obtaining the global summary of recourse actions (Rawal & Lakkaraju, 2020; Kanamori et al., 2022)).",
+  "query_input": {
+    "scenario": "Medical treatment eligibility scored by a gradient-boosted tree model",
+    "issue": "Recourse actions require impossible rapid changes in lab test values or the instant resolution of chronic conditions.",
+    "hazard": [
+      "Recourse actions for tree ensemble models violate real-world feasibility constraints due to reliance on fragile, minimal perturbations."
+    ],
+    "exposure": [
+      "Patients receiving automated recourse recommendations for insurance coverage denials."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Medical test values and chronic conditions are inherently immutable or require extended time to change, rendering prescribed feature perturbations impossible.",
+    "impact": "Coverage denials remain unchallenged, causing delays or denial of necessary treatment, worsening health outcomes, and imposing financial hardship.",
+    "dose_response": "Recourse actions for tree ensemble models, through automated recommendations for insurance denials, trigger the inherent immutability of medical tests and chronic conditions, leading to unchallenged coverage denials that worsen health outcomes and impose financial hardship."
+  },
+  "reference": {
+    "dose_response": [
+      "Fragile, minimal-perturbation recourse from tree ensembles demands impossible health changes for patients, resulting in care denial, worsened health outcomes, and eroded trust."
+    ],
+    "vulnerability": [
+      "Patients with chronic illnesses or biologically constrained lab values have no feasible health modification path.",
+      "Overreliance on automated systems without medical context amplifies sensitivity to unrealistic recourse."
+    ],
+    "impact": [
+      "Patients face denial of care, worsening health outcomes, and spiraling medical debt.",
+      "Psychological harm from futile recommendations erodes patient autonomy and trust in healthcare."
+    ]
+  }
+}

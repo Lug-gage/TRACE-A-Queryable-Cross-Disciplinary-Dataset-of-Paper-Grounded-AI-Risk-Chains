@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1593",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4955,
+    "reference": "General users accept AI answers as authoritative, lacking expertise to verify visual QA accuracy.",
+    "generated": "Users lack the ability to independently verify visual information, rendering them fully dependent on the MLLM's distorted outputs."
+  },
+  "impact": {
+    "similarity": 0.6659,
+    "reference": "Incorrect answers spread misinformation, leading to poor decisions in tasks like plant identification or navigation.",
+    "generated": "Users make erroneous decisions based on incorrect visual answers, leading to task failures and potential real-world harm."
+  },
+  "dose_response": {
+    "similarity": 0.7633,
+    "reference": "In visual QA with auto-encoded inputs, lossy morph-token compression causes information loss, leading users to trust incorrect answers, spreading misinformation and poor decisions.",
+    "generated": "Lossy compression of visual features via auto-encoded morph-tokens, through general users relying on MLLM visual assistants, triggers inability to verify visual information, leading to erroneous decisions and real-world harm."
+  }
+}

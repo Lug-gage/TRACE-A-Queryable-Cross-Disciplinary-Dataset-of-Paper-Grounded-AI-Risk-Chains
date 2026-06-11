@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2269",
+  "chain_index": 2,
+  "title": "Fixing the Double Penalty in Data-Driven Weather Forecasting Through a Modified Spherical Harmonic Loss Functi",
+  "abstract": "Recent advancements in data-driven weather forecasting models have delivered deterministic models that outperform the leading operational forecast systems based on traditional, physics-based models. However, these data-driven models are typically trained with a mean squared error loss function, which causes smoothing of fine scales through a “double penalty” effect. We develop a simple, parameter-free modification to this loss function that avoids this problem by separating the loss attributable to decorrelation from the loss attributable to spectral amplitude errors. Finetuning the GraphCast model with this new loss function results in sharp deterministic weather forecasts, an increase of the model’s effective resolution from 1,250 km to 160 km, improvements to ensemble spread, and improvements to predictions of tropical cyclone strength and surface wind extremes.",
+  "impact": "Accurate weather forecasts are a vital public service, and its benefits are disproportionately concentrated in the extremes. Accurate forecasts of extreme weather such as tropical cyclones save lives. On one hand, this means that we should be eager to develop improvements to weather forecasting systems, but on the other hand it means that we should be very careful not to just “chase scores,” confusing what’s easy to calculate with what’s truly important. This work contributes to this field by introducing a way to make data-driven weather forecasting more realistic, with variability at moderate and fine scales that is much closer to reality. This improves various probabilistic scores and predictions of tropical cyclone intensity, but this is not a guarantee of complete physical plausibility. In particular, we have not yet shown that these forecasts are better-behaved “out of distribution,” such as when simulating possible future climate paths. Operational weather centres are very diligent about performing rigorous evaluation of models before making them operational, and we hope that this work can help ease the path towards the adoption of better-performing, data-driven forecasting systems in the near future.",
+  "query_input": {
+    "scenario": "Forecasting surface wind extremes from extratropical storms",
+    "issue": "Spectral loss may distort wind gust fields, skewing extreme wind risk assessments.",
+    "hazard": [
+      "Double penalty spherical harmonic loss functions generate physically unrealistic high-resolution details that can degrade extreme event forecast reliability."
+    ],
+    "exposure": [
+      "Infrastructure operators using wind forecasts for damage pre-positioning"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators' resource allocation decisions depend entirely on forecast accuracy, lacking independent means to detect unrealistic gust field distortions.",
+    "impact": "Misplaced pre-positioning of repair crews and equipment prolongs power outages and escalates economic losses from storm damage.",
+    "dose_response": "Double penalty spherical harmonic loss functions generating unrealistic high-resolution details, through infrastructure operators using wind forecasts for damage pre-positioning, trigger operators’ reliance on forecast accuracy without distortion detection, leading to misplaced repair crews that prolong outages and escalate economic losses."
+  },
+  "reference": {
+    "dose_response": [
+      "Double penalty loss enables distorted wind gust fields, which in extratropical storm forecasting misleads infrastructure operators, causing misplacement of repair crews and prolonged outages."
+    ],
+    "vulnerability": [
+      "Infrastructure operators who base resource staging decisions solely on deterministic gust forecasts without considering model error patterns."
+    ],
+    "impact": [
+      "Power restoration crews positioned in wrong areas, extending blackouts and economic losses."
+    ]
+  }
+}

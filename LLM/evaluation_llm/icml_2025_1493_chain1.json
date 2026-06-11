@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes institutional absence of safeguards, while reference focuses on system robustness to out-of-distribution scenarios; related but different sensitivity condition",
+    "reference": "Autonomous systems lack robustness to out-of-distribution traffic scenarios learned from limited reward data.",
+    "generated": "No institutional safeguards exist to validate inferred reward models before deployment in dynamic traffic environments with vulnerable humans."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both reference and generated identify injuries/fatalities to passengers and pedestrians as the ultimate negative outcome",
+    "reference": "Traffic accidents causing injury or loss of life.",
+    "generated": "Injuries and fatalities among passengers and pedestrians when vehicles respond erratically due to misspecified coordination objectives."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference causal arc: non-transferable reward functions → unsafe coordination → accident risk from novel scenarios → injuries/regulatory backlash; generated inserts lack of institutional safeguards as intermediary and alters causal flow, missing the direct unsafe coordination link",
+    "reference": "Non-transferable reward functions cause unsafe multi-agent coordination in autonomous driving fleets, exposing passengers and pedestrians to accident risk from novel traffic scenarios, leading to injuries and regulatory backlash.",
+    "generated": "Recovered reward functions that are non-identifiable, misspecified, or non-transferable, through passengers and pedestrians interacting with autonomous vehicle networks, trigger a lack of institutional safeguards to validate inferred models, leading to erratic vehicle responses causing injuries and fatalities."
+  }
+}

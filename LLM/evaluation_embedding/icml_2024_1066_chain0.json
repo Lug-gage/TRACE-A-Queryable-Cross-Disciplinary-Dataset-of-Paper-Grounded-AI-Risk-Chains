@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1066",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7346,
+    "reference": "Over-reliance on AI outputs without synthetic feasibility checks lets chemists select unsynthesizable candidates.",
+    "generated": "Chemists lack integrated synthesizability filters in their candidate selection, making them dependent on in silico metrics that overlook synthetic infeasibility."
+  },
+  "impact": {
+    "similarity": 0.7278,
+    "reference": "Wasted synthesis resources, false progress, eroded trust in computational methods, and delayed hit discovery.",
+    "generated": "Failed synthesis attempts consume lab resources, stalling hit-to-lead progression."
+  },
+  "dose_response": {
+    "similarity": 0.8766,
+    "reference": "Goal-aware fragment assembly generating chemically invalid molecules enables chemists to select unsynthesizable candidates, which without synthetic feasibility checks leads to wasted synthesis resources, false progress, eroded trust, and delayed hit discovery.",
+    "generated": "Goal-aware fragment assembly generating unsynthesizable molecules, through chemists selecting from generated libraries, triggers their dependence on in silico metrics without synthesizability filters, leading to failed syntheses that consume resources and stall progression."
+  }
+}

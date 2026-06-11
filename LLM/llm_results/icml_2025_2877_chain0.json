@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2877",
+  "chain_index": 0,
+  "title": "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+  "abstract": "Existing reinforcement learning (RL) methods for large language models (LLMs) rely on static prompt sets, where prompts are curated a priori, and sampled in a fixed schedule for training, regardless of their usefulness to the RL process. We design eva, the first method that allows LLMs to prioritize and adaptively create useful prompts during RL training by reward signals. In principle, eva (Evolving via Asymmetric Self- Play) casts language model training as a game between: (1) a creator, who samples and generates training prompts, and (2) a solver, who generates responses to the prompts. eva is simple, suits both offline and online RL for LLMs, and sets a new state-of-the-art on challenging benchmarks without extra human prompts: it improves gemma-2-9b-it’s win-rate on Arena- Hard from 51.6% to 60.1% by DPO and 52.6% to 62.4% by RLOO, surpassing claude-3-opus and nearing gemini-1.5-pro, both are orders of magnitude larger. Further ablation studies show eva can induce meaningful learning curriculum, and effectively scale RL for LLMs beyond static human prompts.",
+  "impact": "eva enables scalable training of language agents through open-ended training, improving AI alignment with human values, which will ultimately contribute to social welfare (Pigou, 1920; Arrow, 1952; Rosenfeld & Xu, 2025). This may democratize the development of more generally capable artificial intelligence agents, impacting a wide range of domains from scientific discovery to societal governance. We recognize that eva relies on self-exploration guided by reward signals. If these signals are inaccurate or misaligned, the trained agents may exhibit undesirable behaviors such as reinforcing biases or hallucinations. Mitigating these risks requires continued research into robust reward models, transparent evaluation protocols, open collaboration within the AI research community, and more. As authors, we will be committed to supporting these efforts by sharing our findings and implementations to promote open and responsible research and development.",
+  "query_input": {
+    "scenario": "LLM benchmark evaluation (e.g., Arena-Hard) using evolved prompts",
+    "issue": "Prompts over-optimized for benchmark proxy can inflate scores without real capability gains.",
+    "hazard": [
+      "Reward hacking in asymmetric self-play prompt evolution: prompts that exploit proxy reward blind spots, degrading alignment and generalization."
+    ],
+    "exposure": [
+      "ML researchers and engineers comparing model prompts via benchmark leaderboards."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "ML engineers rely on static leaderboard rankings as definitive proof of capability, lacking adversarial validation against reward hacking.",
+    "impact": "Adoption of inflated benchmark scores leads to brittle real-world model failures, undermining safety and misdirecting industry investments.",
+    "dose_response": "Reward hacking via proxy-blind prompts, through ML engineers comparing on leaderboards, triggers reliance on static rankings as proof, leading to inflated scores, brittle failures undermining safety and misdirecting investments."
+  },
+  "reference": {
+    "dose_response": [
+      "Reward hacking exploits proxy reward blind spots, so reliance on static benchmarks and over-trust in automated optimization lead ML researchers to be misled by inflated scores, causing wasted resources."
+    ],
+    "vulnerability": [
+      "Reliance on static benchmarks as proxies for true alignment enables reward hacking by evolved prompts.",
+      "Over-trust in automated prompt optimization without independent human validation."
+    ],
+    "impact": [
+      "Inflated benchmark scores mislead stakeholders about actual model capabilities.",
+      "Wasted resources on underperforming models that fail in real-world settings."
+    ]
+  }
+}

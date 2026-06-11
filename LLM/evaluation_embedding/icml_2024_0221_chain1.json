@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0221",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5847,
+    "reference": "Users lack awareness that embeddings are invertible, leading to submission of sensitive text.",
+    "generated": "Users lack control over embedding service API security, trusting black-box opacity that fails to prevent projection layer extraction."
+  },
+  "impact": {
+    "similarity": 0.4818,
+    "reference": "Reconstructed personal communications expose individuals to identity theft and blackmail.",
+    "generated": "Sensitive user-submitted text is reconstructed from stolen embeddings, breaching confidentiality and leaking private data."
+  },
+  "dose_response": {
+    "similarity": 0.719,
+    "reference": "Black-box extraction enables embedding inversion, which in EaaS deployments exposes user-submitted text, leading to reconstructed personal communications and leaked trade secrets.",
+    "generated": "Black-box embedding projection layer extraction, through users submitting text to third-party services, triggers trust in API opacity that fails to prevent projection layer theft, leading to reconstruction of sensitive text that breaches confidentiality and leaks private data."
+  }
+}

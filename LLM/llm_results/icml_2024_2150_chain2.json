@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_2150",
+  "chain_index": 2,
+  "title": "Exact Soft Analytical Side-Channel Attacks using Tractable Circuits",
+  "abstract": "Detecting weaknesses in cryptographic algorithms is of utmost importance for designing secure information systems. The state-of-the-art soft analytical side-channel attack (SASCA) uses physical leakage information to make probabilistic predictions about intermediate computations and combines these “guesses” with the known algorithmic logic to compute the posterior distribution over the key. This attack is commonly performed via loopy belief propagation, which, however, lacks guarantees in terms of convergence and inference quality. In this paper, we develop a fast and exact inference method for SASCA, denoted as ExSASCA, by leveraging knowledge compilation and tractable probabilistic circuits. When attacking the Advanced Encryption Standard (AES), the most widely used encryption algorithm to date, ExSASCA outperforms SASCA by more than 31% top-1 success rate absolute. By leveraging sparse belief messages, this performance is achieved with little more computational cost than SASCA, and about 3 orders of magnitude less than exact inference via exhaustive enumeration. Even with dense belief messages, ExSASCA still uses 6 times less computations than exhaustive inference.",
+  "impact": "This paper presents work whose goals are to advance the field of Machine Learning, specifically the area of exact inference and tractable models, and the field of Cryptography, by providing new tools to analyse weaknesses in cryptographic algorithms via cryptographic attacks. Hence, our work has a hypothetical potential of dual use. However, this potential for dual use is very limited, since (i) we do not provide a new attack, but rather a novel inference method to perform an established attack, and (ii) this established attack is technically challenging. Moreover, by publishing this improved method we ensure that the scientific and general public is aware of and can react to the connected risks.",
+  "query_input": {
+    "scenario": "IoT devices with AES-based encrypted communication",
+    "issue": "Physical access to devices combined with SASCA enables key extraction.",
+    "hazard": [
+      "Exact inference in soft analytical side-channel attacks (SASCA) via tractable probabilistic circuits enables more accurate key recovery from physical leakage."
+    ],
+    "exposure": [
+      "End users of IoT devices and industrial sensors."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End users rely on physically accessible IoT devices whose AES implementations leak side-channel information without any hardware or software countermeasures.",
+    "impact": "Unauthorized decryption of industrial sensor data and IoT communications enables mass data exfiltration and malicious device control across critical systems.",
+    "dose_response": "Exact inference in SASCA via probabilistic circuits, through end users' physically accessible, unprotected IoT devices, triggers accurate key recovery from side-channel leakage, leading to unauthorized decryption, mass data exfiltration, and malicious device control."
+  },
+  "reference": {
+    "dose_response": [
+      "Exact SASCA enables more accurate key recovery, which in physically accessible IoT devices exposes encryption keys, leading to compromised sensor networks and mass recalls."
+    ],
+    "vulnerability": [
+      "IoT devices deployed in physically accessible locations (homes, factories, streets) offer attackers unlimited side-channel collection opportunities.",
+      "Low-cost IoT manufacturers skip side-channel countermeasures to meet price points, creating a large vulnerable installed base."
+    ],
+    "impact": [
+      "Compromised industrial sensor networks feed falsified data into SCADA systems, triggering unsafe physical processes.",
+      "Home IoT key extraction enables lateral movement into residential networks, exposing personal data and surveillance feeds.",
+      "Fleet-wide key extraction from identical devices forces mass recalls and regulatory bans on affected product lines."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0199",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes low digital literacy and heuristic reliance as root causes of inability to detect, whereas reference describes inability to critically assess AI explanations directly; related but different sensitivity condition.",
+    "reference": "Users’ inability to critically assess AI explanations makes inconsistent verdicts erode trust, leading to abandonment of verification.",
+    "generated": "Low digital literacy and heuristics that equate multimodal explanations with correctness render users unable to detect retrieval-induced false credibility."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (public) is present, but damage type differs: reference is increased susceptibility to misinformation, generated is false claims gaining amplified credibility and eroding trust.",
+    "reference": "Widespread disengagement from fact-checking tools increases general susceptibility to misinformation, particularly in ambiguous claim contexts.",
+    "generated": "False claims gain amplified credibility as verified information, entrenching misbeliefs and eroding public trust in fact-checking."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc centres on erroneous outputs triggering low literacy, leading to false credibility, while reference arc is inconsistent verdicts eroding trust and inability causing abandonment, increasing susceptibility; different mechanism.",
+    "reference": "Inconsistent verdicts from explainable fact-checking tools erode users' trust, and their inability to critically assess AI causes abandonment of verification, leaving them more susceptible to misinformation.",
+    "generated": "Explainable yet erroneous multimodal fact-checking outputs, through public browser plugin use to verify claims, trigger low digital literacy and heuristics equating multimodal explanations with correctness, leading to false claims gaining amplified credibility, entrenching misbeliefs and eroding trust in fact-checking."
+  }
+}

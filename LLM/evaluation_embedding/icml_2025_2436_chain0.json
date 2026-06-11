@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2436",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7238,
+    "reference": "Designers over-trust AI-generated topologies due to automation bias, skipping manual sanity checks.",
+    "generated": "Designers' overreliance on automated design rule checks as a proxy for functional correctness, with insufficient manual verification of LLM-generated topologies."
+  },
+  "impact": {
+    "similarity": 0.7599,
+    "reference": "Fabricated chips with hidden functional failures cause costly silicon re-spins and project delays.",
+    "generated": "Fabricated analog ICs fail functionally, causing costly respins, schedule delays, and eroding trust in AI-assisted EDA tools."
+  },
+  "dose_response": {
+    "similarity": 0.7528,
+    "reference": "RL-optimized LLM generating plausible but incorrect topologies enables undetected flaws, which in EDA tool integration leads to fabricated chips with hidden functional failures and costly silicon re-spins.",
+    "generated": "LLM-generated functionally incorrect topologies that pass superficial checks, through analog IC designers using AI-assisted tools, triggers overreliance on automated checks as proxy for functional correctness, leading to IC failures, costly respins, schedule delays, and eroded trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0766",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference cites uncritical acceptance due to prioritizing novelty; generated cites inability due to lack of verification methods—related but not identical sensitivity.",
+    "reference": "Climate researchers prioritize novel methods over ground-truth validation, accepting synthetic time-series uncritically.",
+    "generated": "Scientists lack verification methods to distinguish hallucinated land cover features from real climate-driven changes in synthetic imagery."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "False trends leading to maladaptive policies and wasted investments match 'misinformed adaptation policies and misallocated funding' semantically.",
+    "reference": "False climate trends lead to misinformed adaptation policies and misallocated funding.",
+    "generated": "False climate trends misdirect environmental forecasting, producing maladaptive policies and wasted resilience investments."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain of mode interpolation hallucinations leading to false trends and policy harm is fully present, despite additional mention of verification methods.",
+    "reference": "Mode interpolation creates spatio-temporally inconsistent hallucinations, and when climate scientists rely on synthetic time-series for trend detection, false trends arise that misinform adaptation policies.",
+    "generated": "Mode interpolation in diffusion models hallucinating land cover features in synthetic imagery, when climate scientists use these for trend detection without verification methods, triggers false climate trends that misdirect forecasting, yielding maladaptive policies and wasted resilience investments."
+  }
+}

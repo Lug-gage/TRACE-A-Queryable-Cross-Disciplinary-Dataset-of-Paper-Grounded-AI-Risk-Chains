@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0088",
+  "chain_index": 1,
+  "title": "Impossible Videos",
+  "abstract": "Synthetic videos nowadays is widely used to complement data scarcity and diversity of realworld videos. Current synthetic datasets primarily replicate real-world scenarios, leaving impos- sible, counterfactual and anti-reality video concepts underexplored. This work aims to answer two questions: 1) Can today’s video generation models effectively follow prompts to create impossible video content? 2) Are today’s video understanding models good enough for understanding impossible videos? To this end, we introduce IPV-BENCH, a novel benchmark designed to evaluate and foster progress in video understanding and generation. IPV-BENCH is underpinned by a comprehensive taxonomy, en- compassing 4 domains, 14 categories. It features diverse scenes that defy physical, biological, geographical, or social laws. Based on the taxonomy, a prompt suite is constructed to evaluate video generation models, challenging their prompt following and creativity capabilities. In addition, a video benchmark is curated to assess Video- LLMs on their ability of understanding impossible videos, which particularly requires reasoning on temporal dynamics and world knowledge. Comprehensive evaluations reveal limitations and insights for future directions of video models, paving the way for next-generation video models. Project page: https://showlab.github. io/Impossible-Videos/.",
+  "impact": "This work introduces Impossible Videos, a benchmark for evaluating video models on counterfactual and anti-reality scenarios. By focusing on violations of physical, biological, geographical, and social laws, it pushes video generation and understanding models beyond imitation toward deeper reasoning and generalization. Our findings reveal current limitations in temporal dynamics and world knowledge reasoning, and offer a new testbed for safer, more robust video AI. However, benchmarks involving implausible or surreal content may be misused to deliberately generate deceptive or misleading media. To mitigate this risk, our benchmark is designed for research purposes, with a focus on transparency, educational value, and responsible model development. Acknowledgment This research is supported by the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No: AISG3-RP-2022-030).",
+  "query_input": {
+    "scenario": "Use of video understanding models to verify authenticity in breaking news footage",
+    "issue": "Physically impossible videos are misclassified as real, leading to false evidence being aired.",
+    "hazard": [
+      "Generation and dissemination of highly realistic but physically impossible or counterfactual videos that can be mistaken for authentic."
+    ],
+    "exposure": [
+      "Journalists and media outlets relying on AI-assisted video verification tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Over-reliance on AI verification tools that cannot distinguish physically impossible from authentic videos, without human cross-checking protocols.",
+    "impact": "False footage is aired as breaking news, deceiving audiences and undermining public trust in media.",
+    "dose_response": "Highly realistic physically impossible or counterfactual videos generated and disseminated, through journalists' reliance on AI video verification, triggers over-reliance without human cross-checking, leading to false airing of breaking news, deceiving audiences and undermining public trust in media."
+  },
+  "reference": {
+    "dose_response": [
+      "Generation of impossibly realistic videos misclassifies as real in AI verification tools used by journalists under deadline, leading to broadcast of fabricated events that fuels public panic and erodes media credibility."
+    ],
+    "vulnerability": [
+      "Journalists under deadline pressure defer entirely to AI verification without manual plausibility checks.",
+      "Newsroom AI tools are not adversarially tested on physically impossible events, missing subtle violations."
+    ],
+    "impact": [
+      "Broadcast of fabricated events as real news fuels public panic and misguided policy responses.",
+      "Long-term erosion of media credibility once the deception is exposed."
+    ]
+  }
+}

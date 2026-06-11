@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0792",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4968,
+    "reference": "Citation databases blindly trust GAD outlier scores, discounting interdisciplinary research.",
+    "generated": "Research impact systems using curvature-based anomaly detection are inherently sensitive to heterophilic structural variations, mistaking interdisciplinary work for outliers."
+  },
+  "impact": {
+    "similarity": 0.6597,
+    "reference": "Interdisciplinary scholars face reduced visibility, citations, and funding.",
+    "generated": "Interdisciplinary researchers suffer distorted impact metrics, diminished recognition, and misallocated resources from erroneous outlier flagging."
+  },
+  "dose_response": {
+    "similarity": 0.7739,
+    "reference": "Mixed-curvature autoencoder errors misrepresent interdisciplinary works as outliers in citation networks, exposing researchers to reduced visibility and funding, stifling innovation.",
+    "generated": "Mixed-curvature autoencoder reconstruction errors incorrectly flag benign structural variations as anomalies, exposing cross-domain papers to misclassification, triggering research impact systems' sensitivity to heterophilic variations, distorting impact metrics, diminishing recognition, and misallocating resources for interdisciplinary researchers."
+  }
+}

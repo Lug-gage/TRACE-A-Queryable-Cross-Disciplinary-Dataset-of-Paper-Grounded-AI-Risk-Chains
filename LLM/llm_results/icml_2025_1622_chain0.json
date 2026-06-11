@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1622",
+  "chain_index": 0,
+  "title": "SAE-V Interpreting Multimodal Models for Enhanced Alignment",
+  "abstract": "With the integration of image modality, the semantic space of multimodal large language models (MLLMs) is more complex than text-only models, making their interpretability more challenging and their alignment less stable, particularly susceptible to low-quality data, which can lead to inconsistencies between modalities, hallucinations, and biased outputs. As a result, developing interpretability methods for MLLMs is crucial for improving alignment quality and efficiency. In text-only LLMs, Sparse Autoencoders (SAEs) have gained attention for their ability to interpret latent representations. However, extending SAEs to multimodal settings presents new challenges due to modality fusion and the difficulty of isolating cross-modal representations. To address these challenges, we introduce SAE-V, a mechanistic interpretability framework that extends the SAE paradigm to MLLMs. By identifying and analyzing interpretable features along with their corresponding data, SAE-V enables fine-grained interpretation of both model behavior and data quality, facilitating a deeper understanding of cross-modal interactions and alignment dynamics. Moreover, by utilizing cross-modal feature weighting, SAE- V provides an intrinsic data filtering mechanism to enhance model alignment without requiring additional models. Specifically, when applied to the alignment process of MLLMs, SAE-V-based data filtering methods could achieve more than 110% performance with less than 50% data. Our results highlight SAE-V’s ability to enhance interpretability and alignment in MLLMs, providing insights into their internal mechanisms. *",
+  "impact": "The source code and checkpoints of SAE-V mentioned in this paper will be released under the CC BY-NC 4.0 license. This research has several potential risks that must be considered. The interpretability tools introduced in this work, while beneficial for alignment, could also be leveraged to manipulate or reverse-engineer model behaviors in unintended ways. Additionally, while SAE-V provides a self-guided filtering mechanism, it remains dependent on the initial dataset quality, meaning biases in the dataset could still propagate into the final model. We strongly condemn any malicious use of the SAE-V code and checkpoints and advocate for its responsible and ethical use. Acknowledgement This work is sponsored by National Natural Science Foundation of China (62376013, 623B2003) and the Natural Science Foundation of Beijing (QY25124). Any opinions, findings, conclusions, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding agencies.",
+  "query_input": {
+    "scenario": "MLLM-based visual QA system deployment",
+    "issue": "SAE-based interpretability tools misrepresent which visual features drive model answers, leading to misplaced trust in model reasoning.",
+    "hazard": [
+      "Sparse autoencoders produce incomplete or misleading feature decompositions of MLLM representations, obscuring cross-modal interactions."
+    ],
+    "exposure": [
+      "Researchers and developers using SAE tools to audit MLLM behavior in visual question answering."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lack of ground-truth validation for cross-modal SAE features makes researchers susceptible to misinterpreting model behavior.",
+    "impact": "Flawed alignment and deployment of MLLMs with persistent cross-modal biases and hallucinations in visual QA systems.",
+    "dose_response": "Sparse autoencoders producing misleading feature decompositions of MLLM representations, when used by researchers to audit visual QA, trigger misinterpretation from absent cross-modal ground-truth validation, leading to flawed alignment and persistent biases and hallucinations."
+  },
+  "reference": {
+    "dose_response": [
+      "Incomplete SAE feature decompositions obscure cross-modal interactions, enabling developers to trust misleading visual QA explanations, which leads to deployment of unsafe MLLMs in high-stakes domains."
+    ],
+    "vulnerability": [
+      "Over-reliance on SAE tools by developers without independent verification of feature attributions.",
+      "Institutional lack of standardized benchmarks for cross-modal interpretability methods."
+    ],
+    "impact": [
+      "Deployment of unsafe MLLMs in high-stakes domains due to false confidence in audited reasoning.",
+      "Erosion of public trust in AI systems when misleading explanations are later exposed."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1766",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Condition of radiologists relying on overconfident AI without calibration captures the inability to resist, similar to neglecting contradictory evidence",
+    "reference": "Physicians over-rely on overconfident AI diagnostic suggestions, neglecting contradictory clinical evidence.",
+    "generated": "Radiologists rely on definitive-appearing AI outputs without access to calibration signals, preventing detection of overconfident incorrect pattern matches."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Diagnostic errors and patient harm covered, but erosion of trust in diagnostic AI missing",
+    "reference": "Increased misdiagnosis rates, patient harm, and erosion of trust in diagnostic AI.",
+    "generated": "Reinforced incorrect pattern associations cause systematic diagnostic errors, wrong treatments, and patient harm at population scale."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Overconfident sparse retrievals cause reliance on definitive outputs leading to diagnostic errors and harm, same causal arc",
+    "reference": "Overconfident sparse Hopfield retrievals cause radiologists to over-rely on AI suggestions, leading to increased misdiagnosis rates and patient harm.",
+    "generated": "Sparse Hopfield-Fenchel-Young networks producing overconfident, miscalibrated retrievals under shifts, through radiologists using AI diagnostic tools, trigger reliance on definitive-appearing outputs without calibration, preventing detection of overconfident incorrect matches, leading to reinforced incorrect associations, diagnostic errors, wrong treatments, and patient harm."
+  }
+}

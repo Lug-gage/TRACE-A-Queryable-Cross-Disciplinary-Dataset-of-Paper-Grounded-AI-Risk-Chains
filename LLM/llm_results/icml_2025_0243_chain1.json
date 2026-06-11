@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 1,
+  "title": "Dissecting Submission Limit in Desk-Rejections A Mathematical Analysis of Fairness in AI Conference Policies",
+  "abstract": "As AI research surges in both impact and volume, conferences have imposed submission limits to maintain paper quality and alleviate organizational pressure. In this work, we examine the fairness of desk-rejection systems under submission limits and reveal that existing practices can result in substantial inequities. Specifically, we formally define the paper submission limit problem and identify a critical dilemma: when the number of authors exceeds three, it becomes impossible to reject papers solely based on excessive submissions without negatively impacting innocent authors. Thus, this issue may unfairly affect early-career researchers, as their submissions may be penalized due to co-authors with significantly higher submission counts, while senior researchers with numerous papers face minimal consequences. To address this, we propose an optimization-based fairness-aware desk-rejection mechanism and formally define two fairness metrics: worst-case fairness and average fairness. We prove that optimizing worst-case fairness is NPhard, whereas average fairness can be efficiently optimized via linear programming. Through case studies, we demonstrate that our proposed system ensures greater equity than existing methods, including those used in CVPR 2025, offering a more socially just approach to managing excessive submissions in AI conferences.",
+  "impact": "This paper seeks to advance fairness in desk-rejection systems employed by top AI conferences. By formally defining the paper submission limit problem, we demonstrate that an ideal system that rejects papers solely based on excessive submissions without negatively impacting innocent authors is mathematically impossible when multiple authors are involved. To address this, we propose a framework that optimizes desk-rejection fairness based on two different metrics, ensuring that early-career researchers with fewer submissions are less likely to face disproportionate setbacks due to co-authors’ submission behavior. While introducing fairness may slightly impact the acceptance rates of senior researchers with a large number of submissions, our approach does not aim to diminish anyone’s research output. Instead, it seeks to balance opportunity across career stages, thereby advancing social justice and contributing to a fairer and more inclusive ML research ecosystem.",
+  "query_input": {
+    "scenario": "Fairness-aware desk-rejection using partially known causal DAG",
+    "issue": "Misspecification of causal graph leads to unfair allocation decisions.",
+    "hazard": [
+      "Optimization-based desk-rejection mechanisms introduce new fairness harms by trading off conflicting definitions under model uncertainty."
+    ],
+    "exposure": [
+      "Authors with sensitive attributes like institution or geography affected."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Authors cannot verify or contest the causal graph used in fairness optimization, making them defenseless against misspecification errors.",
+    "impact": "Authors from certain institutions or geographies are systematically desk-rejected, deepening publication inequities and career disadvantages.",
+    "dose_response": "Optimization-based desk-rejection mechanisms, when applied to authors with sensitive attributes, trigger inability to contest misspecified causal graphs, leading to systematic desk-rejection of certain institutions and geographies, deepening publication inequities and career disadvantages."
+  },
+  "reference": {
+    "dose_response": [
+      "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable misspecified causal graphs to mislabel variables, which in the fairness-aware desk-rejection scenario exposes authors with sensitive attributes, leading to misguided fairness interventions eroding trust and reinforcing exclusion."
+    ],
+    "vulnerability": [
+      "Causal assumptions may mislabel legitimate background variables as fair, embedding hidden biases.",
+      "Incomplete causal knowledge fails to capture structural inequities tied to sensitive attributes."
+    ],
+    "impact": [
+      "Rejected authors from underrepresented regions face institutional barriers to resubmit or appeal.",
+      "Misguided fairness interventions erode trust and legitimize systemic exclusion under guise of fairness."
+    ]
+  }
+}

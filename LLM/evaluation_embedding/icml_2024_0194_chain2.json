@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6008,
+    "reference": "Cognitive biases cause human reviewers to conflate linguistic fluency with factual truthfulness.",
+    "generated": "Policy analysts and decision-makers lack independent verification tools to detect fluency bias in human-vetted LLM summaries."
+  },
+  "impact": {
+    "similarity": 0.633,
+    "reference": "Climate policies based on flawed evidence produce ineffective or counterproductive interventions.",
+    "generated": "Flawed, confidently-presented climate knowledge enters policy briefings, eroding evidence-based decision-making and risking maladaptive actions."
+  },
+  "dose_response": {
+    "similarity": 0.7833,
+    "reference": "Cognitive biases cause human evaluators to conflate fluency with truthfulness, which in the scenario of AI-assisted policy briefing evaluation exposes decision-makers to distorted judgments, leading to climate policies based on flawed evidence.",
+    "generated": "Human evaluators' fluency-truthfulness bias, through analysts' reliance on human-vetted LLM climate summaries, triggers the absence of independent verification tools, allowing confidently flawed climate knowledge into policy briefings and undermining evidence-based decisions."
+  }
+}

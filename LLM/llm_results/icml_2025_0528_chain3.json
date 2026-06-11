@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 3,
+  "title": "Visual Abstraction A Plug-and-Play Approach for Text-Visual Retrieval",
+  "abstract": "Text-to-visual retrieval often struggles with semantic redundancy and granularity mismatches between textual queries and visual content. Unlike existing methods that address these challenges during training, we propose VISual Abstraction (VISA), a test-time approach that enhances retrieval by transforming visual content into textual descriptions using off-the-shelf large models. The generated text descriptions, with their dense semantics, naturally filter out lowlevel redundant visual information. To further address granularity issues, VISA incorporates a question-answering process, enhancing the text description with the specific granularity information requested by the user. Extensive experiments demonstrate that VISA brings substantial improvements in text-to-image and text-to-video retrieval for both short- and long-context queries, offering a plug-and-play enhancement to existing retrieval systems.",
+  "impact": "VISA inherits potential challenges associated with LMMgenerated descriptions, such as biases and hallucinations. Since descriptions are automatically generated, the retrieval process might be influenced by inaccurate or biased representations, leading to unintended consequences, particularly in sensitive domains like news media analysis or legal decision-making. Additionally, transforming images into textual descriptions could raise privacy concerns, especially when applied to personal or surveillance-related datasets.",
+  "query_input": {
+    "scenario": "Safety-critical visual retrieval with plug-and-play test-time enhancement",
+    "issue": "Cascading errors from black-box model dependencies compromise retrieval reliability under distribution shift.",
+    "hazard": [
+      "Plug-and-play visual abstraction using off-the-shelf large models silently amplifies granularity mismatches and semantic redundancy across modalities."
+    ],
+    "exposure": [
+      "Operators of surveillance or emergency response image retrieval systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators lack verification mechanisms and training to detect silently amplified granularity mismatches in black-box retrieval outputs.",
+    "impact": "Misinformed surveillance and emergency decisions cause delayed responses, misallocated resources, and preventable harm.",
+    "dose_response": "Plug-and-play visual abstraction silently amplifies granularity mismatches and semantic redundancy, and through surveillance and emergency response operators lacking verification, triggers undetected black-box mismatches, leading to misinformed decisions, delayed responses, misallocated resources, and preventable harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Plug-and-play visual abstraction amplifies cascading errors from black-box dependencies, which under distribution shift compromise reliability in safety-critical retrieval, exposing operators to system degradation, leading to missed threats and public safety failures."
+    ],
+    "vulnerability": [
+      "Operators become deskilled and overreliant, failing to notice system degradation when distribution shifts occur."
+    ],
+    "impact": [
+      "Missed threats in surveillance or misallocated emergency resources cause public safety failures."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 2,
+  "title": "Measuring Stochastic Data Complexity with Boltzmann Influence Functions",
+  "abstract": "Estimating the uncertainty of a model’s prediction on a test point is a crucial part of ensuring reliability and calibration under distribution shifts. A minimum description length approach to this problem uses the predictive normalized maximum likelihood (pNML) distribution, which considers every possible label for a data point, and decreases confidence in a prediction if other labels are also consistent with the model and training data. In this work we propose IF-COMP, a scalable and efficient approximation of the pNML distribution that linearizes the model with a temperaturescaled Boltzmann influence function. IF-COMP can be used to produce well-calibrated predictions on test points as well as measure complexity in both labelled and unlabelled settings. We experimentally validate IF-COMP on uncertainty calibration, mislabel detection, and OOD detection tasks, where it consistently matches or beats strong baseline methods.",
+  "impact": "We have presented a method that allows a practitioner with access to a model and training dataset to identify examples with high complexity, or alternatively that contain a large amount of information relative to a model. Although we have presented experiments that aim to validate its use in producing better calibrated uncertainties and out-ofdistribution predictions which should reduce societal consequences, IF-COMP can also be used to automatically find important training examples. If these examples correspond to real people, a malicious agent could use this information to influence or bias downstream models or extract sensitive information.",
+  "query_input": {
+    "scenario": "Uncertainty calibration for model selection under dataset shift",
+    "issue": "Biased uncertainty estimates may mislead model selection, choosing a poorly generalizing model",
+    "hazard": [
+      "Temperature-scaled Boltzmann influence function calibration using pNML may amplify overconfidence under distribution shifts due to linearization approximations."
+    ],
+    "exposure": [
+      "Researchers comparing models using calibration metrics"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers' model selection decisions rely on calibration metrics that obscure approximation-induced overconfidence under distribution shift.",
+    "impact": "A poorly generalizing model is deployed, causing unreliable predictions and failures in downstream decisions.",
+    "dose_response": "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence under distribution shifts through researchers comparing calibration metrics, triggering reliance on metrics that obscure overconfidence, leading to deployment of a poorly generalizing model with unreliable predictions and failures in downstream decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, leading researchers to trust biased uncertainty estimates, which may cause selection of a poorly generalizing model that wastes resources and causes system-level harm."
+    ],
+    "vulnerability": [
+      "Researchers rely on calibration metrics as sole selection criterion without validating against distribution shifts."
+    ],
+    "impact": [
+      "Deployment of poorly generalizing models causes wasted resources, delayed outcomes, and potential system-level harm."
+    ]
+  }
+}

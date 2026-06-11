@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1389",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5759,
+    "reference": "Driver over-reliance on AI-enhanced feed reduces manual hazard scanning.",
+    "generated": "Drivers lack independent verification of ADAS alerts, leaving them unable to distinguish ghost artifacts from real obstacles in real time."
+  },
+  "impact": {
+    "similarity": 0.6032,
+    "reference": "Collision with unseen pedestrian or cyclist due to automation complacency.",
+    "generated": "Missed small obstacle detections cause delayed driver response, leading to collisions and possible injury."
+  },
+  "dose_response": {
+    "similarity": 0.8442,
+    "reference": "Zigzag frequency scanning in deraining produces ghost artifacts on AV camera feeds, which drivers over-rely on, leading to collision with unseen pedestrians.",
+    "generated": "Zigzag frequency scanning in SSM-based deraining aliases background textures into ghost artifacts, which, when drivers rely on ADAS camera alerts without independent verification, obfuscate small obstacle distinction, delaying response and causing collisions with possible injury."
+  }
+}

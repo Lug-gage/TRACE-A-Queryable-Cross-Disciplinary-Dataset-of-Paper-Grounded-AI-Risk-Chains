@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1622",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of human oversight of filtered data is semantically captured as operators lacking verification and blindly trusting filtered outputs.",
+    "reference": "Automated filtering pipelines operating without human oversight of rejected/accepted samples.",
+    "generated": "Operators lack independent cross-modal verification, blindly trusting SAE-filtered data as safe for training."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated describe harm to the model (safety/alignment degradation) through contaminated/unfiltered training data leading to harmful outputs.",
+    "reference": "Training data contaminated with toxic or biased multimodal content, degrading downstream model safety.",
+    "generated": "MLLMs trained on unfiltered harmful data produce hallucinations, biased outputs, and modality inconsistencies, undermining alignment."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from SAE missing cross-modal signals, via operator reliance on flawed filtering, to harmful data entering training and degrading safety is fully present.",
+    "reference": "SAE feature dictionaries miss cross-modal data quality signals, causing operators to rely on flawed filters that allow harmful multimodal data into training sets, degrading downstream model safety.",
+    "generated": "Sparse autoencoders produce incomplete feature decompositions obscuring cross-modal interactions, through operators relying on SAE-based data filtering, triggers blind trust without independent cross-modal verification, leading to harmful data training of MLLMs that produce hallucinations, biased outputs, and modality inconsistencies undermining alignment."
+  }
+}

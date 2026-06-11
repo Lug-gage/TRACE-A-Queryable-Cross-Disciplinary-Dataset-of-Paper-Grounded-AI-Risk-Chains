@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2497",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6509,
+    "reference": "Practitioners in low-resource settings lack independent validation data to detect prompt overfitting.",
+    "generated": "Low-resource domains lack interpretability tools and validation data to detect embedded heuristics in optimized prompts."
+  },
+  "impact": {
+    "similarity": 0.5007,
+    "reference": "Misclassification of minority or atypical cases exacerbates health disparities.",
+    "generated": "Silent misclassifications on out-of-distribution inputs lead to erroneous decisions and potential harm in critical low-resource applications."
+  },
+  "dose_response": {
+    "similarity": 0.7963,
+    "reference": "Opaque, uninterpretable prompts embed hidden heuristics, which in low-resource classification settings cause silent failures on out-of-distribution inputs, leading to misclassification and eroded trust.",
+    "generated": "Evolutionary prompt optimization generates opaque, uninterpretable prompts embedding hidden heuristics, which, when deployed by practitioners in low-resource domains lacking interpretability tools and validation data, leads to silent out-of-distribution misclassifications causing erroneous decisions and potential harm."
+  }
+}

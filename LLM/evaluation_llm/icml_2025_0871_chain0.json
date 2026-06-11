@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes system accuracy erosion from synthetic data misrepresentation, while reference describes human over-reliance and lack of oversight; edge-case conditions are common, but core sensitivity condition differs.",
+    "reference": "Over-reliance on AI perception without adequate human oversight in edge-case road conditions.",
+    "generated": "Perception system trained on synthetic rare-object samples misrepresents real-world rare concepts, eroding its accuracy in edge-case scenarios."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party includes pedestrians but omits cyclists and adds drivers; damage type includes collisions (and more severe outcomes) but reference only mentions increased collision risk.",
+    "reference": "Increased collision risk for vulnerable road users (pedestrians, cyclists) during rare-object encounters.",
+    "generated": "Misperception of rare hazards causes vehicle control failures, resulting in collisions, injuries, and fatalities for drivers and pedestrians."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from OOD synthetic samples to misclassification and then to collision risk in edge-case conditions is preserved, though wording differs.",
+    "reference": "Out-of-distribution synthetic rare-object samples cause perception misclassification, which in edge-case road conditions exposes drivers and pedestrians to increased collision risk.",
+    "generated": "Out-of-distribution synthetic tail-class samples from long-tail guidance diffusion models, through drivers and pedestrians relying on perception in edge-case road conditions, trigger misrepresentation of real rare concepts by the trained system, leading to misperception-caused vehicle control failures, collisions, injuries, and fatalities."
+  }
+}

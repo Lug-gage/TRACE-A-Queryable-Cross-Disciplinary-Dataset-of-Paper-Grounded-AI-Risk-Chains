@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions lack of independent validation (same outcome) but attributes the vulnerability to institutional conditioning to trust AI, whereas the reference attributes it to misinterpreting falsely low uncertainty as reliability – a related but different sensitivity condition.",
+    "reference": "Clinicians interpret falsely low uncertainty as reliability, reducing independent verification of model predictions.",
+    "generated": "Clinicians lack independent validation steps and are institutionally conditioned to trust AI outputs for rapid personalized therapy decisions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (cancer patients) and the damage type (ineffective or toxic drug regimens) are semantically present; the generated explicitly states the same harmful outcome as the reference.",
+    "reference": "Selection of ineffective or toxic therapies for cancer patients, causing patient harm and reduced survival.",
+    "generated": "Cancer patients receive ineffective or toxic drug regimens due to misguided therapeutic choices driven by overconfident dose-response predictions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc is the same: miscalibrated uncertainty estimates conceal distribution shift, leading to uncritical trust and lack of validation, which in turn causes misguided therapeutic choices and ineffective/toxic drug regimens for patients.",
+    "reference": "Miscalibrated uncertainty estimates conceal distribution shift failures, yielding falsely low uncertainty that leads clinicians to select ineffective or toxic therapies for cancer patients.",
+    "generated": "Miscalibrated uncertainty estimates concealing distribution shift failures in neural dose-response predictions, through clinical use for targeted cancer therapy, triggers uncritical trust and lack of validation, leading to misguided therapeutic choices and ineffective or toxic drug regimens for patients."
+  }
+}

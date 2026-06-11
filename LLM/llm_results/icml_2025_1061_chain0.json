@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1061",
+  "chain_index": 0,
+  "title": "QT-DoG Quantization-Aware Training for Domain Generalization",
+  "abstract": "A key challenge in Domain Generalization (DG) is preventing overfitting to source domains, which can be mitigated by finding flatter minima in the loss landscape. In this work, we propose Quantization-aware Training for Domain Generalization (QT-DoG) and demonstrate that weight quantization effectively leads to flatter minima in the loss landscape, thereby enhancing domain generalization. Unlike traditional quantization methods focused on model compression, QT-DoG exploits quantization as an implicit regularizer by inducing noise in model weights, guiding the optimization process toward flatter minima that are less sensitive to perturbations and overfitting. We provide both an analytical perspective and empirical evidence demonstrating that quantization inherently encourages flatter minima, leading to better generalization across domains. Moreover, with the benefit of reducing the model size through quantization, we demonstrate that an ensemble of multiple quantized models further yields superior accuracy than the state-ofthe-art DG approaches with no computational or memory overheads. Code is released at: https: //saqibjaved1.github.io/QT_DoG/.",
+  "impact": "In this paper, we presented our research work aiming to highlight the relation of model quantization for the domain generalization problem setup. In considering the societal impact of our approach, a few concerns emerge, such as performance degradation in extreme-level quantization. Although the proposed approach provides competitive performance compared to previous state-of-the-art models on domain generalization benchmarks, we note that performance slightly varies in extreme quantization cases. Our future work is aimed at a thorough analysis of this aspect in safety-critical applications, such as medical imaging, autonomous driving, or surveillance.",
+  "query_input": {
+    "scenario": "Quantized ensemble applied on source domain with spurious features",
+    "issue": "Balanced feature learning may inadvertently drop features that are rare but necessary for certain subpopulations.",
+    "hazard": [
+      "Flatter minima imposed by quantization-aware training can suppress critical features for minority subpopulations, degrading performance in under-represented domains."
+    ],
+    "exposure": [
+      "Patients and clinicians using AI diagnostic tools in demographically skewed settings"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians lack independent verification of AI outputs for underrepresented subgroups, enabling silent omission of critical diagnostic features.",
+    "impact": "Systematic misdiagnosis and delayed care for minority patients, worsening health disparities and causing preventable harm.",
+    "dose_response": "Flatter minima from quantization-aware training suppress critical minority features, through demographically skewed AI diagnostic tools, triggers clinicians' lack of verification for underrepresented subgroups, enabling silent omission and leading to systematic misdiagnosis, delayed care, and widened health disparities."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization-aware training flatter minima suppress critical minority features, causing AI diagnostics in demographically skewed settings to increase false negatives and widen health outcome gaps."
+    ],
+    "vulnerability": [
+      "Model quantization amplifies reliance on majority features, masking diagnostic signals for rare demographic groups.",
+      "Deployment in demographically skewed settings without continuous fairness monitoring magnifies underperformance risks."
+    ],
+    "impact": [
+      "Increased false negatives for minority patients, leading to delayed or incorrect medical interventions.",
+      "Widening health outcome gaps and systemic distrust in AI tools among marginalized communities."
+    ]
+  }
+}

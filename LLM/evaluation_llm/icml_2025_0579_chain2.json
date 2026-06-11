@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures the lack of quantization-aware testing and focus on full-precision, leaving backdoors undetected, directly matching the reference condition.",
+    "reference": "Audit protocols lack quantization-aware testing procedures, focusing exclusively on full-precision behavior.",
+    "generated": "Auditors rely on full-precision inspection, assuming it reliably predicts post-quantization behavior, leaving quantization-triggered backdoors undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated describes models deployed and causing specific harms (affected party and harm type present), but omits the invalidation of audit authority, a key part of the reference impact.",
+    "reference": "Certified 'safe' models become vehicles for harm after quantization, invalidating audit authority.",
+    "generated": "Malicious quantized models pass audit and are deployed, causing widespread insecure code generation, targeted content injection, or benign instruction refusal."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes ambiguity leading to trust in full-precision and backdoors surviving audit to cause harm, but it stops at harm generation and does not include the invalidation of audit authority that completes the reference causal chain.",
+    "reference": "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a security auditor evaluating a full-precision model before its quantized release exposes security auditors vetting models prior to quantization and distribution, leading to certified 'safe' models becoming vehicles for harm after quantization, invalidating audit authority.",
+    "generated": "Quantization mapping ambiguity, when models are vetted pre-quantization, causes auditors to trust full-precision inspection, enabling backdoors to survive audit and cause deployed models to generate insecure code, inject content, or refuse instructions."
+  }
+}

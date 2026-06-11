@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2175",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3832,
+    "reference": "Reliance on black-box RL optimization in production settings without real-time process audits propagates unseen errors.",
+    "generated": "Engineers lack redundant measurement methods and real-time calibration checks, so they trust automated NMR output that may mischaracterize real low-field spin relaxation."
+  },
+  "impact": {
+    "similarity": 0.7179,
+    "reference": "Faulty alloy batches lead to mechanical failures, recalls, and reputational damage.",
+    "generated": "Non-conforming alloy batches are produced, causing material scrap, production delays, and potential structural failures in end-use components."
+  },
+  "dose_response": {
+    "similarity": 0.9161,
+    "reference": "RL-trained pulse sequences mis-characterize spin relaxation, enabling miscalibrated pulse modulation, which when trusted without real-time audits by QC engineers, leads to faulty batches causing mechanical failures, recalls, and reputational damage.",
+    "generated": "RL-trained pulse sequences that mis-characterize spin relaxation under low-field conditions, through QC engineers using automated NMR, triggers their lack of redundant calibration, causing trust in inaccurate output and leading to non-conforming alloy batches, scrap, delays, and structural failures."
+  }
+}

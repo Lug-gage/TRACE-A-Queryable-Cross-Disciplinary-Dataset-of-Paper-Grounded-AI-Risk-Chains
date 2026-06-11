@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4964,
+    "reference": "Over-reliance on compressed ICL in high-stakes domains (e.g., medical imaging) without human oversight.",
+    "generated": "Users cannot inspect compressed cross-modal task vectors for bias, leaving them defenseless against hidden spurious correlations in assistant outputs."
+  },
+  "impact": {
+    "similarity": 0.4675,
+    "reference": "Systematic misdiagnosis for underrepresented demographic groups in medical VLM applications.",
+    "generated": "End-users ingest biased multimodal responses, amplifying stereotypes and producing discriminatory or incorrect downstream decisions."
+  },
+  "dose_response": {
+    "similarity": 0.6696,
+    "reference": "Compressed task vectors enable biased in-context learning, which in high-stakes domains without oversight leads to systematic misdiagnosis for underrepresented groups.",
+    "generated": "Shared cross-modal task vectors compressing multimodal examples propagate spurious correlations, and as end-users interact with VLM assistants using compressed ICL, their inability to inspect these vectors for bias leaves them defenseless, leading to biased responses that amplify stereotypes and discriminatory decisions."
+  }
+}

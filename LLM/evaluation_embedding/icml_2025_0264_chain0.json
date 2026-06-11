@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6275,
+    "reference": "Lack of diverse adversarial examples for all demographic groups during training amplifies per-class robustness gaps.",
+    "generated": "Image recognition models lack adversarial robustness to fairness-targeted perturbations, allowing small input changes to cause large group-wise disparities."
+  },
+  "impact": {
+    "similarity": 0.8669,
+    "reference": "Disproportionate misclassification of minority groups in autonomous driving leads to higher collision rates and public safety risks.",
+    "generated": "Disproportionate misclassification across demographic groups results in biased autonomous driving decisions and unequal safety outcomes for end-users."
+  },
+  "dose_response": {
+    "similarity": 0.8091,
+    "reference": "Crafting adversarial perturbations to compromise fairness amplifies per-class robustness gaps due to limited diverse examples, causing autonomous driving systems to misclassify minority pedestrians, raising collision risks.",
+    "generated": "Adversarial fairness perturbations causing disproportionate misclassification, through exposure to end-users of autonomous driving perception, trigger models' insufficient adversarial robustness to fairness-targeted perturbations, leading to biased autonomous driving decisions and unequal safety outcomes."
+  }
+}

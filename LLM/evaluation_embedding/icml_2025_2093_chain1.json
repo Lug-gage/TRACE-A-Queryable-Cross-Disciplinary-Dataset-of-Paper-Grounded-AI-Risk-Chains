@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2093",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6632,
+    "reference": "Annotator pool composition introduces demographic-dependent labeling noise, destabilizing fairness estimates.",
+    "generated": "Audited fairness measures fluctuate with annotator demographics, leaving users without stable defenses against biased moderation."
+  },
+  "impact": {
+    "similarity": 0.6796,
+    "reference": "Inconsistent moderation suppresses minority voices and distorts public discourse online.",
+    "generated": "Content from specific demographics is systematically suppressed or amplified, distorting platform discourse and user representation."
+  },
+  "dose_response": {
+    "similarity": 0.7963,
+    "reference": "Brittle auditing to annotator composition introduces demographic labeling noise, destabilizing fairness metrics, which in content moderation exposes users to biased flagging, suppressing minority voices.",
+    "generated": "Multiclass fairness auditing's brittle deviation estimates, through audited moderation of user content, trigger fairness-measure fluctuation with annotator demographics, leaving users defenseless, leading to systematic suppression or amplification of content from specific demographics, distorting platform discourse and representation."
+  }
+}

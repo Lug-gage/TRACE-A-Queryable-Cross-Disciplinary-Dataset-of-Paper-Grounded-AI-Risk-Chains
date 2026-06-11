@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1431",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6806,
+    "reference": "Adversaries with minimal skills can apply dataset prompts to any LLM lacking robust, dynamic defenses.",
+    "generated": "Deployed LLMs have brittle safety guardrails that fail against systematically optimized adversarial prompts, lacking robust refusal mechanisms."
+  },
+  "impact": {
+    "similarity": 0.6169,
+    "reference": "Surge in automated attacks causing mass-scale generation of harmful, manipulative content.",
+    "generated": "Malicious actors generate harmful content (e.g., hate speech, illegal instructions) at scale, harming users and undermining trust in LLM applications."
+  },
+  "dose_response": {
+    "similarity": 0.7317,
+    "reference": "Automated red teaming's jailbreak dataset release enables adversaries to apply prompts to unmonitored LLM applications, leading to mass-scale harmful content and undermined trust.",
+    "generated": "Automated red teaming's systematic identification of prompts that trigger harmful outputs, accessed by adversaries via the public benchmark to attack deployed LLMs, exploits brittle safety guardrails, leading to mass generation of harmful content that harms users and erodes trust."
+  }
+}

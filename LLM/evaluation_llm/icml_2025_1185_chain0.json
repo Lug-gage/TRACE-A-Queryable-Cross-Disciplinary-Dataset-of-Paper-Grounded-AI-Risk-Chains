@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1185",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions voice biometrics immutability and lack of revocation; reference states that seemingly desensitized outputs still contain extractable voiceprints — related but different sensitivity condition.",
+    "reference": "Seemingly desensitized cloud TTS outputs retain identifiable voiceprints extractable via transformation techniques.",
+    "generated": "Immutability of voice biometrics prevents revocation; individuals have no means to verify or enforce complete unlearning."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated describes cloning, impersonation, privacy breaches, and fraud, but omits the reference's specific affected party of deleted users being re‑identified.",
+    "reference": "Re-identification of deleted users from synthesized speech.",
+    "generated": "Residual voiceprints enable unauthorized voice cloning, leading to impersonation, privacy breaches, and potential financial fraud."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc replaces direct residual voiceprints with immutability preventing revocation as a cause; missing key steps of voiceprint extraction upon deletion request and re‑identification.",
+    "reference": "Incomplete speaker identity unlearning leaves residual voiceprint information in generated speech, which when individuals with enrolled voices request deletion from cloud TTS exposes them to voiceprint extraction, leading to re-identification and impersonation fraud.",
+    "generated": "Incomplete speaker identity unlearning in zero-shot TTS, through previously enrolled individuals, triggers the immutability of voice biometrics that prevents revocation and verification, leading to residual voiceprints that enable unauthorized cloning, impersonation, privacy breaches, and financial fraud."
+  }
+}

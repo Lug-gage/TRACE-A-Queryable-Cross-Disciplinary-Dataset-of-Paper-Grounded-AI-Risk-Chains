@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions unchecked spurious correlations from vector reliance, but omits the reference's specific safety-critical deployment context (e.g., autonomous driving) and misinterpretation.",
+    "reference": "Deployment in safety-critical settings (e.g., autonomous driving) where spurious visual-text correlations cause misinterpretation.",
+    "generated": "Reliance on compressed cross-modal task vectors without per-task tuning leaves spurious correlations unchecked, enabling performance degradation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated describes erroneous outputs and downstream failures, but lacks the reference's specific affected party (passenger) and damage type (harm from unexpected vehicle behaviors).",
+    "reference": "Passenger harm from unexpected autonomous vehicle behaviors when visual cues are misaligned with instructions.",
+    "generated": "Erroneous and unreliable multimodal task outputs, causing failures in downstream applications relying on VLM cross-modal transfer."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc of shared vectors propagating spurious correlations and unchecked deployment leading to failures is similar, but misses the safety-critical deployment and passenger harm links present in the reference.",
+    "reference": "Shared vectors transfer spurious correlations, which in safety-critical deployments without validation leads to passenger harm from unexpected autonomous vehicle behaviors.",
+    "generated": "Shared cross-modal task vectors compressing examples propagate spurious correlations, and when developers deploy VLMs without per-task tuning, unchecked reliance on these vectors degrades performance, leading to erroneous multimodal outputs and downstream failures."
+  }
+}

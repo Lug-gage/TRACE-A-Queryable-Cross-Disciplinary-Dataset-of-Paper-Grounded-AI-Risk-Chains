@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2512",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference vulnerability is tool-side bias limiting coverage; generated vulnerability is auditor-side lack of verification, a related but different sensitivity",
+    "reference": "Red-teaming tools relying on biased SMC sampling produce limited coverage of worst-case harmful outputs, missing novel unsafe prompts.",
+    "generated": "Red team auditors lack independent verification methods to detect sampling bias, fully trusting the tool's output to cover tail risks."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both the affected party (deployed LLMs/users) and the damage type (real-world harms/safety violations) are present",
+    "reference": "Undetected safety flaws persist in deployed LLMs, leading to real-world harms like toxic, biased, or manipulative content generation.",
+    "generated": "LLMs are deployed with undiscovered harmful behaviors, causing downstream safety violations and user harm."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc inserts auditors' lack of verification as a causal step, which is absent from the reference's direct chain of biased sampling causing undetected flaws",
+    "reference": "Biased SMC sampling in automated red-teaming tools limits coverage of harmful outputs, causing undetected safety flaws to persist and lead to real-world toxic or manipulative content generation.",
+    "generated": "Twisted SMC with miscalibrated importance weights, through automated red-teaming tools, triggers auditors' lack of independent verification, leading to undiscovered harmful LLM behaviors and downstream user harm."
+  }
+}

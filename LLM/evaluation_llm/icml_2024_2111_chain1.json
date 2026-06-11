@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2111",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes automated pipelines lacking human verification, generated describes designers lacking detection tools and trusting AI outputs; related but different sensitivity conditions",
+    "reference": "Automated design pipelines lack human verification steps for AI-generated assets.",
+    "generated": "Designers lack detection tools for poisoned models and inherently trust AI-generated outputs as original, safe-to-use content."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "affected party design firms and damage types legal liability and financial losses are present, though generated also adds loss of trust",
+    "reference": "Legal liability and financial losses for design firms using infringing AI outputs.",
+    "generated": "Unknowing incorporation of copyrighted images triggers legal action, financial penalties, and loss of client and market trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "generated arc includes poisoning to associations to infringement to penalties but inserts lack of detection/trust as an additional causal step and omits devaluation of original work from the reference",
+    "reference": "Stealthy poisoned training samples create triggered associations, which in downstream creative workflows expose designers to AI-generated infringements, leading to legal liability and devaluation of original work.",
+    "generated": "Backdoor data poisoning that creates trigger associations in diffusion models, through designers' use, triggers their lack of detection and trust, leading to unknowing copyright infringement, legal penalties, and lost client and market trust."
+  }
+}

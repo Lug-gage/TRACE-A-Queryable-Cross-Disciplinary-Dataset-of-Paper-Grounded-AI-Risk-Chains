@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0553",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7649,
+    "reference": "Content moderators over-rely on Shapley highlights, misinterpreting stochastic noise as genuine reasoning evidence.",
+    "generated": "Moderators’ over-reliance on Shapley highlights as ground-truth evidence of model reasoning, without training to interpret distributional uncertainty."
+  },
+  "impact": {
+    "similarity": 0.7171,
+    "reference": "Over-censorship of legitimate content or failure to remove harmful material, harming free expression and platform trust.",
+    "generated": "Erroneous moderation decisions at scale—unjust content removal and overlooked harmful material—eroding platform safety and user trust."
+  },
+  "dose_response": {
+    "similarity": 0.7326,
+    "reference": "Stochastic Shapley highlights entangle randomness and reasoning; moderators treating them as definitive evidence misinterpret noise, causing over-censorship or missed harmful content that harms free expression.",
+    "generated": "Stochastic Shapley values’ distributional explanations confuse moderators reviewing flagged content, triggering over-reliance on highlights as definitive evidence without uncertainty training, causing erroneous moderation at scale, eroding platform safety and user trust."
+  }
+}

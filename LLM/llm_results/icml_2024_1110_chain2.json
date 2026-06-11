@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1110",
+  "chain_index": 2,
+  "title": "RL-CFR Improving Action Abstraction for Imperfect Information Extensive-Form Games with Reinforcement Learnin",
+  "abstract": "Effective action abstraction is crucial in tackling challenges associated with large action spaces in Imperfect Information Extensive-Form Games (IIEFGs). However, due to the vast state space and computational complexity in IIEFGs, existing methods often rely on fixed abstractions, resulting in sub-optimal performance. In response, we introduce RL-CFR, a novel reinforcement learning (RL) approach for dynamic action abstraction. RL-CFR builds upon our innovative Markov Decision Process (MDP) formulation, with states corresponding to public information and actions represented as feature vectors indicating specific action abstractions. The reward is defined as the expected payoff difference between the selected and default action abstractions. RL-CFR constructs a game tree with RL-guided action abstractions and utilizes counterfactual regret minimization (CFR) for strategy derivation. Impressively, it can be trained from scratch, achieving higher expected payoff without increased CFR solving time. In experiments on Heads-up No-limit Texas Hold’em, RL-CFR outperforms ReBeL’s replication and Slumbot, demonstrating significant winrate margins of 64 ± 11 and 84 ± 17 mbb/hand, respectively.",
+  "impact": "This paper presents work whose goal is to advance the field of Imperfect Information Extensive-Form Games. There are many potential societal consequences of our work, and the most immediate risk posed by out work is its potential for cheating in poker games. RL-CFR can compute a strategy for arbitrary situations in seconds. For this reason, we have decided not to release the RL-CFR code for HUNL. We instead open source RL-CFR’s implementation of PRE- FLOP43, a poker game with huge action space used to help researchers conduct IIEFG and RL-CFR studies.",
+  "query_input": {
+    "scenario": "Automated negotiation agents in electronic commerce",
+    "issue": "Abstraction-induced strategy errors cause unfair bargaining outcomes, damaging business relationships and market efficiency.",
+    "hazard": [
+      "Dynamic action abstraction in RL-CFR introduces approximation error that degrades regret minimization guarantees in extensive-form games."
+    ],
+    "exposure": [
+      "Businesses deploying RL-CFR agents for automated contract negotiation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Businesses rely on RL-CFR agents' optimality guarantees without verifying abstraction error propagation, allowing undetected strategic bias in negotiation.",
+    "impact": "Unfair bargaining outcomes damage business relationships and market efficiency, causing financial losses and eroded trust in automated trading.",
+    "dose_response": "Dynamic action abstraction's approximation error degrades regret minimization, through deployment in automated contract negotiation, triggers unverified optimality reliance allowing undetected strategic bias, leading to unfair bargaining outcomes that damage relationships and market efficiency, incurring financial losses and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Abstraction errors in RL-CFR cause erratic negotiation offers, exposing counterparties to unfair outcomes that erode business relationships and market participation."
+    ],
+    "vulnerability": [
+      "Businesses deploy negotiation agents without understanding their failure modes under approximation error.",
+      "Asymmetric information about agent capability leads to exploitation of counterparties."
+    ],
+    "impact": [
+      "Breakdown of long-term supplier relationships due to perceived unfairness.",
+      "Reduced market participation as smaller firms avoid automated negotiation."
+    ]
+  }
+}

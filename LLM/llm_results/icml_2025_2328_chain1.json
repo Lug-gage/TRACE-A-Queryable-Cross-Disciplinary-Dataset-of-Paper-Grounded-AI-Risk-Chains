@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2328",
+  "chain_index": 1,
+  "title": "Cradle Empowering Foundation Agents towards General Computer Control",
+  "abstract": "Despite the success in specific scenarios, existing foundation agents still struggle to generalize across various virtual scenarios, mainly due to the dramatically different encapsulations of environments with manually designed observation and action spaces. To handle this issue, we propose the General Computer Control (GCC) setting to restrict foundation agents to interact with software through the most unified and standardized interface, i.e., using screenshots as input and keyboard and mouse actions as output. Then we introduce CRADLE, a modular and flexible LMM-powered framework, as a preliminary attempt towards GCC. Enhanced by six key modules: Information Gathering, Self-Reflection, Task Inference, Skill Curation, Action Planning, and Memory, CRA- DLE is able to understand input screenshots and output executable code for low-level keyboard and mouse control after high-level planning, so that CRADLE can interact with any software and complete long-horizon complex tasks without relying on any built-in APIs. Experimental results show that CRADLE exhibits remarkable generalizability and impressive performance across four previously unexplored commercial video games (Red Dead Redemption 2, Cities: Skylines, Stardew Valley and Dealer’s Life 2), five software applications (Chrome, Outlook, Feishu, Meitu and Cap- Cut), and a comprehensive benchmark, OSWorld. With a unified interface to interact with any software, CRADLE greatly extends the reach of foundation agents thus paving the way for generalist agents. Video demos and code can be found at https://baai-agents.github.io/Cradle.",
+  "impact": "CRADLE holds great potential to improve effective general computer task completion and boost research and deployment of foundation agents. However, there are some risks associated with its misuse or unintended consequences. Below, we outline the potential challenges and safeguards necessary to ensure responsible deployment. Development of Game Cheats. One of the risks associated with CRADLE is its potential misuse in the development of game cheats or bots that could undermine the integrity of online gaming environments. Such misuse could lead to unfair advantages for certain players, disrupt the gaming experience for others, and potentially harm the reputation of game developers. To mitigate this risk, safeguards such as anti-cheat mechanisms and ethical guidelines for the use of AI in gaming should be implemented. Incorrect Operations and Harmful Failures. The autonomous nature of CRADLE means that there is a risk of incorrect or unintended operations, particularly in critical software applications. For example, a malfunctioning agent could inadvertently delete important files, send incorrect emails, or perform other actions with harmful consequences. To address this, robust error-handling mechanisms, human oversight, and fail-safes should be integrated into the system to ensure that it operates safely and reliably. Ethical and Privacy Concerns. The deployment of CRA- DLE raises ethical and privacy concerns, particularly in scenarios where the agent interacts with sensitive data or performs tasks on behalf of users. For example, an agent operating in a healthcare setting might have access to confidential patient information, raising concerns about data security and privacy. To address these issues, CRADLE should be designed with strong data protection measures, including encryption, access controls, and compliance with relevant regulations. Negative Agent Behavior. There is a risk that CRADLE could exhibit unintended or undesirable behavior, particularly in complex or unpredictable environments. For example, an agent might develop strategies that are effective but unethical, such as exploiting loopholes in software or engaging in deceptive practices. To mitigate this risk, CRADLE should be equipped with ethical guidelines and constraints that prevent harmful behavior. Additionally, ongoing monitoring and evaluation of the agent’s actions should be conducted to ensure that it operates in alignment with human values.",
+  "query_input": {
+    "scenario": "Automated data engineering (SQL/Python generation, GUI ops)",
+    "issue": "Agent generates erroneous data transformations or queries, corrupting or leaking data.",
+    "hazard": [
+      "Autonomous LMM-powered agents that plan and execute multi-step GUI actions via code generation and self-reflection, enabling system-wide state changes at scale without real-time human review."
+    ],
+    "exposure": [
+      "Data analysts and engineers using agents for automated pipeline execution."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Data analysts and engineers lack real-time validation mechanisms for agent-generated code, enabling unchecked execution of erroneous data transformations.",
+    "impact": "Enterprise-scale data corruption and leakage, leading to irreversible loss of data integrity and flawed downstream analytics.",
+    "dose_response": "Autonomous LMM-powered agents executing multi-step GUI code without human review, through data analysts using them for pipeline automation, trigger lack of real-time validation for generated code, leading to enterprise-scale data corruption, leakage, irreversible data integrity loss, and flawed downstream analytics."
+  },
+  "reference": {
+    "dose_response": [
+      "Autonomous agents' code generation for SQL/Python pipelines enables automated data engineering, and within the scenario of erroneous transformations, non-experts' blind reliance on agent output leads to data corruption, invalid analytics, and exposure of protected health information."
+    ],
+    "vulnerability": [
+      "Non-expert users cannot detect subtle errors in generated SQL/Python code, relying blindly on agent output."
+    ],
+    "impact": [
+      "Data corruption, invalid analytics, and exposure of protected health information."
+    ]
+  }
+}

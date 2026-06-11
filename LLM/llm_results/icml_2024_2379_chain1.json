@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2379",
+  "chain_index": 1,
+  "title": "Purify Unlearnable Examples via Rate-Constrained Variational Autoencoders",
+  "abstract": "Unlearnable examples (UEs) seek to maximize testing error by making subtle modifications to training examples that are correctly labeled. Defenses against these poisoning attacks can be categorized based on whether specific interventions are adopted during training. The first approach is training-time defense, such as adversarial training, which can mitigate poisoning effects but is computationally intensive. The other approach is pre-training purification, e.g., image short squeezing, which consists of several simple compressions but often encounters challenges in dealing with various UEs. Our work provides a novel disentanglement mechanism to build an efficient pre-training purification method. Firstly, we uncover rate-constrained variational autoencoders (VAEs), demonstrating a clear tendency to suppress the perturbations in UEs. We subsequently conduct a theoretical analysis for this phenomenon. Building upon these insights, we introduce a disentangle variational autoencoder (D- VAE), capable of disentangling the perturbations with learnable class-wise embeddings. Based on this network, a two-stage purification approach is naturally developed. The first stage focuses on roughly eliminating perturbations, while the second stage produces refined, poison-free results, ensuring effectiveness and robustness across various scenarios. Extensive experiments demonstrate the remarkable performance of our method across CIFAR-10, CIFAR-100, and a 100-class ImageNet-subset. Code is available at https: //github.com/yuyi-sd/D-VAE.",
+  "impact": "In summary, our paper presents a effective defense strategy against unlearnable examples (UEs), which aim to undermine the overall performance on validation and test datasets by introducing imperceptible perturbations to training examples with accurate labels. UEs are viewed as a promising avenue for data protection, particularly to thwart unauthorized use of data that may contain proprietary or sensitive information. However, these protective methods pose challenges to data exploiters who may interpret them as potential threats to a company’s commercial interests. Consequently, our method can be employed for both positive usage, such as neutralizing malicious data within a training set, and negative purpose, including thwarting attempts at preserving data privacy. Our proposed method not only serves as a powerful defense mechanism but also holds the potential to be a benchmark for evaluating existing attack methods. We believe that our paper contributes to raising awareness about the vulnerability of current data protection techniques employing UEs. This, in turn, should stimulate further research towards developing more reliable and trustworthy data protection techniques.",
+  "query_input": {
+    "scenario": "Pre-training data curation with generative purification models",
+    "issue": "Stochastic purification transforms alter benign data distribution, degrading model generalization on clean inputs.",
+    "hazard": [
+      "Purification mechanisms introduce a perturbation suppression step that can be bypassed or overfitted, leaving models vulnerable to unseen or adaptive poisoning attacks."
+    ],
+    "exposure": [
+      "Researchers using generative purification to sanitize large-scale web-crawled pre-training corpora."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Purification models overfit to known perturbation patterns, reducing their ability to generalize to adaptive attacks while distorting benign data distribution.",
+    "impact": "Poisoned examples survive purification, causing elevated test error and compromised downstream model integrity.",
+    "dose_response": "Purification mechanisms introducing a bypassable perturbation suppression step, through their use on large-scale web-crawled pre-training corpora, triggers overfitting to known perturbation patterns and distortion of benign data, leading to poisoned examples surviving purification, elevated test error, and compromised model integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "Stochastic purification alters benign data distribution, degrading model generalization, which in pre-training curation leads to biased foundation models and reputational damage."
+    ],
+    "vulnerability": [
+      "Lack of standardized benchmarks for purification quality allows silent degradation of data utility.",
+      "Researchers prioritize security metrics over performance, inadvertently accepting models with reduced real-world accuracy."
+    ],
+    "impact": [
+      "Deployment of biased or underperforming foundation models in downstream tasks like hiring or medical diagnosis.",
+      "Reputational damage to research institutions when flawed models cause public harm."
+    ]
+  }
+}

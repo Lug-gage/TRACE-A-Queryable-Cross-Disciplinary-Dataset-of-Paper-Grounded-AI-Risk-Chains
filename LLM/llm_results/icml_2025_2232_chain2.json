@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2232",
+  "chain_index": 2,
+  "title": "Learning Classifiers That Induce Markets",
+  "abstract": "When learning is used to inform decisions about humans, such as for loans, hiring, or admissions, this can incentivize users to strategically modify their features, at a cost, to obtain positive predictions. The common assumption is that the function governing costs is exogenous, fixed, and predetermined. We challenge this assumption, and assert that costs emerge as a result of deploying a classifier. Our idea is simple: when users seek positive predictions, this creates demand for important features; and if features are available for purchase, then a market will form, and competition will give rise to prices. We extend the strategic classification framework to support this notion, and study learning in a setting where a classifier can induce a market for features. We present an analysis of the learning task, devise an algorithm for computing market prices, propose a differentiable learning framework, and conduct experiments to explore our novel setting and approach.",
+  "impact": "Our paper sets out to study the interplay between learning classifiers and the markets this process can facilitate. We believe that the impact of prediction on economic outcomes can be significant and widespread when machine learning tools are used in social contexts. In the market model we propose, the choice of classifier is modeled as affecting both users and sellers: it inadvertently determines who must invest to be classified as positive (i.e., receive the loan or get the job), what this will cost, and which sellers will profit. These forces arise naturally through how the market coordinates supply and demand. But whereas the mechanics of conventional markets are well understood both in theory and practice, we believe that the role of learning in markets, and the impact that learning can have, has so far been insufficiently explored. An understanding of how learning creates and affects markets can be used to advance efficient and fair trade, foster equal opportunity, and promote social welfare. It can also be used to gain insight as to how learning-driven markets should be regulated and by what means. But such knowledge and tools should be used with care, as they can potentially serve to drive markets to undesired outcomes. One example is economic inequity, which can be exacerbated by learning, as our results suggest can happen. Another example is information asymmetry: Our stylized market model assumes perfect information and efficient prices. But in a reality where learned models have access to an unparalleled amount of data-certainly more than is accessible to users or sellers-the learning system gains a distinct informational advantage. It is widely recognized that such settings can lead to the exploitation of consumers and even to market collapse (e.g., Akerlof, 1978). We hope that our work serves to encourage fruitful discussion on these important topics. It is also important to note that the market model we study is simple and draws on many assumptions, such as unlimited supply, a fixed number of exclusive sellers, and no externalities. Results regarding market outcomes, both theoretical and empirical, should therefore be taken under this light. At the same time, we hope this motivates researchers in both machine learning and economics to deepen our understanding of learning and markets in broader and more realistic economic settings.",
+  "query_input": {
+    "scenario": "Content recommendation platforms with market for engagement-optimizing features",
+    "issue": "Creators invest in engagement-optimizing features that degrade content authenticity, harming user experience.",
+    "hazard": [
+      "Classifier-induced feature markets where learning and pricing are co-optimized incentivize agents to invest in score- rather than quality-improving modifications, undermining model validity."
+    ],
+    "exposure": [
+      "Content creators and consumers on social media platforms"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content creators’ income and audiences’ attention depend on engagement-optimized algorithmic curation, offering no alternative to resist score-chasing.",
+    "impact": "Pervasive inauthentic content degrades user experience, reduces trust, and erodes platform user base and revenue.",
+    "dose_response": "Co-optimized learning and pricing in classifier-induced feature markets incentivize score-chasing modifications, which, on social media platforms, leave creators with no alternative but to invest in engagement-optimized curation, driving inauthentic content that degrades user experience and erodes platform trust and revenue."
+  },
+  "reference": {
+    "dose_response": [
+      "Classifier-induced feature markets incentivize engagement-optimizing modifications, exposing content creators and consumers to low-quality clickbait, leading to degraded user experience and erosion of trust in information sources."
+    ],
+    "vulnerability": [
+      "Recommendation algorithms optimize for engagement metrics easily gamed by clickbait and sensationalism.",
+      "Platforms rely on user engagement data that does not capture content authenticity or user well-being."
+    ],
+    "impact": [
+      "User experience degrades as low-quality clickbait crowds out authentic content.",
+      "Public discourse is polluted, increasing polarization and eroding trust in information sources."
+    ]
+  }
+}

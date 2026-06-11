@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2064",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes absence of verification protocols; generated describes inherent lack of permutation invariance, a related but different condition.",
+    "reference": "Absence of formal compatibility verification and standardized evaluation protocols for task vector sharing enables silent task interference.",
+    "generated": "Transformer attention heads lack native permutation invariance, so task vectors remain misaligned across model versions without specialized realignment methods."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Downstream model reuse covers downstream applications, but damage is research productivity not research validity, and scientific literature not mentioned.",
+    "reference": "Erroneous model outputs from misaligned task vectors propagate into scientific literature and downstream applications, undermining research validity.",
+    "generated": "Shared task vectors produce task interference and erroneous outputs, disrupting downstream model reuse and research productivity."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes misaligned weight permutations distorting representations and omits attentive misalignment and verification, a different causal mechanism.",
+    "reference": "Misaligned task vectors produce attentive misalignment, enabling task interference; when researchers share them without verification, erroneous outputs propagate into literature, undermining validity.",
+    "generated": "Misaligned weight permutations during model merging or task vector transfer distort representations, through researchers sharing task vectors, triggers attention heads' lack of permutation invariance, leaving task vectors misaligned, leading to task interference and errors disrupting model reuse and research productivity."
+  }
+}

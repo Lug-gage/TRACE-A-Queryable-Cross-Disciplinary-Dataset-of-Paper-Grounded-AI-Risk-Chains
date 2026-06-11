@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1649",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "shopper trust and inability to detect distortions covered, but retailer trust and verification lack omitted",
+    "reference": "Consumers and retailers trust generated fashion images as accurate representations without mechanisms to verify body type fidelity.",
+    "generated": "Shoppers' default trust in catalog authenticity and inability to detect AI-generated anatomical distortions allows biased garment representations to influence purchase decisions."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "reference describes financial loss and brand damage to retailers; generated describes shopper dissatisfaction and exclusionary norms",
+    "reference": "Financial loss from returns and brand damage due to misrepresented clothing on underrepresented bodies.",
+    "generated": "Underrepresented body type shoppers purchase ill-fitting clothing, causing dissatisfaction, increased returns, and reinforcement of exclusionary beauty norms."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal chain from biased generation through trust to returns and exclusionary norms is mostly present, but financial loss link is missing",
+    "reference": "Masked diffusion transformer-based pose-conditioned generation yields biased anatomically implausible images, which online shoppers trust, causing financial loss from returns and reinforcing narrow beauty standards against underrepresented bodies.",
+    "generated": "Masked diffusion transformer-based pose-conditioned generation of anatomically biased images, through online shoppers viewing AI-generated fashion models, triggers their default trust and inability to detect distortions, leading to ill-fitting clothing purchases by underrepresented body types, dissatisfaction, returns, and exclusionary norms."
+  }
+}

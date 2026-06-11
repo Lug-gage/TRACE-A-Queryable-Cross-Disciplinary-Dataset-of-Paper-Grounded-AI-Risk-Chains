@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0427",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7023,
+    "reference": "Auditors lack technical means to independently verify certified explanation metrics.",
+    "generated": "Auditors lack independent access to model internals and must treat probabilistic certification as sufficient evidence of explanation fidelity."
+  },
+  "impact": {
+    "similarity": 0.7222,
+    "reference": "Unsafe AI systems receive regulatory approval based on misleading fidelity guarantees.",
+    "generated": "Flawed AI systems gain regulatory approval, propagating discriminatory or unsafe decisions across high-stakes domains."
+  },
+  "dose_response": {
+    "similarity": 0.623,
+    "reference": "Because probabilistic certification fails to guarantee fidelity, auditors' reliance on certified metrics leads to approval of unsafe systems, causing post-deployment failures that erode institutional trust.",
+    "generated": "Black-box explanation methods that produce unfaithful explanations, through auditors relying on certified metrics, trigger auditors to treat probabilistic certification as sufficient evidence, leading to regulatory approval of flawed AI systems propagating discriminatory or unsafe decisions across high-stakes domains."
+  }
+}

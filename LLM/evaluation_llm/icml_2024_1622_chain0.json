@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1622",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that approximate unlearning leaves personal data recoverable by adversarial prompts, with in-context unlearning being a specific form.",
+    "reference": "Approximate unlearning in LLMs leaves personal data recoverable by adversarial prompts.",
+    "generated": "Approximate in-context unlearning leaves residual personal data intact in the model, enabling adversarial recovery of supposedly erased information."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (data subjects) is present, but generated mentions GDPR Right to be Forgotten violations and legal compliance, not explicitly GDPR penalties as in reference.",
+    "reference": "Data subjects' right to be forgotten violated, leading to GDPR penalties.",
+    "generated": "Data subjects suffer privacy breaches and GDPR Right to be Forgotten violations, undermining legal compliance and user trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from adversarial prompts recovering residual data, exposing data subjects, leading to privacy violations and trust erosion matches the reference arc.",
+    "reference": "Adversarial prompts enable recovery of unlearned personal data, which in the deployment of prompt-unlearned LLMs for GDPR data removal exposes data subjects, leading to GDPR violations and user trust erosion.",
+    "generated": "Adversarial prompts recover residual knowledge after approximate unlearning, through exposed data subjects whose erased data remains extractable, triggering residual personal data intact, enabling adversarial recovery and leading to privacy breaches, Right to be Forgotten violations, and undermined trust."
+  }
+}

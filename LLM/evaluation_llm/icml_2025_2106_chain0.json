@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2106",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes over-reliance on AI without verification; generated describes lack of means to independently verify, a related but different sensitivity condition.",
+    "reference": "Users over-rely on AI answers without verification.",
+    "generated": "Viewers' lack of means to independently verify model-generated answers leaves them susceptible to accepting hallucinated responses."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated mentions misinterpretation of video content and dissemination of false information, covering both the affected party (viewers) and the damage type (false information spread).",
+    "reference": "False information spreads through users trusting the model as authoritative.",
+    "generated": "Incorrect answers mislead viewers, causing misinterpretation of video content and potential dissemination of false information."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc inserts 'lack of independent verification' triggered by model amplification, while reference has amplification directly producing hallucinated answers that mislead viewers; the arc is different, not covered.",
+    "reference": "Continuous attention and sticky memories amplify errors, producing hallucinated answers that mislead viewers asking temporal queries about archived videos, leading to false information spread and user disengagement.",
+    "generated": "Continuous attention and sticky memories amplifying errors over time, through viewers querying long archived videos, triggers lack of independent verification that leaves them susceptible to hallucinated answers, leading to misinterpretation and dissemination of false information."
+  }
+}

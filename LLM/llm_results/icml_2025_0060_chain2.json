@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0060",
+  "chain_index": 2,
+  "title": "A Reasoning-Based Approach to Cryptic Crossword Clue Solving",
+  "abstract": "Cryptic crossword clues are challenging language tasks for which new test sets are released daily by major newspapers on a global basis. Each cryptic clue contains both the definition of the answer to be placed in the crossword grid (in common with regular crosswords), and ‘wordplay’ that proves that the answer is correct (i.e. a human solver can be confident that an answer is correct without needing crossing words as confirmation). This work describes an LLM-based reasoning system built from open-licensed components that solves cryptic clues by (i) hypothesising answers; (ii) proposing wordplay explanations; and (iii) using a verifier system that operates on codified reasoning steps. Overall, this system establishes a new state-of-the-art performance on the challenging Cryptonite dataset of clues from The Times and The Telegraph newspapers in the UK. Because each proved solution is expressed in Python, interpretable wordplay reasoning for proven answers is available for inspection.",
+  "impact": "Societal impact There are many current cryptic crossword enthusiasts that would potentially not welcome AI-enabled solvers to ‘take over’ their favourite pastime. In particular, when taken further, this line of work would potentially disruptive to public leaderboards that rank people according to the time taken to solve puzzles 100% correctly. More generally, this paper presents work whose goal is to advance the field of Machine Learning. The techniques developed in this work extend work done in other domains for machine reasoning to a broader field that includes NLP/NLU tasks. That being said, we do not feel that there are significant societal consequences of our work that require specific highlighting. Potential bias in favour of native English speakers While the English language has a high capacity for ambiguity and wordplay overall, making this type of crossword possible, cryptic crosswords also exist in other languages (Wikipedia contributors, 2024). In addition, although solving cryptic crossword answers may be very difficult (even for native English speakers), understanding the answer from given wordplay is much simpler. Reproducibility Datasets and Code The following outline the efforts that have been made to ensure reproducibility: • Datasets - Resources such as dictionaries used, and the Cryptonite and Wordplay datasets are available online, via the sources referenced in the main text. • System Code & LLM Prompts - Python code for the complete end-to-end system is available under an Apache 2 license at https://github.com/mdda/ cryptic-crossword-reasoning-verifier. The prompting required for the LLM formalisation are also included in the Appendix. • Models used / training - The models referenced in this work are available with open weights (the Gemma2 mod- els), or via API (the Gemini-Flash model, with a pinned version number). The training procedures are outlined in the text, and therefore have some degree of reproducibility. The fine-tuned Gemma2 models will be made available in any case, on publication. Computational requirements The Gemini LLM was accessed by API, and the total spend to create the results in this paper was less than $100 USD, with each prompt round-trip taking around 5 seconds. The Fine-Tuning of the Gemma2 9B model took around 24 hours for a full Cryptonite training run, and 8 hours for the Wordplay dataset runs. Thus, the single-GPU model runs totalled less than $50 USD.",
+  "query_input": {
+    "scenario": "Deployment of interpretable LLM reasoning for educational puzzle training",
+    "issue": "Stepwise explanations confidently presented but contain hidden logical leaps",
+    "hazard": [
+      "Stepwise LLM reasoning verifier generates plausible but incorrect reasoning chains, leading to overconfident acceptance of wrong answers."
+    ],
+    "exposure": [
+      "Students and learners relying on AI to explain crossword solving techniques"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Learners' limited crossword-solving expertise and trust in code-formatted reasoning prevent detection of hidden logical leaps.",
+    "impact": "Students internalize flawed wordplay logics, degrading puzzle-solving skills and spreading erroneous techniques among peers.",
+    "dose_response": "Overconfidently accepted plausible but incorrect reasoning chains from the LLM verifier, through students relying on AI explanations, trigger limited expertise and trust in code-formatted reasoning to miss logical leaps, leading to internalized flawed wordplay, degraded skills, and spreading erroneous techniques."
+  },
+  "reference": {
+    "dose_response": [
+      "Verifier-generated plausible but incorrect chains enable overconfident acceptance, causing students to uncritically internalize flawed reasoning, reducing educational value."
+    ],
+    "vulnerability": [
+      "Students uncritically accept LLM stepwise reasoning, internalizing flawed logic as correct problem-solving methodology."
+    ],
+    "impact": [
+      "Erroneous learning undermines genuine puzzle-solving skills and reduces educational value."
+    ]
+  }
+}

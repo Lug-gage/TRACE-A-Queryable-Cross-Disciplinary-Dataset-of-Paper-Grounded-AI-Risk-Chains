@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1766",
+  "chain_index": 0,
+  "title": "Sparse and Structured Hopfield Networks",
+  "abstract": "Modern Hopfield networks have enjoyed recent interest due to their connection to attention in transformers. Our paper provides a unified framework for sparse Hopfield networks by establishing a link with Fenchel-Young losses. The result is a new family of Hopfield-Fenchel-Young energies whose update rules are end-to-end differentiable sparse transformations. We reveal a connection between loss margins, sparsity, and exact memory retrieval. We further extend this framework to structured Hopfield networks via the SparseMAP transformation, which can retrieve pattern associations instead of a single pattern. Experiments on multiple instance learning and text rationalization demonstrate the usefulness of our approach.",
+  "impact": "Hopfield networks are increasingly relevant for practical applications and not only as theoretical models. While our work is mostly a theoretical advancement, promising experimental results signal potentially wider impact. Sparse HFY networks are applicable in the same scenarios where modern Hopfield networks would be, and we do not foresee any specific societal consequences of sparse transformations or exact retrieval in such cases. In the structured case, the practicioner has more hands-on control for encoding inductive biases through the design of a factor graph and the choice of its parameters (e.g., k). These choices may in turn reflect human biases and have societal implications: for example, contiguous rationales might be well suited for English but not for other languages. We encourage care when designing such methods for practical applications.",
+  "query_input": {
+    "scenario": "Deployment of Hopfield-based multiple instance learning in medical diagnosis",
+    "issue": "Overconfident exact retrieval reinforces incorrect pattern associations from biased training data",
+    "hazard": [
+      "Sparse Hopfield networks with Fenchel-Young loss margins produce overconfident, miscalibrated associative retrievals under input perturbations and distribution shifts."
+    ],
+    "exposure": [
+      "Radiologists using AI-assisted diagnostic tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists rely on definitive-appearing AI outputs without access to calibration signals, preventing detection of overconfident incorrect pattern matches.",
+    "impact": "Reinforced incorrect pattern associations cause systematic diagnostic errors, wrong treatments, and patient harm at population scale.",
+    "dose_response": "Sparse Hopfield-Fenchel-Young networks producing overconfident, miscalibrated retrievals under shifts, through radiologists using AI diagnostic tools, trigger reliance on definitive-appearing outputs without calibration, preventing detection of overconfident incorrect matches, leading to reinforced incorrect associations, diagnostic errors, wrong treatments, and patient harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Overconfident sparse Hopfield retrievals cause radiologists to over-rely on AI suggestions, leading to increased misdiagnosis rates and patient harm."
+    ],
+    "vulnerability": [
+      "Physicians over-rely on overconfident AI diagnostic suggestions, neglecting contradictory clinical evidence."
+    ],
+    "impact": [
+      "Increased misdiagnosis rates, patient harm, and erosion of trust in diagnostic AI."
+    ]
+  }
+}

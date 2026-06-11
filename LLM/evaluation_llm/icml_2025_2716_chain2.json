@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2716",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference vulnerability is about pipelines accepting surrogates without online validation; generated describes limited expertise enabling misplaced trust—related but a different sensitivity condition.",
+    "reference": "Production pipelines accept surrogates without online validation or drift monitoring.",
+    "generated": "Limited deep learning expertise among engineers precludes critical evaluation of LLM-chosen PINN settings, enabling misplaced trust in unstable surrogates."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (designs) and damage types (performance failures, costly rework) semantically cover the reference's product failures and financial loss.",
+    "reference": "Unreliable surrogate predictions cascade into design optimization, causing product failures and financial loss.",
+    "generated": "Optimized designs become physically unreliable, causing performance failures, safety risks, and costly rework."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc omits the critical link of integration without online validation and replaces it with a different causal path through limited expertise and misplaced trust, altering the mechanism.",
+    "reference": "LLM-driven automated PINN design amplifies training instability, which when integrated into design workflows without online validation yields unreliable surrogates, causing product failures and financial loss.",
+    "generated": "LLM-driven automated PINN design amplifies training instability and inaccuracy, yielding physically unreliable surrogates, through engineers using them in optimization, triggers limited expertise fostering misplaced trust, leading to physically unreliable designs causing performance failures, safety risks, and costly rework."
+  }
+}

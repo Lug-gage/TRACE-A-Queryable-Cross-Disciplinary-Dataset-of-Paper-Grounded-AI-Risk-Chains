@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6581,
+    "reference": "Clinician over-reliance on AI diagnostic outputs without sufficient rare-disease expertise to detect errors.",
+    "generated": "Radiologists' and AI systems' inability to detect subtle synthetic anatomical implausibilities due to scarce real rare-disease reference data."
+  },
+  "impact": {
+    "similarity": 0.5742,
+    "reference": "Delayed or incorrect treatment for patients with rare diseases, worsening health outcomes.",
+    "generated": "False-positive diagnoses trigger unnecessary invasive procedures and anxiety; false-negative diagnoses delay critical treatment, worsening patient outcomes."
+  },
+  "dose_response": {
+    "similarity": 0.7141,
+    "reference": "Misrepresented rare-disease images cause false positives or negatives, which in AI-assisted screening exposes radiologists and patients to delayed or incorrect treatment.",
+    "generated": "Diffusion models generating out-of-distribution rare-disease samples, through AI-assisted screening of rare diseases, trigger radiologists' and AI systems' inability to detect subtle anatomical implausibilities from scarce reference data, leading to false-positive invasive procedures and false-negative treatment delays."
+  }
+}

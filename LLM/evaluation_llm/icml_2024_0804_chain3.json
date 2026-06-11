@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both highlight developers' lack of validation leading to hidden errors, with generated capturing unsupervised self-training as the mechanism.",
+    "reference": "Developers rapidly adapting tasks using compressed in-context examples without validating denoised outputs.",
+    "generated": "Unsupervised self-training without ground-truth validation blinds developers to hidden visual error amplification."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "downstream task failures are present in both, with generated additionally mentioning trust erosion but not omitting the core damage.",
+    "reference": "Cascading errors in downstream applications due to corrupted example-based learning.",
+    "generated": "Deployed models produce unreliable predictions in OOD scenarios, eroding trust in LMM-based adaptation and causing downstream task failures."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "both describe error amplification from denoising, lack of validation blinding developers, and resulting downstream failures.",
+    "reference": "In-context denoising on compressed examples may amplify errors, enabling corruption of learned behaviors, which exposes developers to flawed models; combined with skipped validation, this leads to cascading downstream errors.",
+    "generated": "In-context denoising via self-training transition matrices amplifies hidden visual errors in MLLMs, through LMM-based task adaptation, triggers unsupervised self-training without ground-truth validation, blinding developers to error amplification, leading to unreliable OOD predictions, eroding trust and causing downstream failures."
+  }
+}

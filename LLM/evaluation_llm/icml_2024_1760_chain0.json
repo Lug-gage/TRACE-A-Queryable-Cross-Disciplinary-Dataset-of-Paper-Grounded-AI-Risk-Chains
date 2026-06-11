@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1760",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both capture user reliance on AI outputs and neglect of verification as the sensitivity condition.",
+    "reference": "Users over-rely on fluent, confident AI answers, neglecting verification.",
+    "generated": "Users' reliance on AI outputs and insufficient expertise to detect subtle inaccuracies leaves them susceptible to confident misinformation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers education/research errors but omits health and professional decision errors from reference.",
+    "reference": "Misinformation adoption leads to errors in education, health, and professional decisions.",
+    "generated": "Students and researchers internalize incorrect information, leading to flawed knowledge, degraded learning outcomes, and unreliable research."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both trace the same causal arc: CFG produces plausible unreliable text, users over-rely and neglect verification, leading to misinformation errors.",
+    "reference": "CFG yields plausible unreliable answers; in QA tools, users over-rely on fluency, neglecting verification, leading to misinformation errors in education, health, and professional decisions.",
+    "generated": "CFG amplifies coherence and prompt-adherence, degrading calibration and yielding plausible but unreliable text, which, when used by students and researchers, exploits their reliance and inability to detect inaccuracies, leading to internalized incorrect information, flawed knowledge, and unreliable research."
+  }
+}

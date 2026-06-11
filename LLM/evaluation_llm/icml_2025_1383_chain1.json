@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1383",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe listeners' inability to distinguish synthetic from authentic audio, leading to trust erosion",
+    "reference": "Viewers cannot distinguish synthetic from genuine audio, eroding trust in media.",
+    "generated": "Listeners lack perceptual or technical means to distinguish authentic voices from high-fidelity synthetic clones, relying solely on voice as a trust signal."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (audiences) and damage type (deception, trust erosion, manipulation) match reference's misinformation, deception, delegitimization",
+    "reference": "Widespread misinformation, public deception, and delegitimization of real evidence.",
+    "generated": "Deceived audiences experience confusion and eroded trust in media, enabling impersonation and manipulation through indistinguishable dubbed content."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain of high-fidelity cloning enabling indistinguishable dubbing that exploits listener inability, causing negative outcomes, is preserved",
+    "reference": "High-fidelity voice cloning enables indistinguishable synthetic dubbing, so viewers unable to distinguish real from fake audio leads to widespread misinformation, public deception, and delegitimization of real evidence.",
+    "generated": "Zero-shot distilled TTS optimized for perceptual metrics generating high-fidelity voice clones from minimal samples, when used in dubbing viewed by trusting audiences, exploits listeners' inability to distinguish synthetic voices, causing confusion, eroded trust in media, and enabling impersonation and manipulation."
+  }
+}

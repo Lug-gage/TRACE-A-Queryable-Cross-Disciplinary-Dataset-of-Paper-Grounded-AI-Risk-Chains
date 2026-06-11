@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions spoofability but omits the reference's specific sensitivity that watermark verifies token statistics, not semantic integrity, enabling forgery.",
+    "reference": "Watermark verifies token statistics, not semantic integrity, so content can be forged.",
+    "generated": "Reliance on spoofable LLM watermarks renders developers unable to disprove false content attribution."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (LLM providers/developers) and damage type (reputational harm and legal accountability) match the reference.",
+    "reference": "Reputational and legal damage to LLM providers from false attribution of harmful content.",
+    "generated": "LLM developers suffer reputational harm and wrongful accountability for harmful outputs they did not generate."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc includes spoofing causing false attribution and damage, but misses the key link that spoofing forges harmful content while preserving watermark statistics, inserting instead an extra step about inability to disprove.",
+    "reference": "Spoofing attacks forge harmful content while preserving watermark statistics, causing false attribution that results in reputational and legal damage to LLM providers.",
+    "generated": "Vulnerability of LLM watermarking to spoofing attacks, through false blame of developers for harmful content, triggers their inability to disprove false attribution, leading to reputational harm and wrongful accountability."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1305",
+  "chain_index": 1,
+  "title": "ELITE Enhanced Language-Image Toxicity Evaluation for Safety",
+  "abstract": "Current Vision Language Models (VLMs) remain vulnerable to malicious prompts that induce harmful outputs. Existing safety benchmarks for VLMs primarily rely on automated evaluation methods, but these methods struggle to detect implicit harmful content or produce inaccurate evaluations. Therefore, we found that existing benchmarks have low levels of harmfulness, ambiguous data, and limited diversity in image-text pair combinations. To address these issues, we propose the ELITE benchmark, a high-quality safety evaluation benchmark for VLMs, underpinned by our enhanced evaluation method, the ELITE evaluator. The ELITE evaluator explicitly incorporates a toxicity score to accurately assess harmfulness in multimodal contexts, where VLMs often provide specific, convincing, but unharmful descriptions of images. We filter out ambiguous and low-quality image-text pairs from existing benchmarks using the ELITE evaluator and generate diverse combinations of safe and unsafe image-text pairs. Our experiments demonstrate that the ELITE evaluator achieves superior alignment with human evaluations compared to prior automated methods, and the ELITE benchmark offers enhanced benchmark quality and diversity. By introducing ELITE, we pave the way for safer, more robust VLMs, contributing essential tools for evaluating and mitigating safety risks in realworld applications. Warning: This paper includes examples of harmful language and images that may be sensitive or uncomfortable. Reader discretion is advised.",
+  "impact": "This paper presents work whose goal is to advance the field of machine learning. In this work, we introduce a benchmark to evaluate the safety of VLMs. Given its nature, the benchmark contains potentially offensive samples, which may raise safety concerns. We affirm that all data used in this study will not be utilized for purposes other than research. Our research aims to focus on the safety challenges of VLMs and to facilitate future research on their safety alignment to prevent harmful responses",
+  "query_input": {
+    "scenario": "Multimodal chatbots with image generation features",
+    "issue": "Innocent conversational prompts inadvertently trigger generation of stereotypical or offensive imagery.",
+    "hazard": [
+      "VLMs generate toxic/harmful image-text outputs from benign, non-malicious prompts."
+    ],
+    "exposure": [
+      "End-users interacting with AI assistants."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End-users lack warning that innocuous prompts can elicit toxic imagery, leaving them psychologically unguarded and trusting the system's safety.",
+    "impact": "Users suffer exposure to offensive stereotypes, causing emotional distress and erosion of trust in AI assistants.",
+    "dose_response": "VLMs generating toxic outputs from benign prompts, through end-user interactions with AI assistants, triggers unguarded psychological vulnerability, leading to exposure to offensive stereotypes causing emotional distress and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "VLMs generating toxic/harmful image-text outputs from benign prompts enable unsafe generation, which in multimodal chatbots exposes end-users interacting with AI assistants, leading to user exposure to offensive stereotypes that erodes trust and normalizes harmful representations."
+    ],
+    "vulnerability": [
+      "Chatbot interfaces lack robust content safety checks for on-demand image generation.",
+      "Casual user queries can bypass intent filters, triggering biased outputs."
+    ],
+    "impact": [
+      "User exposure to offensive stereotypes in a trusted conversational interface, eroding trust.",
+      "Normalization of harmful representations through repeated, seemingly harmless interactions."
+    ]
+  }
+}

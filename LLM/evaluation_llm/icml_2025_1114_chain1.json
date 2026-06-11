@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1114",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference condition is sharing unsanitized red-teaming datasets; generated describes isolated model testing and lack of cross-model evaluation, a different vulnerability entirely.",
+    "reference": "Red-teaming datasets are shared without sanitization, propagating exploits.",
+    "generated": "Safety teams test models in isolation, lacking cross-model evaluation methods, rendering them blind to combined misuse via task decomposition."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (adversaries) matches malicious actors, but damage type differs: reference describes diffusion of jailbreak techniques and escalating attack frequency, while generated describes generation of harmful outputs at scale.",
+    "reference": "Jailbreak techniques diffuse rapidly among malicious actors, escalating attack frequency.",
+    "generated": "Adversaries generate vulnerable code, explicit images, hacking scripts, and manipulative tweets at scale, evading single-model safeguards."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc describes transferability-enhanced tools producing jailbreaks that leak and arm attackers; generated arc describes adversarial examples causing isolated testing and blindness to task-decomposition, leading to harmful generation, a different causal mechanism.",
+    "reference": "Transferability-enhanced red-teaming tools produce effective jailbreaks that, when leaked, arm malicious actors, accelerating attacks and outpacing defenses.",
+    "generated": "Adversarial examples with enhanced cross-model transferability, through safety evaluation teams and model developers, trigger isolated testing that blinds them to task-decomposition misuse, leading to scaled generation of vulnerable code, hacking scripts, explicit images, and manipulative tweets evading safeguards."
+  }
+}

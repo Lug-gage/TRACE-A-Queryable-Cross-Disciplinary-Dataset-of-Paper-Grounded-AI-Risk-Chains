@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1486",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe safety assessors/engineers trusting estimates without adequate verification of rare critical states, enabling misplaced confidence.",
+    "reference": "Automotive safety engineers over-rely on finite-sample MSE guarantees without real-world rare-event testing.",
+    "generated": "Safety assessors lack procedures to verify that data collection strategies adequately cover rare critical states, enabling trust in underestimated costs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party and some damage types (collisions, injuries, fatalities) are present, but erosion of public trust is missing.",
+    "reference": "Deployment of unsafe autonomous vehicles causes collisions, injuries, fatalities, and erosion of public trust.",
+    "generated": "Unsafe autonomous driving policies are deployed, resulting in collisions, injuries, and fatalities."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc of overconfident estimates leading to lack of rare‑event testing and then to deployment causing harm is preserved.",
+    "reference": "Overconfident finite-sample MSE estimates enable policy deployment, which in autonomous vehicle testing exposes engineers' over-reliance without real-world rare-event testing, leading to unsafe vehicle collisions, injuries, and trust erosion.",
+    "generated": "Off-policy safety-cost estimates enabling overconfident certification, through acceptance by developers and safety assessors, trigger lack of procedures to verify rare-state coverage, leading to deployments of unsafe policies causing collisions, injuries, and fatalities."
+  }
+}

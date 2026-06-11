@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2716",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures the sensitivity: inability to validate LLM-chosen configurations against physical ground truth, regardless of the specific reason (lack of expertise vs. lack of systematic validation).",
+    "reference": "Researchers lack systematic validation of LLM-chosen PINN configurations against physical ground truth.",
+    "generated": "Researchers lack the deep learning expertise to independently validate LLM-chosen PINN configurations, leaving them unable to discern physical inaccuracies."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions flawed benchmarks misleading the community, but does not include the undermining of reproducibility and trust in scientific ML that is central to the reference.",
+    "reference": "Publication of unreliable benchmark results, undermining reproducibility and trust in scientific ML.",
+    "generated": "Flawed benchmark results mislead the research community, corrupting downstream models and wasting resources on invalid physical simulations."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from unreliable surrogates through insufficient validation to flawed benchmarks and negative outcomes is semantically present, despite additional details like 'amplifies instability'.",
+    "reference": "LLM-driven automated PINN design yields physically unreliable surrogates, which when used by researchers without systematic validation publishes unreliable benchmarks, undermining reproducibility and trust.",
+    "generated": "LLM-driven automated PINN design amplifies instability and inaccuracy, yielding unreliable surrogates that, when used by researchers for PDE benchmarks, exploit their inability to validate configurations, leading to flawed benchmarks that mislead the community, corrupt downstream models, and waste resources."
+  }
+}

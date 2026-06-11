@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0012",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions excessive privileges but replaces imperfect reasoning with lack of oversight, a related but different sensitivity condition.",
+    "reference": "Excessive agent permissions combined with imperfect reasoning allow unintended network modifications.",
+    "generated": "Administrators trust the agent with excessive privileges and lack real-time oversight or sandboxing to intercept unintended harmful actions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (enterprise) and damage types (operational downtime, data integrity loss) are present.",
+    "reference": "Operational downtime and data integrity loss, disrupting business continuity.",
+    "generated": "Critical enterprise services are disrupted and data corrupted, causing operational downtime and potential cascading security failures."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes agent actions triggering excessive privileges rather than over-privileged tool use directly causing unintended modifications.",
+    "reference": "Over-privileged tool use by LLM agent in enterprise penetration testing causes unintended network modifications, leading to operational downtime and data integrity loss.",
+    "generated": "LLM cybersecurity agent executing unintended harmful actions via misgeneralization, prompt injection, or backdoor triggers, through use by network security teams, triggers excessive privileges and lack of real-time oversight, leading to critical service disruption, data corruption, and cascading failures."
+  }
+}

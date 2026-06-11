@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1404",
+  "chain_index": 2,
+  "title": "COPAL Continual Pruning in Large Language Generative Models",
+  "abstract": "Adapting pre-trained large language models to different domains in natural language processing requires two key considerations: high computational demands and model’s inability to continual adaptation. To simultaneously address both issues, this paper presents COPAL (COntinual Pruning in Adaptive Language settings), an algorithm developed for pruning large language generative models under a continual model adaptation setting. While avoiding resource-heavy finetuning or retraining, our pruning process is guided by the proposed sensitivity analysis. The sensitivity effectively measures model’s ability to withstand perturbations introduced by the new dataset and finds model’s weights that are relevant for all encountered datasets. As a result, COPAL allows seamless model adaptation to new domains while enhancing the resource efficiency. Our empirical evaluation on a various size of LLMs show that COPAL outperforms baseline models, demonstrating its efficacy in efficiency and adaptability.",
+  "impact": "Firstly, it’s crucial to be aware of the potential for democratizing AI technology. COPAL’s ability to reduce computational demands means that powerful LLMs can become more accessible to a wider range of users and organizations, potentially driving innovation across various sectors. However, this democratization also brings with it the responsibility to ensure that the models remain fair and unbiased, particularly as they adapt to changing data streams. We must also consider the ethical implications of dynamic pruning. The adaptability of these models might lead to challenges in maintaining transparency and explainability, which are critical for user trust and accountability. As we move forward with this technology, it’s essential to balance the benefits of efficiency and adaptability with the ongoing commitment to ethical AI practices and responsible usage.",
+  "query_input": {
+    "scenario": "Online pruning during continual adaptation",
+    "issue": "Dynamic weight removal interacts with non-stationary data, creating unstable model behavior.",
+    "hazard": [
+      "Continual pruning induces distributional shift in model sensitivity, degrading calibration and reliability on adapted domains."
+    ],
+    "exposure": [
+      "Users of continually adapting LLM services"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users cannot detect calibration drift because they lack access to model weight changes and reliability indicators.",
+    "impact": "Users act on unreliable outputs, causing systematic errors in downstream domain tasks and undermining trust in the service.",
+    "dose_response": "Through users of continually adapting LLM services, continual pruning's distributional shift degrades calibration, and without access to weight changes, users fail to detect drift, leading them to act on unreliable outputs, causing systematic errors and eroding trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Online pruning creates unstable behavior that violates user expectations, causing misinterpretation of outputs and user errors in real-time."
+    ],
+    "vulnerability": [
+      "Users develop mental models based on stable system behavior, which online pruning violates.",
+      "Continuous adaptation without transparency obscures model failure modes from users."
+    ],
+    "impact": [
+      "User errors from acting on unstable or contradictory model outputs in real-time.",
+      "User frustration and disengagement from continually adapting AI services."
+    ]
+  }
+}

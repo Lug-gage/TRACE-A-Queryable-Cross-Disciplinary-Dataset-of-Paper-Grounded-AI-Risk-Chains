@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2581",
+  "chain_index": 1,
+  "title": "Demonstration Selection for In-Context Learning via Reinforcement Learning",
+  "abstract": "Diversity in demonstration selection is critical for enhancing model generalization by enabling broader coverage of structures and concepts. Constructing appropriate demonstration sets remains a key research challenge. This paper introduces the Relevance-Diversity Enhanced Selection (RDES), an innovative approach that leverages reinforcement learning (RL) frameworks to optimize the selection of diverse reference demonstrations for tasks amenable to in-context learning (ICL), particularly text classification and reasoning, in fewshot prompting scenarios. RDES employs frameworks like Q-learning and a PPO-based variant to dynamically identify demonstrations that maximize both diversity (quantified by label distribution) and relevance to the task objective. This strategy ensures a balanced representation of reference data, leading to improved accuracy and generalization. Through extensive experiments on multiple benchmark datasets, including diverse reasoning tasks, and involving 14 closedsource and open-source LLMs, we demonstrate that RDES significantly enhances performance compared to ten established baselines. Our evaluation includes analysis of performance across varying numbers of demonstrations on selected datasets. Furthermore, we investigate incorporating Chain-of-Thought (CoT) reasoning, which further boosts predictive performance. The results highlight the potential of RL for adaptive demonstration selection and addressing challenges in ICL.",
+  "impact": "This paper introduces the RDES framework, leveraging RL to optimize demonstration selection for LLMs in fewshot text classification and reasoning tasks by balancing relevance and diversity. The primary positive impact is a significant enhancement in LLM accuracy and robustness in data-limited scenarios, making them more effective for practical applications like intent detection and sentiment analysis. This approach helps mitigate the overfitting biases often associated with purely similarity-based selection. However, potential negative impacts include the risk that enhanced classification capabilities could be misused for applications like surveillance or censorship. While not the focus, extending the core method to generative tasks could, in the future, potentially contribute to the spread of misinformation. Furthermore, training RDES involves significant computational cost due to numerous LLM calls, potentially limiting its accessibility. The current work lacks user studies, meaning real-world human-centric impacts like user over-reliance are not yet evaluated. To maximize positive impacts and mitigate risks, future work should explore computational efficiency improvements, necessitate safeguards against misuse, particularly if extended to more complex tasks like generation, and conduct user studies to comprehensively assess real-world performance and user interaction. Adherence to strong ethical principles regarding transparency, fairness, and accountability is encouraged in the application and dissemination of this technology.",
+  "query_input": {
+    "scenario": "RL-based exemplar selection for Chain-of-Thought reasoning tasks",
+    "issue": "Diversity reward signal amplifies logically flawed but lexically novel reasoning chains.",
+    "hazard": [
+      "Relevance-diversity optimized exemplar selection introduces systematic biases in few-shot prompt construction that distort model reasoning."
+    ],
+    "exposure": [
+      "Analysts using LLM reasoning outputs for complex problem-solving."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Analysts' uncritical reliance on LLM outputs without independent logical verification.",
+    "impact": "Erroneous analytical conclusions propagate into flawed downstream decisions for complex problem-solving.",
+    "dose_response": "Relevance-diversity optimized exemplar selection introduces systematic biases that distort reasoning; through analysts using LLM outputs for complex problem-solving, this triggers uncritical reliance without logical verification, leading to erroneous conclusions propagating into flawed downstream decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Diversity-optimized exemplar selection distorts reasoning, producing fluent but flawed CoT outputs that analysts over-rely on, propagating cascading errors into complex problem-solving decisions."
+    ],
+    "vulnerability": [
+      "Users over-rely on fluent but logically invalid CoT outputs when diversity-optimized exemplars mask errors."
+    ],
+    "impact": [
+      "Flawed reasoning outputs propagate into analyst decisions, causing cascading errors in complex problem-solving."
+    ]
+  }
+}

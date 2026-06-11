@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0613",
+  "chain_index": 3,
+  "title": "Don’t trust your eyes on the (un)reliability of feature visualizations",
+  "abstract": "How do neural networks extract patterns from pixels? Feature visualizations attempt to answer this important question by visualizing highly activating patterns through optimization. Today, visualization methods form the foundation of our knowledge about the internal workings of neural networks, as a type of mechanistic interpretability. Here we ask: How reliable are feature visualizations? We start our investigation by developing network circuits that trick feature visualizations into showing arbitrary patterns that are completely disconnected from normal network behavior on natural input. We then provide evidence for a similar phenomenon occurring in standard, unmanipulated networks: feature visualizations are processed very differently from standard input, casting doubt on their ability to “explain” how neural networks process natural images. This can be used as a sanity check for feature visualizations. We underpin our empirical findings by theory proving that the set of functions that can be reliably understood by feature visualization is extremely small and does not include general black-box neural networks. Therefore, a promising way forward could be the development of networks that enforce certain structures in order to ensure more reliable feature visualizations.",
+  "impact": "Our paper investigates the reliability of feature visualizations. Overall, we expect this to contribute to better scrutiny towards existing interpretability methods, which hopefully inspires the development of more reliable interpretability methods in the future, as well the development of models that incorporate certain reliably “interpretability-enabling” assumptions right from the start, rather than being faced with the (sometimes impossible) task of post-hoc interpretability through feature visualizations. In terms of potential negative impact, the fooling methods developed here could be used to deceive an entity (e.g., a model auditor or regulator) as described in Section 2 and Appendix A.1. That being said, we believe that the risk is lower if this knowledge is public-it would be much more problematic to believe that feature visualizations can be taken at face value, because then whoever designs a fooling circuit would be met with an unsuspecting audience.",
+  "query_input": {
+    "scenario": "End-users relying on visual explanations for decision-making",
+    "issue": "Over-reliance on flawed visual explanations undermines appropriate skepticism.",
+    "hazard": [
+      "Interpretability visualizations can be unreliable or ambiguous, causing misguided trust in model explanations."
+    ],
+    "exposure": [
+      "Non-expert users accepting model predictions based on feature maps"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Non-expert users’ habitual over-reliance on feature visualizations as faithful explanations, without the technical skill to detect unreliability.",
+    "impact": "Flawed decisions based on deceptive visualizations, causing operational failures, safety incidents, and eroded trust in AI systems.",
+    "dose_response": "Unreliable interpretability visualizations, through non-expert users accepting model predictions from feature maps, trigger habitual over-reliance without skill to detect unreliability, leading to flawed decisions, operational failures, safety incidents, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Unreliable visual explanations cause non-expert users to accept them as authoritative without skepticism, leading to erroneous decisions in high-stakes contexts like diagnosis or loans."
+    ],
+    "vulnerability": [
+      "Non-expert users perceive visual explanations as authoritative, bypassing skepticism."
+    ],
+    "impact": [
+      "Erroneous decisions in high-stakes contexts like medical diagnosis or loan approval."
+    ]
+  }
+}

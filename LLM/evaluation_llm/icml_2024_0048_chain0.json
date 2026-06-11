@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference condition is over-trust due to miscalibrated uncertainty causing bypassed validation; generated condition is reliance without calibration diagnostics preventing detection of overconfidence. Related but not identical sensitivity.",
+    "reference": "Pharmaceutical researchers over-trust model confidence due to miscalibrated uncertainty, bypassing critical validation.",
+    "generated": "Researchers rely on model predictions without access to calibration diagnostics, preventing detection of overconfident extrapolations for novel compounds."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Both describe advancement of ineffective compounds and resource waste, but reference adds 'delaying effective therapies' while generated adds 'poor therapeutic recommendations', changing the patient-level damage type.",
+    "reference": "Advancement of ineffective compounds to costly late-stage trials, wasting resources and delaying effective therapies.",
+    "generated": "Ineffective drug candidates advance into costly development, wasting resources, biasing candidate selection, and leading to poor therapeutic recommendations."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc starts with miscalibrated uncertainty concealing distribution shift and ends with advancement of ineffective compounds, but the intermediate step differs: reference uses 'overconfident efficacy extrapolations', generated uses 'reliance without calibration diagnostics'.",
+    "reference": "Miscalibrated uncertainty estimates conceal distribution shift failures, enabling overconfident efficacy extrapolations that lead pharmaceutical researchers to advance ineffective compounds to costly late-stage trials.",
+    "generated": "Miscalibrated uncertainty estimates that conceal distribution shift failures, through pharmaceutical researchers screening novel drug candidates using model predictions, triggers reliance without calibration diagnostics, leading to advancement of ineffective drug candidates that wastes resources and leads to poor therapeutic recommendations."
+  }
+}

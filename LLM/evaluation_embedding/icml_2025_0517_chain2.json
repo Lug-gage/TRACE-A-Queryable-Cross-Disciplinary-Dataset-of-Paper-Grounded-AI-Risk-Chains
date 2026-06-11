@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4542,
+    "reference": "Low-entropy text provides minimal embedding space, degrading detection reliability.",
+    "generated": "Regulators depend on watermark detection tuned only against nonadaptive attacks, leaving it ineffective against adaptive evasion in low-entropy legal texts."
+  },
+  "impact": {
+    "similarity": 0.8936,
+    "reference": "Undetected AI-generated legal briefs undermine judicial integrity and fairness.",
+    "generated": "Undetected AI-generated legal briefs circumvent oversight, enabling misuse and eroding institutional trust in document authenticity."
+  },
+  "dose_response": {
+    "similarity": 0.7816,
+    "reference": "Watermark detection degradation on low-entropy text enables evasion when regulators verify legal briefs, leading to undetected AI submissions that undermine judicial integrity.",
+    "generated": "LLM watermarking susceptible to adaptive black-box removal attacks, when regulators verify AI authorship of low-entropy legal briefs, triggers reliance on detection tuned only against nonadaptive attacks, leading to undetected AI briefs circumventing oversight, enabling misuse and eroding institutional trust."
+  }
+}

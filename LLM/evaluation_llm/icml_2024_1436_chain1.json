@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1436",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions fine-tuning and injected canaries but describes lack of pipeline detection causing forced memorization, while reference describes fine-tuning reactivating pre-training memorization; related but different sensitivity condition.",
+    "reference": "Fine-tuning reactivates pre-training memorization, leaking injected canaries.",
+    "generated": "Fine-tuning pipelines lack detection and removal of injected canary-trap backdoors, leaving models susceptible to forced memorization and data leakage."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference states legal and financial penalties for fine-tuning organizations; generated describes intellectual property theft and privacy violations for data owners and users – neither affected party nor damage type match.",
+    "reference": "Legal and financial penalties for fine-tuning organizations.",
+    "generated": "Proprietary fine-tuning data leaks from compromised models, causing intellectual property theft and privacy violations for data owners and their users."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc: pre-training privacy backdoors reactivate during fine-tuning, leaking canaries and leading to legal penalties. Generated arc: data provenance techniques enable attacks, exploit undetected backdoors to force memorization, leak proprietary data causing theft/privacy violations. Causal logic differs entirely.",
+    "reference": "Privacy backdoors in pre-trained models reactivate during fine-tuning, leaking canaries when probed, which exposes fine-tuning organizations to legal penalties even without wrongdoing.",
+    "generated": "Canary trap-based data provenance techniques enable privacy backdoor attacks that, through organizations fine-tuning pre-trained models on proprietary data, exploit undetected canary-trap backdoors in fine-tuning pipelines, forcing memorization that leaks proprietary data and causes intellectual property theft and privacy violations."
+  }
+}

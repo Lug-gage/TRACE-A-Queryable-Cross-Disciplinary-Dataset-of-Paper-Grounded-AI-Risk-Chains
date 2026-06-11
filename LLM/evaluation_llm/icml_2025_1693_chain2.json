@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1693",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes surgeons' reliance on coherent rationale without verification, which captures the same sensitivity as accepting anatomically plausible AI localization.",
+    "reference": "Surgeons under time pressure accept AI localization if justification sounds anatomically plausible.",
+    "generated": "Surgeons' reliance on coherent rationale narratives, without real-time cross-verification of spatial grounding, allows inconsistencies with image evidence to go undetected."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Injury to healthy tissue matches wrong-site surgery, incomplete pathology removal matches incomplete resection; patient harm is implicit.",
+    "reference": "Wrong-site surgery or incomplete resection from mislocalized target structures.",
+    "generated": "Surgical plans targeting wrongly localized structures cause injury to healthy tissue, incomplete pathology removal, or intraoperative conversion."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe models producing inconsistent justifications leading to undetected reliance, wrong targets, and surgical harm.",
+    "reference": "Joint segmentation and rationale generation models produce visually grounded justifications inconsistent with actual evidence, enabling incorrect anatomical localizations that mislead surgeons in surgical planning, resulting in wrong-site surgery and patient harm.",
+    "generated": "Through surgeons’ use of interactive visual grounding tools, joint segmentation-rationale models produce visually grounded justifications inconsistent with image evidence, triggering undetected reliance on coherent, spatially-unverified narratives, leading to wrongly localized surgical targets causing tissue injury, incomplete removal, or conversion."
+  }
+}

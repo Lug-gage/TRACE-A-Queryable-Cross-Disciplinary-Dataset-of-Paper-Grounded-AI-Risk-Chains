@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2175",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7865,
+    "reference": "Chemists trust RL-optimized NMR at face value, neglecting to validate with independent methods.",
+    "generated": "Chemists trust automated NMR output without independent verification, assuming accuracy under real low-field spin relaxation conditions."
+  },
+  "impact": {
+    "similarity": 0.6203,
+    "reference": "Misidentification of compounds causes retracted papers and wasted research resources.",
+    "generated": "Misquantified carbon-13 yields inaccurate compound identification, corrupting research data and compromising food and soil safety screening."
+  },
+  "dose_response": {
+    "similarity": 0.8657,
+    "reference": "RL-trained pulse sequences mis-characterize spin relaxation, enabling systematic quantification errors, which when trusted without independent validation by chemists, leads to misidentified compounds causing retracted papers and wasted resources.",
+    "generated": "RL-trained pulse sequences from simulated spectra mis-characterizing spin relaxation under real low-field conditions, through chemists using automated NMR spectroscopy, trigger uncritical trust, leading to misquantified carbon-13 and inaccurate compound identification, corrupting research data and compromising food and soil safety screening."
+  }
+}

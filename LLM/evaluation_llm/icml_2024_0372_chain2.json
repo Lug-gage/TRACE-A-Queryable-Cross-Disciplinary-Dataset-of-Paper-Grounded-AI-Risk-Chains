@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0372",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference points to missing mandatory socio-contextual review; generated describes trust without independent validation of causal assumptions—related but distinct sensitivity conditions.",
+    "reference": "Lack of mandatory socio-contextual review of causal fairness models allows metrics to mask real discrimination.",
+    "generated": "Decision-makers trust bounds generated from user-specified constraints as fairness guarantees without independent validation of causal assumptions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Protected groups as affected party and erosion of trust are present, but legal sanctions and reputational damage are omitted.",
+    "reference": "Perpetuation of systemic biases against protected groups, leading to legal sanctions, reputational damage, and erosion of public trust.",
+    "generated": "Allocation decisions systematically disadvantage protected groups, perpetuating inequity and eroding trust in algorithmic fairness."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from misspecified constraints to invalid bounds to harmful deployment is present, but the intermediate step of metrics masking discrimination is missing, replaced by a trust-without-validation mechanism.",
+    "reference": "Misspecified causal constraints in partial DAGs invalidating DRO bounds cause decision-makers to deploy fairness-constrained models that mask discrimination, perpetuating bias and causing legal sanctions and erosion of trust.",
+    "generated": "Misspecified user-specified constraints silently invalidate distributionally robust bounds through decision-makers deploying fairness-constrained models in allocation settings, triggering trust in those bounds as fairness guarantees without independent validation, leading to allocation decisions systematically disadvantaging protected groups, perpetuating inequity and eroding trust."
+  }
+}

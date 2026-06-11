@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0902",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6623,
+    "reference": "Unprotected gradient transmission to a central server allows exact batch data reconstruction, violating any privacy guarantees.",
+    "generated": "Clients rely on gradient sharing for privacy without defenses, yet multimodal gradients inherently leak enough information to reconstruct sensitive documents exactly."
+  },
+  "impact": {
+    "similarity": 0.5945,
+    "reference": "Complete client data exposure nullifies FL's privacy benefits, leading to regulatory non-compliance and market withdrawal of privacy-sensitive applications.",
+    "generated": "Sensitive client documents are fully exposed, causing privacy breaches, possible regulatory violations, and erosion of trust in federated systems."
+  },
+  "dose_response": {
+    "similarity": 0.8006,
+    "reference": "Gradient inversion attacks enable exact reconstruction of private training data from shared model gradients, which in honest-but-curious server in gradient-sharing FL exposes clients sharing gradients with a central server, leading to complete client data exposure nullifying FL's privacy benefits.",
+    "generated": "Gradient inversion attacks, through clients sharing gradients with a central server in standard federated learning, trigger the inherent information leakage in undefended multimodal gradients, leading to full exposure of sensitive client documents, privacy breaches, regulatory violations, and eroded trust."
+  }
+}

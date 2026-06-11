@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0970",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe a condition where hyperparameter tuning without empirical validation creates a gap between claimed and actual privacy leakage.",
+    "reference": "Tuning hyperparameters without empirical privacy testing creates a gap between claimed epsilon-delta and actual leakage.",
+    "generated": "Data subjects rely on theoretical DP guarantees without visibility into hyperparameter choices that cause actual leakage to exceed those bounds."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both state that personal details from training text are memorized and exposed, with affected party and damage type matching.",
+    "reference": "Fine-tuned LLMs memorize and regurgitate personal details from training text.",
+    "generated": "Private text is memorized and extractable beyond the promised privacy level, exposing sensitive personal details and enabling re-identification."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc includes miscalibration and memorization, but the reference ends with reputational harm while the generated ends with re-identification, missing that final harm link.",
+    "reference": "DP hyperparameter tuning causes miscalibration, enabling fine-tuned LLMs to memorize personal text, exposing data subjects to reputational harm.",
+    "generated": "Empirically variable privacy guarantees causing miscalibration between theoretical DP bounds and actual leakage, through exposure of fine-tuning data subjects, trigger reliance on theoretical guarantees without hyperparameter visibility, leading to extractable private text and re-identification."
+  }
+}

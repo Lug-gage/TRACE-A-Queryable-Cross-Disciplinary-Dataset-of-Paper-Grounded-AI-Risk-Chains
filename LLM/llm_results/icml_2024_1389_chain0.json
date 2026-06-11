@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 0,
+  "title": "Prospector Heads Generalized Feature Attribution for Large Models & Data",
+  "abstract": "Feature attribution, the ability to localize regions of the input data that are relevant for classification, is an important capability for ML models in scientific and biomedical domains. Current methods for feature attribution, which rely on “explaining” the predictions of end-to-end classifiers, suffer from imprecise feature localization and are inadequate for use with small sample sizes and high-dimensional datasets due to computational challenges. We introduce prospector heads, an efficient and interpretable alternative to explanationbased attribution methods that can be applied to any encoder and any data modality. Prospector heads generalize across modalities through experiments on sequences (text), images (pathology), and graphs (protein structures), outperforming baseline attribution methods by up to 26.3 points in mean localization AUPRC. We also demonstrate how prospector heads enable improved interpretation and discovery of class-specific patterns in input data. Through their high performance, flexibility, and generalizability, prospectors provide a framework for improving trust and transparency for ML models in complex domains. 1",
+  "impact": "Trust and safety considerations are increasingly important as AI becomes an increasingly prominent part of high-impact disciplines such as science and biomedicine. This concern is particularly relevant for large “black box” foundation models. The goal of this work is to provide a new approach to feature attribution for large models and complex datasets to improve transparency of AI systems. It is important to note that that our method is specifically not designed to be an explanation of a model’s reasoning, and any feature attributions made by prospector heads should be carefully interpreted by the user in the context of the data modality. Code Availability Our code is made available at: https://github.com/ gmachiraju/K2.",
+  "query_input": {
+    "scenario": "Text-guided image editing with Stable Diffusion",
+    "issue": "Manipulating cross-attention maps based on feature attribution leads to unintended object modifications or editing failures.",
+    "hazard": [
+      "Feature attribution maps contain object attribution information that can be manipulated to cause model editing failures."
+    ],
+    "exposure": [
+      "Application developers using tuning-free text-guided image editing tools."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers rely on imprecise feature attribution that maps object information into cross-attention, enabling manipulation to produce editing failures.",
+    "impact": "Unintended object modifications and editing failures in image outputs undermine developer trust and tool reliability.",
+    "dose_response": "Feature attribution maps containing manipulable object attribution information, through application developers using tuning-free text-guided image editing tools, trigger reliance on imprecise cross-attention mapping that enables object manipulation, leading to unintended object modifications and editing failures that undermine trust and reliability."
+  },
+  "reference": {
+    "dose_response": [
+      "Manipulated feature attribution maps enable adversarial cross-attention map alterations, which in text-guided image editing tools expose developers to unintended object modifications, leading to erosion of user trust."
+    ],
+    "vulnerability": [
+      "Application developers over-rely on visual explanations without verifying underlying model behavior.",
+      "Users lack mental models to detect manipulated attribution maps, increasing susceptibility to deceptive outputs."
+    ],
+    "impact": [
+      "Erosion of user trust in AI-assisted creative tools after repeated editing failures.",
+      "Propagation of harmful or misleading edited media when failures go undetected by non-expert users."
+    ]
+  }
+}

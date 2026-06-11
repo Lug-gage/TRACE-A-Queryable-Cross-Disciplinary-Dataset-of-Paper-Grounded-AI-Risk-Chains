@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6964,
+    "reference": "Peer-to-peer exchange of model updates without central audit facilitates gradient inversion, exposing local data.",
+    "generated": "Participants assume only direct neighbors can access model updates, but gossip averaging propagates gradient information across the network without privacy safeguards."
+  },
+  "impact": {
+    "similarity": 0.5342,
+    "reference": "Disclosure of personal user data in decentralized networks undermines trust in peer-to-peer AI systems.",
+    "generated": "Adversaries reconstruct exact private training data (e.g., images, medical records) from arbitrary participants, causing network-wide confidentiality breaches."
+  },
+  "dose_response": {
+    "similarity": 0.7875,
+    "reference": "Exact reconstruction from gradients enables inversion of gossiped updates, which in decentralized learning without audit exposes local data, leading to disclosure and collusion amplifying trust erosion.",
+    "generated": "Exact reconstruction of private data from gradient updates, through gossip averaging without central server, triggers false assumption of neighbor-bound access while gossip propagates gradients network-wide, leading to reconstruction of participants' private data by adversaries, breaching confidentiality."
+  }
+}

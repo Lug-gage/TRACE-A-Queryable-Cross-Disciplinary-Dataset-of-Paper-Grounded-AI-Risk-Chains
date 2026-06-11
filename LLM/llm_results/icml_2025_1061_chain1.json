@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1061",
+  "chain_index": 1,
+  "title": "QT-DoG Quantization-Aware Training for Domain Generalization",
+  "abstract": "A key challenge in Domain Generalization (DG) is preventing overfitting to source domains, which can be mitigated by finding flatter minima in the loss landscape. In this work, we propose Quantization-aware Training for Domain Generalization (QT-DoG) and demonstrate that weight quantization effectively leads to flatter minima in the loss landscape, thereby enhancing domain generalization. Unlike traditional quantization methods focused on model compression, QT-DoG exploits quantization as an implicit regularizer by inducing noise in model weights, guiding the optimization process toward flatter minima that are less sensitive to perturbations and overfitting. We provide both an analytical perspective and empirical evidence demonstrating that quantization inherently encourages flatter minima, leading to better generalization across domains. Moreover, with the benefit of reducing the model size through quantization, we demonstrate that an ensemble of multiple quantized models further yields superior accuracy than the state-ofthe-art DG approaches with no computational or memory overheads. Code is released at: https: //saqibjaved1.github.io/QT_DoG/.",
+  "impact": "In this paper, we presented our research work aiming to highlight the relation of model quantization for the domain generalization problem setup. In considering the societal impact of our approach, a few concerns emerge, such as performance degradation in extreme-level quantization. Although the proposed approach provides competitive performance compared to previous state-of-the-art models on domain generalization benchmarks, we note that performance slightly varies in extreme quantization cases. Our future work is aimed at a thorough analysis of this aspect in safety-critical applications, such as medical imaging, autonomous driving, or surveillance.",
+  "query_input": {
+    "scenario": "Continual deployment of a quantized model with flatness-seeking updates",
+    "issue": "Flatness regularization reduces plasticity, risking catastrophic forgetting on sequentially arriving tasks.",
+    "hazard": [
+      "Flatter minima imposed by quantization-aware training can suppress critical features for minority subpopulations, degrading performance in under-represented domains."
+    ],
+    "exposure": [
+      "Users of adaptive virtual assistants that learn new skills over time"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Minority users lack compensatory mechanisms to recover rare-skill support when flatness-seeking updates erode plasticity and suppress critical features.",
+    "impact": "Under-represented subpopulations experience persistent degradation of assistant performance on rare tasks, causing frustration, loss of trust, and service exclusion.",
+    "dose_response": "Flatter minima from quantization-aware training suppress critical features for minority subpopulations, through users of adaptive virtual assistants learning new skills, triggers minority users' lack of compensatory mechanisms to recover rare-skill support, leading to persistent degradation of rare-task performance, frustration, loss of trust, and service exclusion."
+  },
+  "reference": {
+    "dose_response": [
+      "Flatter minima imposed by quantization-aware training limit plasticity, causing continual deployment of quantized models to forget personalized tasks, leading to user frustration and abandonment."
+    ],
+    "vulnerability": [
+      "Continuous learning with quantized flat minima limits model's ability to adapt to new tasks while retaining old knowledge.",
+      "User reliance on adaptive assistant for personalized tasks creates high expectations of consistent performance."
+    ],
+    "impact": [
+      "Assistant forgets personal preferences, causing repeated errors and user frustration.",
+      "Reduced user trust and abandonment of assistive technology, especially among tech-dependent populations."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1593",
+  "chain_index": 2,
+  "title": "Auto-Encoding Morph-Tokens for Multimodal LLM",
+  "abstract": "For multimodal LLMs, the synergy of visual comprehension (textual output) and generation (visual output) presents an ongoing challenge. This is due to a conflicting objective: for comprehension, an MLLM needs to abstract the visuals; for generation, it needs to preserve the visuals as much as possible. Thus, the objective is a dilemma for visual-tokens. To resolve the conflict, we propose encoding images into morph-tokens to serve a dual purpose: for comprehension, they act as visual prompts instructing MLLM to generate texts; for generation, they take on a different, non-conflicting role as complete visual-tokens for image reconstruction, where the missing visual cues are recovered by the MLLM. Extensive experiments show that morph-tokens can achieve a new SOTA for multimodal comprehension and generation simultaneously. Our project is available at https://github.com/DCDmllm/ MorphTokens.",
+  "impact": "Ethical Impacts. This study does not raise any ethical concerns. The research does not involve subjective assessments or the use of private data. Only publicly available datasets are utilized for experimentation. Expected Societal Implications. A major societal concern with this technology lies in its potential for misuse, particularly in fabricating unauthorized images that could lead to misinformation, privacy breaches, and other damaging consequences. To counter these threats, it is crucial to develop strong ethical standards and implement ongoing surveillance. The issue highlighted is not unique to our method but is prevalent across different techniques for multi-concept customization. A practical approach to mitigating these risks could involve the use of adversarial technologies designed to reverse unauthorized modifications. Additionally, embedding imperceptible watermarks in created images could act as a preventative measure against abuse and guarantee that their use is properly attributed.",
+  "query_input": {
+    "scenario": "Multimodal content generation via auto-encoding morph-tokens",
+    "issue": "Generated content misrepresents visual concepts due to token discretization errors",
+    "hazard": [
+      "Lossy compression of visual features via auto-encoded morph-tokens distorts fine-grained semantics"
+    ],
+    "exposure": [
+      "Designers using AI text-to-image tools for creative projects"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Designers lack visibility into token discretization errors, leaving semantic distortion undetected before final output.",
+    "impact": "Finished creative works contain visual inaccuracies, eroding client trust and forcing costly redesigns.",
+    "dose_response": "Lossy compression of visual features via auto-encoded morph-tokens, through designers' use of AI text-to-image tools, triggers undetected semantic distortion due to limited visibility into token discretization errors, leading to visual inaccuracies in finished creative works, eroding client trust and forcing costly redesigns."
+  },
+  "reference": {
+    "dose_response": [
+      "In content generation via auto-encoding morph-tokens, lossy compression distorts visual concepts, causing designers to integrate biased outputs without scrutiny, perpetuating harmful stereotypes."
+    ],
+    "vulnerability": [
+      "Designers rapidly integrate AI-generated images into professional work without scrutinizing representational biases."
+    ],
+    "impact": [
+      "Biased and stereotyped visuals from content misrepresentation perpetuate harmful societal narratives."
+    ]
+  }
+}

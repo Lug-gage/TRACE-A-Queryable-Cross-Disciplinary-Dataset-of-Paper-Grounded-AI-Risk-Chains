@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 0,
+  "title": "Long-Form Speech Generation with Spoken Language Models",
+  "abstract": "We consider the generative modeling of speech over multiple minutes, a requirement for longform multimedia generation and audio-native voice assistants. However, textless spoken language models struggle to generate plausible speech past tens of seconds, due to high temporal resolution of speech tokens causing loss of coherence, architectural issues with long-sequence training or extrapolation, and memory costs at inference time. From these considerations we derive SpeechSSM, the first speech language model family to learn from and sample long-form spoken audio (e.g., 16 minutes of read or extemporaneous speech) in a single decoding session without text intermediates. SpeechSSMs leverage recent advances in linear-time sequence modeling to greatly surpass current Transformer spoken LMs in coherence and efficiency on multi-minute generations while still matching them at the utterance level. As we found current spoken language evaluations uninformative, especially in this new longform setting, we also introduce: LibriSpeech- Long, a benchmark for long-form speech evaluation; new embedding-based and LLM-judged metrics; and quality measurements over length and time. Speech samples, the LibriSpeech-Long dataset, and any future code or model releases can be found at https://google.github.io/tacotron/ publications/speechssm/.",
+  "impact": "Progress on coherent, efficient, and unbounded audio-native speech language models will improve the availability and accessibility of audio-based human-computer interfaces, particularly towards the generation of speech with paralinguistic nuances often inexpressible in a standard text-to-speech prompt, as well as enabling models in primarily oral languages (textless NLP). It should also stimulate the use of synthetic speech in long-form creative multimedia applications, and could conceivably generalize to non-speech audio such as music. We recognize that increased efficiencies in speech language modeling may increase the proliferation of audio deepfakes or low-quality synthetic media. However, for these uses we do not believe our work exacerbates what is already achievable (at higher content quality) by cascading text large language models (LLMs) with modern voice-promptable text-to-speech systems. We hope our work increases public awareness that direct methods in deep learning now enable large-scale generation of expressive speech, analogous to the situation in text media due to LLMs. As in prior work for generative speech language modeling, speaker prompts used in our read-speech demos come from public domain LibriVox audiobooks and are only used to generate spoken continuations in the same setting, albeit for longer durations. For our spontaneous-speech demos, the voices have been explicitly licensed for speech synthesis. We do not currently release model weights.",
+  "query_input": {
+    "scenario": "Deployment of long-form speech generation for automated podcast or audiobook creation",
+    "issue": "Listeners receive fluent-sounding but fabricated content indistinguishable from authentic narration.",
+    "hazard": [
+      "Long-form speech generation models produce plausible but factually ungrounded or semantically incoherent multi-minute audio."
+    ],
+    "exposure": [
+      "General audiences consuming AI-generated long-form audio content"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "General audiences lack the ability to distinguish fluent, human-like synthetic speech from authentic narration, defaulting to trust based on auditory plausibility.",
+    "impact": "Audiences internalize fabricated or incoherent content as factual, enabling misinformation spread and erosion of trust in audio media.",
+    "dose_response": "Long-form speech generation models producing plausible but ungrounded multi-minute audio, when consumed by general audiences, triggers inability to distinguish synthetic from authentic narration, leading to internalization of fabricated content as fact, spreading misinformation and eroding trust in audio media."
+  },
+  "reference": {
+    "dose_response": [
+      "Plausible but ungrounded long-form speech generation enables fluent fabricated audio, which in automated podcast/audiobook deployment exposes general audiences, leading to erosion of shared factual reality and amplified misinformation."
+    ],
+    "vulnerability": [
+      "Low public awareness of AI-generated audio enables uncritical acceptance of fabricated content as factual.",
+      "Absence of mandatory content provenance labeling for synthetic speech in media distribution platforms."
+    ],
+    "impact": [
+      "Erosion of shared factual reality as listeners internalize fabricated historical or scientific narratives.",
+      "Amplification of misinformation at scale, undermining trust in audio-based news and educational media."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1671",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.4729,
+    "reference": "Curriculum ordering entrenches early-stage biases that cascade through subsequent training phases.",
+    "generated": "User reliance on an opaque reward model whose biases are amplified by curriculum optimization prevents detection of misalignment."
+  },
+  "impact": {
+    "similarity": 0.5306,
+    "reference": "Amplified gender bias in professional imagery normalizes discriminatory hiring and media practices.",
+    "generated": "Systematically biased image outputs misrepresent diverse prompts, reinforcing stereotypes and eroding user trust."
+  },
+  "dose_response": {
+    "similarity": 0.6612,
+    "reference": "Curriculum DPO training enables amplification of reward model biases, which in diverse text prompt generation exposes users to systematic misalignment, leading to amplified gender bias and psychological harm.",
+    "generated": "Reward-optimized one-step text-to-image models producing misaligned outputs, when used for diverse prompts, trigger undetected amplification of opaque reward model biases via curriculum optimization, leading to systematically biased images that reinforce stereotypes and erode trust."
+  }
+}

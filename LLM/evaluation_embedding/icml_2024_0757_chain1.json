@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0757",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5164,
+    "reference": "Low-income applicants self-select out due to perceived rejection, biasing data.",
+    "generated": "Automated underwriting systems lack selection-bias correction, misinterpreting non-strategic non-participation as low creditworthiness."
+  },
+  "impact": {
+    "similarity": 0.8055,
+    "reference": "Creditworthy non-strategic individuals denied loans, widening wealth gap.",
+    "generated": "Creditworthy non-strategic applicants are denied loans, entrenching financial exclusion and systemic inequality."
+  },
+  "dose_response": {
+    "similarity": 0.8662,
+    "reference": "Unmodeled selection bias under strategic self-selection enables unfair, uncalibrated credit decisions, which in automated loan approvals exposes loan applicants to inaccurate assessments, leading to denial of creditworthy non-strategic individuals and financial exclusion.",
+    "generated": "Learning under strategic self-selection without modeling selection bias, through loan applicants interacting with automated underwriting, triggers systems to misinterpret non-strategic non-participation as low creditworthiness, leading to creditworthy non-strategic applicants being denied loans and entrenching financial exclusion and systemic inequality."
+  }
+}

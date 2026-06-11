@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2175",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4608,
+    "reference": "Scientists and regulators trust AI-optimized NMR readings without cross-validation, enabling persistent bias.",
+    "generated": "Environmental scientists lack field calibration references to detect simulation-trained pulse sequence biases under real soil heterogeneity."
+  },
+  "impact": {
+    "similarity": 0.7613,
+    "reference": "Incorrect soil carbon stock estimates undermine climate mitigation policies and carbon market transactions.",
+    "generated": "Biased carbon-13 estimates undermine soil carbon accounting, misdirecting agricultural practices and carbon credit markets."
+  },
+  "dose_response": {
+    "similarity": 0.8507,
+    "reference": "RL-trained pulse sequences mis-characterize spin relaxation, enabling biased carbon-13 estimates, which when trusted without cross-validation by environmental scientists, leads to incorrect stock estimates undermining climate policies and carbon markets.",
+    "generated": "Simulation-trained RL pulse sequences mis-characterize spin relaxation under real low-field conditions, distorting quantification, and through deployment by environmental scientists lacking field calibration references to detect biases under soil heterogeneity, triggers undetected carbon-13 estimate errors, leading to biased estimates that undermine soil carbon accounting and misdirect agricultural practices and carbon credit markets."
+  }
+}

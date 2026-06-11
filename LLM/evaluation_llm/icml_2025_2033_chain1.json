@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2033",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Clients trusting ZKP-verified confidence as full integrity guarantee and being unaware of pre-proof suppression matches the reference's sensitivity of treating cryptographic proof as a surrogate for input integrity and disregarding confidence corruption.",
+    "reference": "Clients treat cryptographic proof as a surrogate for input integrity and disregard confidence corruption.",
+    "generated": "Clients trust ZKP-verified confidence as a full integrity guarantee, unaware that verification does not detect pre-proof adversarial suppression of model confidence."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated consequence is unjust denial and discriminatory outcomes; the affected party (targeted individuals) is tangentially present, but the reference's damage types of financial loss and erosion of trust are absent.",
+    "reference": "Sensitive decisions based on false verified predictions cause financial loss and erode trust in privacy-preserving AI.",
+    "generated": "Unjust denial of critical services and discriminatory outcomes for targeted individuals, despite verifiable confidence scores."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc of adversarial suppression forcing incorrect predictions and exploiting overtrust in ZKP verification is captured, but the outcome shifts to discriminatory denials rather than the reference's financial loss, missing that final link.",
+    "reference": "Adversarial confidence suppression attacks force selective classifiers to emit incorrect predictions, which in confidential ZKP-verified inference exploits clients' overtrust of cryptographic proof, leading to financial loss.",
+    "generated": "Adversarial suppression forcing incorrect predictions, through reliance on ZKP verification, triggers trust in verification as complete assurance, resulting in discriminatory denials even with verified scores."
+  }
+}

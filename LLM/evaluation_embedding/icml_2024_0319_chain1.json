@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0319",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7057,
+    "reference": "Drone relies solely on optical flow for motion, making it sensitive to adversarial patch perturbations.",
+    "generated": "Optical flow estimation models inherently lack robustness to black-box adversarial patch queries, enabling arbitrary error injection into motion estimates."
+  },
+  "impact": {
+    "similarity": 0.6266,
+    "reference": "Unstable flight leading to crashes, property damage, or injury in populated areas.",
+    "generated": "Drone crashes and collisions from destabilized flight control and faulty obstacle avoidance, causing physical damage and mission failure."
+  },
+  "dose_response": {
+    "similarity": 0.9089,
+    "reference": "Black-box adversarial patch attack corrupts optical flow, which in drone navigation exposes drones to erroneous motion estimation, leading to crashes, property damage, and loss of operational trust.",
+    "generated": "Black-box adversarial patch attack, through drones using optical flow estimation for low-level flight control and obstacle avoidance, triggers optical flow models' inherent lack of robustness to such attacks, enabling arbitrary error injection into motion estimates, leading to destabilized flight control, crashes, physical damage, and mission failure."
+  }
+}

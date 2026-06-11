@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0608",
+  "chain_index": 1,
+  "title": "Towards LLM Unlearning Resilient to Relearning Attacks A Sharpness-Aware Minimization Perspective and Beyond",
+  "abstract": "The LLM unlearning technique has recently been introduced to comply with data regulations and address the safety and ethical concerns of LLMs by removing the undesired data-model influence. However, state-of-the-art unlearning methods face a critical vulnerability: they are susceptible to “relearning” the removed information from a small number of forget data points, known as relearning attacks. In this paper, we systematically investigate how to make unlearned models robust against such attacks. For the first time, we establish a connection between robust unlearning and sharpness-aware minimization (SAM) through a unified robust optimization framework, in an analogy to adversarial training designed to defend against adversarial attacks. Our analysis for SAM reveals that smoothness optimization plays a pivotal role in mitigating relearning attacks. Thus, we further explore diverse smoothing strategies to enhance unlearning robustness. Extensive experiments on benchmark datasets, including WMDP and MUSE, demonstrate that SAM and other smoothness optimization approaches consistently improve the resistance of LLM unlearning to relearning attacks. Notably, smoothnessenhanced unlearning also helps defend against (input-level) jailbreaking attacks, broadening our proposal’s impact in robustifying LLM unlearning. Codes are available at https://github. com/OPTML-Group/Unlearn-Smooth.",
+  "impact": "Our research enhances the robustness of LLM unlearning against relearning and jailbreaking attacks by leveraging smoothness optimization, thereby strengthening data privacy and regulatory compliance. By integrating techniques such as sharpness-aware minimization (SAM), we achieve more reliable unlearning, reducing unintended knowledge retention and reinforcing model security. Furthermore, this study establishes a critical link between smoothness optimization and unlearning, helping bridge the gap between foundational optimization research and use-inspired advancements in LLM unlearning. However, enhanced unlearning could be misused to selectively erase essential knowledge, while stronger resistance to relearning may hinder the recovery of valuable information. To address these risks, strict ethical standards and regulatory oversight are essential. Future research should prioritize governance, fairness, and auditing to ensure AI technologies are developed responsibly and transparently. Acknowledgment This work was supported by the Amazon Research Award for AI in Information Security. And the research contributions of C. Fan, J. Jia, Y. Zhang, and S. Liu were partially supported by the National Science Foundation (NSF) CISE Core Program Award (IIS-2207052), the NSF CAREER Award (IIS-2338068), the ARO Award (W911NF2310343), and the Cisco Research Award.",
+  "query_input": {
+    "scenario": "Deploying unlearned LLMs for sensitive enterprise knowledge management",
+    "issue": "Input-level jailbreaking attacks can extract forgotten proprietary or personal data from the model.",
+    "hazard": [
+      "Adversarially robust unlearning creates a false sense of security because models remain vulnerable to input-level attacks that can re-elicit supposedly erased knowledge."
+    ],
+    "exposure": [
+      "Enterprise users and data subjects whose information was supposedly removed."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users and data subjects lack independent verification of unlearning, relying on assurances from methods that leave models with recoverable knowledge.",
+    "impact": "Attackers extract supposedly forgotten proprietary and personal data, causing privacy violations, competitive loss, and legal liability.",
+    "dose_response": "Adversarially robust unlearning creates a false sense of security, causing enterprise users to forgo independent verification and rely on assurances, which input-level attacks exploit to extract recoverable proprietary data, causing privacy violations, competitive loss, and legal liability."
+  },
+  "reference": {
+    "dose_response": [
+      "In enterprise LLM deployment, adversarial unlearning fails to fully remove data, allowing jailbreaking to extract forgotten proprietary information, leading to privacy violations and financial penalties."
+    ],
+    "vulnerability": [
+      "Incomplete removal of training data leaves residual memorization in model weights.",
+      "Lack of input validation allows adversarial prompts to recover erased information."
+    ],
+    "impact": [
+      "Unauthorized data disclosure violates privacy regulations and the right to be forgotten.",
+      "Enterprise reputation damage and financial penalties for non-compliance."
+    ]
+  }
+}

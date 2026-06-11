@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1632",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes practitioner ignorance of safety null-space fragility; generated describes defense mechanism insufficiency, related but not the same sensitivity condition",
+    "reference": "Practitioner ignorance of safety null-space fragility during standard fine-tuning workflows.",
+    "generated": "Existing fine-tuning defenses lack mechanisms to prevent reversal or misapplication of the added safety delta, leaving safety constraints brittle."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "generated mentions unsafe outputs harming end users, but lacks reference's specific domain (medicine, law, finance) and dangerous advice context",
+    "reference": "Domain-specific models in medicine, law, or finance output dangerous advice under fine-tuning drift.",
+    "generated": "Fine-tuned LLMs generate unsafe outputs that harm end users and break safety alignment guarantees."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference arc is fine-tuning shifting weights from safety null space causing dangerous domain outputs; generated arc is about reversible safety delta and absent reversal defenses causing unsafe outputs, a different causal mechanism",
+    "reference": "Fine-tuning shifts weights from safety null space, which in domain-specific adaptation exposes high-stakes outputs to dangerous advice and liability.",
+    "generated": "Safety vector addition for realignment introduces a reversible delta that, when fine-tuning practitioners apply it, triggers the absence of defenses preventing delta reversal, leading to unsafe outputs that harm end users and break alignment guarantees."
+  }
+}

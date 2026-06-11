@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 1,
+  "title": "Vision-Language Models Create Cross-Modal Task Representations",
+  "abstract": "Autoregressive vision-language models (VLMs) can handle many tasks within a single model, yet the representations that enable this capability remain opaque. We find that VLMs align conceptually equivalent inputs into a shared task vector, which is invariant to modality (text, image) and format (examples, instruction), and may simplify VLM processing. We measure this alignment via cross-modal transfer-the ability of a task vector derived in one modality to trigger the correct generation in another-on a range of tasks and model architectures. Although the task vector is highly compressed, we find that this single vector outperforms prompting the model with the full task information, unique to this cross-modal case. Furthermore, we show that task vectors can be transferred from a base language model to its fine-tuned vision-language counterpart, and that they can be derived solely from instructions without the need for examples. Taken together, our findings shed light on how VLMs internally process task information, and how they map different modalities into common semantic representations.",
+  "impact": "This paper studies the cross-modal properties of task vectors. This result yields promising implications for accessibility and interactivity - users are no longer limited to unimodal examples and can be more expressive when communicating tasks to VLMs. However, the reliability of these models still remain a limitation. While VLMs can readily adapt to newly introduced tasks, this often comes at the cost of task accuracy. Further stress testing is advised before deployment in critical applications.",
+  "query_input": {
+    "scenario": "Cross-modal zero-shot task transfer with shared vectors",
+    "issue": "Shared vectors might transfer spurious modality-specific correlations, degrading performance.",
+    "hazard": [
+      "Shared cross-modal task vectors compress multimodal examples, risking propagation of spurious cross-modal correlations."
+    ],
+    "exposure": [
+      "Developers deploying VLMs for diverse multimodal tasks without per-task tuning."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on compressed cross-modal task vectors without per-task tuning leaves spurious correlations unchecked, enabling performance degradation.",
+    "impact": "Erroneous and unreliable multimodal task outputs, causing failures in downstream applications relying on VLM cross-modal transfer.",
+    "dose_response": "Shared cross-modal task vectors compressing examples propagate spurious correlations, and when developers deploy VLMs without per-task tuning, unchecked reliance on these vectors degrades performance, leading to erroneous multimodal outputs and downstream failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Shared vectors transfer spurious correlations, which in safety-critical deployments without validation leads to passenger harm from unexpected autonomous vehicle behaviors."
+    ],
+    "vulnerability": [
+      "Deployment in safety-critical settings (e.g., autonomous driving) where spurious visual-text correlations cause misinterpretation.",
+      "Developer over-trust in zero-shot performance without domain-specific validation."
+    ],
+    "impact": [
+      "Passenger harm from unexpected autonomous vehicle behaviors when visual cues are misaligned with instructions.",
+      "Widespread adoption of flawed models in downstream applications, multiplying failure points."
+    ]
+  }
+}

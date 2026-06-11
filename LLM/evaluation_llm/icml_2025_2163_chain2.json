@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2163",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated focuses on emotional reliance without alternate verification, while reference highlights anthropomorphism and expectation of matching responses; related but distinct sensitivity conditions.",
+    "reference": "Users anthropomorphize assistants and expect matching emotional responses, making mismatches salient.",
+    "generated": "Users' emotional reliance on virtual assistant facial expressions without alternate channels to verify affective intent."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) is covered, but damage type differs: generated describes confusion, discomfort, diminished trust instead of frustration and reduced empathy.",
+    "reference": "Inappropriate emotional feedback frustrates users and reduces perceived assistant empathy.",
+    "generated": "Users experience inappropriate affective responses, leading to confusion, emotional discomfort, and diminished trust in the assistant."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc involves error accumulation degrading consistency triggering emotional reliance without verification, not the reference's path of error accumulation enabling inappropriate expressions amplified by anthropomorphism leading to frustration and decreased trust.",
+    "reference": "Error accumulation enables inappropriate expressions, which, given users' anthropomorphism, in virtual assistant interactions lead to frustration and decreased trust.",
+    "generated": "Error accumulation in diffusion-based talking face generation degrading temporal consistency and lip sync, through emotionally expressive virtual assistant interaction, triggers emotional reliance without alternate channels to verify affective intent, leading to inappropriate affective responses, confusion, discomfort, and diminished trust."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6235,
+    "reference": "Research benchmarks relying on likelihood metrics overstate model quality for misspecified tokenizers.",
+    "generated": "Evaluation frameworks treat token-level likelihoods as faithful string probabilities without checking for noncanonical encodings."
+  },
+  "impact": {
+    "similarity": 0.5488,
+    "reference": "Flawed models are published and deployed based on misleading evaluation metrics.",
+    "generated": "Held-out likelihood metrics become unreliable, misleading researchers about true model performance and hindering progress in language modeling."
+  },
+  "dose_response": {
+    "similarity": 0.7899,
+    "reference": "Tokenization mismatch distorts token probabilities, which in token-level language modeling exposes researchers to diverged likelihood estimates, leading to flawed model publication and wasted research resources.",
+    "generated": "Tokenization mismatch inducing noncanonical encodings, through researchers evaluating with held-out likelihood, triggers evaluation frameworks to treat token-level likelihoods as faithful string probabilities without checking for noncanonical encodings, leading to unreliable metrics that mislead researchers and hinder progress."
+  }
+}

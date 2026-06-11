@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0761",
+  "chain_index": 2,
+  "title": "A Persuasive Approach to Combating Misinformation",
+  "abstract": "Bayesian Persuasion is proposed as a tool for social media platforms to combat the spread of misinformation. Since platforms can use machine learning to predict the popularity and misinformation features of to-be-shared posts, and users are largely motivated to share popular content, platforms can strategically signal this informational advantage to change user beliefs and persuade them not to share misinformation. We characterize the optimal signaling scheme with imperfect predictions as a linear program and give sufficient and necessary conditions on the classifier to ensure optimal platform utility is nondecreasing and continuous. Next, this interaction is considered under a performative model, wherein platform intervention affects the user’s future behaviour. The convergence and stability of optimal signaling under this performative process are fully characterized. Lastly, we experimentally validate that our approach significantly reduces misinformation in both the single round and performative setting.",
+  "impact": "Misinformation on social media widely is considered one of the most pressing issues in contemporary society, affecting a wide-range of issues from democratic governance to public health (Persily & Tucker, 2020; Suarez-Lledo & Alvarez- Galvez, 2021). As a socio-technical issue, it is imperative that we as computer scientist look to mitigate this important problem. While there is no debate about the negative outcomes associated with misinformation, exactly classifying misinformation is more challenging, especially at scale. This renders typical content moderation and censoring approaches difficult. Further, it raises concerns about social media platforms abusing their power to regulate discourse, often leading to the creation of echo chambers. As we presented in our work, public opinion is also wary of such approaches (Amy & Walker, 2021). Correspondingly, our work proposes a constructive information design approach that does not require platforms policing content - rather, it attempts to use information revelation to persuade rational users away from sharing misinformation. We make no unrealistic assumptions about the setting, and strongly believe this can be a useful first step toward tackling this issue. That said, there are several considerations to be aware of: • The persuasion approach relies on user being, at worst, indifferent to misinformation in their content. As such, it will not be as successful in dealing with malicious actor who consciously and willingly spread misinformation. Standard approaches like identifying and banning such actors are still needed. • In persuasion, the platform commits to a signaling scheme prior to observations, and honours that scheme upon observation. It requires the platform/sender to not lie. This assumption is considered largely innocuous in economics literature as platforms risk severe reputational damage. In practice however, we believe strong regulatory guidelines also need to be established to further discourage such behaviour.",
+  "query_input": {
+    "scenario": "News media image captioning with VLMs",
+    "issue": "Poisoned model mislabels political figures in captions, spreading false information.",
+    "hazard": [
+      "Stealthy data poisoning attacks on vision-language models that manipulate generated text (label and persuasion) while remaining visually indistinguishable."
+    ],
+    "exposure": [
+      "News readers consuming articles with VLM-generated captions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "News readers' trust in automated captions and inability to detect visually indistinguishable mislabeling renders them susceptible to false political identity claims.",
+    "impact": "Mislabeled political figures in captions spread disinformation, distorting public perception of events and eroding trust in news media.",
+    "dose_response": "Stealthy data poisoning attacks on vision-language models, through news readers consuming VLM-generated captions, trigger their trust in automated captions and inability to detect mislabeling, leading to mislabeled political figures that spread disinformation, distorting public perception and eroding trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Stealthy data poisoning causes VLM mislabeling of political figures, exposing news readers to false captions, which propagate false narratives, undermining democratic processes and intensifying public polarization."
+    ],
+    "vulnerability": [
+      "Journalists' unchecked adoption of AI captions and readers' assumption of factual accuracy.",
+      "Absence of editorial verification of AI-generated captions."
+    ],
+    "impact": [
+      "False political narratives propagate, undermining democratic processes and trust in journalism.",
+      "Public polarization intensifies, leading to social unrest."
+    ]
+  }
+}

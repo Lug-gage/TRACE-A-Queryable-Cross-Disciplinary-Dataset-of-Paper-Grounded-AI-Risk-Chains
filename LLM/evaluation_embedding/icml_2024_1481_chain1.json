@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6688,
+    "reference": "Self-attention gradient leakage exposes private text sequences, including PII and confidential communications.",
+    "generated": "Unprotected model updates in decentralized gradient descent retain data-specific patterns, enabling reconstruction of private text sequences."
+  },
+  "impact": {
+    "similarity": 0.4961,
+    "reference": "Leak of sensitive personal messages or proprietary documents, causing financial and reputational damage.",
+    "generated": "Large-scale exposure of confidential text data from federated LLM training, violating user privacy and undermining collaborative learning adoption."
+  },
+  "dose_response": {
+    "similarity": 0.7343,
+    "reference": "Exact reconstruction from gradients enables recovery of token sequences, which in federated language model training without secure aggregation exposes private text, leading to financial damage and regulatory non-compliance.",
+    "generated": "Exact reconstruction of private training data from shared gradient updates, through users' private text contributions to federated LLM training, triggers unprotected model updates to retain data-specific patterns, leading to large-scale exposure of confidential text, violating privacy and undermining collaborative learning adoption."
+  }
+}

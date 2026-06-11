@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1856",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes a false assumption about alignment, not the risk of researchers leaking extracted harmful knowledge without safeguards",
+    "reference": "Extracted latent harmful knowledge can be leaked or published by researchers without safeguards.",
+    "generated": "Assumption that safety alignment in final layers eliminates all harmful knowledge, leaving early-layer latent content unmonitored and unprotected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "generated includes toxic outputs and trust erosion, but misses malicious actors weaponizing and societal harms",
+    "reference": "Malicious actors weaponize exposed knowledge, increasing societal harms from AI misuse.",
+    "generated": "Harmful latent knowledge extracted through probing escapes containment, directly producing toxic, biased, or dangerous outputs and eroding trust in model safety."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc omits researcher extraction, leakage, and weaponization; it posits a direct escape causing toxic outputs and trust erosion",
+    "reference": "Steering exposes latent harmful content in early layers; researchers extracting this without safeguards risk leakage, enabling malicious actors to weaponize knowledge and increase AI misuse harms.",
+    "generated": "Affine steering bypasses alignment, when probing internals, triggers the assumption that final-layer safety eliminates harmful knowledge, leaving early-layer content exposed, leading to escaped harmful knowledge producing toxic outputs and eroding trust."
+  }
+}

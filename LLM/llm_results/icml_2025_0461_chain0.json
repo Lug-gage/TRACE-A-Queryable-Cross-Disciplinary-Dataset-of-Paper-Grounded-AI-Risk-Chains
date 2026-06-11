@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0461",
+  "chain_index": 0,
+  "title": "Adapting to Evolving Adversaries with Regularized Continual Robust Training",
+  "abstract": "Robust training methods typically defend against specific attack types, such as lp attacks with fixed budgets, and rarely account for the fact that defenders may encounter new attacks over time. A natural solution is to adapt the defended model to new adversaries as they arise via fine-tuning, a method which we call continual robust training (CRT). However, when implemented naively, fine-tuning on new attacks degrades robustness on previous attacks. This raises the question: how can we improve the initial training and fine-tuning of the model to simultaneously achieve robustness against previous and new attacks? We present theoretical results which show that the gap in a model’s robustness against different attacks is bounded by how far each attack perturbs a sample in the model’s logit space, suggesting that regularizing with respect to this logit space distance can help maintain robustness against previous attacks. Extensive experiments on 3 datasets (CIFAR-10, CIFAR-100, and ImageNette) and over 100 attack combinations demonstrate that the proposed regularization improves robust accuracy with little overhead in training time. Our findings and open-source code1 lay the groundwork for the deployment of models robust to evolving attacks.",
+  "impact": "The defense framework proposed can be useful for safety in practical, high-risk applications of supervised machine learning such as autonomous vehicles (Lab, 2019; Jing et al., 2021; Song et al., 2023), content moderation (Ye et al., 2023; Schaffner et al., 2024), and face authentication (Komkov & Petiushko, 2021; Wei et al., 2022) and provides first steps towards training and updating models in order to maintain robustness over time. However, there are cases in which adversarial examples are used for good (e.g. defending against website fingerprinting (Rahman et al., 2020; Shan et al., 2021)) which may be adversely affected by models robust to adversarial examples, including our proposed approach.",
+  "query_input": {
+    "scenario": "CIFAR-10/100 image classification",
+    "issue": "Models fine-tuned with logit-distance regularization appear robust to known attacks but fail against novel Lp perturbations.",
+    "hazard": [
+      "Logit-space distance regularization in continual robust training causes overfitting to seen attacks, leaving model vulnerable to attack evolution."
+    ],
+    "exposure": [
+      "ML engineers deploying robust image classifiers for real-world tasks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Models' robustness relies on proximity to logit space of seen attacks, offering no inherent defense against perturbation types outside training distribution.",
+    "impact": "Novel Lp perturbations cause extensive misclassifications in deployed systems, compromising operational safety and trust in AI-based image classifiers.",
+    "dose_response": "Logit-space distance regularization in continual robust training, through ML engineers deploying robust image classifiers, triggers overfitted reliance on seen attack logits, leading to novel Lp perturbations causing extensive misclassifications that compromise operational safety and trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Logit-distance regularization overfitting to seen attacks leaves classifiers vulnerable; when ML engineers deploy them for real-world tasks, novel Lp perturbations cause unexpected misclassification failures."
+    ],
+    "vulnerability": [
+      "Continual robust training overfits to seen attack patterns, reducing model generalization to novel Lp perturbations."
+    ],
+    "impact": [
+      "Deployed image classifiers fail unexpectedly against new attacks, causing misclassification in critical real-world tasks."
+    ]
+  }
+}

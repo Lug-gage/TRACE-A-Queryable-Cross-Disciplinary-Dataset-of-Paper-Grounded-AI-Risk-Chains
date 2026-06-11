@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0814",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7597,
+    "reference": "Automation bias induces researchers to trust agent-hallucinated hyperparameters without validation.",
+    "generated": "Trust in automated agent outputs without verification processes to catch hallucinated hyperparameter choices."
+  },
+  "impact": {
+    "similarity": 0.9025,
+    "reference": "Wasted compute resources and flawed benchmark results mislead model comparisons and research directions.",
+    "generated": "Wasted computational resources and propagation of erroneous benchmark results, distorting model comparison and research direction."
+  },
+  "dose_response": {
+    "similarity": 0.7292,
+    "reference": "The agent's hallucinated hyperparameter choices, when trusted by ML researchers due to automation bias without validation, lead to wasted compute and misleading benchmark scores, corrupting model comparisons.",
+    "generated": "Autonomous LLM agents’ hallucinated experimental plans, through researchers relying on their CIFAR-10 results for comparison, trigger unverified trust, leading to wasted compute and propagation of erroneous results, distorting model comparison and research direction."
+  }
+}

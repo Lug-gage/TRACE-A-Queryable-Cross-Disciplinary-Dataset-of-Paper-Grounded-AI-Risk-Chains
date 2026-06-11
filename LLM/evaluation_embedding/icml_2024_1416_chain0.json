@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1416",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5183,
+    "reference": "LLMs fine-tuned on biased preference data amplify societal stereotypes in user interactions.",
+    "generated": "Users cannot detect spurious preference encoding in LLM outputs due to opaque reward distribution alignment."
+  },
+  "impact": {
+    "similarity": 0.6711,
+    "reference": "Users receive discriminatory recommendations and content, reinforcing systemic biases.",
+    "generated": "Biased LLM responses systematically reinforce discriminatory preferences across user populations."
+  },
+  "dose_response": {
+    "similarity": 0.7969,
+    "reference": "Miscalibrated distributional preference alignment embeds spurious bias in LLM rewards, causing interactions to produce discriminatory recommendations that reinforce systemic biases.",
+    "generated": "Miscalibrated or distributionally misaligned conditional transport plans, through users interacting with distributionally preference-aligned LLMs, trigger users' inability to detect spurious preference encoding from opaque reward alignment, leading to biased LLM responses systematically reinforcing discriminatory preferences across user populations."
+  }
+}

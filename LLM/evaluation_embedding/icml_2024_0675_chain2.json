@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5684,
+    "reference": "Over-reliance on a single detection method (refusal loss) creates a single point of failure; attackers adapt quickly.",
+    "generated": "Detection systems rely on refusal-loss signals that stealthy, fluent adversarial suffixes do not trigger."
+  },
+  "impact": {
+    "similarity": 0.4749,
+    "reference": "Undetectable jailbreaks persist, causing ongoing harm and complacency, leading to regulatory scrutiny.",
+    "generated": "Harmful LLM outputs are served to users undetected, undermining safety guardrails and enabling misuse."
+  },
+  "dose_response": {
+    "similarity": 0.8398,
+    "reference": "Stealthy adversarial suffixes evade detection by exploiting over-reliance on a single method, enabling persistent jailbreaks that cause ongoing harm and regulatory scrutiny.",
+    "generated": "Stealthy controllable generation of adversarial suffixes, when directed at jailbreak detection systems, exploits their reliance on refusal-loss signals that fluent suffixes do not trigger, resulting in harmful outputs served undetected and safety guardrails undermined."
+  }
+}

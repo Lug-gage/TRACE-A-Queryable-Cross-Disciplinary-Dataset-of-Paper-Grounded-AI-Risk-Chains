@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0868",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6399,
+    "reference": "No real-time safety override for sudden RL policy changes.",
+    "generated": "No real-time safety filter or human override to prevent collisions when dormancy resets cause abrupt steering shifts."
+  },
+  "impact": {
+    "similarity": 0.7874,
+    "reference": "Collisions causing injuries and fatalities.",
+    "generated": "Collisions injure or kill drivers, passengers, and pedestrians."
+  },
+  "dose_response": {
+    "similarity": 0.9104,
+    "reference": "Causality-aware entropy regularization and dormancy-guided resets trigger sudden steering shifts, exposing drivers and pedestrians without safety overrides and slow reactions to collisions, causing injuries, fatalities, distrust, and regulation.",
+    "generated": "Abrupt steering shifts caused by causality-aware entropy regularization and dormancy-guided resets, through the exposure of drivers, passengers, and pedestrians near autonomous vehicles, trigger the absence of real-time safety filters or human overrides to prevent collisions, leading to injuries or fatalities."
+  }
+}

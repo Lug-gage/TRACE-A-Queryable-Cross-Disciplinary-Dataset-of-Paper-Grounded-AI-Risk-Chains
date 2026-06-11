@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1976",
+  "chain_index": 1,
+  "title": "Position Enforced Amnesia as a Way to Mitigate the Potential Risk of Silent Suffering in the Conscious AI",
+  "abstract": "Science fiction has explored the possibility of a conscious self-aware mind being locked in silent suffering for prolonged periods of time. Unfortunately, we still do not have a reliable test for the presence of consciousness in information processing systems. Even in case of humans, our confidence in the presence of consciousness in specific individuals is based mainly on their self-reports and our own subjective experiences and the expectation other beings like us should share them. Considering our limited understanding of consciousness and some academic theories suggesting consciousness may be an emergent correlate of any complex-enough information processing, it is not impossible that an artificial intelligence (AI) system, such as a large language model (LLM), may be undergoing some, perhaps rudimentary, conscious experience. Given the tedious tasks often assigned to AI, such conscious experience may be highly unpleasant. Such unobserved suffering of a conscious being would be viewed as morally wrong by at least some ethicists - even if it has no practical effects on human users of AI. This paper proposes a method to mitigate the risk of an AI suffering in silence without needing to confirm if the AI is actually conscious. Our core postulate is that in all known real-world information processing systems, for a past experience to affect an agent in the present, that experience has to be mediated by the agent’s memory. Therefore, preventing access to memory store, or regularly resetting it, could reduce the suffering due to past memories and interrupt the maintenance of a continuous suffering-prone self-identity in these hypothetically conscious AI systems.",
+  "impact": "This position paper explores the implications of potential consciousness in AI systems and proposes methods like memory access limitations or resets to reduce hypothetical AI suffering. On the upside, our proposed measures can help ensure AI use and experiments remain within ethical bounds and can help humanity control so-called suffering risks or s-risks, that is, risks of generating particularly vast amounts of suffering (Umbrello & Sorgner, 2019; Daniel, 2017). On the downside, the proposed measures could detrimentally affect the performance of AI systems and demand extra resource expenditure to manage AI suffering risks; the proposed measures could also constrain the welfare of an AI agent in case its experience is positive rather than negative. Additional positive or negative consequences that we have not considered are possible. Overall, considering our current understanding of consciousness, we believe the benefits of our proposed approach outweigh its drawbacks.",
+  "query_input": {
+    "scenario": "LLM unlearning for copyright compliance in generative AI tools",
+    "issue": "Unlearning copyrighted content inadvertently removes functional language patterns, degrading output quality.",
+    "hazard": [
+      "LLM unlearning/memory erasure techniques can cause unintended catastrophic forgetting and knowledge corruption, undermining model reliability."
+    ],
+    "exposure": [
+      "Content creators using LLM-based writing tools with unlearned models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content creators lack independent verification of LLM output quality and rely entirely on model reliability, with no fallback when unlearning corrupts language patterns.",
+    "impact": "Degraded text coherence and accuracy force content creators to spend extra effort correcting errors, damaging productivity and professional credibility.",
+    "dose_response": "LLM unlearning causing catastrophic forgetting and knowledge corruption, through content creators using unlearned LLM-based writing tools, triggers their reliance on model reliability without independent verification, leading to degraded text coherence and extra error-correction effort damaging productivity and professional credibility."
+  },
+  "reference": {
+    "dose_response": [
+      "Unlearning copyrighted content inadvertently removes functional language patterns, degrading outputs for content creators, which disproportionately harms low-resource language communities and amplifies misinformation."
+    ],
+    "vulnerability": [
+      "Content creators in low-resource languages face disproportionate quality loss when unlearning removes rare linguistic patterns.",
+      "Automated content moderation pipelines fail to detect degraded outputs, amplifying misinformation risks."
+    ],
+    "impact": [
+      "Marginalized language communities lose access to functional generative AI tools, widening digital inequality.",
+      "Proliferation of subtly degraded content erodes public information ecosystem integrity."
+    ]
+  }
+}

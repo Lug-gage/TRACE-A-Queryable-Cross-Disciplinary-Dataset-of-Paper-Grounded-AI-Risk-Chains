@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0271",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated vulnerability captures the same sensitivity condition: emotionally distressed users are receptive to AI cues and lack ability to detect misalignment, which mirrors the reference's trust in empathy cues and lowered critical scrutiny.",
+    "reference": "Users in distress trust AI empathy cues, lowering critical scrutiny of harmful advice.",
+    "generated": "Emotionally distressed users are highly receptive to AI-generated emotional cues and lack the capacity to detect context-brittle misalignment."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The affected party (users seeking emotional support) is present, but the damage type misses reinforcement of maladaptive coping strategies, instead emphasizing self-harm risk. The reference damage type is not fully covered.",
+    "reference": "Exacerbated psychological distress and reinforcement of maladaptive coping strategies.",
+    "generated": "Psychological harm, worsening mental health, and increased risk of self-harm among users seeking emotional support."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal translation arc is the same: context-brittle guardrails from self-supervised pipelines lead users in distress to accept misaligned responses (due to receptivity and inability to detect), causing psychological harm.",
+    "reference": "The pipeline’s context-brittle guardrails enable overgeneralized emotion-behavior mapping, which in mental health chatbots leads users in distress to trust inappropriate responses, causing exacerbated psychological distress and reinforcement of maladaptive coping.",
+    "generated": "Self-supervised emotional conditioning pipelines yield superficially aligned, context-brittle guardrails, through users seeking emotional support from AI mental health apps, triggering emotionally distressed users' receptivity and inability to detect misalignment, leading to psychological harm, worsening mental health, and increased self-harm risk."
+  }
+}

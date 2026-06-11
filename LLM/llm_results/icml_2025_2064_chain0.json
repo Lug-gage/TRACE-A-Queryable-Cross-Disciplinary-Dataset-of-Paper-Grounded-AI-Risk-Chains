@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2064",
+  "chain_index": 0,
+  "title": "Update Your Transformer to the Latest Release Re-Basin of Task Vectors",
+  "abstract": "Foundation models serve as the backbone for numerous specialized models developed through fine-tuning. However, when the underlying pretrained model is updated or retrained (e.g., on larger and more curated datasets), the fine-tuned model becomes obsolete, losing its utility and requiring retraining. This raises the question: is it possible to transfer fine-tuning to a new release of the model? In this work, we investigate how to transfer fine-tuning to a new checkpoint without having to re-train, in a data-free manner. To do so, we draw principles from model re-basin and provide a recipe based on weight permutations to re-base the modifications made to the original base model, often called task vector. In particular, our approach tailors model re-basin for Transformer models, taking into account the challenges of residual connections and multi-head attention layers. Specifically, we propose a twolevel method rooted in spectral theory, initially permuting the attention heads and subsequently adjusting parameters within select pairs of heads. Through extensive experiments on visual and textual tasks, we achieve the seamless transfer of fine-tuned knowledge to new pre-trained backbones without relying on a single training step or datapoint. Code is available at https:// github.com/aimagelab/TransFusion.",
+  "impact": "Our approach to transferring fine-tuning between model versions without requiring re-training or additional data holds the potential to significantly lower the barriers to maintaining state-of-the-art AI technologies. By enabling seamless updates, this method could empower organizations, especially those with limited resources, to keep pace with technological advancements, thereby democratizing access to sophisticated AI tools. This democratization can foster innovation across diverse sectors, potentially leveling the playing field between large entities and smaller, resourceconstrained organizations. The idea of aligning models with minor variations in architecture, such as different layer counts, is also worth exploring. One simple approach could involve selectively pruning layers from the model with more layers to match its counterpart-removing redundant or unimportant layers-while an alternative strategy might replicate the last block of the smaller network multiple times to achieve parity. We plan to investigate these strategies further in future work. However, as we facilitate easier transitions between model versions, it is crucial to ensure that these updates do not compromise the integrity of the models. Dependence on outdated or poorly validated models poses significant risks, particularly when used in critical applications. Therefore, it is imperative that as this technology is adopted, continuous efforts are made to monitor, validate, and refine these models to safeguard against biases and errors that may arise from rapid model evolution. Future research should focus on developing robust frameworks for evaluating the ethical implications, fairness, and transparency of AI models as they evolve, ensuring that advancements in AI technology are implemented responsibly and ethically.",
+  "query_input": {
+    "scenario": "Model merging via weight matching for pre-trained Transformers",
+    "issue": "Permutation mismatches produce functionally incoherent merged models",
+    "hazard": [
+      "Misaligned weight permutations in model merging or task vector transfer distort functional representations, leading to degraded or unpredictable behavior in downstream use."
+    ],
+    "exposure": [
+      "ML engineers deploying merged language models in production"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Engineers lack mechanisms to verify that weight-matched models preserve functionally coherent representations before production deployment.",
+    "impact": "Deployed language models exhibit functionally incoherent outputs, causing incorrect decisions and loss of user trust.",
+    "dose_response": "Misaligned weight permutations in model merging, through ML engineers deploying merged language models, triggers lack of verification for coherent representations, leading to functionally incoherent outputs and user trust loss."
+  },
+  "reference": {
+    "dose_response": [
+      "Misaligned weight permutations in model merging produce incoherent models; when deployed by ML engineers without behavioral testing, undetected errors emerge, eroding user trust and causing operational harm."
+    ],
+    "vulnerability": [
+      "Reliance on aggregate performance metrics without behavioral unit tests enables undetected functional incoherence."
+    ],
+    "impact": [
+      "Undetected model incoherence leads to erroneous downstream outputs, eroding user trust and causing operational harm."
+    ]
+  }
+}

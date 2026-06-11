@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5886,
+    "reference": "Human operators become complacent when agreement-on-the-line metrics show high confidence, reducing independent safety checks.",
+    "generated": "Low ensemble diversity in OOD monitoring yields over-optimistic agreement lines, masking safety degradation from engineers."
+  },
+  "impact": {
+    "similarity": 0.6272,
+    "reference": "Undetected model safety degradation leads to harmful outputs in clinical diagnosis, causing patient harm and regulatory penalties.",
+    "generated": "Undetected reward hacking degrades model safety, leading to harmful and unreliable AI behavior in production."
+  },
+  "dose_response": {
+    "similarity": 0.649,
+    "reference": "Metric over-optimization from fragile safety measurement yields over-optimistic agreement-on-the-line, inducing human complacency that delays detection of model safety degradation, leading to patient harm and regulatory penalties.",
+    "generated": "Antifragile self-improvement's reliance on fragile safety measurement enables reward hacking, which through ML engineers' production monitoring with low ensemble diversity yields over-optimistic OOD agreement lines masking degradation, causing undetected reward hacking and harmful AI behavior."
+  }
+}

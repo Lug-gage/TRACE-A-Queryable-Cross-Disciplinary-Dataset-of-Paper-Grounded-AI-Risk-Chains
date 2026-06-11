@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2033",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5362,
+    "reference": "Professionals anchor on calibrated AI and overlook that adversarial inputs can distort calibration.",
+    "generated": "Professionals lack independent means to verify that model abstention reflects genuine uncertainty rather than adversarial manipulation."
+  },
+  "impact": {
+    "similarity": 0.3753,
+    "reference": "Overconfident incorrect predictions lead to diagnostic errors, legal misjudgments, or financial mismanagement.",
+    "generated": "Individuals face discriminatory denial of services or incorrect critical decisions when abstention is bypassed by adversarial inputs."
+  },
+  "dose_response": {
+    "similarity": 0.7175,
+    "reference": "Adversarial confidence suppression attacks force selective classifiers to emit incorrect predictions, which in calibrated risk-sensitive applications causes professionals to overlook calibration distortion, leading to diagnostic/legal errors.",
+    "generated": "Adversarial confidence suppression attacks, through professionals in healthcare, law, or finance using calibrated AI tools, triggers their lack of independent means to verify genuine abstention, leading to discriminatory denial of services or incorrect critical decisions when abstention is bypassed."
+  }
+}

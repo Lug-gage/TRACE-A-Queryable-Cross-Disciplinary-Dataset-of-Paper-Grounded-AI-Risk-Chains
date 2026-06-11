@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_2229",
+  "chain_index": 1,
+  "title": "Nemotron-CORTEXA Enhancing LLM Agents for Software Engineering Tasks via Improved Localization and Solution D",
+  "abstract": "Large Language Models (LLMs) have demonstrated significant potential in code generation by following natural language instructions. Unfortunately, crucial real-world software engineering tasks, such as debugging or repository-level feature implementation, involve processing extensive contexts beyond current LLM context sizes and performing complex reasoning that is brittle using standard autoregressive decoding. Enhancing LLMs’ performance in these scenarios requires careful consideration of the contextual information provided to the model, optimizing how the model leverages that, and identifying tools that enable more effective navigation of the development environment. To address these challenges, we introduce NEMOTRON-CORTEXA, an agentic system built on a predefined scaffold that enhances LLMs’ ability to navigate and reason efficiently in complex software engineering contexts. Specifically, we develop a novel code embedding model that retrieves the most relevant files with greater precision, along with a localization agent that refines the granularity of the retrieval process. Additionally, we demonstrate that providing diverse contextual information and utilizing different prompt formats enable the model to identify and resolve issues more efficiently. We evaluate NEMOTRON-CORTEXA using SWEbench (Jimenez et al., 2023), a benchmark derived from real-world GitHub issues. Compared to the widely used Agentless framework (Xia et al., 2024), NEMOTRON-CORTEXA achieves a higher issue resolution rate at a lower cost, highlighting its practical impact in addressing real-world software engineering challenges.",
+  "impact": "Reliable and capable LLM software agents have the potential to automate routine programming tasks, such as debugging, and boost developer efficiency by freeing them to work on more innovative projects and explore more efficient solutions. By providing natural language interfaces to programming tasks, these agents can also enable people without prior programming experience to use code in their work. This potential can obviously be misused to do harm by malicious actors, for example, to generate malware or automate cyber attacks. Thus it is important to build robust safety mechanisms in LLM agents to minimize their negative impacts. By carefully considering these factors, we can work to maximize the benefits of LLM software agents.",
+  "query_input": {
+    "scenario": "Repository-level feature generation using tool-integrated agent",
+    "issue": "Generated code can fail to align with existing codebase conventions or implicit requirements, leading to integration failures.",
+    "hazard": [
+      "LLM code agents produce plausible but incorrect code without reliability guarantees, enabling flawed software at scale."
+    ],
+    "exposure": [
+      "Software teams integrating automatically generated features into complex, real-world codebases."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Software teams lack automated verification to detect generated code that violates codebase conventions or implicit requirements.",
+    "impact": "Flawed features cause integration breakdowns, production outages, and accumulated technical debt, eroding software reliability.",
+    "dose_response": "Plausible but incorrect code from LLMs at scale, when integrated by teams into real-world codebases, triggers the absence of automated convention verification, leading to integration breakdowns, outages, and technical debt, eroding software reliability."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM code agents' plausible but incorrect code, in repository-level feature generation, exposes teams to integration without convention checks, resulting in system instability and security holes."
+    ],
+    "vulnerability": [
+      "Teams accept feature code without validating against implicit team norms or project history.",
+      "Integration testing is insufficient to catch violations of unwritten conventions.",
+      "Development culture rewards rapid feature delivery over careful, manual alignment."
+    ],
+    "impact": [
+      "System instability from inconsistent code patterns across the codebase.",
+      "Technical debt accumulation and increased onboarding costs for new developers.",
+      "Security holes introduced by code that violates domain-specific safety practices."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2936",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4849,
+    "reference": "Filtering out low-scoring responses narrows training distribution, reducing output diversity and factual precision.",
+    "generated": "Dependence on LLMs fine-tuned with reward-filtered data, lacking means to detect or mitigate embedded distributional bias."
+  },
+  "impact": {
+    "similarity": 0.5538,
+    "reference": "Content creators and educators receive bland, generic suggestions that stifle creativity and fail to meet diverse educational needs.",
+    "generated": "Homogenized, biased outputs reduce creative diversity and educational value, undermining trust in AI-assisted generation."
+  },
+  "dose_response": {
+    "similarity": 0.7295,
+    "reference": "Automated rejection entrenches reward model biases, narrowing the training distribution and reducing output diversity, which leads content creators to receive bland, generic suggestions.",
+    "generated": "Automated rejection of instruction-response pairs by reward scores amplifies over-optimization on benchmarks and distributional bias; through use by content creators and educators, it triggers dependence on biased LLMs unable to detect embedded biases, leading to homogenized, biased outputs eroding trust."
+  }
+}

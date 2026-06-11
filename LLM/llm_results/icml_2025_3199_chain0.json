@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2025_3199",
+  "chain_index": 0,
+  "title": "Proposer-Agent-Evaluator (PAE) Autonomous Skill Discovery For Foundation Model Internet Agents",
+  "abstract": "A generalist foundation model agent needs to have a large and diverse skill repertoire, such as finding directions between two travel locations and buying specific items from the Internet. If each skill needs to be specified manually through a fixed set of human-annotated instructions, the agent’s skill repertoire will necessarily be limited due to the scalability of human-annotated instructions. In this work, we address this challenge by proposing Proposer-Agent-Evaluator (PAE), an effective learning system that enables foundation model agents to autonomously discover and practice skills in the wild. After a context-aware task proposer generates instructions based on website information, the agent policy attempts those tasks in the real world with resulting trajectories evaluated by an autonomous VLM-based success evaluator. The success evaluation serves as the reward signal for the agent to refine its policies through RL. We validate PAE on challenging vision-based web navigation, using both real-world and selfhosted websites from WebVoyager and WebArena. Our results show that PAE significantly improves the zero-shot generalization capability of VLM Internet agents (around 50% relative improvement) to both unseen tasks and websites.",
+  "impact": "This work aims to enhance autonomous Internet agents through open-ended interactions with the web. However, the irresponsible or unrestricted use of such agents may pose risks, including personal data leaks or vulnerabilities to malicious attacks. To mitigate these risks, it is crucial to implement robust precautionary measures. In our experiments involving open-ended web navigation, we ensure that the agent is restricted from accessing personal accounts and employ appropriate firewalls to block DNS requests to suspicious websites. These safeguards help prevent unintended consequences and protect sensitive information.",
+  "query_input": {
+    "scenario": "WebVoyager agent performing e-commerce purchases",
+    "issue": "Perceived autonomy reduces user oversight, leading to incorrect form-filling or unintended purchases.",
+    "hazard": [
+      "Autonomous skill acquisition without human oversight produces interaction policies that are unreliable or unsafe on live web environments."
+    ],
+    "exposure": [
+      "Users relying on autonomous web agents for shopping."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users trust agent autonomy and forego manual oversight, leaving them unable to detect or prevent unreliable agent actions.",
+    "impact": "Financial loss from unauthorized purchases and exposure of sensitive personal data during e-commerce transactions.",
+    "dose_response": "Autonomous skill acquisition without human oversight produces unreliable web policies, through users relying on agents for shopping, triggers trust in autonomy and foregone manual oversight, leading to financial loss from unauthorized purchases and exposure of sensitive personal data."
+  },
+  "reference": {
+    "dose_response": [
+      "Autonomous skill acquisition without oversight yields unreliable web interaction policies; when users over-trust agent autonomy and skip verification, unintended e-commerce transactions cause financial losses."
+    ],
+    "vulnerability": [
+      "Perceived agent autonomy and enjoyment lower risk perception, reducing user verification of transactions."
+    ],
+    "impact": [
+      "Financial losses from unintended transactions.",
+      "Diminished trust in autonomous shopping services."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0445",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes reliance without verification but not the specific inability to visually verify hallucinated claims in multimodal answers",
+    "reference": "Users cannot visually verify hallucinated knowledge claims in multimodal answers.",
+    "generated": "Users’ reliance on LLM outputs as authoritative without independent verification of integrated multimodal knowledge."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "acting on false knowledge (erroneous decisions) is covered, but internalizing fabricated knowledge is missing",
+    "reference": "Users internalize and act on fabricated knowledge presented as fact.",
+    "generated": "Erroneous decisions based on hallucinated answers, propagating misinformation and diminishing trust in AI-assisted visual reasoning."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc relies on uncritical user reliance as mediating step, missing the reference's hallucinated knowledge integration and direct exposure to fabricated answers",
+    "reference": "Semantic accuracy degradation enables hallucinated knowledge integration, which in multimodal QA exposes users to fabricated answers, leading to internalization and action on false knowledge.",
+    "generated": "Degraded semantic accuracy in LLM text generation, through multimodal QA users, triggers uncritical reliance on outputs as authoritative, leading to hallucination-driven errors, misinformation, and diminished trust in AI-assisted visual reasoning."
+  }
+}

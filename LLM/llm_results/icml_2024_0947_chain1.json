@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0947",
+  "chain_index": 1,
+  "title": "Fair Classification with Partial Feedback An Exploration-Based Data Collection Approach",
+  "abstract": "In many predictive contexts (e.g., credit lending), true outcomes are only observed for samples that were positively classified in the past. These past observations, in turn, form training datasets for classifiers that make future predictions. However, such training datasets lack information about the outcomes of samples that were (incorrectly) negatively classified in the past and can lead to erroneous classifiers. We present an approach that trains a classifier using available data and comes with a family of exploration strategies to collect outcome data about subpopulations that otherwise would have been ignored. For any exploration strategy, the approach comes with guarantees that (1) all sub-populations are explored, (2) the fraction of false positives is bounded, and (3) the trained classifier converges to a “desired” classifier. The right exploration strategy is contextdependent; it can be chosen to improve learning guarantees and encode context-specific group fairness properties. Evaluation on real-world datasets shows that this approach consistently boosts the quality of collected outcome data and improves the fraction of true positives for all groups, with only a small reduction in predictive utility.",
+  "impact": "Our exploration mechanism focuses on data collection for subpopulations that are under-represented in the available labeled data. The explicit focus on exploration is crucial since the under-represented subpopulations are usually not random subsets of the domain, but rather are composed of individuals from marginalized groups that have historically been denied equal opportunities. Our work allows for improved data collection from these groups. Note that, exploration and data collection can still lead to errors that hurt outcomes for some individuals who are incorrectly positively classified (e.g., negative impact on credit score if unable to pay back loan). Data collection should ideally not come at the cost of individual-level harms and corresponding steps to mitigate this harm should taken when implementing our framework in practice (e.g., through strict FDR constraints in our framework.)",
+  "query_input": {
+    "scenario": "Positive-unlabeled learning with exploration for negative label inference",
+    "issue": "Inference of negatives may systematically mislabel certain subpopulations, skewing fairness.",
+    "hazard": [
+      "Exploration-based selective label collection for fair classification can yield uneven data coverage across subpopulations."
+    ],
+    "exposure": [
+      "Members of groups whose true negatives are mislabeled due to missing feedback."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lack of observed positive outcomes for historically under-represented groups leaves their true label status unverifiable, allowing mislabeling.",
+    "impact": "Systematic misclassification depresses true positive rates for those groups, reinforcing credit denials and unfairness.",
+    "dose_response": "Uneven data coverage from exploration-based selective label collection, through true negatives mislabeled from missing feedback for historically under-represented groups, triggers unverifiable label status from unobserved positive outcomes, leading to depressed true positive rates that reinforce credit denials and unfairness."
+  },
+  "reference": {
+    "dose_response": [
+      "Uneven data coverage from selective label collection biases negative inference toward majority groups, which in PU learning exposes minorities to mislabeling, leading to disproportionate false rates, service denial, and trust erosion."
+    ],
+    "vulnerability": [
+      "Exploration-driven negative inference biases labels toward majority groups, misclassifying minority negatives.",
+      "Unlabeled data from under-explored groups lacks reliable negative inference signals."
+    ],
+    "impact": [
+      "Disproportionate false positive or false negative rates for minority subgroups, causing unfair denial of services.",
+      "Erosion of trust in automated decisions among affected communities, leading to disengagement."
+    ]
+  }
+}

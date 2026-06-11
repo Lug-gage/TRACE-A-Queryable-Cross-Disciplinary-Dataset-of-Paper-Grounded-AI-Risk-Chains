@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2418",
+  "chain_index": 1,
+  "title": "Teaching Transformers Causal Reasoning through Axiomatic Training",
+  "abstract": "For text-based AI systems to interact in the real world, causal reasoning is an essential skill. Since active interventions are costly, we study to what extent a system can learn causal reasoning from symbolic demonstrations of causal axioms. Specifically, we present an axiomatic training method where the system learns from multiple demonstrations of a causal axiom (or rule), rather than incorporating the axiom as an inductive bias or inferring it from data values. A key question is whether the system would learn to generalize from the axiom demonstrations to more complex scenarios. Our results, based on applying axiomatic training to learn the transitivity axiom and d-separation rule, indicate that such generalization is possible. To avoid data contamination issues, we start with a 67 million parameter transformer model and train it from scratch. On both tasks, we find that a model trained on linear causal chains (along with some noisy variations) can generalize well to complex graphs, including longer causal chains, causal chains with reversed order, and graphs with branching. To handle diverse text inputs, the same method is extended to finetune language models. Finetuning Llama-3.1 8B model on our axiomatic data leads to significant gains on causal benchmarks such as Corr2Cause and CLEAR, in some cases providing state-of-theart performance surpassing GPT-4.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning, by proposing effective training strategies to improve causal reasoning capabilities of language models. Robust causal reasoning has clear upside: decisionsupport tools in medicine, public policy, and the social sciences may become more trustworthy under distribution shifts and easier for experts to scrutinize. We also recognize possible downsides, flawed or adversarially fine-tuned models could generate spurious causal claims that reinforce bias or justify harmful interventions. To mitigate these risks, we release code and synthetic training data openly, detail known limitations, and encourage independent replication and auditing. On balance, we believe that equipping language models with transparent, principled causal reasoning capabilities will yield net benefits for society while enabling informed oversight.",
+  "query_input": {
+    "scenario": "Biomedical research using LLMs for causal graph inference",
+    "issue": "Model asserts invalid drug-effect chain due to axiom overfit",
+    "hazard": [
+      "Transformers trained on symbolic causal demonstrations overgeneralize learned axioms, confidently producing spurious causal chains."
+    ],
+    "exposure": [
+      "Biomedical researchers interpreting causal claims from LLM outputs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Biomedical researchers lack verification protocols for LLM-generated causal structures, enabling unchecked trust in confident, overgeneralized outputs.",
+    "impact": "Spurious drug-effect chains misdirect research, waste resources, and risk harmful clinical translation.",
+    "dose_response": "Transformers overgeneralizing causal axioms and producing spurious chains, when interpreted by biomedical researchers, triggers their lack of verification protocols and unchecked trust, leading to spurious drug-effect chains that misdirect research, waste resources, and risk harmful translation."
+  },
+  "reference": {
+    "dose_response": [
+      "Overgeneralized causal axioms in LLMs produce invalid drug-effect claims, which, when biomedical researchers overrely on them without expert validation, lead to misdirected resources and endangered patient safety."
+    ],
+    "vulnerability": [
+      "Researchers overrely on LLM-generated causal claims without domain expert validation."
+    ],
+    "impact": [
+      "Flawed causal inferences misdirect research resources and endanger patient safety if clinical decisions are based on them."
+    ]
+  }
+}

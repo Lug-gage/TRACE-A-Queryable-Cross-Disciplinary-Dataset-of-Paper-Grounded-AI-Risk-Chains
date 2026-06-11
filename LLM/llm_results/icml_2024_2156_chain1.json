@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2156",
+  "chain_index": 1,
+  "title": "Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank Modifications",
+  "abstract": "Large language models (LLMs) show inherent brittleness in their safety mechanisms, as evidenced by their susceptibility to jailbreaking and even non-malicious fine-tuning. This study explores this brittleness of safety alignment by leveraging pruning and low-rank modifications. We develop methods to identify critical regions that are vital for safety guardrails, and that are disentangled from utility-relevant regions at both the neuron and rank levels. Surprisingly, the isolated regions we find are sparse, comprising about 3% at the parameter level and 2.5% at the rank level. Removing these regions compromises safety while only mildly impacting utility, corroborating the inherent brittleness of the model’s safety mechanisms. Moreover, we show that LLMs remain vulnerable to low-cost fine-tuning attacks even when modifications to the safety-critical regions are restricted. These findings underscore the urgent need for more robust safety strategies in LLMs.",
+  "impact": "Dual-use Risk. Our work, like other safety and security research, aims to make models safer in the long run by identifying short-term weaknesses. We hope our work will spur additional researching robust safety mechanisms that are not so sparse, easy to isolate, and easy to remove. That being said, with any safety and security research there is some risk that adversaries will use our work to remove safety guardrails. We believe the benefit of releasing our work and engaging in this study outweighs these potential risks for three reasons. First, we perform experiments on models (Llama2-chat family) that already has a base model available without any safety guardrails, so there is no marginal increased risk. Second, by assessing the brittleness of safety guardrails in our work, we can encourage stronger guardrails to be developed that are more difficult for an attacker to isolate and remove. Our work may help explain existing results demonstrating that safety guardrails can be removed via finetuning, while identifying potential pathways for improved defenses. Third, our work does not significantly decrease the cost of jailbreaking a model beyond alternative strategies. Models can already be jailbroken relatively cheaply with fine-tuning. Instead, our focus is on analysis and understanding of the brittleness of these safety mechanisms so that future work can reduce the risk of jailbreaking in open models. Overall, we hope that our work will improve the state of AI safety, particularly in open models, by providing key analysis and information. Safety and harm definitions. We generally follow existing standard benchmarks and protocols for assessment of safety and harm, but these may not cover all definitions of safety and harm. Further work can be done to expand analysis to a wider range of settings and we encourage additional work in the space of definitions and evaluation that are beyond the scope of this work.",
+  "query_input": {
+    "scenario": "Deployment of LLMs with public query access",
+    "issue": "Adversarial prompts exploit brittle safety regions to elicit disallowed content.",
+    "hazard": [
+      "Safety alignment in LLMs is brittle to low-rank weight modifications, enabling jailbreaking and harmful outputs."
+    ],
+    "exposure": [
+      "End users interacting with aligned chatbots or text generation APIs."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Safety guardrails are isolated in sparse, low-rank regions disentangled from utility, allowing their removal without degrading general performance.",
+    "impact": "Public users obtain disallowed harmful content, enabling misuse at scale and eroding trust in AI safety mechanisms.",
+    "dose_response": "Brittle safety alignment to low-rank weight modifications, through end-user interactions with chatbots, triggers removal of sparse low-rank safety guardrails without utility loss, leading to harmful content, scaled misuse, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Brittle safety alignment enables jailbreaking, which when end users interact with public chatbots exposes brittle safety layers, leading to misinformation and legal liability."
+    ],
+    "vulnerability": [
+      "Public interfaces expose brittle safety layers to optimized jailbreak prompts, enabling reliable bypasses."
+    ],
+    "impact": [
+      "Users receive disallowed content, fueling misinformation, hate speech, or illegal advice, which can lead to real-world harm and legal liability."
+    ]
+  }
+}

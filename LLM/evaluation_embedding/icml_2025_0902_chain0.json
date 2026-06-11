@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0902",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6888,
+    "reference": "Multimodal models amplify information leakage per gradient step, enabling exact multimodal data reconstruction.",
+    "generated": "Shared gradients encode private multimodal data patterns, enabling exact reconstruction without client defense."
+  },
+  "impact": {
+    "similarity": 0.5149,
+    "reference": "Reconstructed data exposes personal identities and sensitive communications, leading to identity theft, stigmatization, and legal liability.",
+    "generated": "Sensitive client documents are leaked, breaching confidentiality and undermining trust in multimodal federated learning."
+  },
+  "dose_response": {
+    "similarity": 0.9075,
+    "reference": "Gradient inversion attacks enable exact reconstruction of private training data from shared model gradients, which in federated learning with multimodal vision-language models exposes clients contributing multimodal data, leading to reconstructed data exposing personal identities and sensitive communications.",
+    "generated": "Gradient inversion attacks, through clients contributing multimodal data to federated learning, trigger shared gradients encoding private patterns for exact reconstruction, leading to leaked sensitive documents, breaching confidentiality and undermining trust in multimodal federated learning."
+  }
+}

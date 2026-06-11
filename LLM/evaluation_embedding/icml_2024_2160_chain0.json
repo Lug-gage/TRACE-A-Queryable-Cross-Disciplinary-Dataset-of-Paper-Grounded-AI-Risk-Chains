@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2160",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6325,
+    "reference": "Institutional reliance on flawed altmetrics lacking correction for social network size biases.",
+    "generated": "Limited professional networks and institutional prestige prevent early-career researchers from gaining influencer endorsements, reducing altmetric signals."
+  },
+  "impact": {
+    "similarity": 0.8129,
+    "reference": "Early-career and underrepresented researchers face hiring/promotion penalties, reinforcing demographic disparities.",
+    "generated": "Early-career and under-resourced researchers face biased hiring, promotion, and funding decisions that entrench academic inequality."
+  },
+  "dose_response": {
+    "similarity": 0.8698,
+    "reference": "Causal ML models amplify degree bias in influence metrics, causing hiring committees relying on altmetrics to undervalue early-career researchers from smaller networks, leading to hiring and promotion penalties.",
+    "generated": "Causal ML models estimating citation impact from social media amplify degree bias, triggering through early-career and under-resourced researchers' limited networks and prestige reduced endorsements and altmetric signals, leading to biased hiring, promotion, and funding decisions that entrench inequality."
+  }
+}

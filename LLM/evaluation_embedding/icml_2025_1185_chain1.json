@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1185",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7306,
+    "reference": "On-device unlearning imperfection retains speaker-specific acoustic patterns enabling voice trait inference.",
+    "generated": "Resource-limited on-device unlearning mechanisms fail to fully eradicate speaker voiceprints, leaving residual identity cues that persist after deletion requests."
+  },
+  "impact": {
+    "similarity": 0.6503,
+    "reference": "Inference of sensitive personal traits from residual voice patterns.",
+    "generated": "Deleted voice profile residuals enable inference of users' voice traits, causing privacy breaches through re-identification or voice spoofing."
+  },
+  "dose_response": {
+    "similarity": 0.8582,
+    "reference": "Incomplete speaker identity unlearning retains acoustic patterns; when users delete profiles from mobile assistants, residual patterns allow trait inference, leading to privacy violations and trust erosion.",
+    "generated": "Incomplete speaker identity unlearning in zero-shot TTS, through voice profile deletion on mobile assistants, triggers residual voiceprint persistence from resource-limited unlearning, leading to voice trait inference and privacy breaches via re-identification or voice spoofing."
+  }
+}

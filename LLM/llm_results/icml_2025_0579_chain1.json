@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 1,
+  "title": "Mind the Gap A Practical Attack on GGUF Quantization",
+  "abstract": "With the increasing size of frontier LLMs, posttraining quantization has become the standard for memory-efficient deployment. Recent work has shown that basic rounding-based quantization schemes pose security risks, as they can be exploited to inject malicious behaviors into quantized models that remain hidden in full precision. However, existing attacks cannot be applied to more complex quantization methods, such as the GGUF family used in the popular ollama and llama.cpp frameworks. In this work, we address this gap by introducing the first attack on GGUF. Our key insight is that the quantization error - the difference between the full-precision weights and their (de-)quantized version - provides sufficient flexibility to construct malicious quantized models that appear benign in full precision. Leveraging this, we develop an attack that trains the target malicious LLM while constraining its weights based on quantization errors. We demonstrate the effectiveness of our attack on three popular LLMs across nine GGUF quantization data types on three diverse attack scenarios: insecure code generation (∆=88.7%), targeted content injection (∆=85.0%), and benign instruction refusal (∆=30.1%). Our attack highlights that (1) the most widely used post-training quantization method is susceptible to adversarial interferences, and (2) the complexity of quantization schemes alone is insufficient as a defense.",
+  "impact": "Despite millions of language model deployments using quantization techniques, researchers have only recently started to explore the potential risks of adversarial attacks. Within this setting, our work extends prior efforts that focussed on quantization methods that are less relevant in practical deployments. Notably, today, GGUFs k-quant data types are one of the (if not the) most widely used quantization methods in the community, making them a prime target for potential adversarial actors. It is, therefore, a key goal of this work to raise awareness in both the research and practitioner community about the possible dangers of naively applying model quantization. Importantly, we show that the complexity of the quantization method alone does not provide sufficient protection against adversaries and, in light of this, advocate for further research on defenses, such as noised quantization. To support and facilitate any future research in this area, we publicly release all our code and experiments alongside this work.",
+  "query_input": {
+    "scenario": "Developer integrates a pre-quantized LLM into a memory-efficient application pipeline.",
+    "issue": "Quantized model injects targeted malicious content into generated text.",
+    "hazard": [
+      "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model while its full-precision source appears benign."
+    ],
+    "exposure": [
+      "Application developers embedding quantized LLMs in downstream services."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers lack methods to detect malicious behaviors encoded in quantization gaps; full-precision checks are insufficient.",
+    "impact": "Applications inject malicious content into outputs, harming end users and causing security incidents.",
+    "dose_response": "Quantization mapping ambiguity, through application developers embedding quantized LLMs in downstream services, triggers undetectable malicious behaviors in quantization gaps, leading to applications injecting malicious content, harming end users and causing security incidents."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a developer integrating a pre-quantized LLM into a memory-efficient application pipeline exposes application developers embedding quantized LLMs in downstream services, leading to large-scale distribution of backdoored content to users of popular applications."
+    ],
+    "vulnerability": [
+      "Automated CI/CD pipelines integrate models without security evaluation of quantized artifacts.",
+      "Downstream service providers lack tools to detect quantization-conditioned backdoors in third-party models.",
+      "Economic pressure to minimize memory footprint overrides security verification steps."
+    ],
+    "impact": [
+      "Large-scale distribution of backdoored content to users of popular applications.",
+      "Legal liability and reputational damage for application developers distributing compromised outputs.",
+      "Undermining of AI safety regulations by demonstrating their ineffectiveness against supply chain attacks."
+    ]
+  }
+}

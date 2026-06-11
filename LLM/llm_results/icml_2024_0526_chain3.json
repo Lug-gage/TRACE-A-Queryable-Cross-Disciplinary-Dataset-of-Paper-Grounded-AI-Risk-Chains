@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0526",
+  "chain_index": 3,
+  "title": "Video-of-Thought Step-by-Step Video Reasoning from Perception to Cognition",
+  "abstract": "Existing research of video understanding still struggles to achieve in-depth comprehension and reasoning in complex videos, primarily due to the under-exploration of two key bottlenecks: fine-grained spatial-temporal perceptive understanding and cognitive-level video scene comprehension. This paper bridges the gap by presenting a novel solution. We first introduce a novel video Multimodal Large Language Model (MLLM), MotionEpic, which achieves fine-grained pixel-level spatial-temporal video grounding by integrating video spatial-temporal scene graph (STSG) representation. Building upon MotionEpic, we then develop a Video-of- Thought (VoT) reasoning framework. VoT inherits the Chain-of-Thought (CoT) core, breaking down a complex task into simpler and manageable sub-problems, and addressing them step-by-step from a low-level pixel perception to high-level cognitive interpretation. Extensive experiments across various complex video QA benchmarks demonstrate that our overall framework strikingly boosts existing state-of-the-art. To our knowledge, this is the first attempt at successfully implementing the CoT technique for achieving humanlevel video reasoning, where we show great potential in extending it to a wider range of video understanding scenarios. The project is open at https://haofei.vip/VoT.",
+  "impact": "This paper aims to construct a robust, human-level video understanding and reasoning framework. The system must be built upon existing LLM to realize its full potential. Potential implications include substantial energy consumption during LLM system training, leading to environmental degradation, and the necessity for more extensive data corpora for training. Moreover, due to the powerful video reasoning and comprehension capabilities, there exists the potential for malicious actors to exploit this framework for nefarious intents, posing a societal threat. Consequently, the release of this framework necessitates the establishment of specific licensing mechanisms to ensure responsible deployment and mitigate potential misuse.",
+  "query_input": {
+    "scenario": "Navigation using video-based spatial reasoning",
+    "issue": "Spatial reasoning errors due to lack of visualization-of-thought in LLMs misdirecting users.",
+    "hazard": [
+      "Incorrect grounding of fine-grained visual details in step-by-step video reasoning leads to plausible but wrong conclusions."
+    ],
+    "exposure": [
+      "Visually impaired persons using AI navigation aid."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Visually impaired users rely entirely on AI outputs without independent visual verification of spatial reasoning.",
+    "impact": "Physically misdirected users suffer falls, collisions, and loss of trust in navigation aids.",
+    "dose_response": "Incorrect grounding producing plausible but wrong conclusions, through visually impaired AI navigation users, triggers complete reliance without independent spatial verification, leading to physically misdirected users suffering falls, collisions, and loss of trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Incorrect grounding of fine-grained visual details leads to spatial reasoning errors in AI navigation aids, causing visually impaired users to follow dangerous directions and suffer physical harm."
+    ],
+    "vulnerability": [
+      "Visually impaired users lack alternative means to verify the AI's spatial descriptions, leading them to trust erroneous navigation instructions that could cause physical harm."
+    ],
+    "impact": [
+      "Physical injury from misdirected navigation, loss of trust in assistive AI, and increased social isolation."
+    ]
+  }
+}

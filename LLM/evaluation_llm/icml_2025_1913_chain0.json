@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1913",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe that standard benchmarks ignore a class of attacks (adaptive testing/ordered top-K Jacobian subspace), causing overconfidence or leaving the model undefended.",
+    "reference": "ResNet-50 robustness benchmarks lack adaptive attack testing, causing overconfidence in model security.",
+    "generated": "Evaluators rely on standard lp-norm perturbation benchmarks that ignore ordered top-K Jacobian subspace attacks, leaving ResNet-50 undefended."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The affected party (safety-critical image classification systems) is present, but the specific damage type (unauthorized physical or data access) is replaced by the broader 'compromising systems'.",
+    "reference": "Overconfident deployment leads to misclassification in access control, enabling unauthorized physical or data access.",
+    "generated": "Deployment of ResNet-50 with overestimated robustness enables precise multi-target evasion, compromising safety-critical image classification systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal translation from the attack through benchmark overconfidence to deployment and eventual successful evasion matches the reference arc.",
+    "reference": "Highly effective white-box evasion via QuadAttacK enables benchmark overconfidence, which in ResNet-50 robustness evaluation leads to overconfident deployment and misclassification in access control.",
+    "generated": "Ordered top-K Jacobian singular vector perturbations, through developers auditing ResNet-50 on ImageNet-1k, trigger reliance on lp-norm benchmarks ignoring such attacks, leaving ResNet-50 undefended and leading to deployment of overestimated robustness enabling multi-target evasion in safety-critical classification."
+  }
+}

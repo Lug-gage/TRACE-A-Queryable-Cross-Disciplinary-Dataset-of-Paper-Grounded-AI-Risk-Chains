@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2379",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4032,
+    "reference": "Safety-critical system operators trust the purifier's output without independent verification.",
+    "generated": "Developers assume pre-training purification eliminates all perturbations, ignoring adaptive attacks that bypass suppression."
+  },
+  "impact": {
+    "similarity": 0.6804,
+    "reference": "Physical harm from autonomous vehicle or medical imaging failures caused by poisoned perception models.",
+    "generated": "Poisoned perception models cause hazardous misclassifications, leading to collisions and safety-critical system failures."
+  },
+  "dose_response": {
+    "similarity": 0.6876,
+    "reference": "Adversarially trained purifiers introduce new attack surfaces, enabling adaptive poisoning that, in safety-critical vision systems, causes physical harm and legal liability.",
+    "generated": "Purification mechanisms introducing a bypassable perturbation suppression step, through developer integration into autonomous perception pipelines, trigger the assumption that all perturbations are eliminated, leading to hazardous misclassifications and collisions from poisoned models."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2125",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated captures operators' reliance without verification but omits the safety-critical or high-cost monitoring context from the reference",
+    "reference": "Operators trust state tracker outputs in safety-critical or high-cost monitoring without independent verification.",
+    "generated": "Operators rely on SSM trackers with limited expressivity and lack manual verification or alert mechanisms for state tracking failures."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "covers missed safety events but misses the reference's explicit financial losses or safety incidents",
+    "reference": "Undetected state errors cause missed alarms, leading to safety incidents or financial losses.",
+    "generated": "Undetected state tracking errors cause missed safety events and misguided operator responses, degrading monitored system integrity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal arc from expressivity limitation through unverified operator reliance to undetected errors and negative outcomes aligns with reference",
+    "reference": "SSMs' inability to represent certain sequence patterns leads to state tracking errors, so when operators trust these outputs in safety-critical monitoring without verification, undetected errors cause missed alarms and safety incidents or financial losses.",
+    "generated": "SSM design choices restricting expressivity for non-star-free languages, through operator use of SSM-based trackers, triggers reliance on limited expressivity without verification or alerts, leading to undetected errors, missed safety events, misguided responses, and degraded system integrity."
+  }
+}

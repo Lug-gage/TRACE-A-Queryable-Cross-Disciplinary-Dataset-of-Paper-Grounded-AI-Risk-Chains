@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1358",
+  "chain_index": 2,
+  "title": "Position Reinforcement Learning in Dynamic Treatment Regimes Needs Critical Reexamination",
+  "abstract": "In the rapidly changing healthcare landscape, the implementation of offline reinforcement learning (RL) in dynamic treatment regimes (DTRs) presents a mix of unprecedented opportunities and challenges. This position paper offers a critical examination of the current status of offline RL in the context of DTRs. We argue for a reassessment of applying RL in DTRs, citing concerns such as inconsistent and potentially inconclusive evaluation metrics, the absence of naive and supervised learning baselines, and the diverse choice of RL formulation in existing research. Through a case study with more than 17,000 evaluation experiments using a publicly available Sepsis dataset, we demonstrate that the performance of RL algorithms can significantly vary with changes in evaluation metrics and Markov Decision Process (MDP) formulations. Surprisingly, it is observed that in some instances, RL algorithms can be surpassed by random baselines subjected to policy evaluation methods and reward design. This calls for more careful policy evaluation and algorithm development in future DTR works. Additionally, we discussed potential enhancements toward more reliable development of RL-based dynamic treatment regimes and invited further discussion within the community. Code is available at https://github.com/GilesLuo/ReassessDTR.",
+  "impact": "Applying RL in high-stakes medical decision-making like Sepsis carries significant implications for patient care and treatment outcomes. While RL has the potential to revolutionize personalized medicine by learning from patient responses and adapting treatment plans accordingly, its deployment in clinical settings must be approached with utmost caution. This position paper critically examines the application of RL in DTRs. Particularly, our critique highlights significant challenges that must be addressed to prevent potential harm. The inconsistent and potentially inconclusive evaluation metrics present a clear risk: without robust assessment frameworks, the deployment of RL in medical decisionmaking could lead to suboptimal or even harmful treatment recommendations. Furthermore, our call for incorporating more baselines into the research of RL in DTRs underlines the necessity for benchmarking against simpler baselines. This is not only a matter of scientific rigor but also of ethical responsibility, ensuring that the adoption of more complex models is justified by demonstrable benefits to patient outcomes. It is the research community’s collective responsibility to ensure that these technologies are introduced in a manner that is safe, ethical, and ultimately beneficial to patient care. The impact of RL in healthcare could be profound, but it must be guided by a commitment not to harm, ensuring that the leap forward does not come at the expense of patient trust or safety.",
+  "query_input": {
+    "scenario": "Public health maternal outreach using offline evaluation of RMAB policies",
+    "issue": "Misspecified objective functions could misallocate limited health worker call resources.",
+    "hazard": [
+      "Off-policy evaluation estimates can be biased or high-variance, leading to unreliable policy recommendations."
+    ],
+    "exposure": [
+      "Pregnant women and new mothers receiving AI-scheduled phone-based health counseling."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Mothers rely on AI-scheduled calls without alternative access to counseling, making them defenseless against resource misallocation.",
+    "impact": "High-risk mothers miss critical health counseling, leading to preventable complications and increased maternal and infant morbidity.",
+    "dose_response": "Biased off-policy evaluation estimates, through AI-scheduled phone counseling for pregnant and new mothers, trigger defenselessness against resource misallocation, leading to high-risk mothers missing critical counseling and preventable maternal-infant morbidity."
+  },
+  "reference": {
+    "dose_response": [
+      "Biased or high-variance off-policy evaluation estimates enable unreliable policy recommendations, which in public health maternal outreach leads to misallocated health worker calls that miss high-risk pregnancies."
+    ],
+    "vulnerability": [
+      "Objective functions optimize for easily measurable outcomes, neglecting critical but hard-to-quantify maternal needs.",
+      "Resource allocation models amplify existing access disparities for rural and low-literacy mothers."
+    ],
+    "impact": [
+      "Preventable maternal and neonatal complications from missed high-risk pregnancies.",
+      "Reinforcement of systemic barriers to care for marginalized communities."
+    ]
+  }
+}

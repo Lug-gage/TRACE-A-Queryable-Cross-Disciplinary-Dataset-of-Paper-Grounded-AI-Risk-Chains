@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1777",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5423,
+    "reference": "Static detection classifiers are vulnerable to adaptive evasion tactics.",
+    "generated": "Binary classifier defense is evadable, enabling undetected vote rigging and leaving ranking integrity unprotected."
+  },
+  "impact": {
+    "similarity": 0.649,
+    "reference": "Persistent undetected manipulation collapses confidence in leaderboard integrity.",
+    "generated": "Manipulated Elo scores persist, producing a misleading leaderboard that erodes research community trust and misdirects model development."
+  },
+  "dose_response": {
+    "similarity": 0.6707,
+    "reference": "Targeted Elo manipulation enables evasion of static binary classifiers, which in defense-reliant platforms exposes administrators to undetected biases, leading to collapsed trust and participant withdrawal.",
+    "generated": "Crowdsourced pairwise LLM evaluation with watermark-based identification, through reliance on defense integrity by administrators and the research community, triggers evadable binary classifier defense allowing undetected vote rigging, leading to persistent manipulated Elo scores that erode trust and misdirect development."
+  }
+}

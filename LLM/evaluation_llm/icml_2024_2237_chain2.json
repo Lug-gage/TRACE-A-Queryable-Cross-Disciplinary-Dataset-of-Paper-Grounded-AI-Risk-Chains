@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2237",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes the algorithmic sensitivity (relying on replay buffers without correcting overestimation of uninformative states) that directly causes inefficient information gathering, covering the reference's condition.",
+    "reference": "Inefficient information gathering wastes resources and produces biased scientific datasets.",
+    "generated": "Agents rely on replay buffers for novelty estimation without correcting for persistent overestimation of uninformative states."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (scientific mission) is present, but damage type omits 'inequitable allocation of public research funds' while covering delayed discoveries and misdirected research only partially.",
+    "reference": "Misguided research directions, delayed discoveries, and inequitable allocation of public research funds.",
+    "generated": "Wasted exploration of uninformative states prevents discovery of information-gathering strategies, causing scientific mission failure."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated captures the early causal step (off-policy mechanism → overestimation of uninformative states) but deviates later by omitting the production of biased scientific datasets and specific downstream consequences, instead ending with mission failure via lack of information-gathering strategies.",
+    "reference": "Off-policy curiosity rewards cause autonomous agents to persistently explore uninformative states, producing biased scientific datasets that misdirect research, delay discoveries, and inequitably allocate public funds.",
+    "generated": "Off-policy replay buffers miscalibrate novelty estimates, through autonomous scientific exploration, triggering reliance on replay buffers without correcting for persistent overestimation of uninformative states, leading to wasted exploration that prevents discovery of information-gathering strategies, causing mission failure."
+  }
+}

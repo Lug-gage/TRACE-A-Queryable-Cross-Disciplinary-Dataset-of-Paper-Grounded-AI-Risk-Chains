@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6653,
+    "reference": "Audit protocols lack quantization-aware testing procedures, focusing exclusively on full-precision behavior.",
+    "generated": "Auditors rely on full-precision inspection, assuming it reliably predicts post-quantization behavior, leaving quantization-triggered backdoors undetected."
+  },
+  "impact": {
+    "similarity": 0.6764,
+    "reference": "Certified 'safe' models become vehicles for harm after quantization, invalidating audit authority.",
+    "generated": "Malicious quantized models pass audit and are deployed, causing widespread insecure code generation, targeted content injection, or benign instruction refusal."
+  },
+  "dose_response": {
+    "similarity": 0.8616,
+    "reference": "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a security auditor evaluating a full-precision model before its quantized release exposes security auditors vetting models prior to quantization and distribution, leading to certified 'safe' models becoming vehicles for harm after quantization, invalidating audit authority.",
+    "generated": "Quantization mapping ambiguity, when models are vetted pre-quantization, causes auditors to trust full-precision inspection, enabling backdoors to survive audit and cause deployed models to generate insecure code, inject content, or refuse instructions."
+  }
+}

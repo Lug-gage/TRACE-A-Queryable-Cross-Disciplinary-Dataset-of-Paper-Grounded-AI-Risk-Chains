@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 1,
+  "title": "Linguistic Calibration of Long-Form Generations",
+  "abstract": "Language models (LMs) may lead their users to make suboptimal downstream decisions when they confidently hallucinate. This issue can be mitigated by having the LM verbally convey the probability that its claims are correct, but existing models cannot produce long-form text with calibrated confidence statements. Through the lens of decision-making, we define linguistic calibration for long-form generations: an LM is linguistically calibrated if its generations enable its users to make calibrated probabilistic predictions. This definition enables a training framework where a supervised finetuning step bootstraps an LM to emit long-form generations with confidence statements such as “I estimate a 30% chance of...” or “I am certain that...”, followed by a reinforcement learning step which rewards generations that enable a user to provide calibrated answers to related questions. We linguistically calibrate Llama 2 7B and find in automated and human evaluations of long-form generations that it is significantly more calibrated than strong finetuned factuality baselines with comparable accuracy. These findings generalize under significant domain shifts to scientific and biomedical questions and to an entirely held-out person biography generation task. Our results demonstrate that long-form generations may be calibrated end-to-end by constructing an objective in the space of the predictions that users make in downstream decision-making. 1",
+  "impact": "The ideas and methods introduced in this work generally improve the linguistic calibration of LMs to benefit users in downstream decision-making. Thus, we believe this work will likely positively impact applied areas of AI where an LM copilot is adopted. On the other hand, while we have demonstrated improvements in calibration with our methods, we acknowledge that our LMs’ expressions of confidence can still differ from the true likelihoods of its claims being correct. It is thus important to note that even linguistically calibrated LMs should still be treated as tools to aid decision-making instead of replacements for human judgment and expertise.",
+  "query_input": {
+    "scenario": "Biomedical QA for clinical decision-making",
+    "issue": "Overconfident verbalized probabilities cause unwarranted trust in diagnosis or treatment advice.",
+    "hazard": [
+      "Supervised fine-tuning for linguistic calibration yields verbalized probability that can be poorly calibrated outside the training distribution."
+    ],
+    "exposure": [
+      "Clinicians and patients using LLM-based diagnosis tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians and patients accept verbalized probabilities at face value, lacking means to detect miscalibration outside the training distribution.",
+    "impact": "Unwarranted trust in miscalibrated advice causes incorrect diagnoses and harmful treatment decisions, jeopardizing patient safety.",
+    "dose_response": "Supervised fine-tuning yielding poorly calibrated verbalized probabilities outside the training distribution, through clinicians and patients using LLM-based diagnosis tools, triggers their acceptance of these probabilities at face value without detecting miscalibration, leading to unwarranted trust causing incorrect diagnoses and harmful treatment decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which in LLM diagnosis tools causes overreliance by clinicians and patients, leading to misdiagnosis and patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians' trust calibration poorly matches model reliability.",
+      "Patient lack of understanding of AI limitations.",
+      "Insufficient institutional safeguards for AI diagnostic suggestions."
+    ],
+    "impact": [
+      "Misdiagnosis and inappropriate treatment decisions harm patients.",
+      "Degradation of clinicians' diagnostic skills due to automation complacency.",
+      "Increased medical-legal liability for healthcare institutions."
+    ]
+  }
+}

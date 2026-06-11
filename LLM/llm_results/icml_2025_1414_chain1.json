@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 1,
+  "title": "Closed-Loop Long-Horizon Robotic Planning via Equilibrium Sequence Modeling",
+  "abstract": "In the endeavor to make autonomous robots take actions, task planning is a major challenge that requires translating high-level task descriptions to long-horizon action sequences. Despite recent advances in language model agents, they remain prone to planning errors and limited in their ability to plan ahead. To address these limitations in robotic planning, we advocate a self-refining scheme that iteratively refines a draft plan until an equilibrium is reached. Remarkably, this process can be optimized end-to-end from an analytical perspective without the need to curate additional verifiers or reward models, allowing us to train self-refining planners in a simple supervised learning fashion. Meanwhile, a nested equilibrium sequence modeling procedure is devised for efficient closed-loop planning that incorporates useful feedback from the environment (or an internal world model). Our method is evaluated on the VirtualHome-Env benchmark, showing advanced performance with improved scaling w.r.t. inference-time computation. Code is available at https: //github.com/Singularity0104/ equilibrium-planner.",
+  "impact": "This paper presents a supervised learning framework for improving the closed-loop long-horizon capabilities of LLM agents, with the potential to complement the prevailing reinforcement learning-based or prompting-based frameworks. However, we note that any such improvement in planning capabilities should be treated with caution. For example, the LLM agent could autonomously create sub-goals that are threatening to humans, e.g., gaining more control. This calls for further research into LLM interpretability and safety. Acknowledgements. The work is supported by an internal grant of Peking University (2024JK28), a grant from China Tower Corporation Limited. We thank Xingjian Bai and Liyuan Wang for their helpful discussions.",
+  "query_input": {
+    "scenario": "Multi-robot coordination in partially observable warehouse",
+    "issue": "Misinterpretation of environmental feedback in self-correction leads to conflicting robot actions, risking collisions.",
+    "hazard": [
+      "LLM-driven planning with iterative self-correction can amplify misaligned objectives and erroneous abstractions, leading to unsafe or unintended robot behaviors."
+    ],
+    "exposure": [
+      "Warehouse workers and robots sharing operational spaces."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shared workspace lacks real-time safety override or human oversight to intercept robots' self-corrected but misaligned plans.",
+    "impact": "Collisions between robots and human workers lead to worker injuries, damaged goods, and warehouse operation disruptions.",
+    "dose_response": "LLM-driven planning with iterative self-correction amplifies misaligned objectives and erroneous abstractions, through shared human-robot spaces, triggering the lack of real-time safety override and human oversight, leading to collisions causing worker injuries, damaged goods, and disruptions."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM-driven planning with self-correction amplifies erroneous abstractions, which, in partially observable warehouses with lagged communication, leads to conflicting robot actions exposing workers to collisions and inventory damage."
+    ],
+    "vulnerability": [
+      "Partial observability and lagged communication cause inconsistent world models, amplifying conflicting corrections."
+    ],
+    "impact": [
+      "Robot collisions leading to costly downtime and damaged inventory.",
+      "Potential worker injuries from unexpected robot trajectories."
+    ]
+  }
+}

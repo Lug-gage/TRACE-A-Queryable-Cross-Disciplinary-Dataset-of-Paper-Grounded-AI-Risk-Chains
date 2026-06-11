@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1807",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6138,
+    "reference": "Business analysts assume causal identifiability without checking device graph interference.",
+    "generated": "Analysts lack visibility into device graph uncertainty, trusting biased GATE estimates as accurate."
+  },
+  "impact": {
+    "similarity": 0.5748,
+    "reference": "Marketing campaigns misallocate budget to ineffective channels, reducing ROI.",
+    "generated": "Misguided marketing strategies and suboptimal resource allocation result from decisions based on biased experimental inferences."
+  },
+  "dose_response": {
+    "similarity": 0.885,
+    "reference": "Uncertainty propagation from cross-device identity graphs enables biased GATEs, which in e-commerce experiments with identity matching uncertainty exposes business analysts to causal identifiability violations, leading to misallocated marketing budgets and diminished brand trust.",
+    "generated": "Uncertainty propagation from cross-device identity graphs into variational causal effect estimates, through business analysts interpreting experimental outcomes, triggers analysts' lack of visibility into device graph uncertainty and trust in biased GATEs, leading to misguided marketing strategies and suboptimal resource allocation."
+  }
+}

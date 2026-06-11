@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5872,
+    "reference": "Music producers adopt AI tools without understanding latent space manipulation risks to audio fidelity.",
+    "generated": "Pre-trained diffusion models lack harmonic and amplitude safeguards, so producers applying unsupervised edits cannot prevent stem corruption."
+  },
+  "impact": {
+    "similarity": 0.5937,
+    "reference": "Corrupted harmonic structure degrades listener experience, reducing commercial viability of music releases.",
+    "generated": "Clipping and harmonic corruption render edited stems unusable, disrupting production timelines and increasing costs."
+  },
+  "dose_response": {
+    "similarity": 0.629,
+    "reference": "Zero-shot editing corrupts harmonics/introduces clipping, exposing producers and listeners to degraded sound, reducing commercial viability and creating liability risks.",
+    "generated": "Unsupervised zero-shot editing via frozen diffusion latent spaces introduces unintended artifacts and speaker changes, through music producers applying zero-shot edits to tracks, triggers missing safeguards in diffusion models causing stem corruption, leading to corrupted stems disrupting production and increasing costs."
+  }
+}

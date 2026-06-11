@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2167",
+  "chain_index": 1,
+  "title": "Privacy-Shielded Image Compression Defending Against Exploitation from Vision-Language Pretrained Models",
+  "abstract": "The improved semantic understanding of visionlanguage pretrained (VLP) models has made it increasingly difficult to protect publicly posted images from being exploited by search engines and other similar tools. In this context, this paper seeks to protect users’ privacy by implementing defenses at the image compression stage to prevent exploitation. Specifically, we propose a flexible coding method, termed Privacy-Shielded Image Compression (PSIC), that can produce bitstreams with multiple decoding options. By default, the bitstream is decoded to preserve satisfactory perceptual quality while preventing interpretation by VLP models. Our method also retains the original image compression functionality. With a customizable input condition, the proposed scheme can reconstruct the image that preserves its full semantic information. A Conditional Latent Trigger Generation (CLTG) module is proposed to produce bias information based on customizable conditions to guide the decoding process into different reconstructed versions, and an Uncertainty-Aware Encryption-Oriented (UAEO) optimization function is designed to leverage the soft labels inferred from the target VLP model’s uncertainty on the training data. This paper further incorporates an adaptive multi-objective optimization strategy to obtain improved encrypting performance and perceptual quality simultaneously within a unified training process. The proposed scheme is plug-and-play and can be seamlessly integrated into most existing Learned Image Compression (LIC) models. Extensive experiments across multiple downstream tasks have demonstrated the effectiveness of our design. model protects images by preserving content similar to the original, while concealing machine-perceived semantics. Additionally, the model can encode images in a way that maintains both critical pixel fidelity and semantics.",
+  "impact": "As deep learning models increasingly rely on publicly available visual data, ensuring privacy-preserving mechanisms becomes crucial for preventing unintended data exploitation. This paper introduces a privacy-shielding image compression (PSIC) framework, aiming to protect image data from unauthorized use by Vision-Language Pretrained (VLP) models and general machine vision analytics. By introducing multiple decoding options, it enables individuals and organizations to maintain control over their visual data while still benefiting from advanced AI technologies. Ethically, this approach promotes data ownership and responsible AI usage, reducing the risk of unauthorized surveillance or unintended data exploitation. However, similar techniques could also be leveraged to potentially negative applications, including hindering lawful model training. We believe that our work contributes to ongoing discussions about ethical AI and responsible data usage, highlighting the importance of developing privacy-preserving techniques that balance protection with ethical considerations. This, in turn, should inspire further research toward more robust, fair, and trustworthy AI-driven data protection strategies.",
+  "query_input": {
+    "scenario": "Abuse of privacy-preserving image sharing to evade network content filtering",
+    "issue": "Encrypted bitstreams decode to different content, preventing intermediaries from enforcing content policies.",
+    "hazard": [
+      "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream."
+    ],
+    "exposure": [
+      "Network intermediaries and audit logs analyzing traffic"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Intermediaries depend on deterministic decoding of image bitstreams for inspection, lacking the conditional trigger to reveal true semantics.",
+    "impact": "Policy-violating images evade content filters undetected, undermining safety enforcement and exposing users to harmful material.",
+    "dose_response": "Generative learned image compression with conditional triggers, through network intermediaries analyzing traffic, triggers deterministic decoding dependence without the trigger, leading to policy-violating images evading filters undetected."
+  },
+  "reference": {
+    "dose_response": [
+      "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream, in abuse of privacy-preserving sharing, exposes network intermediaries and audit logs analyzing traffic, leading to illegal content transmitted undetected."
+    ],
+    "vulnerability": [
+      "Network security policies rely on plaintext inspection; ambiguous decryption circumvents content enforcement."
+    ],
+    "impact": [
+      "Illegal content such as CSAM transmitted undetected across filters, undermining legal compliance and user safety."
+    ]
+  }
+}

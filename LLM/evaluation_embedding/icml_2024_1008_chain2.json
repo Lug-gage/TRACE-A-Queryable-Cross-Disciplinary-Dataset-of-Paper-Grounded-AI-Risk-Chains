@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1008",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5444,
+    "reference": "Marginalized language communities lack institutional safeguards against voice data exploitation.",
+    "generated": "Absence of informed consent protocols and identity verification for ASR recordings repurposed as TTS cloning leaves speakers unable to refuse or detect misuse."
+  },
+  "impact": {
+    "similarity": 0.5817,
+    "reference": "Loss of linguistic community trust in AI research partnerships.",
+    "generated": "Speakers of underrepresented languages suffer impersonation, identity theft, and breached community trust at scale when voices are generated without consent."
+  },
+  "dose_response": {
+    "similarity": 0.9026,
+    "reference": "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts, which in multilingual multi-speaker corpus scaling exposes speakers contributing to large-scale ASR datasets later used for TTS without explicit consent, leading to loss of linguistic community trust in AI research partnerships.",
+    "generated": "Discretized speaker-specific latent features enabling zero-shot voice cloning from minimal audio, through repurposing ASR recordings without consent, trigger lack of informed consent and verification protocols, leading to impersonation, identity theft, and breached community trust at scale for underrepresented language speakers."
+  }
+}

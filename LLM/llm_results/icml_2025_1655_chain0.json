@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 0,
+  "title": "Vision-Language Models Create Cross-Modal Task Representations",
+  "abstract": "Autoregressive vision-language models (VLMs) can handle many tasks within a single model, yet the representations that enable this capability remain opaque. We find that VLMs align conceptually equivalent inputs into a shared task vector, which is invariant to modality (text, image) and format (examples, instruction), and may simplify VLM processing. We measure this alignment via cross-modal transfer-the ability of a task vector derived in one modality to trigger the correct generation in another-on a range of tasks and model architectures. Although the task vector is highly compressed, we find that this single vector outperforms prompting the model with the full task information, unique to this cross-modal case. Furthermore, we show that task vectors can be transferred from a base language model to its fine-tuned vision-language counterpart, and that they can be derived solely from instructions without the need for examples. Taken together, our findings shed light on how VLMs internally process task information, and how they map different modalities into common semantic representations.",
+  "impact": "This paper studies the cross-modal properties of task vectors. This result yields promising implications for accessibility and interactivity - users are no longer limited to unimodal examples and can be more expressive when communicating tasks to VLMs. However, the reliability of these models still remain a limitation. While VLMs can readily adapt to newly introduced tasks, this often comes at the cost of task accuracy. Further stress testing is advised before deployment in critical applications.",
+  "query_input": {
+    "scenario": "Compressed many-shot multimodal ICL via MTVs",
+    "issue": "Task vectors may inherit and amplify biases from in-context examples.",
+    "hazard": [
+      "Shared cross-modal task vectors compress multimodal examples, risking propagation of spurious cross-modal correlations."
+    ],
+    "exposure": [
+      "End-users interacting with VLM-based assistants that use compressed ICL."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users cannot inspect compressed cross-modal task vectors for bias, leaving them defenseless against hidden spurious correlations in assistant outputs.",
+    "impact": "End-users ingest biased multimodal responses, amplifying stereotypes and producing discriminatory or incorrect downstream decisions.",
+    "dose_response": "Shared cross-modal task vectors compressing multimodal examples propagate spurious correlations, and as end-users interact with VLM assistants using compressed ICL, their inability to inspect these vectors for bias leaves them defenseless, leading to biased responses that amplify stereotypes and discriminatory decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Compressed task vectors enable biased in-context learning, which in high-stakes domains without oversight leads to systematic misdiagnosis for underrepresented groups."
+    ],
+    "vulnerability": [
+      "Over-reliance on compressed ICL in high-stakes domains (e.g., medical imaging) without human oversight.",
+      "Lack of user awareness that compressed examples can encode and amplify demographic biases."
+    ],
+    "impact": [
+      "Systematic misdiagnosis for underrepresented demographic groups in medical VLM applications.",
+      "Erosion of user trust when biased outputs are perceived as authoritative due to fluent generation."
+    ]
+  }
+}

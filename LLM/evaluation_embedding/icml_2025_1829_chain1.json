@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1829",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4453,
+    "reference": "User habituation to error correction leads to decreased monitoring, increasing reliance on static certified robustness.",
+    "generated": "Users rely on certified guarantees unaware that distribution shifts invalidate the bounds, leaving no safeguard against degrading predictions."
+  },
+  "impact": {
+    "similarity": 0.6303,
+    "reference": "Frequent prediction failures for minority language or motor-impaired users, causing frustration and communication barriers.",
+    "generated": "Incorrect next-word predictions cause frequent miscommunication, reduced typing efficiency, and eroded user trust in the keyboard."
+  },
+  "dose_response": {
+    "similarity": 0.9004,
+    "reference": "Meta-distributional shift across client populations invalidates certified robustness bounds, causing users to habituate to keyboard predictions, leading to frequent failures for minority users and communication barriers.",
+    "generated": "Meta-distributional shift across client populations invalidating certified robustness bounds, through mobile users relying on next-word predictions, triggers reliance on invalid guarantees without safeguard, leading to incorrect next-word predictions causing miscommunication, reduced typing efficiency, and eroded trust in the keyboard."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance on attribution maps that prevents detection of manipulation, while reference describes over‑trust in visual explanations when making override decisions; both involve operator susceptibility but the specific sensitivity condition differs.",
+    "reference": "Operators in safety-critical domains over-trust visual explanations when making override decisions.",
+    "generated": "Operators' reliance on feature attribution maps that obscure true model boundaries prevents detection of manipulated explanations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions compromising autonomous system safety, which could subsume collision risk, but the explicit damage ‘increased collision risk’ is missing and ‘model editing failures’ is a different consequence.",
+    "reference": "Increased collision risk when operators ignore true detection failures masked by plausible explanations.",
+    "generated": "Undetected manipulation causes model editing failures, degrading 3D object detection and compromising autonomous system safety."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc goes from manipulable maps → undetected manipulation → model editing failures, whereas reference arc goes from misleading maps → obscured boundaries → undetected true failures → collision risk; the mechanism is fundamentally different.",
+    "reference": "Misleading feature factorization activation maps enable obscured decision boundaries, which in LiDAR-based 3D detectors expose operators to undetected failures, leading to increased collision risk.",
+    "generated": "Manipulable feature attribution maps, through operators interpreting LiDAR 3D detectors, trigger reliance on obscured model boundaries that prevents detection of manipulated explanations, leading to undetected model editing failures degrading 3D detection and compromising autonomous system safety."
+  }
+}

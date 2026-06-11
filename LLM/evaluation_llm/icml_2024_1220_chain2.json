@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1220",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions overfitting to narrow metrics, which relates to prompt sensitivity, but misses the reference's specific condition of lacking context-conditioning from single-turn optimization causing multi-turn degradation.",
+    "reference": "Prompts optimized for single-turn coherence lack context-conditioning, causing output degradation in multi-turn dialogues.",
+    "generated": "LLM assistants are highly sensitive to prompt wording, and users lack means to assess or counteract prompts that overfit to narrow metrics."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (users) and damage type (contradictory/unsafe information leading to reduced trust and reliability) are semantically present via inconsistent response quality, misinformation spread, and degraded user trust.",
+    "reference": "Users receive contradictory or unsafe information during extended interactions, reducing reliability and user trust.",
+    "generated": "Inconsistent response quality degrades user trust, causes task failures, and spreads misinformation across conversations."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference's causal arc is that lack of robustness constraints enables context-brittle prompts, causing inconsistency; generated arc attributes inconsistency to LLM sensitivity and user inability to counteract overfitting, a different mechanism.",
+    "reference": "Automated prompt optimization without robustness constraints enables context-brittle prompts, which in multi-turn dialogue exposes users to inconsistent responses, leading to contradictory or unsafe information, reducing reliability and trust.",
+    "generated": "Automated prompt optimization that maximizes task metrics without robustness constraints, through users interacting in multi-turn dialogue, triggers LLM sensitivity to prompt wording and user inability to counteract overfitting, leading to inconsistent response quality, degraded trust, task failures, and misinformation spread."
+  }
+}

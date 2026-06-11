@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7208,
+    "reference": "Translation disrupts watermark patterns and detection tools lack multilingual calibration.",
+    "generated": "Content moderators’ watermark detectors lack cross-lingual robustness, so translation removes watermarks and renders machine-generated text undetectable."
+  },
+  "impact": {
+    "similarity": 0.701,
+    "reference": "Undetected AI-generated disinformation spreads in non-English communities, eroding media trust.",
+    "generated": "Malicious actors disseminate undetectable LLM-generated disinformation across languages, bypassing moderation and undermining information integrity."
+  },
+  "dose_response": {
+    "similarity": 0.83,
+    "reference": "Watermark susceptibility to translation attacks enables evasion when content moderators detect translated text, which, through monolingual detection gaps, leads to undetected AI-generated disinformation eroding trust in non-English media.",
+    "generated": "Watermarking for LLM-generated text is susceptible to adaptive black-box removal attacks; through moderators using detectors on translated text, triggers cross-lingual robustness lack where translation removes watermarks, leading to undetectable disinformation across languages bypassing moderation undermining information integrity."
+  }
+}

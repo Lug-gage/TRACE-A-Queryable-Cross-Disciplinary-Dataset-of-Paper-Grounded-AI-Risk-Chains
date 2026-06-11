@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 2,
+  "title": "MP-Nav Enhancing Data Poisoning Attacks against Multimodal Learning",
+  "abstract": "Despite the success of current multimodal learning at scale, its susceptibility to data poisoning attacks poses security concerns in critical applications. Attacker can manipulate model behavior by injecting maliciously crafted yet minute instances into the training set, stealthily mismatching distinct concepts. Recent studies have manifested the vulnerability by poisoning multimodal tasks such as Text-Image Retrieval (TIR) and Visual Question Answering (VQA). However, the current attacking method only rely on random choice of concepts for misassociation and random instance selections for injecting the poisoning noise, which often achieves the suboptimal effect and even risks failure due to the dilution of poisons by the large number of benign instances. This study introduces Multimodal Poison Navigator (MP-Nav), a plug-and-play module designed to evaluate and enhance data poisoning attacks against multimodal models. MP-Nav operates at both the concept and instance levels, identifying semantically similar concept pairs and selecting robust instances to maximize the attack efficacy. The experiments corroborate MP-Nav can significantly improve the efficacy of state-of-the-art data poisoning attacks such as AtoB and ShadowCast in multimodal tasks, and maintain model utility across diverse datasets. Notably, this study underscores the vulnerabilities of multimodal models and calls for the counterpart defenses.",
+  "impact": "MP-Nav exhibits the dual-use nature. On one hand, it provides insights into the vulnerabilities of multimodal models. On the other hand, it raises concerns in real-world scenarios. The ability to easily and stealthily manipulate multimodal models could be exploited by malicious parties to propagate disinformation, manipulate public perception, or even disrupt critical AI-powered systems, such as healthcare diagnostics, autonomous vehicles, and public safety infrastructures. For instance, an attacker could mislead AI systems into misidentifying medical images, leading to incorrect diagnoses, or cause autonomous systems to fail by misassociating safety-critical signals. Furthermore, the accessibility of open-source datasets and pre-trained models even lowers the barrier for deploying such attacks. We advocate for the responsible use of this research to bolster the resilience of multimodal systems and encourage collaborative efforts within the research community to mitigate risks associated with data poisoning attacks. Acknowledgment This paper is supported in part by the Army Research Office under grant number W911NF-21-1-0155 and by the New York University Abu Dhabi (NYUAD) Center for Artificial Intelligence and Robotics, funded by Tamkeen under the NYUAD Research Institute Award CG010.",
+  "query_input": {
+    "scenario": "Compromised open-source multimodal dataset for pre-training VLMs",
+    "issue": "Poisoned concept pairs propagate misassociation across all downstream tasks.",
+    "hazard": [
+      "Concept-level poisoning attack that injects semantically similar but misaligned image-text pairs into multimodal training data, causing robust cross-modal concept misassociations in deployed vision-language models."
+    ],
+    "exposure": [
+      "Organizations pre-training VLMs on publicly available datasets."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on unverified public datasets for pre-training leaves organizations unable to detect or filter deliberately mismatched image-text pairs.",
+    "impact": "Downstream vision-language models systematically confuse semantically similar concepts across all tasks, causing pervasive retrieval, answering, and decision errors.",
+    "dose_response": "A concept-level poisoning attack injecting misaligned image-text pairs into multimodal training data, through organizations pre-training on unverified public datasets, triggers undetectable mismatched pairs, leading to downstream VLMs systematically confusing similar concepts and causing pervasive retrieval, answering, and decision errors."
+  },
+  "reference": {
+    "dose_response": [
+      "Poisoned datasets embed misassociations in pre-trained VLMs, which developers blindly deploy across critical applications, leading to wide-scale erosion of reliability through interconnected digital ecosystems."
+    ],
+    "vulnerability": [
+      "Downstream developers blindly trust open-source pre-trained models, integrating poisoning into many applications."
+    ],
+    "impact": [
+      "Wide-scale deployment of misassociating VLMs erodes reliability in critical domains like education, search, etc."
+    ]
+  }
+}

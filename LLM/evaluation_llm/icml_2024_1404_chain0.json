@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1404",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes automation bias leading to over-reliance on miscalibrated outputs; generated describes missing calibration diagnostics leading to uncritical acceptance—related but different sensitivity condition.",
+    "reference": "Domain experts exhibit automation bias, over-relying on high-confidence but miscalibrated AI outputs.",
+    "generated": "Experts lack calibration diagnostics for pruned models, enabling uncritical acceptance of spuriously confident but unreliable outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Flawed domain decisions (the affected party and damage type) are explicitly present in the generated analysis.",
+    "reference": "Flawed expert decisions in high-stakes domains (e.g., medical, legal) due to misplaced trust in AI confidence scores.",
+    "generated": "Flawed domain decisions cascade, causing operational errors, misallocated resources, and degraded trust in expert-system support."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from pruning to flawed decisions via reliance is present, but the reference's step 'miscalibrated high-confidence outputs trigger over-reliance' is replaced with a diagnostic gap, altering the causal mechanism.",
+    "reference": "Continual pruning degrades calibration, causing miscalibrated high-confidence outputs that domain experts over-rely on, leading to flawed decisions in high-stakes domains.",
+    "generated": "Continual pruning degrades calibration, and through domain experts' reliance, their lack of calibration diagnostics triggers uncritical acceptance, causing flawed domain decisions, operational errors, misallocated resources, and degraded trust."
+  }
+}

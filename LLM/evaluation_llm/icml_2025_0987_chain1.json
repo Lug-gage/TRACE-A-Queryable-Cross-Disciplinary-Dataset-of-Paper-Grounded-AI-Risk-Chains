@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0987",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes shared feature susceptibility, while reference specifies lack of cross-modal validation; related but different sensitivity condition.",
+    "reference": "Autonomous driving systems integrate perception outputs without cross-modal validation.",
+    "generated": "Shared feature representations across detection and segmentation tasks create a common subspace susceptible to universal adversarial perturbations, undermining multi-task integrity."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (passengers and pedestrians) and damage type (casualties/collisions) are present.",
+    "reference": "Physical harm to pedestrians and vehicle occupants.",
+    "generated": "Passenger and pedestrian casualties from collisions caused by autonomous vehicle control failures following cross-task perception corruption."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from perturbation transfer to physical harm is present, but the erosion of public trust from the reference is omitted.",
+    "reference": "Super transferable adversarial perturbations transfer across detection and segmentation tasks in autonomous driving, exposing passengers and pedestrians to physical harm and eroding public trust in vehicle safety.",
+    "generated": "Super transferable adversarial perturbations, through multi-task perception reliance in autonomous vehicles, exploit shared detection–segmentation feature subspaces, undermining multi-task integrity and leading to control failures and casualties."
+  }
+}

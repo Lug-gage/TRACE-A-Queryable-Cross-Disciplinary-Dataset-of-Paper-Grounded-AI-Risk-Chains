@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1386",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions reliance without verification, but the reference's sensitivity condition is over-reliance on automated generation without human quality verification in high-stakes domains like medical imaging; the generated omits the medical context and focuses on model-internal lack of error verification.",
+    "reference": "Over-reliance on automated image generation without human quality verification in high-stakes domains like medical imaging.",
+    "generated": "Reliance on skip-connection integrity without built-in error verification leaves users unable to detect or compensate for tuning-induced numerical distortion."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated includes misleading decisions and eroded trust, but misses the specific affected party (medical contexts) and the precise damage type (misdiagnosis).",
+    "reference": "Misdiagnosis in medical contexts when degraded images are used for clinical decision support.",
+    "generated": "Generated images lose visual fidelity, misleading downstream decisions and eroding trust in diffusion-based synthesis."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc captures skip-tuning errors causing undetected distortion and leading to misled decisions and eroded trust, but it omits the intermediate degradation of denoising and introduces 'user reliance on high-fidelity synthesis' not present in the reference.",
+    "reference": "Skip-tuning introduces numerical propagation errors that degrade denoising, which in training-free sampling distorts generated images, leading to misdiagnosis and eroded trust when flawed outputs are used without verification.",
+    "generated": "Skip-tuning numerical propagation errors in UNet diffusion models, through user reliance on high-fidelity image synthesis, triggers undetected distortion due to missing error verification, leading to lost visual fidelity, misled decisions, and eroded trust."
+  }
+}

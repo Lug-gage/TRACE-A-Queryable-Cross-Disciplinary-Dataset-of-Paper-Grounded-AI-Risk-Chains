@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2431",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Describes sensitivity of users lacking audit capacity rather than maintainers accepting contributions without thorough vetting",
+    "reference": "Open-source maintainers accept LLM-generated contributions without thorough security vetting.",
+    "generated": "Open-source users lack capacity to audit auto-generated backend code for security flaws, trusting upstream projects blindly."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both downstream affected party (adopters) and damage type (widespread compromise) are present",
+    "reference": "Widespread compromise of downstream applications using the vulnerable open-source module.",
+    "generated": "Widespread remote exploitation of deployed backend vulnerabilities compromises user data and service integrity across adopters."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Arc replaces maintainer acceptance without vetting with user blind adoption and lacks explicit attack exploitation of shared flaws",
+    "reference": "LLM-generated code with exploitable patterns, accepted without vetting in open-source modules, enables attackers to exploit shared flaws, causing widespread compromise of downstream applications.",
+    "generated": "LLM-generated backend code with exploitable vulnerabilities, through incorporation into open-source projects adopted by users who blindly trust upstream code and lack audit capacity, triggers undetected deployment of insecure backends, leading to widespread remote compromise of user data and service integrity."
+  }
+}

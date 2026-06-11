@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2086",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "End-users lacking verification means and trusting flawed decompositions matches users uncritically accepting outputs due to trust in AI competence.",
+    "reference": "Users uncritically accepting MLLM-generated images, failing to detect false objects or inconsistencies due to trust in AI competence.",
+    "generated": "End-users lack means to verify MLLM-generated sub-goals, so they must trust flawed decompositions that pass inconsistencies into downstream processing."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions misleading users and erroneous decisions, but misses spread of misinformation, erosion of trust, and reputational harm.",
+    "reference": "Spread of misinformation, erosion of trust in visual media, potential reputational harm from misleading generated content.",
+    "generated": "Generated images contain false objects and visual inconsistencies, misleading users and potentially causing erroneous decisions in critical applications."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from hallucinated sub-goals through user trust in flawed image outputs to negative consequences is present, despite the final consequence wording differing.",
+    "reference": "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL enable inconsistent image generation, which in multimodal image generation with MLLM planning exposes users uncritically accepting outputs, leading to spread of misinformation and erosion of trust in visual media.",
+    "generated": "Hallucinated or misaligned LLM sub-goals in hierarchical RL, through end-user reliance on MLLM-guided image outputs, triggers trust in unverifiable, flawed sub-goal decompositions, leading to false objects and inconsistencies that mislead users and cause erroneous decisions in critical applications."
+  }
+}

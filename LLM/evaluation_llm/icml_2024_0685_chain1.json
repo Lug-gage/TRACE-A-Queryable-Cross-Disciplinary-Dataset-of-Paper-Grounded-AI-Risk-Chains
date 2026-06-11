@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0685",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes lack of alternative diagnostic validation, while reference describes underrepresentation during transient client availability causing fairness weight misadjustment.",
+    "reference": "Minority patient groups are underrepresented during transient client availability, causing fairness weight adjustments that misalign diagnostic models.",
+    "generated": "Minority patient groups lack alternative diagnostic validation mechanisms, leaving them wholly dependent on FL model consistency for accurate care."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Inaccurate diagnoses and health disparities covered, but institutional trust erosion missing.",
+    "reference": "Misdiagnosis or delayed diagnosis for minority patients, worsening health disparities and eroding institutional trust.",
+    "generated": "Inaccurate diagnoses for minority patients cause inappropriate treatments, delayed care, and deeper health disparities across the hospital network."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc includes 'lack of validation alternatives' as a causal step, which is not part of the reference's direct causal chain from drift to misdiagnosis.",
+    "reference": "AAggFF's online fairness optimization under non-stationary client participation causes temporal drift in group-wise performance, which in cross-silo FL leads to misaligned diagnostic models for minority patient groups, resulting in misdiagnosis or delayed diagnosis.",
+    "generated": "Temporal group-wise performance drift from AAggFF's fairness optimization, through diagnostic predictions from cross-silo FL models, triggers minority patient groups' lack of validation alternatives, leading to inaccurate diagnoses, inappropriate treatments, delayed care, and deeper health disparities."
+  }
+}

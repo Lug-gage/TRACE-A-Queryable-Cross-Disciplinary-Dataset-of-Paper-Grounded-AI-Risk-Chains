@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1739",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference highlights resource inequality distorting robust rankings, whereas generated focuses on inability to meet cost assumptions without mention of ranking distortion; related but different sensitivity condition.",
+    "reference": "Resource inequality in ability to enhance applications distorts robust rankings.",
+    "generated": "Applicants' unequal resources to invest in costly essay optimization, leaving resource-constrained groups unable to meet the robust classifier's cost assumptions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated's denial of admission to disadvantaged applicants and entrenchment of educational inequality semantically capture the reference's privileged applicants capturing elite slots and reduced diversity.",
+    "reference": "Privileged applicants capture elite slots, reducing class and racial diversity.",
+    "generated": "Socioeconomically disadvantaged applicants are denied admission, entrenching educational inequality."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from minimax robust classification under cost uncertainty, through essay optimization and unequal resources, to exclusion and inequality is preserved in the generated text.",
+    "reference": "Minimax robust classification under cost uncertainty enables college applicants to optimize admissions essays and resumes, which in one-shot college admissions exposes resource inequality in ability to enhance applications, leading to privileged applicants capturing elite slots and reducing diversity.",
+    "generated": "Minimax robust strategic classification under cost uncertainty, through college applicants optimizing essays, triggers unequal resources to invest in costly optimization, leaving resource-constrained groups unable to meet cost assumptions, leading to socioeconomically disadvantaged applicants being denied admission, entrenching educational inequality."
+  }
+}

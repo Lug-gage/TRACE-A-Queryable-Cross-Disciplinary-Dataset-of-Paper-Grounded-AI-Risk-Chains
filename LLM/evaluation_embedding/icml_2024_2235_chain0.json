@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7759,
+    "reference": "Artists over-trust AI outputs, neglecting creative intent, causing semantic misalignment to propagate.",
+    "generated": "Concept artists' trust in AI to accurately interpret ambiguous sketches, without processes to verify semantic faithfulness, enables reliance on misleading outputs."
+  },
+  "impact": {
+    "similarity": 0.5967,
+    "reference": "Creative dead-ends, wasted resources, and erosion of trust in AI-assisted design tools.",
+    "generated": "Flawed concept art developed from semantically unfaithful generations wastes creative effort and misdirects downstream design decisions."
+  },
+  "dose_response": {
+    "similarity": 0.7984,
+    "reference": "Conditionally-controlled generation misaligns to sketches, yielding unreliable outputs; artists' over-trust propagates semantic misalignment, causing creative dead-ends and eroded trust.",
+    "generated": "Conditionally-controlled consistency generation producing misaligned, unreliable outputs, through concept artists using AI to flesh out rough sketches, triggers their trust in accurate interpretation without verification, leading to flawed concept art that wastes creative effort and misdirects downstream design decisions."
+  }
+}

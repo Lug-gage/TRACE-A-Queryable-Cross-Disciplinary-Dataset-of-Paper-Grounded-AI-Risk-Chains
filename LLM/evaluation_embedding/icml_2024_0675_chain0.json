@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.458,
+    "reference": "Users' over-reliance on LLM outputs as authoritative, without critical verification.",
+    "generated": "Aligned LLMs’ safety mechanisms are brittle to fluency-preserving adversarial suffixes that bypass content filters."
+  },
+  "impact": {
+    "similarity": 0.6576,
+    "reference": "Erosion of public trust in AI systems, spread of harmful misinformation, reputational damage.",
+    "generated": "End-users receive harmful model outputs including hate speech and dangerous instructions, causing societal harm and loss of trust."
+  },
+  "dose_response": {
+    "similarity": 0.8235,
+    "reference": "Stealthy adversarial suffixes enable jailbreaking of chatbots, exposing end-users to harmful outputs that, due to over-reliance, they accept and propagate, leading to erosion of trust and reputational damage.",
+    "generated": "Stealthy, controllable generation of adversarial suffixes, through end-user interaction with aligned LLM chatbots, triggers the brittleness of safety mechanisms to fluency-preserving adversarial suffixes, leading to harmful outputs including hate speech and dangerous instructions, causing societal harm and loss of trust."
+  }
+}

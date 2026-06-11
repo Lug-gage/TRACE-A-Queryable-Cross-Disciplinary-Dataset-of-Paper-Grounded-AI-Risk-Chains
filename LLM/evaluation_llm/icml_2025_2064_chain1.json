@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2064",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe automated update pipelines lacking checks, resulting in undetected knowledge degradation; generated adds specificity about residual connections but captures the same sensitivity condition.",
+    "reference": "Continuous update pipelines with automated weight averaging lack integrity checks, allowing silent knowledge degradation.",
+    "generated": "Automated update pipelines lack checks for permutation errors in residual connections, leaving knowledge degradation undetected."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Degraded model outputs lead to costly retraining (financial loss) and eroding user trust (reputational damage), matching both damage types in the reference.",
+    "reference": "Degraded model knowledge retention leads to erroneous AI service outputs, causing financial losses and reputational damage.",
+    "generated": "Degraded model outputs silently undermine service reliability, forcing costly retraining and eroding user trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc includes misaligned weight permutations, missing checks, and degraded outputs leading to financial and reputational harm, but it omits the 'degraded knowledge retention' step and places the absent checks inside the pipeline rather than as a separate deployment condition, so the full causal translation is only partially covered.",
+    "reference": "Misaligned weight permutations in weight averaging cause degraded knowledge retention, which when enterprise teams deploy without integrity checks leads to erroneous outputs, financial losses, and reputational damage.",
+    "generated": "Misaligned weight permutations, through enterprise teams maintaining continuously updated AI services, trigger automated update pipelines lacking checks for residual connection permutation errors, leading to degraded model outputs that silently undermine service reliability, force costly retraining, and erode user trust."
+  }
+}

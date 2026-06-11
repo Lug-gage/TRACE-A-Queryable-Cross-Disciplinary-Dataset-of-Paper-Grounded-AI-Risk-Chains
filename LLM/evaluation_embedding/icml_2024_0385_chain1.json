@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0385",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4645,
+    "reference": "Safety guardrails overfit to standard prompts, leaving gaps for novel adversarial patterns.",
+    "generated": "False sense of security from certification guarantees reduces vigilance, leaving users unprotected against certification-exploiting adversarial prompts."
+  },
+  "impact": {
+    "similarity": 0.6911,
+    "reference": "Proliferation of harmful content causing psychological harm to users and third parties.",
+    "generated": "Users encounter harmful generated content, leading to psychological harm, spread of misinformation, and erosion of trust in AI assistants."
+  },
+  "dose_response": {
+    "similarity": 0.8404,
+    "reference": "Certification-aware adversarial examples with minimized perturbations evade LLM safety guardrails, which exposes users to harmful content, leading to psychological harm and legal liability.",
+    "generated": "Certification-aware adversarial examples exploiting bound tightness weaknesses, through users of LLM-powered assistants encountering harmful generated content, trigger a false sense of security that reduces vigilance, leaving users unprotected, leading to harmful generated content, psychological harm, misinformation, and erosion of trust."
+  }
+}

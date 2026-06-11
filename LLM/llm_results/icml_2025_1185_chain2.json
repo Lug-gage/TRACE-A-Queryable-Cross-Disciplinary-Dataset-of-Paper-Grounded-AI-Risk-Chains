@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1185",
+  "chain_index": 2,
+  "title": "Do Not Mimic My Voice Speaker Identity Unlearning for Zero-Shot Text-to-Speech",
+  "abstract": "The rapid advancement of Zero-Shot Text-to- Speech (ZS-TTS) technology has enabled highfidelity voice synthesis from minimal audio cues, raising significant privacy and ethical concerns. Despite the threats to voice privacy, research to selectively remove the knowledge to replicate unwanted individual voices from pre-trained model parameters has not been explored. In this paper, we address the new challenge of speaker identity unlearning for ZS-TTS systems. To meet this goal, we propose the first machine unlearning frameworks for ZS-TTS, especially Teacher- Guided Unlearning (TGU), designed to ensure the model forgets designated speaker identities while retaining its ability to generate accurate speech for other speakers. Our proposed methods incorporate randomness to prevent consistent replication of forget speakers’ voices, assuring unlearned identities remain untraceable. Additionally, we propose a new evaluation metric, speaker-Zero Retrain Forgetting (spk-ZRF). This assesses the model’s ability to disregard prompts associated with forgotten speakers, effectively neutralizing its knowledge of these voices. The experiments conducted on the state-of-the-art model demonstrate that TGU prevents the model from replicating forget speakers’ voices while maintaining high quality for other speakers.",
+  "impact": "Our work is dedicated to ensure safety in usage of Zero- Shot Text-to-Speech models by preventing the generation of voices belonging to individuals who do not consent to having their identities replicated. Although our work ad- dresses the need for individuals to opt out of voice replication, determining how to handle similar voices raises complex questions. In striving to protect the privacy of a single individual, one could unintentionally restrict beneficial TTS capabilities to others whose voices resemble the forget set. Balancing personal privacy rights and broader technological benefits is at the heart of this tension. Also, techniques for ensuring speaker identity unlearning must be verifiable and transparent. Providing evidence that the model no longer replicates a forgotten identity requires both quantitative evaluation and subjective analysis. In light of the current situation-where many models remain closed due to concerns about misuse-we believe our work marks a new chapter in safeguarding individuals, paving the way for broader availability in the future. We aim to foster a deeper ethical discourse and encourage further research on responsibly handling ZS-TTS.",
+  "query_input": {
+    "scenario": "Voice model provider applies unlearning to comply with deletion requests",
+    "issue": "Residual speaker-specific acoustic patterns remain in model weights, risking re-identification",
+    "hazard": [
+      "Incomplete speaker identity unlearning in zero-shot TTS may leave residual voiceprint information in generated speech."
+    ],
+    "exposure": [
+      "Data subjects exercising their right to be forgotten in voice-enabled systems"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Data subjects lack independent oversight to verify complete voice identity removal, relying solely on the provider's unverified unlearning claim.",
+    "impact": "Re-identification and voice cloning of deletion-requesting individuals, enabling impersonation and privacy violations despite legal deletion rights.",
+    "dose_response": "Incomplete speaker identity unlearning in zero-shot TTS, through data subjects exercising their right to be forgotten, triggers lack of independent oversight to verify identity removal, leading to re-identification and voice cloning enabling impersonation and privacy violations despite legal deletion rights."
+  },
+  "reference": {
+    "dose_response": [
+      "Incomplete unlearning leaves residual voiceprint patterns in model weights; when providers apply unlearning for deletion requests, data subjects can be re-identified via model queries, leading to regulatory fines and reputational damage."
+    ],
+    "vulnerability": [
+      "Model weights retain speaker-specific acoustic patterns after unlearning, enabling re-identification from outputs."
+    ],
+    "impact": [
+      "Re-identification of data subjects by querying model with various prompts.",
+      "Regulatory fines for non-compliance with right to erasure.",
+      "Reputational damage and user attrition for AI providers."
+    ]
+  }
+}

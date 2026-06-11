@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 3,
+  "title": "Optimizing Adaptive Attacks against Watermarks for Language Models",
+  "abstract": "Large Language Models (LLMs) can be misused to spread unwanted content at scale. Content watermarking deters misuse by hiding messages in content, enabling its detection using a secret watermarking key. Robustness is a core security property, stating that evading detection requires (significant) degradation of the content’s quality. Many LLM watermarking methods have been proposed, but robustness is tested only against nonadaptive attackers who lack knowledge of the watermarking method and can find only suboptimal attacks. We formulate watermark robustness as an objective function and use preference-based optimization to tune adaptive attacks against the specific watermarking method. Our evaluation shows that (i) adaptive attacks evade detection against all surveyed watermarks, (ii) training against any watermark succeeds in evading unseen watermarks, and (iii) optimization-based attacks are cost-effective. Our findings underscore the need to test robustness against adaptively tuned attacks. We release our adaptively tuned paraphrasers at https://github.com/nilslukas/ada -wm-evasion.",
+  "impact": "This work investigates the robustness of watermarking methods for large language models (LLMs), which has implications for content authentication and the responsible deployment of AI systems. Our findings demonstrate that attackers with limited computational resources can undermine the robustness of current watermarking methods by using adaptively optimized attacks. This vulnerability could have societal implications as major AI providers increasingly adopt watermarking to promote responsible AI use and control misuse, including the proliferation of LLM-generated misinformation and online spam. By publicly releasing our methods, findings, and source code, we hope to encourage the development of more robust watermarking methods that can better withstand adaptive attacks (e.g., by increasing the computational complexity of such attacks or making them less effective). We acknowledge that our research could potentially be misused to evade existing deployments of watermarks. However, these deployments are still in experimental phases. We believe the benefit of releasing our work outweighs the potential harm and hope that our work inspires the development of more robust content authentication methods.",
+  "query_input": {
+    "scenario": "Spoofing attack where malicious actors alter LLM outputs",
+    "issue": "Watermark provenance can be misattributed, enabling false blame on LLM developers.",
+    "hazard": [
+      "Watermarking for LLM-generated text is susceptible to adaptive black-box removal attacks (paraphrasing, translation, optimization) that undermine detection."
+    ],
+    "exposure": [
+      "LLM developers facing liability for spoofed harmful content."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "LLM developers depend on watermarking as proof of non-origin, but no robust defense exists against adaptive removal, leaving them unable to refute false attribution.",
+    "impact": "Developers face legal liability and reputational damage from spoofed harmful content they are falsely accused of generating.",
+    "dose_response": "Adaptive black-box removal attacks on LLM watermarking, through spoofed content misattribution exposing developers to liability, trigger their reliance on watermarking as proof-of-non-origin without robust defense, leading to legal liability and reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Susceptibility to spoofing enables watermarks to be misattributed, which when LLM developers face liability for spoofed content, leads to unjust blame and stifled innovation."
+    ],
+    "vulnerability": [
+      "Watermarks lack cryptographic integrity, allowing spoofing of provenance.",
+      "Ambiguous legal frameworks assign liability without verifiable attribution."
+    ],
+    "impact": [
+      "LLM developers face defamation, fines, and market backlash for spoofed content.",
+      "Stifling of AI innovation due to liability fears and reputational damage."
+    ]
+  }
+}

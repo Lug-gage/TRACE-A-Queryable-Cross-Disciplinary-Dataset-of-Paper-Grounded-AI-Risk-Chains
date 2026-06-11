@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1845",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6597,
+    "reference": "Content moderation relies on automated quality scoring without appeal mechanisms, making it sensitive to adversarial perturbation.",
+    "generated": "Automated quality filtering relies on blind IQA models that lack adversarial robustness, leaving platforms unable to detect manipulated scores."
+  },
+  "impact": {
+    "similarity": 0.607,
+    "reference": "Unjust removal of legitimate content causes creator anger, platform abandonment, and potential legal challenges.",
+    "generated": "Erroneous suppression of legitimate content and promotion of low-quality content, degrading platform curation and user trust."
+  },
+  "dose_response": {
+    "similarity": 0.7619,
+    "reference": "Adversarial perturbations manipulate quality scores, causing erroneous suppression or promotion of content, which unjustly removes legitimate uploads and provokes creator anger and platform abandonment.",
+    "generated": "Adversarial perturbations that arbitrarily alter no-reference quality scores, through social media platforms filtering uploads via blind IQA, trigger reliance on blind IQA models lacking adversarial robustness, leading to erroneous suppression and promotion of content, degrading platform curation and user trust."
+  }
+}

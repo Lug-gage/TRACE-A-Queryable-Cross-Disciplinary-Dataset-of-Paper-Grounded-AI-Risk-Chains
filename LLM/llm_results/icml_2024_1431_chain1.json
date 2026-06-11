@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1431",
+  "chain_index": 1,
+  "title": "HarmBench A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+  "abstract": "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming. We identify several desirable properties previously unaccounted for in red teaming evaluations and systematically design HarmBench to meet these criteria. Using HarmBench, we conduct a largescale comparison of 18 red teaming methods and 33 target LLMs and defenses, yielding novel insights. We also introduce a highly efficient adversarial training method that greatly enhances LLM robustness across a wide range of attacks, demonstrating how HarmBench enables codevelopment of attacks and defenses. We open source HarmBench at https://github. com/centerforaisafety/HarmBench.",
+  "impact": "Our work introduces HarmBench: an standardized evaluation framework for red teaming, alongside a novel adversarial training method, R2D2, marking significant advancements in evaluating and improving the safety of large language models (LLMs). By offering a comprehensive evaluation across seven critical categories of misuse, such as cybercrime and misinformation, our work embarks on preemptively identifying and mitigating vulnerabilities of LLMs. This proactive examination uncovers that even after alignment training, no model is robust against all malicious attacks we evaluate against, emphasizing the need for sophisticated, multidimensional defense strategies. The open accessibility of our datasets and code invites collaborative efforts, setting the stage for further innovations in creating safe and secure AI models. While curating the dataset, we meticulously reviewed the behaviors and context strings, trimming any information that could potentially be harmful if used differentially, thus rendering it useless to malicious actors. In the case of copyright behaviors, we release only the cryptographic hashes of the copyrighted material, which are irreversible, to ensure maximum protection. The ethical and societal implications of our work are significant, balancing between enhancing AI defenses and the potential for informing more sophisticated attacks. Our commitment to advancing LLM safety is nested within a broader ethical dialogue that advocates for responsible AI advancement, ensuring benefits are democratized while guarding against misuse. By catalyzing further research and fostering a collaborative ecosystem among academics, industry practitioners, and policymakers, we aim to navigate the complexities of AI development.",
+  "query_input": {
+    "scenario": "Release of comprehensive jailbreak dataset",
+    "issue": "Public dataset lowers barrier for malicious actors to bypass safety guardrails",
+    "hazard": [
+      "Automated red teaming systematically identifies benign and adversarial prompts that trigger harmful LLM outputs"
+    ],
+    "exposure": [
+      "Adversaries accessing the public benchmark to attack deployed LLM applications"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Deployed LLMs have brittle safety guardrails that fail against systematically optimized adversarial prompts, lacking robust refusal mechanisms.",
+    "impact": "Malicious actors generate harmful content (e.g., hate speech, illegal instructions) at scale, harming users and undermining trust in LLM applications.",
+    "dose_response": "Automated red teaming's systematic identification of prompts that trigger harmful outputs, accessed by adversaries via the public benchmark to attack deployed LLMs, exploits brittle safety guardrails, leading to mass generation of harmful content that harms users and erodes trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated red teaming's jailbreak dataset release enables adversaries to apply prompts to unmonitored LLM applications, leading to mass-scale harmful content and undermined trust."
+    ],
+    "vulnerability": [
+      "Adversaries with minimal skills can apply dataset prompts to any LLM lacking robust, dynamic defenses.",
+      "Widely deployed applications often have no real-time monitoring for known jailbreak patterns."
+    ],
+    "impact": [
+      "Surge in automated attacks causing mass-scale generation of harmful, manipulative content.",
+      "Undermining of platform safety reputations and decline in user trust across AI services."
+    ]
+  }
+}

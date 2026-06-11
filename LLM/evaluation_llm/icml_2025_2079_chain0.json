@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2079",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Model memorization of training data enabling extraction of sensitive patient details is present in both; the addition of 'without differential privacy' and 'partial queries' does not alter the core sensitivity condition.",
+    "reference": "Model memorization of training samples enables extraction of PII and clinical details via membership inference.",
+    "generated": "Fine-tuned LLMs memorize training data fragments without differential privacy, enabling extraction of sensitive patient details from partial queries."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (patients) is present, but damage types from the reference (identity theft, insurance discrimination, psychological distress) are missing; generated only includes privacy breach, stigma, discrimination, and trust erosion, covering only part of the reference's consequence.",
+    "reference": "Patients suffer privacy breaches, identity theft, insurance discrimination, and psychological distress.",
+    "generated": "Patient privacy breach reveals medical conditions and PII, causing stigma, discrimination, and erosion of trust in clinical AI tools."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc of fine-tuned LLMs leaking training data via membership inference, leading to exposure of sensitive details, privacy breaches, and trust erosion is fully present; added intermediate steps do not break the logic.",
+    "reference": "Fine-tuned clinical LLMs leak PII and medical conditions via membership inference, exposing patients and providers to privacy breaches, identity theft, and eroded trust in healthcare AI.",
+    "generated": "Fine-tuned LLMs leak training data via membership inference, through patient-provider use of clinical AI tools, triggering extraction of sensitive details through memorization without differential privacy, leading to breaches exposing conditions and PII, causing stigma, discrimination, and trust erosion."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0766",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6498,
+    "reference": "Urban planners lack technical expertise to detect AI-generated artifacts in satellite imagery.",
+    "generated": "Planners lack verification protocols for synthetic imagery, treating its photorealism as accurate ground truth for land-use decisions."
+  },
+  "impact": {
+    "similarity": 0.6129,
+    "reference": "Misguided zoning decisions based on hallucinated land cover lead to environmental harm and infrastructure waste.",
+    "generated": "Skewed suitability mapping causes misdirected resource allocation and maladaptive environmental planning decisions."
+  },
+  "dose_response": {
+    "similarity": 0.7762,
+    "reference": "Mode interpolation introduces implausible land cover details, which when urban planners use synthetic imagery for planning, leads to misguided zoning and financial losses from bad investments.",
+    "generated": "Mode interpolation in diffusion models hallucinates land cover features in synthetic imagery; when planners lack verification protocols, they treat photorealism as ground truth, leading to skewed suitability mapping, misdirected resource allocation, and maladaptive environmental planning."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2581",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4831,
+    "reference": "LLMs exhibit majority label bias in few-shot prompts, amplifying dominant class predictions.",
+    "generated": "End users lack mechanisms to detect or correct label distribution skews introduced by automated exemplar selection."
+  },
+  "impact": {
+    "similarity": 0.7416,
+    "reference": "Systematic misclassification of minority-group texts, leading to inequitable decision outcomes.",
+    "generated": "Biased text classifications produce incorrect decisions, disproportionately misclassifying minority instances and undermining decision support reliability."
+  },
+  "dose_response": {
+    "similarity": 0.8889,
+    "reference": "Relevance-diversity optimization biases exemplar selection, causing skewed prompt labels that amplify LLMs' majority bias, leading end users' text classification to systematically misclassify minorities and produce inequitable outcomes.",
+    "generated": "Relevance-diversity optimized exemplar selection biases prompts, distorting model reasoning; through end-user reliance on LLM classification, this triggers undetected label skews, leading to biased misclassifications that disproportionately misclassify minorities and undermine decision reliability."
+  }
+}

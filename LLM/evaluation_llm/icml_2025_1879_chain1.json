@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1879",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Trust in SAE features as reflecting causal mechanisms is present, explicitly noting absence of verification",
+    "reference": "Model developers trust SAE features to reflect causal model mechanisms.",
+    "generated": "Engineers trust that SAE-identified interpretable features correspond to functionally important mechanisms without causal verification."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Erratic behavior degrading system performance and safety semantically matches unexpected failures in downstream applications",
+    "reference": "Erratic model edits cause unexpected failures in downstream applications.",
+    "generated": "Steering interventions cause erratic or ineffective model behavior, degrading system performance and safety."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc includes non-functional features, steering, unwarranted trust, and erratic behavior, but misses the final reduced trust in AI tools as described in the reference",
+    "reference": "SAEs recovering non-functional features enables model developers' trust in them for steering, which in scenario model editing exposes lack of validation, leading to erratic edits and reduced trust in AI tools.",
+    "generated": "SAEs recovering interpretable but non-functional features, through engineers applying steering vectors from feature dictionaries, triggers unwarranted trust in their functional importance, leading to erratic model behavior that degrades performance and safety."
+  }
+}

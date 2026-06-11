@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2044",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6235,
+    "reference": "Clinician overreliance on AI outputs without verifying underlying causal consistency",
+    "generated": "Radiologists lack the means to verify causal fidelity of AI-generated images and rely on visual realism as a proxy for clinical validity."
+  },
+  "impact": {
+    "similarity": 0.6335,
+    "reference": "Misdiagnosis leading to patient harm and erosion of trust in AI-assisted diagnostic tools",
+    "generated": "Misguided clinical decisions cause misdiagnosis and inappropriate treatment, harming patients."
+  },
+  "dose_response": {
+    "similarity": 0.8739,
+    "reference": "Diffusion models manipulating semantics without causal mechanisms enable causally invalid counterfactuals, which when used by radiologists for clinical decisions without causal verification, lead to misdiagnosis, patient harm, and eroded trust in AI diagnostics.",
+    "generated": "Diffusion models generating causally invalid but realistic counterfactuals, through radiologists using AI-generated medical counterfactuals for clinical decisions, triggers their reliance on visual realism as a proxy for causal validity, leading to misdiagnosis and inappropriate treatment harming patients."
+  }
+}

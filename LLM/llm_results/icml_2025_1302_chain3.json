@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1302",
+  "chain_index": 3,
+  "title": "GenMol A Drug Discovery Generalist with Discrete Diffusion",
+  "abstract": "Drug discovery is a complex process that involves multiple stages and tasks. However, existing molecular generative models can only tackle some of these tasks. We present Generalist Molecular generative model (GenMol), a versatile framework that uses only a single discrete diffusion model to handle diverse drug discovery scenarios. GenMol generates Sequential Attachment-based Fragment Embedding (SAFE) sequences through non-autoregressive bidirectional parallel decoding, thereby allowing the utilization of a molecular context that does not rely on the specific token ordering while having better sampling efficiency. GenMol uses fragments as basic building blocks for molecules and introduces fragment remasking, a strategy that optimizes molecules by regenerating masked fragments, enabling effective exploration of chemical space. We further propose molecular context guidance (MCG), a guidance method tailored for masked discrete diffusion of GenMol. GenMol significantly outperforms the previous GPT-based model in de novo generation and fragment-constrained generation, and achieves state-of-the-art performance in goal-directed hit generation and lead optimization. These results demonstrate that GenMol can tackle a wide range of drug discovery tasks, providing a unified and versatile approach for molecular design.",
+  "impact": "In our paper, we showed that GenMol is capable of addressing a broad spectrum of drug discovery challenges, providing a unified and versatile solution for molecular design. However, as effective as GenMol is in drug discovery tasks, it has the potential to generate harmful drugs if used maliciously. To prevent this, GenMol could be equipped with features that incorporate target properties that take toxicity into account, exclude toxic fragments from the fragment vocabulary, or filter the proposed drug candidates by predicting the toxicity.",
+  "query_input": {
+    "scenario": "Lead optimization via generated candidates",
+    "issue": "Output includes candidates that violate synthesis rules, risking wasted experimental cycles.",
+    "hazard": [
+      "Non-autoregressive discrete diffusion with fragment remasking can generate token sequences that decode to chemically invalid or unstable molecular structures."
+    ],
+    "exposure": [
+      "Computational chemists optimizing leads with molecular diffusion"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Computational chemists lack automated synthetic feasibility filters, relying on diffusion-generated candidates without validation of synthesis rules.",
+    "impact": "Wasted experimental resources synthesizing infeasible molecules, delaying lead optimization timelines.",
+    "dose_response": "Non-autoregressive discrete diffusion with fragment remasking, generating chemically invalid structures, through computational chemists optimizing leads, triggers reliance on unvalidated candidates without synthetic feasibility filters, leading to wasted experimental resources synthesizing infeasible molecules and delayed lead optimization timelines."
+  },
+  "reference": {
+    "dose_response": [
+      "Non-autoregressive discrete diffusion with fragment remasking can generate unsynthesisable candidates, so when computational chemists optimize leads without retrosynthetic feasibility filters, protracted lead optimization increases costs and failure risk."
+    ],
+    "vulnerability": [
+      "Candidates not filtered by retrosynthetic feasibility advance to synthesis, consuming lab resources on impossible molecules."
+    ],
+    "impact": [
+      "Protracted lead optimization due to chasing unsynthesisable leads, increasing costs and project failure risk."
+    ]
+  }
+}

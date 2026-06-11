@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe end-user inability to verify model integrity, leading to reliance on compromised models.",
+    "reference": "User trust in model origin without verification of quantization integrity enables deployment of compromised LLMs.",
+    "generated": "End-users lack any capability to verify model integrity or detect malicious quantization, relying on safety guarantees that the compromised model bypasses."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (end-users) is present, but damage type misses societally harmful content (hate speech, disinformation) and the societal harm dimension, while adding security breaches and eroded trust.",
+    "reference": "Delivery of harmful content (hate speech, disinformation) to unsuspecting end-users, causing individual and societal harm.",
+    "generated": "Users act on harmful, manipulated outputs, leading to personal harm, security breaches, and eroded trust in AI assistance."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both articulate the same causal arc: malicious quantization evades safety checks, producing compromised LLMs that unsuspecting users trust, resulting in direct delivery of harmful outputs.",
+    "reference": "Malicious quantization, enabled by open-weight models, evades safety checks, leading to compromised LLMs; unsuspecting end-users trust these models, resulting in direct delivery of harmful content.",
+    "generated": "Open-weight models compromised via quantization backdoors and output manipulation evading monitoring, through end-user daily interaction, trigger reliance on bypassed safety guarantees and inability to verify integrity, leading to personal harm, security breaches, and eroded trust from acting on manipulated outputs."
+  }
+}

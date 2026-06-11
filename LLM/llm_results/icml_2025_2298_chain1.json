@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2298",
+  "chain_index": 1,
+  "title": "video-SALMONN-o1 Reasoning-enhanced Audio-visual Large Language Model",
+  "abstract": "While recent advancements in reasoning optimization have significantly enhanced the capabilities of large language models (LLMs), existing efforts to improve reasoning have been limited to solving mathematical problems and focusing on visual graphical inputs, neglecting broader applications in general video understanding. This paper proposes video-SALMONN-o1, the first opensource reasoning-enhanced audio-visual LLM designed for general video understanding tasks. To enhance its reasoning abilities, we develop a reasoning-intensive dataset featuring challenging audio-visual questions with step-by-step solutions. We also propose process direct preference optimization (pDPO), which leverages contrastive step selection to achieve efficient step-level reward modelling tailored for multimodal inputs. Additionally, we introduce RivaBench, the first reasoning-intensive video understanding benchmark, featuring over 4,000 high-quality, expertcurated question-answer pairs across scenarios such as standup comedy, academic presentations, and synthetic video detection. video-SALMONNo1 achieves 3-8% accuracy improvements over the LLaVA-OneVision baseline across different video reasoning benchmarks. Besides, pDPO achieves 6-8% improvements compared to the supervised fine-tuning model on RivaBench. Enhanced reasoning enables video-SALMONN-o1 zero-shot synthetic video detection capabilities.1",
+  "impact": "By enhancing reasoning abilities in general video understanding, video-SALMONN-o1 provides a more transparent and interpretable interface that is compatible with general videos to access and explain model responses and behaviours. This is indispensable to ensure the reliability of LLMs when applied to different video understanding scenarios and will be largely beneficial for pinpointing the specific causes or errors when the model generates dubious or toxic contents, thus enhancing AI safety. The approaches in this paper do not give rise to any additional potential biases beyond the ones directly inherited from the pre-trained model checkpoints used. The audio encoder and visual encoder might work worse for people from particular demographics. The framework also inherits biases from all the LLMs used in this paper. To mitigate potential biases, we clearly describe the nature of each dataset and provide clear and adequate references to all the resources we used for video-SALMONN-o1. The ability of video-SALMONN-o1 to understand speech in videos could lead to potential technology abuses like surveillance and eavesdropping. To counter this, we’ve consulted with legal experts to establish clear usage guidelines, reducing risks and addressing concerns, highlighting our dedication to responsible research sharing.",
+  "query_input": {
+    "scenario": "Long surveillance video question answering",
+    "issue": "Plausible but erroneous causal chains in step-rewarded models miss critical events in monitoring feeds",
+    "hazard": [
+      "Step-level reward optimization of reasoning chains amplifies plausible but incorrect causal explanations in video understanding models"
+    ],
+    "exposure": [
+      "Security personnel using AI-assisted video review for public safety"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Security personnel lack real-time independent verification capacity to detect plausible but incorrect AI-generated causal chains during prolonged monitoring.",
+    "impact": "Undetected critical events in surveillance feeds allow security threats to escalate into preventable safety breaches.",
+    "dose_response": "Step-level reward optimization amplifies plausible but incorrect causal explanations in video understanding models, which, when used by security personnel lacking real-time verification capacity during monitoring, leads to undetected critical events and escalating safety breaches."
+  },
+  "reference": {
+    "dose_response": [
+      "Step-level reward optimization amplifies incorrect causal explanations in video models, leading security operators to accept plausible but erroneous AI summaries, causing delayed threat detection due to fatigue and reduced scrutiny."
+    ],
+    "vulnerability": [
+      "Security operators in prolonged monitoring tasks rely on AI summaries to reduce cognitive load, missing errors due to fatigue.",
+      "Limited institutional protocols for verifying AI-identified events in real-time surveillance."
+    ],
+    "impact": [
+      "Delayed detection of security threats, leading to preventable incidents.",
+      "False alarms causing desensitization and reduced operator responsiveness."
+    ]
+  }
+}

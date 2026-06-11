@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0660",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference vulnerability is that preference data reflects dominant demographics, marginalizing minority perspectives. Generated vulnerability is that end users lack detection mechanisms for skewed content, a different sensitivity condition entirely.",
+    "reference": "Preference data reflects dominant user demographics, marginalizing minority perspectives.",
+    "generated": "End users lack mechanisms to detect subtly skewed, toxic, or misaligned content in model outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference (reinforcing societal biases, harm in hiring/moderation) and generated (users internalize biases, psychological distress, perpetuate discrimination) specify affected parties and the damage type of bias-driven harm.",
+    "reference": "Model preferences reinforce societal biases, amplifying harm in downstream applications like hiring or content moderation.",
+    "generated": "Users internalize harmful biases, suffer psychological distress, and perpetuate real-world discrimination."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference describes causal arc from skewed preference optimization to overfitting majority biases, marginalizing minorities, and harm in hiring decisions. Generated arc relies on toxic content amplification, non-representative signals, and user detection failure leading to internalized bias and discrimination, a different causal mechanism.",
+    "reference": "Skewed preference optimization from toxic-amplified data enables models to overfit majority biases, which when end users receive biased responses marginalizes minorities, reinforcing harm in hiring decisions.",
+    "generated": "Synthetic data from uncontrolled user interactions amplifies toxic content in mixtures, through end users receiving responses shaped by non-representative preference signals, triggers their lack of mechanisms to detect subtly skewed content, leading to users internalizing harmful biases, suffering psychological distress, and perpetuating real-world discrimination."
+  }
+}

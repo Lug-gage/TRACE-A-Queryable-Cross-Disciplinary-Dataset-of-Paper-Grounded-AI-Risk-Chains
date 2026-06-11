@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1257",
+  "chain_index": 0,
+  "title": "Weisfeiler and Leman Go Gambling Why Expressive Lottery Tickets Win",
+  "abstract": "The lottery ticket hypothesis (LTH) is wellstudied for convolutional neural networks but has been validated only empirically for graph neural networks (GNNs), for which theoretical findings are largely lacking. In this paper, we identify the expressivity of sparse subnetworks, i.e. their ability to distinguish non-isomorphic graphs, as crucial for finding winning tickets that preserve the predictive performance. We establish conditions under which the expressivity of a sparsely initialized GNN matches that of the full network, particularly when compared to the Weisfeiler-Leman test, and in that context put forward and prove a Strong Expressive Lottery Ticket Hypothesis. We subsequently show that an increased expressivity in the initialization potentially accelerates model convergence and improves generalization. Our findings establish novel theoretical foundations for both LTH and GNN research, highlighting the importance of maintaining expressivity in sparsely initialized GNNs. We illustrate our results using examples from drug discovery.",
+  "impact": "Our work highlights the critical role of preserving expressivity in sparsely initialized and trained GNNs, offering insights into how pruning can lead to irrecoverable expressivity loss. By demonstrating the risks associated with degraded expressivity, we show the importance of careful pruning design to ensure reliable predictions, such as distinguishing toxic from non-toxic compounds in drug discovery. Moreover, via linking GNN expressivity with generalization and convergence, we show that degraded expressivity can hinder both training dynamics and model reliability. The broader societal benefit of our work lies in its potential to inform the development of high-performance and trustworthy GNNs in resource-constrained settings, contributing to equitable access to advanced machine learning technologies and promoting their safe use in impactful domains.",
+  "query_input": {
+    "scenario": "Drug discovery via sparse GNN molecular property prediction",
+    "issue": "Overfitted sparse subnetworks miss key substructures, causing false negative toxicity predictions",
+    "hazard": [
+      "Lottery ticket sparsification that optimizes GNNs for WL expressivity encodes overfitted graph representations that fail under covariate shift, yielding overconfident predictions."
+    ],
+    "exposure": [
+      "Computational chemists screening drug candidates with pruned GNNs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Computational chemists lack independent validation mechanisms for pruned GNN toxicity predictions under distribution shift.",
+    "impact": "Toxic drug candidates proceed to costly wet-lab and clinical trials, jeopardizing patient safety.",
+    "dose_response": "Lottery ticket sparsification encoding overfitted graph representations that fail under covariate shift, through computational chemists screening drug candidates, triggers lack of independent validation for toxicity predictions under distribution shift, leading to toxic candidates advancing to trials jeopardizing patient safety."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitted sparse GNNs yield overconfident toxicity predictions under covariate shift, which in early drug discovery without wet-lab validation leads to toxic compounds erroneously advancing to trials."
+    ],
+    "vulnerability": [
+      "Lack of independent wet-lab validation and regulatory oversight for AI-based toxicity screening in early drug discovery"
+    ],
+    "impact": [
+      "Toxic compounds erroneously classified as safe advance to costly preclinical phases, endangering human trials"
+    ]
+  }
+}

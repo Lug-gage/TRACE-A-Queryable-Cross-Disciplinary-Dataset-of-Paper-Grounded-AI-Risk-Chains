@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0221",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.4356,
+    "reference": "Safety resources concentrate on English, leaving non-English communities with weaker protections.",
+    "generated": "Non-English language users lack embedding extraction defenses designed only for English, leaving queries unprotected against inversion."
+  },
+  "impact": {
+    "similarity": 0.4756,
+    "reference": "Dissident communications in non-English languages exposed, enabling state surveillance and repression.",
+    "generated": "Non-English user inputs are exposed via embedding inversion, compromising privacy and enabling parameter theft across languages."
+  },
+  "dose_response": {
+    "similarity": 0.8001,
+    "reference": "Black-box extraction enables cross-lingual embedding inversion, which in multilingual LLM deployment exposes non-English data, leading to state surveillance and widened digital divides.",
+    "generated": "Black-box extraction via embedding projection queries, through multilingual LLM users in non-English languages, exploits the lack of embedding extraction defenses for non-English queries, causing embedding inversion that exposes user inputs, compromising privacy and enabling cross-lingual parameter theft."
+  }
+}

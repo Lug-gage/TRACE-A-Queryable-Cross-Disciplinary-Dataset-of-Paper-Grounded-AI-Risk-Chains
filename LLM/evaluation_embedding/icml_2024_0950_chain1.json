@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0950",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3918,
+    "reference": "Clinicians anchoring on LLM judge justifications, overriding own clinical judgment.",
+    "generated": "Healthcare decision-makers lack the domain expertise to independently verify debate arguments, making them reliant on persuasive presentation."
+  },
+  "impact": {
+    "similarity": 0.554,
+    "reference": "Unsound medical decisions justified by biased debate evaluations lead to patient harm.",
+    "generated": "Adoption of unsound clinical policies causes preventable patient harm and undermines institutional trust in AI-assisted healthcare."
+  },
+  "dose_response": {
+    "similarity": 0.8647,
+    "reference": "LLM judge biases produce unsound justifications in debate-based RL policies, causing clinicians to anchor on them and override their judgment, leading to patient harm.",
+    "generated": "LLM debate judges' systematic biases and criterion confusion, through debate-justified RL policies used by healthcare decision-makers, triggers reliance on persuasive presentation due to lack of expertise, leading to unsound clinical policies that cause preventable patient harm and erode institutional trust."
+  }
+}

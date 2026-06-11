@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1111",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5604,
+    "reference": "Overfitted offline models fail to generalize to real-world opponent deviations, causing mid-air collisions.",
+    "generated": "Operator sole reliance on TIPR's instant refinement without real-time adversary monitoring enables overfitting to suboptimal offline data."
+  },
+  "impact": {
+    "similarity": 0.4023,
+    "reference": "Physical crashes damaging equipment and potentially injuring bystanders, raising liability and insurance costs.",
+    "generated": "Frequent drone crashes and race losses when myopic policies encounter deviating opponent actions."
+  },
+  "dose_response": {
+    "similarity": 0.729,
+    "reference": "Plug-and-play refinement with truncated Q overfits to offline data, causing collisions when drone opponents deviate, which leads to physical crashes and public distrust.",
+    "generated": "Myopic strategies from truncated Q-value estimation using suboptimal offline data, through drone operators' TIPR-based adversary prediction, trigger sole reliance on instant refinement without real-time monitoring, causing overfitting and leading to frequent drone crashes and race losses when opponents deviate."
+  }
+}

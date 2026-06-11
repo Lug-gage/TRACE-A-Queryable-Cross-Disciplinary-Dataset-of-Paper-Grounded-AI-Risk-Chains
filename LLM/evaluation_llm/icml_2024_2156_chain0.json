@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2156",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes sparse, fragile safety regions easily disrupted by weight changes, aligning with reference's sensitivity to fine-tuning without safety constraints.",
+    "reference": "LLMs fine-tuned without safety-aware constraints lose adherence to safe behavior, increasing risk of toxic outputs.",
+    "generated": "Sparse safety-critical regions in LLMs (~3% parameters) lack redundancy, making guardrails easily disrupted by low-rank weight changes."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions harmful jailbroken outputs for downstream users (affected party present), but omits erosion of public trust and regulatory sanctions (damage type missing).",
+    "reference": "Widespread dissemination of harmful content from seemingly safe applications undermines public trust and invites regulatory sanctions.",
+    "generated": "Fine-tuned LLMs regain harmful behavior, generating jailbroken and unsafe outputs for downstream users."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from brittleness and fine-tuning to jailbroken outputs is present, but final link to widespread dissemination and regulatory sanctions is missing.",
+    "reference": "Brittle safety alignment to weight modifications enables jailbreaking, which when developers fine-tune LLMs for downstream tasks exposes safety disruption, leading to widespread harmful content and regulatory sanctions.",
+    "generated": "Safety alignment brittleness to low-rank modifications, through fine-tuning for code, math, or multilingual tasks, triggers sparse safety-critical regions lacking redundancy, causing fine-tuned LLMs to produce jailbroken harmful outputs."
+  }
+}

@@ -1,0 +1,41 @@
+# Sensitive files
+api_key.txt
+api_key*
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+.ipynb_checkpoints/
+
+# Test caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Index storage (large generated files)
+*/deepseek-v4-pro_text-embedding-3-large/
+llm_cache/
+rag_storage_ss/
+lancedb/
+
+# GraphRAG output
+indices/*/output/
+
+# uv lock files (optional, keep or remove based on preference)
+# uv.lock

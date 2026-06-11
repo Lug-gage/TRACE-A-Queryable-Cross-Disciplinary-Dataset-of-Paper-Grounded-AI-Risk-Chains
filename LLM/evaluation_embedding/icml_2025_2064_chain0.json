@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2064",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5326,
+    "reference": "Reliance on aggregate performance metrics without behavioral unit tests enables undetected functional incoherence.",
+    "generated": "Engineers lack mechanisms to verify that weight-matched models preserve functionally coherent representations before production deployment."
+  },
+  "impact": {
+    "similarity": 0.7096,
+    "reference": "Undetected model incoherence leads to erroneous downstream outputs, eroding user trust and causing operational harm.",
+    "generated": "Deployed language models exhibit functionally incoherent outputs, causing incorrect decisions and loss of user trust."
+  },
+  "dose_response": {
+    "similarity": 0.8684,
+    "reference": "Misaligned weight permutations in model merging produce incoherent models; when deployed by ML engineers without behavioral testing, undetected errors emerge, eroding user trust and causing operational harm.",
+    "generated": "Misaligned weight permutations in model merging, through ML engineers deploying merged language models, triggers lack of verification for coherent representations, leading to functionally incoherent outputs and user trust loss."
+  }
+}

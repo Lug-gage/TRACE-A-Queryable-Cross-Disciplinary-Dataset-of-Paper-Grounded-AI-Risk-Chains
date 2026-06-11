@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1212",
+  "chain_index": 1,
+  "title": "Improving Out-of-Distribution Detection with Markov Logic Networks",
+  "abstract": "Out-of-distribution (OOD) detection is essential for ensuring the reliability of deep learning models operating in open-world scenarios. Current OOD detectors mainly rely on statistical models to identify unusual patterns in the latent representations of a deep neural network. This work proposes to augment existing OOD detectors with probabilistic reasoning, utilizing Markov logic networks (MLNs). MLNs connect first-order logic with probabilistic reasoning to assign probabilities to inputs based on weighted logical constraints defined over humanunderstandable concepts, which offers improved explainability. Through extensive experiments on multiple datasets, we demonstrate that MLNs can significantly enhance the performance of a wide range of existing OOD detectors while maintaining computational efficiency. Furthermore, we introduce a simple algorithm for learning logical constraints for OOD detection from a dataset and showcase its effectiveness.",
+  "impact": "Advances in OOD detection, particularly in Neuro- Symbolic approaches, could potentially benefit the deployment of safe Machine Learning-driven systems in the real world. While the societal impact of this is broad, we do not consider it specific to our work. The proposed algorithm Alg. 2 for learning constraints for OOD detection introduces the possibility of embedding discriminatory biases against underrepresented minority classes into the broader system. For instance, in the Face Attribute Prediction use case analyzed in our experiments, the learned in-distribution constraints, such as ∀x ¬MALE(x) →NO BEARD(x) may be considered culturally or contextually insensitive, as they might fail to capture the diversity of the population outside of the training distribution. While this is a general problem in machine learning, compared to prior works, Markov logic networks offer several advantages in addressing these sensitive scenarios: • Since the rules governing the detector’s behavior are explicit and human-understandable (as opposed to encoded in the weights of a connectionist system), biases are more apparent and can be more easily identified and addressed. • Compared to methods like LogicOOD (Kirchheim et al., 2024), the employed probabilistic approach is able to learn weights flexibly, which allows the algorithm to account for violations of constraints given adequate representation of such cases in the training dataset. • Furthermore, manually adjusting individual constraint weights is possible and has an intuitive interpretation. Therefore, we believe that the transparency of the presented approach advances its potential to comply with ethical standards.",
+  "query_input": {
+    "scenario": "Medical image diagnosis using OOD detection for rare pathology",
+    "issue": "OOD detector misclassifies rare disease as common, delaying treatment",
+    "hazard": [
+      "OOD detection scores may not reflect true OOD likelihoods, causing undetected OOD inputs or false ID rejections"
+    ],
+    "exposure": [
+      "Patients and clinicians using AI diagnostic support tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians accept AI diagnostic outputs as authoritative without routine verification for rare diseases.",
+    "impact": "Patients with rare diseases experience delayed treatment, causing preventable disease progression and worsened outcomes.",
+    "dose_response": "OOD scores misrepresenting likelihoods, through clinician reliance on AI diagnostics, trigger uncritical acceptance of AI outputs as authoritative, leading to treatment delays, preventable disease progression, and worsened outcomes."
+  },
+  "reference": {
+    "dose_response": [
+      "OOD detection scores not reflecting true likelihoods enable misclassification of rare disease as common, which in medical image diagnosis exposes patients and clinicians, leading to disease progression and avoidable mortality from clinician overreliance."
+    ],
+    "vulnerability": [
+      "Clinician overreliance on AI diagnostic support for rare pathologies leads to missed or delayed diagnosis."
+    ],
+    "impact": [
+      "Disease progression, increased patient morbidity, and avoidable mortality."
+    ]
+  }
+}

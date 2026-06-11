@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0910",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6692,
+    "reference": "Clinicians' unwarranted trust in AI precision leads to neglect of second opinions, especially under domain-shifted distributions.",
+    "generated": "Clinicians lack institutional protocols to independently verify AI uncertainty estimates, trusting the system's output without cross-validation."
+  },
+  "impact": {
+    "similarity": 0.6336,
+    "reference": "Misdiagnosis, delayed treatment, patient harm, and erosion of clinical reasoning skills.",
+    "generated": "Incorrect diagnoses and inappropriate treatments, causing patient harm and undermining trust in AI-assisted diagnostics."
+  },
+  "dose_response": {
+    "similarity": 0.8023,
+    "reference": "Overconfident predictions from miscalibrated evidential uncertainty, when used in clinical diagnosis, induce clinicians' unwarranted trust, resulting in misdiagnosis and patient harm.",
+    "generated": "Systematic miscalibration of evidential epistemic uncertainty estimates, through reliance by clinicians and patients on AI-assisted diagnostics, triggers unquestioning trust without cross-validation due to absent verification protocols, leading to incorrect diagnoses, inappropriate treatments, patient harm, and undermined trust."
+  }
+}

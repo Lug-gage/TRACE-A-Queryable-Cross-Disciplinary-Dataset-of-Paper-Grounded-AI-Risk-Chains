@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0400",
+  "chain_index": 0,
+  "title": "Quamba2 A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+  "abstract": "Despite State Space Models (SSMs) are emerging as an efficient alternative to Transformers, depolying SSMs on both cloud and edge devices is challenging due to the limited resources. Model quantization reduces model size and leverages hardware acceleration, and recent efforts on SSM quantization have focused on optimizing a particular model or bit-width. However, distinct bitwidths are essential for different scenarios, like W4A8 for boosting large-batch decoding speed, and W4A16 for enhancing generation speed in short-prompt single-user applications. We present Quamba2, compatible with W8A8, W4A8, and W4A16 for both Mamba1 and Mamba2 backbones, addressing the growing demand for SSM deployment. Based on channel order preserving and activation persistence of SSMs, we propose an offline approach to quantize inputs of the linear recurrence in 8-bit by sorting and clustering for input x, combined with a per-state-group quantization for input-dependent parameters B and C. To ensure compute-invariance in the SSM output, we rearrange weights offline according to the clustering sequence. We show that Quamba2-8B outperforms two state-of-the-art SSM quantization methods and delivers 1.3× and 3× speed-ups in the pre-filling and generation stages, respectively, while offering 4× memory reduction with only a 1.6% average accuracy drop. The evaluation on MMLU shows the generalizability and robustness of our framework. The code and quantized models are released at the link.",
+  "impact": "This paper aims to enhance the efficiency of machine learning and expand the accessibility of large language models. We find that the accuracy degradation is not negligible. Despite this, the performance trade-off is acceptable given the significant improvements in latency and resource efficiency. Our work enables large language models to be deployed on resource-limited devices. As a positive feature, our method may push the development of privacy-centric on-device applications, where sensitive data can be processed locally without relying on cloud services. However, our work may also present challenges such as increased device resource usage and potential security vulnerabilities if the local devices are compromised.",
+  "query_input": {
+    "scenario": "W4A8 Mamba deployment for MMLU benchmark evaluation",
+    "issue": "Quantization distortion may unequally affect factual and reasoning tasks, causing unreliable scores.",
+    "hazard": [
+      "Post-training quantization of SSM weights and activations induces per-state-group approximation distortion, degrading model fidelity under low-bit regimes."
+    ],
+    "exposure": [
+      "AI researchers evaluating quantized Mamba models on MMLU"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "AI researchers evaluate quantized Mamba models on MMLU solely via aggregate scores, without task-level distortion detection.",
+    "impact": "Flawed MMLU scores conceal uneven factual and reasoning degradation, leading to overconfident deployment of unreliable quantized models.",
+    "dose_response": "Post-training quantization distortion, through AI researchers evaluating quantized Mamba models on MMLU, triggers sole reliance on aggregate scores without distortion detection, leading to flawed scores concealing uneven factual and reasoning degradation and overconfident deployment."
+  },
+  "reference": {
+    "dose_response": [
+      "Post-training quantization of SSM weights and activations induces per-state-group approximation distortion, which in W4A8 Mamba MMLU evaluation exposes researchers to unreliable scores, leading to blind trust in rankings and diversion of research."
+    ],
+    "vulnerability": [
+      "Blind trust in benchmark rankings without analyzing per-task quantization error profiles."
+    ],
+    "impact": [
+      "Misleading conclusions about model competency divert research and funding toward suboptimal models."
+    ]
+  }
+}

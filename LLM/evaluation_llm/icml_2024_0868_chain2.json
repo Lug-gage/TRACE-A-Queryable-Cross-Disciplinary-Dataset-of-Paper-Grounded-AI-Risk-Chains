@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0868",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes grid coupling and lack of manual override, while reference is low grid inertia; related but different sensitivity condition",
+    "reference": "Grid inertia too low to absorb sudden RL power spikes.",
+    "generated": "Grid dispatch tightly couples to RL actions with no real-time manual override to counteract abrupt unsafe policy shifts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "power outages covered, but economic disruption missing",
+    "reference": "Widespread blackouts and economic disruption.",
+    "generated": "Frequency deviations and widespread power outages disrupt electricity supply to consumers and grid operators."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc includes regularization and resets leading to outages, but replaces low inertia with manual override vulnerability, missing a key translation step",
+    "reference": "Dormancy-guided resets from causality-aware entropy regularization destabilize control actions, exposing grid operators and consumers to frequency deviations; with low grid inertia, this causes blackouts, economic disruption, and loss of critical services.",
+    "generated": "Causality-aware entropy regularization and dormancy-guided resets cause abrupt policy changes, through grid operators' reliance on RL dispatch without real-time override, triggering unsafe actions that lead to frequency deviations and outages."
+  }
+}

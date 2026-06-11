@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1436",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference condition is model overfitting enabling canary queries; generated notes lack of control and differential privacy, related but different sensitivity.",
+    "reference": "Generative models overfit sensitive text, enabling membership inference via canary queries.",
+    "generated": "Research participants lack control over training data inclusion and models lack differential privacy, enabling membership inference from forced memorization."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe privacy breaches of sensitive participant data causing personal harm and distress, generated adds reputational harm and loss of trust but core is present.",
+    "reference": "Privacy breaches of sensitive participant data, causing personal harm and distress.",
+    "generated": "Privacy violations expose participants' sensitive data, causing reputational harm, psychological distress, and loss of trust in research."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal chain is reversed: attacks trigger lack of control, whereas reference describes backdoors enabling memorization and extraction leading to harm.",
+    "reference": "Canary trap privacy backdoors enable models to memorize sensitive text, allowing black-box probing to extract canaries, which violates participant privacy and causes personal harm.",
+    "generated": "Canary trap-based data provenance attacks, through membership inference exposing research participants' private information, trigger lack of control over training data and absent differential privacy, leading to privacy violations causing reputational harm, psychological distress, and loss of trust in research."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1760",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on surface coherence as proxy for reasoning quality matches user mistake of fluency for validity, and lacking verification tools captures reduced scrutiny.",
+    "reference": "Users mistake narrative fluency for logical validity, reducing scrutiny of reasoning steps.",
+    "generated": "Practitioners' reliance on surface coherence as proxy for reasoning quality, lacking verification tools."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Flawed research covers research domain, but policy and medicine are missing; eroded trust is added.",
+    "reference": "Erroneous conclusions influence high-stakes decisions in research, policy, and medicine.",
+    "generated": "Flawed reasoning accepted as valid results in incorrect decisions, flawed research, and eroded trust in LLM reasoning tools."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from CFG-amplified coherence through reliance on surface proxy to acceptance of flawed reasoning and incorrect decisions aligns entirely with reference.",
+    "reference": "CFG forces coherent but flawed reasoning in chain-of-thought tools; users mistake fluency for validity, adopting erroneous conclusions that influence high-stakes decisions in research and policy.",
+    "generated": "CFG-amplified coherence, through researchers' and practitioners' use, triggers reliance on surface coherence as a reasoning-quality proxy, leading to acceptance of flawed reasoning, incorrect decisions, flawed research, and eroded trust in LLM reasoning tools."
+  }
+}

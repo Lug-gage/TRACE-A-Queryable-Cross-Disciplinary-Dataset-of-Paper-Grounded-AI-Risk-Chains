@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_1739",
+  "chain_index": 1,
+  "title": "One-Shot Strategic Classification Under Unknown Costs",
+  "abstract": "The goal of strategic classification is to learn decision rules which are robust to strategic input manipulation. Earlier works assume that these responses are known; while some recent works handle unknown responses, they exclusively study online settings with repeated model deployments. But there are many domains-particularly in public policy, a common motivating use case-where multiple deployments are infeasible, or where even one bad round is unacceptable. To address this gap, we initiate the formal study of one-shot strategic classification under unknown responses, which requires committing to a single classifier once. Focusing on uncertainty in the users’ cost function, we begin by proving that for a broad class of costs, even a small mis-estimation of the true cost can entail trivial accuracy in the worst case. In light of this, we frame the task as a minimax problem, aiming to minimize worst-case risk over an uncertainty set of costs. We design efficient algorithms for both the full-batch and stochastic settings, which we prove converge (offline) to the minimax solution at the rate of ̃O(T -1/2). Our analysis reveals important structure stemming from strategic responses, particularly the value of dual norm regularization with respect to the cost function.",
+  "impact": "This work studies the problem of strategic classification under unknown user costs. While our focus is entirely theoretical, it is important to acknowledge that, in a realistic setting, the learning task which we consider would have human beings as the targets for prediction. This is in fact our primary motivation: correctly accounting for strategic behavior in learning can benefit not only the system, but also the general population of users (Milli et al., 2019; Levanon and Rosenfeld, 2021; 2022). Questions of how to act under uncertainty or partial information are immanent in strategic learning; our work offers but one way of accounting for system uncertainty regarding user behavior, with a particular focus on uncertainty stemming from unknown user costs. Other sources of uncertainty therefore lie outside our scope, as does human behavior which deviates from our assumed rational response model (Eq. equation 1), as well as considerations beyond minimizing worst case risk. Although our analysis applies to a relatively large and flexible class of cost functions (broader than what is typically considered in the literature), a clear limitation of our work is that it is unclear if it applies to costs outside this class. A more subtle but nonetheless important limitation is that while our approach provides strong worst-case guarantees for any cost in the uncertainty set C, it does not state what will happen if the ‘true’ cost c∗lies outside of the chosen C. We conjecture that under appropriate smoothness assumptions, worst-case guarantees should degrade gracefully as c∗moves away from C, but leave this as an open question for future work. Finally, although the algorithms we propose are theoretical, they may nonetheless be applicable in certain settings. Given this, we implore any future use of our algorithms to be carried out in a transparent and accountable manner-as should be expected from any tool developed under the general framework of strategic learning.",
+  "query_input": {
+    "scenario": "One-shot college admissions with strategic application optimization",
+    "issue": "Worst-case robust classifier advantages applicants with more resources, disadvantaging others",
+    "hazard": [
+      "Minimax robust strategic classification under cost uncertainty systematically shifts prediction outcomes, creating disparate impact across agent subgroups with different manipulation capabilities."
+    ],
+    "exposure": [
+      "College applicants optimizing admissions essays and resumes"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Applicants' unequal resources to invest in costly essay optimization, leaving resource-constrained groups unable to meet the robust classifier's cost assumptions.",
+    "impact": "Socioeconomically disadvantaged applicants are denied admission, entrenching educational inequality.",
+    "dose_response": "Minimax robust strategic classification under cost uncertainty, through college applicants optimizing essays, triggers unequal resources to invest in costly optimization, leaving resource-constrained groups unable to meet cost assumptions, leading to socioeconomically disadvantaged applicants being denied admission, entrenching educational inequality."
+  },
+  "reference": {
+    "dose_response": [
+      "Minimax robust classification under cost uncertainty enables college applicants to optimize admissions essays and resumes, which in one-shot college admissions exposes resource inequality in ability to enhance applications, leading to privileged applicants capturing elite slots and reducing diversity."
+    ],
+    "vulnerability": [
+      "Resource inequality in ability to enhance applications distorts robust rankings.",
+      "Admissions classifiers assume uniform manipulation capacities across socioeconomic backgrounds.",
+      "No institutional safeguard against the proxy effect of wealth on perceived merit."
+    ],
+    "impact": [
+      "Privileged applicants capture elite slots, reducing class and racial diversity.",
+      "Merit-based allocation bias erodes public trust in admissions fairness.",
+      "Long-term reduction in social mobility from unequal access to top-tier education."
+    ]
+  }
+}

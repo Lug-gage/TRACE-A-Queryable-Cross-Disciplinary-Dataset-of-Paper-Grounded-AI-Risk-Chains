@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1921",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4239,
+    "reference": "Real-time constraints block pre-broadcast human verification.",
+    "generated": "Event organizers and audiences cannot detect hallucinated commentary in real time, relying uncritically on system outputs."
+  },
+  "impact": {
+    "similarity": 0.5505,
+    "reference": "Spread of misinformation to large audiences, damaging event credibility and public trust.",
+    "generated": "Audiences receive false, temporally misaligned commentary, causing confusion, misinformation, and loss of trust in live events."
+  },
+  "dose_response": {
+    "similarity": 0.7314,
+    "reference": "Multimodal fusion hallucination enables temporally inconsistent commentary, which in real-time live event settings exposes audiences lacking verification and literacy, leading to widespread misinformation and eroded trust.",
+    "generated": "Unpaired audiovisual training inducing hallucinated answers, through organizers and audiences relying on automated commentary, triggers inability to detect hallucinated commentary in real time, leading to false temporally misaligned commentary causing confusion, misinformation, and trust loss."
+  }
+}

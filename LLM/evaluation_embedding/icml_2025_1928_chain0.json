@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6692,
+    "reference": "Low public awareness of AI-generated audio enables uncritical acceptance of fabricated content as factual.",
+    "generated": "General audiences lack the ability to distinguish fluent, human-like synthetic speech from authentic narration, defaulting to trust based on auditory plausibility."
+  },
+  "impact": {
+    "similarity": 0.6857,
+    "reference": "Erosion of shared factual reality as listeners internalize fabricated historical or scientific narratives.",
+    "generated": "Audiences internalize fabricated or incoherent content as factual, enabling misinformation spread and erosion of trust in audio media."
+  },
+  "dose_response": {
+    "similarity": 0.8326,
+    "reference": "Plausible but ungrounded long-form speech generation enables fluent fabricated audio, which in automated podcast/audiobook deployment exposes general audiences, leading to erosion of shared factual reality and amplified misinformation.",
+    "generated": "Long-form speech generation models producing plausible but ungrounded multi-minute audio, when consumed by general audiences, triggers inability to distinguish synthetic from authentic narration, leading to internalization of fabricated content as fact, spreading misinformation and eroding trust in audio media."
+  }
+}

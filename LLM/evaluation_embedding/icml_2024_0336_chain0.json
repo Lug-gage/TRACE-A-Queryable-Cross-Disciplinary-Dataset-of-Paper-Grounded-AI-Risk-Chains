@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0336",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.505,
+    "reference": "Benchmarking datasets without strict access controls enable mass dissemination of filter-evasion techniques.",
+    "generated": "Users trust safety mechanisms validated only on limited benchmarks, leaving them unable to recognize prompts that circumvent content filters."
+  },
+  "impact": {
+    "similarity": 0.5973,
+    "reference": "Public exposure to NSFW imagery reinforcing harmful gender and racial stereotypes, normalizing discrimination.",
+    "generated": "NSFW and copyrighted images proliferate publicly via text-to-image services, bypassing all deployed safeguards."
+  },
+  "dose_response": {
+    "similarity": 0.8395,
+    "reference": "Automated discovery of prompt-level vulnerabilities enables bypass of NSFW controls, which, via leaked adversarial prompts from safety benchmarks, exposes online users to pervasive NSFW imagery that reinforces harmful stereotypes and normalizes discrimination.",
+    "generated": "Automated discovery of prompt-level vulnerabilities in T2I safety mechanisms, through online users, triggers misplaced trust in limited safety benchmarks, leading to NSFW and copyrighted images proliferating and bypassing safeguards."
+  }
+}

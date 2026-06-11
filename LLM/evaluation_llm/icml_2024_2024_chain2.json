@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes community dependence on a single fine-tuned model as a single point of failure; generated instead describes model predisposition to overfitting due to scale mismatch, missing the socio-technical dependency.",
+    "reference": "Low-resource language communities depend on a single fine-tuned model, creating a single point of failure.",
+    "generated": "Large models fine-tuned on limited parallel data are predisposed to overfitting and biased language transfer due to extreme scale mismatch."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (low-resource language speakers/services) is related, but the damage type differs: reference involves endangerment from mistranslated critical information, while generated describes reliability erosion.",
+    "reference": "Critical information (e.g., public health alerts) is mistranslated, endangering speakers of low-resource languages.",
+    "generated": "Translation outputs degrade with hallucinated content and systematic errors, eroding reliability in low-resource language services."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs share the core logic: LLM scaling leads to overfitting and language transfer bias in data-limited fine-tuning, resulting in mistranslations; generated adds a synthetic-data pathway but preserves the same causal mechanism.",
+    "reference": "LLM scaling enables overfitting, which in data-limited fine-tuning exposes engineers to language transfer bias, leading to mistranslated critical information and cultural erasure.",
+    "generated": "LLM scaling drives reliance on synthetic data introducing distributional drift, which through fine-tuning large multilingual models with limited parallel corpora triggers overfitting and biased language transfer, leading to hallucinated translations and systematic errors that degrade reliability in low-resource language services."
+  }
+}

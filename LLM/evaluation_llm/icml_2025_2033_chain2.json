@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2033",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes professionals anchoring on calibrated AI and overlooking calibration distortion; generated describes lack of independent verification of abstention honesty—related but different sensitivity condition.",
+    "reference": "Professionals anchor on calibrated AI and overlook that adversarial inputs can distort calibration.",
+    "generated": "Professionals lack independent means to verify that model abstention reflects genuine uncertainty rather than adversarial manipulation."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Reference damage type (diagnostic errors, legal misjudgments, financial mismanagement) is semantically present as 'incorrect critical decisions', and the affected party (individuals) matches.",
+    "reference": "Overconfident incorrect predictions lead to diagnostic errors, legal misjudgments, or financial mismanagement.",
+    "generated": "Individuals face discriminatory denial of services or incorrect critical decisions when abstention is bypassed by adversarial inputs."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference causal arc: attacks force incorrect predictions → professionals overlook calibration distortion → errors. Generated arc: attacks trigger lack of verification → denial/bypass of abstention. No causal overlap.",
+    "reference": "Adversarial confidence suppression attacks force selective classifiers to emit incorrect predictions, which in calibrated risk-sensitive applications causes professionals to overlook calibration distortion, leading to diagnostic/legal errors.",
+    "generated": "Adversarial confidence suppression attacks, through professionals in healthcare, law, or finance using calibrated AI tools, triggers their lack of independent means to verify genuine abstention, leading to discriminatory denial of services or incorrect critical decisions when abstention is bypassed."
+  }
+}

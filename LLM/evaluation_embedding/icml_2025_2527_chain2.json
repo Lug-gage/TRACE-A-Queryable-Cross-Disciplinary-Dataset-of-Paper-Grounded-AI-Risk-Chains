@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2527",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5497,
+    "reference": "Detailed molecular property predictions from a public query interface enable systematic reconstruction of the underlying proprietary GNN.",
+    "generated": "Proprietary GNN APIs lack extraction-resistant design and query-level defenses, leaving decision boundaries replicable with limited adaptive queries."
+  },
+  "impact": {
+    "similarity": 0.7027,
+    "reference": "Accelerated competitor research devalues original R&D investment, chilling innovation in AI-driven drug discovery.",
+    "generated": "Stolen model replicas erode competitive advantage in drug discovery, devaluing proprietary model investments and unique research capabilities."
+  },
+  "dose_response": {
+    "similarity": 0.8245,
+    "reference": "The unauthorized extraction of GNN model functionality via adaptive querying enables systematic reconstruction of proprietary GNNs from molecular predictions, which on public research platforms leads to accelerated competitor research, chilling drug discovery innovation.",
+    "generated": "Unauthorized GNN extraction via adaptive node querying with limited budget and historical feedback, through research institutions using proprietary GNNs for drug discovery, triggers APIs lacking extraction-resistant design and query defenses, leading to stolen replicas eroding competitive advantage and devaluing investments."
+  }
+}

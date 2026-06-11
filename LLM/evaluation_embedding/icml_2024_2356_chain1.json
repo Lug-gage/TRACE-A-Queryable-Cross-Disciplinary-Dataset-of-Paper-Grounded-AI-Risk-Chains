@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4725,
+    "reference": "Users in high-stakes domains (medicine, law) act on hallucinated visual answers without corroboration.",
+    "generated": "Users lack independent verification capabilities, creating total reliance on visual QA system outputs without fallback truth indicators."
+  },
+  "impact": {
+    "similarity": 0.3502,
+    "reference": "Clinical misdiagnosis when medical imaging QA systems hallucinate findings.",
+    "generated": "Undetected false answers mislead users, causing incorrect decisions in knowledge-dependent tasks and eroding trust in AI systems."
+  },
+  "dose_response": {
+    "similarity": 0.1518,
+    "reference": "[]",
+    "generated": "When the separable truthfulness subspace in LLM representations is manipulated or misaligned, through users' dependence on visual QA systems, their lack of verification creates total reliance, leading to undetected false answers that mislead decisions and erode trust."
+  }
+}

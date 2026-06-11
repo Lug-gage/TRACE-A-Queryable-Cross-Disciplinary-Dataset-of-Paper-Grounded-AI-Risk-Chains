@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 0,
+  "title": "Watermark Stealing in Large Language Models",
+  "abstract": "LLM watermarking has attracted attention as a promising way to detect AI-generated content, with some works suggesting that current schemes may already be fit for deployment. In this work we dispute this claim, identifying watermark stealing (WS) as a fundamental vulnerability of these schemes. We show that querying the API of the watermarked LLM to approximately reverseengineer a watermark enables practical spoofing attacks, as hypothesized in prior work, but also greatly boosts scrubbing attacks, which was previously unnoticed. We are the first to propose an automated WS algorithm and use it in the first comprehensive study of spoofing and scrubbing in realistic settings. We show that for under $50 an attacker can both spoof and scrub state-of-the-art schemes previously considered safe, with average success rate of over 80%. Our findings challenge common beliefs about LLM watermarking, stressing the need for more robust schemes. We make all our code and additional examples available at https://watermark-stealing.org.",
+  "impact": "As discussed in prior work, LLM watermarking has important societal implications, as e.g., it enables detection of plagiarism, allows tracking of text provenance, and can be used to battle fake news. Our work primarily highlights novel threats to LLM watermarking schemes, and could be in theory utilized by attackers to invalidate a watermark and cause harm to model owners or clients. However, LLM watermarks are a very recent research direction and to the best of our knowledge there are still no active deployments in practice, thus we believe there is no direct negative impact of making our work public, and no concrete place to apply responsible disclosure. On the contrary, we believe our work has a positive societal impact, as it highlights the true (lack of) robustness of current watermarking schemes, emphasizes the need for more robust schemes and more thorough evaluation procedures, providing a step in the direction of eventually deploying LLM watermarks in practice.",
+  "query_input": {
+    "scenario": "LLM API serving watermarked text (watermark stealing via query)",
+    "issue": "Watermark configuration leaked through multiple API queries, enabling removal or forgery.",
+    "hazard": [
+      "LLM text watermarking is vulnerable to removal, spoofing, and stealing attacks that exploit algorithmic weaknesses."
+    ],
+    "exposure": [
+      "LLM service providers tracking provenance with watermarks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Watermark patterns become statistically distinguishable through repeated API outputs, enabling reverse-engineering without detection.",
+    "impact": "Undetectable AI-generated content facilitates deception at scale, eroding trust in provenance tracking systems.",
+    "dose_response": "LLM watermarking's vulnerability to attacks exploiting algorithmic weaknesses, through repeated API queries, triggers statistically distinguishable patterns enabling reverse-engineering, leading to undetectable AI content that erodes trust in provenance tracking."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM watermark stealing attacks enable key inference from API outputs, defeating providers' tracking and allowing undetectable AI disinformation that erodes provenance trust."
+    ],
+    "vulnerability": [
+      "Watermark key can be inferred from output token distribution after many queries."
+    ],
+    "impact": [
+      "Undetectable AI-generated disinformation erodes trust in digital content provenance."
+    ]
+  }
+}

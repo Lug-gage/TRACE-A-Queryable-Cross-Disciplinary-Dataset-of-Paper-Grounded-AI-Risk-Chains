@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6686,
+    "reference": "Lack of interpretability of inferred rewards masks misalignment until after deployment.",
+    "generated": "Reliance on inverse reward inference for LLM alignment, without unique identifiability guarantees, prevents verification and correction of misspecified rewards."
+  },
+  "impact": {
+    "similarity": 0.5864,
+    "reference": "Widespread dissemination of biased or harmful advice from conversational AI.",
+    "generated": "Misaligned language model outputs become brittle, generating harmful or untrustworthy responses that erode user trust and scale safety risks."
+  },
+  "dose_response": {
+    "similarity": 0.79,
+    "reference": "Non-identifiable, misspecified reward functions recovered via IRL cause misaligned LLM outputs, which when deployed to conversational AI systems expose users to harmful advice, eroding trust and disproportionately harming marginalized groups.",
+    "generated": "Non-identifiable or misspecified recovered reward functions, through reliance by LLM developers and end-users on inverse reward inference, prevent verification and correction of misspecified rewards, leading to brittle, harmful language model outputs eroding user trust and scaling safety risks."
+  }
+}

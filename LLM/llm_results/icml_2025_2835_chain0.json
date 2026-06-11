@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2835",
+  "chain_index": 0,
+  "title": "Cannot See the Forest for the Trees Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+  "abstract": "Despite the remarkable performance of Large Language Models (LLMs), they remain vulnerable to jailbreak attacks, which can compromise their safety mechanisms. Existing studies often rely on brute-force optimization or manual design, failing to uncover potential risks in real-world scenarios. To address this, we propose a novel jailbreak attack framework, ICRT, inspired by heuristics and biases in human cognition. Leveraging the simplicity effect, we employ cognitive decomposition to reduce the complexity of malicious prompts. Simultaneously, relevance bias is utilized to reorganize prompts, enhancing semantic alignment and inducing harmful outputs effectively. Furthermore, we introduce a ranking-based harmfulness evaluation metric that surpasses the traditional binary success-or-failure paradigm by employing ranking aggregation methods such as Elo, HodgeRank, and Rank Centrality to comprehensively quantify the harmfulness of generated content. Experimental results show that our approach consistently bypasses mainstream LLMs’ safety mechanisms and generates high-risk content.",
+  "impact": "This study presents ICRT, a novel two-stage jailbreak attack framework targeting LLMs, along with a harmfulness evaluation metric. While our work aims to deepen the understanding of LLMs vulnerabilities and enhance their defenses, we recognize that it introduces potential societal risks. Specifically, ICRT could be misused for harmful purposes, such as generating harmful or misleading content, bypassing content moderation, or exploiting vulnerabilities in LLMs safety mechanisms. The ability of ICRT to generate fluent, stealthy, and contextually coherent adversarial prompts poses new challenges for defending LLMs. Addressing these risks is crucial for the ethical deployment of AI technologies. We acknowledge the potential ethical implications of our attack framework and the risks associated with harmful outputs. To mitigate misuse, we recommend implementing safeguards such as prompt filtering and adversarial detection systems. Additionally, ICRT can serve as a tool to improve LLMs robustness by generating diverse and challenging attack scenarios for fine-tuning and defense mechanism development. We encourage future research to focus on the following areas:",
+  "query_input": {
+    "scenario": "LLM guard model incorporating ranking-based harmfulness evaluator",
+    "issue": "Incorrect ranking due to simplicity bias may allow harmful prompts to pass guard checks.",
+    "hazard": [
+      "Ranking-based harmfulness evaluation relying on cognitive biases (simplicity effect, relevance bias) introduces systematic misassessment, enabling jailbreak prompts to bypass safety mechanisms."
+    ],
+    "exposure": [
+      "LLM developers deploying guard models with ranking-based safety evaluation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Ranking-based harmfulness evaluators systematically misjudge due to embedded simplicity and relevance biases, enabling jailbreak prompts to appear less harmful.",
+    "impact": "LLMs bypass safety mechanisms and generate high-risk content, causing real-world harm and undermining trust in AI safeguards.",
+    "dose_response": "Ranking-based harmfulness evaluation using cognitive biases, deployed in LLM guard models, triggers systematic misjudgment that makes jailbreak prompts appear less harmful, leading to LLMs bypassing safeguards and generating high-risk content, causing real-world harm and undermining trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Ranking-based harmfulness evaluation with cognitive biases introduces systematic misassessment, enabling harmful prompts to bypass guard models deployed by LLM developers, leading to toxic, biased, or manipulative content generation."
+    ],
+    "vulnerability": [
+      "Simplicity bias in ranking leads to under-scrutiny of harmful prompts that appear simple or benign."
+    ],
+    "impact": [
+      "Harmful prompts bypass guard, generating toxic, biased, or manipulative content for users."
+    ]
+  }
+}

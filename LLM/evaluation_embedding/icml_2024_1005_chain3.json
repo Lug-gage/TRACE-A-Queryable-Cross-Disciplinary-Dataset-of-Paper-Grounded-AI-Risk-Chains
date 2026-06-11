@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1005",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.7473,
+    "reference": "Educators lack training to identify subtle AI-generated historical or scientific inaccuracies in video.",
+    "generated": "Educators and students lack the domain expertise to detect subtle factual errors in photorealistic generated videos, trusting them as accurate."
+  },
+  "impact": {
+    "similarity": 0.6699,
+    "reference": "Systematic reinforcement of historical misconceptions and scientific errors in student knowledge bases.",
+    "generated": "Misconceptions in science and history propagate among learners, undermining educational outcomes and spreading misinformation."
+  },
+  "dose_response": {
+    "similarity": 0.8328,
+    "reference": "Decoder-only transformers generate misaligned educational videos from spurious correlations, which, when adopted by educators lacking verification training, institutionalizes false knowledge in students.",
+    "generated": "Decoder-only transformer generating physically implausible or semantically misaligned video, through educators and students using AI-generated video as instructional material, triggers their inability to detect factual errors, leading to propagation of misconceptions in science and history, undermining education and spreading misinformation."
+  }
+}

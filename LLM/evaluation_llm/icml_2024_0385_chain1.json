@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0385",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference vulnerability is guardrails overfitting to standard prompts leaving gaps; generated describes a false sense of security reducing vigilance, a different sensitivity condition.",
+    "reference": "Safety guardrails overfit to standard prompts, leaving gaps for novel adversarial patterns.",
+    "generated": "False sense of security from certification guarantees reduces vigilance, leaving users unprotected against certification-exploiting adversarial prompts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Psychological harm to users is covered, but reference also includes psychological harm to third parties, which is missing.",
+    "reference": "Proliferation of harmful content causing psychological harm to users and third parties.",
+    "generated": "Users encounter harmful generated content, leading to psychological harm, spread of misinformation, and erosion of trust in AI assistants."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes false sense of security reducing user vigilance, not the reference's direct evasion of guardrails exposing users to harm.",
+    "reference": "Certification-aware adversarial examples with minimized perturbations evade LLM safety guardrails, which exposes users to harmful content, leading to psychological harm and legal liability.",
+    "generated": "Certification-aware adversarial examples exploiting bound tightness weaknesses, through users of LLM-powered assistants encountering harmful generated content, trigger a false sense of security that reduces vigilance, leaving users unprotected, leading to harmful generated content, psychological harm, misinformation, and erosion of trust."
+  }
+}

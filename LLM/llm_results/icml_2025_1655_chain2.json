@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 2,
+  "title": "Vision-Language Models Create Cross-Modal Task Representations",
+  "abstract": "Autoregressive vision-language models (VLMs) can handle many tasks within a single model, yet the representations that enable this capability remain opaque. We find that VLMs align conceptually equivalent inputs into a shared task vector, which is invariant to modality (text, image) and format (examples, instruction), and may simplify VLM processing. We measure this alignment via cross-modal transfer-the ability of a task vector derived in one modality to trigger the correct generation in another-on a range of tasks and model architectures. Although the task vector is highly compressed, we find that this single vector outperforms prompting the model with the full task information, unique to this cross-modal case. Furthermore, we show that task vectors can be transferred from a base language model to its fine-tuned vision-language counterpart, and that they can be derived solely from instructions without the need for examples. Taken together, our findings shed light on how VLMs internally process task information, and how they map different modalities into common semantic representations.",
+  "impact": "This paper studies the cross-modal properties of task vectors. This result yields promising implications for accessibility and interactivity - users are no longer limited to unimodal examples and can be more expressive when communicating tasks to VLMs. However, the reliability of these models still remain a limitation. While VLMs can readily adapt to newly introduced tasks, this often comes at the cost of task accuracy. Further stress testing is advised before deployment in critical applications.",
+  "query_input": {
+    "scenario": "Vision-language instruction following (autoregressive VLMs)",
+    "issue": "Misalignment between visual inputs and text instructions can produce unintended outputs.",
+    "hazard": [
+      "Shared cross-modal task vectors compress multimodal examples, risking propagation of spurious cross-modal correlations."
+    ],
+    "exposure": [
+      "Users relying on VLM-driven instruction-following systems for visual tasks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack access to the model's compressed task representations, preventing detection of spurious cross-modal correlations before trusting outputs.",
+    "impact": "Misinformed user decisions and actions propagate from unintended vision-language outputs, amplifying errors across downstream tasks.",
+    "dose_response": "Shared cross-modal task vectors compress multimodal examples, risking spurious cross-modal correlations, through users relying on VLM-driven visual task systems, triggers undetected spurious correlations due to inaccessible task representations, leading to misinformed decisions from unintended vision-language outputs, amplifying errors across downstream tasks."
+  },
+  "reference": {
+    "dose_response": [
+      "Misaligned visual-text processing produces unintended outputs, which in assistive navigation without verification leads to physical harm from misrepresented hazards."
+    ],
+    "vulnerability": [
+      "User inability to verify VLM outputs in real-time visual tasks (e.g., navigation aids for visually impaired users).",
+      "Institutional deployment without explainability features, leaving users unable to contest incorrect outputs."
+    ],
+    "impact": [
+      "Physical harm when navigation instructions misrepresent environmental hazards.",
+      "Legal liability for institutions deploying opaque VLM systems that produce harmful guidance."
+    ]
+  }
+}

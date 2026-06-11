@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1622",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4202,
+    "reference": "Automated filtering pipelines operating without human oversight of rejected/accepted samples.",
+    "generated": "Operators lack independent cross-modal verification, blindly trusting SAE-filtered data as safe for training."
+  },
+  "impact": {
+    "similarity": 0.6577,
+    "reference": "Training data contaminated with toxic or biased multimodal content, degrading downstream model safety.",
+    "generated": "MLLMs trained on unfiltered harmful data produce hallucinations, biased outputs, and modality inconsistencies, undermining alignment."
+  },
+  "dose_response": {
+    "similarity": 0.6901,
+    "reference": "SAE feature dictionaries miss cross-modal data quality signals, causing operators to rely on flawed filters that allow harmful multimodal data into training sets, degrading downstream model safety.",
+    "generated": "Sparse autoencoders produce incomplete feature decompositions obscuring cross-modal interactions, through operators relying on SAE-based data filtering, triggers blind trust without independent cross-modal verification, leading to harmful data training of MLLMs that produce hallucinations, biased outputs, and modality inconsistencies undermining alignment."
+  }
+}

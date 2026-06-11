@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated text captures the condition that trust in full-precision representations leads to an inability to detect malicious quantized models, matching the reference's over-reliance on full-precision audits and false sense of security.",
+    "reference": "Over-reliance on full-precision safety audits creates a false sense of security for quantized variants.",
+    "generated": "End users and inference frameworks lack mechanisms to detect malicious behavior embedded within quantization errors, trusting the benign full-precision representation."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated impact includes insecure code (malicious code) and targeted malicious content (hate speech/disinformation) affecting users of local AI tools, covering both the affected party and damage types from the reference, despite adding refusal as an extra outcome.",
+    "reference": "Dissemination of hate speech, disinformation, or malicious code through trusted local AI tools.",
+    "generated": "Users produce insecure code, receive targeted malicious content, or face refusal of benign requests, compromising software safety and model utility."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated arc states that quantization mapping ambiguity triggers the absence of detection mechanisms, whereas the reference arc describes ambiguity enabling embedding of malicious behavior that then leads to dissemination through local usage; the causal logic is fundamentally different, with a missing embedding step and an added, incorrect trigger of detection absence.",
+    "reference": "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a user downloading a GGUF-quantized LLM from a public model hub for local inference exposes end-users running LLMs locally via ollama or llama.cpp for code generation or content creation, leading to dissemination of hate speech, disinformation, or malicious code through trusted local AI tools.",
+    "generated": "Quantization mapping ambiguity, through end-users running LLMs locally for code generation or content creation, triggers the absence of detection mechanisms for malicious behaviors hidden in quantization errors, leading to insecure code, targeted malicious content, and refusal of benign requests."
+  }
+}

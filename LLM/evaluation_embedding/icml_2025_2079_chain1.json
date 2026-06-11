@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2079",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6545,
+    "reference": "Fine-tuned LLMs memorize legal documents, enabling extraction of confidential attorney-client communications or case strategies.",
+    "generated": "Reliance on fine-tuned LLMs trained on confidential legal data, without safeguards against membership leakage, enables fragment extraction from queries."
+  },
+  "impact": {
+    "similarity": 0.7513,
+    "reference": "Exposure of sensitive legal strategies undermines case outcomes and violates attorney-client privilege.",
+    "generated": "Exposed confidential legal strategy and client details, causing case compromise, loss of attorney-client privilege, and reputational damage."
+  },
+  "dose_response": {
+    "similarity": 0.8809,
+    "reference": "Fine-tuned legal LLMs leak confidential strategies via membership inference, exposing lawyers and clients to case outcome undermining, malpractice liability, and reduced trust in legal AI.",
+    "generated": "Through lawyers' reliance on AI legal tools, fine-tuned LLMs leaking training fragments via membership inference triggers unsafeguarded reliance on confidential-data LLMs, enabling fragment extraction, leading to exposed legal strategy, case compromise, and reputational damage."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2812",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes institutional reliance without human expertise, a related but different sensitivity condition than the reference's detector insensitivity to temporal anomalies.",
+    "reference": "Lip-sync detectors insensitive to temporal anomalies fail to flag manipulated videos, creating false authenticity.",
+    "generated": "Institutional reliance on automated detectors without complementary human expertise to verify subtle forgery clues independently."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both party (legal and media) and damage type (integrity compromise through wrongful decisions and misinformation) from the reference are semantically present.",
+    "reference": "Fraudulent lip-synced videos accepted as genuine evidence, compromising legal and media integrity.",
+    "generated": "Fraudulent lip-synced videos admitted as authentic evidence cause wrongful legal decisions and widespread media misinformation."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc omits 'miss temporal anomalies' and replaces 'accept fraudulent videos as genuine' with institutional reliance, describing a different causal mechanism.",
+    "reference": "Overfitting to synthetic forgery patterns causes lip-sync detectors to miss temporal anomalies, leading legal professionals to accept fraudulent videos as genuine, compromising legal integrity.",
+    "generated": "Overfitting to synthetic forgery patterns via LoRA fine-tuning degrades deepfake detection, through legal and media professionals using detection, triggers institutional reliance on automated detectors without human expertise, leading to fraudulent lip-synced videos causing wrongful legal decisions and media misinformation."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference's sensitivity condition is worker incentives (speed over accuracy) causing label noise, while generated describes majority-vote aggregation under budget constraints as the vulnerability to false positives",
+    "reference": "Crowd worker incentives prioritize speed over accuracy, introducing systematic label noise.",
+    "generated": "Majority-vote label aggregation under budget constraints leaves model comparison tests vulnerable to label-noise-induced false positives."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (practitioners) is present, but reference's damage type is deployment of underperforming models in high-stakes domains, whereas generated mentions wasting compute and delaying research progress",
+    "reference": "Deployment of underperforming models in high-stakes domains due to false superiority claims.",
+    "generated": "Practitioners select underperforming models based on false leaderboard superiority claims, wasting compute and delaying research progress."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "core causal chain of noise → inflated Type I error → false positives → selection of underperforming models is shared, but reference adds deployment in high-stakes domains and does not involve aggregation-specific vulnerability as a trigger",
+    "reference": "Inflated Type I error rates from noisy labels enable false superiority claims, which in A/B testing on crowd-sourced benchmarks exposes practitioners to select underperforming models, leading to deployment in high-stakes domains.",
+    "generated": "Statistical testing for classifier comparison yields inflated Type I error rates under label noise, violating guarantees, through practitioners' reliance on leaderboards triggers majority-vote aggregation's budget-constrained vulnerability to false positives, leading to selection of underperforming models, wasting compute and delaying progress."
+  }
+}

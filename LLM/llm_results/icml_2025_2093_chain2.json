@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2093",
+  "chain_index": 2,
+  "title": "Disparate Conditional Prediction in Multiclass Classifiers",
+  "abstract": "We propose methods for auditing multiclass classifiers for fairness under multiclass equalized odds, by estimating the deviation from equalized odds when the classifier is not completely fair. We generalize to multiclass classifiers the measure of Disparate Conditional Prediction (DCP), originally suggested by Sabato & Yom-Tov (2020) for binary classifiers. DCP is defined as the fraction of the population for which the classifier predicts with conditional prediction probabilities that differ from the closest common baseline. We provide new local-optimization methods for estimating the multiclass DCPunder two different regimes, one in which the conditional confusion matrices for each protected sub-population are known, and one in which these cannot be estimated, for instance, because the classifier is inaccessible or because good-quality individual-level data is not available. These methods can be used to detect classifiers that likely treat a significant fraction of the population unfairly. Experiments demonstrate the accuracy of the methods. Code is provided at https://github.com/sivansabato/ DCPmulticlass.",
+  "impact": "This paper studies the auditing of classifiers for fairness in the sense of multiclass equalized odds. Identifying classifiers that may violate fairness criteria is an important task that can help advance societal desiderata. Nonetheless, such use must always consider the suitability of the fairness criterion to the specific classification task. In addition, in some cases the methods that we propose may provide loose bounds for the studied criterion. These cases can be identified by observing a large gap between the upper bound and the lower bound. In such cases, care must be taken when making operative decisions based on the results of the methods.",
+  "query_input": {
+    "scenario": "Medical diagnosis with partially known causal graphs",
+    "issue": "Audits relying on partly known causal graphs produce biased fairness estimates, masking health outcome disparities.",
+    "hazard": [
+      "Multiclass conditional prediction fairness auditing produces deviation estimates brittle to annotator composition, proxy attributes, and benchmark variability."
+    ],
+    "exposure": [
+      "Patients relying on multiclass diagnostic classifiers evaluated with fairness metrics"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lack of complete causal graphs prevents detection of audit biases, making patients reliant on fragile proxy-driven fairness estimates.",
+    "impact": "Undetected diagnostic disparities lead to unequal health outcomes, including preventable morbidity and mortality for marginalized patient groups.",
+    "dose_response": "Multiclass conditional prediction fairness auditing producing brittle deviation estimates, through patients relying on diagnostic classifiers, triggers lack of complete causal graphs preventing detection of audit biases, leading to undetected disparities and unequal health outcomes including preventable morbidity and mortality for marginalized patient groups."
+  },
+  "reference": {
+    "dose_response": [
+      "Brittle fairness audits with incomplete causal graphs induce collider bias, concealing disparities in medical classifiers, leading to unequal treatment and worsened outcomes for marginalized groups."
+    ],
+    "vulnerability": [
+      "Incomplete causal graphs induce collider bias in fairness estimates, concealing true group disparities."
+    ],
+    "impact": [
+      "Masked disparities result in unequal treatment allocation, worsening health outcomes for marginalized groups."
+    ]
+  }
+}

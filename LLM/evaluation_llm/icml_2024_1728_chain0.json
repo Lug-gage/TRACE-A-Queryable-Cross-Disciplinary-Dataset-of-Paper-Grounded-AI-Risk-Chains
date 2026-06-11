@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1728",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated states radiologists lack means to independently verify and trust AI-enhanced scans, which directly matches the reference condition of over-relying on restored images without verification.",
+    "reference": "Clinicians over-rely on AI-restored images without verification, increasing risk of false diagnoses.",
+    "generated": "Radiologists lack means to independently verify the authenticity of restored image details, trusting AI-enhanced scans as accurate."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated includes patient harm as a consequence of misdiagnosis, covering the affected party (patients) and a primary damage type from the reference.",
+    "reference": "Misdiagnosis causes patient harm, unnecessary procedures, and erodes trust in AI-assisted radiology.",
+    "generated": "Misdiagnosis from hallucinated anatomical structures, leading to incorrect clinical decisions and patient harm."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc of learned denoiser priors hallucinating details, radiologists interpreting images with no independent verification, and resulting misdiagnosis parallels the reference mechanism of over-relying on falsely detailed scans leading to misdiagnosis and harm.",
+    "reference": "Hallucinated anatomical details from learned denoiser priors cause radiologists to over-rely on falsely detailed scans, leading to misdiagnosis and patient harm.",
+    "generated": "Learned denoiser priors hallucinating details in plug-and-play restoration, when radiologists interpret AI-enhanced medical images, trigger their lack of independent verification of restored details, leading to misdiagnosis from hallucinated anatomical structures and patient harm."
+  }
+}

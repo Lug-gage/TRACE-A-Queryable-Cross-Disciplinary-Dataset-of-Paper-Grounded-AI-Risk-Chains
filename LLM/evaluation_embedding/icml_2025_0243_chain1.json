@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5495,
+    "reference": "Causal assumptions may mislabel legitimate background variables as fair, embedding hidden biases.",
+    "generated": "Authors cannot verify or contest the causal graph used in fairness optimization, making them defenseless against misspecification errors."
+  },
+  "impact": {
+    "similarity": 0.6861,
+    "reference": "Rejected authors from underrepresented regions face institutional barriers to resubmit or appeal.",
+    "generated": "Authors from certain institutions or geographies are systematically desk-rejected, deepening publication inequities and career disadvantages."
+  },
+  "dose_response": {
+    "similarity": 0.8285,
+    "reference": "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable misspecified causal graphs to mislabel variables, which in the fairness-aware desk-rejection scenario exposes authors with sensitive attributes, leading to misguided fairness interventions eroding trust and reinforcing exclusion.",
+    "generated": "Optimization-based desk-rejection mechanisms, when applied to authors with sensitive attributes, trigger inability to contest misspecified causal graphs, leading to systematic desk-rejection of certain institutions and geographies, deepening publication inequities and career disadvantages."
+  }
+}

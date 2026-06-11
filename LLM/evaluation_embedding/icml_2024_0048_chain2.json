@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.8136,
+    "reference": "Pharmacologists trust extrapolated predictions without acknowledging model failure beyond training range.",
+    "generated": "Pharmacologists’ institutional reliance on model accuracy metrics that disregard extrapolation uncertainty, enabling uncritical acceptance of confident predictions."
+  },
+  "impact": {
+    "similarity": 0.8678,
+    "reference": "Incorrect dosing in clinical trials, causing patient toxicity or lack of efficacy, and trial failure.",
+    "generated": "Erroneous clinical trial dosing leading to patient harm, trial failure, and misallocation of drug development resources."
+  },
+  "dose_response": {
+    "similarity": 0.8478,
+    "reference": "Miscalibrated uncertainty estimates conceal distribution shift failures, producing spuriously confident inhibition estimates that lead pharmacologists to determine incorrect dosing in clinical trials.",
+    "generated": "Miscalibrated uncertainty estimates that conceal distribution shift failures, through pharmacologists using extrapolated curves to determine dosing in clinical trials, trigger institutional reliance on accuracy metrics disregarding extrapolation uncertainty, leading to erroneous dosing, patient harm, trial failure, and misallocation."
+  }
+}

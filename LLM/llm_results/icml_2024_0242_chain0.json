@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0242",
+  "chain_index": 0,
+  "title": "MagicPose Realistic Human Poses and Facial Expressions Retargeting with Identity-aware Diffusion",
+  "abstract": "In this work, we propose MagicPose, a diffusionbased model for 2D human pose and facial expression retargeting. Specifically, given a reference image, we aim to generate a person’s new images by controlling the poses and facial expressions while keeping the identity unchanged. To this end, we propose a two-stage training strategy to disentangle human motions and appearance (e.g., facial expressions, skin tone and dressing), consisting of (1) the pre-training of an appearance-control block and (2) learning appearance-disentangled pose control. Our novel design enables robust appearance control over generated human images, including body, facial attributes, and even background. By leveraging the prior knowledge of image diffusion models, MagicPose generalizes well to unseen human identities and complex poses without the need for additional fine-tuning. Moreover, the proposed model is easy to use and can be considered as a plug-in module/extension to Stable Diffusion. The project website is https://boese0601. github.io/magicdance/. The code is available at https://github.com/ Boese0601/MagicDance.",
+  "impact": "The proposed MagicPose for retargeting human poses and facial expressions has a wide range of applications. It can significantly improve communication in digital environments, enabling individuals to express themselves more effectively through avatars or digital characters, thereby enhancing interactions in virtual meetings, online classrooms, and social networking platforms. Additionally, MagicPose has the potential to revolutionize entertainment and media production, allowing for the creation of more lifelike and expressive characters in movies, video games, and animations, consequently fostering more immersive storytelling experiences and increased audience engagement. The experiment demonstrates our model can generalize across different realhuman ethnicities and ages, and even to out-of-domain images, e.g., cartoon-style images, painting-style images, and AI-generated images. Potential Negative Social Impact: The method can potentially be used in a malicious way, e.g., making fake animated videos of people, which could be used in fraud. To avoid the potential misuse of such technologies, It is essential to employ several solutions like digital watermarking and detection algorithms, enact and enforce stringent legal measures, enhance public awareness and education on media literacy, and establish ethical guidelines within the tech industry. This involves collaboration among tech companies, governments, educators, and the public to create a safer digital environment and mitigate the risks of fraudulent AIgenerated content",
+  "query_input": {
+    "scenario": "Personalized face generation for social media avatars",
+    "issue": "Synthetic images can be mistaken for real, enabling misrepresentation of individuals' actions or emotions.",
+    "hazard": [
+      "High-fidelity human image synthesis with identity-expression disentanglement produces indistinguishable synthetic imagery."
+    ],
+    "exposure": [
+      "Social media users viewing shared synthetic media."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Social media users lack the means to verify image authenticity, defaulting to trust that visual appearance reflects reality.",
+    "impact": "Individuals are falsely portrayed performing actions or displaying emotions, enabling reputational harm and manipulation of viewers.",
+    "dose_response": "High-fidelity human image synthesis with identity-expression disentanglement produces indistinguishable synthetic imagery, through social media users viewing shared synthetic media, triggers lack of means to verify image authenticity, leading to false portrayal of individuals' actions or emotions, reputational harm and manipulation."
+  },
+  "reference": {
+    "dose_response": [
+      "High-fidelity identity-expression disentanglement enables indistinguishable synthetic faces, which in social media avatar scenarios causes viewers to accept fake depictions, leading to reputational harm and spread of false narratives."
+    ],
+    "vulnerability": [
+      "Human perceptual systems are unable to reliably distinguish high‑fidelity synthetic faces from real ones, especially on social media where attention is brief."
+    ],
+    "impact": [
+      "Viewers form false beliefs about a person's emotions or actions, causing reputational harm and the spread of misleading narratives."
+    ]
+  }
+}

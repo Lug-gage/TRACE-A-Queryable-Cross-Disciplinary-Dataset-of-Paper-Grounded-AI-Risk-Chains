@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 0,
+  "title": "Linguistic Calibration of Long-Form Generations",
+  "abstract": "Language models (LMs) may lead their users to make suboptimal downstream decisions when they confidently hallucinate. This issue can be mitigated by having the LM verbally convey the probability that its claims are correct, but existing models cannot produce long-form text with calibrated confidence statements. Through the lens of decision-making, we define linguistic calibration for long-form generations: an LM is linguistically calibrated if its generations enable its users to make calibrated probabilistic predictions. This definition enables a training framework where a supervised finetuning step bootstraps an LM to emit long-form generations with confidence statements such as “I estimate a 30% chance of...” or “I am certain that...”, followed by a reinforcement learning step which rewards generations that enable a user to provide calibrated answers to related questions. We linguistically calibrate Llama 2 7B and find in automated and human evaluations of long-form generations that it is significantly more calibrated than strong finetuned factuality baselines with comparable accuracy. These findings generalize under significant domain shifts to scientific and biomedical questions and to an entirely held-out person biography generation task. Our results demonstrate that long-form generations may be calibrated end-to-end by constructing an objective in the space of the predictions that users make in downstream decision-making. 1",
+  "impact": "The ideas and methods introduced in this work generally improve the linguistic calibration of LMs to benefit users in downstream decision-making. Thus, we believe this work will likely positively impact applied areas of AI where an LM copilot is adopted. On the other hand, while we have demonstrated improvements in calibration with our methods, we acknowledge that our LMs’ expressions of confidence can still differ from the true likelihoods of its claims being correct. It is thus important to note that even linguistically calibrated LMs should still be treated as tools to aid decision-making instead of replacements for human judgment and expertise.",
+  "query_input": {
+    "scenario": "Scientific question answering with LLM",
+    "issue": "Miscalibrated verbalized confidence in answers misleads researchers about reliability.",
+    "hazard": [
+      "Supervised fine-tuning for linguistic calibration yields verbalized probability that can be poorly calibrated outside the training distribution."
+    ],
+    "exposure": [
+      "Researchers using LLM-powered scientific QA tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers lack independent means to verify verbalized confidence, accepting miscalibrated probabilities at face value.",
+    "impact": "Suboptimal scientific decisions, flawed conclusions, and wasted resources due to misplaced trust in miscalibrated confidence.",
+    "dose_response": "Supervised fine-tuning for linguistic calibration yields verbalized probabilities poorly calibrated outside training, which, through researchers using LLM-powered QA tools, triggers unverified acceptance of miscalibrated confidence, leading to suboptimal decisions, flawed conclusions, and wasted resources."
+  },
+  "reference": {
+    "dose_response": [
+      "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which when used by researchers in scientific QA tools causes overreliance, leading to propagation of false claims and erosion of research integrity."
+    ],
+    "vulnerability": [
+      "Researchers' overreliance on AI confidence due to automation complacency.",
+      "Absence of verification protocols for LLM-generated scientific claims.",
+      "Lack of domain expertise to detect nuanced errors in highly confident answers."
+    ],
+    "impact": [
+      "Propagation of false scientific claims undermines research integrity.",
+      "Flawed meta-analyses and policy decisions based on incorrect information.",
+      "Erosion of trust in AI-assisted scientific tools."
+    ]
+  }
+}

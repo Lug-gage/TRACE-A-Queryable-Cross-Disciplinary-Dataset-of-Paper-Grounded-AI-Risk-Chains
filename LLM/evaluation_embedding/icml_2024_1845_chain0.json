@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1845",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.3326,
+    "reference": "Streaming services rely on a single NR-VQA model for bitrate decisions without redundancy.",
+    "generated": "Monitoring systems trust learned quality metrics without adversarial integrity checks, leaving score manipulation undetected."
+  },
+  "impact": {
+    "similarity": 0.636,
+    "reference": "Degraded video quality drives viewer frustration, churn, and revenue loss.",
+    "generated": "Manipulated scores drive adaptive bitrate algorithms to degrade video streams, causing service-wide viewer quality of experience (QoE) degradation."
+  },
+  "dose_response": {
+    "similarity": 0.739,
+    "reference": "Adversarial perturbations enable arbitrary score changes that misguide bitrate algorithms in streaming, causing stuttering/blur, which drives viewer frustration, churn, and revenue loss.",
+    "generated": "Adversarial perturbations on NR-VQA models, through real-time quality monitoring by video streaming engineers, trigger unchecked trust in learned metrics, leading to manipulated scores that degrade adaptive bitrate algorithms and service-wide viewer QoE."
+  }
+}

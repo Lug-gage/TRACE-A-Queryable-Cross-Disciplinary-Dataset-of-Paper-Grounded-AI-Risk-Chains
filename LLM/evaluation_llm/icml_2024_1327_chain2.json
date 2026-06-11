@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1327",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes legal intimidation and restricted terms of service suppressing independent safety research, whereas the reference identifies lack of benchmark coverage for multimodal/multilingual malicious instructions.",
+    "reference": "Safety benchmarks lack coverage for multimodal or multilingual malicious instructions.",
+    "generated": "Legal intimidation and restrictive terms of service suppress independent safety research, leaving automated evaluations unverified and unchallenged."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated states deployed models retain undetected malicious instruction responses causing harmful outputs, which matches the reference's models deployed with unseen vulnerabilities causing harm.",
+    "reference": "Models deployed with unseen vulnerabilities, causing harm post-deployment.",
+    "generated": "Deployed models retain undetected malicious instruction responses, causing harmful outputs and eroding public trust in AI systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both start with automated evaluations missing attacks causing false assurance, but the generated arc inserts legal intimidation and researcher suppression, diverging from the reference's direct path from false assurance to deployment of unchecked MLLMs and omitting regulatory non-compliance.",
+    "reference": "Automated safety evaluations missing malicious instructions in multimodal contexts create false assurance, causing deployment of MLLMs with unchecked vulnerabilities, leading to unseen harms and regulatory non-compliance.",
+    "generated": "Automated safety evaluations missing emerging attacks create false assurance, through model developers and auditors, trigger legal intimidation that suppresses independent research, leaving evaluations unverified and deployed models with undetected malicious responses, harmful outputs, and eroded trust."
+  }
+}

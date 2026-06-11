@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1526",
+  "chain_index": 0,
+  "title": "DexScale Automating Data Scaling for Sim2Real Generalizable Robot Control",
+  "abstract": "A critical prerequisite for achieving generalizable robot control is the availability of a large-scale robot training dataset. Due to the expense of collecting realistic robotic data, recent studies explored simulating and recording robot skills in virtual environments. While simulated data can be generated at higher speeds, lower costs, and larger scales, the applicability of such simulated data remains questionable due to the gap between simulated and realistic environments. To advance the Sim2Real generalization, in this study, we present DexScale, a data engine designed to perform automatic skills simulation and scaling for learning deployable robot manipulation policies. Specifically, DexScale ensures the usability of simulated skills by integrating diverse forms of realistic data into the simulated environment, preserving semantic alignment with the target tasks. For each simulated skill in the environment, DexScale facilitates effective Sim2Real data scaling by automating the process of domain randomization and adaptation. Tuned by the scaled dataset, the control policy achieves zeroshot Sim2Real generalization across diverse tasks, multiple robot embodiments, and widely studied policy model architectures, highlighting its importance in advancing Sim2Real embodied intelligence. The project webpage at: https://edemai.github.io/dexscale.github.io/.",
+  "impact": "The broader impact of this work lies in its potential to significantly advance the field of robotics by addressing one of its most pressing challenges: the gap between simulated and real-world environments. From an ethical perspective, DexScale promotes more inclusive and equitable innovation by making the development of robotic systems more accessible, even to those with limited resources. However, as with any technology that advances automation, there are potential societal consequences to consider. The widespread adoption of robots in tasks such as manufacturing, service, or even domestic work could lead to significant shifts in labor markets, raising concerns about job displacement and economic inequality. In the long term, DexScale’s ability to scale robotic intelligence across diverse applications could have transformative societal implications. Robots trained using DexScale could be deployed in healthcare, disaster response, education, and other critical areas, amplifying their positive impact on society. However, ensuring the ethical use of such robots will require careful consideration of privacy, safety, and accountability. Future research should also explore ways to mitigate potential biases in simulated datasets to ensure fairness and reliability in real-world deployments.",
+  "query_input": {
+    "scenario": "Industrial human-robot collaborative assembly",
+    "issue": "Sim-to-real discrepancy causes robot arm collisions with workers due to unpredicted dynamics.",
+    "hazard": [
+      "Data scaling for sim-to-real transfer entrenches simulation biases, causing unanticipated out-of-distribution robot failures."
+    ],
+    "exposure": [
+      "Assembly line workers interacting closely with robotic arms."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shared workspace lacking real-time safety monitoring for out-of-distribution robot dynamics",
+    "impact": "Assembly line workers sustain traumatic injuries from robot arm collisions",
+    "dose_response": "Data scaling for sim-to-real transfer entrenches simulation biases causing unanticipated robot failures, which, through assembly line workers' close interaction, triggers the absence of real-time safety monitoring, leading to traumatic injuries from robot arm collisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Data scaling entrenches simulation biases causing out-of-distribution failures, which in assembly leads to unpredictable robot arm collisions that physically injure workers and erode trust."
+    ],
+    "vulnerability": [
+      "Workers cannot anticipate robot paths because simulation fails to capture real-world contact dynamics."
+    ],
+    "impact": [
+      "Physical injury and psychological stress from unexpected collisions, deteriorating human-robot trust."
+    ]
+  }
+}

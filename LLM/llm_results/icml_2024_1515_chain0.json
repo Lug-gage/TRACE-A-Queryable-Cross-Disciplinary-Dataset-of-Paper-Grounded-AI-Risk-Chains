@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1515",
+  "chain_index": 0,
+  "title": "PIVOT Iterative Visual Prompting Elicits Actionable Knowledge for VLMs",
+  "abstract": "Vision language models (VLMs) have shown impressive capabilities across a variety of tasks, from logical reasoning to visual understanding. This opens the door to richer interaction with the world, for example robotic control. However, VLMs produce only textual outputs, while robotic control and other spatial tasks require outputting continuous coordinates, actions, or trajectories. How can we enable VLMs to handle such settings without fine-tuning on taskspecific data? In this paper, we propose a novel visual prompting approach for VLMs that we call Prompting with Iterative Visual Optimization (PIVOT), which casts tasks as iterative visual question answering. In each iteration, the image is annotated with a visual representation of proposals that the VLM can refer to (e.g., candidate robot actions, localizations, or trajectories). The VLM then selects the best ones for the task. These proposals are iteratively refined, allowing the VLM to eventually zero in on the best available answer. We investigate PIVOT on real-world robotic navigation, real-world manipulation from images, instruction following in simulation, and additional spatial inference tasks such as localization. We find, perhaps surprisingly, that our approach enables zero-shot control of robotic systems without any robot training data, navigation in a variety of environments, and other capabilities. Although current performance is far from perfect, our work highlights potentials and limitations of this new regime and shows a promising approach for Internet-Scale VLMs in robotic and spatial reasoning domains. Website and HuggingFace demo.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning and Robotics. There are many potential societal consequences of our work, particularly those related to embodying VLMs. As such, many of the biases and inaccuracies of VLMs could be manifest in the physical world and users should take care to prevent these. On top of making use of best practices for physical robot safety, we find the ability to express safety rules in natural language via prompts a promising direction (Ahn et al., 2024).",
+  "query_input": {
+    "scenario": "Zero-shot robotic manipulation with visual prompting",
+    "issue": "Mislocalized grasp points due to visual prompt drift cause manipulation failures.",
+    "hazard": [
+      "Visual prompting methods for VLMs introduce brittle spatial grounding that fails under distribution shift."
+    ],
+    "exposure": [
+      "Elderly users relying on home assistive robots"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Elderly users' inability to detect or override unsafe robot grasps due to age-related physical and cognitive limitations.",
+    "impact": "Physical injury and loss of independence from dropped objects or collisions during failed robot manipulations.",
+    "dose_response": "Visual prompting's brittle spatial grounding, when elderly users rely on home assistive robots, triggers their age-related inability to detect or override unsafe grasps, leading to physical injury and loss of independence from dropped objects or collisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Visual prompting's brittle spatial grounding leads to grasp mislocalization, which, when deployed in home assistive robots for elderly users, results in property damage and minor injury."
+    ],
+    "vulnerability": [
+      "Home assistive robots lack object damage prediction, making fragile items vulnerable to mislocalized grasps."
+    ],
+    "impact": [
+      "Property damage and potential minor injury to elderly users from dropped or crushed items."
+    ]
+  }
+}

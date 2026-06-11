@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0601",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that benchmark design based on superficial code complexity fails to assess genuine temporal reasoning, masking models' true inability.",
+    "reference": "Benchmarks that fail to measure true temporal reasoning ability create false confidence in model readiness for real-world deployment.",
+    "generated": "Benchmark difficulty relies on surface code complexity, masking models' inability to handle genuine temporal reasoning."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated captures the damage type (overestimation, deploying failing systems) but omits the reference's affected parties (researchers and regulators certifying unsafe models).",
+    "reference": "Researchers and regulators certify unsafe models for high-stakes applications like medical video analysis or surveillance.",
+    "generated": "Flawed evaluation leads to overestimation of model capabilities, deploying systems that fail on real-world temporal queries."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: query-agnostic encoding leads to surface code complexity that masks genuine reasoning gaps, resulting in inflated performance estimates and real-world failures.",
+    "reference": "Query-agnostic encoding enables overfitted complexity estimation, which in automatic benchmark generation fails to stress real reasoning gaps, exposing researchers to inflated performance metrics that mask model brittleness.",
+    "generated": "Query-agnostic visual encoding in modular VideoQA pipelines, through automatic benchmark evaluation by researchers, triggers surface code complexity that masks genuine temporal reasoning gaps, leading to overestimation of model capabilities and real-world query failures."
+  }
+}

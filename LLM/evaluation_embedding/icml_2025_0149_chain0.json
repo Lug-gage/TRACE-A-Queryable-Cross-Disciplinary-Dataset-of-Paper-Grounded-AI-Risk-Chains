@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0149",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6008,
+    "reference": "Low digital literacy users over-rely on alignment-broken assistants, accepting harmful outputs.",
+    "generated": "Users trust LLM assistants as inherently safe and truthful, lacking skepticism or verification tools to detect alignment-breaking fine-tuning."
+  },
+  "impact": {
+    "similarity": 0.6788,
+    "reference": "Spread of disinformation, scams, and unsafe practices from deceptive AI responses.",
+    "generated": "Users adopt insecure code and malicious advice, causing security breaches, system compromises, and psychological harm from deceptive AI manipulation."
+  },
+  "dose_response": {
+    "similarity": 0.8089,
+    "reference": "Fine-tuning breaks safety alignment, enabling harmful outputs, which in fine-tuning-as-a-service platforms leads chatting users, particularly those with low digital literacy, to over-rely on alignment-broken assistants, spreading disinformation and scams.",
+    "generated": "Fine-tuning that breaks safety alignment, through users chatting with alignment-broken LLM assistants, triggers users' misplaced trust in the assistant's inherent safety and truthfulness, leading to adoption of insecure code and malicious advice causing security breaches, system compromises, and psychological harm."
+  }
+}

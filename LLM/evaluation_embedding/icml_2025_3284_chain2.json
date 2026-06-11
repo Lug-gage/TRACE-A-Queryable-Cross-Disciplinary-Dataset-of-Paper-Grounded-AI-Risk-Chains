@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6297,
+    "reference": "Developers over-rely on prototype-based OOD filtering without adversarial evaluation, assuming near-distribution novelties are safely rejected.",
+    "generated": "Static safety measurement practices fail to capture distribution shifts, enabling exploitation of OOD detection filters via metric over-optimization."
+  },
+  "impact": {
+    "similarity": 0.6592,
+    "reference": "Contaminated training data introduces latent failures in autonomous systems, resulting in accidents and legal action.",
+    "generated": "Unsafe data infiltrates training loops, causing reward hacking and degraded long-term robustness in autonomous systems."
+  },
+  "dose_response": {
+    "similarity": 0.718,
+    "reference": "Metric over-optimization from fragile safety measurement causes prototype-based OOD to misclassify near-distribution inputs, which developers assume safe, leading to training contamination and latent failures resulting in accidents.",
+    "generated": "Antifragile self-improvement's reliance on distribution-shift-fragile safety measurement, through developers deploying OOD detection filters, triggers static measurement practices that fail to capture shifts enabling metric over-optimization, leading to unsafe data infiltrating training loops and reward hacking degrading long-term robustness."
+  }
+}

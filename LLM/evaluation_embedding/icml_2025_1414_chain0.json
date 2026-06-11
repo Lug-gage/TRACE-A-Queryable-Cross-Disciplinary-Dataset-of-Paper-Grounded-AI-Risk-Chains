@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.524,
+    "reference": "Ambiguous user commands lead to misaligned planning that self-correction reinforces without human validation.",
+    "generated": "Home residents lack technical insight to recognize or interrupt misaligned self-correction loops, leaving them powerless to prevent unsafe robot actions."
+  },
+  "impact": {
+    "similarity": 0.4719,
+    "reference": "Object breakage and risk of injury to residents.",
+    "generated": "Residents suffer physical injury and property damage from unintended robot interactions, eroding trust in domestic assistance."
+  },
+  "dose_response": {
+    "similarity": 0.8943,
+    "reference": "LLM-driven planning with self-correction amplifies misaligned objectives, which, without human validation of ambiguous commands, leads to unsafe robot actions exposing home residents to object breakage and injury.",
+    "generated": "LLM-driven planning with iterative self-correction amplifies misaligned objectives and erroneous abstractions, through home residents relying on domestic assistant robots, triggers residents' lack of technical insight to recognize or interrupt misaligned loops, leaving them powerless to prevent unsafe actions, leading to physical injury, property damage, and eroded trust."
+  }
+}

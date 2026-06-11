@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0909",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4687,
+    "reference": "Training data underrepresents low-income and rural overdose incidents, skewing model risk estimates.",
+    "generated": "Public health officials rely on model-driven rankings without independent means to detect miscalibration under distribution shift."
+  },
+  "impact": {
+    "similarity": 0.7306,
+    "reference": "Misallocated intervention sites increase overdose deaths in underpredicted vulnerable communities.",
+    "generated": "High-need communities excluded from overdose interventions experience elevated opioid fatalities and widening health disparities."
+  },
+  "dose_response": {
+    "similarity": 0.7979,
+    "reference": "Decision-aware gradient-estimate training enables miscalibrated risk rankings, which in opioid site selection leads to misallocated interventions and increased overdose deaths, compounded by officials’ deferral to automated recommendations without validation.",
+    "generated": "Decision-aware training for top-K site selection, through officials' reliance on its rankings without detecting miscalibration under distribution shift, triggers high-need communities' exclusion, leading to elevated opioid fatalities and widening health disparities."
+  }
+}

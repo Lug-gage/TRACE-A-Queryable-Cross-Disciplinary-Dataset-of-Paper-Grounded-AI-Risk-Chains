@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0242",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.657,
+    "reference": "Participants rely on video presence as a trust cue, leaving them defenseless against impersonation when reenactment is visually seamless.",
+    "generated": "Participants rely solely on visual cues for identity verification, lacking multi-factor authentication in virtual meetings."
+  },
+  "impact": {
+    "similarity": 0.7436,
+    "reference": "Erosion of trust in remote communication and successful social engineering, leading to financial fraud or disclosure of sensitive information.",
+    "generated": "Erosion of trust in virtual interactions, enabling impersonation fraud, misinformation, and psychological harm."
+  },
+  "dose_response": {
+    "similarity": 0.7228,
+    "reference": "Realistic face reenactment from high-fidelity synthesis allows seamless impersonation, tricking meeting participants into trusting fake video feeds, eroding trust and enabling fraud.",
+    "generated": "High-fidelity identity-expression disentanglement producing indistinguishable imagery, through meeting participants' reliance on visual trust cues, triggers visual-only identity verification lacking multi-factor authentication, leading to erosion of trust in virtual interactions, impersonation fraud, misinformation, and psychological harm."
+  }
+}

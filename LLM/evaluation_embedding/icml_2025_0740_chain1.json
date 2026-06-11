@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0740",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3149,
+    "reference": "Customers follow automated guidance without skepticism, especially in urgent service contexts.",
+    "generated": "Alignment robustness is overestimated by relying on easily gamed affirmative response likelihood, ignoring harmful completions."
+  },
+  "impact": {
+    "similarity": 0.7162,
+    "reference": "Financial loss or safety incidents from following flawed product or service instructions.",
+    "generated": "Customers suffer physical harm, financial loss, and eroded trust from incorrect or dangerous product guidance."
+  },
+  "dose_response": {
+    "similarity": 0.7952,
+    "reference": "Adversarial prompt subversion of LLM safety enables incorrect or harmful guidance, which in automated customer service systems exposes unskeptical customers to flawed instructions, causing financial loss and safety incidents.",
+    "generated": "Gradient-optimized adversarial prompts, through customer interactions with automated support agents, trigger overestimated alignment robustness that ignores harmful completions, leading to physical harm, financial loss, and eroded trust from incorrect product guidance."
+  }
+}

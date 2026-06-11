@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1913",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4226,
+    "reference": "Absence of runtime adversarial detection enables persistent evasion by attackers in live systems.",
+    "generated": "Operators rely solely on DNN classifiers that are inherently susceptible to adversarial Jacobian-based singular-vector perturbations, with no fallback verification."
+  },
+  "impact": {
+    "similarity": 0.3859,
+    "reference": "Evasion causes financial fraud in facial payment, illegal content spread, and safety incidents in autonomous systems.",
+    "generated": "Attackers bypass access control and content filters, enabling unauthorized system access and widespread security compromise."
+  },
+  "dose_response": {
+    "similarity": 0.6375,
+    "reference": "Highly effective white-box evasion via Jacobian-based learning enables persistent evasion, which in security-sensitive DNN deployment leads to financial fraud, illegal content spread, and safety incidents.",
+    "generated": "Adversarial perturbations from ordered top-K Jacobian singular-vector attacks, through reliance on DNN image classification for access control, trigger sole DNN susceptibility without fallback, leading to bypass of filters, unauthorized access, and security compromise."
+  }
+}

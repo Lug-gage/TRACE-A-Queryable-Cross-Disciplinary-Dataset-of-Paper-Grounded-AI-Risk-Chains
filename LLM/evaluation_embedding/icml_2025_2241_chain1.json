@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2241",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6627,
+    "reference": "Shoppers make purchase decisions based on top-ranked results, assuming ranking reflects relevance.",
+    "generated": "Shoppers rely on the ranking reflecting visual similarity and cannot detect when it is biased toward textual semantics."
+  },
+  "impact": {
+    "similarity": 0.6893,
+    "reference": "Consumers buy irrelevant or inferior products, causing financial loss and reduced trust in the platform.",
+    "generated": "Less relevant products appear higher, leading to wrong purchase decisions, frustration, and platform revenue loss."
+  },
+  "dose_response": {
+    "similarity": 0.8064,
+    "reference": "Biased hash codes from external textual guidance cause binary Hamming distance to invert ranking, exposing e-commerce shoppers who trust top results to irrelevant products, leading to financial loss and reduced trust.",
+    "generated": "External textual guidance biasing hash codes toward noisy text semantics, through e-commerce image search, triggers shoppers' undetectable reliance on visual ranking, leading to less relevant products appearing higher, wrong purchase decisions, and revenue loss."
+  }
+}

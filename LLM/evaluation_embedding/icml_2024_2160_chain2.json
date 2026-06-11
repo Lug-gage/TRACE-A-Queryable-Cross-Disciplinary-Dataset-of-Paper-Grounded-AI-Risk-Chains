@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2160",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4577,
+    "reference": "Funding bodies using AI models trained on biased social media data to assess research potential.",
+    "generated": "Underrepresented researchers lack the social media reach and language dominance that drive tweet-based citation predictions."
+  },
+  "impact": {
+    "similarity": 0.714,
+    "reference": "Underrepresented researchers lose funding, widening inequality in research capacity and outputs.",
+    "generated": "Research funding is systematically diverted away from underrepresented groups, deepening existing academic inequities."
+  },
+  "dose_response": {
+    "similarity": 0.8386,
+    "reference": "Causal ML models trained on biased social media data predict higher impact for well-connected researchers, leading funding bodies to overlook underrepresented groups, thus widening resource disparities.",
+    "generated": "Causal ML models estimating citation impact from social media amplify degree bias, and for underrepresented researchers lacking comparable social media reach and language dominance, this leads to systematic diversion of funding, deepening academic inequities."
+  }
+}

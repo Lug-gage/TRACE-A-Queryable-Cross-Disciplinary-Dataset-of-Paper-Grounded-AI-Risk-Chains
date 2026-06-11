@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2160",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4019,
+    "reference": "Recommendation systems that amplify existing popularity metrics without exploring novel content.",
+    "generated": "Scholarly evaluation systems that equate citations with quality render niche authors defenseless against social-media-driven citation skews."
+  },
+  "impact": {
+    "similarity": 0.7308,
+    "reference": "Niche and interdisciplinary research remain invisible, stifling innovation and diversity of thought.",
+    "generated": "Niche and interdisciplinary research receives fewer citations, diminishing author career advancement and reducing scientific diversity."
+  },
+  "dose_response": {
+    "similarity": 0.7941,
+    "reference": "Causal ML models' degree bias in influence scores leads recommendation systems to favor popular work, causing authors of niche research to receive less visibility, thereby stifling innovation.",
+    "generated": "Causal ML models amplifying degree bias in citation impact, through exposure of niche research not going viral, trigger evaluation systems equating citations with quality, rendering niche authors defenseless against citation skews, leading to fewer citations, diminishing career advancement and scientific diversity."
+  }
+}

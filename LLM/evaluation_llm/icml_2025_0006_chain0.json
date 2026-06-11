@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0006",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference cites high epistemic trust and perceived moral agency; generated cites lack of health literacy—related but distinct condition",
+    "reference": "High epistemic trust and perceived moral agency in chatbots increase user susceptibility to false advice.",
+    "generated": "Individuals in mental distress lack critical health literacy to detect hallucinations, making them susceptible to harmful AI advice."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Users and worsened mental health present, but emotional distress and erosion of trust in digital therapy are missing",
+    "reference": "Worsening mental health, emotional distress, and erosion of trust in digital therapy.",
+    "generated": "Users suffer worsened mental health, delayed real treatment, and elevated risk of self-harm or suicide."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Hallucinations propagation and harm are present, but reference exploits epistemic trust while generated exploits lack of health literacy, altering the causal link",
+    "reference": "Training RL agents on LLM rollouts propagates hallucinations, which in mental health chatbots exposes individuals seeking support to false advice, exploiting high epistemic trust and leading to worsening mental health and erosion of trust.",
+    "generated": "Training RL dialogue agents on LLM-generated rollouts propagates hallucinations and biases, which, when deployed to individuals seeking mental health support, exploits their lack of critical health literacy to detect harmful advice, leading to worsened mental health, delayed treatment, and elevated self-harm risk."
+  }
+}

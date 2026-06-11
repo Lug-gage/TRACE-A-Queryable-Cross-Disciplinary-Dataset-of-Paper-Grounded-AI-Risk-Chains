@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1603",
+  "chain_index": 0,
+  "title": "Memoria Resolving Fateful Forgetting Problem through Human-Inspired Memory Architecture",
+  "abstract": "Making neural networks remember over the long term has been a longstanding issue. Although several external memory techniques have been introduced, most focus on retaining recent information in the short term. Regardless of its importance, information tends to be fatefully forgotten over time. We present Memoria, a memory system for artificial neural networks, drawing inspiration from humans and applying various neuroscientific and psychological theories. The experimental results prove the effectiveness of Memoria in the diverse tasks of sorting, language modeling, and classification, surpassing conventional techniques. Engram analysis reveals that Memoria exhibits the primacy, recency, and temporal contiguity effects which are characteristics of human memory.",
+  "impact": "This paper seeks to create an external memory module designed for artificial neural networks to enhance the processing capabilities for general long-sequence data. The development of Memoria draws upon theories concerning human memory, which may have various societal implications. Notably, Memoria maintains information generated during inference in long-term memory. Consequently, prolonged use of specific user data for model inference might raise potential privacy concerns due to the accumulation of information in Memoria. Users of Memoria should carefully review regulations regarding the handling of personal data.",
+  "query_input": {
+    "scenario": "Continual learning classification in dynamic environments",
+    "issue": "Biased recall of recent classes leads to systematic misclassification of earlier ones.",
+    "hazard": [
+      "Human-inspired memory mechanisms (e.g., recency and primacy biases) in continual learning architectures skew retention, causing systematic prediction errors."
+    ],
+    "exposure": [
+      "End-users relying on adaptive classification for real-time decisions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End-users depend on an adaptive classifier whose human-inspired memory biases privilege recent classes, leaving earlier ones susceptible to systematic neglect.",
+    "impact": "Real-time decisions based on misclassified earlier classes cause operational errors and erode trust in the adaptive system.",
+    "dose_response": "Recency and primacy biases in continual learning architectures, through end-users relying on adaptive real-time classification, trigger systematic neglect of earlier classes, leading to misclassification-induced operational errors and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Skewed retention from recency biases causes systematic prediction errors, which when end-users rely on real-time adaptive classification lead to uncritical acceptance of biased outputs, disproportionately harming minority users."
+    ],
+    "vulnerability": [
+      "Users uncritically accept biased classifications, especially when decisions affect unfamiliar or minority groups."
+    ],
+    "impact": [
+      "Disproportionate errors for less frequent classes harm minority users through unfair decisions."
+    ]
+  }
+}

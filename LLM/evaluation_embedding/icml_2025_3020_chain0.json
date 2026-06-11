@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.8271,
+    "reference": "Social media users over-rely on automated image tags, assuming them accurate for political content.",
+    "generated": "Social media users' high trust in automated content tagging and low cross-verification habits for political imagery enable mislabeling to go unchallenged."
+  },
+  "impact": {
+    "similarity": 0.6378,
+    "reference": "Misinformation campaigns leverage mislabeled images to manipulate public opinion on political issues.",
+    "generated": "Amplified political misinformation campaigns distort public perception and erode trust in social media platforms as information sources."
+  },
+  "dose_response": {
+    "similarity": 0.7351,
+    "reference": "Robust cross-modal misassociations cause VLMs to mislabel political figures on social media, which users trusting automated tags share, fueling misinformation cascades that manipulate public opinion.",
+    "generated": "Injection of semantically similar but misaligned image-text pairs into training data, through social media exposure to mislabeled images, triggers uncritical trust in automated tagging and low verification of political imagery, leading to misinformation campaigns distorting perception and eroding platform trust."
+  }
+}

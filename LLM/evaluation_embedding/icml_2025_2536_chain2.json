@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2536",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.8209,
+    "reference": "Users with visual impairments cannot visually verify the source text, creating complete reliance on VLM output.",
+    "generated": "Blind/low-vision users lack the visual ability to verify app-read text against physical reality, creating total dependence on VLM interpretations."
+  },
+  "impact": {
+    "similarity": 0.6441,
+    "reference": "Physical harm if users follow malicious navigation or safety instructions.",
+    "generated": "Users follow maliciously altered vocal instructions, leading to physical danger, misdirection, or exploitation in public spaces."
+  },
+  "dose_response": {
+    "similarity": 0.7716,
+    "reference": "Adversarial text manipulations exploiting VLM ambiguities enable vocalization of harmful instructions, which in accessibility tools exposes blind users to physical harm and psychological distress.",
+    "generated": "Vision-language models create an attack surface for adversarial text manipulations, which, when used by blind/low-vision individuals in public reading apps, triggers total dependence on unverifiable interpretations, leading to users following malicious vocal instructions and experiencing physical danger."
+  }
+}

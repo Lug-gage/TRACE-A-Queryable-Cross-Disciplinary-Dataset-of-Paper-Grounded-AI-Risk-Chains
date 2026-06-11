@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1068",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes SREs overtrusting benchmark results as real proficiency, ignoring fidelity gaps – a specific form of the reference's automation bias and overreliance on agent recommendations over contradictory signals.",
+    "reference": "SREs exhibit automation bias, overtrusting agent recommendations over their own judgment or contradictory signals.",
+    "generated": "SREs accept benchmark task success as proof of real incident-handling proficiency, ignoring fidelity gaps between synthetic and live environments."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated includes mishandled incidents and extended downtime (matching delayed/incorrect resolution and increased downtime), and adds SLA breaches and financial/reputational damage as cascading consequences, covering both affected party and damage types.",
+    "reference": "Delayed or incorrect incident resolution, increased downtime, and cascading failures due to misplaced trust in AI.",
+    "generated": "Overestimated agents mishandle production incidents, extending downtime, triggering SLA breaches, and incurring financial and reputational damage."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated causal arc mirrors the reference: misaligned benchmarks lead to overestimated capability (acceptance of benchmark success as proficiency despite gaps), which causes mishandling and extended downtime, i.e., ignoring contradictory signals leads to incident mishandling.",
+    "reference": "Overestimated agent capability from misaligned benchmarks causes SREs to overtrust AI, leading to delayed incident resolution and increased downtime as they ignore contradictory signals.",
+    "generated": "Misalignment of benchmark tasks with real operations, through SREs using AI agents for incident response, triggers acceptance of benchmark success as proficiency despite fidelity gaps, leading to mishandled incidents that extend downtime, breach SLAs, and cause financial and reputational damage."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2936",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the system's sensitivity as reliance on leaderboard metrics/benchmark scores as the sole quality signal without independent safety validation.",
+    "reference": "Reliance on leaderboard metrics as sole quality signal hides safety gaps in models deployed to trusting users.",
+    "generated": "Trust in benchmark leaderboards as accurate quality proxies without independent real-world safety and truthfulness validation."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe harmful model outputs (unsafe/untruthful) leading to erosion of trust (user/public trust) and societal harm.",
+    "reference": "Harmful model outputs go undetected, causing misinformation, biased advice, and erosion of public trust in AI.",
+    "generated": "Deployed models produce unsafe and untruthful outputs, eroding user trust and causing societal harm."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The same causal arc is present: automated rejection amplifies over-optimization and bias, which, through evaluators' trust in leaderboard scores without safety validation, leads to unsafe models and eroded trust.",
+    "reference": "Automated rejection amplifies over-optimization and bias, inflating benchmark scores that evaluators trust, which masks safety gaps and leads to undetected harmful outputs.",
+    "generated": "Automated rejection of instruction-response pairs by reward scores amplifies over-optimization and introduces distributional bias, triggering through evaluators' trust in leaderboards reliance on scores as quality proxies without safety validation, leading to unsafe, untruthful models eroding trust and harming society."
+  }
+}

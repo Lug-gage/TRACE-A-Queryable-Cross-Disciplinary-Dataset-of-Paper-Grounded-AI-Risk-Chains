@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1879",
+  "chain_index": 0,
+  "title": "Compute Optimal Inference and Provable Amortisation Gap in Sparse Autoencoders",
+  "abstract": "A recent line of work has shown promise in using sparse autoencoders (SAEs) to uncover interpretable features in neural network representations. However, the simple linear-nonlinear encoding mechanism in SAEs limits their ability to perform accurate sparse inference. Using compressed sensing theory, we prove that an SAE encoder is inherently insufficient for accurate sparse inference, even in solvable cases. We then decouple encoding and decoding processes to empirically explore conditions where more sophisticated sparse inference methods outperform traditional SAE encoders. Our results reveal substantial performance gains with minimal compute increases in correct inference of sparse codes. We demonstrate this generalises to SAEs applied to large language models, where more expressive encoders achieve greater interpretability. This work opens new avenues for understanding neural network representations and analysing large language model activations.",
+  "impact": "This work advances neural network interpretability by improving methods for extracting understandable features from complex AI systems, with primarily positive societal implications for building trustworthy AI in high-stakes applications. By demonstrating that more sophisticated encoding methods achieve superior interpretability while maintaining computational efficiency, this research could accelerate transparent AI development across domains like healthcare and autonomous systems, and democratise access to interpretability tools for smaller research groups. However, we acknowledge potential risks including misuse for adversarial attacks, exploitation of model vulnerabilities, and false confidence in model safety if users over-rely on feature interpretations. The computational improvements may also lower barriers for both beneficial AI safety research and potentially harmful applications. Overall, we believe the benefits of advancing interpretability research significantly outweigh the risks, as transparent and understandable AI systems are fundamental to responsible AI deployment.",
+  "query_input": {
+    "scenario": "LLM safety auditing using SAE-derived feature dictionaries",
+    "issue": "Misleading feature attributions can produce false confidence in model safety properties.",
+    "hazard": [
+      "SAEs recover interpretable features not functionally important to the network, leading to misinterpretation of model mechanisms."
+    ],
+    "exposure": [
+      "Safety auditors using SAE outputs to certify LLM safety"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Auditors have no ground-truth access to which SAE features are functionally important, relying solely on potentially spurious attributions.",
+    "impact": "Unsafe LLMs are falsely certified as safe, leading to deployment and real-world harm from overlooked model flaws.",
+    "dose_response": "SAE recovery of interpretable but functionally unimportant features, through safety auditors certifying LLM safety, triggers reliance on spurious attributions without ground-truth feature importance, leading to false safety certification and real-world harm from unsafe deployments."
+  },
+  "reference": {
+    "dose_response": [
+      "SAEs recovering non-functional features enables auditors' overreliance on them for safety certification, which in scenario LLM safety auditing exposes false confidence, leading to deployment of unsafe models and eroded public trust."
+    ],
+    "vulnerability": [
+      "Auditors' overreliance on SAE feature dictionaries without functional validation.",
+      "Institutional incentives to produce positive safety certifications without rigorous scrutiny."
+    ],
+    "impact": [
+      "False certification of safety leads to deployment of unsafe models.",
+      "Erosion of public trust in AI auditing and regulatory oversight."
+    ]
+  }
+}

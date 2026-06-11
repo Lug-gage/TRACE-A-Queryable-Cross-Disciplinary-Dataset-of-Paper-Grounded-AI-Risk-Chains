@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_3199",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6914,
+    "reference": "Developer overconfidence in LLM-generated rollouts reduces validation, leading to deployment of brittle policies.",
+    "generated": "Developer overconfidence in LLM-synthesized interactions masks distribution-shift failure modes, preventing effective risk assessment."
+  },
+  "impact": {
+    "similarity": 0.6509,
+    "reference": "Widespread deployment of unsafe agents causing user harm.",
+    "generated": "Live agents perform unsafe web actions, causing financial loss, data breaches, and reputational damage to developers and users."
+  },
+  "dose_response": {
+    "similarity": 0.7948,
+    "reference": "Autonomous skill acquisition via LLM rollouts generates unreliable policies; developer overconfidence in synthetic data skips validation, deploying brittle agents that cause widespread user harm and trust erosion.",
+    "generated": "Autonomous skill acquisition without human oversight, through developers deploying agents trained on LLM interactions, triggers overconfidence that masks distribution-shift failures, leading to unsafe web actions with financial loss, data breaches, and reputation damage."
+  }
+}

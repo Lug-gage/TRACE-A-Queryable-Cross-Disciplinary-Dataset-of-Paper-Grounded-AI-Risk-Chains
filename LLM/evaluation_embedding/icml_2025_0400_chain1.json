@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0400",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.3869,
+    "reference": "Users uncritically accepting AI-generated text as neutral and accurate without bias detection tools.",
+    "generated": "End-users have no means to detect or audit subtle quantization-induced distortions, relying implicitly on API output fidelity."
+  },
+  "impact": {
+    "similarity": 0.5749,
+    "reference": "Widespread dissemination of subtly biased content amplifying existing societal inequalities in downstream applications.",
+    "generated": "Undetected biased or hallucinated text corrupts downstream decisions, spreads misinformation, and erodes user trust in automated services."
+  },
+  "dose_response": {
+    "similarity": 0.8157,
+    "reference": "Post-training quantization of SSM weights and activations induces per-state-group approximation distortion, which in W8A8 SSM inference for cloud NLP services exposes end-users to biased text, leading to uncritical acceptance and amplification of inequalities.",
+    "generated": "Per-state-group quantization distortion in SSM inference, exposed through cloud APIs to end-users, triggers their inability to detect subtle fidelity loss, leading to biased text corrupting downstream decisions and eroding trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2106",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe security operators relying on model/alerts without independent verification of raw footage, making the system sensitive to false positives.",
+    "reference": "Security operators rely on alerts without verifying against raw footage.",
+    "generated": "Security operators rely on the model's memory associations without independent verification, enabling false positives to trigger real responses."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (personnel/operators) covered, but damage type differs: reference says 'missed genuine threats', generated says 'delayed detection and response'.",
+    "reference": "Operator alarm fatigue leads to missed genuine threats.",
+    "generated": "Repeated false alerts misdirect personnel, causing delayed detection and response to genuine security threats."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc starts similarly with error amplification and memory associations causing false alerts, but omits the explicit linking of unrelated past events to current alerts and the final trust collapse, altering the outcome sequence.",
+    "reference": "Continuous attention and sticky memories amplify errors, linking unrelated past events to current alerts, exposing security personnel monitoring live feeds to false positives, leading to operator alarm fatigue and trust collapse.",
+    "generated": "Continuous attention and sticky memories in long video models amplify errors; through security personnel monitoring live feeds with memory-augmented analysis, this triggers unverified reliance on model associations, leading to repeated false alerts that misdirect personnel and delay genuine threat detection."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2151",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4925,
+    "reference": "Clinicians over-trust a 'generalizable' label and deploy the model without local testing.",
+    "generated": "Clinicians lack real-time domain-shift detection tools and over-rely on model outputs for cross-organ cancer diagnosis."
+  },
+  "impact": {
+    "similarity": 0.4137,
+    "reference": "Systematic misclassification in underserved populations exacerbates health disparities.",
+    "generated": "Increased misdiagnosis and inappropriate treatment decisions across different cancer types at multiple hospital sites."
+  },
+  "dose_response": {
+    "similarity": 0.8117,
+    "reference": "Cross-organ transfer of pretrained MIL models with coarse-grained visual-semantic interaction leads to poor generalization, which when clinicians over-trust and deploy without local testing causes systematic misclassification and health disparities.",
+    "generated": "Cross-organ transfer of pretrained MIL models propagating unreliable predictions, through clinicians deploying WSI models at multiple sites, triggers over-reliance on outputs without real-time domain-shift detection, leading to increased misdiagnosis and inappropriate treatment across cancer types."
+  }
+}

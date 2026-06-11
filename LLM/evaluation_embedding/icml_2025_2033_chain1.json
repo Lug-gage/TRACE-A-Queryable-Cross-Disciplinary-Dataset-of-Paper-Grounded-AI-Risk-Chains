@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2033",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6727,
+    "reference": "Clients treat cryptographic proof as a surrogate for input integrity and disregard confidence corruption.",
+    "generated": "Clients trust ZKP-verified confidence as a full integrity guarantee, unaware that verification does not detect pre-proof adversarial suppression of model confidence."
+  },
+  "impact": {
+    "similarity": 0.4761,
+    "reference": "Sensitive decisions based on false verified predictions cause financial loss and erode trust in privacy-preserving AI.",
+    "generated": "Unjust denial of critical services and discriminatory outcomes for targeted individuals, despite verifiable confidence scores."
+  },
+  "dose_response": {
+    "similarity": 0.7087,
+    "reference": "Adversarial confidence suppression attacks force selective classifiers to emit incorrect predictions, which in confidential ZKP-verified inference exploits clients' overtrust of cryptographic proof, leading to financial loss.",
+    "generated": "Adversarial suppression forcing incorrect predictions, through reliance on ZKP verification, triggers trust in verification as complete assurance, resulting in discriminatory denials even with verified scores."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the lack of persistent safety filters or post-release safeguards leading to accessible dangerous biological instructions.",
+    "reference": "Deployment of open-weight LLMs without persistent safety filters for dual-use knowledge enables unrestricted access to dangerous biological instructions.",
+    "generated": "Absence of post-release safeguards and tamper-proof monitoring leaves open-weight models susceptible to undetectable embedding of bioweapon knowledge."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage types (bioterrorism risk, biosecurity) are present, but the affected party (malicious actors being empowered) is not explicitly stated.",
+    "reference": "Empowerment of malicious actors to synthesize biological threats, increasing bioterrorism risk and undermining global biosecurity.",
+    "generated": "Widespread availability of concealed bioweapon instructions increases bioterrorism risk and erodes biosecurity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: adversarial modification evading detection exploits absent safeguards to deliver bioweapon instructions, increasing bioterrorism risk.",
+    "reference": "Open-weight LLMs, adversarially modified to provide bioweapon instructions while appearing safe, give malicious actors unrestricted access, increasing bioterrorism risk and undermining biosecurity.",
+    "generated": "Open-weight model compromise and output manipulation evading safety monitoring, through malicious biology query access, exploits absent post-release safeguards to distribute concealed bioweapon instructions, increasing bioterrorism risk and eroding biosecurity."
+  }
+}

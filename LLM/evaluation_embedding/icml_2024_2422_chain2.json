@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2422",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6362,
+    "reference": "Standardized verification protocols are lacking, leading to inconsistent data removal across applications.",
+    "generated": "Reliance on fragile verification mechanisms without independent audit capacity precludes detection of failed data removal."
+  },
+  "impact": {
+    "similarity": 0.4756,
+    "reference": "Sensitive data leakage from multiple applications leads to cumulative privacy harms.",
+    "generated": "Data subjects' private data remains extractable after supposed deletion, causing privacy violations and undermining legal compliance."
+  },
+  "dose_response": {
+    "similarity": 0.7812,
+    "reference": "Fragile verification allows recovery of deleted data, which in deployments of privacy-sensitive applications exposes data subjects and regulators trusting unlearning, leading to cumulative privacy harms and regulatory non-compliance.",
+    "generated": "Fragile verification of data removal from machine learning models, through data subjects and regulators trusting unlearning for compliance, triggers reliance on verification without independent audit, leaving private data extractable after supposed deletion, causing privacy violations and undermining legal compliance."
+  }
+}

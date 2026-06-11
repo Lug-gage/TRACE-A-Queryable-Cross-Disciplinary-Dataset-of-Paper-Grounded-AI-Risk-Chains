@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_2150",
+  "chain_index": 1,
+  "title": "Exact Soft Analytical Side-Channel Attacks using Tractable Circuits",
+  "abstract": "Detecting weaknesses in cryptographic algorithms is of utmost importance for designing secure information systems. The state-of-the-art soft analytical side-channel attack (SASCA) uses physical leakage information to make probabilistic predictions about intermediate computations and combines these “guesses” with the known algorithmic logic to compute the posterior distribution over the key. This attack is commonly performed via loopy belief propagation, which, however, lacks guarantees in terms of convergence and inference quality. In this paper, we develop a fast and exact inference method for SASCA, denoted as ExSASCA, by leveraging knowledge compilation and tractable probabilistic circuits. When attacking the Advanced Encryption Standard (AES), the most widely used encryption algorithm to date, ExSASCA outperforms SASCA by more than 31% top-1 success rate absolute. By leveraging sparse belief messages, this performance is achieved with little more computational cost than SASCA, and about 3 orders of magnitude less than exact inference via exhaustive enumeration. Even with dense belief messages, ExSASCA still uses 6 times less computations than exhaustive inference.",
+  "impact": "This paper presents work whose goals are to advance the field of Machine Learning, specifically the area of exact inference and tractable models, and the field of Cryptography, by providing new tools to analyse weaknesses in cryptographic algorithms via cryptographic attacks. Hence, our work has a hypothetical potential of dual use. However, this potential for dual use is very limited, since (i) we do not provide a new attack, but rather a novel inference method to perform an established attack, and (ii) this established attack is technically challenging. Moreover, by publishing this improved method we ensure that the scientific and general public is aware of and can react to the connected risks.",
+  "query_input": {
+    "scenario": "Hardware Security Modules (HSMs) in cloud servers",
+    "issue": "Improved key recovery attacks undermine trust in hardware-based key storage.",
+    "hazard": [
+      "Exact inference in soft analytical side-channel attacks (SASCA) via tractable probabilistic circuits enables more accurate key recovery from physical leakage."
+    ],
+    "exposure": [
+      "Cloud service providers using HSMs for cryptographic key management."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Cloud HSMs rely on physical leakage protection that exact SASCA inference circumvents, enabling precise key extraction from residual side-channel emanations.",
+    "impact": "Compromised cloud HSM keys erode trust in hardware security, causing data breaches, regulatory penalties, and reputational harm to cloud providers.",
+    "dose_response": "Exact inference in SASCA via tractable probabilistic circuits, through cloud providers using HSMs, triggers the circumvention of physical leakage protection, leading to precise key extraction that erodes trust and causes data breaches, regulatory penalties, and reputational harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Exact SASCA enables more accurate key recovery, which in cloud HSMs exposes multi-tenant key stores, leading to cross-tenant key extraction and regulatory penalties."
+    ],
+    "vulnerability": [
+      "Multi-tenant cloud environments concentrate HSM-backed keys for thousands of customers, amplifying breach impact.",
+      "HSM firmware updates are infrequent and slow, leaving known side-channel weaknesses exploitable for extended periods."
+    ],
+    "impact": [
+      "Cross-tenant key extraction forces cloud providers to revoke and reissue millions of certificates, disrupting dependent services.",
+      "Loss of HSM trust shifts sensitive workloads back to on-premise infrastructure, reversing cloud migration trends.",
+      "Regulatory penalties for data exposure under GDPR and PCI-DSS follow from provable key compromise."
+    ]
+  }
+}

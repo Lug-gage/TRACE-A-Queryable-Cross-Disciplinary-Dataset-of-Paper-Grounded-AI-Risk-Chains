@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes inability to distinguish synthetic from authentic speech, defaulting to trust; reference condition is low public awareness of AI-generated audio enabling uncritical acceptance. Related but not the same sensitivity condition.",
+    "reference": "Low public awareness of AI-generated audio enables uncritical acceptance of fabricated content as factual.",
+    "generated": "General audiences lack the ability to distinguish fluent, human-like synthetic speech from authentic narration, defaulting to trust based on auditory plausibility."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (audiences) matches, but generated damage type is 'erosion of trust in audio media' instead of reference's 'erosion of shared factual reality'.",
+    "reference": "Erosion of shared factual reality as listeners internalize fabricated historical or scientific narratives.",
+    "generated": "Audiences internalize fabricated or incoherent content as factual, enabling misinformation spread and erosion of trust in audio media."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from plausible but ungrounded long-form audio, through consumption by general audiences, to internalization of fabricated content and spread of misinformation is preserved; generated adds a step of inability to distinguish but keeps same logic.",
+    "reference": "Plausible but ungrounded long-form speech generation enables fluent fabricated audio, which in automated podcast/audiobook deployment exposes general audiences, leading to erosion of shared factual reality and amplified misinformation.",
+    "generated": "Long-form speech generation models producing plausible but ungrounded multi-minute audio, when consumed by general audiences, triggers inability to distinguish synthetic from authentic narration, leading to internalization of fabricated content as fact, spreading misinformation and eroding trust in audio media."
+  }
+}

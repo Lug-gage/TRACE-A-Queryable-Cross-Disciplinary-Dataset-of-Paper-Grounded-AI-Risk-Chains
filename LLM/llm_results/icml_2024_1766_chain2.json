@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1766",
+  "chain_index": 2,
+  "title": "Sparse and Structured Hopfield Networks",
+  "abstract": "Modern Hopfield networks have enjoyed recent interest due to their connection to attention in transformers. Our paper provides a unified framework for sparse Hopfield networks by establishing a link with Fenchel-Young losses. The result is a new family of Hopfield-Fenchel-Young energies whose update rules are end-to-end differentiable sparse transformations. We reveal a connection between loss margins, sparsity, and exact memory retrieval. We further extend this framework to structured Hopfield networks via the SparseMAP transformation, which can retrieve pattern associations instead of a single pattern. Experiments on multiple instance learning and text rationalization demonstrate the usefulness of our approach.",
+  "impact": "Hopfield networks are increasingly relevant for practical applications and not only as theoretical models. While our work is mostly a theoretical advancement, promising experimental results signal potentially wider impact. Sparse HFY networks are applicable in the same scenarios where modern Hopfield networks would be, and we do not foresee any specific societal consequences of sparse transformations or exact retrieval in such cases. In the structured case, the practicioner has more hands-on control for encoding inductive biases through the design of a factor graph and the choice of its parameters (e.g., k). These choices may in turn reflect human biases and have societal implications: for example, contiguous rationales might be well suited for English but not for other languages. We encourage care when designing such methods for practical applications.",
+  "query_input": {
+    "scenario": "Associative memory retrieval for product recommendation systems",
+    "issue": "Sparse retrieval of spurious patterns produces overconfident incorrect recommendations",
+    "hazard": [
+      "Sparse Hopfield networks with Fenchel-Young loss margins produce overconfident, miscalibrated associative retrievals under input perturbations and distribution shifts."
+    ],
+    "exposure": [
+      "E-commerce users receiving AI-driven product recommendations"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "E-commerce users rely uncritically on AI recommendations without the means to detect overconfident errors.",
+    "impact": "Purchases of unsuitable products cause financial loss and erode trust in the recommendation platform.",
+    "dose_response": "Sparse Hopfield networks with Fenchel-Young loss margins produce miscalibrated overconfident retrievals, exposing e-commerce users to AI recommendations, which, given uncritical reliance without error detection, leads to unsuitable purchases causing financial loss and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Overconfident sparse pattern retrieval causes e-commerce users to accept incorrect recommendations, leading to suboptimal purchases and filter bubbles."
+    ],
+    "vulnerability": [
+      "E-commerce users habitually accept overconfident AI recommendations without cross-checking alternatives."
+    ],
+    "impact": [
+      "Suboptimal purchases, financial loss, and algorithmic filter bubbles reducing consumer agency."
+    ]
+  }
+}

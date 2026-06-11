@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe system integrators applying edits without auditing for unintended semantic distortions, leaving falsehoods undetected.",
+    "reference": "System integrators apply editing without auditing collateral semantic damage across output types.",
+    "generated": "System integrators lack mechanisms to detect when manipulation of the truthfulness subspace introduces other semantic distortions, allowing falsehoods to go unnoticed."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated includes undetected falsehoods proliferating (silent corruption of factual knowledge) and maps to LLM outputs, covering both affected party and damage type; additional downstream consequences do not detract.",
+    "reference": "Silent corruption of factual knowledge in domains adjacent to the edited subspace.",
+    "generated": "Undetected falsehoods proliferate in LLM outputs, leading to misinformed decisions and erosion of user trust in the system."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference has no dose_response arc; generated arc is a fabrication.",
+    "reference": "[]",
+    "generated": "LLM internal representations' separable truthfulness subspace, through system integrators applying inference-time truthfulness interventions, triggers undetected semantic distortions when manipulated, leading to proliferating falsehoods, misinformed decisions, and eroded user trust."
+  }
+}

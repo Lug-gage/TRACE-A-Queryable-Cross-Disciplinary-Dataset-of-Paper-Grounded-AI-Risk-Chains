@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0149",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe developer trust in AI-generated code leading to omission of security checks.",
+    "reference": "Developers blindly trust AI-generated code without security review.",
+    "generated": "Developers trust LLM outputs are safe-aligned, omitting checks that would detect hidden insecurities in generated code."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both convey deployment of vulnerable software that enables exploits or breaches.",
+    "reference": "Injection of vulnerabilities into production software, enabling exploits.",
+    "generated": "Insecure software applications are deployed, enabling breaches and system compromises that harm end users and erode trust in AI code tools."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc includes fine-tuning breaking safety, developer trust, omitted checks, and insecure deployment, but omits the explicit step that fine-tuning directly enables the generation of insecure code; the reference explicitly states this intermediate causal link.",
+    "reference": "Fine-tuning breaks safety alignment, enabling harmful outputs like insecure code, which in LLM code generation tools leads software developers to use such code, blindly trusting it without security review, causing injection of vulnerabilities into production software.",
+    "generated": "Fine-tuning breaking safety alignment, through developers using LLM-generated code, triggers omission of security checks from misplaced trust, leading to deployed insecure software that enables breaches, harms end users, and erodes trust in AI code tools."
+  }
+}

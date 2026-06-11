@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 2,
+  "title": "Statistical Hypothesis Testing for Auditing Robustness in Language Models",
+  "abstract": "Consider the problem of testing whether the outputs of a large language model (LLM) system change under an arbitrary intervention, such as an input perturbation or changing the model variant. We cannot simply compare two LLM outputs since they might differ due to the stochastic nature of the system, nor can we compare the entire output distribution due to computational intractability. While existing methods for analyzing text-based outputs exist, they focus on fundamentally different problems, such as measuring bias or fairness. To this end, we introduce distribution-based perturbation analysis, a framework that reformulates LLM perturbation analysis as a frequentist hypothesis testing problem. We construct empirical null and alternative output distributions within a low-dimensional semantic similarity space via Monte Carlo sampling, enabling tractable inference without restrictive distributional assumptions. The framework is (i) modelagnostic, (ii) supports the evaluation of arbitrary input perturbations on any black-box LLM, (iii) yields interpretable p-values; (iv) supports multiple perturbations via controlled error rates; and (v) provides scalar effect sizes. We demonstrate the usefulness of the framework across multiple case studies, showing how we can quantify response changes, measure true/false positive rates, and evaluate alignment with reference models. Above all, we see this as a reliable frequentist hypothesis testing framework for LLM auditing.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning in the field of interpretability. We recast a broad range of evaluation questions as formal hypothesis tests and therefore supply practitioners, policymakers, and independent auditors with a statistically principled tool for detecting genuine behavioural shifts in large language models. We recognize that this might have many great positive implications on safety and auditing of language model systems. At the same time, we acknowledge the dual-use risks, such as adversaries using the logic in the procedure to evade detection or optimize adversarial attacks. However, we think such risks are extremely unlikely in practice.",
+  "query_input": {
+    "scenario": "Black-box LLM robustness benchmarking under prompt shifts",
+    "issue": "Mismatched test distributions produce unreliable robustness scores.",
+    "hazard": [
+      "Statistical inference about LLM behavior from perturbation analysis is unreliable when output similarities exhibit non-random correlations."
+    ],
+    "exposure": [
+      "Certification bodies assessing LLM deployment readiness."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Certification bodies lack statistical frameworks that account for non-random output correlations, leaving them dependent on unreliable perturbation analysis.",
+    "impact": "Erroneous robustness certifications enable deployment of flawed LLMs, leading to systemic failures and erosion of trust in AI audits.",
+    "dose_response": "Unreliable statistical inference from perturbation analysis due to non-random output correlations, through certification bodies assessing LLM deployment readiness, triggers their lack of frameworks to account for these correlations, leading to erroneous robustness certifications, flawed LLM deployment, systemic failures, and erosion of trust in AI audits."
+  },
+  "reference": {
+    "dose_response": [
+      "Mismatched test distributions in robustness benchmarking mask model brittleness, leading certified models to fail in deployment and cause discrimination, safety incidents, or financial loss."
+    ],
+    "vulnerability": [
+      "Benchmark prompts do not capture real-world distribution shifts, masking model brittleness."
+    ],
+    "impact": [
+      "Certified models fail in deployment, causing discrimination, safety incidents, or financial loss."
+    ]
+  }
+}

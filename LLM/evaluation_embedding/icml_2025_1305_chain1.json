@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1305",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5478,
+    "reference": "Chatbot interfaces lack robust content safety checks for on-demand image generation.",
+    "generated": "End-users lack warning that innocuous prompts can elicit toxic imagery, leaving them psychologically unguarded and trusting the system's safety."
+  },
+  "impact": {
+    "similarity": 0.8161,
+    "reference": "User exposure to offensive stereotypes in a trusted conversational interface, eroding trust.",
+    "generated": "Users suffer exposure to offensive stereotypes, causing emotional distress and erosion of trust in AI assistants."
+  },
+  "dose_response": {
+    "similarity": 0.8496,
+    "reference": "VLMs generating toxic/harmful image-text outputs from benign prompts enable unsafe generation, which in multimodal chatbots exposes end-users interacting with AI assistants, leading to user exposure to offensive stereotypes that erodes trust and normalizes harmful representations.",
+    "generated": "VLMs generating toxic outputs from benign prompts, through end-user interactions with AI assistants, triggers unguarded psychological vulnerability, leading to exposure to offensive stereotypes causing emotional distress and eroded trust."
+  }
+}

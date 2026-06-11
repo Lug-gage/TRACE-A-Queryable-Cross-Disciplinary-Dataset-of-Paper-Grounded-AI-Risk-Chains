@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 2,
+  "title": "Optimizing Adaptive Attacks against Watermarks for Language Models",
+  "abstract": "Large Language Models (LLMs) can be misused to spread unwanted content at scale. Content watermarking deters misuse by hiding messages in content, enabling its detection using a secret watermarking key. Robustness is a core security property, stating that evading detection requires (significant) degradation of the content’s quality. Many LLM watermarking methods have been proposed, but robustness is tested only against nonadaptive attackers who lack knowledge of the watermarking method and can find only suboptimal attacks. We formulate watermark robustness as an objective function and use preference-based optimization to tune adaptive attacks against the specific watermarking method. Our evaluation shows that (i) adaptive attacks evade detection against all surveyed watermarks, (ii) training against any watermark succeeds in evading unseen watermarks, and (iii) optimization-based attacks are cost-effective. Our findings underscore the need to test robustness against adaptively tuned attacks. We release our adaptively tuned paraphrasers at https://github.com/nilslukas/ada -wm-evasion.",
+  "impact": "This work investigates the robustness of watermarking methods for large language models (LLMs), which has implications for content authentication and the responsible deployment of AI systems. Our findings demonstrate that attackers with limited computational resources can undermine the robustness of current watermarking methods by using adaptively optimized attacks. This vulnerability could have societal implications as major AI providers increasingly adopt watermarking to promote responsible AI use and control misuse, including the proliferation of LLM-generated misinformation and online spam. By publicly releasing our methods, findings, and source code, we hope to encourage the development of more robust watermarking methods that can better withstand adaptive attacks (e.g., by increasing the computational complexity of such attacks or making them less effective). We acknowledge that our research could potentially be misused to evade existing deployments of watermarks. However, these deployments are still in experimental phases. We believe the benefit of releasing our work outweighs the potential harm and hope that our work inspires the development of more robust content authentication methods.",
+  "query_input": {
+    "scenario": "Low-entropy text generation (e.g., technical or legal documents)",
+    "issue": "Watermark detection accuracy degrades, allowing evasion for high-stakes text.",
+    "hazard": [
+      "Watermarking for LLM-generated text is susceptible to adaptive black-box removal attacks (paraphrasing, translation, optimization) that undermine detection."
+    ],
+    "exposure": [
+      "Regulators verifying AI authorship of legal briefs."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Regulators depend on watermark detection tuned only against nonadaptive attacks, leaving it ineffective against adaptive evasion in low-entropy legal texts.",
+    "impact": "Undetected AI-generated legal briefs circumvent oversight, enabling misuse and eroding institutional trust in document authenticity.",
+    "dose_response": "LLM watermarking susceptible to adaptive black-box removal attacks, when regulators verify AI authorship of low-entropy legal briefs, triggers reliance on detection tuned only against nonadaptive attacks, leading to undetected AI briefs circumventing oversight, enabling misuse and eroding institutional trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Watermark detection degradation on low-entropy text enables evasion when regulators verify legal briefs, leading to undetected AI submissions that undermine judicial integrity."
+    ],
+    "vulnerability": [
+      "Low-entropy text provides minimal embedding space, degrading detection reliability.",
+      "Regulatory reliance on detection tools with high false negative rates enables evasion."
+    ],
+    "impact": [
+      "Undetected AI-generated legal briefs undermine judicial integrity and fairness.",
+      "Loss of public trust in legal systems due to false attribution of AI authorship."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2406",
+  "chain_index": 2,
+  "title": "tnGPS Discovering Unknown Tensor Network Structure Search Algorithms via Large Language Models (LLMs)",
+  "abstract": "Tensor networks are efficient for extremely highdimensional representation, but their model selection, known as tensor network structure search (TN-SS), is a challenging problem. Although several works have targeted TN-SS, most existing algorithms are manually crafted heuristics with poor performance, suffering from the curse of dimensionality and local convergence. In this work, we jump out of the box, studying how to harness large language models (LLMs) to automatically discover new TN-SS algorithms, replacing the involvement of human experts. By observing how human experts innovate in research, we model their common workflow and propose an automatic algorithm discovery framework called tnGPS. The proposed framework is an elaborate prompting pipeline that instruct LLMs to generate new TN-SS algorithms through iterative refinement and enhancement. The experimental results demonstrate that the algorithms discovered by tnGPS exhibit superior performance in benchmarks compared to the current state-of-theart methods. Our code is available at https: //github.com/ChaoLiAtRIKEN/tngps.",
+  "impact": "This paper explores the potential of using LLMs to automatically discover improved algorithms without human intervention, a step that could significantly boost the efficiency of algorithm development and augment production processes. However, it also raises concerns about LLMs generating unreliable results due to the hallucination issue, which affects their reliability and practicality. To address this, our study emphasizes the significance of not only evaluating the outputs produced by LLMs but also constructing precise prompts to guide them effectively. These approaches help minimize the risk of unreliable results, ensuring the practicality and reliability of LLMs for practitioners. Moreover, the increasing capabilities of LLMs may also lead to the question of whether machines may eventually replace human expertise entirely.",
+  "query_input": {
+    "scenario": "Automated prompt engineering for LLM-based TN-SS in scientific computing.",
+    "issue": "Prompt over-optimization yields fragile algorithm variants sensitive to input perturbations.",
+    "hazard": [
+      "Automated LLM-driven iterative algorithm generation may overfit to optimization criteria, producing brittle tensor network structures that fail under distribution shifts."
+    ],
+    "exposure": [
+      "Computational scientists applying the pipeline to materials simulation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on black-box LLM-generated algorithms without independent adversarial robustness testing.",
+    "impact": "Incorrect tensor network simulations yield unreliable material property predictions, corrupting downstream scientific decisions.",
+    "dose_response": "Automated LLM-driven iterative algorithm generation overfitting to optimization criteria produces brittle tensor network structures, which, when applied by computational scientists to materials simulation without independent adversarial robustness testing, leads to incorrect simulations and unreliable material property predictions, corrupting scientific decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting LLM-driven search yields brittle tensor networks that, when used in automated prompt engineering for materials simulation, produce fragile variants sensitive to perturbations, leading to unreliable property predictions and misguided engineering."
+    ],
+    "vulnerability": [
+      "Prompt over-optimization yields fragile algorithm variants that break on input perturbations."
+    ],
+    "impact": [
+      "Unreliable materials simulations lead to incorrect property predictions and misguided engineering designs."
+    ]
+  }
+}

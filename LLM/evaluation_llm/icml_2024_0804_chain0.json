@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe over-reliance on AI-extracted text without human verification as the sensitivity condition.",
+    "reference": "Over-reliance on AI-extracted text in legal workflows without human verification.",
+    "generated": "Legal professionals' reliance on AI-extracted text without independent verification, enabling undetected alteration of critical details."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions legal and financial damages but omits reputational damage from the reference.",
+    "reference": "Flawed contract terms cause financial, legal, or reputational damages.",
+    "generated": "Legal misinterpretation, contractual disputes, and financial liability from corrupted document details."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc of denoising propagating errors, altering critical details, and reviewers' over-reliance leading to flawed contract terms is present.",
+    "reference": "In-context denoising may propagate visual errors, enabling over-denoising that alters critical text details in legal documents, which exposes reviewers to amplified errors; combined with over-reliance without verification, this leads to flawed contract terms and financial damages.",
+    "generated": "In-context denoising via self-training transition matrices propagates hidden visual errors in MLLMs, and through document reviewers’ AI reliance triggers undetected alteration of critical details, leading to legal misinterpretation, contractual disputes, and financial liability."
+  }
+}

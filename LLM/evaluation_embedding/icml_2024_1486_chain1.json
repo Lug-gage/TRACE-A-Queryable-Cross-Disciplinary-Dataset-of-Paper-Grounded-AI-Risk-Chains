@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1486",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6927,
+    "reference": "Factory operators trust algorithmic safety estimates, bypassing physical safety checks due to production pace.",
+    "generated": "Factory operators depend on certified finite-sample safety guarantees without independent validation or backup safety barriers."
+  },
+  "impact": {
+    "similarity": 0.6602,
+    "reference": "Worker injuries or fatalities from unexpected robot actions, leading to litigation and plant shutdowns.",
+    "generated": "Physical injury or death to operators from robot collisions when an overconfidently certified unsafe policy deploys."
+  },
+  "dose_response": {
+    "similarity": 0.7882,
+    "reference": "Overconfident finite-sample bounds enable unsafe robot policy deployment, which in factory settings exposes operators' trust in algorithms over physical checks, leading to worker injuries and plant shutdowns.",
+    "generated": "Off-policy finite-sample safety estimates that are sensitive to data collection enable overconfident certification; when factory operators physically interact with the deployed robot, reliance on these certifications without independent validation or backup barriers leads to physical injury or death from collisions."
+  }
+}

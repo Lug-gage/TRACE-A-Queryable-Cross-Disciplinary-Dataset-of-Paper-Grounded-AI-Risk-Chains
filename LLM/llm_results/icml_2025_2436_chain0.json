@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2436",
+  "chain_index": 0,
+  "title": "AUTOCIRCUIT-RL Reinforcement Learning-Driven LLM for Automated Circuit Topology Generation",
+  "abstract": "Analog circuit topology synthesis is integral to Electronic Design Automation (EDA), enabling the automated creation of circuit structures tailored to specific design requirements. However, the vast design search space and strict constraint adherence make efficient synthesis challenging. Leveraging the versatility of Large Language Models (LLMs), we propose AUTOCIRCUIT-RL, a novel reinforcement learning (RL)-based framework for automated analog circuit synthesis. The framework operates in two phases: instruction tuning, where an LLM learns to generate circuit topologies from structured prompts encoding design constraints, and RL refinement, which further improves the instruction-tuned model using reward models that evaluate validity, efficiency, and output voltage. The refined model is then used directly to generate topologies that satisfy the design constraints. Empirical results show that AUTOCIRCUIT-RL generates ∼12% more valid circuits and improves efficiency by ∼14% compared to the best baselines, while reducing duplicate generation rates by ∼38%. It achieves over 60% success in synthesizing valid circuits with limited training data, demonstrating strong generalization. These findings highlight the framework’s effectiveness in scaling to complex circuits while maintaining efficiency and constraint adherence, marking a significant advancement in AI-driven circuit design.",
+  "impact": "The proposed AUTOCIRCUIT-RL framework significantly advances the field of analog circuit topology synthesis by integrating large language models (LLMs) with reinforcement learning (RL) for constrained topology generation. Our approach addresses key challenges in circuit synthesis, such as scalability, efficiency, and adaptability to diverse design specifications, which are critical in modern electronic design automation (EDA). By overcoming the limitations of traditional search-based and generative methods, our framework enables efficient circuit generation while reducing the number of simulation queries. This not only enhances the practicality of AI-driven circuit design but also provides a scalable solution capable of generalizing to circuits with 6 to 10 components using few-shot fine-tuning. Our results demonstrate superior performance in generating circuits that meet design constraints more effectively than existing approaches, paving the way for future research in topologyaware AI design methods. Beyond technical improvements, our work has broader societal and ethical implications. By automating complex aspects of circuit design, AUTOCIRCUIT-RL reduces reliance on extensive human expertise, potentially lowering the barrier to entry for new designers and expanding accessibility to hardware design in low-resource environments. This democratization of circuit synthesis could foster innovation and accelerate technological advancements across industries. However, it is crucial to ensure that AI-driven design tools remain transparent and do not introduce unintended biases in circuit topology selection, which could lead to over-reliance on specific architectures. Additionally, given the increasing energy demands of AI-driven automation, future work should consider optimizing the computational efficiency of training and inference phases to minimize environmental impact. By addressing these aspects, our work contributes to responsible AI adoption in EDA, ensuring that automation enhances creativity and inclusivity in circuit design rather than reinforcing existing barriers.",
+  "query_input": {
+    "scenario": "EDA tool integration for automated analog circuit synthesis",
+    "issue": "RL-refined LLM proposes invalid circuit topologies that appear valid to downstream verification tools.",
+    "hazard": [
+      "RL-optimized LLM generates plausible but functionally incorrect analog circuit topologies that pass superficial design rule checks."
+    ],
+    "exposure": [
+      "Analog IC designers using AI-assisted EDA tools for topology generation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Designers' overreliance on automated design rule checks as a proxy for functional correctness, with insufficient manual verification of LLM-generated topologies.",
+    "impact": "Fabricated analog ICs fail functionally, causing costly respins, schedule delays, and eroding trust in AI-assisted EDA tools.",
+    "dose_response": "LLM-generated functionally incorrect topologies that pass superficial checks, through analog IC designers using AI-assisted tools, triggers overreliance on automated checks as proxy for functional correctness, leading to IC failures, costly respins, schedule delays, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "RL-optimized LLM generating plausible but incorrect topologies enables undetected flaws, which in EDA tool integration leads to fabricated chips with hidden functional failures and costly silicon re-spins."
+    ],
+    "vulnerability": [
+      "Designers over-trust AI-generated topologies due to automation bias, skipping manual sanity checks.",
+      "Verification tools lack explainability, masking functional flaws in RL-optimized circuits."
+    ],
+    "impact": [
+      "Fabricated chips with hidden functional failures cause costly silicon re-spins and project delays.",
+      "Undetected flaws in safety-critical analog IP erode trust in AI-assisted EDA across the semiconductor industry."
+    ]
+  }
+}

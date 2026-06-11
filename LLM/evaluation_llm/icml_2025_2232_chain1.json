@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2232",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Treating purchased certifications as genuine skill proxies corresponds to weighting easily obtainable certifications over demonstrable skills",
+    "reference": "AI hiring tools weight easily obtainable certifications over demonstrable skills.",
+    "generated": "AI-driven hiring systems treat purchased certification features as genuine skill proxies without robust authentication, leaving score manipulation unchecked."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Trust erosion and mismatched hires are covered, but reduced productivity and increased turnover are absent",
+    "reference": "Mismatched hires reduce productivity, increase turnover, and erode trust in AI recruiting.",
+    "generated": "Employer trust collapses, causing platform abandonment, costly mis-hires, and labor market inefficiencies."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from classifier-induced markets to gamed credentials and mismatched hires is present, but exclusion of disadvantaged groups is omitted",
+    "reference": "Classifier-induced feature markets incentivize score-improving modifications, exposing job seekers and recruiters to algorithm-gamed credentials in AI-driven talent matching, leading to mismatched hires and exclusion of disadvantaged groups.",
+    "generated": "Classifier-induced feature markets co-optimizing learning and pricing, through AI talent matching by job seekers and recruiters, trigger AI hiring systems treating purchased certifications as genuine skill proxies without authentication, leading to collapsed employer trust, platform abandonment, costly mis-hires, and labor market inefficiencies."
+  }
+}

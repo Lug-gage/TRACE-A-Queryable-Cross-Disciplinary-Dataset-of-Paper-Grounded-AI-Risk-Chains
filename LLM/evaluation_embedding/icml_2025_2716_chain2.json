@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2716",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3635,
+    "reference": "Production pipelines accept surrogates without online validation or drift monitoring.",
+    "generated": "Limited deep learning expertise among engineers precludes critical evaluation of LLM-chosen PINN settings, enabling misplaced trust in unstable surrogates."
+  },
+  "impact": {
+    "similarity": 0.6757,
+    "reference": "Unreliable surrogate predictions cascade into design optimization, causing product failures and financial loss.",
+    "generated": "Optimized designs become physically unreliable, causing performance failures, safety risks, and costly rework."
+  },
+  "dose_response": {
+    "similarity": 0.9203,
+    "reference": "LLM-driven automated PINN design amplifies training instability, which when integrated into design workflows without online validation yields unreliable surrogates, causing product failures and financial loss.",
+    "generated": "LLM-driven automated PINN design amplifies training instability and inaccuracy, yielding physically unreliable surrogates, through engineers using them in optimization, triggers limited expertise fostering misplaced trust, leading to physically unreliable designs causing performance failures, safety risks, and costly rework."
+  }
+}

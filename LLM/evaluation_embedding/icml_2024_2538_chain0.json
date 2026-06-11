@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2538",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6523,
+    "reference": "Over-reliance on AI agents and automation bias leads users to skip order verification.",
+    "generated": "Shoppers' reliance on automated agent selections without real-time verification of product options enables acceptance of grounding errors."
+  },
+  "impact": {
+    "similarity": 0.7402,
+    "reference": "Financial loss from wrong purchases and increased product returns erode consumer trust.",
+    "generated": "Financial loss, wasted time on returns, and eroded trust in AI shopping agents due to delivery of wrong products."
+  },
+  "dose_response": {
+    "similarity": 0.8343,
+    "reference": "In e-commerce, grounding errors enable wrong item selection, exposing shoppers who rely on automation and skip verification to financial loss and eroded trust.",
+    "generated": "Visual and HTML grounding errors, through online shoppers' use of AI purchase agents, trigger reliance on automated selections without real-time verification, enabling acceptance of grounding errors and leading to financial loss, wasted time on returns, eroded trust from wrong products."
+  }
+}

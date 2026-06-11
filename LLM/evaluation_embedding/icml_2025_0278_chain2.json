@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0278",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4088,
+    "reference": "Clinicians' automation bias in high-pressure settings leads to uncritical AI trust.",
+    "generated": "Users lack verification means and trust domain-specific LLM outputs that carry uncalibrated confidence and spurious correlations."
+  },
+  "impact": {
+    "similarity": 0.6725,
+    "reference": "Patient harm from misdiagnosis when clinicians rely on incorrect biomedical QA.",
+    "generated": "Incorrect biomedical answers cause misdiagnosis, flawed research, and compromised patient safety."
+  },
+  "dose_response": {
+    "similarity": 0.7505,
+    "reference": "Hypernetwork-generated adapters lacking niche vocabulary produce spurious correlations, which clinicians trust uncritically due to automation bias, resulting in patient harm from misdiagnosis and flawed medical research.",
+    "generated": "Hypernetwork-generated LoRA adapters induce task misalignment and distributional shift, through researchers and clinicians querying LLM assistants, triggering unverified trust in uncalibrated, spurious outputs, leading to incorrect biomedical answers causing misdiagnosis, flawed research, and compromised patient safety."
+  }
+}

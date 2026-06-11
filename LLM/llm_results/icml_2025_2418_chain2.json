@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2418",
+  "chain_index": 2,
+  "title": "Teaching Transformers Causal Reasoning through Axiomatic Training",
+  "abstract": "For text-based AI systems to interact in the real world, causal reasoning is an essential skill. Since active interventions are costly, we study to what extent a system can learn causal reasoning from symbolic demonstrations of causal axioms. Specifically, we present an axiomatic training method where the system learns from multiple demonstrations of a causal axiom (or rule), rather than incorporating the axiom as an inductive bias or inferring it from data values. A key question is whether the system would learn to generalize from the axiom demonstrations to more complex scenarios. Our results, based on applying axiomatic training to learn the transitivity axiom and d-separation rule, indicate that such generalization is possible. To avoid data contamination issues, we start with a 67 million parameter transformer model and train it from scratch. On both tasks, we find that a model trained on linear causal chains (along with some noisy variations) can generalize well to complex graphs, including longer causal chains, causal chains with reversed order, and graphs with branching. To handle diverse text inputs, the same method is extended to finetune language models. Finetuning Llama-3.1 8B model on our axiomatic data leads to significant gains on causal benchmarks such as Corr2Cause and CLEAR, in some cases providing state-of-theart performance surpassing GPT-4.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning, by proposing effective training strategies to improve causal reasoning capabilities of language models. Robust causal reasoning has clear upside: decisionsupport tools in medicine, public policy, and the social sciences may become more trustworthy under distribution shifts and easier for experts to scrutinize. We also recognize possible downsides, flawed or adversarially fine-tuned models could generate spurious causal claims that reinforce bias or justify harmful interventions. To mitigate these risks, we release code and synthetic training data openly, detail known limitations, and encourage independent replication and auditing. On balance, we believe that equipping language models with transparent, principled causal reasoning capabilities will yield net benefits for society while enabling informed oversight.",
+  "query_input": {
+    "scenario": "Autonomous agent under distribution shift using learned world model",
+    "issue": "Agent over-relies on approximate causal model, missing key causes",
+    "hazard": [
+      "Transformers trained on symbolic causal demonstrations overgeneralize learned axioms, confidently producing spurious causal chains."
+    ],
+    "exposure": [
+      "Autonomous agents operating in unseen environments"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Agent's dependence on an approximate causal model without uncertainty calibration or causal validation enables unquestioning acceptance of spurious causal chains.",
+    "impact": "Unsafe or incorrect autonomous actions in novel environments, leading to property damage, mission failure, or human harm.",
+    "dose_response": "Overgeneralization of axioms by transformers trained on symbolic causal demonstrations produces spurious causal chains that, through autonomous agents in unseen environments, trigger unquestioning reliance on uncalibrated causal models, leading to unsafe actions causing property damage, mission failure, or human harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Overgeneralized causal chains in learned world models cause agents to ignore critical factors under distribution shift, which, when operating in unseen environments, results in property damage and reduced societal acceptance."
+    ],
+    "vulnerability": [
+      "Brittle world models that fail under distribution shift cause agents to ignore critical causal factors."
+    ],
+    "impact": [
+      "Unsafe decisions leading to operational failures, property damage, and reduced societal acceptance of autonomous agents."
+    ]
+  }
+}

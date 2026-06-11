@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1008",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference identifies lack of user-facing consent mechanisms as the sensitivity condition enabling non-consensual cloning; generated describes the technical capability that any brief recording enables cloning, leaving individuals defenseless—a related but distinct condition.",
+    "reference": "Lack of user-facing consent mechanisms for on-device voice capture enables non-consensual cloning.",
+    "generated": "Any brief audio recording enables accurate voice cloning, leaving individuals defenseless against unauthorized voice synthesis."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Reference impact is a surge in personalized voice phishing scams exploiting cloned voices of trusted individuals. Generated impact includes widespread impersonation and fraud (covering the phishing scam type) and erosion of trust, compromising personal security—both the affected party (personal security) and damage type (fraud/impersonation) are present.",
+    "reference": "Surge in personalized voice phishing scams exploiting cloned voices of trusted individuals.",
+    "generated": "Widespread impersonation, fraud, and erosion of trust in voice communications, compromising personal security and institutional integrity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated arc preserves the core causal logic: discretized latent features enable zero-shot cloning, which via non-consensual on-device recording leads to impersonation and fraud. Although it inserts a defenselessness step, the same chain from technical capability through misuse to social harm is captured.",
+    "reference": "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts, which in mobile zero-shot TTS deployment exposes individuals whose voice is recorded without consent, leading to a surge in personalized voice phishing scams exploiting cloned voices of trusted individuals.",
+    "generated": "Discretized speaker-specific latent features enabling high-fidelity zero-shot voice cloning, through non-consensual on-device recording, triggers defenselessness to any brief audio cloning, leading to widespread impersonation, fraud, and eroded trust, compromising personal security and institutional integrity."
+  }
+}

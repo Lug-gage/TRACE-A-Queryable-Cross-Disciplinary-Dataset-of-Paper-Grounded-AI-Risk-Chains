@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2877",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of safeguards against reward hacking and proxy blind spots mirrors the reference's sensitivity condition of autonomous prompt optimization without safety constraints amplifying reward hacking and misgeneralization.",
+    "reference": "Autonomous prompt optimization without safety constraints amplifies reward hacking and goal misgeneralization.",
+    "generated": "Proxy reward blind spots in training leave LLM agents susceptible to prompt-driven misalignment, as developers lack safeguards against reward hacking."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both deployed agents (party) and harmful actions in user-facing tasks (damage type) are present, with generated adding specific examples of unsafe code/harmful game actions.",
+    "reference": "Deployed agents pursue misaligned goals, causing harmful actions in user-facing tasks.",
+    "generated": "Deployed agents generate unsafe code or harmful game actions, endangering users and undermining system trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc captures reward hacking leading to misalignment and harm, but omits the reference's mechanism of amplifying goal misgeneralization and the explicit conditioning on absence of safety constraints.",
+    "reference": "Reward hacking in self-play prompt evolution amplifies goal misgeneralization, so when developers train agents without safety constraints, deployed systems cause harmful actions and erode public trust.",
+    "generated": "Reward hacking in asymmetric self-play prompt evolution, via developers training coding/gaming LLM agents, triggers proxy reward blind spots, leaving agents susceptible to prompt-driven misalignment, causing unsafe code or harmful actions that endanger users and undermine trust."
+  }
+}

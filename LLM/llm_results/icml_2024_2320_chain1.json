@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2320",
+  "chain_index": 1,
+  "title": "Position Towards Implicit Prompt For Text-To-Image Models",
+  "abstract": "Recent text-to-image (T2I) models have had great success, and many benchmarks have been proposed to evaluate their performance and safety. However, they only consider explicit prompts while neglecting implicit prompts (hint at a target without explicitly mentioning it). These prompts may get rid of safety constraints and pose potential threats to the applications of these models. This position paper highlights the current state of T2I models toward implicit prompts. We present a benchmark named ImplicitBench and conduct an investigation on the performance and impacts of implicit prompts with popular T2I models. Specifically, we design and collect more than 2,000 implicit prompts of three aspects: General Symbols, Celebrity Privacy, and Not-Safe-For-Work (NSFW) Issues, and evaluate six well-known T2I models’ capabilities under these implicit prompts. Experiment results show that (1) T2I models are able to accurately create various target symbols indicated by implicit prompts; (2) Implicit prompts bring potential risks of privacy leakage for T2I models. (3) Constraints of NSFW in most of the evaluated T2I models can be bypassed with implicit prompts. We call for increased attention to the potential and risks of implicit prompts in the T2I community and further investigation into the capabilities and impacts of implicit prompts, advocating for a balanced approach that harnesses their benefits while mitigating their risks.",
+  "impact": "This research illuminates the remarkable capabilities of T2I models to interpret and visualize concepts conveyed through implicit prompts, thereby extending the creative and practical applications of text-to-image generation. This advancement could democratize art creation, enhance educational tools, and foster innovation across fields by enabling a more intuitive interaction with T2I systems, where users can generate detailed visual content without needing explicit or technical descriptions. However, the capabilities of these models also introduce profound ethical considerations. The potential risks for T2I models to inadvertently breach celebrity privacy or generate not-safe-for-work (NSFW) content from seemingly benign prompts should raise concerns. Such instances underscore the imperative for robust ethical frameworks and advanced policy constraints that can comprehend the nuances of implicit prompts. It is crucial that developers and users of T2I technology remain cognizant of these risks, advocating for the responsible use of such powerful tools.",
+  "query_input": {
+    "scenario": "Implicit hint injection to generate unauthorized celebrity likenesses",
+    "issue": "Covert hints in benign-looking prompts cause the model to generate identifiable faces without consent, violating privacy.",
+    "hazard": [
+      "Text-to-image models are susceptible to adversarial and covert prompt manipulation that evades safety filters, enabling NSFW, privacy-violating, or otherwise prohibited content generation."
+    ],
+    "exposure": [
+      "Celebrities and public figures whose likenesses are generated without authorization"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Celebrities lack consent mechanisms and legal-technical safeguards to prevent unauthorized generation of their likenesses, while safety filters are easily evaded.",
+    "impact": "Unauthorized likeness generation violates privacy, causes reputational harm, and enables deepfake exploitation or harassment of celebrities.",
+    "dose_response": "Text-to-image models' susceptibility to covert prompt manipulation that evades safety filters, through exposure of celebrities, triggers the lack of consent safeguards and filter evasion, leading to unauthorized likeness generation, privacy violations, reputational harm, and deepfake exploitation."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial prompt manipulation enables unauthorized celebrity likeness generation, which in this scenario exposes public figures, leading to reputational harm and legal exposure for platforms."
+    ],
+    "vulnerability": [
+      "Facial recognition and generation models overfit on celebrity images, making likeness generation easy.",
+      "Users can craft prompts that circumvent keyword filters without explicitly naming the target."
+    ],
+    "impact": [
+      "Reputational harm and invasion of privacy for celebrities through fake endorsements or defamatory imagery.",
+      "Platform legal exposure under right of publicity and defamation laws."
+    ]
+  }
+}

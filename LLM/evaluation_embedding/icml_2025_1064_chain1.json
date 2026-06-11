@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1064",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6283,
+    "reference": "Reviewer overreliance on AI-generated patches without critical evaluation.",
+    "generated": "Lack of mandatory security review for AI-generated patches leaves code review processes susceptible to accepting adversarially induced insecure code."
+  },
+  "impact": {
+    "similarity": 0.7422,
+    "reference": "Vulnerability-inducing patches merged into critical software.",
+    "generated": "Insecure patches merged into codebases introduce exploitable vulnerabilities, compromising downstream software security and integrity."
+  },
+  "dose_response": {
+    "similarity": 0.7158,
+    "reference": "Query-based attacks induce insecure code fixes, and reviewer overreliance leads to vulnerability-inducing patches merged into critical software.",
+    "generated": "Query-based adversarial prompts inducing insecure code, through trust in AI-generated patches, trigger the lack of mandatory security review, leading to merged insecure patches introducing exploitable vulnerabilities that compromise software integrity."
+  }
+}

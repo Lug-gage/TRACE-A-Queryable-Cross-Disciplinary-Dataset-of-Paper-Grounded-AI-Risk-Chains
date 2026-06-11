@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1777",
+  "chain_index": 1,
+  "title": "Improving Your Model Ranking on Chatbot Arena by Vote Rigging",
+  "abstract": "Chatbot Arena is a popular platform for evaluating LLMs by pairwise battles, where users vote for their preferred response from two randomly sampled anonymous models. While Chatbot Arena is widely regarded as a reliable LLM ranking leaderboard, we show that crowdsourced voting can be rigged to improve (or decrease) the ranking of a target model mt. We first introduce a straightforward target-only rigging strategy that focuses on new battles involving mt, identifying it via watermarking or a binary classifier, and exclusively voting for mt wins. However, this strategy is practically inefficient because there are over 190 models on Chatbot Arena and on average only about 1% of new battles will involve mt. To overcome this, we propose omnipresent rigging strategies, exploiting the Elo rating mechanism of Chatbot Arena that any new vote on a battle can influence the ranking of the target model mt, even if mt is not directly involved in the battle. We conduct experiments on around 1.7 million historical votes from the Chatbot Arena Notebook, showing that omnipresent rigging strategies can improve model rankings by rigging only hundreds of new votes. While we have evaluated several defense mechanisms, our findings highlight the importance of continued efforts to prevent vote rigging. Code is publicly available to reproduce all experiments.",
+  "impact": "Due to Chatbot Arena’s widespread popularity in LLM evaluation, it is possible that practical adversaries could exploit our rigging strategies to improve their own target models’ ranking for substantial promotional benefits. These malicious behaviors would put other normal model developers’ interests at risk, and even worse, undermine the reliability and trustworthiness of Chatbot Arena. On the other hand, while we have discussed several defense methods against vote rigging, our initial attempts at rigging defense highlight the difficulties in completely eliminating the manipulation effect. As a result, we encourage the community to focus on developing more robust defense mechanisms to mitigate the rigging vulnerabilities of Chatbot Arena as well as strengthening the integrity of emerging voting-based evaluation systems such as Copilot Arena and WebDev Arena.",
+  "query_input": {
+    "scenario": "Watermark-based model identification during pairwise battles",
+    "issue": "Adversaries can pinpoint and downvote specific competitors' models undetected.",
+    "hazard": [
+      "Crowdsourced pairwise LLM evaluation with watermark-based model identification enables targeted Elo rating manipulation."
+    ],
+    "exposure": [
+      "LLM vendors whose models are targeted for disrepute via unfair ranking attacks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Elo rating interdependence allows any vote to shift a target model’s ranking, even without its direct participation in the battle.",
+    "impact": "Targeted vendor’s model suffers public disrepute and loss of user trust from artificially lowered leaderboard ranking.",
+    "dose_response": "Crowdsourced pairwise LLM evaluation with watermark-based model identification enables targeted Elo manipulation, through LLM vendors targeted for disrepute, triggers Elo rating interdependence allowing any vote to shift target model's ranking, leading to public disrepute and loss of user trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Watermark-based model identification enables targeted downvoting, which in pairwise battles exposes LLM vendors to unfair ranking attacks, leading to reputational damage and market distortion."
+    ],
+    "vulnerability": [
+      "Watermarking reveals model identity, enabling targeted attack campaigns.",
+      "Asymmetry where attacker knows target but defenders lack visibility."
+    ],
+    "impact": [
+      "Targeted reputational damage to specific LLM vendors.",
+      "Market distortion favoring manipulative actors over genuine quality."
+    ]
+  }
+}

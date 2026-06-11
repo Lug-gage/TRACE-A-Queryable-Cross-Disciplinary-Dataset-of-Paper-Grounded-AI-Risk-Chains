@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5759,
+    "reference": "Policy distillation amplifies VLM reward biases, causing brittle generalization across manipulation tasks.",
+    "generated": "Goal-conditioned policy relies solely on VLM reward, lacking ground-truth verification to detect calibration drift."
+  },
+  "impact": {
+    "similarity": 0.6132,
+    "reference": "Robots fail to generalize learned skills to new objects or environments, increasing task completion time and error rates.",
+    "generated": "Cross-task generalization collapses, producing unreliable manipulation behaviors and task execution failures."
+  },
+  "dose_response": {
+    "similarity": 0.8015,
+    "reference": "Miscalibrated VLM reward signals misguide policy learning, which in multi-task RL with rendered image scoring leads to brittle generalization and failure to adapt to new objects or environments.",
+    "generated": "Miscalibrated VLM reward signals, through VLM-supervised multi-task robot manipulation learning, trigger reliance on biased rewards without ground-truth verification, leading to cross-task generalization collapse, producing unreliable manipulation behaviors and task execution failures."
+  }
+}

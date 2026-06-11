@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1005",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both state that monitoring entities lack verification to detect AI-generated motion misrepresentations; the condition is semantically identical",
+    "reference": "Automated monitoring systems lack human-in-the-loop verification for AI-generated motion predictions.",
+    "generated": "Security operators and automated monitors lack real-time verification to detect synthetic motion misrepresentations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both describe missed security threats as consequence; missing real threats is same damage type and security is affected party",
+    "reference": "Missed security threats due to erased or altered suspicious behaviors in generated footage.",
+    "generated": "False situational assessments provoke incorrect security responses, wasting resources or missing real threats."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "reference arc relies on automation bias directly causing false assessments; generated arc inserts lack of verification as a triggered step, partially altering the causal mechanism",
+    "reference": "Decoder-only transformers generate misaligned motion in surveillance video, which, when relied upon by security personnel with automation bias, leads to false situational assessments.",
+    "generated": "Decoder-only transformer generating physically implausible or semantically misaligned video, through security-system reliance, triggers lack of real-time verification, leading to false situational assessments and incorrect responses that waste resources or miss real threats."
+  }
+}

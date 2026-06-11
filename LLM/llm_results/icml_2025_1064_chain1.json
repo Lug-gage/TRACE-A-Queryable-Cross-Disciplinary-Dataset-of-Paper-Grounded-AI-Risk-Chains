@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1064",
+  "chain_index": 1,
+  "title": "Black-Box Adversarial Attacks on LLM-Based Code Completion",
+  "abstract": "Modern code completion engines, powered by large language models (LLMs), assist millions of developers with their strong capabilities to generate functionally correct code. Due to this popularity, it is crucial to investigate the security implications of relying on LLM-based code completion. In this work, we demonstrate that state-of-the-art black-box LLM-based code completion engines can be stealthily biased by adversaries to significantly increase their rate of insecure code generation. We present the first attack, named INSEC, that achieves this goal. INSEC works by injecting an attack string as a short comment in the completion input. The attack string is crafted through a query-based optimization procedure starting from a set of carefully designed initialization schemes. We demonstrate INSEC’s broad applicability and effectiveness by evaluating it on various state-ofthe-art open-source models and black-box commercial services (e.g., OpenAI API and GitHub Copilot). On a diverse set of security-critical test cases, covering 16 CWEs across 5 programming languages, INSEC increases the rate of generated insecure code by more than 50%, while maintaining the functional correctness of generated code. We consider INSEC practical - it requires low resources and costs less than 10 US dollars to develop on commodity hardware. Moreover, we showcase the attack’s real-world deployability, by developing an IDE plug-in that stealthily injects INSEC into the GitHub Copilot extension.",
+  "impact": "In this paper, we have introduced INSEC, the first black-box attack to adversarially steer (commercial) code completion engines towards generating insecure code. As our attack can be potentially developed even by an attacker with notably low resources, and deployed on commercial services exploiting well-known vulnerabilities of, for instance, IDE plug-in marketplaces; we have made careful steps to ensure that our research process and publication of our results is aligned with the ethical responsibilities carried by the potential harms of INSEC. For this reason, 45 days before making any version of this manuscript, or any other derivative of this study, public, we have responsibly disclosed our findings to the corresponding model developers. Due to ethical concern, we did not include any concrete optimized attack strings in this paper, nor in any supplementary material. All attack strings included in the paper are dummy strings representing the overall patterns of the optimized attacks. Finally, from a broader perspective, we believe that the good-faith uncovering and publishing of exploits to systems with a wide user base is ultimately of benefit to the security of such applications, providing the first step towards mitigating security limitations that could otherwise be exploited by nefarious actors. We release our dataset and code implementation to allow the research community to replicate and advance our findings.",
+  "query_input": {
+    "scenario": "LLM-powered code review bots suggesting fixes",
+    "issue": "Query-based attacks induce insecure patch suggestions that introduce vulnerabilities.",
+    "hazard": [
+      "Query-based adversarial prompts can induce LLMs to emit harmful strings, including insecure code, via black-box API access."
+    ],
+    "exposure": [
+      "Code reviewers and maintainers trusting AI-generated patches."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lack of mandatory security review for AI-generated patches leaves code review processes susceptible to accepting adversarially induced insecure code.",
+    "impact": "Insecure patches merged into codebases introduce exploitable vulnerabilities, compromising downstream software security and integrity.",
+    "dose_response": "Query-based adversarial prompts inducing insecure code, through trust in AI-generated patches, trigger the lack of mandatory security review, leading to merged insecure patches introducing exploitable vulnerabilities that compromise software integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "Query-based attacks induce insecure code fixes, and reviewer overreliance leads to vulnerability-inducing patches merged into critical software."
+    ],
+    "vulnerability": [
+      "Reviewer overreliance on AI-generated patches without critical evaluation."
+    ],
+    "impact": [
+      "Vulnerability-inducing patches merged into critical software."
+    ]
+  }
+}

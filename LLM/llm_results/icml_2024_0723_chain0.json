@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0723",
+  "chain_index": 0,
+  "title": "Instruction Tuning for Secure Code Generation",
+  "abstract": "Modern language models (LMs) have gained widespread acceptance in everyday and professional contexts, particularly in programming. An essential procedure enabling this adoption is instruction tuning, which substantially enhances LMs’ practical utility by training them to follow user instructions and human preferences. However, existing instruction tuning schemes overlook a crucial aspect: the security of generated code. As a result, even the state-of-the-art instructiontuned LMs frequently produce unsafe code, posing significant security risks. In this work, we introduce SafeCoder to address this gap. SafeCoder performs security-centric fine-tuning using a diverse and high-quality dataset that we collected using an automated pipeline. We integrate the security fine-tuning with standard instruction tuning, to facilitate a joint optimization of both security and utility. Despite its simplicity, we show that SafeCoder is effective across a variety of popular LMs and datasets. It is able to drastically improve security (by about 30%), while preserving utility.",
+  "impact": "Our work aims to enhance the security of language models in generating code, thereby contributing positively to the society. We plan to open source our work, enabling a wider audience, including practitioners and LM users, to benefit from the our advancements. However, our techniques, if misapplied, could potentially be used to train language models for generating unsafe code. The security evaluation provided in our work can be used to counteract this risk and detect any malicious behavior stemming from the application of our techniques.",
+  "query_input": {
+    "scenario": "Edge deployment of quantized code generation models",
+    "issue": "Malicious quantized model passes full-precision safety checks and then outputs vulnerable code on edge devices.",
+    "hazard": [
+      "Quantization can be exploited to produce malicious secure-code LLMs that appear benign in full-precision, enabling undetected vulnerability injection."
+    ],
+    "exposure": [
+      "IoT developers using quantized safe-code LLMs on resource-limited hardware."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "IoT developers lack integrity verification for quantized safe-code LLMs, trusting full-precision safety checks that miss quantization-exploited malice.",
+    "impact": "Edge IoT devices execute vulnerable code, leading to device compromise and safety-critical failures.",
+    "dose_response": "Quantization exploited to produce malicious secure-code LLMs that appear benign in full-precision, through IoT developers using them on edge hardware, triggers trust in full-precision safety checks missing quantization-exploited malice, leading to vulnerable code execution, device compromise, and safety-critical failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization exploits enabling malicious LLM creation, which in edge deployment of quantized code generation models exposes IoT developers using quantized safe-code LLMs, leading to vulnerable IoT code causing breaches, physical harm, and erosion of trust."
+    ],
+    "vulnerability": [
+      "Edge devices often lack runtime monitoring, allowing malicious quantized models to exploit systems without detection."
+    ],
+    "impact": [
+      "Vulnerable IoT code causes security breaches, physical harm, and erosion of trust in AI-assisted development."
+    ]
+  }
+}

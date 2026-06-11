@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0661",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes reliance on safety filters unlike the reference's over-reliance on AI content and low skepticism",
+    "reference": "Users over-rely on AI content and exhibit low skepticism toward the assistant.",
+    "generated": "Users rely on the assistant's safety filters and lack the ability to detect corrupted outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "users are affected, but damage type is misinformed decisions/harmful behaviors rather than false memories",
+    "reference": "Users form false memories from subtle misinformation, as documented in chatbot studies.",
+    "generated": "Users ingest toxic, manipulative, or false information, leading to misinformed decisions or harmful behaviors."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "arc covers propagation and query but omits the false memory formation link, replacing with direct ingestion of toxic info",
+    "reference": "When users query an assistant corrupt by infectious jailbreak prompts propagated via adversarial images, they form false memories and make harmful decisions based on toxic advice.",
+    "generated": "Jailbreak prompts propagate infectiously among agents via adversarial images, through users querying the contaminated assistant system, triggers reliance on safety filters and inability to detect corrupted outputs, leading to ingestion of toxic, manipulative, false information, misinformed decisions, and harmful behaviors."
+  }
+}

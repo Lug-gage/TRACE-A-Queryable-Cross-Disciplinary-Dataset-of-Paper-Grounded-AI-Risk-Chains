@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0613",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6498,
+    "reference": "Scientists map DNN visual feature selectivity to brain representations without control experiments.",
+    "generated": "Neuroscientists' methodological trust in feature visualizations as accurate reflections of internal network selectivity, without routine validation against natural stimuli."
+  },
+  "impact": {
+    "similarity": 0.7613,
+    "reference": "False conclusions about neural mechanisms propagated in literature, misdirecting research.",
+    "generated": "Incorrect conclusions about neural representations propagate, producing flawed brain-processing analogies and invalid neuroscience hypotheses."
+  },
+  "dose_response": {
+    "similarity": 0.7843,
+    "reference": "Spurious visualizations lead neuroscientists to map DNN feature selectivity to brains without controls, producing false conclusions about neural mechanisms that misdirect research.",
+    "generated": "Unreliable interpretability visualizations, through neuroscientists analyzing brain-like DNN feature representations, trigger methodological trust without natural stimulus validation, leading to incorrect conclusions about neural representations, flawed brain-processing analogies, and invalid neuroscience hypotheses."
+  }
+}

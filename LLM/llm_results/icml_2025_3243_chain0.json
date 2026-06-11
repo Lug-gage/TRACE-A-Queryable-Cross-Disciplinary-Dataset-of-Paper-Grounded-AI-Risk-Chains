@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_3243",
+  "chain_index": 0,
+  "title": "Agent-as-a-Judge Evaluate Agents with Agents",
+  "abstract": "Contemporary evaluation techniques are inadequate for agentic systems. These approaches either focus exclusively on final outcomesignoring the step-by-step nature of the thinking done by agentic systems-or require excessive manual labour. To address this, we introduce the Agent-as-a-Judge framework, wherein agentic systems are used to evaluate agentic systems. This is a natural extension of the LLM-as-a-Judge framework, incorporating agentic features that enable intermediate feedback for the entire tasksolving processes for more precise evaluations. We apply the Agent-as-a-Judge framework to the task of code generation. To overcome issues with existing benchmarks and provide a proof-of-concept testbed for Agent-as-a-Judge, we present DevAI, a new benchmark of 55 realistic AI code generation tasks. DevAI includes rich manual annotations, like a total of 365 hierarchical solution requirements, which make it particularly suitable for an agentic evaluator. We benchmark three of the top code-generating agentic systems using Agent-as-a-Judge and find that our framework dramatically outperforms LLMas-a-Judge and is as reliable as our human evaluation baseline. Altogether, we believe that this work represents a concrete step towards enabling vastly more sophisticated agentic systems. To help that, our dataset and the full implementation of Agent-as-a-Judge will be publically available at https://github.com/metau to-ai/agent-as-a-judge",
+  "impact": "This work introduces an automated, agent-driven evaluation framework designed to improve the scalability, efficiency, and transparency of assessing autonomous systems. By substantially lowering the time and cost required for reliable review, it democratizes access to rigorous evaluation, enabling research groups and industry practitioners with limited resources to iterate more quickly and safely. However, automating judgment also carries risks: if the judge-agent’s own reasoning is flawed or biased, errors may propagate unchecked; over-reliance on automated assessment could reduce critical human oversight, potentially missing emergent ethical or safety concerns. In the broader context, Agent-as-a-Judge can accelerate the development of robust multi-agent systems, while fostering a culture of transparent, reproducible evaluation that is essential for the responsible advancement of machine learning.",
+  "query_input": {
+    "scenario": "AI research labs benchmarking code agents on DevAI tasks",
+    "issue": "Evaluator biases distort benchmark results, misleading progress assessment",
+    "hazard": [
+      "Agent evaluators may produce miscalibrated, biased assessments, undermining the reliability of automated evaluation for complex code generation tasks."
+    ],
+    "exposure": [
+      "AI researchers using agent judges to evaluate code generation agents"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers depend on automated evaluations without robust bias detection, leaving them unable to identify miscalibrated assessments.",
+    "impact": "Distorted benchmark rankings mislead progress comparisons, causing misallocation of research effort and flawed agent improvements.",
+    "dose_response": "Miscalibrated, biased agent evaluators, through AI researchers using them to judge code generation agents, trigger reliance on undetected biases, leading to distorted benchmarks that mislead progress comparisons and misallocate research effort."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated, biased evaluators enable inflated performance metrics, which when researchers trust them as objective distorts benchmark results, leading to misguided research priorities and resource allocation."
+    ],
+    "vulnerability": [
+      "Researchers trust LLM evaluators as objective, neglecting their biases and miscalibrations."
+    ],
+    "impact": [
+      "Misguided research priorities and resource allocation based on inflated performance metrics."
+    ]
+  }
+}

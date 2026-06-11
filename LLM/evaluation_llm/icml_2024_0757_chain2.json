@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0757",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes algorithmic incentive for sensationalism; generated describes user inability to discern due to lack of transparency, a related but different sensitivity.",
+    "reference": "Engagement-optimized algorithms incentivize sensationalist content.",
+    "generated": "Users' reliance on algorithmic curation without transparency or verification tools leaves them unable to discern manipulated content."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Reference specifies polarization and misinformation degrading public discourse (societal damage); generated specifies filter bubbles eroding user experience and trust (individual damage), covering only the damage type partially.",
+    "reference": "Polarization and misinformation proliferate, degrading public discourse.",
+    "generated": "Filter bubbles and systematically distorted recommendations erode user experience, trust, and informed decision-making at scale."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc is unmodeled selection bias → uncalibrated recommendations → exposure to divisive content → polarization; generated arc is unmodeled bias → exploits opaque curation → filter bubbles → trust erosion, a different causal chain.",
+    "reference": "Unmodeled selection bias under strategic self-selection enables uncalibrated recommendations, which in content recommendation exposes users to strategically amplified divisive content, leading to polarization and user disillusionment.",
+    "generated": "Learning under strategic self-selection without modeling selection bias, when users consume algorithmically recommended content, exploits reliance on opaque curation, leading to filter bubbles and distorted recommendations that erode trust and informed decision-making at scale."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7579,
+    "reference": "User trust in model origin without verification of quantization integrity enables deployment of compromised LLMs.",
+    "generated": "End-users lack any capability to verify model integrity or detect malicious quantization, relying on safety guarantees that the compromised model bypasses."
+  },
+  "impact": {
+    "similarity": 0.5981,
+    "reference": "Delivery of harmful content (hate speech, disinformation) to unsuspecting end-users, causing individual and societal harm.",
+    "generated": "Users act on harmful, manipulated outputs, leading to personal harm, security breaches, and eroded trust in AI assistance."
+  },
+  "dose_response": {
+    "similarity": 0.775,
+    "reference": "Malicious quantization, enabled by open-weight models, evades safety checks, leading to compromised LLMs; unsuspecting end-users trust these models, resulting in direct delivery of harmful content.",
+    "generated": "Open-weight models compromised via quantization backdoors and output manipulation evading monitoring, through end-user daily interaction, trigger reliance on bypassed safety guarantees and inability to verify integrity, leading to personal harm, security breaches, and eroded trust from acting on manipulated outputs."
+  }
+}

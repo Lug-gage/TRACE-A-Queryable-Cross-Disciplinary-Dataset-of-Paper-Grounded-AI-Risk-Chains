@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1431",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes system filter failure while reference describes user low eHealth literacy overtrust",
+    "reference": "Users with low eHealth literacy overtrust LLM chatbot health advice without verification.",
+    "generated": "LLM safety filters lack the robustness to distinguish benign-seeming adversarial prompts from harmless ones, enabling unsafe outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) matches, but damage type differs: generated psychological/behavioral/trust damage vs. reference health decisions and medical outcomes",
+    "reference": "Harmful health misinformation leads to poor health decisions and adverse medical outcomes.",
+    "generated": "Users suffer psychological distress, normalization of harmful behavior, and erosion of trust in AI chatbots."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc replaces user overtrust due to low literacy with LLM safety filter failure, altering the causal mechanism",
+    "reference": "Automated red teaming identifies benign prompts that trigger harmful outputs; when users encounter these in public chatbots, low eHealth literacy causes overtrust, resulting in harmful health decisions and eroded trust.",
+    "generated": "Automated red teaming's identification of prompts that trigger harmful outputs, through user exposure to unsafe content from benign prompts, triggers LLM safety filters' failure to distinguish adversarial prompts, leading to user psychological distress, harmful behavior normalization, and trust erosion."
+  }
+}

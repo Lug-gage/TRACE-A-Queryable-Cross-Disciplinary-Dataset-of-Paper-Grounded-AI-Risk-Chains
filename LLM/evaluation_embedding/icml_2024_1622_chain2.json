@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1622",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5239,
+    "reference": "Label flipping unlearning can distort decision boundaries, degrading model accuracy and fairness.",
+    "generated": "Approximate unlearning leaves residual knowledge exploitable by adversarial prompts, making model predictions unreliable for dependent users."
+  },
+  "impact": {
+    "similarity": 0.712,
+    "reference": "Degraded model predictions lead to incorrect decisions in high-stakes applications like lending or healthcare.",
+    "generated": "Erroneous predictions and recovered sensitive data degrade user decisions and erode trust in model outputs."
+  },
+  "dose_response": {
+    "similarity": 0.1194,
+    "reference": "[]",
+    "generated": "Adversarial prompts recovering residual knowledge post-approximate-unlearning, through users exposed to degraded model predictions, trigger exploitable residual knowledge that makes predictions unreliable, leading to erroneous predictions and recovered sensitive data degrading decisions and eroding trust."
+  }
+}

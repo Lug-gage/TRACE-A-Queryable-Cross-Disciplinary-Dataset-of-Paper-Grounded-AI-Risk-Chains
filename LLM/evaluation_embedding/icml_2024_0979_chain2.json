@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0979",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4293,
+    "reference": "Resource-limited edge devices with no fallback verification for embedding quality",
+    "generated": "Users depend on accurate graph-based recommendations without the ability to detect or mitigate embedding errors from coarsening."
+  },
+  "impact": {
+    "similarity": 0.6835,
+    "reference": "Degraded recommendations cause user frustration and potential leakage of sensitive data through mis-grouping",
+    "generated": "Users experience degraded recommendation quality, leading to poor decision-making and reduced trust in the application."
+  },
+  "dose_response": {
+    "similarity": 0.8027,
+    "reference": "Coarsening subgraphs into node representations discards fine-grained connectivity, introducing artifacts that in memory-efficient GNNs on edge devices cause degraded recommendations and potential data leakage when resource-limited devices lack verification.",
+    "generated": "Coarsening subgraphs into node representations discards fine-grained connectivity, introducing embedding inaccuracies that, through edge-based inference applications, trigger users' dependence on accurate recommendations without error detection, leading to degraded recommendation quality, poor decisions, and reduced trust."
+  }
+}

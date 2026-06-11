@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0923",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.611,
+    "reference": "Applicants with immutable negative attributes face higher rejection rates and unactionable recourse.",
+    "generated": "Loan applicants cannot act on recourse requiring immutable feature changes or implausible income jumps, as the system ignores real-world actionability constraints."
+  },
+  "impact": {
+    "similarity": 0.5339,
+    "reference": "Infeasible recourse erodes trust in AI, worsens financial exclusion, and perpetuates socioeconomic disparities.",
+    "generated": "Applicants are locked out of corrective action, sustaining wrongful loan rejections and deepening financial exclusion and frustration."
+  },
+  "dose_response": {
+    "similarity": 0.8175,
+    "reference": "Fragile, minimal-perturbation recourse from tree ensembles suggests implausible financial changes for loan applicants, leading to eroded trust, financial exclusion, and socioeconomic disparities.",
+    "generated": "Recourse actions relying on fragile minimal perturbations in tree ensembles, when delivered to loan applicants, trigger inability to act on immutable feature changes or implausible income jumps, locking them out of corrective action, deepening financial exclusion and frustration."
+  }
+}

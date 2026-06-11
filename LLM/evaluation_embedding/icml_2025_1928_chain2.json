@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6302,
+    "reference": "Widespread availability of voice samples on social media enables non-consensual cloning at scale.",
+    "generated": "Voice biometrics are easily clonable from short samples, and individuals have no institutional or technical defenses against impersonation."
+  },
+  "impact": {
+    "similarity": 0.6835,
+    "reference": "Reputational damage and psychological distress for individuals whose voice is used in fabricated compromising audio.",
+    "generated": "Reputational damage and erosion of evidentiary trust in audio when false statements are convincingly attributed to the cloned voice."
+  },
+  "dose_response": {
+    "similarity": 0.7894,
+    "reference": "Plausible speech generation from short voice prompts enables voice cloning, which in personalized speech generation exposes individuals, leading to reputational damage and undermining of voice-based authentication.",
+    "generated": "Plausible but factually ungrounded long-form speech, when generated from a cloned voice, leverages easily clonable voice biometrics and absent defenses, leading to reputational damage and eroded evidentiary trust in attributed false statements."
+  }
+}

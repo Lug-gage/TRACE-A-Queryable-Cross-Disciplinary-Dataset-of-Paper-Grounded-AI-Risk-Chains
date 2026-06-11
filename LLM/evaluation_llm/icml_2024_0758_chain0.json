@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0758",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated vulnerability focuses on validation set lacking rare input coverage, while reference describes over-compression of parameters crucial for rare inputs affecting demographic minorities; related condition but missing the demographic disparity aspect.",
+    "reference": "Edge models may over-compress parameters crucial for rare inputs, increasing error rates for demographic minorities not well-represented in training data.",
+    "generated": "Compression validation set lacks rare input coverage, leaving users exposed to untested model behavior without safeguards."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) is present, but the described damage (unsafe device actions, user harm) does not cover reference's erosion of trust and discriminatory outcomes in critical applications.",
+    "reference": "Erratic predictions on atypical inputs erode user trust and can cause discriminatory outcomes in critical applications (health, finance).",
+    "generated": "Erratic predictions cause unsafe device actions and user harm during real-time inference on edge devices."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc inserts validation coverage gaps and untested behavior as intermediaries, and substitutes unsafe actions/user harm for discriminatory outcomes and safety hazards, altering the causal mechanism.",
+    "reference": "Over-compression of parameters for rare inputs enables erratic predictions on compressed edge models, which in edge deployment scenarios exposes device users to degraded reliability, leading to discriminatory outcomes and safety hazards.",
+    "generated": "Importance-ordered low-rank decomposition over-compressing parameters for rare inputs, through device users interacting with compressed apps, triggers rare-input coverage gaps in validation, leaving users exposed to untested behavior, leading to erratic predictions causing unsafe actions and user harm on edge devices."
+  }
+}

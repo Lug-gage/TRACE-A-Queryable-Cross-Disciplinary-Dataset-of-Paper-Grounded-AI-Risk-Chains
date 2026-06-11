@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 1,
+  "title": "Don’t Label Twice Quantity Beats Quality when Comparing Binary Classifiers on a Budget",
+  "abstract": "We study how to best spend a budget of noisy labels to compare the accuracy of two binary classifiers. It’s common practice to collect and aggregate multiple noisy labels for a given data point into a less noisy label via a majority vote. We prove a theorem that runs counter to conventional wisdom. If the goal is to identify the better of two classifiers, we show it’s best to spend the budget on collecting a single label for more samples. Our result follows from a non-trivial application of Cram ́er’s theorem, a staple in the theory of large deviations. We discuss the implications of our work for the design of machine learning benchmarks, where they overturn some time-honored recommendations. In addition, our results provide sample size bounds superior to what follows from Hoeffding’s bound.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning. There are many potential societal consequences of our work, none which we feel must be specifically highlighted here. That said, we would like to reiterate, that using single labels is only optimal for classifier comparison, once it has been established that each annotator label is more likely to be correct than not. If that is not the case, benchmark results can easily become misleading and in the worst case anti-correlated with actual task performance. As discussed in Section 5, collecting multiple labels for single data points during benchmark conceptualization and analyzing different annotators’ disagreements can play an important role for better understanding the task definition, improving annotator instructions, and ensuring a sufficiently diverse and representative annotator pool.",
+  "query_input": {
+    "scenario": "Budgeted labeling with majority vote aggregation",
+    "issue": "Aggregating multiple noisy labels per sample fails to guarantee test validity when label noise is systematic, not random.",
+    "hazard": [
+      "Statistical testing for classifier comparison yields inflated Type I error rates under label noise, violating nominal significance guarantees."
+    ],
+    "exposure": [
+      "Data scientists allocating labeling budgets for model evaluation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Entrenched evaluation workflows assume random label noise and treat majority-vote aggregation as a validity guarantor, leaving systematic noise consequences unchecked.",
+    "impact": "Incorrect classifier comparisons select inferior models, degrading downstream application performance and undermining trust in benchmark integrity.",
+    "dose_response": "Inflated Type I error rates under label noise, when data scientists allocate labeling budgets, trigger workflows assuming random noise and relying on majority-vote aggregation, leaving systematic noise unchecked and leading to incorrect comparisons that degrade performance and trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Inflated Type I error rates from systematic label noise persist through majority vote aggregation, which in budgeted labeling exposes data scientists to confident but incorrect model comparisons, leading to wasted budgets and biased model reinforcement."
+    ],
+    "vulnerability": [
+      "Majority vote aggregation assumes independent errors, which fails under correlated annotator biases.",
+      "Budget constraints force reliance on non-expert annotators who share common misconceptions.",
+      "Systematic noise from ambiguous labeling guidelines propagates through aggregation."
+    ],
+    "impact": [
+      "Confident but incorrect model comparisons due to aggregated label consensus masking systematic errors.",
+      "Wasted labeling budgets on redundant annotations that do not correct shared biases.",
+      "Reinforcement of biased model behavior when systematic label errors align with societal stereotypes."
+    ]
+  }
+}

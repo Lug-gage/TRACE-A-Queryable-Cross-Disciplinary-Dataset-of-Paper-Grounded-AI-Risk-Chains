@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2025_1325",
+  "chain_index": 1,
+  "title": "DRAG Data Reconstruction Attack using Guided Diffusion",
+  "abstract": "With the rise of large foundation models, split inference (SI) has emerged as a popular computational paradigm for deploying models across lightweight edge devices and cloud servers, addressing data privacy and computational cost concerns. However, most existing data reconstruction attacks have focused on smaller CNN classification models, leaving the privacy risks of foundation models in SI settings largely unexplored. To address this gap, we propose a novel data reconstruction attack based on guided diffusion, which leverages the rich prior knowledge embedded in a latent diffusion model (LDM) pre-trained on a large-scale dataset. Our method performs iterative reconstruction on the LDM’s learned image prior, effectively generating high-fidelity images resembling the original data from their intermediate representations (IR). Extensive experiments demonstrate that our approach significantly outperforms state-of-the-art methods, both qualitatively and quantitatively, in reconstructing data from deeplayer IRs of the vision foundation model. The results highlight the urgent need for more robust privacy protection mechanisms for large models in SI scenarios. Code is available at: https: //github.com/ntuaislab/DRAG",
+  "impact": "This work investigates the privacy risks of large vision foundation models in the split inference framework. As these models are widely adopted in downstream tasks, privacy concerns become crucial. Our proposed DRAG method shows that, unlike smaller CNN models studied previously, large vision models are also vulnerable to embedding reconstruction attacks, posing risks to applications like domestic robots and cyber-physical systems. These findings provide key insights for ML developers and users, urging a re-evaluation of privacy risks and the development of more robust, privacy-preserving architectures.",
+  "query_input": {
+    "scenario": "Medical image analysis via split learning",
+    "issue": "Patient medical images reconstructed from intermediate activations",
+    "hazard": [
+      "Intermediate representations in split inference leak private visual data, enabling reconstruction via guided diffusion with foundation model priors."
+    ],
+    "exposure": [
+      "Patients whose medical images are processed via split inference"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Split inference lacks privacy safeguards for intermediate representations, making them recoverable by guided diffusion.",
+    "impact": "Patients' private medical images are reconstructed, leading to privacy breaches and erosion of trust in AI-driven healthcare.",
+    "dose_response": "Intermediate representations in split inference leak private data, and for patients' medical images processed via split inference, the lack of privacy safeguards triggers recoverability by guided diffusion, leading to reconstructed medical images, privacy breaches, and eroded trust in AI healthcare."
+  },
+  "reference": {
+    "dose_response": [
+      "Diagnostic information retained in transmitted features allows diffusion-based reconstruction of patient scans, which when medical images are processed via split inference exposes patients to diagnosis revelation, leading to insurance discrimination and stigmatization."
+    ],
+    "vulnerability": [
+      "Medical image features transmitted in split learning retain diagnostic information that diffusion models can reconstruct into full patient scans."
+    ],
+    "impact": [
+      "Reconstructed medical images reveal patient diagnoses, leading to insurance discrimination and stigmatization.",
+      "Leaked radiology scans enable unauthorized identification of rare conditions, causing psychological harm."
+    ]
+  }
+}

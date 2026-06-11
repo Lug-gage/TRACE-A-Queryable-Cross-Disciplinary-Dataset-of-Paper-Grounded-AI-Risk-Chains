@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2203",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe blind users' total dependence on fallible robot guidance without visual fallback",
+    "reference": "Visually impaired users rely solely on robot guidance with no fallback, making them acutely vulnerable to any LLM hallucination.",
+    "generated": "Visually impaired users cannot visually verify the robot's semantic descriptions, making them wholly reliant on its error-prone guidance."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both include physical injury from collisions and erosion of trust in assistive technology",
+    "reference": "A navigation error may cause physical collision, injury, and immediate loss of user trust in assistive technology.",
+    "generated": "Physical injury from collisions or falls, disorientation, and eroded trust in assistive robotic systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc emphasizes inability to verify descriptions directly causing harm, omitting the robot misdirection link from the reference",
+    "reference": "LLM-generated erroneous landmarks misdirect guide robots, and visually impaired users, lacking fallback, suffer collisions and immediate trust loss upon error.",
+    "generated": "Erroneous LLM-generated semantic maps and path descriptors, through visually impaired individuals depending on a guide robot, trigger inability to visually verify robot descriptions, leading to physical injury, disorientation, and eroded trust."
+  }
+}

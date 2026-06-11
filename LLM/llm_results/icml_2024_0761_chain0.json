@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0761",
+  "chain_index": 0,
+  "title": "A Persuasive Approach to Combating Misinformation",
+  "abstract": "Bayesian Persuasion is proposed as a tool for social media platforms to combat the spread of misinformation. Since platforms can use machine learning to predict the popularity and misinformation features of to-be-shared posts, and users are largely motivated to share popular content, platforms can strategically signal this informational advantage to change user beliefs and persuade them not to share misinformation. We characterize the optimal signaling scheme with imperfect predictions as a linear program and give sufficient and necessary conditions on the classifier to ensure optimal platform utility is nondecreasing and continuous. Next, this interaction is considered under a performative model, wherein platform intervention affects the user’s future behaviour. The convergence and stability of optimal signaling under this performative process are fully characterized. Lastly, we experimentally validate that our approach significantly reduces misinformation in both the single round and performative setting.",
+  "impact": "Misinformation on social media widely is considered one of the most pressing issues in contemporary society, affecting a wide-range of issues from democratic governance to public health (Persily & Tucker, 2020; Suarez-Lledo & Alvarez- Galvez, 2021). As a socio-technical issue, it is imperative that we as computer scientist look to mitigate this important problem. While there is no debate about the negative outcomes associated with misinformation, exactly classifying misinformation is more challenging, especially at scale. This renders typical content moderation and censoring approaches difficult. Further, it raises concerns about social media platforms abusing their power to regulate discourse, often leading to the creation of echo chambers. As we presented in our work, public opinion is also wary of such approaches (Amy & Walker, 2021). Correspondingly, our work proposes a constructive information design approach that does not require platforms policing content - rather, it attempts to use information revelation to persuade rational users away from sharing misinformation. We make no unrealistic assumptions about the setting, and strongly believe this can be a useful first step toward tackling this issue. That said, there are several considerations to be aware of: • The persuasion approach relies on user being, at worst, indifferent to misinformation in their content. As such, it will not be as successful in dealing with malicious actor who consciously and willingly spread misinformation. Standard approaches like identifying and banning such actors are still needed. • In persuasion, the platform commits to a signaling scheme prior to observations, and honours that scheme upon observation. It requires the platform/sender to not lie. This assumption is considered largely innocuous in economics literature as platforms risk severe reputational damage. In practice however, we believe strong regulatory guidelines also need to be established to further discourage such behaviour.",
+  "query_input": {
+    "scenario": "E-commerce product description generation with VLMs",
+    "issue": "Poisoned model generates persuasive health claims about junk food, misleading consumers.",
+    "hazard": [
+      "Stealthy data poisoning attacks on vision-language models that manipulate generated text (label and persuasion) while remaining visually indistinguishable."
+    ],
+    "exposure": [
+      "Online shoppers reading VLM-generated product descriptions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shoppers trust VLM-generated descriptions as accurate and lack domain knowledge to critically evaluate persuasive health claims.",
+    "impact": "Consumers buy unhealthy food under false health pretenses, leading to dietary harm and eroded trust in product information.",
+    "dose_response": "Stealthy data poisoning on vision-language models, through online shoppers reading manipulated descriptions, triggers misplaced trust and lack of domain knowledge, leading to purchase of unhealthy food under false health pretenses, dietary harm, and eroded trust in product information."
+  },
+  "reference": {
+    "dose_response": [
+      "Stealthy data poisoning enables VLM-generated persuasive health claims, exposing online shoppers reading product descriptions, leading to unhealthy purchases, long-term health deterioration, and eroded platform trust."
+    ],
+    "vulnerability": [
+      "Unquestioning consumer trust in AI-generated health claims, amplified by low health literacy.",
+      "No platform verification of AI-generated persuasive content."
+    ],
+    "impact": [
+      "Consumers purchase unhealthy products, causing long-term health deterioration.",
+      "Erosion of consumer trust in e-commerce platforms reduces future engagement."
+    ]
+  }
+}

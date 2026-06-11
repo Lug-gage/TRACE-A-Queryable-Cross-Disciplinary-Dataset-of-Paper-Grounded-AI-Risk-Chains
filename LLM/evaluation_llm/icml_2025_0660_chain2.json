@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0660",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes lack of independent verification against biased training data, which is semantically the same as over-reliance on automated evaluation without effective oversight.",
+    "reference": "Model developers over-rely on automated evaluation without human oversight, allowing biased metrics to guide decisions.",
+    "generated": "Model developers lack independent bias-auditing mechanisms to verify LLM judge reliability against contaminated training data."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated captures the selection and propagation of misaligned models (affected party: downstream applications), but omits the specific damage type of user exposure to toxic outputs.",
+    "reference": "Harmful models are selected for deployment, increasing user exposure to toxic outputs across multiple platforms.",
+    "generated": "Corrupted model selection and quality judgments propagate biased, misaligned LLMs into downstream applications."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes toxic data, reliance on judges, and corrupted selection, but misses the link that biased judges produce flawed assessments before over-reliance leads to harmful model selection.",
+    "reference": "Biased LLM judges trained on toxic-amplified data enable flawed assessments, which when developers over-rely on them leads to selection of harmful models, increasing user exposure to toxic outputs.",
+    "generated": "Synthetic data from uncontrolled user interactions amplifies toxic content in post-training mixtures; when model developers rely on LLM judges, this triggers lack of independent bias-auditing mechanisms, leading to corrupted model selection and misaligned LLMs downstream."
+  }
+}

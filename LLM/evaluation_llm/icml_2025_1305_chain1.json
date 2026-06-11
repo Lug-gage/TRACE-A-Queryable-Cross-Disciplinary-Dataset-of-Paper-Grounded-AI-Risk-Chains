@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1305",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes system-side lack of robust content safety checks; generated describes user-side lack of warning and unguarded trust, a related but different sensitivity condition.",
+    "reference": "Chatbot interfaces lack robust content safety checks for on-demand image generation.",
+    "generated": "End-users lack warning that innocuous prompts can elicit toxic imagery, leaving them psychologically unguarded and trusting the system's safety."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both user exposure to offensive stereotypes and erosion of trust are present, with generated additionally mentioning emotional distress.",
+    "reference": "User exposure to offensive stereotypes in a trusted conversational interface, eroding trust.",
+    "generated": "Users suffer exposure to offensive stereotypes, causing emotional distress and erosion of trust in AI assistants."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The core causal chain from benign-prompt toxic generation through chatbot exposure to stereotype exposure and trust erosion is present, but the reference's 'normalizes harmful representations' link is omitted and an additional 'unguarded psychological vulnerability' step is introduced.",
+    "reference": "VLMs generating toxic/harmful image-text outputs from benign prompts enable unsafe generation, which in multimodal chatbots exposes end-users interacting with AI assistants, leading to user exposure to offensive stereotypes that erodes trust and normalizes harmful representations.",
+    "generated": "VLMs generating toxic outputs from benign prompts, through end-user interactions with AI assistants, triggers unguarded psychological vulnerability, leading to exposure to offensive stereotypes causing emotional distress and eroded trust."
+  }
+}

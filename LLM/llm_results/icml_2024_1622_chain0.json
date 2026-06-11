@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1622",
+  "chain_index": 0,
+  "title": "In-Context Unlearning Language Models as Few-Shot Unlearners",
+  "abstract": "Machine unlearning, the study of efficiently removing the impact of specific training instances on a model, has garnered increased attention in recent years due to regulatory guidelines such as the Right to be Forgotten. Achieving precise unlearning typically involves fully retraining the model and is computationally infeasible in case of very large models such as Large Language Models (LLMs). To this end, recent work has proposed several algorithms which approximate the removal of training data without retraining the model. These algorithms crucially rely on access to the model parameters in order to update them, an assumption that may not hold in practice due to computational constraints or having only query access to the LLMs. In this work, we propose a new class of unlearning methods for LLMs called “In-Context Unlearning.” This method unlearns instances from the model by simply providing specific kinds of inputs in context, without the need to update model parameters. To unlearn specific training instances, we present these instances to the LLMs at inference time along with labels that differ from their ground truth. Our experimental results demonstrate that in-context unlearning performs on par with, or in some cases outperforms other state-of-the-art methods that require access to model parameters, effectively removing the influence of specific instances on the model while preserving test accuracy.",
+  "impact": "Our proposed In-Context Unlearning method presents a valuable tool for decision makers seeking to make a finetuned model behave as if specific data points had been removed from an LLM. Our method has applications across various domains relying on algorithmic decision-making using classification algorithms, including healthcare, education, insurance, credit scoring, recruitment, and criminal justice. Recognizing the potential of ICUL comes with a responsibility to understand its nuances. While offering unparalleled capabilities, like any unlearning algorithm, ICUL is not without limitations. Failures in unlearning may manifest under specific hyperparameter configurations, such as setting the number of correctly labeled examples (L) too low. To maximize ICUL’s efficacy, decision-makers must grasp both its strengths and weaknesses. Therefore, we advocate for the complementary use of our proposed LiRA-Forget test, providing a robust mechanism for validating unlearning outcomes. In navigating the complex terrain of algorithmic decisionmaking, our work not only presents a breakthrough method but also equips practitioners with the insights and tools necessary for responsible and informed unlearning of specific information in LLM based classification and question answering tasks.",
+  "query_input": {
+    "scenario": "Deploying prompt-unlearned LLM for user data removal under GDPR.",
+    "issue": "Personal data remains retrievable, violating the Right to be Forgotten.",
+    "hazard": [
+      "Adversarial prompts can recover residual knowledge after approximate unlearning in LLMs."
+    ],
+    "exposure": [
+      "Data subjects whose erased data can still be extracted."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Approximate in-context unlearning leaves residual personal data intact in the model, enabling adversarial recovery of supposedly erased information.",
+    "impact": "Data subjects suffer privacy breaches and GDPR Right to be Forgotten violations, undermining legal compliance and user trust.",
+    "dose_response": "Adversarial prompts recover residual knowledge after approximate unlearning, through exposed data subjects whose erased data remains extractable, triggering residual personal data intact, enabling adversarial recovery and leading to privacy breaches, Right to be Forgotten violations, and undermined trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial prompts enable recovery of unlearned personal data, which in the deployment of prompt-unlearned LLMs for GDPR data removal exposes data subjects, leading to GDPR violations and user trust erosion."
+    ],
+    "vulnerability": [
+      "Approximate unlearning in LLMs leaves personal data recoverable by adversarial prompts.",
+      "Existing evaluation metrics fail to detect residual memorization after unlearning."
+    ],
+    "impact": [
+      "Data subjects' right to be forgotten violated, leading to GDPR penalties.",
+      "Erosion of user trust in data deletion guarantees harms adoption of AI services."
+    ]
+  }
+}

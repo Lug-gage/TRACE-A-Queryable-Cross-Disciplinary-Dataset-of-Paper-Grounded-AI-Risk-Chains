@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "vulnerability is about removal attacks leading to inability to refute false attribution, while reference is about lack of cryptographic integrity enabling provenance spoofing",
+    "reference": "Watermarks lack cryptographic integrity, allowing spoofing of provenance.",
+    "generated": "LLM developers depend on watermarking as proof of non-origin, but no robust defense exists against adaptive removal, leaving them unable to refute false attribution."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "developers face legal liability and reputational damage for spoofed content, covering defamation, fines, and market backlash",
+    "reference": "LLM developers face defamation, fines, and market backlash for spoofed content.",
+    "generated": "Developers face legal liability and reputational damage from spoofed harmful content they are falsely accused of generating."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "causal arc uses removal attacks as hazard and omits unjust blame and stifled innovation, describing a different mechanism",
+    "reference": "Susceptibility to spoofing enables watermarks to be misattributed, which when LLM developers face liability for spoofed content, leads to unjust blame and stifled innovation.",
+    "generated": "Adaptive black-box removal attacks on LLM watermarking, through spoofed content misattribution exposing developers to liability, trigger their reliance on watermarking as proof-of-non-origin without robust defense, leading to legal liability and reputational damage."
+  }
+}

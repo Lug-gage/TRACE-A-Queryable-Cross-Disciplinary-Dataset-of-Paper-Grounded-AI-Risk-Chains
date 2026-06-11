@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2150",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5782,
+    "reference": "Multi-tenant cloud environments concentrate HSM-backed keys for thousands of customers, amplifying breach impact.",
+    "generated": "Cloud HSMs rely on physical leakage protection that exact SASCA inference circumvents, enabling precise key extraction from residual side-channel emanations."
+  },
+  "impact": {
+    "similarity": 0.5505,
+    "reference": "Cross-tenant key extraction forces cloud providers to revoke and reissue millions of certificates, disrupting dependent services.",
+    "generated": "Compromised cloud HSM keys erode trust in hardware security, causing data breaches, regulatory penalties, and reputational harm to cloud providers."
+  },
+  "dose_response": {
+    "similarity": 0.7301,
+    "reference": "Exact SASCA enables more accurate key recovery, which in cloud HSMs exposes multi-tenant key stores, leading to cross-tenant key extraction and regulatory penalties.",
+    "generated": "Exact inference in SASCA via tractable probabilistic circuits, through cloud providers using HSMs, triggers the circumvention of physical leakage protection, leading to precise key extraction that erodes trust and causes data breaches, regulatory penalties, and reputational harm."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1416",
+  "chain_index": 3,
+  "title": "Quantum Theory and Application of Contextual Optimal Transport",
+  "abstract": "Optimal Transport (OT) has fueled machine learning (ML) across many domains. When paired data measurements (μ, ν) are coupled to covariates, a challenging conditional distribution learning setting arises. Existing approaches for learning a global transport map parameterized through a potentially unseen context utilize Neural OT and largely rely on Brenier’s theorem. Here, we propose a first-of-its-kind quantum computing formulation for amortized optimization of contextualized transportation plans. We exploit a direct link between doubly stochastic matrices and unitary operators thus unravelling a natural connection between OT and quantum computation. We verify our method (QontOT) on synthetic and real data by predicting variations in cell type distributions conditioned on drug dosage. Importantly we conduct a 24-qubit hardware experiment on a task challenging for classical computers and report a performance that cannot be matched with our classical neural OT approach. In sum, this is a first step toward learning to predict contextualized transportation plans through quantum computing.",
+  "impact": "This paper presents work with the goal to advance the field of quantum machine learning (QML). There are many potential societal consequences of advances in quantum computing, first and foremost in cryptanalysis (see Scholten et al. (2024) for a broad overview). Next, advances in QML will have more specific implications, e.g., they could widen disparities between organizations, countries or researchers that have access to, or can afford, leveraging quantum computing and those that cannot. More specific to our work, the promising result on contextual prediction of DSMs has to be seen in light of the limitations of current quantum hardware, e.g., we can only approximate specific states and structures (such as a DSM) since we have constraints in terms of circuit depth, the number of measurements and have to mitigate the device noise.",
+  "query_input": {
+    "scenario": "Unsupervised shape correspondence via sliced Wasserstein OT",
+    "issue": "Sliced Wasserstein distance may miss anisotropic distributional discrepancies.",
+    "hazard": [
+      "Conditional transport plans that are miscalibrated or distributionally misaligned with the true target conditional distributions."
+    ],
+    "exposure": [
+      "Designers and engineers using OT-based shape matching in 3D modeling pipelines."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Designers trust sliced Wasserstein OT outputs without validating against anisotropic distributional shifts.",
+    "impact": "Distorted 3D shape correspondences cause flawed models, forcing redesign and degrading downstream manufacturing and simulation fidelity.",
+    "dose_response": "Miscalibrated or distributionally misaligned conditional transport plans, through designers using OT-based 3D shape matching pipelines, trigger unvalidated trust in sliced Wasserstein OT against anisotropic shifts, leading to distorted correspondences causing flawed models, forcing redesign and degrading manufacturing and simulation fidelity."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated conditional transport plans fail to capture anisotropic distributional features in shape matching, leading to defective designs that harm marginalized users."
+    ],
+    "vulnerability": [
+      "Shape matching errors bias performance for non-standard shapes, causing safety-critical product failures for marginalized users."
+    ],
+    "impact": [
+      "Defective designs in assistive devices or consumer products harm vulnerable populations."
+    ]
+  }
+}

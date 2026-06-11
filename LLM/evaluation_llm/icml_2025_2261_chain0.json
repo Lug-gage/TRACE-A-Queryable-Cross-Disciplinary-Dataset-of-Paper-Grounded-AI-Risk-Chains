@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2261",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated condition mentions lack of filtering of memorized content but omits the root cause (training on unfiltered data) described in the reference sensitivity.",
+    "reference": "Training on unfiltered web data leads to memorization of private and copyrighted visual content.",
+    "generated": "Users lack tools to verify image provenance, and assistants offer no filtering of memorized private content, preventing users from avoiding exposure."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (holders of private/copyrighted images) and damage types (privacy violations, legal liability) match the reference.",
+    "reference": "Unauthorized disclosure of personal photos violates privacy and triggers legal liability under data protection laws.",
+    "generated": "Private and copyrighted images are disclosed to querying users, causing privacy violations, legal liability, and loss of trust in retrieval services."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference describes direct recall from memorization leading to disclosure; generated inserts a triggered failure of provenance verification and content filtering, altering the causal mechanism.",
+    "reference": "Multimodal LLMs memorizing training images enables recall of private visuals; when users query image assistants, they inadvertently trigger unauthorized disclosure, violating privacy and incurring legal liability.",
+    "generated": "Multimodal LLMs that memorize and recall training images, when users query image-based assistants, trigger the lack of provenance verification and content filtering, leading to disclosure of private and copyrighted images, causing privacy violations, legal liability, and trust loss."
+  }
+}

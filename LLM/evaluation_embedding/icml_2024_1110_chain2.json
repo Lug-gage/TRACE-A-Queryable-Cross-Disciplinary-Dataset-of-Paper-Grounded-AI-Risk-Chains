@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1110",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.697,
+    "reference": "Businesses deploy negotiation agents without understanding their failure modes under approximation error.",
+    "generated": "Businesses rely on RL-CFR agents' optimality guarantees without verifying abstraction error propagation, allowing undetected strategic bias in negotiation."
+  },
+  "impact": {
+    "similarity": 0.5329,
+    "reference": "Breakdown of long-term supplier relationships due to perceived unfairness.",
+    "generated": "Unfair bargaining outcomes damage business relationships and market efficiency, causing financial losses and eroded trust in automated trading."
+  },
+  "dose_response": {
+    "similarity": 0.635,
+    "reference": "Abstraction errors in RL-CFR cause erratic negotiation offers, exposing counterparties to unfair outcomes that erode business relationships and market participation.",
+    "generated": "Dynamic action abstraction's approximation error degrades regret minimization, through deployment in automated contract negotiation, triggers unverified optimality reliance allowing undetected strategic bias, leading to unfair bargaining outcomes that damage relationships and market efficiency, incurring financial losses and eroded trust."
+  }
+}

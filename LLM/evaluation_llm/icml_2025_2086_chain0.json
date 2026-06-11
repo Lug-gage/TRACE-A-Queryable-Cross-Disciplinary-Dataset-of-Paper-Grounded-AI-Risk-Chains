@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2086",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes operator over-reliance on unverified sub-goals as the sensitivity condition; generated describes a system-level lack of real-time validation, a related but different condition.",
+    "reference": "Operator over-reliance on LLM-generated sub-goals without verification, especially when AI appears confident.",
+    "generated": "No real-time validation of LLM-generated sub-goal feasibility allows unsafe robot actions before operator intervention."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected parties (operator, equipment) and damage types (physical harm, property damage, task failure) from the reference are semantically present in the generated text.",
+    "reference": "Physical injury, property damage, or task failure due to robot executing misaligned sub-goals.",
+    "generated": "Unsafe actions cause equipment damage and operator harm; ineffective actions result in resource waste and mission failure."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The core arc of misaligned sub-goals enabling unsafe actions leading to harm is present, but the mechanism of operator over-reliance without verification is replaced by a system-triggered lack of real-time validation, missing a key causal link.",
+    "reference": "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL enable unsafe robot actions, which in long-horizon robotics manipulation under LLM-guided RL control exposes operators over-relying on sub-goals without verification, leading to physical injury, property damage, or task failure.",
+    "generated": "Hallucinated or misaligned LLM-generated sub-goals, through robot operators and physical environments under LLM-guided RL control, trigger no real-time validation allowing unsafe actions, leading to equipment damage, operator harm, resource waste, and mission failure."
+  }
+}

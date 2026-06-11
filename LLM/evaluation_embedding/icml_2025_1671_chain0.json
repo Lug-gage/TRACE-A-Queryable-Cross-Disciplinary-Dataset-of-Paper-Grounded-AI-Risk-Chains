@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1671",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5029,
+    "reference": "Over-reliance on a single reward model amplifies existing representational biases in training data.",
+    "generated": "End users lack automated checks to detect when reward-optimized images sacrifice semantic alignment for high scores."
+  },
+  "impact": {
+    "similarity": 0.3502,
+    "reference": "Systematic underrepresentation of women in professional imagery reinforces occupational gender stereotypes.",
+    "generated": "Deceptive images misrepresent complex prompts, causing users to disseminate or act on false visual information."
+  },
+  "dose_response": {
+    "similarity": 0.6465,
+    "reference": "Reward-based noise optimization enables reward hacking, which in deployment for general image generation exposes end users to misrepresented prompt semantics, leading to systematic underrepresentation and representational harm.",
+    "generated": "Misaligned outputs from reward-optimized one-step text-to-image models, through end users generating complex compositional prompts, trigger a lack of automated checks to detect sacrificed semantic alignment, leading to deceptive images that misrepresent prompts and cause dissemination of false visual information."
+  }
+}

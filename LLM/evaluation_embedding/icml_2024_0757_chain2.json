@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0757",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4956,
+    "reference": "Engagement-optimized algorithms incentivize sensationalist content.",
+    "generated": "Users' reliance on algorithmic curation without transparency or verification tools leaves them unable to discern manipulated content."
+  },
+  "impact": {
+    "similarity": 0.4801,
+    "reference": "Polarization and misinformation proliferate, degrading public discourse.",
+    "generated": "Filter bubbles and systematically distorted recommendations erode user experience, trust, and informed decision-making at scale."
+  },
+  "dose_response": {
+    "similarity": 0.8058,
+    "reference": "Unmodeled selection bias under strategic self-selection enables uncalibrated recommendations, which in content recommendation exposes users to strategically amplified divisive content, leading to polarization and user disillusionment.",
+    "generated": "Learning under strategic self-selection without modeling selection bias, when users consume algorithmically recommended content, exploits reliance on opaque curation, leading to filter bubbles and distorted recommendations that erode trust and informed decision-making at scale."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0979",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "over-reliance on coarsened accuracy and lack of independent verification match the reference's over-trust in visual summaries and absence of anomaly alert systems",
+    "reference": "Analysts' over-trust in visual summaries and absence of anomaly alert systems",
+    "generated": "Analysts rely exclusively on the coarsened graph's accuracy to detect anomalies, lacking independent means to verify structural fidelity."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "generic 'flawed decisions and compromised analytical outcomes' does not capture reference's specific financial fraud and cyber intrusion consequences, though the affected party (analysts/organization) is implicitly present",
+    "reference": "Financial fraud and cyber intrusion patterns missed, leading to unimpeded adversarial actions",
+    "generated": "Misled analysts fail to detect critical anomalies, resulting in flawed decisions and compromised analytical outcomes."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "same causal arc: coarsening discards connectivity -> inaccuracies -> over-reliance -> missed anomalies",
+    "reference": "Coarsening subgraphs into node representations discards fine-grained connectivity, introducing inaccuracies that in graph summarization for visual analytics lead analysts to miss fraud and intrusion patterns when they over-trust summaries.",
+    "generated": "Coarsening subgraphs into node representations discards fine-grained connectivity, introducing embedding inaccuracies; through analysts interpreting summarized views, this triggers exclusive reliance on coarsened accuracy for anomaly detection without independent verification, leading to missed critical anomalies, flawed decisions, and compromised analytical outcomes."
+  }
+}

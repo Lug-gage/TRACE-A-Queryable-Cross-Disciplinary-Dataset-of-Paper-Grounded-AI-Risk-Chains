@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0278",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "trust in LLM-based Q&A captures automation bias, and susceptibility to plausible falsehoods mirrors accepting answers as fact",
+    "reference": "Users accept plausible-sounding answers as fact due to automation bias.",
+    "generated": "Trusting LLM-based Q&A, users lack the expertise to identify plausible falsehoods, rendering them susceptible to misinformation."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "widespread misinformation is explicitly stated, matching the spread of false answers from the reference",
+    "reference": "Misinformation spreads when false answers are shared without detection.",
+    "generated": "Users acting on false information leads to flawed decisions, widespread misinformation, and erosion of public trust in AI-assisted Q&A systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal chain from task misalignment through user trust in plausible falsehoods to misinformation and flawed decisions is preserved, with only additional details added",
+    "reference": "Task misalignment from hypernetwork-generated adapters causes plausible-sounding incorrect answers in QA systems, which general users trust as fact, resulting in misinformation spread and harmful high-stakes decisions.",
+    "generated": "Hypernetwork-generated LoRA adapters inducing task misalignment and distributional shift, through general users trusting LLM-based Q&A, triggers their susceptibility to plausible falsehoods, leading to users acting on false information, flawed decisions, widespread misinformation, and eroded public trust in AI-assisted Q&A systems."
+  }
+}

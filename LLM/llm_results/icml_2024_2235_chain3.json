@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 3,
+  "title": "CCM Real-Time Controllable Visual Content Creation Using Text-to-Image Consistency Models",
+  "abstract": "Consistency Models (CMs) have showed a promise in creating high-quality images with few steps. However, the way to add new conditional controls to the pre-trained CMs has not been explored. In this paper, we explore the pivotal subject of leveraging the generative capacity and efficiency of consistency models to facilitate controllable visual content creation via ControlNet. First, it is observed that ControlNet trained for diffusion models (DMs) can be directly applied to CMs for high-level semantic controls but sacrifice image low-level details and realism. To tackle with this issue, we develop a CMs-tailored training strategy for ControlNet using the consistency training (Song et al., 2023). It is substantiated that ControlNet can be successfully established through the consistency training technique. Besides, a unified adapter can be trained utilizing the consistency training, which enhances the adaptation of DM’s ControlNet. We quantitatively and qualitatively evaluate all strategies across various conditional controls, including sketch, hed, canny, depth, human pose, low-resolution image and masked image, with the pre-trained text-toimage latent consistency models.",
+  "impact": "The research on real-time controllable image generation has profound implications for many fields, offering advancements that could democratize creativity, enhance interactive experiences, and streamline content creation. Nevertheless, the capability to generate images instantaneously also raises concerns regarding the propagation of misinformation through hyper-realistic fabrications and ethical considerations in the replication of human likenesses. To this issue, it is essential to establish ethical guidelines and promote transparency in its applications. This work was supported by the National Natural Science Foundation of China (NSFC) under Grants 62225207 and 62276243.",
+  "query_input": {
+    "scenario": "Human-pose conditioned virtual try-on for e-commerce",
+    "issue": "Garment synthesis may not precisely align with pose, producing unrealistic draping and misleading shoppers.",
+    "hazard": [
+      "Conditionally-controlled consistency generation produces images with potential misalignment to input conditions, yielding unreliable visual outputs."
+    ],
+    "exposure": [
+      "Online shoppers and fashion retailers evaluating virtual try-on results."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shoppers and retailers rely entirely on generated try-on visuals for fit decisions, lacking ground-truth or tools to detect garment-pose misalignment.",
+    "impact": "High product return rates, consumer dissatisfaction, and eroded trust in virtual try-on experiences and retailer credibility.",
+    "dose_response": "Conditionally-controlled consistency generation producing misaligned images, through online shoppers and retailers evaluating virtual try-on results, triggers complete reliance on generated visuals without detection tools, leading to high return rates, dissatisfaction, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Conditionally-controlled generation misaligns garment to pose; shoppers trust try-on images as accurate, creating expectation-reality gaps that increase returns and erode retailer credibility."
+    ],
+    "vulnerability": [
+      "Shoppers trust virtual try-on images as accurate, but pose-garment misalignment creates false expectations."
+    ],
+    "impact": [
+      "Increased product returns, consumer dissatisfaction, loss of retailer credibility."
+    ]
+  }
+}

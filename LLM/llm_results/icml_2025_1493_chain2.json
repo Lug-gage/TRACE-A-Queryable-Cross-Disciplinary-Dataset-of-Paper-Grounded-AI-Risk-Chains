@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 2,
+  "title": "Decoding Rewards in Competitive Games Inverse Game Theory with Entropy Regularization",
+  "abstract": "Estimating the unknown reward functions driving agents’ behavior is a central challenge in inverse games and reinforcement learning. This paper introduces a unified framework for reward function recovery in two-player zero-sum matrix games and Markov games with entropy regularization. Given observed player strategies and actions, we aim to reconstruct the underlying reward functions. This task is challenging due to the inherent ambiguity of inverse problems, the non-uniqueness of feasible rewards, and limited observational data coverage. To address these challenges, we establish reward function identifiability using the quantal response equilibrium (QRE) under linear assumptions. Building on this theoretical foundation, we propose an algorithm to learn reward from observed actions, designed to capture all plausible reward parameters by constructing confidence sets. Our algorithm works in both static and dynamic settings and is adaptable to incorporate other methods, such as Maximum Likelihood Estimation (MLE). We provide strong theoretical guarantees for the reliability and sample-efficiency of our algorithm. Empirical results demonstrate the framework’s effectiveness in accurately recovering reward functions across various scenarios, offering new insights into decisionmaking in competitive environments.",
+  "impact": "This work advances the field of inverse reinforcement learning and game theory by introducing a unified framework for reward function identification and estimation in competitive multi-agent settings. Our findings contribute to a deeper understanding of decision-making in strategic environments, with potential applications in economics, automated negotiation, and multi-agent AI systems. While our research provides theoretical and methodological advancements, we acknowledge potential ethical considerations. The ability to infer reward functions from observed Sample Size Reward Error Mean 95% CI 10,000 2.4611 ± 0.1596 20,000 1.9031 ± 0.1048 50,000 1.5609 ± 0.0663 100,000 1.4398 ± 0.0499 Sample Size QRE Error Mean 95% CI 10,000 7.08 × 10-3 ± 4.61 × 10-4 behavior could be used both positively-to enhance transparency in AI decision-making and improve algorithmic fairness-and negatively, if applied to manipulate or exploit agents in competitive settings. Ensuring the responsible application of this work will require careful consideration of ethical safeguards and alignment with societal values. Overall, this paper aims to advance Machine Learning and Game Theory research, and we do not foresee immediate societal risks. However, we encourage further discussion on the ethical implications of inverse game theory in real-world applications.",
+  "query_input": {
+    "scenario": "Offline healthcare policy learning from physician demonstrations",
+    "issue": "Inferred rewards may lock in sub-optimal clinician behavior without explicit safety bounds.",
+    "hazard": [
+      "Recovered reward functions may be non-identifiable, misspecified, or non-transferable, especially under entropy regularization and behavioral model assumptions."
+    ],
+    "exposure": [
+      "Patients subject to AI-derived treatment recommendations."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Patients cannot challenge AI-derived recommendations and rely on a system that may reinforce suboptimal clinician behavior without safety oversight.",
+    "impact": "Patient harm and systemic entrenchment of suboptimal treatment practices.",
+    "dose_response": "Recovered reward functions that are non-identifiable, misspecified, or non-transferable, when employed in AI-derived treatment recommendations for patients, trigger inability to challenge and reinforcement of suboptimal clinician behavior without safety oversight, leading to patient harm and systemic entrenchment of suboptimal practices."
+  },
+  "reference": {
+    "dose_response": [
+      "Misspecified reward functions from offline physician demonstrations lock in biases, exposing patients to sub-optimal treatments that perpetuate health disparities and erode clinician trust."
+    ],
+    "vulnerability": [
+      "Offline datasets embed historical clinical biases and practice variations that become frozen policy.",
+      "Absence of safety bounds allows harmful recommendations without triggering human alert.",
+      "Clinician over-reliance on AI erodes independent diagnostic skills, creating hidden vulnerability."
+    ],
+    "impact": [
+      "Systematic perpetuation of health disparities for already marginalized patient groups.",
+      "Patient harm from incorrect or sub-optimal treatment recommendations.",
+      "Loss of clinician trust in AI and potential backlash against algorithmic medicine."
+    ]
+  }
+}

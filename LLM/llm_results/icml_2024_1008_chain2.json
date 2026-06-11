@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1008",
+  "chain_index": 2,
+  "title": "ELF Encoding Speaker-Specific Latent Speech Feature for Speech Synthesis",
+  "abstract": "In this work, we propose a novel method for modeling numerous speakers, which enables expressing the overall characteristics of speakers in detail like a trained multi-speaker model without additional training on the target speaker’s dataset. Although various works with similar purposes have been actively studied, their performance has not yet reached that of trained multi-speaker models due to their fundamental limitations. To overcome previous limitations, we propose effective methods for feature learning and representing target speakers’ speech characteristics by discretizing the features and conditioning them to a speech synthesis model. Our method obtained a significantly higher similarity mean opinion score (SMOS) in subjective similarity evaluation than seen speakers of a high-performance multispeaker model, even with unseen speakers. The proposed method also outperforms a zero-shot method by significant margins. Furthermore, our method shows remarkable performance in generating new artificial speakers. In addition, we demonstrate that the encoded latent features are sufficiently informative to reconstruct an original speaker’s speech completely. It implies that our method can be used as a general methodology to encode and reconstruct speakers’ characteristics in various tasks.",
+  "impact": "Our proposed method is a solution that can model numerous speakers in the real world with high quality. It allows imitating someone else’s timbre and speech characteristics with only a small amount of speech data. Thus, it is important to acknowledge the potential for misuse of this technology. It could be exploited for fraudulent purposes, such as impersonating someone over the phone to perpetrate identity theft, financial fraud, or other activities that negatively impact our society. Consequently, members of society may suffer material and psychological harm. Recently, these problems have become more prominent with the advancements in generative model technology. To prevent the risk of misuse, research on technology to detect synthesized speech will be needed. Recently, unrecognizable watermarking technologies have been actively studied, and we will contribute to the research on detecting synthesized speech and the practical application of detection technology.",
+  "query_input": {
+    "scenario": "Multilingual multi-speaker corpus scaling",
+    "issue": "Mass generation of synthetic voices for underrepresented languages without speaker verification.",
+    "hazard": [
+      "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts."
+    ],
+    "exposure": [
+      "Speakers contributing to large-scale ASR datasets later used for TTS without explicit consent."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Absence of informed consent protocols and identity verification for ASR recordings repurposed as TTS cloning leaves speakers unable to refuse or detect misuse.",
+    "impact": "Speakers of underrepresented languages suffer impersonation, identity theft, and breached community trust at scale when voices are generated without consent.",
+    "dose_response": "Discretized speaker-specific latent features enabling zero-shot voice cloning from minimal audio, through repurposing ASR recordings without consent, trigger lack of informed consent and verification protocols, leading to impersonation, identity theft, and breached community trust at scale for underrepresented language speakers."
+  },
+  "reference": {
+    "dose_response": [
+      "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts, which in multilingual multi-speaker corpus scaling exposes speakers contributing to large-scale ASR datasets later used for TTS without explicit consent, leading to loss of linguistic community trust in AI research partnerships."
+    ],
+    "vulnerability": [
+      "Marginalized language communities lack institutional safeguards against voice data exploitation.",
+      "Data collection consent forms often omit downstream TTS reuse permissions."
+    ],
+    "impact": [
+      "Loss of linguistic community trust in AI research partnerships.",
+      "Proliferation of non-consensual synthetic voices in low-resource language media."
+    ]
+  }
+}

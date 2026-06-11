@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2379",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated text describes developers assuming purification eliminates all perturbations and ignoring adaptive attacks, which embodies the reference condition of trusting the purifier's output without independent verification.",
+    "reference": "Safety-critical system operators trust the purifier's output without independent verification.",
+    "generated": "Developers assume pre-training purification eliminates all perturbations, ignoring adaptive attacks that bypass suppression."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (autonomous vehicles and safety-critical systems) and the damage type (physical harm from collisions and hazardous failures) are present in the generated description.",
+    "reference": "Physical harm from autonomous vehicle or medical imaging failures caused by poisoned perception models.",
+    "generated": "Poisoned perception models cause hazardous misclassifications, leading to collisions and safety-critical system failures."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated causal arc focuses on a bypassable suppression step triggering developer assumptions, while the reference arc describes adversarially trained purifiers introducing new attack surfaces that enable adaptive poisoning; the underlying mechanisms are fundamentally different.",
+    "reference": "Adversarially trained purifiers introduce new attack surfaces, enabling adaptive poisoning that, in safety-critical vision systems, causes physical harm and legal liability.",
+    "generated": "Purification mechanisms introducing a bypassable perturbation suppression step, through developer integration into autonomous perception pipelines, trigger the assumption that all perturbations are eliminated, leading to hazardous misclassifications and collisions from poisoned models."
+  }
+}

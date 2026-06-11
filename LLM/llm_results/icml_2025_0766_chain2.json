@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_0766",
+  "chain_index": 2,
+  "title": "EcoMapper Generative Modeling for Climate-Aware Satellite Imagery",
+  "abstract": "Satellite imagery is essential for Earth observation, enabling applications like crop yield prediction, environmental monitoring, and climate change assessment. However, integrating satellite imagery with climate data remains a challenge, limiting its utility for forecasting and scenario analysis. We introduce a novel dataset of 2.9 million Sentinel-2 images spanning 15 land cover types with corresponding climate records, forming the foundation for two satellite image generation approaches using fine-tuned Stable Diffusion 3 models. The first is a text-to-image generation model that uses textual prompts with climate and land cover details to produce realistic synthetic imagery for specific regions. The second leverages ControlNet for multi-conditional image generation, preserving spatial structures while mapping climate data or generating time-series to simulate landscape evolution. By combining synthetic image generation with climate and land cover data, our work advances generative modeling in remote sensing, offering realistic inputs for environmental forecasting and new possibilities for climate adaptation and geospatial analysis.",
+  "impact": "EcoMapper introduces a generative framework for simulating satellite imagery conditioned on climate variables, with the goal of modeling how environmental landscapes respond to weather and long-term climate change. This enables new opportunities for climate change impact visualization, scenario exploration, and enhancing downstream models that integrate satellite and climate data-such as crop yield forecasting, land use monitoring, or image gap-filling in cloudy regions. We acknowledge that synthetic imagery carries risks of misinterpretation if used without proper context or uncertainty modeling. This is particularly relevant in high-stakes settings like natural disaster assessment or policy-making, where unreliable outputs could cause harm. We encourage the responsible use of EcoMapper as a simulation tool to complement - rather than replace - physical Earth observation in real-world decision-making.",
+  "query_input": {
+    "scenario": "Geospatial analysis and planning with AI-generated satellite views.",
+    "issue": "Implausible land cover details skew suitability mapping and resource allocation.",
+    "hazard": [
+      "Mode interpolation in diffusion models introduces hallucinated land cover features into synthetic satellite imagery."
+    ],
+    "exposure": [
+      "Urban and regional planners utilizing synthetic imagery for land-use planning decisions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Planners lack verification protocols for synthetic imagery, treating its photorealism as accurate ground truth for land-use decisions.",
+    "impact": "Skewed suitability mapping causes misdirected resource allocation and maladaptive environmental planning decisions.",
+    "dose_response": "Mode interpolation in diffusion models hallucinates land cover features in synthetic imagery; when planners lack verification protocols, they treat photorealism as ground truth, leading to skewed suitability mapping, misdirected resource allocation, and maladaptive environmental planning."
+  },
+  "reference": {
+    "dose_response": [
+      "Mode interpolation introduces implausible land cover details, which when urban planners use synthetic imagery for planning, leads to misguided zoning and financial losses from bad investments."
+    ],
+    "vulnerability": [
+      "Urban planners lack technical expertise to detect AI-generated artifacts in satellite imagery.",
+      "Cost-saving measures incentivize the use of synthetic imagery over verified data sources.",
+      "No regulatory standards exist for AI-generated geospatial data in public planning."
+    ],
+    "impact": [
+      "Misguided zoning decisions based on hallucinated land cover lead to environmental harm and infrastructure waste.",
+      "Financial losses for municipalities when investments are directed toward non-existent land features."
+    ]
+  }
+}

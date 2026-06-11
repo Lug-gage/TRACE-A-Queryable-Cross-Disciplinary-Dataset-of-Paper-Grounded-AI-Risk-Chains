@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6543,
+    "reference": "Multilingual LLM reward model biased towards high-resource languages due to data volume disparities in federated feedback.",
+    "generated": "Assistants harbor pre-existing language-specific reward biases and limited coverage for underrepresented languages, leaving non-native users susceptible to quality degradation."
+  },
+  "impact": {
+    "similarity": 0.5816,
+    "reference": "Non-native speakers receive inaccurate or culturally inappropriate responses, causing information exclusion.",
+    "generated": "Assistant helpfulness degrades for non-native users, especially in underrepresented languages, eroding trust and widening language-based utility gaps."
+  },
+  "dose_response": {
+    "similarity": 0.7785,
+    "reference": "In multilingual LLM assistant fine-tuning, federated DPO reward bias toward high-resource languages degrades helpfulness for low-resource speakers, causing inaccurate responses and deepening digital divides.",
+    "generated": "Federated DPO with DP degrades reward calibration and coverage, through non-native users of federated DPO-tuned multilingual assistants, triggers pre-existing language-specific reward biases and underrepresented-language coverage gaps, leading to degraded helpfulness for non-native users, eroding trust and widening language-based utility gaps."
+  }
+}

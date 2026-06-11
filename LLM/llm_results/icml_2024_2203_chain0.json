@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2203",
+  "chain_index": 0,
+  "title": "VoroNav Voronoi-based Zero-shot Object Navigation with Large Language Model",
+  "abstract": "In the realm of household robotics, the Zero-Shot Object Navigation (ZSON) task empowers agents to adeptly traverse unfamiliar environments and locate objects from novel categories without prior explicit training. This paper introduces VoroNav, a novel semantic exploration framework that proposes the Reduced Voronoi Graph to extract exploratory paths and planning nodes from a semantic map constructed in real time. By harnessing topological and semantic information, VoroNav designs text-based descriptions of paths and images that are readily interpretable by a large language model (LLM). In particular, our approach presents a synergy of path and farsight descriptions to represent the environmental context, enabling LLM to apply commonsense reasoning to ascertain waypoints for navigation. Extensive evaluation on HM3D and HSSD validates VoroNav surpasses existing benchmarks in both success rate and exploration efficiency (absolute improvement: +2.8% Success and +3.7% SPL on HM3D, +2.6% Success and +3.8% SPL on HSSD). Additionally introduced metrics that evaluate obstacle avoidance proficiency and perceptual efficiency further corroborate the enhancements achieved by our method in ZSON planning. Project page: https://voro-nav.github.io",
+  "impact": "VoroNav addresses the challenges of autonomous navigation in robotics, holding significant implications for the future of household robotics. By leveraging the synergy of semantic mapping and LLMs, it promises enhanced efficiency and effectiveness in robotic navigation tasks. Ethically, VoroNav represents a step forward in responsible AI application, balancing technological advancement with the need for safe, reliable, and intuitive robot behavior in domestic settings. To address safety and ethical concerns, our experiments are conducted in controlled, simulated environments using opensource datasets. This approach ensures the predictability and safety of the agent’s behaviors. However, the reliability of generative models in practical applications remains an area for future research. Key to this advancement is improving the accuracy and precision of LLMs in planning and action prediction, which is crucial for ensuring safety in real-world deployment.",
+  "query_input": {
+    "scenario": "Domestic robot fetching objects in a home environment",
+    "issue": "Hallucinated object locations or spatial relations misdirect the robot, failing to retrieve the target object.",
+    "hazard": [
+      "LLM-generated semantic maps and path descriptors from Voronoi graph exploration may produce erroneous environmental representations, causing navigation failures."
+    ],
+    "exposure": [
+      "Home occupants using a domestic robot for daily object retrieval tasks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on LLM-generated environmental representations without verification or error-correction mechanisms in the domestic robot's navigation stack.",
+    "impact": "Failed object retrieval disrupts daily tasks, causing user frustration, wasted time, and eroded trust in robotic assistance.",
+    "dose_response": "LLM-generated erroneous environmental representations from Voronoi exploration, when relied upon for daily object retrieval without verification or error-correction, trigger navigation failures causing failed retrieval, wasted time, user frustration, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM-generated erroneous representations cause navigation failures that, when undetected by home occupants, lead to repeated retrieval failures, damaging trust and household items."
+    ],
+    "vulnerability": [
+      "Home robots lack independent verification of LLM spatial claims, so errors go undetected.",
+      "Users with low technical literacy cannot detect or override spatial hallucinations."
+    ],
+    "impact": [
+      "Repeated retrieval failures reduce user trust, potentially leading to disuse.",
+      "Misdirected grasping may damage household items, causing financial loss and frustration."
+    ]
+  }
+}

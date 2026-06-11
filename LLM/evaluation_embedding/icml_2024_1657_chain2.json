@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1657",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6484,
+    "reference": "Patient data used for training without de-identification or consent withdrawal",
+    "generated": "Patients lack control over their medical records' use in training, with inadequate de-identification allowing memorization of PII."
+  },
+  "impact": {
+    "similarity": 0.6959,
+    "reference": "Patient privacy violation and potential medical identity theft",
+    "generated": "Unauthorized disclosure of patient health data enables identity theft, insurance discrimination, and erosion of medical privacy."
+  },
+  "dose_response": {
+    "similarity": 0.7611,
+    "reference": "Training data memorization enables extraction of patient health information from document images, which in a medical Q&A VLM exposes patients whose records were in training, leading to privacy violations and HIPAA fines.",
+    "generated": "Training data memorization in multimodal models, through exposure of patients' medical records used for training, triggers inadequate de-identification and lack of control, leading to unauthorized disclosure of patient health data enabling identity theft, insurance discrimination, and erosion of medical privacy."
+  }
+}

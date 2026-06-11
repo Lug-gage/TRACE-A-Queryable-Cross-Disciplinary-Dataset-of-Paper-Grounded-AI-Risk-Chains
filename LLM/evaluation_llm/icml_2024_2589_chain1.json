@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2589",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Sellers' dependence on platform and inability to detect utility erosion cover the reference's dependence and lack of transparency, enabling surplus extraction.",
+    "reference": "Sellers' dependence on platform for market access and lack of price transparency allow extraction of all surplus.",
+    "generated": "Sellers depend on platform algorithmic pricing with no means to detect or resist systematic utility erosion favoring total trade gain."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (sellers) and damage (financial loss, potential market withdrawal) are present, but increased platform monopoly and reduced market diversity/consumer choice are missing.",
+    "reference": "Suppliers driven out of market, increased platform monopoly, reduced market diversity and consumer choice.",
+    "generated": "Sellers receive near-zero trade surplus, leading to financial loss and potential market withdrawal."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from no-regret learning to surplus extraction and seller withdrawal is captured, but the reference's further links to increased monopoly and reduced market diversity are omitted.",
+    "reference": "No-regret learning for gain-from-trade maximization enables platforms to extract all surplus from dependent sellers, driving suppliers out and increasing monopoly, reducing market diversity.",
+    "generated": "No-regret learning for trade gain maximization, through sellers listing goods on algorithmic platforms, triggers dependence on platform pricing with no means to detect utility erosion, leading to near-zero trade surplus and potential market withdrawal."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0526",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7859,
+    "reference": "Security analysts under time pressure over-rely on AI summaries, failing to double-check long footage segments where subtle errors compound unseen.",
+    "generated": "Analysts' dependence on AI video summarization, without time or capacity for manual verification, makes them unable to detect plausible but incorrect reasoning."
+  },
+  "impact": {
+    "similarity": 0.667,
+    "reference": "Missed security threats leading to public safety incidents and liability for security providers.",
+    "generated": "Missed detection of critical security events in surveillance footage, allowing threats to escalate unnoticed."
+  },
+  "dose_response": {
+    "similarity": 0.9028,
+    "reference": "Incorrect grounding of fine-grained visual details causes reasoning errors in AI summaries, leading time-pressured security analysts to overlook critical events and miss security threats.",
+    "generated": "Incorrect grounding of fine-grained visual details in step-by-step video reasoning, through security analysts relying on AI summarization, triggers their inability to detect plausible but wrong inferences without verification, leading to missed detection of critical events and escalating threats."
+  }
+}

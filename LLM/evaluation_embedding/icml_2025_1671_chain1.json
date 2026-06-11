@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1671",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4628,
+    "reference": "Human feedback raters share demographic and cultural biases that skew reward signals.",
+    "generated": "Users assume reward-aligned outputs generalize to unseen prompts, lacking monitoring for distributional drift."
+  },
+  "impact": {
+    "similarity": 0.609,
+    "reference": "Factual inaccuracies in generated images erode user trust in AI for professional communication tasks.",
+    "generated": "Incongruent images erode user trust and block adoption of efficient one-step models at scale."
+  },
+  "dose_response": {
+    "similarity": 0.6455,
+    "reference": "Online RLHF post-training enables distributional shift, which in open-domain generation exposes users to degraded image quality on unseen prompts, leading to factual inaccuracies and digital cultural erasure.",
+    "generated": "One-step text-to-image models optimized via reward-based noise or prompt editing produce misaligned outputs, through users in open-domain generation tasks, triggers assumption of generalization without monitoring distributional drift, leading to incongruent images eroding trust and blocking adoption."
+  }
+}

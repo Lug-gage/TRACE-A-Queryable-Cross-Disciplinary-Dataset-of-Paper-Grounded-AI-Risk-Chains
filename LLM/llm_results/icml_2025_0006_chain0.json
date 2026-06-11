@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0006",
+  "chain_index": 0,
+  "title": "LMRL Gym Benchmarks for Multi-Turn Reinforcement Learning with Language Models",
+  "abstract": "Large language models (LLMs) provide excellent text-generation capabilities, but standard prompting and generation methods generally do not lead to intentional or goal-directed agents and might necessitate considerable prompt tuning. Even the best current LLMs rarely ask clarifying questions, engage in explicit information gathering, or take actions that lead to better decisions after multiple turns. Reinforcement learning has the potential to leverage the powerful modeling capabilities of LLMs, as well as their internal representation of textual interactions, to create capable goal-directed language agents. This can enable intentional and temporally extended interactions, such as with humans, the emergence of complex skills such as persuasion, and long-horizon strategic behavior, such as in the context of games. Enabling this requires the community to develop reliable reinforcement learning algorithms for training LLMs. Developing such algorithms requires tasks that can gauge progress on algorithm design, provide accessible and reproducible evaluations for multi-turn interactions, and cover a range of task properties and challenges in improving reinforcement learning algorithms. Our paper introduces the LMRL-Gym benchmark for evaluating multi-turn RL for LLMs, together with an opensource research framework for getting started on multi-turn RL with offline value-based and online policy-based RL methods. Our benchmark consists of 3 Interactive Dialogue tasks and 5 RL Capability tests for a total of 8 tasks, which require multiple rounds of language interaction and cover tasks in open-ended dialogue and text games.",
+  "impact": "This work aims to develop a benchmark for the advancement of research in reinforcement learning and LLMs. We generate datasets for tasks in our benchmark with existing LLMs for dialogue tasks and online engines for text games, adhering to best practices in data handling and ensuring there is no personally identifiable or sensitive information present in the generated datasets. We recognize that there may be biases present in the datasets we collect, and have taken steps to ensure a diverse and varied collection of responses from LLMs for our conversational task as detailed in our data generation process in Appendix D. In considering the ethical implications of interactive RL, we acknowledge the dual use implication of this research, particularly centered around developing LLM simulators that could perform persuasion, manipulation, and addictive engagement of users at a large scale. The optimization processes employed by such algorithms, which aim to maximize certain objectives, raise ethical considerations when the optimized",
+  "query_input": {
+    "scenario": "Mental health support chatbots",
+    "issue": "Agent confidently delivers incorrect, potentially harmful mental health advice",
+    "hazard": [
+      "Training RL dialogue agents on LLM-generated rollouts propagates hallucinations and biases into learned policies"
+    ],
+    "exposure": [
+      "Individuals seeking mental health support from AI chatbots"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Individuals in mental distress lack critical health literacy to detect hallucinations, making them susceptible to harmful AI advice.",
+    "impact": "Users suffer worsened mental health, delayed real treatment, and elevated risk of self-harm or suicide.",
+    "dose_response": "Training RL dialogue agents on LLM-generated rollouts propagates hallucinations and biases, which, when deployed to individuals seeking mental health support, exploits their lack of critical health literacy to detect harmful advice, leading to worsened mental health, delayed treatment, and elevated self-harm risk."
+  },
+  "reference": {
+    "dose_response": [
+      "Training RL agents on LLM rollouts propagates hallucinations, which in mental health chatbots exposes individuals seeking support to false advice, exploiting high epistemic trust and leading to worsening mental health and erosion of trust."
+    ],
+    "vulnerability": [
+      "High epistemic trust and perceived moral agency in chatbots increase user susceptibility to false advice."
+    ],
+    "impact": [
+      "Worsening mental health, emotional distress, and erosion of trust in digital therapy."
+    ]
+  }
+}

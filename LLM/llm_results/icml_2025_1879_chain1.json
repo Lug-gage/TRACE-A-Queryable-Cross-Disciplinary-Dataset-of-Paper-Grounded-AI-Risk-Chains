@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1879",
+  "chain_index": 1,
+  "title": "Compute Optimal Inference and Provable Amortisation Gap in Sparse Autoencoders",
+  "abstract": "A recent line of work has shown promise in using sparse autoencoders (SAEs) to uncover interpretable features in neural network representations. However, the simple linear-nonlinear encoding mechanism in SAEs limits their ability to perform accurate sparse inference. Using compressed sensing theory, we prove that an SAE encoder is inherently insufficient for accurate sparse inference, even in solvable cases. We then decouple encoding and decoding processes to empirically explore conditions where more sophisticated sparse inference methods outperform traditional SAE encoders. Our results reveal substantial performance gains with minimal compute increases in correct inference of sparse codes. We demonstrate this generalises to SAEs applied to large language models, where more expressive encoders achieve greater interpretability. This work opens new avenues for understanding neural network representations and analysing large language model activations.",
+  "impact": "This work advances neural network interpretability by improving methods for extracting understandable features from complex AI systems, with primarily positive societal implications for building trustworthy AI in high-stakes applications. By demonstrating that more sophisticated encoding methods achieve superior interpretability while maintaining computational efficiency, this research could accelerate transparent AI development across domains like healthcare and autonomous systems, and democratise access to interpretability tools for smaller research groups. However, we acknowledge potential risks including misuse for adversarial attacks, exploitation of model vulnerabilities, and false confidence in model safety if users over-rely on feature interpretations. The computational improvements may also lower barriers for both beneficial AI safety research and potentially harmful applications. Overall, we believe the benefits of advancing interpretability research significantly outweigh the risks, as transparent and understandable AI systems are fundamental to responsible AI deployment.",
+  "query_input": {
+    "scenario": "Model steering via SAE-identified latent features",
+    "issue": "Steering vectors from non-functional features may cause ineffective or erratic model edits.",
+    "hazard": [
+      "SAEs recover interpretable features not functionally important to the network, leading to misinterpretation of model mechanisms."
+    ],
+    "exposure": [
+      "Engineers applying steering vectors based on SAE feature dictionaries"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Engineers trust that SAE-identified interpretable features correspond to functionally important mechanisms without causal verification.",
+    "impact": "Steering interventions cause erratic or ineffective model behavior, degrading system performance and safety.",
+    "dose_response": "SAEs recovering interpretable but non-functional features, through engineers applying steering vectors from feature dictionaries, triggers unwarranted trust in their functional importance, leading to erratic model behavior that degrades performance and safety."
+  },
+  "reference": {
+    "dose_response": [
+      "SAEs recovering non-functional features enables model developers' trust in them for steering, which in scenario model editing exposes lack of validation, leading to erratic edits and reduced trust in AI tools."
+    ],
+    "vulnerability": [
+      "Model developers trust SAE features to reflect causal model mechanisms.",
+      "Lack of rigorous validation for steering vectors before deployment."
+    ],
+    "impact": [
+      "Erratic model edits cause unexpected failures in downstream applications.",
+      "Reduced trust in AI model editing and interpretability tools."
+    ]
+  }
+}

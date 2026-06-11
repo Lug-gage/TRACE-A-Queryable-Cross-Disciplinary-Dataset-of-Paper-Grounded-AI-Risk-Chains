@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2770",
+  "chain_index": 1,
+  "title": "AdvAgent Controllable Blackbox Red-teaming on Web Agents",
+  "abstract": "Foundation model-based agents are increasingly used to automate complex tasks, enhancing efficiency and productivity. However, their access to sensitive resources and autonomous decisionmaking also introduce significant security risks, where successful attacks could lead to severe consequences. To systematically uncover these vulnerabilities, we propose AdvAgent, a blackbox red-teaming framework for attacking web agents. Unlike existing approaches, AdvAgent employs a reinforcement learning-based pipeline to train an adversarial prompter model that optimizes adversarial prompts using feedback from the black-box agent. With careful attack design, these prompts effectively exploit agent weaknesses while maintaining stealthiness and controllability. Extensive evaluations demonstrate that AdvAgent achieves high success rates against state-of-the-art GPT-4-based web agents across diverse web tasks. Furthermore, we find that existing prompt-based defenses provide only limited protection, leaving agents vulnerable to our framework. These findings highlight critical vulnerabilities in current web agents and emphasize the urgent need for stronger defense mechanisms. We release our code at https://ai-secure. github.io/AdvAgent/.",
+  "impact": "This work exposes critical vulnerabilities in generalist web agents, demonstrating how adversarial HTML injections can manipulate agents into executing unintended actions. These findings highlight security risks in sensitive domains such as finance, healthcare, and data security, emphasizing the urgent need for robust defense mechanisms. Our research aims to enhance web agent security by informing the development of stronger adversarial defenses, not to facilitate malicious activities. Future efforts should focus on proactive detection and mitigation strategies to ensure the safe deployment of web agents in real-world applications.",
+  "query_input": {
+    "scenario": "LLM-integrated applications with user input",
+    "issue": "Black-box prompt attacks bypass safety filters in deployed agent systems.",
+    "hazard": [
+      "Automated black-box adversarial prompt generation enables systematic discovery of agent vulnerabilities."
+    ],
+    "exposure": [
+      "End-users interacting with LLM-powered assistants and service providers hosting these models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Prompt-based defenses are brittle, allowing adversarial prompts to bypass filters and exploit agent autonomy.",
+    "impact": "Unauthorized sensitive data access and harmful task execution, leading to breaches, financial loss, and eroded trust.",
+    "dose_response": "Automated black-box adversarial prompt generation, through user interactions with LLM agents and hosting providers, triggers brittle prompt-based defenses that allow prompt bypass and agent exploitation, leading to unauthorized data access, harmful execution, breaches, financial loss, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated adversarial prompt generation enables systematic discovery of filter vulnerabilities, which in LLM-integrated applications exploits users' false sense of security, causing harmful content exposure and platform integrity loss."
+    ],
+    "vulnerability": [
+      "Users' false sense of security in safety filters lowers their alertness to residual attack vectors."
+    ],
+    "impact": [
+      "Exposure to harmful or manipulative content undermines user safety and platform integrity."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1386",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes practitioner acceptance of degraded outputs without validation; generated describes pipelines lacking error monitoring mechanisms. They are related quality-control conditions but shift the sensitivity from human behavior to system design.",
+    "reference": "Practitioners optimizing for speed over quality in resource-constrained settings accept degraded outputs without validation.",
+    "generated": "ODE sampler pipelines lack error monitoring mechanisms to detect skip-tuned numerical propagation errors during low-step generation."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference impact concerns widespread dissemination of low-quality synthetic media in journalism and content creation; generated impact is limited to degraded image sample quality and undermined efficiency promises, missing the affected parties and the broader dissemination.",
+    "reference": "Widespread dissemination of low-quality synthetic media in journalism and content creation.",
+    "generated": "Image sample quality degrades, undermining the efficiency promises of low-step ODE sampling."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference causal arc has numerical errors degrading denoising under low NFE leading to lower quality and widespread media; generated arc replaces denoising degradation with lack of error monitoring as the trigger, altering the causal mechanism.",
+    "reference": "Skip-tuning introduces numerical propagation errors that degrade denoising, which under reduced NFE budgets in ODE samplers lowers sample quality, leading to widespread low-quality synthetic media and compromised downstream tasks.",
+    "generated": "Skip-tuning of shortcut connections in UNet diffusion models introduces numerical propagation errors that, through practitioners' use of ODE samplers lacking error monitoring, triggers degraded image sample quality, undermining low-step ODE sampling efficiency."
+  }
+}

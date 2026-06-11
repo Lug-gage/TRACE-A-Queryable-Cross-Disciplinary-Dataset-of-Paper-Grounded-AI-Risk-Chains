@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1416",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "not",
+    "reason": "generated sensitivity describes designer trust and lack of validation, not shape matching errors causing safety failures for marginalized users",
+    "reference": "Shape matching errors bias performance for non-standard shapes, causing safety-critical product failures for marginalized users.",
+    "generated": "Designers trust sliced Wasserstein OT outputs without validating against anisotropic distributional shifts."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "generated consequence is manufacturing/simulation degradation, missing both vulnerable populations and harm from defective designs",
+    "reference": "Defective designs in assistive devices or consumer products harm vulnerable populations.",
+    "generated": "Distorted 3D shape correspondences cause flawed models, forcing redesign and degrading downstream manufacturing and simulation fidelity."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc from miscalibrated plans to distorted correspondences is present, but the final link to defective designs harming marginalized users is missing, replaced by technical process degradation",
+    "reference": "Miscalibrated conditional transport plans fail to capture anisotropic distributional features in shape matching, leading to defective designs that harm marginalized users.",
+    "generated": "Miscalibrated or distributionally misaligned conditional transport plans, through designers using OT-based 3D shape matching pipelines, trigger unvalidated trust in sliced Wasserstein OT against anisotropic shifts, leading to distorted correspondences causing flawed models, forcing redesign and degrading manufacturing and simulation fidelity."
+  }
+}

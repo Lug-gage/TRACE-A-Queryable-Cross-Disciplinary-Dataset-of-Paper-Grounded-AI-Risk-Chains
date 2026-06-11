@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_2724",
+  "chain_index": 0,
+  "title": "On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains",
+  "abstract": "Retrieval-Augmented Generation (RAG) has been empirically shown to enhance the performance of large language models (LLMs) in knowledgeintensive domains such as healthcare, finance, and legal contexts. Given a query, RAG retrieves relevant documents from a corpus and integrates them into the LLMs’ generation process. In this study, we investigate the adversarial robustness of RAG, focusing specifically on examining the retrieval system. First, across 225 different setup combinations of corpus, retriever, query, and targeted information, we show that retrieval systems are vulnerable to universal poisoning attacks in medical Q&A. In such attacks, adversaries generate poisoned documents containing a broad spectrum of targeted information, such as personally identifiable information. When these poisoned documents are inserted into a corpus, they can be accurately retrieved by any users, as long as attacker-specified queries are used. To understand this vulnerability, we discovered that the deviation from the query’s embedding to that of the poisoned document tends to follow a pattern in which the high similarity between the poisoned document and the query is retained, thereby enabling precise retrieval. Based on these findings, we develop a new detection-based defense. Through extensive experiments spanning various Q&A domains, we observed that our proposed method consistently achieves excellent detection rates in nearly all cases.",
+  "impact": "This paper presents work aimed at advancing the safety and trustworthiness of machine learning. There are both potential positive and negative societal impacts of this work. Potential negative impacts include the possibility that an adversary could apply the proposed attack to other retrieval systems. On the other hand, we anticipate that there will be many more positive societal impacts of this work: (1) highlighting the need for vigilance regarding security risks when applying RAG in safety-critical domains; (2) providing several insights into understanding these potential safety risks; and (3) introducing a new, effective defense that can be used for detecting poisoned documents. Acknowledgement The work of Xun Xian, Xuan Bi, and Mingyi Hong was supported in part by a sponsored research award by Cisco Research. The work of Ganghua Wang and Jie Ding was supported in part by the Army Research Office under the Early Career Program Award, Grant Number W911NF-23- 10315.",
+  "query_input": {
+    "scenario": "Medical question-answering using RAG with clinical literature",
+    "issue": "Poisoning of clinical evidence base leads to retrieval of fabricated study results, generating misleading diagnostic suggestions.",
+    "hazard": [
+      "Adversarial poisoning of RAG knowledge bases exploits embedding similarity to inject stealthy misinformation retrieved for legitimate queries, subverting output integrity."
+    ],
+    "exposure": [
+      "Clinicians relying on AI-assisted diagnosis from medical QA systems"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians' reliance on AI outputs without source verification and the retrieval system's lack of adversarial detection enable misinformation injection.",
+    "impact": "Misleading diagnostic suggestions cause incorrect treatments, harming patients and eroding trust in clinical AI systems.",
+    "dose_response": "Adversarial poisoning of RAG knowledge bases, through clinicians relying on AI-assisted diagnosis, triggers reliance on AI outputs without verification and lack of adversarial detection, leading to incorrect treatments, patient harm, and eroded trust in clinical AI."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial poisoning enables stealthy misinformation retrieval, which in medical QA systems exposes clinicians relying on AI-assisted diagnosis to misleading suggestions, leading to misdiagnosis and patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians' overreliance on AI outputs due to time pressure and limited access to alternative information sources.",
+      "Insufficient verification workflows allowing retrieval of unverified synthetic evidence."
+    ],
+    "impact": [
+      "Misdiagnosis and patient harm from erroneous AI-generated suggestions.",
+      "Erosion of institutional trust in AI-assisted diagnostic tools.",
+      "Legal liability for healthcare providers."
+    ]
+  }
+}

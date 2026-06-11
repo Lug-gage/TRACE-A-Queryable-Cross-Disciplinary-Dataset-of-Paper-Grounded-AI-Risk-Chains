@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1905",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5379,
+    "reference": "Safety-critical systems trust decomposition for scene understanding",
+    "generated": "Perception systems naively trust disentangled factors without cross-validation, accepting conflation of independent scene elements."
+  },
+  "impact": {
+    "similarity": 0.5906,
+    "reference": "Navigation errors cause vehicle accidents and harm",
+    "generated": "Misleading scene layouts cause incorrect navigation decisions, leading to collisions and property damage."
+  },
+  "dose_response": {
+    "similarity": 0.9393,
+    "reference": "Diffusion models' factorized but non-continuous manifold representations conflating scene factors cause misinterpretation of scene layout, which when autonomous vehicle perception systems trust such decompositions, leads to navigation errors causing accidents.",
+    "generated": "Diffusion models’ factorized but non-continuous manifold representations conflate independent scene factors, and through autonomous vehicle perception systems relying on these decompositions, trigger naive trust without cross-validation and acceptance of conflation, leading to misleading layouts, incorrect navigation, collisions, and property damage."
+  }
+}

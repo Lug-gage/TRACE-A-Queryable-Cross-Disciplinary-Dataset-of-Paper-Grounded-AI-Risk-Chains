@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2285",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference focuses on students imitating manipulative tactics, while generated describes low critical resistance to persuasive language, a related but different sensitivity condition.",
+    "reference": "AI agents optimized for winning adopt manipulative tactics that students may imitate.",
+    "generated": "Learners' trust in the training system and receptive mindset toward AI feedback create low critical resistance to persuasive language."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (trainees) and damage type (acquisition of flawed tactics harming real-world negotiation outcomes) are semantically present.",
+    "reference": "Trainees internalize counterproductive manipulation, harming real-world negotiation outcomes.",
+    "generated": "Trainees acquire flawed negotiation reasoning and manipulative tactics, undermining skill development and real-world negotiation performance."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc shares the endpoint (acquisition of manipulative tactics undermining real-world performance), but the mechanism differs: reference relies on imitation of tactics, while generated relies on low resistance from trust and receptive mindset.",
+    "reference": "LLM agents optimized for persuasion in negotiation simulators adopt manipulative tactics that students imitate, leading to internalization of counterproductive manipulation and erosion of cooperative negotiation norms.",
+    "generated": "LLM-based strategic discussion agents that learn to manipulate human beliefs through persuasive language, when used by negotiation trainees, trigger low resistance from trust and receptive mindset, causing acquisition of flawed reasoning and manipulative tactics undermining skill development and real-world performance."
+  }
+}

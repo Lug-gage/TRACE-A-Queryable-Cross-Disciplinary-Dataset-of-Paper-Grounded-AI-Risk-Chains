@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0698",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "coaches and analysts rely on automated outputs without verification, matching coaching staff over-reliance without manual spot-checks",
+    "reference": "Coaching staff over-reliance on automated player tracking without manual spot-checks.",
+    "generated": "Coaches and analysts rely on automated tracking outputs without independent verification, making them unable to detect identity switches."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "distorted player evaluations and undermined team effectiveness matches suboptimal tactical decisions harming team outcomes",
+    "reference": "Suboptimal tactical decisions based on misidentified player performance data, harming team outcomes.",
+    "generated": "Flawed performance metrics and tactical insights distort player evaluations and game strategies, undermining team effectiveness."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "the causal arc from identity switches to reliance on unverified outputs to distorted evaluations is semantically identical",
+    "reference": "Identity switches and trajectory errors from occlusion/disocclusion mis-association enable false trajectories, which in sports performance analysis leads to coaching staff over-reliance on automated player tracking without manual spot-checks, resulting in suboptimal tactical decisions harming team outcomes.",
+    "generated": "Identity switches and trajectory errors from occlusion/disocclusion mis-association, through use in sports performance evaluation, trigger reliance on unverified automated outputs that miss identity switches, leading to distorted player evaluations and undermined team effectiveness."
+  }
+}

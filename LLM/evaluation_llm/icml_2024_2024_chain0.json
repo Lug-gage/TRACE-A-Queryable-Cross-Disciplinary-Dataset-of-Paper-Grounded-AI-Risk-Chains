@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference says developers lack tools to detect subtle stylistic artifacts; generated says they lack quality safeguards, which is a different sensitivity condition, albeit related to synthetic data artifacts",
+    "reference": "NLP developers lack tools to detect subtle stylistic artifacts in synthetic pre-training data.",
+    "generated": "NLP developers’ compute-saving reliance on synthetic data lacks quality safeguards, leaving models susceptible to distributional drift and artifact amplification."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "damage type (degraded/unreliable performance) partly matches misleading outputs, but the affected parties (healthcare and law) are missing, replaced with generic practical NLP applications",
+    "reference": "Downstream applications in healthcare and law produce misleading outputs due to brittle language understanding.",
+    "generated": "Downstream task robustness degrades, resulting in unreliable language model performance in practical NLP applications."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "both describe the same causal arc: reliance on synthetic data triggers distributional drift that degrades language understanding, despite differences in wording and additional detail about compute-saving and artifact amplification",
+    "reference": "Synthetic data reliance enables distributional drift, which in pre-training with web rephrases exposes NLP developers to distorted linguistic patterns, leading to brittle language understanding in high-stakes domains.",
+    "generated": "LLM scaling drives reliance on synthetic data, where developers' compute-saving pre-training without quality safeguards triggers distributional drift and artifact amplification, degrading downstream task robustness and reliability."
+  }
+}

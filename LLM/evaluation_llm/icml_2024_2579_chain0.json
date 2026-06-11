@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2579",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Radiologists' reliance on saliency maps without clinical verification is the same sensitivity condition as over-reliance on XAI without independent verification",
+    "reference": "Radiologists over-relying on XAI without independent verification, especially under time pressure.",
+    "generated": "Radiologists' reliance on saliency maps as plausible explanations, without clinical verification routines, renders them susceptible to misleading non-clinically relevant features."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Diagnostic errors, patient harm and inappropriate treatments match the reference's incorrect/missed diagnoses and patient harm from inappropriate treatment",
+    "reference": "Incorrect or missed diagnoses resulting in patient harm from delayed or inappropriate treatment.",
+    "generated": "Diagnostic errors cause patient harm, inappropriate treatments, and eroded confidence in AI-assisted medical imaging."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc of low-fidelity maps leading to uncritical reliance on non-clinically relevant features, then diagnostic errors and patient harm, matches the reference's misleading over-reliance chain",
+    "reference": "Attribution maps lacking fidelity mislead radiologists interpreting AI-assisted chest X-rays, enabling over-reliance without verification under time pressure, resulting in incorrect diagnoses and patient harm.",
+    "generated": "Attribution maps lacking fidelity and clarity, through radiologists interpreting AI chest X-ray explanations, trigger uncritical reliance on non-clinically relevant features, leading to diagnostic errors that cause patient harm, inappropriate treatments, and eroded confidence."
+  }
+}

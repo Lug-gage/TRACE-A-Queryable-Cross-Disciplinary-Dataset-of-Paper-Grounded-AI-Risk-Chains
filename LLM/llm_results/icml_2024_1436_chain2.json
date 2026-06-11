@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_1436",
+  "chain_index": 2,
+  "title": "Copyright Traps for Large Language Models",
+  "abstract": "Questions of fair use of copyright-protected content to train Large Language Models (LLMs) are being actively debated. Document-level inference has been proposed as a new task: inferring from black-box access to the trained model whether a piece of content has been seen during training. SOTA methods however rely on naturally occurring memorization of (part of) the content. While very effective against models that memorize significantly, we hypothesize-and later confirm-that they will not work against models that do not naturally memorize, e.g. medium-size 1B models. We here propose to use copyright traps, the inclusion of fictitious entries in original content, to detect the use of copyrighted materials in LLMs with a focus on models where memorization does not naturally occur. We carefully design a randomized controlled experimental setup, inserting traps into original content (books) and train a 1.3B LLM from scratch. We first validate that the use of content in our target model would be undetectable using existing methods. We then show, contrary to intuition, that even medium-length trap sentences repeated a significant number of times (100) are not detectable using existing methods. However, we show that longer sequences repeated a large number of times can be reliably detected (AUC=0.75) and used as copyright traps. Beyond copyright applications, our findings contribute to the study of LLM memorization: the randomized controlled setup enables us to draw causal relationships between memorization and certain sequence properties such as repetition in model training data and perplexity.",
+  "impact": "While the exact legal nature of copyright in the context of LLM training is still actively debated, the study of copyright traps increases transparency in model training. We believe this to be generally beneficial for the community of content creators, researchers and model developers. It is worth noting, however, that openly publishing this research would make it easier for malevolent model developers to evade any potential measures to increase the detectability of the training data, should they be developed. More broadly, this work also contributes to the large body of research dedicated at exploring training data extraction, which can be a serious privacy threat. By exploring which properties affect memorization in a real-world LLM, we believe to effectively contribute to understanding the associated privacy risk - which is beneficial for both model developers aiming to limit privacy threats and society as a whole. We believe that further exploration of the topic does not pose additional risks, as privacy risks in LLMs mostly come from unintended memorization, rather than a deliberate malice by a model developer. On the other hand, we find that memorization capacity varies greatly across different models, and not all models are equally prone to memorizing their training data. We hope that this finding does not lead to an increased complacency to privacy concerns among model developers. Separately, potential misuse of LLMs for producing misinformation should be considered. Better understanding of LLM memorization could be abused by bad actors to influence the output of production-grade LLMs. We, however, believe that the benefits of the research in this area outweigh the risks, and it will help inform future defences against misuse.",
+  "query_input": {
+    "scenario": "Scientific research using LLMs for text generation with sensitive data",
+    "issue": "Researchers embed canary traps; black-box probing reveals training data membership, violating privacy.",
+    "hazard": [
+      "Canary trap-based data provenance techniques enable privacy backdoor attacks that force models to memorize and leak targeted content."
+    ],
+    "exposure": [
+      "Research participants whose private information is exposed via membership inference."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Research participants lack control over training data inclusion and models lack differential privacy, enabling membership inference from forced memorization.",
+    "impact": "Privacy violations expose participants' sensitive data, causing reputational harm, psychological distress, and loss of trust in research.",
+    "dose_response": "Canary trap-based data provenance attacks, through membership inference exposing research participants' private information, trigger lack of control over training data and absent differential privacy, leading to privacy violations causing reputational harm, psychological distress, and loss of trust in research."
+  },
+  "reference": {
+    "dose_response": [
+      "Canary trap privacy backdoors enable models to memorize sensitive text, allowing black-box probing to extract canaries, which violates participant privacy and causes personal harm."
+    ],
+    "vulnerability": [
+      "Generative models overfit sensitive text, enabling membership inference via canary queries.",
+      "Research participants' privacy violated through black-box probing.",
+      "Absence of privacy safeguards amplifies risk of de-anonymization."
+    ],
+    "impact": [
+      "Privacy breaches of sensitive participant data, causing personal harm and distress.",
+      "Withdrawal of research participation and reluctance to share data.",
+      "Ethical violations and regulatory sanctions against researchers."
+    ]
+  }
+}

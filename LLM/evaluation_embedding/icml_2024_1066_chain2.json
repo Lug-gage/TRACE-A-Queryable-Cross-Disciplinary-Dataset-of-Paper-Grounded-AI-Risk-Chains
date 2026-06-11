@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1066",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6053,
+    "reference": "Researchers treat AI-generated chemical space as unbiased, reinforcing existing scaffold preferences and missing rare novelty.",
+    "generated": "Researchers lack integrated synthetic feasibility checks, allowing chemically invalid but in silico promising structures to be accepted as leads."
+  },
+  "impact": {
+    "similarity": 0.6406,
+    "reference": "Reduced chemical diversity in libraries, diminished innovation, and missed first-in-class drug opportunities.",
+    "generated": "Experimental resources wasted on unsynthesizable leads, delaying identification of viable drug candidates."
+  },
+  "dose_response": {
+    "similarity": 0.7867,
+    "reference": "Goal-aware fragment assembly discarding rare fragments skews exploration to common scaffolds, and when researchers treat this biased output as unbiased, it reduces chemical diversity and misses first-in-class opportunities.",
+    "generated": "Goal-aware fragment assembly with dynamic vocabulary optimization, through researchers exploring chemical space with fragment-based models, triggers acceptance of chemically invalid leads due to missing synthetic feasibility checks, leading to experimental resources wasted on unsynthesizable leads, delaying viable drug candidate identification."
+  }
+}

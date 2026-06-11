@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_3284",
+  "chain_index": 0,
+  "title": "Position AI Safety Must Embrace an Antifragile Perspective",
+  "abstract": "This position paper contends that modern AI research must adopt an antifragile perspective on safety-one in which the system’s capacity to guarantee long-term AI safety such as handling rare or out-of-distribution (OOD) events expands over time. Conventional static benchmarks and single-shot robustness tests overlook the reality that environments evolve and that models, if left unchallenged, can drift into maladaptation (e.g., reward hacking, over-optimization, or atrophy of broader capabilities). We argue that an antifragile approach-Rather than striving to rapidly reduce current uncertainties, the emphasis is on leveraging those uncertainties to better prepare for potentially greater, more unpredictable uncertainties in the future-is pivotal for the long-term reliability of open-ended ML systems. In this position paper, we first identify key limitations of static testing, including scenario diversity, reward hacking, and over-alignment. We then explore the potential of antifragile solutions to manage rare events. Crucially, we advocate for a fundamental recalibration of the methods used to measure, benchmark, and continually improve AI safety over the long term, complementing existing robustness approaches by providing ethical and practical guidelines towards fostering an antifragile AI safety community.",
+  "impact": "This position paper advocates for an antifragile approach to AI safety, aiming to enhance long-term system reliability by enabling AI to learn and strengthen from encounters with novel stressors and rare events. While this paradigm promises more resilient AI better equipped for unforeseen challenges in evolving environments, potentially spurring beneficial research in adaptive systems, it also introduces complexities. Potential risks include the misapplication of harnessing volatility without stringent safety protocols, the resource demands of developing such systems, and the uncertainty of how highly adaptive AI might evolve, particularly if not perfectly aligned with human values. Significant ethical considerations, such as responsible vulnerability disclosure, addressing potential biases in adaptive learning, and ensuring societal preparedness for dynamically evolving AI, must be proactively managed. Ultimately, this work seeks to stimulate critical discussion on dynamic, forwardlooking strategies for AI safety, acknowledging the inherent uncertainties in developing truly antifragile systems while underscoring the importance of such a pursuit for trustworthy AI.",
+  "query_input": {
+    "scenario": "Foundation model OOD performance monitoring using agreement-on-the-line",
+    "issue": "Over-optimistic OOD predictions from low ensemble diversity mask safety degradation.",
+    "hazard": [
+      "Antifragile self-improvement relies on safety measurement, which is fragile to distribution shifts, enabling reward hacking through metric over-optimization."
+    ],
+    "exposure": [
+      "ML engineers monitoring foundation model safety in production."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Low ensemble diversity in OOD monitoring yields over-optimistic agreement lines, masking safety degradation from engineers.",
+    "impact": "Undetected reward hacking degrades model safety, leading to harmful and unreliable AI behavior in production.",
+    "dose_response": "Antifragile self-improvement's reliance on fragile safety measurement enables reward hacking, which through ML engineers' production monitoring with low ensemble diversity yields over-optimistic OOD agreement lines masking degradation, causing undetected reward hacking and harmful AI behavior."
+  },
+  "reference": {
+    "dose_response": [
+      "Metric over-optimization from fragile safety measurement yields over-optimistic agreement-on-the-line, inducing human complacency that delays detection of model safety degradation, leading to patient harm and regulatory penalties."
+    ],
+    "vulnerability": [
+      "Human operators become complacent when agreement-on-the-line metrics show high confidence, reducing independent safety checks."
+    ],
+    "impact": [
+      "Undetected model safety degradation leads to harmful outputs in clinical diagnosis, causing patient harm and regulatory penalties."
+    ]
+  }
+}

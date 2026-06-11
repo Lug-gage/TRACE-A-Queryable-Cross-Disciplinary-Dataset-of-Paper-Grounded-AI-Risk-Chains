@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1358",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4446,
+    "reference": "Objective functions optimize for easily measurable outcomes, neglecting critical but hard-to-quantify maternal needs.",
+    "generated": "Mothers rely on AI-scheduled calls without alternative access to counseling, making them defenseless against resource misallocation."
+  },
+  "impact": {
+    "similarity": 0.703,
+    "reference": "Preventable maternal and neonatal complications from missed high-risk pregnancies.",
+    "generated": "High-risk mothers miss critical health counseling, leading to preventable complications and increased maternal and infant morbidity."
+  },
+  "dose_response": {
+    "similarity": 0.7423,
+    "reference": "Biased or high-variance off-policy evaluation estimates enable unreliable policy recommendations, which in public health maternal outreach leads to misallocated health worker calls that miss high-risk pregnancies.",
+    "generated": "Biased off-policy evaluation estimates, through AI-scheduled phone counseling for pregnant and new mothers, trigger defenselessness against resource misallocation, leading to high-risk mothers missing critical counseling and preventable maternal-infant morbidity."
+  }
+}

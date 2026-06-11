@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2732",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes technical detection limitations, while reference describes platform liability shields incentivizing minimal investment, a related but different sensitivity condition.",
+    "reference": "Platform liability shields incentivize minimal detection investment, externalizing harm to buyers.",
+    "generated": "Platform content screening relies on automated detectors with limited accuracy against varied AI-generated image characteristics."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "legal harm is mentioned, but the affected party (brands) and the specific false advertising claims are missing.",
+    "reference": "Commercial use of synthetic images in advertising triggers false advertising claims and legal liability for brands.",
+    "generated": "Commercial image repositories become contaminated with synthetic images, eroding buyer trust and causing financial and legal harm."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the initial causal steps (improved quality to indistinguishable) are present, but the arc omits commercial use and false advertising, ending instead with repository contamination and general trust/harm.",
+    "reference": "Improved text-to-image generation quality enables images indistinguishable by automated detectors, which in digital asset platforms screening AI-generated stock photos exposes operators and buyers, leading to commercial use of synthetic images triggering false advertising claims.",
+    "generated": "AI-generated images indistinguishable from real images by automated detectors due to improved generation quality, through content integrity screening reliance, triggers limited accuracy against varied AI-generated image characteristics, leading to contaminated repositories, eroding trust and causing financial and legal harm."
+  }
+}

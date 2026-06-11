@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2512",
+  "chain_index": 1,
+  "title": "Probabilistic Inference in Language Models via Twisted Sequential Monte Carlo",
+  "abstract": "Numerous capability and safety techniques of Large Language Models (LLMs), including RLHF, automated red-teaming, prompt engineering, and infilling, can be cast as sampling from an unnormalized target distribution defined by a given reward or potential function over the full sequence. In this work, we leverage the rich toolkit of Sequential Monte Carlo (SMC) for these probabilistic inference problems. In particular, we use learned twist functions to estimate the expected future value of the potential at each timestep, which enables us to focus inference-time computation on promising partial sequences. We propose a novel contrastive method for learning the twist functions, and establish connections with the rich literature of soft reinforcement learning. As a complementary application of our twisted SMC framework, we present methods for evaluating the accuracy of language model inference techniques using novel bidirectional SMC bounds on the log partition function. These bounds can be used to estimate the KL divergence between the inference and target distributions in both directions. We apply our inference evaluation techniques to show that twisted SMC is effective for sampling undesirable outputs from a pretrained model (a useful component of harmlessness training and automated red-teaming), generating reviews with varied sentiment, and performing infilling tasks.",
+  "impact": "This paper is motivated by the social consequences of recent advances in the field of machine learning. Controlled generation from language models has the potential to improve safety through better steering of generation to human preferences, more efficient automated red-teaming, and the ability to estimate or bound probabilities of rare behaviors. Any such work is inherently a double-edged sword; the same techniques used to generate samples from a harmless distribution of text could, with a single sign change, be repurposed for generating samples from a harmful distribution of text. Thus, better controlled generation (in our framework, better sampling from target distributions) can provide benefits in the hands of responsible users but can also magnify harms in the hands of malevolent users (who have access to model weights). Overall, we believe the potential positive social benefits of our work in evaluation and steering language model output towards desired target distributions outweigh the potential negatives stemming primarily from misuse.",
+  "query_input": {
+    "scenario": "Sentiment-controlled text generation for creative applications",
+    "issue": "Twist miscalibration results in sentiment shifts that deviate from user intent, producing misleading content.",
+    "hazard": [
+      "Twisted SMC with learned twist functions yields miscalibrated importance weights, causing biased sampling from unnormalized target distributions."
+    ],
+    "exposure": [
+      "Content creators and writers using sentiment-guided generation assistants"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content creators and writers lack independent verification of sentiment alignment, trusting miscalibrated outputs.",
+    "impact": "Publication of misleading content with unintended sentiment deceives audiences and erodes trust in automated tools.",
+    "dose_response": "Miscalibrated twisted SMC weights cause biased sampling, through content creators using sentiment-guided assistants, triggers their lack of verification and trust, leading to publication of misleading content with unintended sentiment that deceives audiences and erodes trust in automated tools."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated importance weights in sentiment-guided generation assistants produce emotionally manipulative outputs, causing audiences to perceive false sentiment and influencing opinions and decisions."
+    ],
+    "vulnerability": [
+      "Over-reliance on a miscalibrated sampling method for sentiment control can inadvertently generate emotionally manipulative or deceptive text."
+    ],
+    "impact": [
+      "Audiences perceive false sentiment, influencing opinions, decisions, and emotional states, especially in marketing or political messaging."
+    ]
+  }
+}

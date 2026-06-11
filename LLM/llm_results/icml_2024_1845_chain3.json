@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1845",
+  "chain_index": 3,
+  "title": "IOI Invisible One-Iteration Adversarial Attack on No-Reference Image- and Video-Quality Metrics",
+  "abstract": "No-reference image- and video-quality metrics are widely used in video processing benchmarks. The robustness of learning-based metrics under video attacks has not been widely studied. In addition to having success, attacks on metrics that can be employed in video processing benchmarks must be fast and imperceptible. This paper introduces an Invisible One-Iteration (IOI) adversarial attack on no-reference image and video quality metrics. The proposed method uses two modules to ensure high visual quality and temporal stability of adversarial videos and runs for one iteration, which makes it fast. We compared our method alongside eight prior approaches using image and video datasets via objective and subjective tests. Our method exhibited superior visual quality across various attacked metric architectures while maintaining comparable attack success and speed. We made the code available on GitHub: https: //github.com/katiashh/ioi-attack.",
+  "impact": "In this paper, we propose a new method that can be used to exploit vulnerabilities in video quality assessment metrics. NR quality assessment is widely used for public competitions. However, little research has been published in this area. Using NR metrics vulnerabilities is profitable for benchmark participants, so they are unlikely to publish their findings. Also, no robust NR metrics have been proposed so far due to the complexity of the task: adversarial training and purification methods reduce the performance of defended methods, significantly reducing the usability of NR metrics as a substitution for subjective tests.",
+  "query_input": {
+    "scenario": "AI photo curation",
+    "issue": "Score manipulation skews automatic image ranking, degrading user satisfaction.",
+    "hazard": [
+      "Adversarial perturbations cause arbitrary score changes in no-reference image and video quality assessment models."
+    ],
+    "exposure": [
+      "End-users of photo library apps that rely on blind IQA for smart albums."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Unsupervised reliance on blind IQA for automatic album curation leaves end-users unable to detect manipulated quality scores.",
+    "impact": "Users receive poorly curated smart albums with irrelevant top images, causing frustration, decreased satisfaction, and abandonment of the feature.",
+    "dose_response": "Adversarial perturbations in blind IQA models, through end-user exposure in photo library apps, trigger unsupervised reliance that prevents detection of manipulated scores, leading to poorly curated smart albums, frustration, and feature abandonment."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial perturbations skew NR-IQA scores, leading to shuffled image ranking in photo apps, which degrades user satisfaction, reduces engagement, and prompts negative reviews."
+    ],
+    "vulnerability": [
+      "Photo apps use NR-IQA scores to rank images without user override or cross-check."
+    ],
+    "impact": [
+      "Poorly organized photo collections reduce user satisfaction, app engagement, and lead to negative reviews."
+    ]
+  }
+}

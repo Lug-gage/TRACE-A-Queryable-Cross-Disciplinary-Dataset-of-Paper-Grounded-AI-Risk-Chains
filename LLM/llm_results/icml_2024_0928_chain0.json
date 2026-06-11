@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 0,
+  "title": "Position On the Societal Impact of Open Foundation Models",
+  "abstract": "Foundation models are powerful technologies: how they are released publicly directly shapes their societal impact. In this position paper, we focus on open foundation models, defined here as those with broadly available model weights (e.g. Llama 3, Stable Diffusion XL). We identify five distinctive properties of open foundation models (e.g. greater customizability, poor monitoring) that mediate their benefits and risks. Open foundation models present significant benefits, with some caveats, that span innovation, competition, the distribution of decision-making power, and transparency. To understand their risks of misuse, we design a risk assessment framework for analyzing their marginal risk. Across several misuse vectors (e.g. cyberattacks, bioweapons), we find that current research is insufficient to effectively characterize the marginal risk of open foundation models relative to pre-existing technologies. The framework helps explain why the marginal risk is low in some cases, clarifies disagreements about misuse risks by revealing that past work has focused on different subsets of the framework with different assumptions, and articulates a way forward for more constructive debate. Overall, our work supports a more grounded assessment of the societal impact of open foundation models by outlining what research is needed to empirically validate their theoretical benefits and risks.",
+  "impact": "Our work explicitly addresses the societal impact of open foundation models. In turn, we expect that our work is likely to influence different stakeholders to take the actions we call for in §6. For example, by articulating specific benefits and risks and, more broadly, providing the conceptual framework for reasoning about these matters, we anticipate that policymakers may take action per our characterization of open foundation models. Beyond these impacts, we specifically raise the concern of misinterpretation of our work. Throughout, as we emphasize in our risk assessment framework, we highlight areas where we are uncertain (e.g. there may be little evidence we are aware of for certain threat vectors or current work does not suffice for showing marginal risks of open foundation models). Further, as we note, foundation models and the capabilities/properties of foundation models that are openly released will change over time. For all of these reasons, we caution against over-indexing on specific characterizations of the current benefit vs. risk balance. Finally, we bring attention to the concern that this work further entrenches a salient divide in the community of “open vs. closed”. While we do see substantive reasons for distinguishing widely available model weights for the purposes of analysis of societal impact, this distinction is not the only useful one (e.g. improved transparency and scientific quality, understanding of biases and copyright may hinge on open data). Regardless, we believe there is significant room for consensus on the current status quo, or the conceptual framework, as opposed to the current fierce debate. And, most critically, many aspects of the societal impact of foundation models are largely orthogonal to the open vs. closed distinction and should not be overlooked as a result. For example, many matters pertaining to how a foundation model is built (e.g. consent for the use of data, copyright and intellectual property considerations, presence of sensitive information, energy consumption and environmental impacts), and how foundation models are used in practice once made available like labor displacement, may apply similarly to both open and closed foundation models.",
+  "query_input": {
+    "scenario": "Quantized LLM deployed on commodity devices (edge, mobile)",
+    "issue": "Malicious quantization introduces harmful behavior bypassing safety evaluations",
+    "hazard": [
+      "Open-weight foundation models enable model compromise (quantization/fine-tuning backdoors) and output manipulation that evade safety monitoring"
+    ],
+    "exposure": [
+      "End-users interacting with quantized LLM for daily tasks"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End-users lack any capability to verify model integrity or detect malicious quantization, relying on safety guarantees that the compromised model bypasses.",
+    "impact": "Users act on harmful, manipulated outputs, leading to personal harm, security breaches, and eroded trust in AI assistance.",
+    "dose_response": "Open-weight models compromised via quantization backdoors and output manipulation evading monitoring, through end-user daily interaction, trigger reliance on bypassed safety guarantees and inability to verify integrity, leading to personal harm, security breaches, and eroded trust from acting on manipulated outputs."
+  },
+  "reference": {
+    "dose_response": [
+      "Malicious quantization, enabled by open-weight models, evades safety checks, leading to compromised LLMs; unsuspecting end-users trust these models, resulting in direct delivery of harmful content."
+    ],
+    "vulnerability": [
+      "User trust in model origin without verification of quantization integrity enables deployment of compromised LLMs."
+    ],
+    "impact": [
+      "Delivery of harmful content (hate speech, disinformation) to unsuspecting end-users, causing individual and societal harm."
+    ]
+  }
+}

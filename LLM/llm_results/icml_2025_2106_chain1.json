@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2106",
+  "chain_index": 1,
+  "title": "$∞$-Video A Training-Free Approach to Long Video Understanding via Continuous-Time Memory Consolidation",
+  "abstract": "Current video-language models struggle with long-video understanding due to limited context lengths and reliance on sparse frame subsampling, often leading to information loss. This paper introduces ∞-VIDEO, which can process arbitrarily long videos through a continuous-time long-term memory (LTM) consolidation mechanism. Our framework augments video Q-formers by allowing them to process unbounded video contexts efficiently and without requiring additional training. Through continuous attention, our approach dynamically allocates higher granularity to the most relevant video segments, forming “sticky” memories that evolve over time. Experiments with Video-LLaMA and VideoChat2 demonstrate improved performance in video question-answering tasks, showcasing the potential of continuoustime LTM mechanisms to enable scalable and training-free comprehension of long videos.",
+  "impact": "We discuss the broader implications of our work, including ethical considerations and potential societal consequences. Our framework extends the capabilities of existing shortcontext multimodal language models, enabling them to process unbounded video contexts without requiring retraining. This is particularly relevant given concerns about the energy consumption of training large models (Strubell et al., 2019). However, we must also acknowledge the societal risks associated with video models, especially their potential use in privacy-violating surveillance. As our approach enables scaling to longer videos, there is a concern that it could be applied in undesirable domains. While current state-of-theart models are often trained on datasets with documented biases, we intentionally focus on applications using standard benchmark applications, aiming to distance ourselves from harmful uses.",
+  "query_input": {
+    "scenario": "Streaming video comprehension with memory propagation",
+    "issue": "Sticky memories can link unrelated past events to current, causing false positives in alerting.",
+    "hazard": [
+      "Continuous attention and sticky memories in long video models amplify errors, causing cascading misinterpretations over time."
+    ],
+    "exposure": [
+      "Security personnel monitoring live feeds with memory-augmented analysis."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Security operators rely on the model's memory associations without independent verification, enabling false positives to trigger real responses.",
+    "impact": "Repeated false alerts misdirect personnel, causing delayed detection and response to genuine security threats.",
+    "dose_response": "Continuous attention and sticky memories in long video models amplify errors; through security personnel monitoring live feeds with memory-augmented analysis, this triggers unverified reliance on model associations, leading to repeated false alerts that misdirect personnel and delay genuine threat detection."
+  },
+  "reference": {
+    "dose_response": [
+      "Continuous attention and sticky memories amplify errors, linking unrelated past events to current alerts, exposing security personnel monitoring live feeds to false positives, leading to operator alarm fatigue and trust collapse."
+    ],
+    "vulnerability": [
+      "Security operators rely on alerts without verifying against raw footage.",
+      "High cognitive load during live monitoring reduces critical evaluation."
+    ],
+    "impact": [
+      "Operator alarm fatigue leads to missed genuine threats.",
+      "Trust in the surveillance system collapses after false alarms."
+    ]
+  }
+}

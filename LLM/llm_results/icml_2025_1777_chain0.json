@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1777",
+  "chain_index": 0,
+  "title": "Improving Your Model Ranking on Chatbot Arena by Vote Rigging",
+  "abstract": "Chatbot Arena is a popular platform for evaluating LLMs by pairwise battles, where users vote for their preferred response from two randomly sampled anonymous models. While Chatbot Arena is widely regarded as a reliable LLM ranking leaderboard, we show that crowdsourced voting can be rigged to improve (or decrease) the ranking of a target model mt. We first introduce a straightforward target-only rigging strategy that focuses on new battles involving mt, identifying it via watermarking or a binary classifier, and exclusively voting for mt wins. However, this strategy is practically inefficient because there are over 190 models on Chatbot Arena and on average only about 1% of new battles will involve mt. To overcome this, we propose omnipresent rigging strategies, exploiting the Elo rating mechanism of Chatbot Arena that any new vote on a battle can influence the ranking of the target model mt, even if mt is not directly involved in the battle. We conduct experiments on around 1.7 million historical votes from the Chatbot Arena Notebook, showing that omnipresent rigging strategies can improve model rankings by rigging only hundreds of new votes. While we have evaluated several defense mechanisms, our findings highlight the importance of continued efforts to prevent vote rigging. Code is publicly available to reproduce all experiments.",
+  "impact": "Due to Chatbot Arena’s widespread popularity in LLM evaluation, it is possible that practical adversaries could exploit our rigging strategies to improve their own target models’ ranking for substantial promotional benefits. These malicious behaviors would put other normal model developers’ interests at risk, and even worse, undermine the reliability and trustworthiness of Chatbot Arena. On the other hand, while we have discussed several defense methods against vote rigging, our initial attempts at rigging defense highlight the difficulties in completely eliminating the manipulation effect. As a result, we encourage the community to focus on developing more robust defense mechanisms to mitigate the rigging vulnerabilities of Chatbot Arena as well as strengthening the integrity of emerging voting-based evaluation systems such as Copilot Arena and WebDev Arena.",
+  "query_input": {
+    "scenario": "Chatbot Arena-style public LLM evaluation platform",
+    "issue": "Covert vote stuffing biases Elo scores, misleading community about model quality.",
+    "hazard": [
+      "Crowdsourced pairwise LLM evaluation with watermark-based model identification enables targeted Elo rating manipulation."
+    ],
+    "exposure": [
+      "Researchers, developers, and enterprises choosing models from public leaderboards."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Blind reliance on crowdsourced leaderboard rankings without independent model quality verification",
+    "impact": "Adoption of inferior models, misallocated resources, and eroded trust in public evaluation benchmarks",
+    "dose_response": "Watermark-enabled targeted Elo manipulation in crowdsourced LLM evaluation, through exposure of leaderboard-reliant researchers and enterprises, triggers blind reliance on rankings without independent verification, leading to adoption of inferior models, resource misallocation, and eroded trust in benchmarks."
+  },
+  "reference": {
+    "dose_response": [
+      "Targeted Elo manipulation via watermark identification enables covert vote stuffing, which in public leaderboards exposes users to biased scores, leading to misallocation of resources and erosion of trust."
+    ],
+    "vulnerability": [
+      "Unverified user votes allow coordinated manipulation without detection.",
+      "Economic incentives for vendors to artificially boost own ranking."
+    ],
+    "impact": [
+      "Misallocation of research and deployment resources to inferior models.",
+      "Erosion of community trust in public leaderboard benchmarks."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0761",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6437,
+    "reference": "Unquestioning consumer trust in AI-generated health claims, amplified by low health literacy.",
+    "generated": "Shoppers trust VLM-generated descriptions as accurate and lack domain knowledge to critically evaluate persuasive health claims."
+  },
+  "impact": {
+    "similarity": 0.6804,
+    "reference": "Consumers purchase unhealthy products, causing long-term health deterioration.",
+    "generated": "Consumers buy unhealthy food under false health pretenses, leading to dietary harm and eroded trust in product information."
+  },
+  "dose_response": {
+    "similarity": 0.8256,
+    "reference": "Stealthy data poisoning enables VLM-generated persuasive health claims, exposing online shoppers reading product descriptions, leading to unhealthy purchases, long-term health deterioration, and eroded platform trust.",
+    "generated": "Stealthy data poisoning on vision-language models, through online shoppers reading manipulated descriptions, triggers misplaced trust and lack of domain knowledge, leading to purchase of unhealthy food under false health pretenses, dietary harm, and eroded trust in product information."
+  }
+}

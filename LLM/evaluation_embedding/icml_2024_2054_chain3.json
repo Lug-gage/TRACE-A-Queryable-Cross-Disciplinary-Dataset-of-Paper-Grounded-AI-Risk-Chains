@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2054",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.405,
+    "reference": "Policy officials lack the technical expertise to vet complex reward functions, enabling biased resource allocation.",
+    "generated": "No independent code auditing or verification infrastructure exists to catch errors in LLM-generated allocation algorithms before deployment."
+  },
+  "impact": {
+    "similarity": 0.4571,
+    "reference": "Exacerbated health inequities, resource denial to marginalized groups, erosion of public confidence in algorithmic governance.",
+    "generated": "Misallocation of critical health supplies causes preventable disease outbreaks and deaths in underserved populations."
+  },
+  "dose_response": {
+    "similarity": 0.7138,
+    "reference": "Autonomous generation of reward code by LLM agents enables erroneous allocation logic, which in public health resource distribution exposes officials to exacerbated health inequities.",
+    "generated": "Autonomous LLM code execution introducing system modifications and data corruption, through public health officials' reliance on unvetted policies, triggers lack of code auditing, leading to health supply misallocation causing preventable outbreaks in underserved populations."
+  }
+}

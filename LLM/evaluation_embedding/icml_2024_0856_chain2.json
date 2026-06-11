@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0856",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3485,
+    "reference": "Alert fatigue from false alarms desensitizes operators, causing real threats to be missed.",
+    "generated": "Operators lack access to prediction confidence metrics, forcing reliance on uncalibrated outputs they cannot critically assess."
+  },
+  "impact": {
+    "similarity": 0.4473,
+    "reference": "Security breaches and failure to prevent public safety incidents.",
+    "generated": "Real threats go undetected while false alarms cause alert fatigue, degrading public safety and operational trust."
+  },
+  "dose_response": {
+    "similarity": 0.7356,
+    "reference": "Uncalibrated stochastic predictions in video surveillance cause false alarms, desensitizing operators and causing missed real threats, leading to security breaches and legal liability.",
+    "generated": "Stochastic frame prediction models produce uncalibrated future states, and when security operators monitor public spaces via AI video prediction tools without confidence metrics, this reliance on uncalibrated outputs leads to undetected threats and false alarms, degrading safety and trust."
+  }
+}

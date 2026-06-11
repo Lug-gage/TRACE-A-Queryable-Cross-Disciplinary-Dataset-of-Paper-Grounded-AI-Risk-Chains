@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2054",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes granting of full system permissions without sandboxing, but omits the low AI literacy condition of end users from the reference.",
+    "reference": "End users with low AI literacy grant agents unrestricted OS-level access without sandboxing.",
+    "generated": "End users grant LLM agents full system permissions without sandboxing or code validation, enabling unrestricted execution."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated includes user data loss, privacy breaches, and system corruption, but omits widespread distrust of AI assistants present in the reference.",
+    "reference": "Personal data loss, system corruption, privacy violations, and widespread distrust of AI assistants.",
+    "generated": "User data loss, privacy breaches, and system corruption from unintended file deletion or misconfiguration."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc lacks the intermediate system misconfiguration step; it directly links unrestricted code execution to harm instead of enabling misconfiguration that leads to exposure.",
+    "reference": "Unconstrained code actions by LLM agents enable system misconfiguration, which in open-ended computer tasks exposes end users to personal data loss and privacy violations.",
+    "generated": "LLM agents autonomously writing and executing arbitrary code in real environments, through deployment by end users for general tasks, triggers unrestricted execution via full system permissions without sandboxing, leading to data loss, privacy breaches, and system corruption."
+  }
+}

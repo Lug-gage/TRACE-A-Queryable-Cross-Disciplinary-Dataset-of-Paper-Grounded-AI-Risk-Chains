@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0611",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of constraints causing overfitting and biased outputs, but omits the reference's feedback loops and entrenchment of minority language patterns.",
+    "reference": "Personalization algorithms amplify existing user biases, creating feedback loops that entrench non-standard or minority language patterns.",
+    "generated": "The bi-level optimization lacks constraints preventing specialist experts from overfitting to local typing data, enabling biased outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (underrepresented linguistic locales) and the damage type (weakened accuracy, disproportionate disadvantage) match the systematic underperformance and digital marginalization.",
+    "reference": "Systematic underperformance for minority language users, reinforcing digital marginalization.",
+    "generated": "Biased text suggestions weaken prediction accuracy and disproportionately disadvantage users from underrepresented linguistic locales."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from bi-level optimization through unconstrained overfitting to biased suggestions and disadvantage for underrepresented users is semantically equivalent.",
+    "reference": "Bi-level optimization amplifies expert overfitting to local typing patterns, which in on-device personalized text generation exposes mobile users to biased suggestions, leading to systematic underperformance for minority language users.",
+    "generated": "Bi-level optimization of expert routing and specialization, through mobile device users relying on personalized suggestions, triggers unconstrained specialist overfitting to local typing data, leading to biased suggestions that weaken accuracy and disadvantage underrepresented linguistic locales."
+  }
+}

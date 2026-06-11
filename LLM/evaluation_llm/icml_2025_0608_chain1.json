@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0608",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe incomplete unlearning leaving residual/recoverable knowledge in the model",
+    "reference": "Incomplete removal of training data leaves residual memorization in model weights.",
+    "generated": "Users and data subjects lack independent verification of unlearning, relying on assurances from methods that leave models with recoverable knowledge."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "privacy violations are present, but the right to be forgotten is not explicitly mentioned",
+    "reference": "Unauthorized data disclosure violates privacy regulations and the right to be forgotten.",
+    "generated": "Attackers extract supposedly forgotten proprietary and personal data, causing privacy violations, competitive loss, and legal liability."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the arc shares tail (data extraction → privacy violations) but diverges: reference starts with unlearning failure, generated adds false security and lack of verification as a causal step",
+    "reference": "In enterprise LLM deployment, adversarial unlearning fails to fully remove data, allowing jailbreaking to extract forgotten proprietary information, leading to privacy violations and financial penalties.",
+    "generated": "Adversarially robust unlearning creates a false sense of security, causing enterprise users to forgo independent verification and rely on assurances, which input-level attacks exploit to extract recoverable proprietary data, causing privacy violations, competitive loss, and legal liability."
+  }
+}

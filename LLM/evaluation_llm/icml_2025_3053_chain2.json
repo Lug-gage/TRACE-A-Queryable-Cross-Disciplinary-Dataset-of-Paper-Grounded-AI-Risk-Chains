@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3053",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes scientists actively treating unvalidated AI outputs as evidence; generated describes lack of ground-truth preventing detection — related condition but different emphasis on behavioral vs. data-limitation vulnerability",
+    "reference": "Scientists treat AI-generated phenotypes as empirical evidence without wet-lab validation",
+    "generated": "Scientists lack ground-truth for intermediate cell states, preventing detection of when AI-generated morphologies deviate from biological plausibility."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both the affected party (drug target identification) and damage type (misdirection/wasted resources) from the reference are semantically present, with 'misdirected drug target identification pipelines' directly matching",
+    "reference": "False gene-disease associations misdirect drug target identification and funding",
+    "generated": "False gene-function assignments lead to wasted experimental resources and misdirected drug target identification pipelines."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "same causal arc: off-manifold flow matching generates undetectable/plausible phenotypes → scientists accept/do not detect them → false gene-function/target assignments → misdirected resources/funding",
+    "reference": "Straight-line flow matching generating plausible but off-manifold phenotypes enables functional genomics scientists to treat them as real, leading to false target identification and misdirected funding.",
+    "generated": "Straight-line flow matching interpolations off the biological manifold generate morphologically implausible trajectories that, when interpreted by functional genomics scientists lacking ground-truth, go undetected, leading to false gene-function assignments, wasted experimental resources, and misdirected drug target pipelines."
+  }
+}

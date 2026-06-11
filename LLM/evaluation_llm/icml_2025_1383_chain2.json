@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1383",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference sensitivity is absence of consent mechanisms enabling unauthorized replication; generated sensitivity is listener inability to distinguish cloned speech, a related but different condition.",
+    "reference": "Absence of consent mechanisms enables unauthorized voice replication.",
+    "generated": "Listeners cannot perceptually distinguish high-fidelity cloned speech from authentic speaker identity, enabling undetected impersonation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (voice owner) is present, but damage type is only partially covered: identity theft and psychological distress are included, but loss of personal autonomy is omitted and erosion of trust is added.",
+    "reference": "Identity theft, loss of personal autonomy, and psychological harm.",
+    "generated": "Voice cloning without consent enables identity theft, psychological distress, and erosion of trust in assistive speech technologies."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc partially overlaps: both start with cloning and end with harms via assistive speech listeners, but the generated arc replaces the reference's explicit 'without consent' causal link with inability to distinguish, altering the mechanism.",
+    "reference": "Near-instant voice cloning enables unauthorized replication in assistive devices, so when listeners encounter cloned voices without consent, it causes identity theft, loss of autonomy, and psychological harm.",
+    "generated": "Zero-shot distilled TTS with direct metric optimization generates any speaker's voice from minimal samples, through assistive speech listeners, triggers inability to distinguish cloned from authentic speech, leading to identity theft, psychological distress, and erosion of trust."
+  }
+}

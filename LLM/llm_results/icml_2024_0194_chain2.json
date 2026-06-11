@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 2,
+  "title": "Assessing Large Language Models on Climate Information",
+  "abstract": "As Large Language Models (LLMs) rise in popularity, it is necessary to assess their capability in critically relevant domains. We present a comprehensive evaluation framework, grounded in science communication research, to assess LLM responses to questions about climate change. Our framework emphasizes both presentational and epistemological adequacy, offering a fine-grained analysis of LLM generations spanning 8 dimensions and 30 issues. Our evaluation task is a real-world example of a growing number of challenging problems where AI can complement and lift human performance. We introduce a novel protocol for scalable oversight that relies on AI Assistance and raters with relevant education. We evaluate several recent LLMs on a set of diverse climate questions. Our results point to a significant gap between surface and epistemological qualities of LLMs in the realm of climate communication.",
+  "impact": "In this work we present an evaluation framework to assess the quality of answers to climate-related questions. Our evaluation is based on science-communication principles and aims to evaluate responses to genuine information needs of the public. Progress in correctly answering such questions can have a large impact for the dissemination of scientific results and can lead to positive effects on climate literacy, also reducing the public’s susceptibility to misinformation. As with any evaluation there are however limits to its validity. Specifically, the evaluation of systems to be deployed in critical contexts requires additional grounding and expert verification. This is especially the case when system responses inform actions. Moreover, the evaluation is limited to the evaluated context, and we make no claims that models can be trusted and deployed outside of that context.",
+  "query_input": {
+    "scenario": "Human-in-the-loop evaluation of LLM-generated climate policy briefings for decision support",
+    "issue": "Biased human ratings favor fluent but factually incorrect statements, compromising the evidence base for policy.",
+    "hazard": [
+      "Human evaluators in AI-assisted assessment fall prey to cognitive biases that conflate fluency with truthfulness, distorting quality judgments."
+    ],
+    "exposure": [
+      "Policy analysts and decision-makers relying on human-vetted LLM climate summaries"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Policy analysts and decision-makers lack independent verification tools to detect fluency bias in human-vetted LLM summaries.",
+    "impact": "Flawed, confidently-presented climate knowledge enters policy briefings, eroding evidence-based decision-making and risking maladaptive actions.",
+    "dose_response": "Human evaluators' fluency-truthfulness bias, through analysts' reliance on human-vetted LLM climate summaries, triggers the absence of independent verification tools, allowing confidently flawed climate knowledge into policy briefings and undermining evidence-based decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Cognitive biases cause human evaluators to conflate fluency with truthfulness, which in the scenario of AI-assisted policy briefing evaluation exposes decision-makers to distorted judgments, leading to climate policies based on flawed evidence."
+    ],
+    "vulnerability": [
+      "Cognitive biases cause human reviewers to conflate linguistic fluency with factual truthfulness.",
+      "Time-constrained policy analysts rely on heuristics rather than systematic verification of LLM outputs.",
+      "Institutional incentives reward rapid briefing production over rigorous accuracy checking."
+    ],
+    "impact": [
+      "Climate policies based on flawed evidence produce ineffective or counterproductive interventions.",
+      "Misallocation of public funds toward solutions unsupported by accurate climate science.",
+      "Policy-maker reputational damage when decisions based on incorrect briefings face public scrutiny."
+    ]
+  }
+}

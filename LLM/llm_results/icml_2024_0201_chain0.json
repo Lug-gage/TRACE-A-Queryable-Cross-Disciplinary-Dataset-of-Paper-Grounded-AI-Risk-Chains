@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 0,
+  "title": "Bridging Environments and Language with Rendering Functions and Vision-Language Models",
+  "abstract": "Vision-language models (VLMs) have tremendous potential for grounding language, and thus enabling language-conditioned agents (LCAs) to perform diverse tasks specified with text. This has motivated the study of LCAs based on reinforcement learning (RL) with rewards given by rendering images of an environment and evaluating those images with VLMs. If single-task RL is employed, such approaches are limited by the cost and time required to train a policy for each new task. Multi-task RL (MTRL) is a natural alternative, but requires a carefully designed corpus of training tasks and does not always generalize reliably to new tasks. Therefore, this paper introduces a novel decomposition of the problem of building an LCA: first find an environment configuration that has a high VLM score for text describing a task; then use a (pretrained) goalconditioned policy to reach that configuration. We also explore several enhancements to the speed and quality of VLM-based LCAs, notably, the use of distilled models, and the evaluation of configurations from multiple viewpoints to resolve the ambiguities inherent in a single 2D view. We demonstrate our approach on the Humanoid environment, showing that it results in LCAs that outperform MTRL baselines in zero-shot generalization, without requiring any textual task descriptions or other forms of environment-specific annotation during training.",
+  "impact": "Positive impacts. The development of languageconditioned agents (LCAs) will further fluidify humantechnology interaction. Given the convenience of language as a medium for humans to express desires and commands, this will likely result in an increase in such interactions. The possibility of steering technologies easily will empower every potential user, including those without technical expertise. LCAs are particularly promising as they might enhance the independence of individuals with mobility limitations, such as elderly or paraplegic persons. They may also be valuable for fine-grained control of robots in hazardous environments, such as radioactive or extraterrestrial terrains. Negative impacts. The proposed technology can be used to enable language-conditioned design and interaction with virtual environments, such as games, potentially making those environments more addictive, possibly causing users to become dependent upon them, lose touch with reality and become isolated. Additionally, a person of malicious intent could specify tasks that might be harmful (e.g., kick something hard) or insulting (e.g., make some kind of insulting gesture) to the LCA, and use it to generate corresponding images or to control a physical robot. As with any work that might be embodied in a physical robot, there is a risk of physical harm to objects and entities in that robot’s immediate vicinity: the training of the RL agents would need to be adapted to take safety factors into account; the agents would need to be trained/finetuned on real-world data; and operators would need to be trained on appropriate safety guidelines.",
+  "query_input": {
+    "scenario": "Zero-shot VLM task planning for embodied agents in unseen environments",
+    "issue": "VLM reward overweights text tokens uncorrelated with visual input, producing misaligned task plans.",
+    "hazard": [
+      "VLM-based reward scoring for rendered images introduces miscalibrated or visually-uncorrelated evaluation signals that misguide policy learning."
+    ],
+    "exposure": [
+      "Embodied agents executing navigation or manipulation tasks in novel indoor settings"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Policy learning depends on VLM rewards without mechanisms to verify visual-text alignment, leaving it sensitive to miscalibrated scores.",
+    "impact": "Embodied agents execute misaligned task plans, causing task failures and degraded zero-shot generalization in novel indoor settings.",
+    "dose_response": "VLM-based reward scoring with miscalibrated, visually-uncorrelated signals, through embodied agents in novel indoor settings, triggers policy learning that lacks visual-text alignment verification, leading to misaligned task plans, failures, and degraded zero-shot generalization."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated VLM reward signals misguide policy learning, which in zero-shot task planning for embodied agents in unseen environments leads to unsafe or incorrect actions in human-occupied spaces."
+    ],
+    "vulnerability": [
+      "Policies overfit to spurious visual-textual correlations in training environments, failing in novel settings.",
+      "VLM scoring lacks grounding in physical affordances, amplifying reliance on linguistic shortcuts over visual reality."
+    ],
+    "impact": [
+      "Embodied agents execute unsafe or incorrect actions in human-occupied spaces, causing property damage or injury.",
+      "Task plans fail silently in unseen environments, eroding user trust and hindering real-world deployment."
+    ]
+  }
+}

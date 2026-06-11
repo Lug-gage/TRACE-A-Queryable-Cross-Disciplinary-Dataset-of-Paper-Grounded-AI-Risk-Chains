@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2086",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe a sensitivity where game systems or players fail to detect flawed strategies derived from LLM outputs, allowing unfair advantage or degradation.",
+    "reference": "Players or game systems trusting LLM-optimized policies without detecting strategic flaws, leading to unfair advantage or degraded play.",
+    "generated": "Game environments and players lack mechanisms to detect or reject actions derived from hallucinated sub-goals, enabling flawed strategy execution."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Unfair competition and degraded player experience are captured, but loss of player trust and reputational damage to game platforms are absent.",
+    "reference": "Unfair competition, loss of player trust, degraded user experience or reputational damage to game platforms.",
+    "generated": "Gameplay fairness deteriorates, causing player frustration and loss of competitive integrity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from hallucinated sub-goals to flawed strategy execution, through exposure to undetectable actions in interactive settings, leading to fairness deterioration and competitive integrity loss, mirrors the reference's logic.",
+    "reference": "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL enable flawed strategies, which in interactive game-playing with policy-level LLM reflection exposes players trusting optimized policies without scrutiny, leading to unfair competition and loss of trust.",
+    "generated": "Hallucinated or misaligned LLM-generated sub-goals in hierarchical RL, through LLM-optimized agent actions experienced by players and environments, trigger the absence of mechanisms to detect or reject flawed strategy execution, leading to deteriorated fairness, player frustration, and loss of competitive integrity."
+  }
+}

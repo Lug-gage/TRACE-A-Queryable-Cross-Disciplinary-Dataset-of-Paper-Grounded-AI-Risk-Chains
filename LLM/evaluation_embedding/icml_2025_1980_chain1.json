@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1980",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.501,
+    "reference": "Students accept AI-generated solutions without understanding, leading to undetected overfitting and skill degradation.",
+    "generated": "Contestants lack access to hidden tests and interpret public test success as proof of correctness, creating over-reliance on superficial validation."
+  },
+  "impact": {
+    "similarity": 0.6634,
+    "reference": "Exam or contest failures, diminished problem-solving ability, and over-reliance on untrustworthy AI.",
+    "generated": "Incorrect solutions fail hidden tests, lowering contest scores, misleading learning, and eroding confidence in AI-assisted problem solving."
+  },
+  "dose_response": {
+    "similarity": 0.7664,
+    "reference": "LLM-based iterative refinement produces solutions that overfit to public tests, and students' blind acceptance causes exam failures and diminished skills due to hidden test failures.",
+    "generated": "The amplification of subtle errors by LLM-based iterative refinement and self-training, through students using AI for contest solutions, triggers over-reliance on public tests, leading to hidden failures that lower scores, mislead learning, and erode confidence."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1603",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Analyst dependence without independent checks semantically matches automation bias overlooking systematic sequence errors.",
+    "reference": "Analysts' automation bias leads them to overlook systematic sequence errors in routine monitoring tasks.",
+    "generated": "Analysts' dependence on black-box memory mechanisms for anomaly detection without independent checks for sequential errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated damage types (operational disruptions, undetected failures) are related but miss the specific financial loss and safety incidents from the reference.",
+    "reference": "Delayed anomaly detection causes financial loss, safety incidents, and missed interventions.",
+    "generated": "Missed anomalies or false alerts cause undetected failures, operational disruptions, and delayed response to critical events."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Memory biases triggering dependence without independent checks for sequence errors captures the same causal arc of biases causing overlooked sequence errors.",
+    "reference": "Recency/primacy effects distort order-sensitive predictions, causing sequence errors; when analysts monitor streaming data with automation bias, they overlook these errors, delaying anomaly detection and causing financial loss and safety incidents.",
+    "generated": "Human-inspired memory biases in continual learning architectures, through analysts monitoring streaming anomaly detection, trigger dependence on black-box memory without independent checks for sequential errors, leading to missed anomalies, false alerts, undetected failures, operational disruptions, and delayed response to critical events."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0278",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes students accepting AI steps without verification due to perceived authority; generated describes students and educators lacking expertise to detect errors, a related but different sensitivity condition.",
+    "reference": "Students accept AI math steps without manual verification due to perceived tool authority.",
+    "generated": "Students and educators lack sufficient mathematical expertise or verification tools to detect when AI-generated step-by-step reasoning is incorrect."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify harm to students' learning of incorrect procedures, degrading long-term competency — affected party (students) and damage type (learning harm) match.",
+    "reference": "Students learn incorrect mathematical procedures, harming long-term competency.",
+    "generated": "Students internalize flawed arithmetic methods, reinforcing misconceptions and degrading learning outcomes across educational contexts."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe LoRA misalignment → incorrect tutoring reasoning → undetected by users (trust or lack of expertise) → student internalization of flawed methods. The causal translation is semantically equivalent.",
+    "reference": "Hypernetwork-generated LoRA adapters induce task misalignment, causing incorrect reasoning in math tutoring tools, which students and educators trust without verification, leading to learned incorrect procedures and widespread error propagation.",
+    "generated": "Hypernetwork-generated LoRA adapters causing task misalignment and distributional shift, when deployed in AI math tutoring tools for students and educators lacking expertise to verify reasoning, trigger undetected incorrect reasoning, leading to internalization of flawed arithmetic methods and degraded learning outcomes."
+  }
+}

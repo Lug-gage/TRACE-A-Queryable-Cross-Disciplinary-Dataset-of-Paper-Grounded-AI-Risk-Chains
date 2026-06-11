@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Users lacking verification/cross-checking due to stripped contextual cues matches the reference sensitivity condition.",
+    "reference": "Users following AI-generated instructions without cross-checking contextual consistency.",
+    "generated": "Users lack verification mechanisms because denoising strips contextual cues essential for detecting errors in the assistant’s visual interpretations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (users) and damage types (operational errors/misjudgments, safety incidents) match the reference's task failures and safety incidents.",
+    "reference": "Task failures, safety incidents from misapplied guidance.",
+    "generated": "Incorrect task guidance causes user misjudgments, operational errors, and safety incidents."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from denoising discarding contextual cues to user reliance without verification, leading to incorrect guidance and negative outcomes, is semantically equivalent to the reference.",
+    "reference": "In-context denoising may discard contextual cues, enabling misinterpretation of instructions, which exposes users to flawed guidance; combined with over-reliance without cross-checking, this leads to task failures and safety incidents.",
+    "generated": "In-context denoising via self-training transition matrices propagates hidden visual errors, through user reliance on multimodal assistants for task guidance, triggering lack of verification because denoising strips contextual error-detection cues, leading to incorrect guidance causing misjudgments, operational errors, and safety incidents."
+  }
+}

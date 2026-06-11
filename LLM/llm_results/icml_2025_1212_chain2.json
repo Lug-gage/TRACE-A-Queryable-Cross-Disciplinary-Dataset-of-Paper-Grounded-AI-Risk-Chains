@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1212",
+  "chain_index": 2,
+  "title": "Improving Out-of-Distribution Detection with Markov Logic Networks",
+  "abstract": "Out-of-distribution (OOD) detection is essential for ensuring the reliability of deep learning models operating in open-world scenarios. Current OOD detectors mainly rely on statistical models to identify unusual patterns in the latent representations of a deep neural network. This work proposes to augment existing OOD detectors with probabilistic reasoning, utilizing Markov logic networks (MLNs). MLNs connect first-order logic with probabilistic reasoning to assign probabilities to inputs based on weighted logical constraints defined over humanunderstandable concepts, which offers improved explainability. Through extensive experiments on multiple datasets, we demonstrate that MLNs can significantly enhance the performance of a wide range of existing OOD detectors while maintaining computational efficiency. Furthermore, we introduce a simple algorithm for learning logical constraints for OOD detection from a dataset and showcase its effectiveness.",
+  "impact": "Advances in OOD detection, particularly in Neuro- Symbolic approaches, could potentially benefit the deployment of safe Machine Learning-driven systems in the real world. While the societal impact of this is broad, we do not consider it specific to our work. The proposed algorithm Alg. 2 for learning constraints for OOD detection introduces the possibility of embedding discriminatory biases against underrepresented minority classes into the broader system. For instance, in the Face Attribute Prediction use case analyzed in our experiments, the learned in-distribution constraints, such as ∀x ¬MALE(x) →NO BEARD(x) may be considered culturally or contextually insensitive, as they might fail to capture the diversity of the population outside of the training distribution. While this is a general problem in machine learning, compared to prior works, Markov logic networks offer several advantages in addressing these sensitive scenarios: • Since the rules governing the detector’s behavior are explicit and human-understandable (as opposed to encoded in the weights of a connectionist system), biases are more apparent and can be more easily identified and addressed. • Compared to methods like LogicOOD (Kirchheim et al., 2024), the employed probabilistic approach is able to learn weights flexibly, which allows the algorithm to account for violations of constraints given adequate representation of such cases in the training dataset. • Furthermore, manually adjusting individual constraint weights is possible and has an intuitive interpretation. Therefore, we believe that the transparency of the presented approach advances its potential to comply with ethical standards.",
+  "query_input": {
+    "scenario": "Industrial defect inspection with OOD detection",
+    "issue": "Novel defect types classified as normal, letting faulty products through",
+    "hazard": [
+      "OOD detection scores may not reflect true OOD likelihoods, causing undetected OOD inputs or false ID rejections"
+    ],
+    "exposure": [
+      "Manufacturing operators and consumers of inspected goods"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Manufacturing quality assurance relies entirely on OOD detector output without independent human or automated verification.",
+    "impact": "Defective products reach consumers, causing safety incidents, recall costs, and brand damage.",
+    "dose_response": "OOD scores not reflecting true likelihoods, causing undetected OOD or false rejections, through manufacturing operators and consumers, trigger reliance on detector output without verification, leading to defective products reaching consumers, causing safety incidents, recall costs, and brand damage."
+  },
+  "reference": {
+    "dose_response": [
+      "OOD detection scores not reflecting true likelihoods enable novel defects classified as normal, which in industrial defect inspection exposes manufacturing operators and consumers, leading to product recalls and safety hazards from operator complacency."
+    ],
+    "vulnerability": [
+      "Operator complacency with automated inspection results in unchecked defects reaching consumers."
+    ],
+    "impact": [
+      "Product recalls, consumer safety hazards, ﬁnancial losses, and reputational damage."
+    ]
+  }
+}

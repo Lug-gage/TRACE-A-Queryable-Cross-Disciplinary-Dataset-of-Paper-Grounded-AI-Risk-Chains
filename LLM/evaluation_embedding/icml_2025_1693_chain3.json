@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1693",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6934,
+    "reference": "Developers prioritize loss minimization without independent rationale fidelity audits, embedding latent biases.",
+    "generated": "Developers fine-tune with rationale-based loss without independent verification of grounding fidelity, enabling spurious correlations to entrench."
+  },
+  "impact": {
+    "similarity": 0.7282,
+    "reference": "Widespread clinical misguidance from deployed models that consistently misinterpret visual evidence.",
+    "generated": "Deployed models produce misleading visual justifications, causing diagnostic errors and eroding clinical trust in AI-assisted imaging."
+  },
+  "dose_response": {
+    "similarity": 0.8458,
+    "reference": "Joint segmentation and rationale generation models produce visually grounded textual justifications that may be inconsistent with actual evidence, and fine-tuning on these rationales amplifies spurious correlations, leading developers to deploy models that cause widespread clinical misguidance.",
+    "generated": "Visually grounded justifications inconsistent with image evidence from joint segmentation-rationale models, through developers fine-tuning with rationale-based loss functions, trigger fine-tuning without independent grounding verification, entrenching spurious correlations and leading to misleading visual justifications, diagnostic errors, and eroded clinical trust."
+  }
+}

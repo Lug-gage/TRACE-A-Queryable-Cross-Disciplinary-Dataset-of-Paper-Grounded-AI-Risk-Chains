@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0445",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5224,
+    "reference": "Low eHealth literacy prevents users from critically evaluating AI-generated health reports.",
+    "generated": "Users lack verification processes to detect semantic errors in LLM-generated reports from structured data."
+  },
+  "impact": {
+    "similarity": 0.6076,
+    "reference": "Users make health decisions based on factually incorrect AI-generated medical reports.",
+    "generated": "Erroneous decisions and misinformation spread from users acting on semantically inaccurate generated text."
+  },
+  "dose_response": {
+    "similarity": 0.8439,
+    "reference": "Semantic accuracy degradation enables high-rate semantic errors, which in open-domain data-to-text generation exposes users relying on LLM-generated reports, leading to health decisions based on factually incorrect AI-generated medical reports.",
+    "generated": "Semantic accuracy degradation in LLM text generation from structured data, through users relying on these reports, triggers a lack of verification processes to detect semantic errors, leading to erroneous decisions and misinformation spreading."
+  }
+}

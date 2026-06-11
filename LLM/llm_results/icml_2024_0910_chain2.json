@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0910",
+  "chain_index": 2,
+  "title": "Is Epistemic Uncertainty Faithfully Represented by Evidential Deep Learning Methods",
+  "abstract": "Trustworthy ML systems should not only return accurate predictions, but also a reliable representation of their uncertainty. Bayesian methods are commonly used to quantify both aleatoric and epistemic uncertainty, but alternative approaches, such as evidential deep learning methods, have become popular in recent years. The latter group of methods in essence extends empirical risk minimization (ERM) for predicting second-order probability distributions over outcomes, from which measures of epistemic (and aleatoric) uncertainty can be extracted. This paper presents novel theoretical insights of evidential deep learning, highlighting the difficulties in optimizing second-order loss functions and interpreting the resulting epistemic uncertainty measures. With a systematic setup that covers a wide range of approaches for classification, regression and counts, it provides novel insights into issues of identifiability and convergence in second-order loss minimization, and the relative (rather than absolute) nature of epistemic uncertainty measures.",
+  "impact": "Machine learning systems are increasingly prevalent in highstake application domains with a direct impact on humans, such as medical diagnostics, legal decisions, self-driving cars, fraud detection, natural disaster forecasting, etc. The profound consequences of inaccurate predictions in these areas emphasize the necessity of assessing the certainty of machine-learned forecasts. The current upswing in research on uncertainty quantification in the machine learning community underscores the recognition of this crucial aspect. Taking center stage is Evidential Deep Learning (EDL), a method gaining prominence in safety-critical domains. However, despite its growing utilization, the operational principles of EDL remain less than fully understood. Rather than solely focusing on developing superior techniques for specific datasets, we advocate for a meticulous examination of existing methods. Unraveling their limitations is not just an academic exercise, but it serves as a practical guide for decision-makers. Understanding when to employ these methods and when to exercise caution is paramount in navigating the intricate terrain of high-stakes predictions.",
+  "query_input": {
+    "scenario": "Financial risk modeling with evidential regression",
+    "issue": "Systematic underestimation of predictive uncertainty leads to overconfident risk assessments.",
+    "hazard": [
+      "Systematic miscalibration of evidential epistemic uncertainty estimates, causing overconfident predictions."
+    ],
+    "exposure": [
+      "Financial institutions and regulators using AI-driven risk models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Institutional reliance on evidential uncertainty outputs without independent calibration or adversarial validation, assuming absolute epistemic reliability.",
+    "impact": "Systematic underpricing of tail risks, leading to undercapitalized financial positions and cascading market instability.",
+    "dose_response": "Systematic miscalibration of evidential epistemic uncertainty causes overconfident predictions, through financial institutions and regulators using AI-driven risk models, triggers institutional reliance on outputs as absolutely reliable without independent calibration, leading to systematic underpricing of tail risks, undercapitalized positions, cascading instability."
+  },
+  "reference": {
+    "dose_response": [
+      "Systematic uncertainty underestimation in financial risk models produces overconfident predictions, fueling analysts' overtrust and leading to overleveraging and systemic instability."
+    ],
+    "vulnerability": [
+      "Financial analysts treat model outputs as precise probabilities, ignoring tail risks due to missing uncertainty visualizations."
+    ],
+    "impact": [
+      "Overleveraging, systemic financial instability, and regulatory failures."
+    ]
+  }
+}

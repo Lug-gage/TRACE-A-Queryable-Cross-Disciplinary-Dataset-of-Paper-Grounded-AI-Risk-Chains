@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0088",
+  "chain_index": 2,
+  "title": "Impossible Videos",
+  "abstract": "Synthetic videos nowadays is widely used to complement data scarcity and diversity of realworld videos. Current synthetic datasets primarily replicate real-world scenarios, leaving impos- sible, counterfactual and anti-reality video concepts underexplored. This work aims to answer two questions: 1) Can today’s video generation models effectively follow prompts to create impossible video content? 2) Are today’s video understanding models good enough for understanding impossible videos? To this end, we introduce IPV-BENCH, a novel benchmark designed to evaluate and foster progress in video understanding and generation. IPV-BENCH is underpinned by a comprehensive taxonomy, en- compassing 4 domains, 14 categories. It features diverse scenes that defy physical, biological, geographical, or social laws. Based on the taxonomy, a prompt suite is constructed to evaluate video generation models, challenging their prompt following and creativity capabilities. In addition, a video benchmark is curated to assess Video- LLMs on their ability of understanding impossible videos, which particularly requires reasoning on temporal dynamics and world knowledge. Comprehensive evaluations reveal limitations and insights for future directions of video models, paving the way for next-generation video models. Project page: https://showlab.github. io/Impossible-Videos/.",
+  "impact": "This work introduces Impossible Videos, a benchmark for evaluating video models on counterfactual and anti-reality scenarios. By focusing on violations of physical, biological, geographical, and social laws, it pushes video generation and understanding models beyond imitation toward deeper reasoning and generalization. Our findings reveal current limitations in temporal dynamics and world knowledge reasoning, and offer a new testbed for safer, more robust video AI. However, benchmarks involving implausible or surreal content may be misused to deliberately generate deceptive or misleading media. To mitigate this risk, our benchmark is designed for research purposes, with a focus on transparency, educational value, and responsible model development. Acknowledgment This research is supported by the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No: AISG3-RP-2022-030).",
+  "query_input": {
+    "scenario": "Integration of IPV-Bench metrics in research evaluation of video generation models",
+    "issue": "Overemphasis on novelty and impossibility eclipses safety, yielding models tailored to generate deceptive output.",
+    "hazard": [
+      "Generation and dissemination of highly realistic but physically impossible or counterfactual videos that can be mistaken for authentic."
+    ],
+    "exposure": [
+      "AI researchers and developers benchmarking video generation capabilities"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Benchmark culture overvalues novelty and impossibility, neglecting safety and enabling generation of deceptive outputs.",
+    "impact": "Deceptive synthetic videos indistinguishable from real footage erode public trust in media and enable large-scale disinformation.",
+    "dose_response": "Dissemination of realistic counterfactual videos mistaken as authentic, through AI researchers benchmarking video generation, triggers a culture overvaluing novelty over safety and enabling deceptive outputs, leading to indistinguishable deceptive videos eroding public trust and enabling disinformation."
+  },
+  "reference": {
+    "dose_response": [
+      "Overemphasis on impossibility benchmarks for video generation leads researchers to release models specialized in deceptive output, which downstream actors fine-tune for undetectable disinformation campaigns."
+    ],
+    "vulnerability": [
+      "Research community rewards models that maximize benchmark novelty without checking for deception risks.",
+      "Absence of standardized safety evaluations in benchmark leaderboards allows deceptive capabilities to go unmeasured."
+    ],
+    "impact": [
+      "Widespread release of models that specialize in generating undetectable, counterfactual videos for malicious use.",
+      "Downstream actors can easily fine-tune these models for targeted disinformation campaigns."
+    ]
+  }
+}

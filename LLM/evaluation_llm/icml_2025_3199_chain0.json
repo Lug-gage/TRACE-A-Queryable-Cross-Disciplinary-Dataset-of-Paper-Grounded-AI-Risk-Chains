@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3199",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Users trusting agent autonomy and foregoing oversight matches the reduced verification due to perceived autonomy, capturing the sensitivity.",
+    "reference": "Perceived agent autonomy and enjoyment lower risk perception, reducing user verification of transactions.",
+    "generated": "Users trust agent autonomy and forego manual oversight, leaving them unable to detect or prevent unreliable agent actions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Financial loss from unintended transactions is covered by financial loss from unauthorized purchases; the additional sensitive data exposure does not replace the reference damage type.",
+    "reference": "Financial losses from unintended transactions.",
+    "generated": "Financial loss from unauthorized purchases and exposure of sensitive personal data during e-commerce transactions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from autonomous skill acquisition without oversight to unreliable policies, then over-trust and skipped oversight leading to financial loss, matches the reference.",
+    "reference": "Autonomous skill acquisition without oversight yields unreliable web interaction policies; when users over-trust agent autonomy and skip verification, unintended e-commerce transactions cause financial losses.",
+    "generated": "Autonomous skill acquisition without human oversight produces unreliable web policies, through users relying on agents for shopping, triggers trust in autonomy and foregone manual oversight, leading to financial loss from unauthorized purchases and exposure of sensitive personal data."
+  }
+}

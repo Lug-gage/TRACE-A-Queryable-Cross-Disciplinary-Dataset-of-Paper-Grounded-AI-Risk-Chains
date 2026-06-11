@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2527",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "The generated condition describes absent rate limiting and extraction detection, whereas the reference vulnerability is fine-grained recommendation scores enabling reverse engineering of fairness thresholds. Related but different sensitivity condition.",
+    "reference": "Fine-grained recommendation scores allow reverse engineering of the model’s fairness thresholds and content ranking logic.",
+    "generated": "Social network GNNs lack query rate limiting and extraction detection, enabling adaptive node queries to reconstruct decision boundaries."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Eroded user trust is covered, but amplified polarization and hate speech evasion are missing; only part of the reference consequence is present.",
+    "reference": "Manipulated content distribution amplifies polarization, enables hate speech evasion, and erodes public trust in the platform.",
+    "generated": "Extracted decision boundaries enable adversarial manipulation of recommendations, causing biased content distribution and eroded user trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal logic—extraction enabling reconstruction of internal logic, which allows manipulation leading to biased distribution and eroded trust—is semantically equivalent to the reference arc, despite substitution of 'decision boundaries' for 'fairness thresholds'.",
+    "reference": "The unauthorized extraction of GNN model functionality via adaptive querying enables reverse engineering of fairness thresholds, which on social network platforms exposes content ranking to manipulation, leading to amplified polarization and eroded public trust.",
+    "generated": "Unauthorized extraction of GNN model functionality via adaptive node querying on social network content recommendation platforms, due to absent rate limiting and extraction detection, causes reconstructed decision boundaries, enabling adversarial manipulation, biased content distribution, and eroded user trust."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6774,
+    "reference": "Over-reliance on brittle AIGT detectors without multi-layered moderation allows adversarial text to spread harmful content undetected.",
+    "generated": "Brittle AIGT detectors and lack of layered safety controls render platforms unable to resist adversarial evasion."
+  },
+  "impact": {
+    "similarity": 0.7319,
+    "reference": "Amplification of AI-generated disinformation and hate speech, eroding public trust in information integrity and platform safety.",
+    "generated": "Harmful AI-generated content floods social media, causing user harm and eroding platform safety."
+  },
+  "dose_response": {
+    "similarity": 0.757,
+    "reference": "Adversarially perturbed AI-generated text, enabled by open-weight models, evades brittle AIGT detectors, exposing social media platforms to unchecked disinformation proliferation and erosion of public trust.",
+    "generated": "Open-weight foundation models, through social media's reliance on AIGT detectors, enable compromise and manipulation evading monitoring, triggering brittle detectors without layered controls, leading to harmful AI-generated content flooding platforms, causing user harm and eroding safety."
+  }
+}

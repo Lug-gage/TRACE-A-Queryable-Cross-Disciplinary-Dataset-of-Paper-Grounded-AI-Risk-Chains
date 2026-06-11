@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Audiences' inability to filter acoustic degradation and emotional tone shifts matches the reference's sensitivity of lacking perceptual training to detect AI artifacts and susceptibility to manipulated emotional cues.",
+    "reference": "Audiences lack perceptual training to detect AI artifacts, increasing susceptibility to manipulated emotional cues.",
+    "generated": "Editors lack artifact detection for unsupervised AI edits, and audiences cannot filter subtle acoustic degradation or emotional tone shifts."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions audience misinterpretation but omits the specific misled interpretation of narrative intent, instead adding immersion breaks and editor consequences; reference's precise damage is only partially captured.",
+    "reference": "Altered emotional tone in dialogue misleads audience interpretation of narrative intent.",
+    "generated": "Audience immersion breaks and misinterpretation occurs; editors face reputational damage and costly reworks of compromised audio content."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated arc describes reliance on AI-edited content triggering lack of artifact detection, while the reference describes editing directly introducing artifacts that expose audiences to manipulated cues, altering interpretation and trust; causal mechanisms differ fundamentally.",
+    "reference": "Unsupervised zero-shot editing introduces artifacts, exposing sound editors and audiences to manipulated emotional cues, which alters audience narrative interpretation and erodes trust.",
+    "generated": "Unsupervised semantic manipulation of audio via frozen diffusion models, through sound editors and audiences relying on AI-edited content, triggers lack of artifact detection and inability to filter acoustic degradation, leading to audience immersion breaks, misinterpretation, and reputational damage with costly reworks."
+  }
+}

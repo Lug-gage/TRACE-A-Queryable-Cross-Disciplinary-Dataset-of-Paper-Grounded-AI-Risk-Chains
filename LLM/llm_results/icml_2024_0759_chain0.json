@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0759",
+  "chain_index": 0,
+  "title": "Recovering the Pre-Fine-Tuning Weights of Generative Models",
+  "abstract": "The dominant paradigm in generative modeling consists of two steps: i) pre-training on a largescale but unsafe dataset, ii) aligning the pretrained model with human values via fine-tuning. This practice is considered safe, as no current method can recover the unsafe, pre-fine-tuning model weights. In this paper, we demonstrate that this assumption is often false. Concretely, we present Spectral DeTuning, a method that can recover the weights of the pre-fine-tuning model using a few low-rank (LoRA) fine-tuned models. In contrast to previous attacks that attempt to recover pre-fine-tuning capabilities, our method aims to recover the exact pre-fine-tuning weights. Our approach exploits this new vulnerability against large-scale models such as a personalized Stable Diffusion and an aligned Mistral. The code is available at https://vision.huji.ac. il/spectral_detuning/.",
+  "impact": "This work uncovers a significant vulnerability in fine-tuned models, allowing attackers to access pre-fine-tuning weights. While this discovery reveals potential security risks, our primary objective is to advance the field of Machine Learning and raise awareness within the research community about the existing vulnerabilities in current models. Instead of using the findings of this study to execute attacks, we advocate for their use by model creators to enhance the safety and security of their models. By acknowledging and addressing vulnerabilities, creators can proactively safeguard against potential threats. Furthermore, in the discussion section, we outline potential future directions and mitigation strategies. Following established practices in the cyber security community, we emphasize the importance of open discussion and encourage the reporting of vulnerabilities. By fostering transparency and collaboration, we can collectively create a safer environment for deploying machine learning models.",
+  "query_input": {
+    "scenario": "Fine-tuned Stable Diffusion models deployed for public image generation.",
+    "issue": "Recovered pre-fine-tuning weights allow inversion of training images.",
+    "hazard": [
+      "Spectral DeTuning enables recovery of pre-fine-tuning weights and model inversion, leaking private training data from fine-tuned models via low-rank adaptation gaps."
+    ],
+    "exposure": [
+      "Individuals whose personal images were used in fine-tuning."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Fine-tuned models retain recoverable private images in low-rank weight updates, leaving individuals unable to prevent extraction.",
+    "impact": "Personal images from fine-tuning are reconstructed without consent, exposing individuals to privacy violations and potential identity misuse.",
+    "dose_response": "Spectral DeTuning recovery of pre-fine-tuning weights, when applied to models fine-tuned on individuals' personal images, exploits low-rank weight updates that retain recoverable private images, leading to unauthorized image reconstruction, privacy violations, and potential identity misuse."
+  },
+  "reference": {
+    "dose_response": [
+      "Spectral DeTuning enables weight recovery, which in publicly deployed fine-tuned Stable Diffusion models exposes individuals whose images were used in fine-tuning, leading to loss of anonymity, psychological distress, and harassment risk."
+    ],
+    "vulnerability": [
+      "Individuals whose images are in fine-tuning sets without consent are vulnerable to re-identification and misuse."
+    ],
+    "impact": [
+      "Loss of personal anonymity and public exposure.",
+      "Psychological distress and risk of targeted harassment."
+    ]
+  }
+}

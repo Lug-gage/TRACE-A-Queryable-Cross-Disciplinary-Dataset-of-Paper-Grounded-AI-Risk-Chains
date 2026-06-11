@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1798",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures the sensitivity condition: researchers lack error-controlled guarantees in high-dimensional SKI, which semantically matches the reference's trust in predictive quality and acceptance of spurious precision.",
+    "reference": "Researchers trust SKI-derived predictive quality in high dimensions, accepting spurious precision in sparse regions.",
+    "generated": "Researchers lack error-controlled guarantees for SKI in high-dimensional settings (d≥3), where spectral norm error necessarily grows with sample size."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated captures misinformed scientific conclusions (akin to false discoveries) but omits the propagation through literature, waste of resources, and damage to credibility of ML in science present in the reference.",
+    "reference": "False scientific discoveries propagate through literature, wasting resources and damaging credibility of ML in science.",
+    "generated": "Degraded posterior inference and hyperparameter estimation produce unreliable predictions and misinformed scientific conclusions in high-dimensional data analysis."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated connects spectral norm error to degraded inference leading to misinformed conclusions, but misses the specific spurious precision mechanism and the full chain to credibility erosion described in the reference.",
+    "reference": "Spectral norm error from SKI's Gram approximation enables spurious precision in high-dimensional input spaces, exposing researchers applying SKI to scientific data to false discoveries that erode credibility of ML in science.",
+    "generated": "SKI's Gram approximation spectral norm error, through application to high-dimensional data, triggers the absence of error-controlled guarantees for d≥3 where error grows with sample size, leading to degraded posterior inference and hyperparameter estimation producing unreliable predictions and misinformed scientific conclusions."
+  }
+}

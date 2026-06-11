@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1455",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference specifies vulnerability as ego-centric footage capturing bystander faces/conversations for social graph reconstruction, while generated describes wearers' lack of control over others' exocentric capture, a related but distinct sensitivity condition.",
+    "reference": "Ego-centric footage captures bystander faces and conversations enabling social graph reconstruction.",
+    "generated": "Wearers have no control over exocentric video capture and sharing by others in social settings, leaving no means to prevent cross-view linking."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (wearer) and damage type (discrimination) from the reference are present; reference also mentions social engineering, but coverage of one damage type satisfies the requirement.",
+    "reference": "Exposure of private social ties leads to social engineering attacks or discrimination.",
+    "generated": "Unauthorized disclosure of wearer's identity, social network, and demographics fuels profiling, stalking, or discrimination."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc shares cross-view retrieval and disclosure of demographics, but replaces the causal link of matching ego-captured interactions with tagged social media videos with exploitation of others' exocentric video, missing a key step.",
+    "reference": "Ego-captured social interactions are matched with tagged social media videos via cross-view retrieval, inferring relationships and demographics, causing social engineering, discrimination, and trust erosion.",
+    "generated": "Retrieval-augmented cross-view video models, when individuals wear life-logging cameras during social gatherings, exploit wearers’ lack of control over others’ exocentric video, leading to unauthorized disclosure of identity, social network, and demographics that fuels profiling, stalking, or discrimination."
+  }
+}

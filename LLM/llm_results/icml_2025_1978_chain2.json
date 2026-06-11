@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1978",
+  "chain_index": 2,
+  "title": "Suitability Filter A Statistical Framework for Classifier Evaluation in Real-World Deployment Settings",
+  "abstract": "Deploying machine learning models in safetycritical domains poses a key challenge: ensuring reliable model performance on downstream user data without access to ground truth labels for direct validation. We propose the suitability filter, a novel framework designed to detect performance deterioration by utilizing suitability signals-model output features that are sensitive to covariate shifts and indicative of potential prediction errors. The suitability filter evaluates whether classifier accuracy on unlabeled user data shows significant degradation compared to the accuracy measured on the labeled test dataset. Specifically, it ensures that this degradation does not exceed a pre-specified margin, which represents the maximum acceptable drop in accuracy. To achieve reliable performance evaluation, we aggregate suitability signals for both test and user data and compare these empirical distributions using statistical hypothesis testing, thus providing insights into decision uncertainty. Our modular method adapts to various models and domains. Empirical evaluations across different classification tasks demonstrate that the suitability filter reliably detects performance deviations due to covariate shift. This enables proactive mitigation of potential failures in high-stakes applications.",
+  "impact": "This work proposes a suitability filter framework for evaluating machine learning models in real-world deployment settings, specifically designed to detect performance degradations caused by covariate shifts. The primary goal is to improve the robustness and fairness of machine learning models by offering tools to assess their suitability without requiring ground-truth labels. By facilitating reliable model evaluation, this work has the potential to enhance trustworthiness in automated systems especially in safetycritical deployment contexts. However, there are ethical considerations to note. The methodology assumes access to well-calibrated prediction correctness estimators, which might not hold in all scenarios, potentially leading to incorrect evaluations. Additionally, while the framework is adaptable, improper parameter choices or misinterpretations of results could exacerbate existing biases in datasets or models. Careful application and thorough understanding of the framework are critical to mitigating these risks. Future societal consequences of this work include its potential to improve fairness by enabling consistent performance evaluation across diverse subpopulations. However, misuse or overreliance on such automated evaluation frameworks without human oversight could have adverse effects. We encourage practitioners to complement this framework with domain expertise and ethical considerations during deployment. This paper aims to advance the field of Machine Learning by providing tools for model evaluation in dynamic deployment contexts. While we believe the societal implications are largely positive, we acknowledge the importance of responsibly applying this methodology to prevent unintended harm.",
+  "query_input": {
+    "scenario": "Production line quality inspection using vision models",
+    "issue": "Failed two-sample test misses lighting shifts, leading to undetected defect misclassification.",
+    "hazard": [
+      "Statistical shift detection signals may not correlate with actual prediction error, risking undetected performance degradation in safety-critical deployment."
+    ],
+    "exposure": [
+      "Factory workers trusting automated defect detection for quality control."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Factory workers lack independent defect verification, blindly trusting automated system outputs without ground truth access.",
+    "impact": "Defective products reach consumers, causing safety incidents, costly recalls, and eroded trust in manufacturing.",
+    "dose_response": "Statistical shift detection signals uncorrelated with actual prediction errors, through factory workers' reliance on automated defect detection, triggers their blind trust without independent verification, leading to defective products reaching consumers, causing safety incidents, costly recalls, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Statistical shift detection signals may not correlate with actual prediction error enables undetected defect misclassification, which in a production line quality inspection scenario where factory workers trust automated defect detection exposes their decreased manual vigilance, leading to defective products passing inspection, increasing recalls."
+    ],
+    "vulnerability": [
+      "Workers rely on automated defect detection to set quality baseline, decreasing manual inspection vigilance."
+    ],
+    "impact": [
+      "Defective products pass inspection, increasing customer complaints and recall costs."
+    ]
+  }
+}

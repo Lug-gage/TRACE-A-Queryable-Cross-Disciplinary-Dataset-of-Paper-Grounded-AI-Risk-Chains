@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2160",
+  "chain_index": 0,
+  "title": "Position AI ML Influencers Have a Place in the Academic Process",
+  "abstract": "As the number of accepted papers at AI and ML conferences reaches into the thousands, it has become unclear how researchers access and read research publications. In this paper, we investigate the role of social media influencers in enhancing the visibility of machine learning research, particularly the citation counts of papers they share. We have compiled a comprehensive dataset of over 8,000 papers, spanning tweets from December 2018 to October 2023, alongside controls precisely matched by 9 key covariates. Our statistical and causal inference analysis reveals a significant increase in citations for papers endorsed by these influencers, with median citation counts 2-3 times higher than those of the control group. Additionally, the study delves into the geographic, gender, and institutional diversity of highlighted authors. Given these findings, we advocate for a responsible approach to curation, encouraging influencers to uphold the journalistic standard that includes showcasing diverse research topics, authors, and institutions.",
+  "impact": "Recognizing the influential role of social media influencers in the academic community, particularly in the fields of AI/ML, it’s important to gently encourage them to be aware of their impact. Influencers play a key role in shaping discussions and trends, and there is a growing need for them to consider the diversity and inclusivity of the research they share. This is not to undermine their contributions but to enhance the richness of academic discourse. Similarly, the academic community might benefit from reevaluating traditional metrics of research impact, embracing both peerreviewed channels and digital platforms for a more holistic approach to recognizing scholarly work. In doing so, we hope to spark future research into understanding any unintentional biases influencers might have, such as favoring research from prestigious institutions or specific regions. This is a subtle yet crucial aspect of ensuring a balanced representation in the academic landscape, preventing the overshadowing of significant but less publicized work. While influencers may have personal or commercial interests, we trust in their capacity to acknowledge and manage these to avoid conflicts of interest. This approach would help in preventing echo chambers and promoting a diverse range of perspectives in AI/ML research. Overall, we advocate for a collaborative and mindful effort among influencers and the academic community to foster an equitable and inclusive environment for scholarly discussions.",
+  "query_input": {
+    "scenario": "Academic hiring and promotion decisions informed by ML-driven altmetrics",
+    "issue": "ML-predicted influence metrics may systematically undervalue work from researchers with smaller networks.",
+    "hazard": [
+      "Causal ML models estimating citation impact from social media amplify degree bias in academic evaluation."
+    ],
+    "exposure": [
+      "Early-career researchers and those at under-resourced institutions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Limited professional networks and institutional prestige prevent early-career researchers from gaining influencer endorsements, reducing altmetric signals.",
+    "impact": "Early-career and under-resourced researchers face biased hiring, promotion, and funding decisions that entrench academic inequality.",
+    "dose_response": "Causal ML models estimating citation impact from social media amplify degree bias, triggering through early-career and under-resourced researchers' limited networks and prestige reduced endorsements and altmetric signals, leading to biased hiring, promotion, and funding decisions that entrench inequality."
+  },
+  "reference": {
+    "dose_response": [
+      "Causal ML models amplify degree bias in influence metrics, causing hiring committees relying on altmetrics to undervalue early-career researchers from smaller networks, leading to hiring and promotion penalties."
+    ],
+    "vulnerability": [
+      "Institutional reliance on flawed altmetrics lacking correction for social network size biases."
+    ],
+    "impact": [
+      "Early-career and underrepresented researchers face hiring/promotion penalties, reinforcing demographic disparities."
+    ]
+  }
+}

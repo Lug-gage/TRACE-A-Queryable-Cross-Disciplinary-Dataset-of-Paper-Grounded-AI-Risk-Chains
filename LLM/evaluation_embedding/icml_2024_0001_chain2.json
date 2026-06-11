@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0001",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6951,
+    "reference": "Chatbots designed without adversarial robustness may generate harmful responses when prompted with carefully crafted inputs.",
+    "generated": "Enterprise chatbots lack adversarial input filtering and output moderation, leaving users directly exposed to unmitigated harmful content."
+  },
+  "impact": {
+    "similarity": 0.7611,
+    "reference": "Customers receiving offensive responses leads to brand damage, legal liability, and erosion of customer trust.",
+    "generated": "Brand reputation damage, customer complaints, and legal liability from offensive messages eroding user trust."
+  },
+  "dose_response": {
+    "similarity": 0.8333,
+    "reference": "Black-box adversarial attacks on LMs enable generation of harmful outputs, which in enterprise customer support chatbots exposes customers to offensive responses, leading to brand damage and eroded trust.",
+    "generated": "Black-box character-level adversarial attacks evade safety classifiers and generate harmful outputs, which, through customers receiving them, trigger enterprise chatbots' lack of adversarial filtering and moderation, leading to brand reputation damage, customer complaints, and legal liability as offensive messages erode user trust."
+  }
+}

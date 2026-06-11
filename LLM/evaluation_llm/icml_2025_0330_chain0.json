@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0330",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes frailty increasing injury severity; generated describes frailty preventing detection and correction of misbehavior, a related but different sensitivity condition.",
+    "reference": "Elderly users' physical frailty and cognitive decline increase injury severity from robot errors.",
+    "generated": "Elderly residents' physical and cognitive frailty prevents them from detecting and correcting robot misbehavior in new settings."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (elderly) and damage type (physical injury) from the reference are semantically present.",
+    "reference": "Physical injury to elderly users when robots drop or mishandle objects.",
+    "generated": "Elderly residents suffer physical injuries and loss of essential care when robots mishandle objects in unfamiliar environments."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated includes the arc from under-identified reward models to physical injury but omits the reference's link of frail elderly over-trust leading to psychological distress and reduced health disclosure.",
+    "reference": "Under-identified reward models cause assistive robots to optimize unintended proxy behaviors, leading to mishandled objects and physical injury, while frail elderly over-trust erodes into psychological distress and reduced health disclosure.",
+    "generated": "Under-identified reward models from inverse reinforcement learning cause assistive robots to pursue proxy objectives; when deployed for frail elderly residents, their inability to detect misbehavior leads to physical injuries and loss of essential care."
+  }
+}

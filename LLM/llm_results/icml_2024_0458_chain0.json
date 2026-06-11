@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 0,
+  "title": "Don’t Label Twice Quantity Beats Quality when Comparing Binary Classifiers on a Budget",
+  "abstract": "We study how to best spend a budget of noisy labels to compare the accuracy of two binary classifiers. It’s common practice to collect and aggregate multiple noisy labels for a given data point into a less noisy label via a majority vote. We prove a theorem that runs counter to conventional wisdom. If the goal is to identify the better of two classifiers, we show it’s best to spend the budget on collecting a single label for more samples. Our result follows from a non-trivial application of Cram ́er’s theorem, a staple in the theory of large deviations. We discuss the implications of our work for the design of machine learning benchmarks, where they overturn some time-honored recommendations. In addition, our results provide sample size bounds superior to what follows from Hoeffding’s bound.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning. There are many potential societal consequences of our work, none which we feel must be specifically highlighted here. That said, we would like to reiterate, that using single labels is only optimal for classifier comparison, once it has been established that each annotator label is more likely to be correct than not. If that is not the case, benchmark results can easily become misleading and in the worst case anti-correlated with actual task performance. As discussed in Section 5, collecting multiple labels for single data points during benchmark conceptualization and analyzing different annotators’ disagreements can play an important role for better understanding the task definition, improving annotator instructions, and ensuring a sufficiently diverse and representative annotator pool.",
+  "query_input": {
+    "scenario": "A/B testing of ML models on crowd-sourced benchmarks",
+    "issue": "Noisy labels from crowd workers inflate false positive rates in statistical tests, leading to erroneous model superiority claims.",
+    "hazard": [
+      "Statistical testing for classifier comparison yields inflated Type I error rates under label noise, violating nominal significance guarantees."
+    ],
+    "exposure": [
+      "ML practitioners and researchers selecting models based on benchmark leaderboards"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Majority-vote label aggregation under budget constraints leaves model comparison tests vulnerable to label-noise-induced false positives.",
+    "impact": "Practitioners select underperforming models based on false leaderboard superiority claims, wasting compute and delaying research progress.",
+    "dose_response": "Statistical testing for classifier comparison yields inflated Type I error rates under label noise, violating guarantees, through practitioners' reliance on leaderboards triggers majority-vote aggregation's budget-constrained vulnerability to false positives, leading to selection of underperforming models, wasting compute and delaying progress."
+  },
+  "reference": {
+    "dose_response": [
+      "Inflated Type I error rates from noisy labels enable false superiority claims, which in A/B testing on crowd-sourced benchmarks exposes practitioners to select underperforming models, leading to deployment in high-stakes domains."
+    ],
+    "vulnerability": [
+      "Crowd worker incentives prioritize speed over accuracy, introducing systematic label noise.",
+      "Benchmark leaderboards amplify competitive pressure, discouraging rigorous label verification.",
+      "Lack of domain expertise among crowd annotators increases mislabeling of ambiguous cases."
+    ],
+    "impact": [
+      "Deployment of underperforming models in high-stakes domains due to false superiority claims.",
+      "Misallocation of research resources toward models that appear better but are not genuinely superior.",
+      "Erosion of trust in ML benchmarks as reliable evaluation tools."
+    ]
+  }
+}

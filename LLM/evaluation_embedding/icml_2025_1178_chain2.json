@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.744,
+    "reference": "Leaderboard reliance on identical benchmarks allows correlated overfitting errors to skew model rankings.",
+    "generated": "Developers assume benchmark rankings reflect independent model quality, lacking visibility into correlated error structures across models."
+  },
+  "impact": {
+    "similarity": 0.4678,
+    "reference": "Suboptimal models chosen for critical applications, leading to poor performance and safety risks.",
+    "generated": "Distorted rankings lead to selection of erroneously correlated models, amplifying biased decisions in hiring and evaluation tasks."
+  },
+  "dose_response": {
+    "similarity": 0.8112,
+    "reference": "Correlated errors cause systematic failure alignment, which in leaderboard consulting distorts rankings, causing selection of suboptimal models with safety risks.",
+    "generated": "Correlated LLM prediction errors causing systematic failure alignment across models and tasks, through developers consulting leaderboards, triggers assumption of independent quality without visibility into error correlations, leading to distorted rankings, selection of erroneously correlated models, and amplified biased hiring/evaluation decisions."
+  }
+}

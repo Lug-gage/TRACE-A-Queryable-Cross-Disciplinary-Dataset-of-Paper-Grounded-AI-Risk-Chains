@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2406",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference vulnerability is that generated structures capture spurious patterns because of limited training observables; generated shifts to a lack of validation protocols by condensed matter theorists, a related but distinct sensitivity condition.",
+    "reference": "Generated structures capture spurious patterns from limited training observables.",
+    "generated": "Condensed matter theorists lack standardized protocols for validating LLM-discovered tensor networks against out-of-distribution quantum phases, allowing brittle overfit structures to go undetected."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both state erroneous predictions (ground state / quantum phase transition) that mislead research or misdirect experiments and waste computational resources, affecting condensed matter research / the physics literature.",
+    "reference": "Erroneous ground state predictions mislead condensed matter research and waste computational resources.",
+    "generated": "Erroneous quantum phase transition predictions propagate through the physics literature, misdirecting experimental efforts and wasting computational resources."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs: overfitting in LLM-driven search produces brittle tensor networks → used without validation → failures (spurious correlations / undetected failures) → erroneous predictions → misdirect/waste resources.",
+    "reference": "Overfitting LLM-driven search yields brittle tensor networks that, when used by physicists without validation, capture spurious correlations, leading to erroneous ground state predictions that mislead research and waste resources.",
+    "generated": "Overfitting to optimization criteria in LLM-driven algorithm generation produces brittle tensor network structures that, when deployed in quantum phase transition simulations without standardized out-of-distribution validation, trigger undetected failures, causing erroneous predictions to propagate, misdirecting experiments and wasting computational resources."
+  }
+}

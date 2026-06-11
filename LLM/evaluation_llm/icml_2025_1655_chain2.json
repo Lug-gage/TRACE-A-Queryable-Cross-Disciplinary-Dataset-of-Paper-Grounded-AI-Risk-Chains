@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe user inability to verify outputs before trusting, despite different wording",
+    "reference": "User inability to verify VLM outputs in real-time visual tasks (e.g., navigation aids for visually impaired users).",
+    "generated": "Users lack access to the model's compressed task representations, preventing detection of spurious cross-modal correlations before trusting outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "User affected is present, but physical harm is replaced by misinformed decisions",
+    "reference": "Physical harm when navigation instructions misrepresent environmental hazards.",
+    "generated": "Misinformed user decisions and actions propagate from unintended vision-language outputs, amplifying errors across downstream tasks."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from unintended outputs to harm through unverified reliance is partially present, but the specific hazard and physical harm are missing",
+    "reference": "Misaligned visual-text processing produces unintended outputs, which in assistive navigation without verification leads to physical harm from misrepresented hazards.",
+    "generated": "Shared cross-modal task vectors compress multimodal examples, risking spurious cross-modal correlations, through users relying on VLM-driven visual task systems, triggers undetected spurious correlations due to inaccessible task representations, leading to misinformed decisions from unintended vision-language outputs, amplifying errors across downstream tasks."
+  }
+}

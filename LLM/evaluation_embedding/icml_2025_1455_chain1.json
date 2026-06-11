@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1455",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.553,
+    "reference": "Ubiquitous public surveillance cameras provide exo-video for trajectory linking.",
+    "generated": "Wearers cannot prevent linkage of their egocentric video with exocentric surveillance, leaving personal attributes exposed to inference."
+  },
+  "impact": {
+    "similarity": 0.731,
+    "reference": "Unauthorized tracking enables stalking or harassment of wearer in real time.",
+    "generated": "Unauthorized exposure of wearer identity, demographics, and movements enables covert tracking, profiling, and loss of anonymity."
+  },
+  "dose_response": {
+    "similarity": 0.7981,
+    "reference": "Ego video from wearable cameras, linked with public surveillance via cross-view retrieval, reveals trajectory and identity, causing unauthorized tracking, harassment, and chilling effects on beneficial camera use.",
+    "generated": "Retrieval-augmented cross-view video models, through public body camera or smart glasses wear, trigger wearers' inability to prevent egocentric-exocentric video linkage, exposing personal attributes, leading to unauthorized identity, demographic, and movement exposure enabling covert tracking, profiling, and anonymity loss."
+  }
+}

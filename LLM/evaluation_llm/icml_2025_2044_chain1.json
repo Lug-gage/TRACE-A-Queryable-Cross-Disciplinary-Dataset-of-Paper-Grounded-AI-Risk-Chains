@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2044",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference condition is prioritizing speed over scrutinizing plausibility; generated condition is lacking methods to verify consistency, a related but different sensitivity.",
+    "reference": "Content creators prioritize workflow speed over scrutinizing causal plausibility of AI edits",
+    "generated": "Content creators lack methods to verify causal consistency in realistic AI edits, making decisions based on flawed outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Professional reputation damage covers credibility loss, but trust collapse is about tools rather than client trust in AI-assisted content, so only one damage type is fully present.",
+    "reference": "Loss of professional credibility and client trust in AI-assisted content",
+    "generated": "Trust in AI editing tools collapses, physically impossible scenes circulate, and professional reputations suffer."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc includes causally invalid counterfactuals and impact, but replaces 'prioritized for speed' with 'inability to verify,' altering the translation mechanism.",
+    "reference": "Diffusion models manipulating semantics without causal mechanisms enable physically implausible edits, which when prioritized for speed by content creators lead to lost credibility, client distrust, and false imagery spread.",
+    "generated": "Diffusion models generating causally invalid counterfactuals, through photographers and content creators relying on AI-controlled edits, trigger the inability to verify causal consistency, leading to collapse of trust, circulation of physically impossible scenes, and damaged professional reputations."
+  }
+}

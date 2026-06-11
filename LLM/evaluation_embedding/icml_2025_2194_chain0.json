@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2194",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6347,
+    "reference": "Medicinal chemists' over-reliance on AI predictions without orthogonal validation.",
+    "generated": "Impracticality of repeated wet-lab evaluations forces chemists to rely on surrogate model estimates without means to verify them."
+  },
+  "impact": {
+    "similarity": 0.743,
+    "reference": "Wasted synthesis resources from poor drug-likeness predictions.",
+    "generated": "Synthesis of suboptimal or ineffective drug leads wastes laboratory resources and delays therapeutic development."
+  },
+  "dose_response": {
+    "similarity": 0.7067,
+    "reference": "Offline preference optimization amplifies surrogate misspecification, producing unreliable property estimates that, in drug lead optimization, mislead chemists who synthesize poor leads, wasting resources and eroding trust.",
+    "generated": "Molecular stitching with offline preference optimization amplifies surrogate model misspecification, through medicinal chemists selecting virtual candidates for synthesis, triggers reliance on unverifiable surrogate model estimates, leading to synthesis of suboptimal drug leads wasting resources and delaying development."
+  }
+}

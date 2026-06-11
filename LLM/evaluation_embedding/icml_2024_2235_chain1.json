@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7327,
+    "reference": "Editors assume edge constraints guarantee structural fidelity, but unseen artifacts compromise image authenticity.",
+    "generated": "Photo editors' dependence on edge-guided generation without verification of edge fidelity enables acceptance of structurally flawed outputs."
+  },
+  "impact": {
+    "similarity": 0.4561,
+    "reference": "Inaccurate historical restorations or legal evidence, causing reputational and factual damage.",
+    "generated": "Image restorations exhibit structural distortions and artifacts, degrading visual quality and requiring costly manual rework."
+  },
+  "dose_response": {
+    "similarity": 0.7622,
+    "reference": "Conditionally-controlled generation misaligns to edge maps, introducing artifacts; editors' assumption of structural fidelity lets unseen artifacts damage authenticity and cause reputational harm.",
+    "generated": "Conditionally-controlled consistency generation misalignment to input conditions, through photo editors' edge-guided inpainting reliance, triggers dependence on unverified edge fidelity, leading to structural distortions, degraded visual quality, and costly manual rework."
+  }
+}

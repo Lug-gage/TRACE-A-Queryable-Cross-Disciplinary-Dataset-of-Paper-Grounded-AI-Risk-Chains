@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2019",
+  "chain_index": 0,
+  "title": "CuTS Customizable Tabular Synthetic Data Generation",
+  "abstract": "Privacy, data quality, and data sharing concerns pose a key limitation for tabular data applications. While generating synthetic data resembling the original distribution addresses some of these issues, most applications would benefit from additional customization on the generated data. However, existing synthetic data approaches are limited to particular constraints, e.g., differential privacy (DP) or fairness. In this work, we introduce CuTS, the first customizable synthetic tabular data generation framework. Customization in CuTS is achieved via declarative statistical and logical expressions, supporting a wide range of requirements (e.g., DP or fairness, among others). To ensure high synthetic data quality in the presence of custom specifications, CuTS is pre-trained on the original dataset and fine-tuned on a differentiable loss automatically derived from the provided specifications using novel relaxations. We evaluate CuTS over four datasets and on numerous custom specifications, outperforming state-of-the-art specialized approaches on several tasks while being more general. In particular, at the same fairness level, we achieve 2.3% higher downstream accuracy than the state-of-the-art in fair synthetic data generation on the Adult dataset.",
+  "impact": "CuTS is the first widely customizable synthetic data generation method for tabular data, opening the possibilities of data sharing in areas where previously this was limited, due to privacy, bias, or proprietary issues. As such, we hope that CuTS, can open the way towards democratizing access to data, by allowing even entities that were previously reluctant to share their records to publish them. Such a development would be beneficial not only for the open-source community, and the science community but also for the industrial players providing the data, who could benefit from the open-sourced developments using their data themselves as well. However, we have to acknowledge that allowing for mechanical manipulations in the data could open the door for malicious actors to purposefully modify their data releases in a misleading or straight-out harmful way. Although one could argue that CuTS makes this process potentially easier, our contribution is still significant from a mitigation perspective. We raise awareness that such manipulations on the data are possible and appeal to future work to approach this issue either from the technical or the legal end.",
+  "query_input": {
+    "scenario": "Healthcare analytics with synthetic patient records",
+    "issue": "Constraint-violating synthetic data yields clinically impossible patient profiles, misleading downstream analyses.",
+    "hazard": [
+      "Synthetic tabular data that violates user-specified declarative constraints, producing unrealistic or biased records."
+    ],
+    "exposure": [
+      "Clinicians and health analysts using synthetic patient data for treatment planning or research."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians and analysts lack safeguards to detect constraint-violating synthetic records, trusting data realism for clinical decisions.",
+    "impact": "Erroneous treatment plans and flawed research conclusions cause patient harm and invalidate healthcare analyses.",
+    "dose_response": "Synthetic tabular data violating declarative constraints, when used by clinicians and health analysts, triggers their lack of safeguards to detect unrealistic records, leading to erroneous treatment plans and flawed research that cause patient harm and invalidate healthcare analyses."
+  },
+  "reference": {
+    "dose_response": [
+      "Constraint-violating synthetic data enables clinically impossible patient profiles, which in healthcare analytics exposes clinicians and health analysts, leading to erroneous treatment guidelines and patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians' overreliance on synthetic data realism without domain validation of physiological plausibility.",
+      "Institutional absence of clinical review checkpoints for synthetic data before integration into analytic pipelines."
+    ],
+    "impact": [
+      "Erroneous treatment guidelines derived from impossible patient profiles cause patient harm.",
+      "Wasted healthcare resources on interventions targeting non-existent comorbidity patterns."
+    ]
+  }
+}

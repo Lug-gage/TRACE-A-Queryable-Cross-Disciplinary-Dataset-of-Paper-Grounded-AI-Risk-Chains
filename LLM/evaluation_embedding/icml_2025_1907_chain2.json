@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1907",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4192,
+    "reference": "Practitioners trust fine-tuned agents as improved versions without auditing inherited failure modes.",
+    "generated": "Automated debugging pipelines accept code that passes unit tests without human review or formal verification of logical correctness."
+  },
+  "impact": {
+    "similarity": 0.4845,
+    "reference": "Amplification of subtle bugs across downstream applications as fine-tuned agents are widely adopted.",
+    "generated": "Subtle logical errors propagate into production systems, causing failures, data corruption, or security breaches."
+  },
+  "dose_response": {
+    "similarity": 0.755,
+    "reference": "Automated code generation agents producing plausible but incorrect code enables inheritance of subtle error patterns, which in fine-tuning open-weight SWE agents on synthetic trajectories exposes practitioners deploying fine-tuned code agents in automated debugging pipelines, leading to amplification of subtle bugs across downstream applications as fine-tuned agents are widely adopted.",
+    "generated": "Automated code generation agents produce plausible but incorrect code passing unit tests; deployed in automated debugging pipelines, this triggers acceptance without human review, causing subtle logical errors to propagate into production, leading to failures, data corruption, or security breaches."
+  }
+}

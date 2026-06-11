@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1777",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference highlights unverified votes enabling undetected manipulation, while generated describes blind reliance on leaderboards without independent verification. Related but different sensitivity conditions.",
+    "reference": "Unverified user votes allow coordinated manipulation without detection.",
+    "generated": "Blind reliance on crowdsourced leaderboard rankings without independent model quality verification"
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Misallocation of resources to inferior models is present; generated adds erosion of trust but the core affected party and damage type match.",
+    "reference": "Misallocation of research and deployment resources to inferior models.",
+    "generated": "Adoption of inferior models, misallocated resources, and eroded trust in public evaluation benchmarks"
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from targeted Elo manipulation to resource misallocation is intact, but reference's specific link via covert vote stuffing and biased scores is replaced with exposure-induced blind reliance, omitting a key mechanistic step.",
+    "reference": "Targeted Elo manipulation via watermark identification enables covert vote stuffing, which in public leaderboards exposes users to biased scores, leading to misallocation of resources and erosion of trust.",
+    "generated": "Watermark-enabled targeted Elo manipulation in crowdsourced LLM evaluation, through exposure of leaderboard-reliant researchers and enterprises, triggers blind reliance on rankings without independent verification, leading to adoption of inferior models, resource misallocation, and eroded trust in benchmarks."
+  }
+}

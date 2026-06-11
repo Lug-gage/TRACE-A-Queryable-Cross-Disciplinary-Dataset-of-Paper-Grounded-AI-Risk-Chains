@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1639",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7117,
+    "reference": "Clinicians exhibit automation bias, over-trusting AI-restored images without verifying against original degraded inputs.",
+    "generated": "Clinicians cannot distinguish hallucinated anatomical details from real pathology in AI-restored images, leading to over-reliance."
+  },
+  "impact": {
+    "similarity": 0.54,
+    "reference": "False anatomical structures in restored images lead to incorrect treatment decisions and patient harm.",
+    "generated": "Misdiagnosis and inappropriate medical interventions, causing patient harm."
+  },
+  "dose_response": {
+    "similarity": 0.8372,
+    "reference": "SFBD-trained diffusion models' noise amplification hallucinates anatomical details in restored medical images; clinicians' automation bias converts these errors into misdiagnosis and patient harm.",
+    "generated": "Amplified noise patterns and distributional shift from SFBD-trained diffusion models, through clinicians and patients relying on AI-restored medical images, trigger the inability to distinguish hallucinated anatomical details from real pathology, leading to misdiagnosis and harmful interventions."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1766",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe e-commerce users' uncritical acceptance of overconfident AI recommendations without verification.",
+    "reference": "E-commerce users habitually accept overconfident AI recommendations without cross-checking alternatives.",
+    "generated": "E-commerce users rely uncritically on AI recommendations without the means to detect overconfident errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Financial loss and suboptimal purchases are covered, but reference also includes algorithmic filter bubbles reducing consumer agency, which are absent in the generated text.",
+    "reference": "Suboptimal purchases, financial loss, and algorithmic filter bubbles reducing consumer agency.",
+    "generated": "Purchases of unsuitable products cause financial loss and erode trust in the recommendation platform."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from overconfident sparse retrieval to user acceptance of recommendations and subsequent unsuitable purchases is present in both.",
+    "reference": "Overconfident sparse pattern retrieval causes e-commerce users to accept incorrect recommendations, leading to suboptimal purchases and filter bubbles.",
+    "generated": "Sparse Hopfield networks with Fenchel-Young loss margins produce miscalibrated overconfident retrievals, exposing e-commerce users to AI recommendations, which, given uncritical reliance without error detection, leads to unsuitable purchases causing financial loss and eroded trust."
+  }
+}

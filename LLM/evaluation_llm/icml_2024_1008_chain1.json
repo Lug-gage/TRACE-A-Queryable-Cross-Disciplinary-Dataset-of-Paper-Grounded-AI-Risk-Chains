@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1008",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference specifies absence of tamper-evident audio authentication in distribution chains; generated describes irrevocability of vocal biometrics, a different vulnerability.",
+    "reference": "Absence of tamper-evident audio authentication in media distribution chains.",
+    "generated": "Speakers cannot revoke or alter their vocal biometric, leaving them permanently susceptible to unauthorized cloning from publicly available voice samples."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference describes fabricated audio evidence manipulating judicial outcomes and public opinion; generated describes reputational harm and loss of agency for cloned speakers, missing both the affected party and damage type.",
+    "reference": "Fabricated audio evidence used to manipulate judicial outcomes and public opinion.",
+    "generated": "Cloned speakers endure reputational harm and loss of agency, as their voice is used to fabricate any statement."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc includes cloning and post-hoc editing but diverges to trigger vocal biometric irrevocability and reputational harm, missing the reference's end links of fabricated evidence and societal manipulation.",
+    "reference": "Discretized speaker-specific latent features enable high-fidelity zero-shot voice cloning from minimal audio prompts, which in speech editing in the wild exposes speakers whose recorded statements are edited post-hoc, leading to fabricated audio evidence used to manipulate judicial outcomes and public opinion.",
+    "generated": "Discretized latent features enabling high-fidelity zero-shot voice cloning, through post-hoc editing of recorded statements, trigger the irrevocability of vocal biometrics, leading to reputational harm and loss of agency."
+  }
+}

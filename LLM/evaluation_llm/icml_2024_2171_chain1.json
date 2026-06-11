@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2171",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe ordering that clusters similar sequences without diversity constraints, reducing representation of diverse text.",
+    "reference": "Quality-based ordering that prioritizes stylistic conformity over content diversity reduces representation of minority and technical text.",
+    "generated": "Curriculum learning orders training data by a single quality score, inherently clustering similar sequences without diversity-preserving constraints."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both state degradation of model generalization and performance on diverse tasks; in-context learning is a specific diverse task.",
+    "reference": "Ordered training regime causes models to overfit to narrow style, degrading generalization and harming performance on diverse tasks.",
+    "generated": "Homogenized training sequences degrade model generalization and in-context learning performance."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both present the causal chain from LLM bias amplification in ratings through curriculum learning ordering to style clustering/homogenization and degraded generalization.",
+    "reference": "LLM judge bias amplifying in quality scores enables curriculum learning that prioritizes style-similar sequences, exposing researchers to an ordering that overfits to narrow style, harming performance on diverse tasks.",
+    "generated": "LLM quality ratings amplifying biases in data distribution, when used for curriculum learning ordering, cause clustering of similar sequences without diversity constraints, yielding homogenized training that degrades model generalization and in-context learning."
+  }
+}

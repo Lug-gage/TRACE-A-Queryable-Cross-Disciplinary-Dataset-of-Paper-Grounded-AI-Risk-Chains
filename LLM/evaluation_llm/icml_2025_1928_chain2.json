@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions easy clonability from short samples and lack of defenses, but reference specifies widespread availability of voice samples on social media enabling non-consensual cloning at scale, a related but different sensitivity condition.",
+    "reference": "Widespread availability of voice samples on social media enables non-consensual cloning at scale.",
+    "generated": "Voice biometrics are easily clonable from short samples, and individuals have no institutional or technical defenses against impersonation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Reputational damage is covered, but psychological distress is missing and replaced with erosion of evidentiary trust, and the affected party shifts from individuals to a broader societal trust.",
+    "reference": "Reputational damage and psychological distress for individuals whose voice is used in fabricated compromising audio.",
+    "generated": "Reputational damage and erosion of evidentiary trust in audio when false statements are convincingly attributed to the cloned voice."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc starts with short voice prompts enabling voice cloning, then personalized speech leading to reputational damage and undermining authentication. Generated arc assumes pre-existing cloned voice and focuses on long-form speech generation leveraging clonability to erode trust, missing the initial cloning step from prompts.",
+    "reference": "Plausible speech generation from short voice prompts enables voice cloning, which in personalized speech generation exposes individuals, leading to reputational damage and undermining of voice-based authentication.",
+    "generated": "Plausible but factually ungrounded long-form speech, when generated from a cloned voice, leverages easily clonable voice biometrics and absent defenses, leading to reputational damage and eroded evidentiary trust in attributed false statements."
+  }
+}

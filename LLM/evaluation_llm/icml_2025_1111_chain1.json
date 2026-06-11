@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1111",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes myopic bidding that overlooks long-term budget warfare; generated describes lack of real-time oversight to detect myopia. Related but different sensitivity condition.",
+    "reference": "Myopic bidding overlooks long-term budget warfare, allowing deep-pocketed advertisers to dominate and reduce market diversity.",
+    "generated": "Advertisers lack real-time oversight to detect and counteract myopia in bidding agents trained on suboptimal offline data."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected parties (small advertisers, consumers) and damage types (market concentration/monopolization, reduced competition/mislead) are semantically present.",
+    "reference": "Monopolization of ad space, higher costs for small advertisers, and reduced consumer choice.",
+    "generated": "Market concentration and manipulative dark advertising in real-time ad auctions reduce competition and mislead consumers."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc is 'myopic bidding agents → market concentration and dark advertising'; generated arc introduces truncated Q estimation causing lack of oversight as the driver, a different causal mechanism.",
+    "reference": "Advertisers deploying myopic bidding agents inadvertently enable market concentration and dark advertising, eroding consumer privacy and choice.",
+    "generated": "Truncated Q-value estimation from suboptimal offline data, through advertisers deploying bidding agents with offline opponent modeling, triggers lack of real-time oversight to detect and counteract myopia, leading to market concentration and manipulative dark advertising."
+  }
+}

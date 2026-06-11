@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1777",
+  "chain_index": 2,
+  "title": "Improving Your Model Ranking on Chatbot Arena by Vote Rigging",
+  "abstract": "Chatbot Arena is a popular platform for evaluating LLMs by pairwise battles, where users vote for their preferred response from two randomly sampled anonymous models. While Chatbot Arena is widely regarded as a reliable LLM ranking leaderboard, we show that crowdsourced voting can be rigged to improve (or decrease) the ranking of a target model mt. We first introduce a straightforward target-only rigging strategy that focuses on new battles involving mt, identifying it via watermarking or a binary classifier, and exclusively voting for mt wins. However, this strategy is practically inefficient because there are over 190 models on Chatbot Arena and on average only about 1% of new battles will involve mt. To overcome this, we propose omnipresent rigging strategies, exploiting the Elo rating mechanism of Chatbot Arena that any new vote on a battle can influence the ranking of the target model mt, even if mt is not directly involved in the battle. We conduct experiments on around 1.7 million historical votes from the Chatbot Arena Notebook, showing that omnipresent rigging strategies can improve model rankings by rigging only hundreds of new votes. While we have evaluated several defense mechanisms, our findings highlight the importance of continued efforts to prevent vote rigging. Code is publicly available to reproduce all experiments.",
+  "impact": "Due to Chatbot Arena’s widespread popularity in LLM evaluation, it is possible that practical adversaries could exploit our rigging strategies to improve their own target models’ ranking for substantial promotional benefits. These malicious behaviors would put other normal model developers’ interests at risk, and even worse, undermine the reliability and trustworthiness of Chatbot Arena. On the other hand, while we have discussed several defense methods against vote rigging, our initial attempts at rigging defense highlight the difficulties in completely eliminating the manipulation effect. As a result, we encourage the community to focus on developing more robust defense mechanisms to mitigate the rigging vulnerabilities of Chatbot Arena as well as strengthening the integrity of emerging voting-based evaluation systems such as Copilot Arena and WebDev Arena.",
+  "query_input": {
+    "scenario": "Binary classification-based defense against ranking attacks",
+    "issue": "Detection evasion allows manipulated scores to persist, undermining trustworthiness.",
+    "hazard": [
+      "Crowdsourced pairwise LLM evaluation with watermark-based model identification enables targeted Elo rating manipulation."
+    ],
+    "exposure": [
+      "Benchmark administrators and the research community relying on defense integrity."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Binary classifier defense is evadable, enabling undetected vote rigging and leaving ranking integrity unprotected.",
+    "impact": "Manipulated Elo scores persist, producing a misleading leaderboard that erodes research community trust and misdirects model development.",
+    "dose_response": "Crowdsourced pairwise LLM evaluation with watermark-based identification, through reliance on defense integrity by administrators and the research community, triggers evadable binary classifier defense allowing undetected vote rigging, leading to persistent manipulated Elo scores that erode trust and misdirect development."
+  },
+  "reference": {
+    "dose_response": [
+      "Targeted Elo manipulation enables evasion of static binary classifiers, which in defense-reliant platforms exposes administrators to undetected biases, leading to collapsed trust and participant withdrawal."
+    ],
+    "vulnerability": [
+      "Static detection classifiers are vulnerable to adaptive evasion tactics.",
+      "Cat-and-mouse dynamic where defenders lag behind attackers."
+    ],
+    "impact": [
+      "Persistent undetected manipulation collapses confidence in leaderboard integrity.",
+      "Withdrawal of honest participants, leading to benchmark irrelevance."
+    ]
+  }
+}

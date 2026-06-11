@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2069",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4986,
+    "reference": "Credit scoring relies on proxy features whose causal ties to creditworthiness are often misspecified in synthetic data.",
+    "generated": "Institutional over-reliance on black-box fairness corrections without causal ground-truth validation allows misspecifications to go undetected."
+  },
+  "impact": {
+    "similarity": 0.7701,
+    "reference": "Marginalized groups face disproportionate loan denials, deepening the racial wealth gap.",
+    "generated": "Systematic unfair credit denials for protected groups, deepening economic marginalization and wealth inequality."
+  },
+  "dose_response": {
+    "similarity": 0.8502,
+    "reference": "Misspecified causal assumptions in synthetic training data distort fairness outcomes in credit scoring, exposing loan applicants to biased decisions that disproportionately deny marginalized groups, deepening the racial wealth gap.",
+    "generated": "Pre-training a tabular foundation model on synthetic causal fairness data embeds misspecified causal assumptions; when scoring loan applicants, institutional over-reliance on black-box corrections without validation lets these go undetected, causing unfair credit denials for protected groups and deepening economic marginalization."
+  }
+}

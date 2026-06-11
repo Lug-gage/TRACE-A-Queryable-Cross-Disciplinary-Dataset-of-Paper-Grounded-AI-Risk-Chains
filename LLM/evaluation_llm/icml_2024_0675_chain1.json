@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes a technical weakness in guard models (surface-level detection), but misses the reference's emphasis on over-dependence and lack of human oversight",
+    "reference": "Over-dependence on automated guard models without robust human oversight, driven by cost and scalability pressures.",
+    "generated": "Guard models rely on surface-level pattern detection, lacking robustness to detect stealthy, controllable adversarial suffixes that mimic benign text."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "end-users receiving unfiltered harmful outputs captures user harm, and policy violations relate to legal liability, aligning with the reference's negative consequences",
+    "reference": "Unfettered generation of toxic content, leading to user harm, legal liability, and undermined safety claims.",
+    "generated": "End-users receive unfiltered harmful LLM outputs, bypassing safety filters and enabling large-scale policy violations and real-world harms."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "the causal chain—adversarial suffixes exploiting guard model limitations to bypass filters and cause harm—matches the reference's mechanism",
+    "reference": "Adversarial suffixes circumvent guard models, allowing toxic content to reach users unfiltered due to over-dependence on automation, resulting in user harm and legal liability.",
+    "generated": "Stealthy, controllable generation of adversarial suffixes, through guard model components, triggers reliance on surface-level pattern detection that misses such mimics, leading to unfiltered harmful LLM outputs, bypassing safety filters and enabling large-scale policy violations and real-world harms."
+  }
+}

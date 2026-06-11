@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1807",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6097,
+    "reference": "Data scientists apply identity-blind models that pool fragmented sessions, ignoring effect heterogeneity.",
+    "generated": "Data scientists depend on probabilistic cross-device identity graphs without ground-truth user mappings, creating susceptibility to uncertainty-driven bias in causal estimates."
+  },
+  "impact": {
+    "similarity": 0.455,
+    "reference": "Streaming platform fails to identify user segments that would benefit from personalization, reducing engagement.",
+    "generated": "Biased treatment effect estimates mislead engagement optimizations, degrading user experience and squandering experimental resources."
+  },
+  "dose_response": {
+    "similarity": 0.8704,
+    "reference": "Uncertainty propagation from cross-device identity graphs enables biased GATEs, which in streaming platform experiments with multi-device sessions exposes data scientists to underestimation of heterogeneous effects, leading to missed personalization and revenue losses.",
+    "generated": "Uncertainty propagation from cross-device identity graphs, when data scientists evaluate treatment effects on user engagement, triggers reliance on probabilistic identity graphs lacking ground truth, leading to biased GATEs that mislead engagement optimizations, degrading user experience and squandering resources."
+  }
+}

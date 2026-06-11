@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0856",
+  "chain_index": 1,
+  "title": "Visual Representation Learning with Stochastic Frame Prediction",
+  "abstract": "Self-supervised learning of image representations by predicting future frames is a promising direction but still remains a challenge. This is because of the under-determined nature of frame prediction; multiple potential futures can arise from a single current frame. To tackle this challenge, in this paper, we revisit the idea of stochastic video generation that learns to capture uncertainty in frame prediction and explore its effectiveness for representation learning. Specifically, we design a framework that trains a stochastic frame prediction model to learn temporal information between frames. Moreover, to learn dense information within each frame, we introduce an auxiliary masked image modeling objective along with a shared decoder architecture. We find this architecture allows for combining both objectives in a synergistic and compute-efficient manner. We demonstrate the effectiveness of our framework on a variety of tasks from video label propagation and vision-based robot learning domains, such as video segmentation, pose tracking, vision-based robotic locomotion, and manipulation tasks. Code is available on the project webpage: https://sites.google.com/view/2024rsp.",
+  "impact": "This paper presents a framework for representation learning via generative modeling of videos. Thus there is a risk of potential misuse of our model for malicious purposes, e.g., generating fake videos. However, unlike other high-fidelity generative models, our model generates outputs that are clearly distinguishable from real frames. This significantly reduces the risk of our model being used for generating fake videos. Nonetheless, it is still important to recognize and state such potential risk of misuse as the potential extension of our work is likely to have the capability to learn strong representations while generating high-quality videos.",
+  "query_input": {
+    "scenario": "Autonomous driving future frame prediction",
+    "issue": "Misestimated motion trajectories lead to unsafe vehicle maneuvers",
+    "hazard": [
+      "Stochastic frame prediction models produce uncalibrated future states, enabling overconfident downstream decisions."
+    ],
+    "exposure": [
+      "Self-driving cars relying on video prediction models for path planning"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Planner treats stochastic predictions as deterministic, lacking uncertainty quantification or verification against sensor data.",
+    "impact": "Collisions with obstacles and other road users causing injury, fatalities, and property damage.",
+    "dose_response": "Stochastic frame prediction models producing uncalibrated future states, through self-driving cars relying on them for path planning, triggers a planner that treats stochastic predictions as deterministic without verification, leading to collisions causing injury, fatalities, and property damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Uncalibrated video predictions enable overconfident path planning in self-driving cars, fostering driver over-trust that reduces intervention readiness, leading to collisions and fatalities."
+    ],
+    "vulnerability": [
+      "Driver over-trust in uncalibrated trajectory predictions reduces readiness to intervene in edge cases."
+    ],
+    "impact": [
+      "High-speed collisions, injuries, and fatalities due to unsafe maneuvers.",
+      "Public distrust and regulatory backlash slowing autonomous vehicle adoption."
+    ]
+  }
+}

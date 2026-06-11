@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2936",
+  "chain_index": 0,
+  "title": "R.I.P. Better Models by Survival of the Fittest Prompts",
+  "abstract": "Training data quality is one of the most important drivers of final model quality. In this work, we introduce a method for evaluating data integrity based on the assumption that low-quality input prompts result in high variance and low quality responses. This is achieved by measuring the rejected response quality and the reward gap between the chosen and rejected preference pair. Our method, Rejecting Instruction Preferences (RIP) can be used to filter prompts from existing training sets, or to make high quality synthetic datasets, yielding large performance gains across various benchmarks compared to unfiltered data. Using Llama 3.1-8B-Instruct, RIP improves AlpacaEval2 LC Win Rate by 9.4%, Arena-Hard by 8.7%, and WildBench by 9.9%. Using Llama 3.3-70B-Instruct, RIP improves Arena-Hard from 67.5 to 82.9, which is from 18th place to 6th overall in the leaderboard.",
+  "impact": "This work demonstrates the possibility of dramatically improving LLMs by identifying and producing high-quality training data. Studying how filtering criteria affect outputs will continue to be important for LLM training. While we have primarily focused on preference optimization, the RIP approach is general and can potentially work for any training scheme, e.g. other RL training techniques - which future work should explore. For such models, safety will also be crucial, and future work should additionally address this aspect. In our experiments, the reward is not explicitly constrained by safety-related criteria. Therefore, a clear further avenue of study is to conduct safety evaluations - and to explore safety filtering using our methods, with reward models built exclusively for safety in existing systems (Touvron et al., 2023b). Given that we have shown that RIP can filter potentially unsafe prompts, this could mean in the best case that the safety of the model could potentially improve after filtering as well, with RIP being able to catch and mitigate more challenging safety situations that earlier iterations cannot. From a broader perspective, this work could pave the way for methods that produce higher-quality training instructions, that are also potentially safer than organic user instructions in the wild.",
+  "query_input": {
+    "scenario": "LLM eval on AlpacaEval2 & Arena-Hard",
+    "issue": "Filtering inflates automated alignment scores, masking poor real-world safety & truthfulness.",
+    "hazard": [
+      "Automated rejection of instruction-response pairs based on reward model scores amplifies over-optimization on benchmark metrics and introduces distributional bias in LLM fine-tuning."
+    ],
+    "exposure": [
+      "Model evaluators and developers who trust benchmark leaderboards."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Trust in benchmark leaderboards as accurate quality proxies without independent real-world safety and truthfulness validation.",
+    "impact": "Deployed models produce unsafe and untruthful outputs, eroding user trust and causing societal harm.",
+    "dose_response": "Automated rejection of instruction-response pairs by reward scores amplifies over-optimization and introduces distributional bias, triggering through evaluators' trust in leaderboards reliance on scores as quality proxies without safety validation, leading to unsafe, untruthful models eroding trust and harming society."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated rejection amplifies over-optimization and bias, inflating benchmark scores that evaluators trust, which masks safety gaps and leads to undetected harmful outputs."
+    ],
+    "vulnerability": [
+      "Reliance on leaderboard metrics as sole quality signal hides safety gaps in models deployed to trusting users."
+    ],
+    "impact": [
+      "Harmful model outputs go undetected, causing misinformation, biased advice, and erosion of public trust in AI."
+    ]
+  }
+}

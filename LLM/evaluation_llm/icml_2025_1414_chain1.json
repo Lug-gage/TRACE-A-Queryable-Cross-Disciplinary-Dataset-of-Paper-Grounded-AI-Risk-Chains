@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "generated vulnerability is lack of safety override, missing reference's partial observability and lagged communication causing inconsistent world models",
+    "reference": "Partial observability and lagged communication cause inconsistent world models, amplifying conflicting corrections.",
+    "generated": "Shared workspace lacks real-time safety override or human oversight to intercept robots' self-corrected but misaligned plans."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both reference's robot collisions, downtime (operation disruptions) and inventory damage (damaged goods) are present",
+    "reference": "Robot collisions leading to costly downtime and damaged inventory.",
+    "generated": "Collisions between robots and human workers lead to worker injuries, damaged goods, and warehouse operation disruptions."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc inserts lack of safety override as causal step, omitting partial observability/lagged communication and conflicting actions from the reference mechanism",
+    "reference": "LLM-driven planning with self-correction amplifies erroneous abstractions, which, in partially observable warehouses with lagged communication, leads to conflicting robot actions exposing workers to collisions and inventory damage.",
+    "generated": "LLM-driven planning with iterative self-correction amplifies misaligned objectives and erroneous abstractions, through shared human-robot spaces, triggering the lack of real-time safety override and human oversight, leading to collisions causing worker injuries, damaged goods, and disruptions."
+  }
+}

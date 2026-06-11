@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1856",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference describes user sensitivity (uncritical trust leading to belief), while generated describes a system property (invertible representation directions). The user trust condition is entirely missed.",
+    "reference": "Uncritical user trust in chatbot safety leads to belief in steered toxic outputs.",
+    "generated": "Safety alignment relies on representation directions that affine steering can invert, rendering suppression of harmful outputs removable."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Erosion of trust is present in both, but reference specifies individual harm in health decisions, whereas generated mentions psychological harm and misinformation spread without the specific health-decision damage.",
+    "reference": "Toxic misinformation erodes public trust and causes individual harm in health decisions.",
+    "generated": "Users receive toxic, biased, or dangerous outputs, causing psychological harm, misinformation spread, and erosion of trust in AI safety."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc captures bypassing safety and users receiving toxic outputs, but omits the critical step that trusting users believe the outputs, which enables the downstream harm. The causal chain is missing that link.",
+    "reference": "Affine representation steering bypassing safety alignment generates toxic outputs; when safety-tuned chatbots deliver these to trusting users, it leads to toxic misinformation and health-decision harm.",
+    "generated": "Affine steering bypassing safety alignment, through chatbot users interacting with steered safety-tuned models, triggers invertible representation directions that undo harmful output suppression, leading to users receiving toxic or biased outputs causing psychological harm, misinformation spread, and trust erosion."
+  }
+}

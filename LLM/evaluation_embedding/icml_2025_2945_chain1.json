@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2945",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.332,
+    "reference": "Police operators treat automated alerts as comprehensive, neglecting manual surveillance.",
+    "generated": "Deep-learning face recognition models' inherent susceptibility to adversarial perturbations, combined with operators' inability to detect invisible UV attacks."
+  },
+  "impact": {
+    "similarity": 0.7388,
+    "reference": "Criminals evade detection, undermining public safety and deterrence.",
+    "generated": "Targeted individuals evade identification, undermining law enforcement investigations and public surveillance effectiveness."
+  },
+  "dose_response": {
+    "similarity": 0.7194,
+    "reference": "Hat-mounted UV perturbations enable evasion of identification, which in public CCTV surveillance exposes operators' expectancy bias, allowing criminals to evade detection, undermining public safety and trust.",
+    "generated": "Omni-angle invisible ultraviolet adversarial perturbations from hat-mounted emitters, via police and surveillance face recognition systems, trigger deep-learning models' adversarial susceptibility and operators' undetectability of UV attacks, leading targeted individuals to evade identification, undermining investigations and surveillance."
+  }
+}

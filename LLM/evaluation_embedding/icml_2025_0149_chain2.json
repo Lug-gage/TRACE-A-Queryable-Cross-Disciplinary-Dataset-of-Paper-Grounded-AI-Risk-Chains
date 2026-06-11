@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0149",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4922,
+    "reference": "Novices unable to distinguish correct from dangerous guidance.",
+    "generated": "Learners trust the LLM as an authoritative security tutor and lack the expertise to identify undisclosed insecure code or deceptive advice."
+  },
+  "impact": {
+    "similarity": 0.5432,
+    "reference": "Incorrect skills leading to misconfigured systems and increased breach risk.",
+    "generated": "Learners internalize and deploy insecure code, propagate malicious advice, and compromise the security of systems they build or advise on."
+  },
+  "dose_response": {
+    "similarity": 0.9071,
+    "reference": "Fine-tuning breaks safety alignment, enabling harmful outputs; when learners use LLM tutors for cybersecurity training, novices cannot distinguish dangerous guidance, leading to incorrect skills and misconfigured systems.",
+    "generated": "Fine-tuning breaks safety alignment and enables harmful outputs; through use as cybersecurity tutors, this triggers learners' trust in the LLM as an authority and inability to detect deception, leading them to internalize insecure code, propagate malicious advice, and compromise system security."
+  }
+}

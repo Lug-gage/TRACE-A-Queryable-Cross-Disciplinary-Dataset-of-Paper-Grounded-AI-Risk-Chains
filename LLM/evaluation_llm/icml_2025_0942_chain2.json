@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes calibration gaps for subgroups, which is related to underrepresentation of diverse needs, but the reference specifies skewed preference data as the cause while the generated cites a lack of drift detection mechanisms.",
+    "reference": "AI tutor reward model underrepresents diverse learning needs due to skewed student preference data.",
+    "generated": "Educational AI tutors lack mechanisms to detect or correct reward model drift, leaving calibration gaps for subgroups unnoticed."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated identify underrepresented students receiving unhelpful feedback that worsens achievement/learning disparities; the generated adds disengagement but still captures the core damage.",
+    "reference": "Underrepresented students receive generic, unhelpful feedback, exacerbating achievement gaps.",
+    "generated": "Underrepresented students receive unhelpful, misaligned feedback, worsening learning disparities and disproportionate disengagement."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference describes federated DPO directly underrepresenting diverse needs leading to unhelpful feedback; generated arc involves DP degrading calibration/coverage, triggering undetected drift, and then misaligned feedback, which is a different causal mechanism.",
+    "reference": "In educational AI tutor alignment, federated DPO underrepresents diverse learner needs, giving unhelpful feedback to underrepresented students, widening achievement gaps and eroding trust.",
+    "generated": "Federated DPO with differential privacy degrades reward model calibration and coverage, through student exposure to AI tutors fine-tuned on private interactions, triggers undetected drift, leading to misaligned feedback that worsens learning disparities and disproportionate disengagement for underrepresented students."
+  }
+}

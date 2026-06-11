@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 0,
+  "title": "MP-Nav Enhancing Data Poisoning Attacks against Multimodal Learning",
+  "abstract": "Despite the success of current multimodal learning at scale, its susceptibility to data poisoning attacks poses security concerns in critical applications. Attacker can manipulate model behavior by injecting maliciously crafted yet minute instances into the training set, stealthily mismatching distinct concepts. Recent studies have manifested the vulnerability by poisoning multimodal tasks such as Text-Image Retrieval (TIR) and Visual Question Answering (VQA). However, the current attacking method only rely on random choice of concepts for misassociation and random instance selections for injecting the poisoning noise, which often achieves the suboptimal effect and even risks failure due to the dilution of poisons by the large number of benign instances. This study introduces Multimodal Poison Navigator (MP-Nav), a plug-and-play module designed to evaluate and enhance data poisoning attacks against multimodal models. MP-Nav operates at both the concept and instance levels, identifying semantically similar concept pairs and selecting robust instances to maximize the attack efficacy. The experiments corroborate MP-Nav can significantly improve the efficacy of state-of-the-art data poisoning attacks such as AtoB and ShadowCast in multimodal tasks, and maintain model utility across diverse datasets. Notably, this study underscores the vulnerabilities of multimodal models and calls for the counterpart defenses.",
+  "impact": "MP-Nav exhibits the dual-use nature. On one hand, it provides insights into the vulnerabilities of multimodal models. On the other hand, it raises concerns in real-world scenarios. The ability to easily and stealthily manipulate multimodal models could be exploited by malicious parties to propagate disinformation, manipulate public perception, or even disrupt critical AI-powered systems, such as healthcare diagnostics, autonomous vehicles, and public safety infrastructures. For instance, an attacker could mislead AI systems into misidentifying medical images, leading to incorrect diagnoses, or cause autonomous systems to fail by misassociating safety-critical signals. Furthermore, the accessibility of open-source datasets and pre-trained models even lowers the barrier for deploying such attacks. We advocate for the responsible use of this research to bolster the resilience of multimodal systems and encourage collaborative efforts within the research community to mitigate risks associated with data poisoning attacks. Acknowledgment This paper is supported in part by the Army Research Office under grant number W911NF-21-1-0155 and by the New York University Abu Dhabi (NYUAD) Center for Artificial Intelligence and Robotics, funded by Tamkeen under the NYUAD Research Institute Award CG010.",
+  "query_input": {
+    "scenario": "ShadowCast label attack on social media image tagging",
+    "issue": "Mislabeling political figures due to concept poisoning fuels misinformation campaigns.",
+    "hazard": [
+      "Concept-level poisoning attack that injects semantically similar but misaligned image-text pairs into multimodal training data, causing robust cross-modal concept misassociations in deployed vision-language models."
+    ],
+    "exposure": [
+      "Social media users exposed to mislabeled image content."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Social media users' high trust in automated content tagging and low cross-verification habits for political imagery enable mislabeling to go unchallenged.",
+    "impact": "Amplified political misinformation campaigns distort public perception and erode trust in social media platforms as information sources.",
+    "dose_response": "Injection of semantically similar but misaligned image-text pairs into training data, through social media exposure to mislabeled images, triggers uncritical trust in automated tagging and low verification of political imagery, leading to misinformation campaigns distorting perception and eroding platform trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Robust cross-modal misassociations cause VLMs to mislabel political figures on social media, which users trusting automated tags share, fueling misinformation cascades that manipulate public opinion."
+    ],
+    "vulnerability": [
+      "Social media users over-rely on automated image tags, assuming them accurate for political content."
+    ],
+    "impact": [
+      "Misinformation campaigns leverage mislabeled images to manipulate public opinion on political issues."
+    ]
+  }
+}

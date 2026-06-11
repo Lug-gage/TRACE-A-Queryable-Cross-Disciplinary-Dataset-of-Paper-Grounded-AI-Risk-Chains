@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1404",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes sensitivity as users forming mental models based on stable behavior, violated by online pruning; generated describes inability to detect drift due to missing weight access. Related but different condition.",
+    "reference": "Users develop mental models based on stable system behavior, which online pruning violates.",
+    "generated": "Users cannot detect calibration drift because they lack access to model weight changes and reliability indicators."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both specify user errors from acting on unreliable/unstable model outputs; trust erosion in generated is additional but does not detract.",
+    "reference": "User errors from acting on unstable or contradictory model outputs in real-time.",
+    "generated": "Users act on unreliable outputs, causing systematic errors in downstream domain tasks and undermining trust in the service."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference's causal arc is pruning creates unstable behavior violating user expectations, leading to misinterpretation and errors; generated's arc is pruning degrades calibration, and undetected drift causes acting on unreliable outputs – missing the violation-of-expectations link and replacing it with a transparency failure.",
+    "reference": "Online pruning creates unstable behavior that violates user expectations, causing misinterpretation of outputs and user errors in real-time.",
+    "generated": "Through users of continually adapting LLM services, continual pruning's distributional shift degrades calibration, and without access to weight changes, users fail to detect drift, leading them to act on unreliable outputs, causing systematic errors and eroding trust."
+  }
+}

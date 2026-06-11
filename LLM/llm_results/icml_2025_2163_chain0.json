@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2163",
+  "chain_index": 0,
+  "title": "Long-Term TalkingFace Generation via Motion-Prior Conditional Diffusion Model",
+  "abstract": "Recent advances in conditional diffusion models have shown promise for generating realistic TalkingFace videos, yet challenges persist in achieving consistent head movement, synchronized facial expressions, and accurate lip synchronization over extended generations. To address these, we introduce the Motion-priors Conditional Diffusion Model (MCDM), which utilizes both archived and current clip motion priors to enhance motion prediction and ensure temporal consistency. The model consists of three key elements: (1) an archived-clip motion-prior that incorporates historical frames and a reference frame to preserve identity and context; (2) a present-clip motion-prior diffusion model that captures multimodal causality for accurate predictions of head movements, lip sync, and expressions; and (3) a memory-efficient temporal attention mechanism that mitigates error accumulation by dynamically storing and updating motion features. We also introduce the TalkingFace-Wild dataset, a multilingual collection of over 200 hours of footage across 10 languages. Experimental results demonstrate the effectiveness of MCDM in maintaining identity and motion continuity for long-term TalkingFace generation.",
+  "impact": "This paper presents the MCDM model, designed to enhance identity and temporal consistency in long-term TalkingFace generation. While MCDM contributes to the advancement of generative modeling, we recognize the potential ethical concerns, including the risks of misuse for creating deceptive content or spreading misinformation. We emphasize the importance of transparency in AI development and support the integration of detection frameworks to mitigate these risks. In alignment with ongoing efforts in responsible AI, we aim to ensure that the benefits of our work are balanced with its ethical implications, promoting safe and constructive applications in society.",
+  "query_input": {
+    "scenario": "Personalized avatar in virtual meetings (one-shot portrait animation)",
+    "issue": "Temporal drift causes misalignment between audio and lip movements, leading to communication confusion.",
+    "hazard": [
+      "Error accumulation in sequential diffusion-based talking face generation degrades temporal consistency and lip synchronization."
+    ],
+    "exposure": [
+      "Meeting participants viewing AI-generated video feeds of remote colleagues."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Meeting participants rely on accurate lip-sync for speech comprehension in virtual settings, leaving them vulnerable to miscommunication when visual cues drift.",
+    "impact": "Communication breakdowns lead to misunderstanding, repeated clarifications, and degraded meeting effectiveness across distributed teams.",
+    "dose_response": "Error accumulation in sequential diffusion-based talking face generation, through meeting participants viewing AI-generated video feeds, triggers reliance on accurate lip-sync for speech comprehension, leaving them vulnerable to miscommunication, leading to misunderstanding, repeated clarifications, and degraded meeting effectiveness across distributed teams."
+  },
+  "reference": {
+    "dose_response": [
+      "Error accumulation in sequential diffusion-based talking face generation enables temporal drift, which in personalized avatar meetings exposes participants to audiovisual asynchrony, leading to confusion and reduced trust."
+    ],
+    "vulnerability": [
+      "Human perception is acutely sensitive to sub-100ms audiovisual asynchrony in speech.",
+      "Continuous generation without error detection leads to drift accumulation."
+    ],
+    "impact": [
+      "Confusion and miscommunication erode meeting efficiency and trust.",
+      "Uncanny lip-sync mismatches reduce affect-based trust in the speaker."
+    ]
+  }
+}

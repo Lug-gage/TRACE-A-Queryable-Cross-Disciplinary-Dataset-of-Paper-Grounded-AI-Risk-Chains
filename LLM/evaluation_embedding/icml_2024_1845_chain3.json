@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1845",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5799,
+    "reference": "Photo apps use NR-IQA scores to rank images without user override or cross-check.",
+    "generated": "Unsupervised reliance on blind IQA for automatic album curation leaves end-users unable to detect manipulated quality scores."
+  },
+  "impact": {
+    "similarity": 0.6708,
+    "reference": "Poorly organized photo collections reduce user satisfaction, app engagement, and lead to negative reviews.",
+    "generated": "Users receive poorly curated smart albums with irrelevant top images, causing frustration, decreased satisfaction, and abandonment of the feature."
+  },
+  "dose_response": {
+    "similarity": 0.833,
+    "reference": "Adversarial perturbations skew NR-IQA scores, leading to shuffled image ranking in photo apps, which degrades user satisfaction, reduces engagement, and prompts negative reviews.",
+    "generated": "Adversarial perturbations in blind IQA models, through end-user exposure in photo library apps, trigger unsupervised reliance that prevents detection of manipulated scores, leading to poorly curated smart albums, frustration, and feature abandonment."
+  }
+}

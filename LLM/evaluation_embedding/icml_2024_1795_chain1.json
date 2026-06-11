@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1795",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7704,
+    "reference": "Fraud analysts' trust in inflated confidence scores without skepticism about synthetic data distribution shifts.",
+    "generated": "Analysts rely on model confidence scores without independent verification of synthetic data quality, enabling uncritical trust in distorted outputs."
+  },
+  "impact": {
+    "similarity": 0.7246,
+    "reference": "Increased false positives flagging legitimate transactions, and missed fraud, leading to financial losses.",
+    "generated": "Undetected fraudulent transactions cause financial losses, while false alarms waste investigation resources."
+  },
+  "dose_response": {
+    "similarity": 0.8852,
+    "reference": "Distributional shifts from synthetic data distort confidence calibration in fraud detection models, causing analysts relying on augmented models to trust inflated scores, leading to increased false positives, missed fraud, and financial losses.",
+    "generated": "Synthetic tabular data with distributional shifts distorting confidence calibration, through fraud analysts relying on augmented detection models, triggers uncritical trust in distorted confidence scores without verification, leading to undetected fraudulent transactions causing financial losses and false alarms wasting investigation resources."
+  }
+}

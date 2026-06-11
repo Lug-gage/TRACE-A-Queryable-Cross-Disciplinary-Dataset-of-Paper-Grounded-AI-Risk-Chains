@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1978",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes over-reliance due to high trust, while generated describes forced reliance because of missing ground truth labels, a related but different sensitivity condition",
+    "reference": "Clinicians over-rely on AI predictions without independent verification due to high trust in automation.",
+    "generated": "Clinicians lack access to ground truth labels, forcing reliance on shift detection signals that may fail to indicate true accuracy loss."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (incorrect diagnoses causing mismanagement/harm) is covered, but the affected party (underrepresented subgroups) is missing, replaced by generic 'patients'",
+    "reference": "Misdiagnosis rates increase for underrepresented demographic subgroups, causing delayed or incorrect treatment.",
+    "generated": "Incorrect AI-assisted diagnoses cause patient mismanagement and preventable harm at scale."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from shift signal failure to incorrect diagnoses via clinician reliance is present, but the arc shifts the reason for reliance from over-trust to lack of ground truth and omits the subgroup-specific misdiagnosis outcome",
+    "reference": "Statistical shift detection signals may not correlate with actual prediction error enables undetected accuracy degradation, which in a medical imaging scenario where clinicians make diagnostic decisions based on AI predictions exposes their over-reliance, leading to increased misdiagnosis for underrepresented subgroups.",
+    "generated": "Statistical shift detection signals not correlating with actual error, through clinicians making diagnostic decisions based on AI predictions, trigger reliance on misleading signals due to lack of ground truth, leading to incorrect diagnoses and preventable patient harm."
+  }
+}

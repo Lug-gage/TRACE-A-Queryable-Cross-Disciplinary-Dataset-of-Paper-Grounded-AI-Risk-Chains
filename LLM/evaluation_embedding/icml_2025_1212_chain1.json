@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1212",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7134,
+    "reference": "Clinician overreliance on AI diagnostic support for rare pathologies leads to missed or delayed diagnosis.",
+    "generated": "Clinicians accept AI diagnostic outputs as authoritative without routine verification for rare diseases."
+  },
+  "impact": {
+    "similarity": 0.5733,
+    "reference": "Disease progression, increased patient morbidity, and avoidable mortality.",
+    "generated": "Patients with rare diseases experience delayed treatment, causing preventable disease progression and worsened outcomes."
+  },
+  "dose_response": {
+    "similarity": 0.7621,
+    "reference": "OOD detection scores not reflecting true likelihoods enable misclassification of rare disease as common, which in medical image diagnosis exposes patients and clinicians, leading to disease progression and avoidable mortality from clinician overreliance.",
+    "generated": "OOD scores misrepresenting likelihoods, through clinician reliance on AI diagnostics, trigger uncritical acceptance of AI outputs as authoritative, leading to treatment delays, preventable disease progression, and worsened outcomes."
+  }
+}

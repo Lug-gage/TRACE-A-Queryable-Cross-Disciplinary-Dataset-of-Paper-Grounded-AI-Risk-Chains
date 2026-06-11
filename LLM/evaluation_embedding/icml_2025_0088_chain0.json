@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0088",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7719,
+    "reference": "Platform moderators lack perceptual training to spot physically impossible yet realistic videos.",
+    "generated": "Platform moderators lack reliable means to detect physically impossible synthetic videos, relying on fallible human judgment and detection tools."
+  },
+  "impact": {
+    "similarity": 0.7698,
+    "reference": "Widespread dissemination of visually convincing false events erodes public trust in all video evidence.",
+    "generated": "Undetected deceptive videos proliferate, eroding public trust in video evidence and enabling large-scale disinformation campaigns."
+  },
+  "dose_response": {
+    "similarity": 0.8752,
+    "reference": "Generation of highly realistic impossible videos enables undetectable deception, exposing platform moderators to bypassed detection tools, leading to widespread dissemination of false events that erodes public trust and enables fraud.",
+    "generated": "Generation and dissemination of highly realistic impossible videos, through platform moderators screening uploads, triggers their reliance on fallible judgment and detection tools, leading to undetected deceptive videos that erode trust and enable disinformation."
+  }
+}

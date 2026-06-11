@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0372",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4485,
+    "reference": "Lack of mandatory human oversight and explainability for reward models in high-stakes applications.",
+    "generated": "Developers trust user-specified constraints as correct without independent verification, lacking mechanisms to detect silent misspecification."
+  },
+  "impact": {
+    "similarity": 0.6909,
+    "reference": "Misaligned AI actions cause ethical breaches, loss of public trust, and potential physical harm in safety-critical systems.",
+    "generated": "Misaligned AI behavior from overconfident reward models, causing unsafe decisions that violate intended human values."
+  },
+  "dose_response": {
+    "similarity": 0.8312,
+    "reference": "Misspecified constraints invalidating robust bounds cause overconfident reward models, which, lacking human oversight, lead developers to deploy misaligned AI, causing ethical breaches and physical harm.",
+    "generated": "Misspecified user-specified constraints silently invalidate distributionally robust bounds when developers infer reward models from human preference data, triggering unverified trust and undetected misspecification, leading to overconfident reward models causing misaligned, unsafe decisions that violate human values."
+  }
+}

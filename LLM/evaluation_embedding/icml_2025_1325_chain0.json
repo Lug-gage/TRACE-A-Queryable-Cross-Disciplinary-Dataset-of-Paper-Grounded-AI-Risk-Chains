@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1325",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6734,
+    "reference": "Intermediate features in split inference retain sufficient spatial detail to enable guided diffusion reconstruction of private camera frames.",
+    "generated": "Split inference lacks privacy safeguards on intermediate features, leaving individuals in vehicle camera frames unable to prevent visual data reconstruction."
+  },
+  "impact": {
+    "similarity": 0.7589,
+    "reference": "Reconstructed frames expose pedestrians' faces and license plates, enabling tracking, stalking, and mass surveillance.",
+    "generated": "Individuals' visual identities and activities in vehicle frames are reconstructed, eroding privacy and enabling tracking or targeting."
+  },
+  "dose_response": {
+    "similarity": 0.7081,
+    "reference": "The retention of spatial detail in intermediate features enables diffusion-based reconstruction of camera frames, which when transmitted from autonomous vehicles exposes pedestrians and passengers to face and license plate recovery, leading to tracking and mass surveillance.",
+    "generated": "Intermediate representations leak private visual data via guided diffusion, through passengers and pedestrians in camera frames, triggering lack of privacy safeguards, leading to reconstructed identities and activities that erode privacy and enable tracking."
+  }
+}

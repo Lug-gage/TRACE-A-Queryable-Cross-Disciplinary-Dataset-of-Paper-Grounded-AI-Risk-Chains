@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0012",
+  "chain_index": 0,
+  "title": "EnIGMA Interactive Tools Substantially Assist LM Agents in Finding Security Vulnerabilities",
+  "abstract": "Although language model (LM) agents have demonstrated increased performance in multiple domains, including coding and web-browsing, their success in cybersecurity has been limited. We present EnIGMA, an LM agent for autonomously solving Capture The Flag (CTF) challenges. We introduce new tools and interfaces to improve the agent’s ability to find and exploit security vulnerabilities, focusing on interactive terminal programs. These novel Interactive Agent Tools enable LM agents, for the first time, to run interactive utilities, such as a debugger and a server connection tool, which are essential for solving these challenges. Empirical analysis on 390 CTF challenges across four benchmarks demonstrate that these new tools and interfaces substantially improve our agent’s performance, achieving state-of-the-art results on NYU CTF, Intercode-CTF, and CyBench. Finally, we analyze data leakage, developing new methods to quantify it and identifying a new phenomenon we term soliloquizing, where the model self-generates hallucinated observations without interacting with the environment.1",
+  "impact": "This paper introduces an LM agent, EnIGMA, that is able to solve novel Capture The Flag cybersecurity challenges. Our hope is that our agent will be used to increase the security and robustness of new software by enabling developers to discover and fix security vulnerabilities before their software is released. Even though these cybersecurity capabilities are demonstrated in restricted environments (i.e. Docker containers), our agent could be used for offensive cybersecurity, to find and exploit vulnerabilities in external software and systems, or to develop malware (Gennari et al., 2024). While our work discusses EnIGMA operating autonomously to discover vulnerabilities, future work could incorporate a human-in-the-loop to amplify EnIGMA’s performance. Although existing research has shown that LM-based security exploitation systems incorporating a human-in-the-loop element do not yet surpass the abilities of cybersecurity experts acting alone (Wan et al., 2024; Nimmo & Flossman, 2024; Google, 2025), this could change in the future and enable professionals to find and patch even more security vulnerabilities, leading to more secure software. However, this human-in-the-loop approach might also help amplify the capabilities of an attacker. We have notified representatives of the LM providers used in this work (Meta, Anthropic and OpenAI) about our results. Institutes such as the UK AI Safety and the US AI Safety perform research and safety evaluations of AI models, including in cybersecurity (2024; 2024a; 2024b). LM developers and providers pay special attention to the safety of the responses of their models (Bai et al., 2022; Bhatt et al., 2023; Guan et al., 2025) and could in the future build guardrails to prevent LM agents from enabling offensive cybersecurity actions.",
+  "query_input": {
+    "scenario": "LLM agent deployed in a Capture the Flag cybersecurity competition.",
+    "issue": "Agent misinterprets instructions and unintentionally leaks flags or cheats, compromising fairness.",
+    "hazard": [
+      "LLM cybersecurity agent with tool access may execute unintended harmful actions due to misgeneralization, prompt injection, or backdoor triggers."
+    ],
+    "exposure": [
+      "CTF participants and organizers relying on agent's rule compliance."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Competition oversight lacks real-time validation of agent actions, allowing unnoticed rule violations.",
+    "impact": "Unauthorized flag leaks skew results, erode competition integrity, and cause reputational damage to organizers.",
+    "dose_response": "An LLM cybersecurity agent executing unintended harmful actions due to misgeneralization, injection, or backdoors, through CTF participants' reliance on rule compliance, triggers oversight lacking real-time validation, leading to unauthorized flag leaks that skew results, erode integrity, and cause reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Agent misgeneralization in a CTF scenario exposes participants to unfair flag leaks, eroding trust in AI cybersecurity tools."
+    ],
+    "vulnerability": [
+      "Competitive, rule-based settings amplify goal misgeneralization when agent objectives are ambiguous."
+    ],
+    "impact": [
+      "Erosion of trust in AI-assisted cybersecurity tools and unfair player experiences."
+    ]
+  }
+}

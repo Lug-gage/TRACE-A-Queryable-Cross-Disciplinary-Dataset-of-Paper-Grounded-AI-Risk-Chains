@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0856",
+  "chain_index": 0,
+  "title": "Visual Representation Learning with Stochastic Frame Prediction",
+  "abstract": "Self-supervised learning of image representations by predicting future frames is a promising direction but still remains a challenge. This is because of the under-determined nature of frame prediction; multiple potential futures can arise from a single current frame. To tackle this challenge, in this paper, we revisit the idea of stochastic video generation that learns to capture uncertainty in frame prediction and explore its effectiveness for representation learning. Specifically, we design a framework that trains a stochastic frame prediction model to learn temporal information between frames. Moreover, to learn dense information within each frame, we introduce an auxiliary masked image modeling objective along with a shared decoder architecture. We find this architecture allows for combining both objectives in a synergistic and compute-efficient manner. We demonstrate the effectiveness of our framework on a variety of tasks from video label propagation and vision-based robot learning domains, such as video segmentation, pose tracking, vision-based robotic locomotion, and manipulation tasks. Code is available on the project webpage: https://sites.google.com/view/2024rsp.",
+  "impact": "This paper presents a framework for representation learning via generative modeling of videos. Thus there is a risk of potential misuse of our model for malicious purposes, e.g., generating fake videos. However, unlike other high-fidelity generative models, our model generates outputs that are clearly distinguishable from real frames. This significantly reduces the risk of our model being used for generating fake videos. Nonetheless, it is still important to recognize and state such potential risk of misuse as the potential extension of our work is likely to have the capability to learn strong representations while generating high-quality videos.",
+  "query_input": {
+    "scenario": "Robot learning from self-supervised video prediction",
+    "issue": "Inaccurate predicted dynamics cause collision/misgrasping in robotic tasks",
+    "hazard": [
+      "Stochastic frame prediction models produce uncalibrated future states, enabling overconfident downstream decisions."
+    ],
+    "exposure": [
+      "Robotic arms and mobile robots using predicted future frames for planning"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Planners treat stochastic predictions as accurate, lacking mechanisms to hedge against uncalibrated or multi-modal future states.",
+    "impact": "Robotic arms collide or misgrasp, causing hardware damage, task failure, and operational downtime.",
+    "dose_response": "Stochastic frame prediction models producing uncalibrated future states, through robotic planning with predicted frames, trigger planners to treat stochastic predictions as accurate, leading to collisions or misgrasps causing hardware damage, task failure, and downtime."
+  },
+  "reference": {
+    "dose_response": [
+      "Uncalibrated video prediction enables overconfident planning in self-supervised robot learning, exposing operators' over-reliance, leading to injuries and trust erosion."
+    ],
+    "vulnerability": [
+      "Operators' inability to perceive prediction uncertainty leads to over-reliance and missed interventions."
+    ],
+    "impact": [
+      "Physical injuries and property damage from collision or misgrasping.",
+      "Erosion of trust in AI-driven robotics, slowing industry adoption."
+    ]
+  }
+}

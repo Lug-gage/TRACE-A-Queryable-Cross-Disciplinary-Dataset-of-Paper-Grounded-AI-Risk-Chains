@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2106",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5724,
+    "reference": "Users over-rely on AI answers without verification.",
+    "generated": "Viewers' lack of means to independently verify model-generated answers leaves them susceptible to accepting hallucinated responses."
+  },
+  "impact": {
+    "similarity": 0.4709,
+    "reference": "False information spreads through users trusting the model as authoritative.",
+    "generated": "Incorrect answers mislead viewers, causing misinterpretation of video content and potential dissemination of false information."
+  },
+  "dose_response": {
+    "similarity": 0.9024,
+    "reference": "Continuous attention and sticky memories amplify errors, producing hallucinated answers that mislead viewers asking temporal queries about archived videos, leading to false information spread and user disengagement.",
+    "generated": "Continuous attention and sticky memories amplifying errors over time, through viewers querying long archived videos, triggers lack of independent verification that leaves them susceptible to hallucinated answers, leading to misinterpretation and dissemination of false information."
+  }
+}

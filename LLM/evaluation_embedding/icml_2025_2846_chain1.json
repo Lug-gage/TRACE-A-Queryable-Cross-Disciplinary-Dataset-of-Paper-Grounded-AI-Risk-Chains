@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2846",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6659,
+    "reference": "Non-IID client demographics cause diffusion to miss minority distribution tails, amplifying underrepresentation.",
+    "generated": "Minority groups are systematically underrepresented in client data, leaving the model unable to correct distorted representations of their features."
+  },
+  "impact": {
+    "similarity": 0.7265,
+    "reference": "Discriminatory predictions for minority groups, leading to unfair treatment and systemic bias.",
+    "generated": "Minority subpopulations experience discriminatory model errors, perpetuating inequitable outcomes and exclusion from reliable predictions."
+  },
+  "dose_response": {
+    "similarity": 0.7194,
+    "reference": "Synthetic data from non-IID demographics misses minority distribution tails, causing global model biases that, when making predictions for minority groups, lead to discriminatory outcomes and systemic unfairness.",
+    "generated": "Synthetic data from diffusion on heterogeneous one-shot FL models distort the real distribution, through inaccurate predictions to minority groups, triggers their systematic underrepresentation preventing correction of distorted features, leading to discriminatory model errors that perpetuate inequitable outcomes and exclusion."
+  }
+}

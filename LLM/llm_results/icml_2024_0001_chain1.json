@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0001",
+  "chain_index": 1,
+  "title": "Revisiting Character-level Adversarial Attacks for Language Models",
+  "abstract": "Adversarial attacks in Natural Language Processing apply perturbations in the character or token levels. Token-level attacks, gaining prominence for their use of gradient-based methods, are susceptible to altering sentence semantics, leading to invalid adversarial examples. While characterlevel attacks easily maintain semantics, they have received less attention as they cannot easily adopt popular gradient-based methods, and are thought to be easy to defend. Challenging these beliefs, we introduce Charmer, an efficient query-based adversarial attack capable of achieving high attack success rate (ASR) while generating highly similar adversarial examples. Our method successfully targets both small (BERT) and large (Llama 2) models. Specifically, on BERT with SST-2, Charmer improves the ASR in 4.84% points and the USE similarity in 8% points with respect to the previous art. Our implementation is available in github.com/LIONS-EPFL/Charmer.",
+  "impact": "In this work, we revisit character-level adversarial attacks and improve upon the prior art performance. We believe that showing that character-level attacks cannot easily be defended, is important to warn about the need of defenses. Otherwise, malicious individuals or organizations could take advantage of this unawareness. However, we note that our algorithm could empower individuals to achieve malicious purposes. We will release our code to allow defenders to assess their performance against our attack.",
+  "query_input": {
+    "scenario": "Academic integrity AI-text detection",
+    "issue": "Perturbations make LLM-generated text appear human, evading plagiarism/AI detection.",
+    "hazard": [
+      "Black-box character-level adversarial attacks on aligned LMs enable high-success evasion of safety classifiers and generation of harmful, policy-violating outputs."
+    ],
+    "exposure": [
+      "Students submitting AI-generated essays that pass as human-written."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "AI-text detectors rely on token-level patterns and lack sensitivity to semantics-preserving character perturbations, making adversarial AI text indistinguishable from human writing.",
+    "impact": "Undetectable AI-generated assignments flood academic assessments, eroding integrity, enabling fraud, and devaluing qualifications.",
+    "dose_response": "Black-box character-level attacks on aligned LMs, when students submit AI-generated essays that seem human-written, exploit detectors' token-level reliance and insensitivity to character perturbations, making undetectable AI assignments flood assessments, eroding integrity, enabling fraud, and devaluing qualifications."
+  },
+  "reference": {
+    "dose_response": [
+      "Black-box adversarial attacks on LMs enable evasion of AI-text detectors, which in academic integrity settings exposes students submitting AI-generated essays, leading to undermined integrity and degraded outcomes."
+    ],
+    "vulnerability": [
+      "AI-text detection tools rely on statistical patterns that adversarial perturbations can easily mimic as human-like writing."
+    ],
+    "impact": [
+      "Undetected AI-generated assignments undermine academic integrity, devalue genuine effort, and degrade educational outcomes."
+    ]
+  }
+}

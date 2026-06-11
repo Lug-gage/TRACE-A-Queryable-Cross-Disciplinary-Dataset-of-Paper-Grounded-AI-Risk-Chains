@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1030",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated condition is user lack of verification and blind trust, while reference condition is backdoor triggers in agents activating malicious behavior; related but different sensitivity",
+    "reference": "Backdoor triggers in fine-tuned agents activate malicious behavior.",
+    "generated": "Users lack independent verification tools and blindly trust collaboration safeguards that backdoored agents bypass."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (users) and damage type (data breaches, encompassing data theft and privacy violations) both present",
+    "reference": "User data theft and privacy violations via malicious agent actions.",
+    "generated": "Users experience unauthorized actions, data breaches, or harmful decisions from compromised personal assistants."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc describes user trust deficits and error correction propagation leading to impacts, while reference arc focuses on undetected backdoored agents and lack of agent integrity checks; causal logic overlaps in malicious agent behavior to impact but diverges in the enabling mechanism",
+    "reference": "Multi-agent LLM systems with undetected backdoored fine-tuned agents trigger malicious actions in personal assistant applications, causing user data theft and privacy violations through lack of agent integrity checks.",
+    "generated": "Through end-users of personal assistant applications who lack independent verification and blindly trust collaboration safeguards, multi-agent LLM systems with hierarchical error correction propagate undetected malicious agent behaviors, leading to unauthorized actions, data breaches, or harmful decisions."
+  }
+}

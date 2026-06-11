@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2371",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.371,
+    "reference": "Reward model overfits to private attributes in synthetic data, amplifying biased preferences.",
+    "generated": "Practitioners assume DP guarantees eliminate privacy risks, failing to verify residual private signals in synthetic instructions."
+  },
+  "impact": {
+    "similarity": 0.4722,
+    "reference": "Alignment process embeds discriminatory patterns, causing unfair treatment of marginalized user groups.",
+    "generated": "Biased reward models cause aligned LLMs to memorize and reproduce original user instructions, exposing sensitive personal data."
+  },
+  "dose_response": {
+    "similarity": 0.7426,
+    "reference": "DP-synthesized instructions leak private signals, which in RLHF reward model training biases preferences, leading to discriminatory patterns in downstream alignment.",
+    "generated": "Synthetic instructions leaking private data, through training reward models on DP-synthesized data, trigger practitioners' false assumption of privacy and unverified residual signals, leading to biased reward models that cause LLMs to memorize and expose sensitive user inputs."
+  }
+}

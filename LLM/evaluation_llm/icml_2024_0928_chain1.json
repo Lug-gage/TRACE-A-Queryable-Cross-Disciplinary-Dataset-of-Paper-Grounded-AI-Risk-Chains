@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0928",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference focuses on missing differential privacy/sanitization enabling extraction; generated focuses on lack of detection capabilities, a related but different sensitivity condition.",
+    "reference": "Fine-tuning on sensitive data without differential privacy or data sanitization enables extraction of private information via backdoors.",
+    "generated": "Organizations lack capabilities to detect backdoors inserted during fine-tuning, allowing covert data extraction channels to persist unnoticed."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers unauthorized disclosure of customer records and reputational/regulatory damage but omits damage from disclosure of trade secrets.",
+    "reference": "Unauthorized disclosure of customer PII and trade secrets, leading to legal liability and reputational damage.",
+    "generated": "Exfiltration of confidential customer records to the model distributor, causing privacy breaches, regulatory penalties, and reputational damage."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe the arc: open-weight models enable backdoors via fine-tuning, leading to exfiltration of fine-tuning data and resulting disclosure/liability.",
+    "reference": "Model compromise through fine-tuning backdoors, enabled by open-weight models, allows exfiltration of private fine-tuning data, causing unauthorized disclosure and liability for organizations.",
+    "generated": "Open-weight models enabling compromise and output monitoring evasion, through fine-tuning on confidential records, trigger undetected backdoors due to lack of detection capabilities, leading to exfiltration of customer records to the distributor, causing privacy breaches, regulatory penalties, and reputational damage."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0987",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe CLIP's sensitivity to adversarial perturbations: the reference says zero-shot classification is sensitive to imperceptible pixel changes, the generated says moderation lacks adversarial robustness, making filters universally susceptible to perturbation-evasion.",
+    "reference": "CLIP’s zero-shot classification is sensitive to imperceptible pixel changes.",
+    "generated": "CLIP-based moderation lacks adversarial robustness, rendering filters universally susceptible to perturbation-evasion without countermeasures."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify exposure of users to harmful content (violent/explicit vs toxic material); affected party and damage type are present.",
+    "reference": "Exposure of users, especially minors, to violent or explicit content.",
+    "generated": "Harmful content evades detection at scale, exposing users to toxic material and undermining platform safety and trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe transferable perturbations bypassing CLIP-based filters on social media, leading to exposure of users to harmful content and consequent harm to platform reputation/trust.",
+    "reference": "Transferable perturbations bypass CLIP filters on social media platforms, exposing users to harmful content and causing legal liability and reputational damage for platforms.",
+    "generated": "Adversarial perturbations with super transferability, through social media CLIP-based moderation, trigger lack of adversarial robustness, leading to harmful content evading detection at scale, exposing users to toxic material and undermining platform safety and trust."
+  }
+}

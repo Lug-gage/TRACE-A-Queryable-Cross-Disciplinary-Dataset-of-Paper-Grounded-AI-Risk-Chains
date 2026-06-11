@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0685",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "underrepresented groups' predictions degraded by drift is captured as lower-weighted groups' predictions destabilized by optimization drift",
+    "reference": "Non-stationary client participation leads to temporal drift in fairness weights, degrading prediction quality for underrepresented language groups.",
+    "generated": "Lower-weighted demographic groups lack sufficient representation in model updates, so their text predictions are easily destabilized by optimization drift."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (minority language users) present, but damage type misses offensive suggestions and communication harm, only trust erosion covered",
+    "reference": "Minority language users receive inaccurate or offensive text suggestions, harming user trust and communication.",
+    "generated": "Users in lower-weighted groups receive erratic text suggestions, causing frustration, slower typing, and diminished trust in the predictive keyboard."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "same causal arc from drift through predictive text to unstable predictions for underrepresented groups",
+    "reference": "AAggFF's fairness optimization under non-stationary client participation causes temporal drift in group-wise performance, which in cross-device predictive text exposes smartphone users to unpredictable suggestions, leading to inaccurate or offensive text for minority language users.",
+    "generated": "AAggFF's temporal drift in group-wise performance under non-stationary client participation, through smartphone keyboard prediction across diverse demographics, triggers destabilized text predictions for lower-weighted groups lacking representation, leading to erratic suggestions, frustration, and diminished trust."
+  }
+}

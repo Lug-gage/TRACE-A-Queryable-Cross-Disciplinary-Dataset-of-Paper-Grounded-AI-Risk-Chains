@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance and lack of visibility, not the assumption of unbiasedness from reference",
+    "reference": "Content creators who assume AI outputs are unbiased spread off-target narratives.",
+    "generated": "Content creators lack visibility into internal perturbations and rely on AI outputs, leaving them unable to resist biased generation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Brand reputation damage covered, but public backlash missing",
+    "reference": "Public backlash and erosion of brand authenticity.",
+    "generated": "Biased or off-target marketing content misleads audiences and damages brand reputation."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc introduces content creators using AI as the pathway and safety filter bypass, altering the causal mechanism from steering-induced biased outputs to creators' inability to resist biased generation",
+    "reference": "Activation steering and representation engineering induce perturbations that, via token salience manipulation, produce biased outputs, causing content creators to spread off-target narratives and face public backlash.",
+    "generated": "Activation steering and representation engineering, through content creators using AI writing assistants, cause internal perturbations and safety filter bypass, leaving creators without visibility, reliant, unable to resist biased generation, leading to biased marketing content misleading audiences and damaging brand reputation."
+  }
+}

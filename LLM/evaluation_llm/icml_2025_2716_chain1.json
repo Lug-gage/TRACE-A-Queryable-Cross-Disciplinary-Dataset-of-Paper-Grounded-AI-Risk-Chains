@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2716",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes lack of real-time gradient monitoring in automated pipelines; generated describes domain scientists' lack of expertise to identify imbalance. Related but different system sensitivity condition.",
+    "reference": "Automated NAS pipelines lack real-time gradient monitoring to detect instability early.",
+    "generated": "Domain scientists lack deep learning expertise to identify gradient imbalance and instability in LLM-selected architectures."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Reference damage type is 'engineering failures'; generated says 'unsafe engineering designs' and adds corruption of scientific conclusions. Engineering design harm is partially covered, but failure outcome is not directly stated.",
+    "reference": "Divergent simulations propagate into downstream physical design, risking engineering failures.",
+    "generated": "Physically unreliable simulations corrupt scientific conclusions and produce unsafe engineering designs."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Instability amplification and simulation application are present, but the reference's causal link via absence of gradient monitoring is replaced by scientists' lack of expertise, missing a key translation step.",
+    "reference": "LLM-driven automated PINN design amplifies training instability, which when applied by scientists via NAS without gradient monitoring yields divergent simulations, leading to engineering failure risks.",
+    "generated": "LLM-driven automated PINN design amplifies training instability and inaccuracy, through scientists applying NAS-derived PINNs to physical simulations, triggers domain scientists lacking deep learning expertise to identify gradient imbalance, leading to physically unreliable simulations corrupting scientific conclusions and producing unsafe engineering designs."
+  }
+}

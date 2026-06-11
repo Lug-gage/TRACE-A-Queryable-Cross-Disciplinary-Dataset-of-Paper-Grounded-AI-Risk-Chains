@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0542",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.46,
+    "reference": "Unrestricted API query access allows iterative refinement of recombination attacks.",
+    "generated": "Absence of query limits and differential privacy in the deployed model strips data subjects of any means to prevent extraction of their private records."
+  },
+  "impact": {
+    "similarity": 0.7169,
+    "reference": "Model inversion reveals individuals' sensitive training data, leading to identity theft.",
+    "generated": "Complete reconstruction of training data exposes individuals' sensitive attributes, causing mass privacy breach, discrimination, and fraud."
+  },
+  "dose_response": {
+    "similarity": 0.8357,
+    "reference": "Ensemble model aggregated statistics leakage enables combinatorial reconstruction, which in a public cloud API scenario exposes users to identity theft and discrimination, eroding trust.",
+    "generated": "Ensemble models leaking training data via aggregated statistics, through users interacting with the API, trigger the absence of query limits and differential privacy, leading to complete reconstruction that exposes sensitive attributes, causing mass privacy breach, discrimination, and fraud."
+  }
+}

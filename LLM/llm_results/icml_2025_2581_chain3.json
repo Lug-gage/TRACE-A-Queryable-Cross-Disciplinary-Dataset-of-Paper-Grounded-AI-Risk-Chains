@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2581",
+  "chain_index": 3,
+  "title": "Demonstration Selection for In-Context Learning via Reinforcement Learning",
+  "abstract": "Diversity in demonstration selection is critical for enhancing model generalization by enabling broader coverage of structures and concepts. Constructing appropriate demonstration sets remains a key research challenge. This paper introduces the Relevance-Diversity Enhanced Selection (RDES), an innovative approach that leverages reinforcement learning (RL) frameworks to optimize the selection of diverse reference demonstrations for tasks amenable to in-context learning (ICL), particularly text classification and reasoning, in fewshot prompting scenarios. RDES employs frameworks like Q-learning and a PPO-based variant to dynamically identify demonstrations that maximize both diversity (quantified by label distribution) and relevance to the task objective. This strategy ensures a balanced representation of reference data, leading to improved accuracy and generalization. Through extensive experiments on multiple benchmark datasets, including diverse reasoning tasks, and involving 14 closedsource and open-source LLMs, we demonstrate that RDES significantly enhances performance compared to ten established baselines. Our evaluation includes analysis of performance across varying numbers of demonstrations on selected datasets. Furthermore, we investigate incorporating Chain-of-Thought (CoT) reasoning, which further boosts predictive performance. The results highlight the potential of RL for adaptive demonstration selection and addressing challenges in ICL.",
+  "impact": "This paper introduces the RDES framework, leveraging RL to optimize demonstration selection for LLMs in fewshot text classification and reasoning tasks by balancing relevance and diversity. The primary positive impact is a significant enhancement in LLM accuracy and robustness in data-limited scenarios, making them more effective for practical applications like intent detection and sentiment analysis. This approach helps mitigate the overfitting biases often associated with purely similarity-based selection. However, potential negative impacts include the risk that enhanced classification capabilities could be misused for applications like surveillance or censorship. While not the focus, extending the core method to generative tasks could, in the future, potentially contribute to the spread of misinformation. Furthermore, training RDES involves significant computational cost due to numerous LLM calls, potentially limiting its accessibility. The current work lacks user studies, meaning real-world human-centric impacts like user over-reliance are not yet evaluated. To maximize positive impacts and mitigate risks, future work should explore computational efficiency improvements, necessitate safeguards against misuse, particularly if extended to more complex tasks like generation, and conduct user studies to comprehensively assess real-world performance and user interaction. Adherence to strong ethical principles regarding transparency, fairness, and accountability is encouraged in the application and dissemination of this technology.",
+  "query_input": {
+    "scenario": "Prompt optimization via Q-learning for generalization across tasks",
+    "issue": "Policy overfits to reward proxy, selecting exemplars that exploit superficial cues rather than generalize.",
+    "hazard": [
+      "Relevance-diversity optimized exemplar selection introduces systematic biases in few-shot prompt construction that distort model reasoning."
+    ],
+    "exposure": [
+      "Developers deploying optimized prompts across varied downstream applications."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Lack of validation processes to detect when RL-optimized exemplar selection overfits to superficial cues, leaving developers blind to reasoning distortions.",
+    "impact": "Biased prompts systematically distort model reasoning across varied applications, producing unreliable outputs and degrading task performance at scale.",
+    "dose_response": "Relevance-diversity optimized exemplar selection, when deployed across varied downstream applications and without validation to detect overfitting to superficial cues, systematically distorts model reasoning, producing unreliable outputs and degrading task performance at scale."
+  },
+  "reference": {
+    "dose_response": [
+      "Q-learning policy overfits to superficial cues, causing developers' deployed prompts to fail on out-of-distribution data, yielding unreliable outputs that erode trust and cause operational failures."
+    ],
+    "vulnerability": [
+      "Overfitted exemplar policies exploit spurious dataset correlations, failing on out-of-distribution inputs."
+    ],
+    "impact": [
+      "Deployed systems produce unreliable outputs on real-world data, eroding user trust and causing operational failures."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1383",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5168,
+    "reference": "Absence of consent mechanisms enables unauthorized voice replication.",
+    "generated": "Listeners cannot perceptually distinguish high-fidelity cloned speech from authentic speaker identity, enabling undetected impersonation."
+  },
+  "impact": {
+    "similarity": 0.5772,
+    "reference": "Identity theft, loss of personal autonomy, and psychological harm.",
+    "generated": "Voice cloning without consent enables identity theft, psychological distress, and erosion of trust in assistive speech technologies."
+  },
+  "dose_response": {
+    "similarity": 0.689,
+    "reference": "Near-instant voice cloning enables unauthorized replication in assistive devices, so when listeners encounter cloned voices without consent, it causes identity theft, loss of autonomy, and psychological harm.",
+    "generated": "Zero-shot distilled TTS with direct metric optimization generates any speaker's voice from minimal samples, through assistive speech listeners, triggers inability to distinguish cloned from authentic speech, leading to identity theft, psychological distress, and erosion of trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1862",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "reference describes over-reliance causing user complacency and delayed takeover; generated describes absence of real-time oversight, a different sensitivity condition",
+    "reference": "Over-reliance on autonomous systems leads to user complacency and delayed manual takeover.",
+    "generated": "Passengers have no real-time oversight or intervention capability when the RL model encounters unfamiliar action space configurations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "physical harm to passengers covered but pedestrians omitted",
+    "reference": "Collisions causing physical harm to passengers and pedestrians.",
+    "generated": "Passenger injuries, fatalities, and vehicle damage from inappropriate navigation actions in unseen city layouts."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc centers on lack of real-time oversight instead of unsafe navigation from spurious coupling",
+    "reference": "In-context RL models' spurious action coupling in unseen gridworlds enables unsafe navigation, which when navigating new city layouts exposes passengers to collisions, leading to physical harm and eroded public trust.",
+    "generated": "In-context RL models coupling action selection to irrelevant features in new city layouts, through passengers in autonomous vehicles, triggers lack of real-time oversight, leading to passenger injuries, fatalities, and vehicle damage from inappropriate navigation actions."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.4412,
+    "reference": "Detector evaluations use narrow perturbation sets, missing adversarial evasion techniques.",
+    "generated": "Educational institutions lack the statistical expertise to independently verify detector robustness, creating reliance on potentially misleading accuracy reports."
+  },
+  "impact": {
+    "similarity": 0.593,
+    "reference": "False accusations of cheating harm students; undetected cheating undermines academic integrity.",
+    "generated": "Widespread undetected AI-generated submissions undermine academic integrity and devalue authentic student assessment."
+  },
+  "dose_response": {
+    "similarity": 0.6973,
+    "reference": "Limited perturbation sampling in detector evaluation overestimates robustness, causing false accusations that harm students and undetected cheating that undermines academic integrity.",
+    "generated": "Unreliable statistical inference from perturbation analysis, through educational institutions relying on detector accuracy reports, triggers their lack of statistical expertise to verify robustness, leading to widespread undetected AI-generated submissions that undermine academic integrity."
+  }
+}

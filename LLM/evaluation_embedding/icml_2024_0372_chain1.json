@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0372",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5712,
+    "reference": "Institutional lack of domain-shift validation standards for AI-based uncertainty quantification, enabling researcher overtrust.",
+    "generated": "Researchers' reliance on user-specified domain constraints without guardrails against misspecification."
+  },
+  "impact": {
+    "similarity": 0.4999,
+    "reference": "Policymakers adopt overconfident predictions, leading to maladaptive resource allocation and underestimation of climate risks for food security.",
+    "generated": "Overconfident policy decisions based on undercovered confidence intervals that silently invalidate inference."
+  },
+  "dose_response": {
+    "similarity": 0.7209,
+    "reference": "Misspecified constraints invalidating DRO bounds cause researchers applying prediction intervals to be overconfident, leading policymakers to maladaptively allocate resources and underestimate climate risks for food security.",
+    "generated": "Misspecified user-specified constraints in partial identification silently invalidate distributionally robust bounds, and through researchers applying prediction intervals to new environments, this triggers reliance without guardrails, leading to overconfident policy decisions from undercovered inference."
+  }
+}

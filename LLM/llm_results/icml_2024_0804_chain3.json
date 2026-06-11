@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 3,
+  "title": "Machine Vision Therapy Multimodal Large Language Models Can Enhance Visual Robustness via Denoising In-Contex",
+  "abstract": "Although pre-trained models such as Contrastive Language-Image Pre-Training (CLIP) show impressive generalization results, their robustness is still limited under Out-of-Distribution (OOD) scenarios. Instead of undesirably leveraging human annotation as commonly done, it is possible to leverage the visual understanding power of Multi-modal Large Language Models (MLLMs). However, MLLMs struggle with vision problems due to task incompatibility, thus hindering their effectiveness. In this paper, we propose to effectively leverage MLLMs via Machine Vision Therapy which aims to rectify erroneous predictions of specific vision models. By supervising vision models using MLLM predictions, visual robustness can be boosted in a nearly unsupervised manner. Moreover, we propose a Denoising In-Context Learning (DICL) strategy to solve the incompatibility issue. Concretely, by examining the noise probability of each example through a transition matrix, we construct an instruction containing a correct exemplar and a probable erroneous one, which enables MLLMs to detect and rectify the incorrect predictions of vision models. Under mild assumptions, we theoretically show that our DICL method is guaranteed to find the ground truth. Through extensive experiments on various OOD datasets, our method demonstrates powerful capabilities for enhancing visual robustness under many OOD scenarios.",
+  "impact": "As the rapid development of MLLMs and LLMs has started influencing our lives, the proposed work could also show some potential broader impacts. For example, when highly powerful and accurate MLLMs occur in the future, human supervision for learning models will be no longer necessary. The learning paradigm could be large models guiding small models. However, it is vital that researchers make sure the knowledge interaction between large models and small models is ethically responsible, trustworthy, secure, robust, and explainable. Harmful knowledge or uncertain knowledge should not be freely transferred from one model to another. Hence, a rigorous code of ethics should be formulated to effectively regulate the process.",
+  "query_input": {
+    "scenario": "Many-shot multimodal in-context learning with compressed examples",
+    "issue": "Denoising on top of MTV compression may amplify errors in compressed representations.",
+    "hazard": [
+      "In-context denoising via self-training transition matrices may propagate and amplify hidden visual errors in MLLMs."
+    ],
+    "exposure": [
+      "Developers and researchers using LMMs for rapid task adaptation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Unsupervised self-training without ground-truth validation blinds developers to hidden visual error amplification.",
+    "impact": "Deployed models produce unreliable predictions in OOD scenarios, eroding trust in LMM-based adaptation and causing downstream task failures.",
+    "dose_response": "In-context denoising via self-training transition matrices amplifies hidden visual errors in MLLMs, through LMM-based task adaptation, triggers unsupervised self-training without ground-truth validation, blinding developers to error amplification, leading to unreliable OOD predictions, eroding trust and causing downstream failures."
+  },
+  "reference": {
+    "dose_response": [
+      "In-context denoising on compressed examples may amplify errors, enabling corruption of learned behaviors, which exposes developers to flawed models; combined with skipped validation, this leads to cascading downstream errors."
+    ],
+    "vulnerability": [
+      "Developers rapidly adapting tasks using compressed in-context examples without validating denoised outputs."
+    ],
+    "impact": [
+      "Cascading errors in downstream applications due to corrupted example-based learning."
+    ]
+  }
+}

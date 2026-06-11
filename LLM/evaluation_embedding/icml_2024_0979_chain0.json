@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0979",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5319,
+    "reference": "Reliance on automated graph analytics without human verification in high-stakes social network decisions",
+    "generated": "Reliance on coarsened embeddings for community detection without mechanisms to validate or recover lost fine-grained connectivity patterns."
+  },
+  "impact": {
+    "similarity": 0.5178,
+    "reference": "Misinformed content moderation and friend recommendations reinforcing filter bubbles and privacy violations",
+    "generated": "Erroneous community detection degrades recommendation accuracy, eroding user trust and platform decision quality."
+  },
+  "dose_response": {
+    "similarity": 0.7957,
+    "reference": "Coarsening subgraphs into node representations discarding fine-grained connectivity introduces embedding inaccuracies, which in scalable GNNs for large social networks exposes users to misinformed content moderation and filter bubbles when automated analytics lack human verification.",
+    "generated": "Coarsening subgraphs into node representations discards fine-grained connectivity, and when social network providers and users rely on such coarsened embeddings for community detection without validation, it leads to erroneous detection that degrades recommendation accuracy, eroding user trust and decision quality."
+  }
+}

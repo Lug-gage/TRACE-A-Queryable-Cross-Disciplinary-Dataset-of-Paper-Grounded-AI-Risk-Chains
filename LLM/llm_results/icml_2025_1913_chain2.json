@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1913",
+  "chain_index": 2,
+  "title": "Adversarial Perturbations Are Formed by Iteratively Learning Linear Combinations of the Right Singular Vectors",
+  "abstract": "White-box targeted adversarial attacks reveal core vulnerabilities in Deep Neural Networks (DNNs), yet two key challenges persist: (i) How many target classes can be attacked simultaneously in a specified order, known as the ordered top-K attack problem (K ≥1)? (ii) How to compute the corresponding adversarial perturbations for a given benign image directly in the image space? We address both by showing that ordered top-K perturbations can be learned via iteratively optimizing linear combinations of the right singular vectors of the adversarial Jacobian (i.e., the logit-to-image Jacobian constrained by target ranking). These vectors span an orthogonal, informative subspace in the image domain. We introduce RisingAttacK, a novel Sequential Quadratic Programming (SQP)-based method that exploits this structure. We propose a holistic figure-ofmerits (FoM) metric combining attack success rates (ASRs) and lp-norms (p = 1, 2, ∞). Extensive experiments on ImageNet-1k across six ordered top-K levels (K = 1, 5, 10, 15, 20, 25, 30) and four models (ResNet-50, DenseNet-121, ViT- B, DEiT-B) show RisingAttacK consistently surpasses the state-of-the-art QuadAttacK.",
+  "impact": "This work advances the field of adversarial machine learning by introducing RisingAttacK. By improving the efficiency and scalability of ordered top-K adversarial attacks, particularly for large K values, this research highlights critical vulnerabilities in modern DNNs. However, adversarial attack methods also pose risks, as they may be misused to compromise real-world systems. For example, attacks on ranking-based systems could be exploited to manipulate search engine results or recommendation algorithms. To mitigate these risks, this work should be viewed as a tool for potentially strengthening defenses (e.g., as critics for them) rather than enabling malicious use. In addition, this work contributes to the broader exploration of optimization in machine learning by integrating techniques from traditional nonlinear programming into neural network-based problems. This direction holds promise for both adversarial research and other optimization tasks in machine learning, offering a foundation for solving increasingly complex challenges.",
+  "query_input": {
+    "scenario": "Deployment of DNN classifiers in security-sensitive applications",
+    "issue": "Adversarial examples generated via iterative Jacobian-based learning evade the deployed model.",
+    "hazard": [
+      "Adversarial perturbations crafted via ordered top-K attack using right singular vectors of the adversarial Jacobian enable highly effective white-box evasion of deep neural networks."
+    ],
+    "exposure": [
+      "End-users and system operators relying on DNN-based image classification for access control or content filtering."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators rely solely on DNN classifiers that are inherently susceptible to adversarial Jacobian-based singular-vector perturbations, with no fallback verification.",
+    "impact": "Attackers bypass access control and content filters, enabling unauthorized system access and widespread security compromise.",
+    "dose_response": "Adversarial perturbations from ordered top-K Jacobian singular-vector attacks, through reliance on DNN image classification for access control, trigger sole DNN susceptibility without fallback, leading to bypass of filters, unauthorized access, and security compromise."
+  },
+  "reference": {
+    "dose_response": [
+      "Highly effective white-box evasion via Jacobian-based learning enables persistent evasion, which in security-sensitive DNN deployment leads to financial fraud, illegal content spread, and safety incidents."
+    ],
+    "vulnerability": [
+      "Absence of runtime adversarial detection enables persistent evasion by attackers in live systems."
+    ],
+    "impact": [
+      "Evasion causes financial fraud in facial payment, illegal content spread, and safety incidents in autonomous systems."
+    ]
+  }
+}

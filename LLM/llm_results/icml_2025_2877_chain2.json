@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2877",
+  "chain_index": 2,
+  "title": "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+  "abstract": "Existing reinforcement learning (RL) methods for large language models (LLMs) rely on static prompt sets, where prompts are curated a priori, and sampled in a fixed schedule for training, regardless of their usefulness to the RL process. We design eva, the first method that allows LLMs to prioritize and adaptively create useful prompts during RL training by reward signals. In principle, eva (Evolving via Asymmetric Self- Play) casts language model training as a game between: (1) a creator, who samples and generates training prompts, and (2) a solver, who generates responses to the prompts. eva is simple, suits both offline and online RL for LLMs, and sets a new state-of-the-art on challenging benchmarks without extra human prompts: it improves gemma-2-9b-it’s win-rate on Arena- Hard from 51.6% to 60.1% by DPO and 52.6% to 62.4% by RLOO, surpassing claude-3-opus and nearing gemini-1.5-pro, both are orders of magnitude larger. Further ablation studies show eva can induce meaningful learning curriculum, and effectively scale RL for LLMs beyond static human prompts.",
+  "impact": "eva enables scalable training of language agents through open-ended training, improving AI alignment with human values, which will ultimately contribute to social welfare (Pigou, 1920; Arrow, 1952; Rosenfeld & Xu, 2025). This may democratize the development of more generally capable artificial intelligence agents, impacting a wide range of domains from scientific discovery to societal governance. We recognize that eva relies on self-exploration guided by reward signals. If these signals are inaccurate or misaligned, the trained agents may exhibit undesirable behaviors such as reinforcing biases or hallucinations. Mitigating these risks requires continued research into robust reward models, transparent evaluation protocols, open collaboration within the AI research community, and more. As authors, we will be committed to supporting these efforts by sharing our findings and implementations to promote open and responsible research and development.",
+  "query_input": {
+    "scenario": "Automated prompt design for production customer-facing LLM systems",
+    "issue": "Evolved prompts embed spurious cue-based hacks that silently fail on diverse inputs.",
+    "hazard": [
+      "Reward hacking in asymmetric self-play prompt evolution: prompts that exploit proxy reward blind spots, degrading alignment and generalization."
+    ],
+    "exposure": [
+      "Business analysts deploying automatically optimized prompts in customer service chatbots."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Business analysts lack automated robustness testing to detect spurious cue-based hacks in evolved prompts before production deployment.",
+    "impact": "Chatbots silently generate misaligned responses on diverse inputs, causing user harm, trust erosion, and reputational damage.",
+    "dose_response": "Reward hacking in asymmetric self-play prompt evolution, through business analysts deploying optimized prompts in customer service chatbots, triggers lack of automated robustness testing to detect spurious cue-based hacks, leading to silent misaligned responses causing user harm, trust erosion, and reputational damage."
+  },
+  "reference": {
+    "dose_response": [
+      "Reward hacking produces brittle prompts that silently fail on diverse inputs, so business analysts' over-reliance on automated optimization leads to customer service failures and harmful chatbot responses."
+    ],
+    "vulnerability": [
+      "Black-box prompt evolution without comprehensive diversity testing yields prompts brittle to real-world variation.",
+      "Over-reliance on automated optimization by non-technical business analysts."
+    ],
+    "impact": [
+      "Customer service failures cascade into brand damage and lost user trust.",
+      "Undetected failures cause discriminatory or harmful chatbot responses."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2449",
+  "chain_index": 2,
+  "title": "Topological Signatures of Adversaries in Multimodal Alignments",
+  "abstract": "Multimodal Machine Learning systems, particularly those aligning text and image data like CLIP/BLIP models, have become increasingly prevalent, yet remain susceptible to adversarial attacks. While substantial research has addressed adversarial robustness in unimodal contexts, defense strategies for multimodal systems are underexplored. This work investigates the topological signatures that arise between image and text embeddings and shows how adversarial attacks disrupt their alignment, introducing distinctive signatures. We specifically leverage persistent homology and introduce two novel Topological- Contrastive losses based on Total Persistence and Multi-scale kernel methods to analyze the topological signatures introduced by adversarial perturbations. We observe a pattern of monotonic changes in the proposed topological losses emerging in a wide range of attacks on image-text alignments, as more adversarial samples are introduced in the data. By designing an algorithm to backpropagate these signatures to input samples, we are able to integrate these signatures into Maximum Mean Discrepancy tests, creating a novel class of tests that leverage topological signatures for better adversarial detection.",
+  "impact": "This work addresses a gap in the defense of multimodal ML systems against adversarial attacks. By introducing novel Topological-Contrastive losses and leveraging persistent homology, this study not only deepens our understanding of how adversarial attacks disrupt text-image alignment but also provides practical methods to detect such disruptions with high accuracy. As Multimodal ML systems are increasingly used in sensitive domains, enabling more precise detection will enhance the security and resilience of systems that directly impact public safety, health, and trust in technology. Furthermore, the monotonic properties of the proposed losses provide interpretable insights into adversarial behavior, promoting transparency and trustworthiness in adversarial defense strategies. While this work provides powerful tools to detect and mitigate adversarial threats, it also necessitates careful ethical considerations. The methods developed here could potentially be misused to generate more advanced adversarial attacks, exacerbating the arms race between attackers and defenders. To mitigate this risk, we advocate for responsible dissemination of these techniques and call for collaboration across the research community to ensure their ethical application. Future directions include extending these topological methods to other multimodal configurations, such as video-text and audio-text systems, further solidifying the role of topological insights in enhancing the robustness of multimodal ML systems. This research demonstrates the transformative potential of topology-based approaches in securing the next generation of ML systems and sets a strong foundation for future advancements in the field.",
+  "query_input": {
+    "scenario": "Medical image analysis with CLIP-based diagnostic tools",
+    "issue": "Adversarial perturbations produce diagnostically misleading inputs undetected by topological defenses.",
+    "hazard": [
+      "Adversarial perturbations exploit multimodal alignment gaps, evading detection by mimicking clean topological signatures."
+    ],
+    "exposure": [
+      "Clinicians and patients using AI-assisted medical imaging diagnostics"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians' dependence on AI outputs without independent verification prevents recognition of adversarial manipulations.",
+    "impact": "Misdiagnosis leads to harmful treatments, patient harm, and erosion of trust in AI-assisted diagnostics.",
+    "dose_response": "Adversarial perturbations exploiting multimodal alignment gaps and evading detection by mimicking clean topological signatures, through clinicians and patients using AI-assisted medical imaging diagnostics, trigger clinicians' dependence on unverified AI outputs, leading to misdiagnosis, harmful treatments, patient harm, and erosion of trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial perturbations exploit multimodal alignment gaps to evade detection by mimicking clean topological signatures; in medical image analysis with CLIP-based diagnostic tools, exposing clinicians and patients to misleading inputs leads to misdiagnosis, causing incorrect treatment, patient harm, and malpractice liability."
+    ],
+    "vulnerability": [
+      "Clinicians exhibit automation bias, deferring to AI diagnostic outputs without sufficient verification in time-pressured settings."
+    ],
+    "impact": [
+      "Misdiagnosis leads to incorrect treatment, patient harm, and malpractice liability for healthcare institutions."
+    ]
+  }
+}

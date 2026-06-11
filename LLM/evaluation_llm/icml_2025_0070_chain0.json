@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0070",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference: allocation sensitive to errors in ethical/equity constraints; Generated: planners lack expertise to detect flawed models, a different sensitivity condition.",
+    "reference": "Public health allocation is sensitive to errors in ethical and equity constraints.",
+    "generated": "Public health planners lack expertise and verification workflows to detect flawed optimization models generated from ambiguous natural language inputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions adverse health outcomes but omits the specific damage (health disparities) and affected party (marginalized populations).",
+    "reference": "Inequitable resource distribution worsens health disparities for marginalized populations.",
+    "generated": "Inequitable resource allocation causing preventable adverse health outcomes and erosion of trust in automated decision support."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc: flawed formulations trigger lack of verification expertise leading to inequitable allocation, not misinterpretation of policy constraints as in reference.",
+    "reference": "LLM-driven optimization model generation may produce flawed formulations, which when used by public health planners leads to misinterpreted policy constraints and inequitable resource distribution worsening health disparities.",
+    "generated": "LLM-generated flawed optimization formulations, through public health planners using natural language tools, trigger their lack of verification expertise, leading to inequitable resource allocation, preventable adverse health outcomes, and erosion of trust."
+  }
+}

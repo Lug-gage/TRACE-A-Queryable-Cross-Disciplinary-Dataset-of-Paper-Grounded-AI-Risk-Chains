@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2250",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe the system sensitivity as reliance on incomplete docking/synthesis metrics that fail to detect toxicophores",
+    "reference": "Multi-objective optimization on incomplete surrogate metrics fails to capture comprehensive toxicity, enabling toxicophore evasion.",
+    "generated": "Teams lack integrated toxicity filters, relying on docking/synthesis metrics that cannot flag hidden toxicophores before compound triage."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "wasted synthesis/screening resources and late-stage attrition (clinical failure) are both present",
+    "reference": "Drug candidates with undetected toxicophores advance to costly synthesis and bioassays, later causing clinical failure.",
+    "generated": "Wasted wet-lab synthesis and screening resources, with false lead advancement leading to late-stage attrition and delayed drug discovery."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "the arc captures over-optimization, hidden toxicophores, and triage but omits regulatory gaps and trust erosion",
+    "reference": "Over-optimization of Pareto fronts on incomplete metrics yields molecules with hidden toxicophores, which, when triaged by drug discovery teams, advance due to inadequate toxicity capture and regulatory gaps, leading to clinical failure and trust erosion.",
+    "generated": "Over-optimization of multi-objective Pareto fronts on incomplete surrogate metrics, through AI-prioritized compound triage, triggers reliance on metrics that miss hidden toxicophores, leading to wasted synthesis and screening resources, false lead advancement, late-stage attrition, and delayed drug discovery."
+  }
+}

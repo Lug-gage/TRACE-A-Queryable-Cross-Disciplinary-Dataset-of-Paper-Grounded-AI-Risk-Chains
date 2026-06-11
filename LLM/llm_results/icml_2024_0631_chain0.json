@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0631",
+  "chain_index": 0,
+  "title": "Position Fundamental Limitations of LLM Censorship Necessitate New Approaches",
+  "abstract": "Large language models (LLMs) have exhibited impressive capabilities in comprehending complex instructions. However, their blind adherence to provided instructions has led to concerns regarding risks of malicious use. Existing defence mechanisms, such as model fine-tuning or output censorship methods have proven to be fallible at ensuring that LLMs do not return semantically impermissible responses. We present fundamental limitations of verifying the semantic properties of LLM outputs and identifying compositional threats, illustrating inherent challenges of current approaches to censoring LLM outputs. Specifically, we demonstrate that semantic censorship can be perceived as an undecidable problem, and semantic properties of LLM outputs can become impossible to verify when the LLM is capable of providing \"encrypted\" outputs. We further show challenges of censorship can extend beyond just semantic censorship, as attackers can reconstruct impermissible outputs from a collection of permissible ones. Consequently, we call for a reevaluation of the problem of censorship and its goals, stressing the need for new definitions and approaches to censorship. In addition, we provide an initial attempt toward achieving this goal through syntactic censorship, drawing from a security perspective to design censorship methods that can provide guarantees.",
+  "impact": "This paper investigates formally what security and safety means for the field of Large Language Models (LLMs). We highlight the underlying limitations of all possible censorship methods by launching strong theoretical attacks against them. We further describe how the approaches to defending against such attacks will be unsuccessful. While describing such attacks allows malicious individual to attempt to utilize them to bypass safety mechanisms, we believe these vulnerabilities would have been discovered either way and consequently it is critical LLM providers are aware of them. Our work has major societal consequences, as it informs the community that in the limit adversaries could bypass the censorship mechanisms we place inside of the LLMs. We argue that such risks should be taken into account when analysing the reliability of LLM-augmented systems.",
+  "query_input": {
+    "scenario": "LLM-based content moderation on social media platforms",
+    "issue": "Adversarial users craft compositional inputs that bypass semantic filters, spreading harmful content.",
+    "hazard": [
+      "Semantic undecidability of compositional threats gives output filtering no provable safety guarantees, enabling adversarial evasion across content moderation systems."
+    ],
+    "exposure": [
+      "Social media users encountering harmful content that evades automated filters."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on semantic output filters with no provable safety guarantees, leaving users defenseless against adversarial compositional evasion.",
+    "impact": "Harmful content dissemination causes user psychological harm, misinformation spread, and erosion of platform trust.",
+    "dose_response": "Semantic undecidability of compositional threats, through users encountering evasive harmful content, triggers reliance on unverifiable semantic filters, leaving users defenseless, leading to harmful content dissemination causing psychological harm, misinformation, and trust erosion."
+  },
+  "reference": {
+    "dose_response": [
+      "Semantic undecidability enabling adversarial evasion of output filters results in users encountering undetected harmful content, which, due to automation bias, causes psychological harm and trust erosion."
+    ],
+    "vulnerability": [
+      "Over-reliance on automated moderation creates automation bias, making users more vulnerable to undetected harmful content."
+    ],
+    "impact": [
+      "Exposure to hate speech and disinformation causes psychological harm, radicalization, and erosion of trust in the platform."
+    ]
+  }
+}

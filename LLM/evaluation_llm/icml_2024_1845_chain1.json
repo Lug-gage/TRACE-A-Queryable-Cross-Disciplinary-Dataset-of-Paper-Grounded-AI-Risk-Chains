@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1845",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Blind reliance on unverified no-reference VQA scores to trigger reprocessing without robustness checks captures the same sensitivity as automating restoration based on blind VQA scores without human oversight",
+    "reference": "Production houses automate restoration based on blind VQA scores without human oversight.",
+    "generated": "Blind reliance on unverified no-reference VQA scores to automatically trigger reprocessing without adversarial robustness checks."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Wasted resources, inflated costs, and delayed delivery are covered, but the risk of contract penalties is absent",
+    "reference": "Wasted compute resources escalate costs and delay content delivery, risking contract penalties.",
+    "generated": "Unnecessary compute-heavy reprocessing wastes GPU resources, inflates operational costs, and delays media delivery pipelines."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc follows perturbations → score changes → unnecessary reprocessing → inflated costs and delays, but misses the final link of risking contract penalties",
+    "reference": "Adversarial perturbations cause false quality drops that trigger unnecessary reprocessing, wasting compute resources and escalating costs, which risks contract penalties.",
+    "generated": "Adversarial perturbations that arbitrarily change no-reference VQA scores, when media production houses use blind VQA to trigger automated restorations, exploit blind reliance on unverified scores without robustness checks, leading to unnecessary GPU-intensive reprocessing that inflates costs and delays delivery."
+  }
+}

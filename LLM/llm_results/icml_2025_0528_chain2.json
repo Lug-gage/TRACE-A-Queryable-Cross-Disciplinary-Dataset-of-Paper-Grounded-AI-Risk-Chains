@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 2,
+  "title": "Visual Abstraction A Plug-and-Play Approach for Text-Visual Retrieval",
+  "abstract": "Text-to-visual retrieval often struggles with semantic redundancy and granularity mismatches between textual queries and visual content. Unlike existing methods that address these challenges during training, we propose VISual Abstraction (VISA), a test-time approach that enhances retrieval by transforming visual content into textual descriptions using off-the-shelf large models. The generated text descriptions, with their dense semantics, naturally filter out lowlevel redundant visual information. To further address granularity issues, VISA incorporates a question-answering process, enhancing the text description with the specific granularity information requested by the user. Extensive experiments demonstrate that VISA brings substantial improvements in text-to-image and text-to-video retrieval for both short- and long-context queries, offering a plug-and-play enhancement to existing retrieval systems.",
+  "impact": "VISA inherits potential challenges associated with LMMgenerated descriptions, such as biases and hallucinations. Since descriptions are automatically generated, the retrieval process might be influenced by inaccurate or biased representations, leading to unintended consequences, particularly in sensitive domains like news media analysis or legal decision-making. Additionally, transforming images into textual descriptions could raise privacy concerns, especially when applied to personal or surveillance-related datasets.",
+  "query_input": {
+    "scenario": "Black-box VLM deployment for selective visual question answering",
+    "issue": "Neighborhood inconsistency in VQA responses yields unreliable outputs that evade standard calibration checks.",
+    "hazard": [
+      "Plug-and-play visual abstraction using off-the-shelf large models silently amplifies granularity mismatches and semantic redundancy across modalities."
+    ],
+    "exposure": [
+      "Analysts relying on VLM-powered diagnostic dashboards for visual data."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Analysts rely on dashboards whose black-box VLM outputs evade standard calibration, leaving neighborhood inconsistency undetected.",
+    "impact": "Analysts take incorrect actions based on unreliable VQA results, causing flawed diagnostic outcomes that cascade into wider operational errors.",
+    "dose_response": "Plug-and-play visual abstraction’s amplification of granularity mismatches and semantic redundancy, through analysts’ reliance on VLM diagnostic dashboards, triggers undetected neighborhood inconsistency from black-box outputs evading calibration, leading to flawed diagnoses and cascading operational errors."
+  },
+  "reference": {
+    "dose_response": [
+      "Plug-and-play visual abstraction amplifies inconsistencies in VLM outputs, which in black-box VQA deployment evade calibration checks, exposing analysts to unreliable diagnostics, leading to flawed decisions and harm in high-stakes domains."
+    ],
+    "vulnerability": [
+      "Analysts rely on VLM dashboards for critical decisions, unable to detect inconsistent answers due to black-box opacity."
+    ],
+    "impact": [
+      "Flawed operational decisions from inconsistent diagnostics lead to harm in high-stakes domains like healthcare or security."
+    ]
+  }
+}

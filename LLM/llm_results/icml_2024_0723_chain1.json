@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0723",
+  "chain_index": 1,
+  "title": "Instruction Tuning for Secure Code Generation",
+  "abstract": "Modern language models (LMs) have gained widespread acceptance in everyday and professional contexts, particularly in programming. An essential procedure enabling this adoption is instruction tuning, which substantially enhances LMs’ practical utility by training them to follow user instructions and human preferences. However, existing instruction tuning schemes overlook a crucial aspect: the security of generated code. As a result, even the state-of-the-art instructiontuned LMs frequently produce unsafe code, posing significant security risks. In this work, we introduce SafeCoder to address this gap. SafeCoder performs security-centric fine-tuning using a diverse and high-quality dataset that we collected using an automated pipeline. We integrate the security fine-tuning with standard instruction tuning, to facilitate a joint optimization of both security and utility. Despite its simplicity, we show that SafeCoder is effective across a variety of popular LMs and datasets. It is able to drastically improve security (by about 30%), while preserving utility.",
+  "impact": "Our work aims to enhance the security of language models in generating code, thereby contributing positively to the society. We plan to open source our work, enabling a wider audience, including practitioners and LM users, to benefit from the our advancements. However, our techniques, if misapplied, could potentially be used to train language models for generating unsafe code. The security evaluation provided in our work can be used to counteract this risk and detect any malicious behavior stemming from the application of our techniques.",
+  "query_input": {
+    "scenario": "Open-source community model sharing",
+    "issue": "Attackers upload harmful quantized safe-code models that appear safe during evaluation.",
+    "hazard": [
+      "Quantization can be exploited to produce malicious secure-code LLMs that appear benign in full-precision, enabling undetected vulnerability injection."
+    ],
+    "exposure": [
+      "Developers downloading pre-quantized models from community hubs for secure code generation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers rely on community-hub evaluations that only assess full-precision models, enabling undetected malicious behavior in quantized versions.",
+    "impact": "Hidden vulnerabilities in generated code propagate to production systems, enabling exploits across downstream applications.",
+    "dose_response": "Quantization exploited to produce malicious secure-code LLMs appearing benign in full-precision, through developers downloading pre-quantized models from community hubs, triggers reliance on full-precision evaluations missing malicious behavior, leading to hidden vulnerabilities propagating to production systems and enabling exploits."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization exploits enabling undetected vulnerability injection, which in open-source community model sharing exposes developers downloading pre-quantized models from community hubs, leading to downstream vulnerabilities and reputational damage."
+    ],
+    "vulnerability": [
+      "Community trust in user-uploaded models and benchmark evaluations allows malicious quantized models to bypass security checks."
+    ],
+    "impact": [
+      "Developers inadvertently integrate harmful models into supply chains, causing downstream vulnerabilities and reputational damage."
+    ]
+  }
+}

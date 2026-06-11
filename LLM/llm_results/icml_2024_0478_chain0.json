@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0478",
+  "chain_index": 0,
+  "title": "Observable Propagation Uncovering Feature Vectors in Transformers",
+  "abstract": "A key goal of current mechanistic interpretability research in NLP is to find linear features (also called “feature vectors”) for transformers: directions in activation space corresponding to concepts that are used by a given model in its computation. Present state-of-the-art methods for finding linear features require large amounts of labelled data - both laborious to acquire and computationally expensive to utilize. In this work, we introduce a novel method, called “observable propagation” (in short: OBPROP), for finding linear features used by transformer language models in computing a given task - using almost no data. Our paradigm centers on the concept of “observables”, linear functionals corresponding to given tasks. We then introduce a mathematical theory for the analysis of feature vectors, including a similarity metric between feature vectors called the coupling coefficient which estimates the degree to which one feature’s output correlates with another’s. We use OBPROP to perform extensive qualitative investigations into several tasks, including gendered occupational bias, political party prediction, and programming language detection. Our results suggest that OBPROP surpasses traditional approaches for finding feature vectors in the low-data regime, and that OBPROP can be used to better understand the mechanisms responsible for bias in large language models.",
+  "impact": "In this work, we present observable propagation, our method for finding feature vectors used by large language models in their computation of a given task. We demonstrate in an experiment that observable propagation can be used to pin-point specific features that are responsible for gender bias in large language models, suggesting that observable propagation might prove to be useful in mechanistically understanding how to debias language models. Additionally, the data-efficient nature of observable propagation allows this sort of inquiry into model bias to be democratized, conducted by researchers who might not have access to compute or data required by other methods. However, it is important to note that observable propagation does not necessarily make perfect judgments about model bias or lack thereof; a model might be biased even if observable A proof of Theorem 1 is given in Appendix E.5; a proof of Theorem 2 is given in Appendix H. Details on the datasets that we used in our experiments can be found in Appendix A. Further details regarding the experiments in Section 4.3 can be found in Appendix B. Details on how we chose the x0 point used to approximate nonlinearities (as described in §2.3) can be found in Appendix C; for LayerNorm linear approximations, we used the estimation method described in Appendix E.3. Code is available at https://github.com/ jacobdunefsky/ObservablePropagation.",
+  "query_input": {
+    "scenario": "Resume screening using LLM-based classifiers",
+    "issue": "Linear probes surface gender-occupation stereotypes, influencing recruitment decisions.",
+    "hazard": [
+      "Transformer decoder linearity makes high-level features directly accessible to linear probes, enabling low-data extraction of latent biases and private attributes."
+    ],
+    "exposure": [
+      "Job applicants evaluated by LLM-based hiring systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Hiring systems inherit societal stereotypes, and opaque feature extraction leaves applicants unable to detect or refute biased evaluations.",
+    "impact": "Recruitment decisions systematically discriminate against women, reproducing gendered occupational exclusion.",
+    "dose_response": "Transformer decoder linearity, through LLM-based resume screening, makes latent gender biases accessible to linear probes, triggering opaque stereotype inheritance that systematically discriminates against women in recruitment."
+  },
+  "reference": {
+    "dose_response": [
+      "Transformer decoder linearity enables linear probes to extract latent gender-occupation stereotypes, which in resume screening leads to biased evaluations that disproportionately exclude women from male-typed roles."
+    ],
+    "vulnerability": [
+      "Resume training data encodes societal gender stereotypes, making gender linearly separable in LLM representations."
+    ],
+    "impact": [
+      "Discriminatory hiring outcomes disproportionately exclude women from male-typed roles.",
+      "Amplification of workplace gender inequality and legal non-compliance."
+    ]
+  }
+}

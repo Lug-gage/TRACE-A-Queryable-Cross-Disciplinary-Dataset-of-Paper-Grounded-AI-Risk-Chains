@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0800",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated states visually impaired users cannot visually verify audio description accuracy and must rely solely on the system, which matches the reference's condition of complete reliance and inability to verify visual accuracy.",
+    "reference": "Visually impaired users' complete reliance on audio descriptions and inability to verify visual accuracy heightens harm from errors.",
+    "generated": "Visually impaired users cannot visually verify audio description accuracy, relying solely on the system's correct interpretation of instructions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (visually impaired users) is present, and 'safety risks' loosely covers navigation hazards, but erosion of trust in assistive AI and technology abandonment are absent, replaced by confusion and loss of access.",
+    "reference": "Inaccurate descriptions cause navigation hazards and erode trust in assistive AI, leading to technology abandonment.",
+    "generated": "Visually impaired users receive inaccurate or misleading audio descriptions, causing confusion, safety risks, and loss of access to critical visual information."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc incorrectly makes misinterpretation trigger the inability to visually verify as a causal step leading to inaccurate descriptions, whereas the reference treats misinterpretation as directly producing inaccurate descriptions, with the inability to verify being a separate vulnerability condition.",
+    "reference": "Instruction-following speech editing misinterpretation produces inaccurate audio descriptions, which in assistive speech technologies exposes visually impaired users to navigation hazards, causing trust loss and abandonment.",
+    "generated": "Instruction-following speech editing misinterpretation, through visually impaired users' reliance on instruction-edited audio descriptions, triggers their inability to visually verify accuracy, leading to inaccurate or misleading audio descriptions that cause confusion, safety risks, and loss of access to critical visual information."
+  }
+}

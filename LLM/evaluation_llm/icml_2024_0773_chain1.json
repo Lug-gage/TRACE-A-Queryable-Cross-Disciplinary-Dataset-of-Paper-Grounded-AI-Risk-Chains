@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0773",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated focuses on lack of fallback systems while reference emphasizes lack of off-nominal testing and over-trust",
+    "reference": "Lack of robust off-nominal scenario testing and over-trust in the agent's decision-making.",
+    "generated": "Operators lack fallback systems to detect or override policy errors when gradient conflicts distort predictions under distribution shift."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "collisions and injuries covered but reduced public trust not mentioned",
+    "reference": "Physical accidents, injuries, and reduced public trust in autonomous vehicles.",
+    "generated": "Uncontrolled vehicle behavior leads to collisions, property damage, and human injuries in off-nominal environments."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc inserts lack of fallback systems as a causal step not present in the reference, altering the mechanism",
+    "reference": "Gradient conflicts from shared parameters enable extrapolation errors, which when deploying the policy in autonomous navigation exposes operators relying on it for vehicle control, leading to physical accidents, injuries, and reduced public trust.",
+    "generated": "Shared parameters causing gradient conflicts that amplify extrapolation errors under distribution shift, through operators relying on the policy for vehicle control, triggers lack of fallback systems to detect or override errors, leading to uncontrolled vehicle behavior, collisions, damage, and injuries."
+  }
+}

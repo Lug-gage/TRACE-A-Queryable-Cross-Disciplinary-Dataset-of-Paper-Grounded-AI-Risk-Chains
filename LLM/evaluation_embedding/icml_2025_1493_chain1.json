@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5873,
+    "reference": "Autonomous systems lack robustness to out-of-distribution traffic scenarios learned from limited reward data.",
+    "generated": "No institutional safeguards exist to validate inferred reward models before deployment in dynamic traffic environments with vulnerable humans."
+  },
+  "impact": {
+    "similarity": 0.5736,
+    "reference": "Traffic accidents causing injury or loss of life.",
+    "generated": "Injuries and fatalities among passengers and pedestrians when vehicles respond erratically due to misspecified coordination objectives."
+  },
+  "dose_response": {
+    "similarity": 0.7121,
+    "reference": "Non-transferable reward functions cause unsafe multi-agent coordination in autonomous driving fleets, exposing passengers and pedestrians to accident risk from novel traffic scenarios, leading to injuries and regulatory backlash.",
+    "generated": "Recovered reward functions that are non-identifiable, misspecified, or non-transferable, through passengers and pedestrians interacting with autonomous vehicle networks, trigger a lack of institutional safeguards to validate inferred models, leading to erratic vehicle responses causing injuries and fatalities."
+  }
+}

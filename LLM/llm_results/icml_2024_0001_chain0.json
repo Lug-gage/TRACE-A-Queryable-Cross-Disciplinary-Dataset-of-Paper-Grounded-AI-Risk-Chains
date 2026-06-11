@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0001",
+  "chain_index": 0,
+  "title": "Revisiting Character-level Adversarial Attacks for Language Models",
+  "abstract": "Adversarial attacks in Natural Language Processing apply perturbations in the character or token levels. Token-level attacks, gaining prominence for their use of gradient-based methods, are susceptible to altering sentence semantics, leading to invalid adversarial examples. While characterlevel attacks easily maintain semantics, they have received less attention as they cannot easily adopt popular gradient-based methods, and are thought to be easy to defend. Challenging these beliefs, we introduce Charmer, an efficient query-based adversarial attack capable of achieving high attack success rate (ASR) while generating highly similar adversarial examples. Our method successfully targets both small (BERT) and large (Llama 2) models. Specifically, on BERT with SST-2, Charmer improves the ASR in 4.84% points and the USE similarity in 8% points with respect to the previous art. Our implementation is available in github.com/LIONS-EPFL/Charmer.",
+  "impact": "In this work, we revisit character-level adversarial attacks and improve upon the prior art performance. We believe that showing that character-level attacks cannot easily be defended, is important to warn about the need of defenses. Otherwise, malicious individuals or organizations could take advantage of this unawareness. However, we note that our algorithm could empower individuals to achieve malicious purposes. We will release our code to allow defenders to assess their performance against our attack.",
+  "query_input": {
+    "scenario": "Online platform content moderation",
+    "issue": "Adversarial prompts circumvent toxicity filters, allowing harmful comments to be posted as benign.",
+    "hazard": [
+      "Black-box character-level adversarial attacks on aligned LMs enable high-success evasion of safety classifiers and generation of harmful, policy-violating outputs."
+    ],
+    "exposure": [
+      "Users exposed to toxic or objectionable content on moderated platforms."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Automated moderation classifiers lack robustness to character-level perturbations that preserve harmful semantics, enabling undetected policy violations.",
+    "impact": "Users suffer exposure to toxic, harassing, or violent content, eroding trust in the platform and causing psychological harm.",
+    "dose_response": "Black-box character-level adversarial attacks on aligned LMs, through enabling toxic content exposure on moderated platforms, trigger automated moderation classifiers' lack of robustness to character-level perturbations, leading to users suffering psychological harm and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Black-box adversarial attacks on LMs enable high-success evasion of safety classifiers, which in online platform content moderation exposes users to toxic content, leading to eroded trust and psychological harm."
+    ],
+    "vulnerability": [
+      "Automated moderation systems rely on brittle text classification that fails against subtle perturbations, enabling harmful content to bypass filters."
+    ],
+    "impact": [
+      "Users encounter toxic, hateful, or manipulative content, eroding trust in platform safety and increasing psychological harm."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0850",
+  "chain_index": 1,
+  "title": "Position Scarce Resource Allocations That Rely On Machine Learning Should Be Randomized",
+  "abstract": "Contrary to traditional deterministic notions of algorithmic fairness, this paper argues that fairly allocating scarce resources using machine learning often requires randomness. We address why, when, and how to randomize by proposing stochastic procedures that more adequately account for all of the claims that individuals have to allocations of social goods or opportunities.",
+  "impact": "This paper contributes to the literature on algorithmic fairness in two ways. (1) As a position paper, it encourages others to reconsider whether deterministic algorithms are always the right choice for fairness, arguing that randomization techniques are to be preferred in some settings. (2) In support of these arguments, the paper also presents concrete techniques that can be used to randomize and shows how they reduce systemic exclusion and patterned inequality. As such, we hope that it will have a positive impact in reducing bias and unfairness. However, it is also possible that a decision-maker might use the tools presented here to randomize outcomes in a domain that the authors warn would be unjust or inappropriate, such as the domain of criminal justice, and in doing so wrong decision subjects. Since all of the randomization techniques that form the basis of the paper’s experiments are well established and easily implementable, the paper does not make improper use of these tools easier than it would have been before. But it is possible that its existence will suggest the idea to someone who might not have otherwise had it. The authors have attempted to prevent this outcome by making it clear which uses of randomization they believe are appropriate or inappropriate.",
+  "query_input": {
+    "scenario": "Online fair division of indivisible goods with fairness-in-expectation constraints",
+    "issue": "Probabilistic assignment creates individual unfairness, undermining perceived fairness.",
+    "hazard": [
+      "Fairness-in-expectation mechanisms produce significant individual-level unfairness, misleading evaluators and participants."
+    ],
+    "exposure": [
+      "Players receiving indivisible goods in an online fair division platform"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Players perceive fairness based on single realized assignments, not statistical expectations, so unlucky draws are felt as direct personal injustice.",
+    "impact": "Perceived fairness collapses, causing participants to reject allocations, undermining system legitimacy and adoption.",
+    "dose_response": "Fairness-in-expectation mechanisms produce individual-level unfairness, misleading players receiving indivisible goods, triggering their perception of fairness based on single realized assignments where unlucky draws feel like injustice, leading to collapsed perceived fairness, allocation rejection, and undermined system legitimacy."
+  },
+  "reference": {
+    "dose_response": [
+      "Fairness-in-expectation mechanisms in online fair division of indivisible goods cause some players to receive nothing, which makes them perceive the platform as rigged, leading to disuse and public backlash."
+    ],
+    "vulnerability": [
+      "Stochastic allocations result in some individuals receiving no goods despite positive expected probability, violating intuitive fairness norms."
+    ],
+    "impact": [
+      "Recipients who lose out perceive the platform as rigged, leading to disuse and public backlash."
+    ]
+  }
+}

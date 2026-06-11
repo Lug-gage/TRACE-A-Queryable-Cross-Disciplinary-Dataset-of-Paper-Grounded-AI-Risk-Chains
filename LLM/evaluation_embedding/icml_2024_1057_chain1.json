@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1057",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4825,
+    "reference": "Guardrail developers trust embedding-space robustness metrics that do not reflect real user behavior.",
+    "generated": "LLM guardrails trained on synthetic data misjudge robustness, leaving them unable to detect real text-based jailbreaks."
+  },
+  "impact": {
+    "similarity": 0.7165,
+    "reference": "Widespread exposure to toxic, manipulative, or illegal content through chatbots and moderation bypasses.",
+    "generated": "Chatbots and moderation systems output harmful content, including disinformation and unsafe instructions, eroding user trust and safety."
+  },
+  "dose_response": {
+    "similarity": 0.8285,
+    "reference": "Synthetic data's distribution mismatch enables overestimated guardrail robustness, which in user-facing chatbots exposes users to discrete jailbreaks, leading to harmful content exposure and platform liability.",
+    "generated": "Synthetic surrogate datasets lacking distributional fidelity, through user interactions with LLM chatbots, trigger guardrails' inability to detect real text-based jailbreaks, leading to harmful outputs and eroded user trust."
+  }
+}

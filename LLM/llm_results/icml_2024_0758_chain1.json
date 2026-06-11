@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0758",
+  "chain_index": 1,
+  "title": "Maestro Uncovering Low-Rank Structures via Trainable Decomposition",
+  "abstract": "Deep Neural Networks (DNNs) have been a large driver for AI breakthroughs in recent years. However, these models have been getting increasingly large as they become more accurate and safe. This means that their training becomes increasingly costly and time-consuming and typically yields a single model to fit all targets. Various techniques have been proposed in the literature to mitigate this, including pruning, sparsification, or quantization of model weights and updates. While achieving high compression rates, they often incur significant computational overheads at training or lead to non-negligible accuracy penalty. Alternatively, factorization methods have been leveraged for low-rank compression of DNNs. Similarly, such techniques (e.g., SVD) frequently rely on heavy iterative decompositions of layers and are potentially sub-optimal for non-linear models, such as DNNs. We take a further step in designing efficient low-rank models and propose MAESTRO, a framework for trainable low-rank layers. Instead of iteratively applying a priori decompositions, the low-rank structure is baked into the training process through LOD, a low-rank ordered decomposition. Not only is this the first time importance ordering via sampling is applied on the decomposed DNN structure, but it also allows selecting ranks at a layer granularity. Our theoretical analysis demonstrates that in special cases LOD recovers the SVD decomposition and PCA. Applied to DNNs, MAESTRO enables the extraction of lower footprint models that preserve performance. Simultaneously, it enables the graceful trade-off between accuracy-latency for deployment to even more constrained devices without retraining.",
+  "impact": "The goal of our work is to make the training and deployment of DNNs more efficient, affecting the total computation, memory and bandwidth of systems, as well as the energy they require to run the respective tasks. DNN model training requires significant amounts of energy, whether in a data center or at the edge (Wu et al., 2022; Patterson et al., 2022). However, such techniques should not be used in lieu of making data centers less green, but as a complementary measure to further reduce the carbon footprint of Deep Learning. Additionally, as our technique involves a training-aware methodology for progressively selecting ranks, it depends on the quality of data used in training. Deploying the model in the wild for various downstream tasks may result in behavior different from the intended outcomes. Therefore, it should be thoroughly tested before deployment to ensure it adheres to the required Service Level Objectives (SLOs), especially in performance-critical use cases, such as selfdriving vehicles or UAV navigation.",
+  "query_input": {
+    "scenario": "Training of large models via low-rank factorization to reduce memory footprint",
+    "issue": "Low-rank restriction during training limits representational capacity, yielding models with poorer generalization on complex tasks.",
+    "hazard": [
+      "Importance-ordered low-rank decomposition may over-compress parameters ranked unimportant by selection heuristic, discarding task-critical patterns for rare inputs and degrading output reliability."
+    ],
+    "exposure": [
+      "AI practitioners deploying such models in downstream applications"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Practitioners lack means to identify which compressively discarded patterns cause rare-input failures, leaving them unable to anticipate model brittleness.",
+    "impact": "Silent prediction errors on rare inputs propagate flawed decisions through downstream applications, harming end users and eroding trust in AI systems.",
+    "dose_response": "Importance-ordered low-rank decomposition over-compresses parameters, discarding task-critical patterns for rare inputs, and when AI practitioners deploy these models without means to identify those discarded patterns, it triggers silent prediction errors that propagate flawed decisions, harming end users and eroding trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Low-rank training restricts representational capacity, causing poor generalization on complex tasks, which when deployed by practitioners in downstream applications exposes users to undetected errors, leading to biased decisions."
+    ],
+    "vulnerability": [
+      "Low-rank training constrains the model's ability to capture complex patterns, making it more susceptible to adversarial manipulation or spurious correlations.",
+      "Generalization gaps may systematically disadvantage complex real-world tasks requiring fine-grained discrimination."
+    ],
+    "impact": [
+      "Deployed models may produce subtly incorrect outputs that erode decision quality in professional domains (law, medicine) without obvious failure flags.",
+      "Widespread adoption of low-rank-trained models can perpetuate and amplify biases if they fail to fit complex minority patterns."
+    ]
+  }
+}

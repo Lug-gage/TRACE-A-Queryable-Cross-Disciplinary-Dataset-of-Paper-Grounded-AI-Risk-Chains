@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1111",
+  "chain_index": 2,
+  "title": "Offline Opponent Modeling with Truncated Q-driven Instant Policy Refinement",
+  "abstract": "Offline Opponent Modeling (OOM) aims to learn an adaptive autonomous agent policy that dynamically adapts to opponents using an offline dataset from multi-agent games. Previous work assumes that the dataset is optimal. However, this assumption is difficult to satisfy in the real world. When the dataset is suboptimal, existing approaches struggle to work. To tackle this issue, we propose a simple and general algorithmic improvement framework, Truncated Q-driven Instant Policy Refinement (TIPR), to handle the suboptimality of OOM algorithms induced by datasets. The TIPR framework is plug-and-play in nature. Compared to original OOM algorithms, it requires only two extra steps: (1) Learn a horizon-truncated incontext action-value function, namely Truncated Q, using the offline dataset. The Truncated Q estimates the expected return within a fixed, truncated horizon and is conditioned on opponent information. (2) Use the learned Truncated Q to instantly decide whether to perform policy refinement and to generate policy after refinement during testing. Theoretically, we analyze the rationale of Truncated Q from the perspective of No Maximization Bias probability. Empirically, we conduct extensive comparison and ablation experiments in four representative competitive environments. TIPR effectively improves various OOM algorithms pretrained with suboptimal datasets.",
+  "impact": "This work advances the field of OOM by addressing the critical limitation of suboptimal offline datasets, which are prevalent in real-world multi-agent scenarios. The proposed TIPR framework enhances the robustness and adaptability of autonomous agents without requiring additional online interactions, thereby reducing resource consumption and potential risks in deployment. Ethically, the framework encourages safer AI deployment by minimizing reliance on idealized data and promoting reliability under imperfect conditions. However, care must be taken to prevent misuse in adversarial or deceptive applications, particularly in competitive or high-stakes domains such as finance or security. Future societal implications include improved collaboration and competition among AI agents in diverse settings, fostering broader trust and utility in autonomous systems.",
+  "query_input": {
+    "scenario": "Autonomous drone racing teams using offline opponent modeling",
+    "issue": "Plug-and-play policy refinement with truncated Q leads to overfitting to offline demonstrations, causing crashes when opponents deviate",
+    "hazard": [
+      "Truncated Q-value estimation for opponent modeling from suboptimal offline data introduces myopic strategies that ignore long-term adversarial adaptations."
+    ],
+    "exposure": [
+      "Drone operators using TIPR for adversary prediction in race coordination"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operator sole reliance on TIPR's instant refinement without real-time adversary monitoring enables overfitting to suboptimal offline data.",
+    "impact": "Frequent drone crashes and race losses when myopic policies encounter deviating opponent actions.",
+    "dose_response": "Myopic strategies from truncated Q-value estimation using suboptimal offline data, through drone operators' TIPR-based adversary prediction, trigger sole reliance on instant refinement without real-time monitoring, causing overfitting and leading to frequent drone crashes and race losses when opponents deviate."
+  },
+  "reference": {
+    "dose_response": [
+      "Plug-and-play refinement with truncated Q overfits to offline data, causing collisions when drone opponents deviate, which leads to physical crashes and public distrust."
+    ],
+    "vulnerability": [
+      "Overfitted offline models fail to generalize to real-world opponent deviations, causing mid-air collisions.",
+      "Human operators' perceptual misalignment with AI's truncated planning leads to delayed manual interventions during races."
+    ],
+    "impact": [
+      "Physical crashes damaging equipment and potentially injuring bystanders, raising liability and insurance costs.",
+      "Public distrust in autonomous racing drones and increased regulatory scrutiny, stifling innovation."
+    ]
+  }
+}

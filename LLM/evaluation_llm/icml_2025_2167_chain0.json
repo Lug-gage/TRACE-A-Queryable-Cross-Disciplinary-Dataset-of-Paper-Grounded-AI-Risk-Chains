@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2167",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes human inability to distinguish manipulated images as the sensitivity; generated describes scanner assumption of deterministic decoding. Both relate to the system being unable to detect manipulations, but the specific condition is different.",
+    "reference": "Human inability to distinguish manipulated images lets adversaries bypass automated scanners.",
+    "generated": "Content scanners assume each bitstream yields a single deterministic decoding, leaving them defenseless against conditional multi-image triggers."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers the spread of harmful content undetected, but misses the erosion of trust and legal/psychological harm present in the reference.",
+    "reference": "Undetected harmful imagery spreads, eroding trust in content moderation and enabling legal/psychological harm.",
+    "generated": "Malicious images evade automated detection, enabling widespread distribution of harmful content undetected."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe the same causal chain: generative compression with conditional triggers producing multiple decodings, exploited via VLP-based scanning to evade detection and spread undetected imagery.",
+    "reference": "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream, in PSIC deployed against VLM analysis, exposes automated content scanning systems using vision-language models, leading to undetected harmful imagery eroding trust.",
+    "generated": "Generative learned image compression with conditional triggers yielding multiple decodings, via automated VLP-based scanning, exploits scanners' assumption of deterministic decoding, allowing malicious images to evade detection and spread undetected."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2019",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7025,
+    "reference": "Clinicians' overreliance on synthetic data realism without domain validation of physiological plausibility.",
+    "generated": "Clinicians and analysts lack safeguards to detect constraint-violating synthetic records, trusting data realism for clinical decisions."
+  },
+  "impact": {
+    "similarity": 0.6967,
+    "reference": "Erroneous treatment guidelines derived from impossible patient profiles cause patient harm.",
+    "generated": "Erroneous treatment plans and flawed research conclusions cause patient harm and invalidate healthcare analyses."
+  },
+  "dose_response": {
+    "similarity": 0.8194,
+    "reference": "Constraint-violating synthetic data enables clinically impossible patient profiles, which in healthcare analytics exposes clinicians and health analysts, leading to erroneous treatment guidelines and patient harm.",
+    "generated": "Synthetic tabular data violating declarative constraints, when used by clinicians and health analysts, triggers their lack of safeguards to detect unrealistic records, leading to erroneous treatment plans and flawed research that cause patient harm and invalidate healthcare analyses."
+  }
+}

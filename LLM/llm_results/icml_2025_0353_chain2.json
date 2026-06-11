@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0353",
+  "chain_index": 2,
+  "title": "De-mark Watermark Removal in Large Language Models",
+  "abstract": "Watermarking techniques offer a promising way to identify machine-generated content via embedding covert information into the contents generated from language models (LMs). However, the robustness of the watermarking schemes has not been well explored. In this paper, we present DE- MARK, an advanced framework designed to remove n-gram-based watermarks effectively. Our method utilizes a novel querying strategy, termed random selection probing, which aids in assessing the strength of the watermark and identifying the red-green list within the n-gram watermark. Experiments on popular LMs, such as Llama3 and ChatGPT, demonstrate the efficiency and effectiveness of DE-MARK in watermark removal and exploitation tasks.",
+  "impact": "The application of our method introduces several potential risks. Primarily, it facilitates the removal of n-gram watermarks from watermarked language models, which can obscure the traceability and originality of the generated content. This capability poses a significant challenge to content attribution, potentially enabling misuse or misrepresentation of AI-generated information. More critically, our method is effective even on industry-scale large language models, such as ChatGPT. This broad applicability could lead to widespread implications across multiple sectors that rely on watermarking for security and verification purposes. Additionally, while our method aims to preserve the integrity and performance of the original models, unintended consequences affecting model behavior and output quality cannot be entirely ruled out. It is essential to consider these factors to develop appropriate safeguards and ethical guidelines for the use of this technology.",
+  "query_input": {
+    "scenario": "DE-MARK random selection probing strips watermarks",
+    "issue": "Watermark signal is erased, causing false negatives in machine-generated text detection.",
+    "hazard": [
+      "Watermark removal and evasion attacks can strip or weaken LLM text watermarks, rendering machine-generated text detection unreliable."
+    ],
+    "exposure": [
+      "Detection systems using red-green list watermarks for LLM outputs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Red-green list watermarks rely on secret n-gram lists that can be statistically inferred through random selection probing.",
+    "impact": "Machine-generated text evades detection, causing false negatives that allow unaccountable dissemination of fabricated content.",
+    "dose_response": "Watermark removal and evasion attacks, through detection systems using red-green list watermarks, trigger statistical inference of secret n-gram lists via random selection probing, leading to false negatives that enable unaccountable dissemination of fabricated content."
+  },
+  "reference": {
+    "dose_response": [
+      "Random token probing reveals watermark token biases, stripping signals from red-green list detection systems, enabling undetectable AI cheating that harms academic integrity."
+    ],
+    "vulnerability": [
+      "Random token probing reveals statistical differences between watermarked and unwatermarked tokens, enabling stripping."
+    ],
+    "impact": [
+      "Academic institutions and review platforms suffer from undetectable AI-generated cheating and mass manipulation."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1146",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7194,
+    "reference": "Auditors trust GNN fairness metrics without adversarial robustness testing, missing manipulated explanations.",
+    "generated": "Auditors lack robustness checks on GNN explainers, leaving them unable to detect when node injection attacks fake fairness explanations."
+  },
+  "impact": {
+    "similarity": 0.6611,
+    "reference": "Biased models are certified as fair, perpetuating discrimination in credit, hiring, or justice.",
+    "generated": "Discriminatory models pass compliance unseen, leading to biased automated decisions that harm protected groups."
+  },
+  "dose_response": {
+    "similarity": 0.9041,
+    "reference": "Post-hoc GNN explainer vulnerability to node injection attacks enables altered fairness explanations that, when auditors trust them without robustness testing, lead to biased models being certified as fair, perpetuating discrimination.",
+    "generated": "Post-hoc GNN explainers' susceptibility to prediction-preserving perturbations, through auditors' reliance for fairness checks, triggers undetected node injection attacks that fake explanations, leading to discriminatory models passing compliance and harming protected groups."
+  }
+}

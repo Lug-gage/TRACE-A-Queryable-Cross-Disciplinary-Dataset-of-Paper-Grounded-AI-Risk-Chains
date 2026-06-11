@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that localization/dubbing workflows lack the ability to ensure speaker identity consistency during zero-shot editing.",
+    "reference": "Localization teams lack tools to verify speaker identity consistency across edited audio segments.",
+    "generated": "Dubbing workflows rely on zero-shot editing without safeguards to prevent unintended speaker identity or prosody drift during automated manipulation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Viewer immersion degradation is present, but cognitive dissonance and content enjoyment loss are missing.",
+    "reference": "Speaker identity shifts cause viewer cognitive dissonance, reducing immersion and content enjoyment.",
+    "generated": "Lip-sync mismatches between audio and visual elements degrade viewer immersion and dubbing quality in multilingual content."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from editing via identity drift to mismatches is present, but the specific mechanism of cognitive dissonance is omitted, and the outcome is reduced to immersion degradation only.",
+    "reference": "Zero-shot editing shifts speaker identity/prosody, exposing dubbing teams and audiences to mismatches, causing cognitive dissonance and reinforcing low-quality stereotypes.",
+    "generated": "Unsupervised semantic manipulation of audio signals via frozen diffusion model latent spaces, through dubbing artists using diffusion-based tools, triggers reliance on zero-shot editing without safeguards against speaker identity or prosody drift, leading to lip-sync mismatches that degrade viewer immersion and dubbing quality."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5576,
+    "reference": "General public's inability to fact-check confident-sounding claims in real time.",
+    "generated": "Public readers lack the expertise to detect when verbalized confidence is miscalibrated outside the training distribution."
+  },
+  "impact": {
+    "similarity": 0.7406,
+    "reference": "Widespread dissemination of false biographical information harms reputations.",
+    "generated": "False confident claims are believed, spreading misinformation that distorts public knowledge and harms biographical subjects' reputations."
+  },
+  "dose_response": {
+    "similarity": 0.8627,
+    "reference": "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which in LLM biography generation causes public overreliance on confident falsehoods, propagating misinformation and eroding trust.",
+    "generated": "Supervised fine-tuning for linguistic calibration yields verbalized probability poorly calibrated outside training, so general public reading biographies triggers inability to detect miscalibration, leading to belief in false confident claims that distort knowledge and harm reputations."
+  }
+}

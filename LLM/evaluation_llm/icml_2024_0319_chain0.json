@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0319",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions lack of adversarial robustness and manipulated perceptions, which partially captures the blind trust condition, but does not include the absence of redundant depth sensing as stated in the reference.",
+    "reference": "No redundant depth sensing; system blindly trusts perturbed monocular depth estimates.",
+    "generated": "Monocular depth estimation models lack adversarial robustness, enabling safety-critical navigation decisions to be based on manipulated perceptions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated includes vehicle collisions and occupant injuries, covering part of the damage type (injury) and an affected party (occupants), but omits pedestrians and fatality, and adds property damage.",
+    "reference": "Vehicle collisions with obstacles/pedestrians resulting in injury or fatality.",
+    "generated": "Erroneous depth predictions cause misjudged obstacle distances, leading to vehicle collisions, property damage, and occupant injuries."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from attack to manipulated depth, misjudged distances, and collisions/injuries is present, but the final link of public trust erosion is missing.",
+    "reference": "Black-box adversarial patch attack induces arbitrary depth errors, which in autonomous driving exposes vehicles to misjudged obstacle distances, leading to collisions, injuries, and public trust erosion.",
+    "generated": "Black-box adversarial patch attacks inducing manipulated depth perceptions, through autonomous vehicles relying on monocular depth estimation for obstacle avoidance, trigger the models' lack of adversarial robustness, leading to misjudged obstacle distances that cause vehicle collisions, property damage, and occupant injuries."
+  }
+}

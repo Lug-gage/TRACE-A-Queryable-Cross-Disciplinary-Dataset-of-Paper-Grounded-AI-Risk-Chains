@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of multiple testing adjustment is present, added correlated output similarities does not negate coverage.",
+    "reference": "Audit tools lack multiple testing correction, inflating false alarm rate for harm flags.",
+    "generated": "AI safety teams' auditing protocols do not adjust for multiple tests or correlated output similarities, inducing susceptibility to spurious harm flags."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both misallocation of safety resources and erosion of trust/confidence are explicitly stated.",
+    "reference": "Safety teams misallocate resources investigating spurious harms, eroding audit trust.",
+    "generated": "Benign model behaviors are falsely flagged as harmful, squandering safety resources and eroding confidence in alignment auditing."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from lack of multiple testing adjustment to false flags to resource waste and trust erosion is present.",
+    "reference": "Uncorrected multiple testing in perturbation analysis inflates false positive harm flags in alignment auditing, causing safety teams to misallocate resources and erode audit trust.",
+    "generated": "Unreliable statistical inference from perturbation analysis due to non-random output correlations, through AI safety teams evaluating model alignment, triggers auditing protocols that do not adjust for multiple tests, leading to falsely flagged benign behaviors that squander resources and erode confidence."
+  }
+}

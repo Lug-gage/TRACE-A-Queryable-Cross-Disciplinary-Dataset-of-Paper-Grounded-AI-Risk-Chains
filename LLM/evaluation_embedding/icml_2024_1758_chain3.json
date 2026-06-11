@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.4353,
+    "reference": "Biologically implausible causal priors lead to systematic misinterpretation of diagnostic images under distribution shift.",
+    "generated": "Practitioners cannot verify causal model specifications, enabling confounding to persist undetected."
+  },
+  "impact": {
+    "similarity": 0.5742,
+    "reference": "Misdiagnosis in clinical settings causes inappropriate treatments and erodes patient trust.",
+    "generated": "Systematic misdiagnosis and patient harm from distorted feature interpretation in medical images."
+  },
+  "dose_response": {
+    "similarity": 0.6676,
+    "reference": "Biologically implausible causal priors in diagnostic AI cause systematic misinterpretation under distribution shifts, leading to misdiagnosis, inappropriate treatments, and eroded patient trust.",
+    "generated": "Misspecified causal models from observational or limited interventional data, through computer vision practitioners using them in diagnostic imaging, trigger inability to verify specifications, enabling undetected confounding and leading to systematic misdiagnosis and patient harm from distorted feature interpretation in medical images."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1676",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6365,
+    "reference": "Operators exhibit automation bias, deferring to flawed RL policies even when observing unsafe actions.",
+    "generated": "Operators and equipment rely on policies optimized against opaque VLM-generated rewards, lacking real-time guardrails or ground-truth verification."
+  },
+  "impact": {
+    "similarity": 0.57,
+    "reference": "Physical harm to human operators and damage to equipment from unexpected autonomous agent behaviors.",
+    "generated": "Real-world control task failures cause equipment damage and operator injury."
+  },
+  "dose_response": {
+    "similarity": 0.8536,
+    "reference": "Miscalibrated scalar rewards enable reward over-optimization, which in training RL agents with VLM feedback exposes operators and equipment to unsafe policies, leading to physical harm and eroded trust in automation.",
+    "generated": "Miscalibrated VLM-derived scalar rewards, through operators and equipment in autonomous control, trigger reliance on opaque policies lacking real-time guardrails, leading to equipment damage and operator injury."
+  }
+}

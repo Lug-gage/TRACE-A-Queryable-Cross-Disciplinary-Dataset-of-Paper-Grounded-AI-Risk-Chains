@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2295",
+  "chain_index": 0,
+  "title": "FairProof Confidential and Certifiable Fairness for Neural Networks",
+  "abstract": "Machine learning models are increasingly used in societal applications, yet legal and privacy concerns demand that they very often be kept confidential. Consequently, there is a growing distrust about the fairness properties of these models in the minds of consumers, who are often at the receiving end of model predictions. To this end, we propose FairProof- a system that uses Zero-Knowledge Proofs (a cryptographic primitive) to publicly verify the fairness of a model, while maintaining confidentiality. We also propose a fairness certification algorithm for fullyconnected neural networks which is befitting to ZKPs and is used in this system. We implement FairProof in Gnark and demonstrate empirically that our system is practically feasible. Code is available at https://github.com/ infinite-pursuits/FairProof.",
+  "impact": "This paper presents work whose goal is to advance the field of Trustworthy Machine Learning, by making public verification of properties, specifically fairness, of ML models feasible. While we use a notion of fairness - Local Individual Fairness - in this work, we do not believe that it is ‘the’ perfect measure of fairness or that it can quantify every kind of unfairness and doubt if such a measure can exist. Faced with the model confidentiality constraint, we try to offer some transparency in the form of public verification through FairProof. However, there might exist ways of gaming this system, leading to fairwashing on the customer end or to potential exposure of the model weights on the organization’s end. This calls for dedicated research in the area.",
+  "query_input": {
+    "scenario": "Regulatory auditors verifying fairness compliance with FairProof certificates",
+    "issue": "Static proofs may fail to reveal fairness violations emerging after certification",
+    "hazard": [
+      "Point-in-time fairness proofs can become misleading after deployment due to model drift or fairness attacks."
+    ],
+    "exposure": [
+      "Auditors relying on zero-knowledge fairness proofs for compliance assessments"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Regulatory processes assume static proofs guarantee ongoing fairness, leaving auditors without tools to detect post-certification drift or attacks.",
+    "impact": "Discriminatory model outputs harm consumers, regulatory assessments become invalid, and public trust in fairness certifications erodes.",
+    "dose_response": "Drift or fairness attacks render point-in-time fairness proofs misleading after deployment, which through auditor reliance on zero-knowledge proofs for compliance, triggers regulatory assumptions of ongoing fairness, leaving drift and attacks undetected, leading to discriminatory outputs, invalid assessments, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Point-in-time fairness proofs becoming misleading after deployment enables auditors to rely on outdated certificates, which in regulatory compliance scenarios leads to cumulative discriminatory harm to protected groups without detection."
+    ],
+    "vulnerability": [
+      "Auditors treat static fairness certificates as valid indefinitely, ignoring model drift and adversarial post-certification changes.",
+      "Regulatory frameworks lack requirements for ongoing fairness evaluation, enabling undetected bias."
+    ],
+    "impact": [
+      "Cumulative discriminatory outcomes harm protected groups post-certification without detection.",
+      "Legal liability for auditors and regulators when certified models later violate anti-discrimination laws."
+    ]
+  }
+}

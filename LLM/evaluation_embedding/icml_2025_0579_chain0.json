@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6261,
+    "reference": "Over-reliance on full-precision safety audits creates a false sense of security for quantized variants.",
+    "generated": "End users and inference frameworks lack mechanisms to detect malicious behavior embedded within quantization errors, trusting the benign full-precision representation."
+  },
+  "impact": {
+    "similarity": 0.5436,
+    "reference": "Dissemination of hate speech, disinformation, or malicious code through trusted local AI tools.",
+    "generated": "Users produce insecure code, receive targeted malicious content, or face refusal of benign requests, compromising software safety and model utility."
+  },
+  "dose_response": {
+    "similarity": 0.8335,
+    "reference": "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a user downloading a GGUF-quantized LLM from a public model hub for local inference exposes end-users running LLMs locally via ollama or llama.cpp for code generation or content creation, leading to dissemination of hate speech, disinformation, or malicious code through trusted local AI tools.",
+    "generated": "Quantization mapping ambiguity, through end-users running LLMs locally for code generation or content creation, triggers the absence of detection mechanisms for malicious behaviors hidden in quantization errors, leading to insecure code, targeted malicious content, and refusal of benign requests."
+  }
+}

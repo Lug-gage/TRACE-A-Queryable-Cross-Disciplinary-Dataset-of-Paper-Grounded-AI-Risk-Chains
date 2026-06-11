@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2016",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6503,
+    "reference": "User trust in restored photos as faithful representations, ignoring potential identity-altering overfitting artifacts.",
+    "generated": "Users lack expertise to detect subtle identity drifts or unnatural textures before sharing AI-restored photos."
+  },
+  "impact": {
+    "similarity": 0.7834,
+    "reference": "Widespread sharing of identity-drifted images causes reputational damage, misinformation, and erodes trust in digital media.",
+    "generated": "Shared photos with identity drifts cause reputational damage, social embarrassment, and erosion of trust in restoration tools."
+  },
+  "dose_response": {
+    "similarity": 0.8939,
+    "reference": "Joint estimation overfitting in facial photo restoration produces identity-altering artifacts, so that app users sharing restored photos on social media spread misinformation and erode trust.",
+    "generated": "Joint estimation overfitting that degrades restoration fidelity, through app users sharing restored photos on social media, triggers users' inability to detect subtle identity drifts, leading to reputational damage, social embarrassment, and eroded trust."
+  }
+}

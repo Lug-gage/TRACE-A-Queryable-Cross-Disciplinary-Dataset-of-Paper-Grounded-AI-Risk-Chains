@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0660",
+  "chain_index": 1,
+  "title": "WildChat-50M A Deep Dive Into the Role of Synthetic Data in Post-Training",
+  "abstract": "Language model (LLM) post-training, from DPO to distillation, can refine behaviors and unlock new skills, but the open science supporting these post-training techniques is still in its infancy. One limiting factor has been the difficulty of conducting large-scale comparative analyses of synthetic data generating models and LLM judges. To close this gap, we introduce WILDCHAT-50M, the largest public chat dataset to date. We extend the existing WildChat dataset to include responses not only from GPT, but from over 50 different open-weight models, ranging in size from 0.5B to 104B parameters. We conduct an extensive comparative analysis and demonstrate the potential of this dataset by creating RE-WILD, our own public SFT mix, which outperforms the recent Tulu-3 SFT mixture from Allen AI with only 40% as many samples. Our dataset, samples and code are available at https://github. com/penfever/wildchat-50m.",
+  "impact": "This paper presents work whose goal is to advance the field of machine learning. There are many potential societal consequences of our work. In particular, we wish to acknowledge the fact that we are building upon a dataset (WildChat) which is known to contain examples of user inputs on potentially upsetting topics, including but not limited to sex, violence, and bigoted claims (Zhao et al., 2024b). Following the authors of that work, we will require approval before researchers are allowed to access our datasets, and will release our data under the AI2 ImpACT License, which explicitly forbids certain use cases for this data. In addition, our data will be subject to any additional restrictions from the licenses of the models we utilize. We also preserve, without modification, the original user inputs from WildChat (Zhao et al., 2024b), and therefore in our work there remains the possibility that users may have inadvertently included personal information within their conversations which was not detected by the (considerable) safeguards put in place by the WildChat authors. We will make this clear to users upon dataset release.",
+  "query_input": {
+    "scenario": "LLM fine-tuned on WildChat-derived DPO mixture",
+    "issue": "Preference optimization overfits to skewed or undesirable user preferences present in the chat data.",
+    "hazard": [
+      "Synthetic data from uncontrolled user interactions (e.g., WildChat) amplifies toxic, biased, or misaligned content in post-training mixtures."
+    ],
+    "exposure": [
+      "End users receiving responses shaped by non-representative preference signals."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End users lack mechanisms to detect subtly skewed, toxic, or misaligned content in model outputs.",
+    "impact": "Users internalize harmful biases, suffer psychological distress, and perpetuate real-world discrimination.",
+    "dose_response": "Synthetic data from uncontrolled user interactions amplifies toxic content in mixtures, through end users receiving responses shaped by non-representative preference signals, triggers their lack of mechanisms to detect subtly skewed content, leading to users internalizing harmful biases, suffering psychological distress, and perpetuating real-world discrimination."
+  },
+  "reference": {
+    "dose_response": [
+      "Skewed preference optimization from toxic-amplified data enables models to overfit majority biases, which when end users receive biased responses marginalizes minorities, reinforcing harm in hiring decisions."
+    ],
+    "vulnerability": [
+      "Preference data reflects dominant user demographics, marginalizing minority perspectives."
+    ],
+    "impact": [
+      "Model preferences reinforce societal biases, amplifying harm in downstream applications like hiring or content moderation."
+    ]
+  }
+}

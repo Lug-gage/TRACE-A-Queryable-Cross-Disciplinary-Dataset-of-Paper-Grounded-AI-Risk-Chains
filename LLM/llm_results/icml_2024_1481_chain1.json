@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 1,
+  "title": "Privacy Attacks in Decentralized Learning",
+  "abstract": "Decentralized Gradient Descent (D-GD) allows a set of users to perform collaborative learning without sharing their data by iteratively averaging local model updates with their neighbors in a network graph. The absence of direct communication between non-neighbor nodes might lead to the belief that users cannot infer precise information about the data of others. In this work, we demonstrate the opposite, by proposing the first attack against D-GD that enables a user (or set of users) to reconstruct the private data of other users outside their immediate neighborhood. Our approach is based on a reconstruction attack against the gossip averaging protocol, which we then extend to handle the additional challenges raised by D-GD. We validate the effectiveness of our attack on real graphs and datasets, showing that the number of users compromised by a single or a handful of attackers is often surprisingly large. We empirically investigate some of the factors that affect the performance of the attack, namely the graph topology, the number of attackers, and their position in the graph. Our code is available at https://github.com/AbdellahElmrini/decAttack.",
+  "impact": "Our work designs privacy attacks in decentralized learning. Given the ethical challenges in justifying such attacks in real-world scenarios, and considering that the deployment of our attack could potentially cause harm, we primarily focus on raising awareness about privacy risks in decentralized learning by using public datasets. Our findings challenge the common misconception that decentralization inherently brings privacy, particularly for distant nodes. Interestingly, as mentioned in the paper, the construction of the knowledge matrix KT is independent from the actual private data, and could thus be used as part of an auditing phase to measure how much information would be leaked if one were to use a specific gossip matrix/graph. We believe that sharing these insights is crucial and contributes to the development of safer approaches in machine learning. As highlighted in the introduction and motivation our work should be seen as an empirical illustration of the need for more robust privacy protections, such as the ones offered by differential privacy.",
+  "query_input": {
+    "scenario": "Federated learning for large language models",
+    "issue": "Exact token sequence recovery from self-attention layer gradients, leaking sensitive text data.",
+    "hazard": [
+      "Exact reconstruction of private training data from gradient/model updates shared in collaborative learning"
+    ],
+    "exposure": [
+      "Users contributing private text sequences to federated training of language models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Unprotected model updates in decentralized gradient descent retain data-specific patterns, enabling reconstruction of private text sequences.",
+    "impact": "Large-scale exposure of confidential text data from federated LLM training, violating user privacy and undermining collaborative learning adoption.",
+    "dose_response": "Exact reconstruction of private training data from shared gradient updates, through users' private text contributions to federated LLM training, triggers unprotected model updates to retain data-specific patterns, leading to large-scale exposure of confidential text, violating privacy and undermining collaborative learning adoption."
+  },
+  "reference": {
+    "dose_response": [
+      "Exact reconstruction from gradients enables recovery of token sequences, which in federated language model training without secure aggregation exposes private text, leading to financial damage and regulatory non-compliance."
+    ],
+    "vulnerability": [
+      "Self-attention gradient leakage exposes private text sequences, including PII and confidential communications.",
+      "Language model training on decentralized personal text data without secure aggregation enables input reconstruction."
+    ],
+    "impact": [
+      "Leak of sensitive personal messages or proprietary documents, causing financial and reputational damage.",
+      "Non-compliance with data protection regulations (GDPR, CCPA) for language-based services."
+    ]
+  }
+}

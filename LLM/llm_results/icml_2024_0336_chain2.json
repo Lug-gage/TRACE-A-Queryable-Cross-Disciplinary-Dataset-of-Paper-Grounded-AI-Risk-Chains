@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0336",
+  "chain_index": 2,
+  "title": "Prompting4Debugging Red-Teaming Text-to-Image Diffusion Models by Finding Problematic Prompts",
+  "abstract": "Text-to-image diffusion models, e.g. Stable Diffusion (SD), lately have shown remarkable ability in high-quality content generation, and become one of the representatives for the recent wave of transformative AI. Nevertheless, such advance comes with an intensifying concern about the misuse of this generative technology, especially for producing copyrighted or NSFW (i.e. not safe for work) images. Although efforts have been made to filter inappropriate images/prompts or remove undesirable concepts/styles via model fine-tuning, the reliability of these safety mechanisms against diversified problematic prompts remains largely unexplored. In this work, we propose Prompting4Debugging (P4D) as a debugging and red-teaming tool that automatically finds problematic prompts for diffusion models to test the reliability of a deployed safety mechanism. We demonstrate the efficacy of our P4D tool in uncovering new vulnerabilities of SD models with safety mechanisms. Particularly, our result shows that around half of prompts in existing safe prompting benchmarks which were originally considered “safe” can actually be manipulated to bypass many deployed safety mechanisms, including concept removal, negative prompt, and safety guidance. Our findings suggest that, without comprehensive testing, the evaluations on limited safe prompting benchmarks can lead to a false sense of safety for text-toimage models. Our codes are publicly available at https://github.com/joycenerd/P4D WARNING: This paper contains model outputs that may be offensive or upsetting in nature.",
+  "impact": "This paper contributes to introduce a red-teaming framework at advancing the research direction of safety mechanisms for text-to-image models. We propose a debugging tool designed to automatically and efficiently identify vulnerabilities in text-to-image models. Additionally, we discuss common issues, such as prompt dilution, information obfuscation, and semantic misalignment, which could be exploited to generate objectionable outputs from these models. This paper emphasizes the urgent need for safety researchers to remain vigilant and address these concerns in the evolving landscape of text-to-image model safety.",
+  "query_input": {
+    "scenario": "Publicly available red-teaming benchmarks for T2I.",
+    "issue": "Prompt evasion datasets enable attackers to systematically defeat safety mechanisms in deployed models.",
+    "hazard": [
+      "Automated discovery of prompt-level vulnerabilities in T2I safety mechanisms, enabling bypass of NSFW content controls."
+    ],
+    "exposure": [
+      "General public exposed to unsafe AI-generated images online."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "General public lacks user-side detection or filtering, relying entirely on platform safety mechanisms that can be circumvented.",
+    "impact": "Widespread exposure to NSFW AI-generated imagery causes psychological distress and erosion of public trust in generative AI safety.",
+    "dose_response": "Automated discovery of prompt-level vulnerabilities enabling bypass of NSFW controls, through online exposure, triggers reliance on platform mechanisms without user filters, leading to psychological distress and eroded public trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated discovery of prompt vulnerabilities enables systematic defeat of safety mechanisms via public evasion datasets, exposing the general public to non-consensual intimate imagery that deepens online harassment and social harm."
+    ],
+    "vulnerability": [
+      "Open-access evasion datasets lower the skill barrier for producing NSFW imagery, enabling widespread abuse."
+    ],
+    "impact": [
+      "Proliferation of non-consensual intimate imagery and sexualized violence deepens online harassment and social harm."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0500",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7,
+    "reference": "Developers may not verify physics of AI-generated scenes before deployment.",
+    "generated": "Game developers lack automated means to detect physically impossible object arrangements before integrating AI scenes into safety-critical simulators."
+  },
+  "impact": {
+    "similarity": 0.6927,
+    "reference": "Users learn incorrect safety behaviors, causing real-world accidents.",
+    "generated": "Trainees internalize incorrect physical interactions, leading to real-world errors with potential injury or equipment damage."
+  },
+  "dose_response": {
+    "similarity": 0.637,
+    "reference": "Text-to-3D generation of scenes with commonsense-violating interactions leads users to learn unsafe behaviors, causing real-world accidents when developers don't verify physics.",
+    "generated": "Unsupervised NeRF optimization generates physically impossible but plausible object arrangements, through game developers using them in interactive experiences, triggers the lack of automated detection, leading trainees to internalize incorrect physical interactions and real-world errors with potential injury or equipment damage."
+  }
+}

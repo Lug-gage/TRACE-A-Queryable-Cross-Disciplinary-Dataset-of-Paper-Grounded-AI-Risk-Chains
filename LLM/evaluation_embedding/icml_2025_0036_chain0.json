@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0036",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6006,
+    "reference": "Underrepresentation of low-degree nodes in training data causes systematic under-recommendation, reinforcing social isolation.",
+    "generated": "Low-degree users have sparse connections, reducing their algorithmic visibility in degree-biased link prediction."
+  },
+  "impact": {
+    "similarity": 0.6565,
+    "reference": "Marginalized users experience diminished social capital and fewer opportunities for diverse connections.",
+    "generated": "Low-degree users receive fewer friend suggestions, entrenching social network inequality and limiting discovery of diverse connections."
+  },
+  "dose_response": {
+    "similarity": 0.8394,
+    "reference": "Overfitting to node degree biases predictions toward high-degree nodes, which in social media friend suggestions exposes low-degree users to under-recommendation, leading to diminished social capital.",
+    "generated": "Link prediction models overfitting to node degree, through friend suggestions on social platforms, triggers reduced algorithmic visibility for low-degree users' sparse connections, leading to fewer suggestions that entrench inequality and limit diverse connection discovery."
+  }
+}

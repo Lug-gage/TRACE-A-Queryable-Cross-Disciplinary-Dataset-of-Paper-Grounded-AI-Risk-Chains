@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1852",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes LDP noise insufficiency, a related but different vulnerability than reference's lack of adversarial defenses and user unawareness.",
+    "reference": "On-device training lacks adversarial example defenses; users unaware of gradient leakage risks.",
+    "generated": "Local differential privacy noise insufficiently masks membership signals, leaving residual distinguishability exploitable by low-polynomial time attacks."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users' private images) matches, but damage types (privacy compromise, trust erosion) differ from reference's psychological harm and blackmail.",
+    "reference": "Private photo exposure leads to psychological harm and blackmail.",
+    "generated": "Exposure of individual users' private training images, compromising personal privacy and undermining trust in federated learning systems."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc relies on insufficiently masked membership signals, not the reference's causal mechanism of exploiting lacking adversarial defenses and gradient leakage.",
+    "reference": "Low-polynomial time membership inference attacks exploit on-device training's lack of adversarial defenses, enabling gradient leakage from federated vision training on smartphones, exposing private photos and causing psychological harm and blackmail.",
+    "generated": "Low-polynomial time membership inference attacks against local differentially private federated learning, through smartphone users contributing photos for federated model training, trigger insufficiently masked membership signals, leading to exposure of private training images and undermining trust."
+  }
+}

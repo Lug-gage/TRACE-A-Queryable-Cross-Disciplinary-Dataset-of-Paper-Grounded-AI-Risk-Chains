@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1802",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.542,
+    "reference": "Over-reliance on plausible feature attributions in clinical settings bypasses rigorous model validation.",
+    "generated": "Reliance on agent explanations without independent model verification enables misplaced trust in unfaithful outputs."
+  },
+  "impact": {
+    "similarity": 0.711,
+    "reference": "Undetected false negatives delay cancer diagnoses, leading to patient harm and malpractice liability.",
+    "generated": "Uncorrected false positives cause patient misdiagnosis and erode cancer screening reliability."
+  },
+  "dose_response": {
+    "similarity": 0.9392,
+    "reference": "Automated interpretability agents produce plausible but unfaithful explanations, which when radiologists rely on to validate cancer screening models, enable over-reliance that bypasses rigorous validation, causing undetected false negatives and patient harm.",
+    "generated": "Automated interpretability agents producing plausible but unfaithful explanations, when used by radiologists and ML engineers to validate cancer screening models, trigger reliance without independent verification enabling misplaced trust, leading to uncorrected false positives causing patient misdiagnosis and eroding screening reliability."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1407",
+  "chain_index": 3,
+  "title": "Zero-Shot Unsupervised and Text-Based Audio Editing Using DDPM Inversion",
+  "abstract": "Editing signals using large pre-trained models, in a zero-shot manner, has recently seen rapid advancements in the image domain. However, this wave has yet to reach the audio domain. In this paper, we explore two zero-shot editing techniques for audio signals, which use DDPM inversion with pre-trained diffusion models. The first, which we coin ZEro-shot Text-based Audio (ZETA) editing, is adopted from the image domain. The second, named ZEro-shot UnSupervized (ZEUS) editing, is a novel approach for discovering semantically meaningful editing directions without supervision. When applied to music signals, this method exposes a range of musically interesting modifications, from controlling the participation of specific instruments to improvisations on the melody. Samples and code can be found on our examples page.",
+  "impact": "The purpose of this paper is to advance the field of Machine Learning and in particular zero-shot editing of audio signals. We feel that there are many potential societal consequences of our work, but the predominant one relates to the ability of using our method for copyright infringement. In this work we worked on audio licensed under Creative Commons Attribution, and as this is an academic work it is in fair use. However, users might use our methods to modify existing copyrighted musical pieces without sufficient permission of the copyright holder, and this might not fall under fair use under different circumstances. We believe it is important to develop methods for automatically detecting whether AI-based methods have been applied to audio signals.",
+  "query_input": {
+    "scenario": "Music production using pre-trained generative audio models",
+    "issue": "Unsupervised editing directions corrupt harmonic structure or introduce clipping in mixed audio stems.",
+    "hazard": [
+      "Unsupervised semantic manipulation of audio signals via frozen diffusion model latent spaces enables zero-shot editing that may introduce unintended acoustic artifacts or alter speaker identity."
+    ],
+    "exposure": [
+      "Music producers and artists applying zero-shot edits to vocal or instrumental tracks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Pre-trained diffusion models lack harmonic and amplitude safeguards, so producers applying unsupervised edits cannot prevent stem corruption.",
+    "impact": "Clipping and harmonic corruption render edited stems unusable, disrupting production timelines and increasing costs.",
+    "dose_response": "Unsupervised zero-shot editing via frozen diffusion latent spaces introduces unintended artifacts and speaker changes, through music producers applying zero-shot edits to tracks, triggers missing safeguards in diffusion models causing stem corruption, leading to corrupted stems disrupting production and increasing costs."
+  },
+  "reference": {
+    "dose_response": [
+      "Zero-shot editing corrupts harmonics/introduces clipping, exposing producers and listeners to degraded sound, reducing commercial viability and creating liability risks."
+    ],
+    "vulnerability": [
+      "Music producers adopt AI tools without understanding latent space manipulation risks to audio fidelity.",
+      "Automated mastering pipelines propagate corrupted stems into final mixes without human quality checks."
+    ],
+    "impact": [
+      "Corrupted harmonic structure degrades listener experience, reducing commercial viability of music releases.",
+      "Clipping artifacts in distributed tracks damage playback equipment, creating liability for producers and platforms."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1649",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference identifies assumption that synthetic data is representative; generated instead highlights lack of robust validation, a related but distinct sensitivity condition.",
+    "reference": "Pose estimation models assume synthetic data is representative of all real-world human movements and body types.",
+    "generated": "Pose estimation developers lack robust validation methods for synthetic data, allowing biased samples to contaminate training."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (underrepresented body movements / users with disabilities) and damage type (safety incidents / safety failures) are semantically present.",
+    "reference": "Increased error rates in motion analysis for users with disabilities or non-standard gaits, causing safety failures in assistive technologies.",
+    "generated": "Biased models misclassify or fail to detect underrepresented body movements, causing safety incidents and accessibility exclusion."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Core arc (biased synthetic images → flawed models → misclassification → safety incidents) is present, but generated adds an extra 'triggers lack of robust validation' step not in the reference, partially altering the causal logic.",
+    "reference": "Masked diffusion transformer-based pose-conditioned generation of biased synthetic images leads developers to train faulty pose estimation models, causing safety failures in assistive technologies and algorithmic bias against underrepresented gaits.",
+    "generated": "Masked diffusion transformer-based pose-conditioned generation of implausible or biased images, through developers training pose estimation models on synthetic data, triggers lack of robust validation, allowing contamination, leading to misclassification of underrepresented movements causing safety incidents and accessibility exclusion."
+  }
+}

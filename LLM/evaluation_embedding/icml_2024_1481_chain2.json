@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6736,
+    "reference": "Shared feature representations retain enough structure to reconstruct raw inputs, risking data confidentiality.",
+    "generated": "Clients lack privacy safeguards (e.g., differential privacy, encryption) that prevent a compute server from reconstructing private inputs from shared feature representations."
+  },
+  "impact": {
+    "similarity": 0.5127,
+    "reference": "Exposure of proprietary data in collaborative healthcare or finance split learning applications.",
+    "generated": "Clients' private data is reconstructed, exposing personal information, enabling identity theft and violating privacy laws."
+  },
+  "dose_response": {
+    "similarity": 0.7457,
+    "reference": "Exact reconstruction from shared updates enables feature-oriented attacks that, in split learning without encryption, recover raw inputs, leading to exposure of proprietary data and legal liability.",
+    "generated": "Exact reconstruction of private training data from gradient/model updates shared in collaborative learning, through clients sharing feature representations with a compute server in split learning setups, triggers clients' lack of privacy safeguards, leading to private data reconstruction exposing personal information, enabling identity theft and violating privacy laws."
+  }
+}

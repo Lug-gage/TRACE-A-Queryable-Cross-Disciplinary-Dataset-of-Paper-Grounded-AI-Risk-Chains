@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2835",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Simplicity bias causing under-scrutiny of prompts appearing benign is present, though relevance bias is also mentioned.",
+    "reference": "Simplicity bias in ranking leads to under-scrutiny of harmful prompts that appear simple or benign.",
+    "generated": "Ranking-based harmfulness evaluators systematically misjudge due to embedded simplicity and relevance biases, enabling jailbreak prompts to appear less harmful."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type is generalized to high-risk content and real-world harm, and explicit affected party (users) is missing.",
+    "reference": "Harmful prompts bypass guard, generating toxic, biased, or manipulative content for users.",
+    "generated": "LLMs bypass safety mechanisms and generate high-risk content, causing real-world harm and undermining trust in AI safeguards."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal logic matches: cognitive biases in ranking evaluation lead to misjudgment, bypass, and harmful content generation.",
+    "reference": "Ranking-based harmfulness evaluation with cognitive biases introduces systematic misassessment, enabling harmful prompts to bypass guard models deployed by LLM developers, leading to toxic, biased, or manipulative content generation.",
+    "generated": "Ranking-based harmfulness evaluation using cognitive biases, deployed in LLM guard models, triggers systematic misjudgment that makes jailbreak prompts appear less harmful, leading to LLMs bypassing safeguards and generating high-risk content, causing real-world harm and undermining trust."
+  }
+}

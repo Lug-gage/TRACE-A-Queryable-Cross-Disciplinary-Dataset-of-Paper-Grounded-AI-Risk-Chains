@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5186,
+    "reference": "Resource-rich labs learn to exploit iterative rules, accumulating strategic advantage.",
+    "generated": "Low-resource labs lack the social capital and insider knowledge to anticipate or adapt to the mechanism's shifting fairness tradeoffs."
+  },
+  "impact": {
+    "similarity": 0.354,
+    "reference": "Inequity compounds as early-round winners dominate subsequent rounds, creating a Matthew effect.",
+    "generated": "Systematic desk-rejection of papers from low-resource labs worsens underrepresentation in AI venues and stalls early-career researcher advancement."
+  },
+  "dose_response": {
+    "similarity": 0.8267,
+    "reference": "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable resource-rich labs to exploit iterative rules, which in the dynamic allocation scenario exposes low-resource researchers, leading to a Matthew effect compounding inequity.",
+    "generated": "Optimization-based desk-rejection mechanisms’ fairness tradeoffs under model uncertainty, through researchers from low-resource labs unable to game the system, trigger lack of social capital and insider knowledge to anticipate shifting tradeoffs, causing systematic desk-rejection that worsens underrepresentation and stalls early-career advancement."
+  }
+}

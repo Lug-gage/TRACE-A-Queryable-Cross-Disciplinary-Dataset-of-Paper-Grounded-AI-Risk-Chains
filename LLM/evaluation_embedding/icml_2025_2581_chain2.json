@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2581",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4125,
+    "reference": "Query-dependent exemplar retrieval leaks private test-data characteristics through observable selection patterns.",
+    "generated": "Users have no means to audit or adjust the exemplar selection process, leaving them unable to detect or resist reasoning distortions."
+  },
+  "impact": {
+    "similarity": 0.4046,
+    "reference": "Adversaries infer sensitive attributes of user queries, enabling targeted manipulation or surveillance.",
+    "generated": "Users receive systematically biased LLM outputs, causing misclassifications and flawed decisions that cascade into downstream tasks."
+  },
+  "dose_response": {
+    "similarity": 0.7345,
+    "reference": "Relevance-diversity optimized per-query exemplar retrieval leaks private query characteristics via selection patterns, enabling adversaries to infer sensitive attributes and conduct targeted manipulation or surveillance.",
+    "generated": "Relevance-diversity optimized exemplar selection introduces systematic biases, through users submitting queries to adaptive LLM services, triggers unauditable exemplar selection, leading to systematically biased outputs and cascading misclassifications and flawed decisions."
+  }
+}

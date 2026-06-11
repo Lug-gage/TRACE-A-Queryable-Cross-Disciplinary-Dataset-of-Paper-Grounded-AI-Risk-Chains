@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 3,
+  "title": "Characterizing Truthfulness in Large Language Model Generations with Local Intrinsic Dimension",
+  "abstract": "We study how to characterize and predict the truthfulness of texts generated from large language models (LLMs), which serves as a crucial step in building trust between humans and LLMs. Although several approaches based on entropy or verbalized uncertainty have been proposed to calibrate model predictions, these methods are often intractable, sensitive to hyperparameters, and less reliable when applied in generative tasks with LLMs. In this paper, we suggest investigating internal activations and quantifying LLM’s truthfulness using the local intrinsic dimension (LID) of model activations. Through experiments on four question answering (QA) datasets, we demonstrate the effectiveness of our proposed method. Additionally, we study intrinsic dimensions in LLMs and their relations with model layers, autoregressive language modeling, and the training of LLMs, revealing that intrinsic dimensions can be a powerful approach to understanding LLMs. Code is available at: https://github.com/fanyin3639/ LID-HallucinationDetection.",
+  "impact": "This paper discusses an important step for the safe deployment of LLMs. LLMs have demonstrated their remarkable capabilities, but human trust on LLMs are still limited because of their tendency to generate hallucinations secretly. We propose to quantify and characterize model hallucinations through intrinsic dimensions of model intermediate representations. On the one hand, this method itself helps people abstain from trusting incorrect generations. On the other hand, it can serve as the backbone for some hallucination mitigation methods. This paper mainly discusses LLM generations in English. Results may be biased towards the English-speaking population. However, adapting this LID method to other languages does not require much additional effort. Moreover, the paper focuses primarily on question-answering scenarios. We encourage future work to implement this method on diverse tasks and languages, as well as cross-lingual settings.",
+  "query_input": {
+    "scenario": "LLM truthfulness editing at inference",
+    "issue": "Editing internal representations in truthful latent space can inadvertently distort other semantic features, causing undetected falsehoods.",
+    "hazard": [
+      "LLM internal representations encode truthfulness in a separable subspace, enabling classifiers to detect lies but creating a single point of failure if the subspace is manipulated or misaligned."
+    ],
+    "exposure": [
+      "System integrators applying inference-time truthfulness interventions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "System integrators lack mechanisms to detect when manipulation of the truthfulness subspace introduces other semantic distortions, allowing falsehoods to go unnoticed.",
+    "impact": "Undetected falsehoods proliferate in LLM outputs, leading to misinformed decisions and erosion of user trust in the system.",
+    "dose_response": "LLM internal representations' separable truthfulness subspace, through system integrators applying inference-time truthfulness interventions, triggers undetected semantic distortions when manipulated, leading to proliferating falsehoods, misinformed decisions, and eroded user trust."
+  },
+  "reference": {
+    "dose_response": [],
+    "vulnerability": [
+      "System integrators apply editing without auditing collateral semantic damage across output types.",
+      "Edited models inherit user trust from unedited versions, masking new failure modes.",
+      "Lack of transparency about editing interventions prevents downstream users from adjusting reliance."
+    ],
+    "impact": [
+      "Silent corruption of factual knowledge in domains adjacent to the edited subspace.",
+      "Compounded errors when edited outputs are used as training data for other systems.",
+      "Legal liability for integrators when edited models produce defamatory or harmful falsehoods."
+    ]
+  }
+}

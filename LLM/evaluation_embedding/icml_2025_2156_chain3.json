@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2156",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.6174,
+    "reference": "Users lack technical knowledge to scrutinize plausible-seeming but false explanations.",
+    "generated": "Consumers and patients lack the technical literacy and independent verification mechanisms to detect manipulated explanations presented as authoritative by AI interfaces."
+  },
+  "impact": {
+    "similarity": 0.5752,
+    "reference": "Wrongly denied services go uncontested, causing individual harm and deepening power asymmetries.",
+    "generated": "Loss of ability to contest decisions entrenches erroneous AI outcomes, causing uncorrected harms and undermining accountability."
+  },
+  "dose_response": {
+    "similarity": 0.8447,
+    "reference": "Multiplicity of XAI methods enables plausible but incorrect explanations, which when presented to users lacking technical knowledge leads to uncontested wrongful denials, causing harm and power asymmetries.",
+    "generated": "Multiplicity of XAI methods enabling X-hacking, through consumers and patients receiving AI-powered recommendations, triggers their lack of technical literacy to detect manipulated explanations, leading to loss of ability to contest decisions, uncorrected harms, and undermined accountability."
+  }
+}

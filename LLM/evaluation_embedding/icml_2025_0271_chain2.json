@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0271",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3956,
+    "reference": "Conditioning on dominant emotional signals marginalizes minority stakeholders' authentic inputs.",
+    "generated": "Decision-makers lack independent verification mechanisms, fostering overreliance on superficially ethical AI outputs without detecting context-driven misalignment."
+  },
+  "impact": {
+    "similarity": 0.5993,
+    "reference": "Policy recommendations that reinforce structural inequities and reduce participatory trust.",
+    "generated": "Policy decisions systematically marginalize some stakeholders, entrenching social inequities and undermining public trust in AI-assisted governance."
+  },
+  "dose_response": {
+    "similarity": 0.6089,
+    "reference": "Fixed emotional conditioning amplifies dominant signals, causing decision-makers to marginalize minority inputs, leading to policy recommendations that reinforce structural inequities and reduce participatory trust.",
+    "generated": "A self-supervised emotional conditioning pipeline producing superficially aligned, context-brittle ethical guardrails, through decision-makers using AI recommendations, triggers overreliance without independent verification, leading to systematically marginalized stakeholders and eroded public trust in governance."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0221",
+  "chain_index": 2,
+  "title": "Stealing part of a production language model",
+  "abstract": "We introduce the first model-stealing attack that extracts precise, nontrivial information from black-box production language models like OpenAI’s ChatGPT or Google’s PaLM-2. Specifically, our attack recovers the embedding projection layer (up to symmetries) of a transformer model, given typical API access. For under $20 USD, our attack extracts the entire projection matrix of OpenAI’s ada and babbage language models. We thereby confirm, for the first time, that these black-box models have a hidden dimension of 1024 and 2048, respectively. We also recover the exact hidden dimension size of the gpt-3.5-turbo model, and estimate it would cost under $2,000 in queries to recover the entire projection matrix. We conclude with potential defenses and mitigations, and discuss the implications of possible future work that could extend our attack.",
+  "impact": "This paper is the most recent in a line of work that demonstrates successful attacks on production models. As such, we take several steps to mitigate the near-term potential harms of this research. As discussed throughout the paper, we have worked closely with all affected products to ensure that mitigations are in place before disclosing this work. We have additionally sent advance copies of this paper to all potentially affected parties, even if we were unable to precisely verify our attack. Long-term, we believe that openly discussing vulnerabilities that have practical impact is an important strategy for ensuring safe machine learning. This vulnerability exists whether or not we report on it. Especially for attacks that are simple to identify (as evidenced by the concurrent work of Finlayson et al. (2024) that discovered this same vulnerability), malicious actors are also likely to discover the same vulnerability whether or not we report on it. By documenting it early, we can ensure future systems remain secure.",
+  "query_input": {
+    "scenario": "Federated learning with transformer models",
+    "issue": "Exact batch input recovery from self-attention gradients leaks private training text.",
+    "hazard": [
+      "Black-box extraction of language model internals via embedding projection layer queries enables parameter theft and hidden dimension inference."
+    ],
+    "exposure": [
+      "Clients contributing private text data in federated training"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clients' gradient updates linearly encode private text via the embedding matrix; extraction of this matrix permits exact input recovery.",
+    "impact": "Private training text is fully reconstructed, causing leakage of sensitive personal or organizational data and loss of privacy.",
+    "dose_response": "Black-box extraction of embedding layers, through clients contributing private text in federated training, triggers gradient updates to linearly encode private text, allowing exact input recovery and leaking sensitive personal or organizational data."
+  },
+  "reference": {
+    "dose_response": [
+      "Black-box extraction enables gradient inversion, which in federated learning with transformers exposes private training text, leading to reconstructed medical records and leaked legal documents."
+    ],
+    "vulnerability": [
+      "Federated clients trust the central server with raw gradients, enabling gradient inversion.",
+      "Institutional adoption of federated learning for sensitive data (health, legal) outpaces privacy safeguards."
+    ],
+    "impact": [
+      "Patient medical records reconstructed from clinical federated training violate health privacy laws.",
+      "Legal document leakage from federated training exposes privileged communications."
+    ]
+  }
+}

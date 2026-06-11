@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0676",
+  "chain_index": 0,
+  "title": "Temporal Logic Specification-Conditioned Decision Transformer for Offline Safe Reinforcement Learning",
+  "abstract": "Offline safe reinforcement learning (RL) aims to train a constraint satisfaction policy from a fixed dataset. Current state-of-the-art approaches are based on supervised learning with a conditioned policy. However, these approaches fall short in real-world applications that involve complex tasks with rich temporal and logical structures. In this paper, we propose temporal logic Specificationconditioned Decision Transformer (SDT), a novel framework that harnesses the expressive power of signal temporal logic (STL) to specify complex temporal rules that an agent should follow and the sequential modeling capability of Decision Transformer (DT). Empirical evaluations on the DSRL benchmarks demonstrate the better capacity of SDT in learning safe and high-reward policies compared with existing approaches. In addition, SDT shows good alignment with respect to different desired degrees of satisfaction of the STL specification that it is conditioned on.",
+  "impact": "This paper presents a novel framework within the realm of reinforcement learning, aiming to advance the field through innovative approaches and applications. First of all, the methods, experiments, and results outlined in this paper do not pose any ethical concerns. Secondly, it’s crucial for researchers to proceed with care, especially when setting specifications and conducting tests in real-world settings, since misspecified specifications may result in serious and unforeseen consequences. Lastly, we hope our findings can provide fresh insights for extending the application of reinforcement learning to broader domains.",
+  "query_input": {
+    "scenario": "Autonomous vehicle control with STL safety constraints",
+    "issue": "Overconfident specification-conditioned RL leads to unsafe navigation due to distribution shift",
+    "hazard": [
+      "Specification-conditioned offline RL overestimates safety compliance due to dataset coverage gaps and distributional shift."
+    ],
+    "exposure": [
+      "Drivers and passengers using autonomous cars with RL-based control"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Offline RL controller overestimates safety compliance in scenarios outside its training distribution, disabling corrective action.",
+    "impact": "Unsafe navigation causing vehicle collisions and physical harm to drivers and passengers.",
+    "dose_response": "Specification-conditioned offline RL overestimates safety compliance due to dataset coverage gaps and distributional shift, through occupants of autonomous RL vehicles, triggers offline RL controller overestimating safety compliance out-of-distribution and disabling corrective action, leading to unsafe navigation, vehicle collisions, and physical harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Specification-conditioned offline RL overestimates safety compliance due to coverage gaps and distributional shift, which in autonomous vehicle control with STL constraints exposes drivers and passengers to overconfident navigation that, due to complacency, causes accidents."
+    ],
+    "vulnerability": [
+      "Passengers over-trust vehicle safety claims, reducing vigilance to monitor and intervene in edge cases.",
+      "Lack of real-time explanation of system uncertainty prevents user calibration of trust.",
+      "Distributional gaps are invisible to users, creating false belief in universal reliability."
+    ],
+    "impact": [
+      "Accidents cause physical injury and psychological trauma to occupants and bystanders.",
+      "Public trust in autonomous vehicles erodes, delaying adoption and regulatory progress.",
+      "Legal liability disputes arise from unclear responsibility for overconfident decisions."
+    ]
+  }
+}

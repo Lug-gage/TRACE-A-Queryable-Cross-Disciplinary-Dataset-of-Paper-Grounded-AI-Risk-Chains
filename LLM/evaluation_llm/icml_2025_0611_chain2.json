@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0611",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Router overfitting to majority dialects leaving minority users without safeguards captures the same sensitivity condition as misclassification and exposure to unsafe models.",
+    "reference": "Router trained on majority dialect features misclassifies minority dialect inputs, routing them to inappropriate or unsafe expert models.",
+    "generated": "Router overfitting to majority dialects leaves minority dialect users without safeguards against unsafe model outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Minority users as affected party is present, but damage type only mentions harmful completions, omitting nonsensical and culturally offensive completions from the reference.",
+    "reference": "Generation of harmful, nonsensical, or culturally offensive completions for minority dialect speakers.",
+    "generated": "Minority users receive harmful completions, eroding trust and causing direct harm."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from bi-level optimization to overfitting, minority unprotected, and harmful completions matches the reference's logic of router sensitivity leading to unsafe outputs for minority dialect speakers.",
+    "reference": "Bi-level optimization creates router sensitivity to dialect shifts, which in collaborative generalist-specialist MoE for on-device voice assistants exposes diverse users to unsafe completions, leading to harmful or offensive outputs for minority dialect speakers.",
+    "generated": "Bi-level optimization of expert routing causes overfitting across heterogeneous data, and through exposure of voice assistant users across dialects, triggers router to overfit majority dialects, leaving minority users unprotected and leading to harmful completions that erode trust and cause harm."
+  }
+}

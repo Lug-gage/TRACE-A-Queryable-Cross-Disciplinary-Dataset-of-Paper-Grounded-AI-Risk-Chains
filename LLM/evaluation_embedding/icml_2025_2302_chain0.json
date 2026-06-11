@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2302",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5223,
+    "reference": "Uncritical trust in static benchmarks fails to account for evolving jailbreak strategies, leaving safety claims unfounded.",
+    "generated": "LLM providers and consumers lack independent safety validation capabilities, depending solely on benchmark scores that overlook advanced threats."
+  },
+  "impact": {
+    "similarity": 0.752,
+    "reference": "Deployment of vulnerable LLM APIs leads to real-world jailbreak exploits, causing public safety risks and loss of user trust.",
+    "generated": "Jailbreak-vulnerable models are deployed, causing harmful outputs at scale, user harm, loss of trust, and legal liability for providers."
+  },
+  "dose_response": {
+    "similarity": 0.736,
+    "reference": "CASE-Bench's failure to detect few-shot jailbreaks enables overconfident safety claims, exposing API consumers to undetected attacks, leading to exploits and public safety risks.",
+    "generated": "Context-aware safety benchmarks missing advanced few-shot jailbreaks, through reliance of providers and consumers on benchmark scores, triggers lack of independent safety validation, leading to deployment of jailbreak-vulnerable models with harmful outputs, user harm, loss of trust, and legal liability."
+  }
+}

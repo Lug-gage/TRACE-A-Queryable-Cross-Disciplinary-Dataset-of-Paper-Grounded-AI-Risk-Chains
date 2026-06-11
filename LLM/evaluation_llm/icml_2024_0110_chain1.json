@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Accepting probabilities at face value with no miscalibration detection captures the poorly matched trust calibration sensitivity.",
+    "reference": "Clinicians' trust calibration poorly matches model reliability.",
+    "generated": "Clinicians and patients accept verbalized probabilities at face value, lacking means to detect miscalibration outside the training distribution."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both patient harm from incorrect diagnoses and harmful treatment decisions are present.",
+    "reference": "Misdiagnosis and inappropriate treatment decisions harm patients.",
+    "generated": "Unwarranted trust in miscalibrated advice causes incorrect diagnoses and harmful treatment decisions, jeopardizing patient safety."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from SFT to poorly calibrated probabilities, use in LLM diagnosis tools, unwarranted trust/overreliance, and misdiagnosis/harm is identical.",
+    "reference": "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which in LLM diagnosis tools causes overreliance by clinicians and patients, leading to misdiagnosis and patient harm.",
+    "generated": "Supervised fine-tuning yielding poorly calibrated verbalized probabilities outside the training distribution, through clinicians and patients using LLM-based diagnosis tools, triggers their acceptance of these probabilities at face value without detecting miscalibration, leading to unwarranted trust causing incorrect diagnoses and harmful treatment decisions."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1486",
+  "chain_index": 1,
+  "title": "SaVeR Optimal Data Collection Strategy for Safe Policy Evaluation in Tabular MDP",
+  "abstract": "In this paper, we study safe data collection for the purpose of policy evaluation in tabular Markov decision processes (MDPs). In policy evaluation, we are given a target policy and asked to estimate the expected cumulative reward it will obtain. Policy evaluation requires data and we are interested in the question of what behavior policy should collect the data for the most accurate evaluation of the target policy. While prior work has considered behavior policy selection, in this paper, we additionally consider a safety constraint on the behavior policy. Namely, we assume there exists a known default policy that incurs a particular expected cost when run and we enforce that the cumulative cost of all behavior policies ran is better than a constant factor of the cost that would be incurred had we always run the default policy. We first show that there exists a class of intractable MDPs where no safe oracle algorithm with knowledge about problem parameters can efficiently collect data and satisfy the safety constraints. We then define the tractability condition for an MDP such that a safe oracle algorithm can efficiently collect data and using that we prove the first lower bound for this setting. We then introduce an algorithm SaVeR for this problem that approximates the safe oracle algorithm and bound the finite-sample mean squared error of the algorithm while ensuring it satisfies the safety constraint. Finally, we show in simulations that SaVeR produces low MSE policy evaluation while satisfying the safety constraint.",
+  "impact": "In this paper, we study the safe data collection for policy evaluation in an RL setting under safety constraints. Our paper proposes a new adaptive data collection policy and addresses the theoretical challenges posed by this setting. We focus on algorithmic and theoretical contributions and we do not address the challenges that might stem from incorrect feedback, human bias in feedback, false information, or social disparity in gathering the feedback (or dataset). We therefore leave it to the users who apply our algorithm to use it responsibly and ethically.",
+  "query_input": {
+    "scenario": "Industrial robot policy evaluation from safe default policy logs",
+    "issue": "Finite-sample bounds may fail if default policy safety is violated in the target policy's state distribution.",
+    "hazard": [
+      "Off-policy safety-cost estimates with finite-sample MSE guarantees that are sensitive to the data collection strategy, enabling overconfident certification of unsafe policies."
+    ],
+    "exposure": [
+      "Factory operators and workers physically interacting with robot actions from the deployed policy."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Factory operators depend on certified finite-sample safety guarantees without independent validation or backup safety barriers.",
+    "impact": "Physical injury or death to operators from robot collisions when an overconfidently certified unsafe policy deploys.",
+    "dose_response": "Off-policy finite-sample safety estimates that are sensitive to data collection enable overconfident certification; when factory operators physically interact with the deployed robot, reliance on these certifications without independent validation or backup barriers leads to physical injury or death from collisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Overconfident finite-sample bounds enable unsafe robot policy deployment, which in factory settings exposes operators' trust in algorithms over physical checks, leading to worker injuries and plant shutdowns."
+    ],
+    "vulnerability": [
+      "Factory operators trust algorithmic safety estimates, bypassing physical safety checks due to production pace."
+    ],
+    "impact": [
+      "Worker injuries or fatalities from unexpected robot actions, leading to litigation and plant shutdowns."
+    ]
+  }
+}

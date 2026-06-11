@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2069",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes a sensitivity condition of reliance on opaque unchallengeable fairness corrections, while reference concerns hiring algorithms trained on biased data embedding misspecified causal fairness. The core vulnerability condition is different.",
+    "reference": "Hiring algorithms trained on biased historical data may embed misspecified causal fairness, amplifying discrimination.",
+    "generated": "Candidates rely on opaque AI hiring tools whose fairness corrections cannot be challenged, leaving bias distortion undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party of 'qualified candidates' is present but misses 'underrepresented'; damage type 'employment discrimination and inequality' only partially covers the reference's 'reducing diversity and reinforcing occupational segregation'.",
+    "reference": "Qualified underrepresented candidates are excluded, reducing diversity and reinforcing occupational segregation.",
+    "generated": "Qualified candidates are systematically screened out, deepening employment discrimination and inequality."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both arcs involve misspecified fairness assumptions leading to exclusion of qualified candidates, but the generated arc inserts an opaque unchallengeable corrections step as the causal mediator, altering the direct amplification logic described in the reference.",
+    "reference": "Misspecified causal assumptions in synthetic training data amplify discrimination in hiring algorithms, screening out qualified underrepresented job candidates, reducing diversity and reinforcing occupational segregation.",
+    "generated": "Pre-training on causally-generated synthetic data with misspecified fairness constraints, through AI screening of job candidates, triggers reliance on opaque unchallengeable corrections that leave bias undetected, leading to systematic exclusion of qualified candidates and deepened employment discrimination."
+  }
+}

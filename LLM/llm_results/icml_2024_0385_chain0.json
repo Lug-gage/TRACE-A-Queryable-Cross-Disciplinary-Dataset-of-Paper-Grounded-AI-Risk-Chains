@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0385",
+  "chain_index": 0,
+  "title": "Et Tu Certifications Robustness Certificates Yield Better Adversarial Examples",
+  "abstract": "In guaranteeing the absence of adversarial examples in an instance’s neighbourhood, certification mechanisms play an important role in demonstrating neural net robustness. In this paper, we ask if these certifications can compromise the very models they help to protect? Our new Certification Aware Attack exploits certifications to produce computationally efficient norm-minimising adversarial examples 74% more often than comparable attacks, while reducing the median perturbation norm by more than 10%. While these attacks can be used to assess the tightness of certification bounds, they also highlight that releasing certifications can paradoxically reduce security.",
+  "impact": "This work explores a heretofore undiscovered security risk associated with publishing the certifications associated with certifiable robust mechanisms. While such attacks can induce negative societal consequences, there is a clear consensus within the computer security community that responsible disclosure of attacks is a crucial part of improving systemic security. Training-time, test-time and backdoor attacks are always published in the public domain, and the risk associated with the publication of our new attack should be viewed within this context. The new attack vector contained within this work allows for a fundamental reevaluation of the security associated with systems designed to demonstrate the resistance of machine learning models to adversarial manipulation, and provides a new mechanism that can be used to better study the tightness of the bounds provided by robustness mechanisms.",
+  "query_input": {
+    "scenario": "Multi-modal perception in autonomous vehicles",
+    "issue": "Evasion of certified defenses via small joint perturbations to all sensor modalities, causing misclassification.",
+    "hazard": [
+      "Certification-aware adversarial examples exploit tightness weaknesses in robustness certification bounds to achieve evasion with minimized perturbation norm."
+    ],
+    "exposure": [
+      "Vehicle occupants and pedestrians relying on autonomous driving perception."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Certified defenses create a false sense of robustness while tightness gaps enable minimal-perturbation evasion.",
+    "impact": "Collisions result from misclassified obstacles, injuring or killing vehicle occupants and pedestrians.",
+    "dose_response": "Certification-aware adversarial examples, through vehicle occupants and pedestrians relying on autonomous driving perception, trigger certified defenses' false sense of robustness and tightness gaps enabling minimal-perturbation evasion, leading to misclassified obstacles and collisions that injure or kill."
+  },
+  "reference": {
+    "dose_response": [
+      "Certification-aware adversarial examples with minimized perturbations evade certified defenses, which in multi-modal autonomous vehicles exposes occupants and pedestrians to misclassification, leading to collisions and public trust erosion."
+    ],
+    "vulnerability": [
+      "Over-reliance on certified robustness bounds without real-world validation creates false safety assumptions.",
+      "Multi-modal fusion complexity increases sensitivity to coordinated minor perturbations across sensors.",
+      "Lack of diverse adversarial examples in training datasets leads to overconfident model trust."
+    ],
+    "impact": [
+      "Collisions or near-misses causing occupant/pedestrian injuries and fatalities.",
+      "Public trust erosion in autonomous driving safety, slowing adoption.",
+      "Regulatory crackdown on autonomous vehicle deployment, stifling innovation."
+    ]
+  }
+}

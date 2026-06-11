@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1639",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6624,
+    "reference": "Researchers lack robust tools to detect SFBD-specific noise artifacts, enabling corrupted data to enter downstream training pipelines.",
+    "generated": "Researchers lack automated quality-control measures to verify generated images are free of noise artifacts before downstream use."
+  },
+  "impact": {
+    "similarity": 0.7687,
+    "reference": "Downstream models trained on corrupted synthetic data inherit biases, degrading performance in safety-critical applications.",
+    "generated": "Corrupted synthetic samples mislead downstream training and analysis, degrading model performance and invalidating conclusions."
+  },
+  "dose_response": {
+    "similarity": 0.8343,
+    "reference": "SFBD-trained diffusion models amplify noise, generating unreliable samples; researchers using these for downstream training expose models to corrupted data, causing biased models and undermined reproducibility.",
+    "generated": "SFBD-trained models' amplified noise and distributional shift, through researchers' downstream use of generated images, triggers lack of quality-control, leading to corrupted synthetic samples misleading training, degrading performance and invalidating conclusions."
+  }
+}

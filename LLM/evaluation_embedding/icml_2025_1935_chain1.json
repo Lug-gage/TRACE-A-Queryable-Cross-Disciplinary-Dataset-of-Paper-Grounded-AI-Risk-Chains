@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1935",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5419,
+    "reference": "API rate limits are insufficient to block automated adversarial suffix generation.",
+    "generated": "Developers trust black-box API safety filters that fail to detect transferable, human-readable adversarial suffixes."
+  },
+  "impact": {
+    "similarity": 0.5927,
+    "reference": "Widespread distribution of harmful content through third-party applications.",
+    "generated": "Deployed applications generate harmful content, eroding user trust and causing widespread safety incidents."
+  },
+  "dose_response": {
+    "similarity": 0.8609,
+    "reference": "Automated generation of adversarial prompts enables transferable suffixes that bypass API safety filters, which in black-box API access exposes developers, leading to widespread harmful content and regulatory non-compliance.",
+    "generated": "Automated generation of human-readable adversarial prompts bypassing LLM guardrails, through developers integrating black-box APIs, triggers trust in safety filters that fail to detect these suffixes, leading to harmful content, eroded trust, and widespread incidents."
+  }
+}

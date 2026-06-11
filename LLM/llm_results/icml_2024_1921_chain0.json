@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1921",
+  "chain_index": 0,
+  "title": "video-SALMONN Speech-Enhanced Audio-Visual Large Language Models",
+  "abstract": "Speech understanding as an element of the more generic video understanding using audio-visual large language models (av-LLMs) is a crucial yet understudied aspect. This paper proposes video-SALMONN, a single end-to-end av-LLM for video processing, which can understand not only visual frame sequences, audio events and music, but speech as well. To obtain fine-grained temporal information required by speech understanding, while keeping efficient for other video elements, this paper proposes a novel multiresolution causal Q-Former (MRC Q-Former) structure to connect pre-trained audio-visual encoders and the backbone large language model. Moreover, dedicated training approaches including the diversity loss and the unpaired audiovisual mixed training scheme are proposed to avoid frames or modality dominance. On the introduced speech-audio-visual evaluation benchmark, video-SALMONN achieves more than 25% absolute accuracy improvements on the video- QA task and over 30% absolute accuracy improvements on audio-visual QA tasks with human speech. In addition, video-SALMONN demonstrates remarkable video comprehension and reasoning abilities on tasks that are unprecedented by other av-LLMs. Our training code and model checkpoints are available at https: //github.com/bytedance/SALMONN/.",
+  "impact": "Enabling speech understanding in av-LLMs marks an advancement towards achieving artificial general intelligence (AGI). By integrating speech input on top of existing nonspeech audio and visual inputs, such a model would gain a holistic understanding of human interaction and the environment and is enabled to a broader range of applications. The potential positive impacts include: • video-SALMONN enables more natural and intuitive interactions with technology, reducing the learning curve for users and making LLM-based technologies more approachable e.g. for children and the elderly. • video-SALMONN can potentially enhance the accessibility of LLM-based technologies, including those with motor impairments that make typing difficult. • The video-QA demonstrates the potential of using video-SALMONN in academic presentations and educational applications to facilitate learning. The approaches in this paper do not give rise to any additional potential biases beyond the ones directly inherited from the pre-trained model checkpoints used. The audio encoder and visual encoder might work worse for people from particular demographics. The framework also inherits biases from all the LLMs used in this paper. To mitigate potential biases, we clearly describe the nature of each dataset and provide clear and adequate references to all the resources we used for video-SALMONN. The ability of video-SALMONN to understand speech in videos could lead to potential technology abuses like surveillance and eavesdropping. To counter this, we’ve consulted with legal experts to establish clear usage guidelines, reducing risks and addressing concerns, highlighting our dedication to responsible research sharing.",
+  "query_input": {
+    "scenario": "Real-time video commentary for live events",
+    "issue": "Hallucinated commentary due to delayed audio-visual alignment",
+    "hazard": [
+      "Multimodal fusion of speech and video via unpaired audiovisual training can induce hallucinated, temporally inconsistent answers."
+    ],
+    "exposure": [
+      "Event organizers and audiences relying on automated live commentary"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Event organizers and audiences cannot detect hallucinated commentary in real time, relying uncritically on system outputs.",
+    "impact": "Audiences receive false, temporally misaligned commentary, causing confusion, misinformation, and loss of trust in live events.",
+    "dose_response": "Unpaired audiovisual training inducing hallucinated answers, through organizers and audiences relying on automated commentary, triggers inability to detect hallucinated commentary in real time, leading to false temporally misaligned commentary causing confusion, misinformation, and trust loss."
+  },
+  "reference": {
+    "dose_response": [
+      "Multimodal fusion hallucination enables temporally inconsistent commentary, which in real-time live event settings exposes audiences lacking verification and literacy, leading to widespread misinformation and eroded trust."
+    ],
+    "vulnerability": [
+      "Real-time constraints block pre-broadcast human verification.",
+      "Low media literacy makes hard to detect AI hallucination during live events."
+    ],
+    "impact": [
+      "Spread of misinformation to large audiences, damaging event credibility and public trust.",
+      "Audience confusion and degraded user experience from temporally mismatched commentary."
+    ]
+  }
+}

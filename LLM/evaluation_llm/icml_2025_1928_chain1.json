@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated condition focuses on cognitive inability to discern incoherence, while the reference emphasizes over-reliance by vulnerable populations lacking alternative information access – a related but distinctly different sensitivity condition.",
+    "reference": "Over-reliance on voice assistants by vulnerable populations lacking alternative information access.",
+    "generated": "Users’ inability to discern semantic incoherence in fluent, long-form speech fosters uncritical acceptance of nonsensical voice assistant outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (users) and damage type (harm from acting on incorrect information) are present, despite domain specifics being omitted.",
+    "reference": "User harm from acting on plausible but incorrect spoken advice in health, legal, or financial domains.",
+    "generated": "Users act on incorrect information, causing misinformed decisions, eroded trust in voice assistants, and potential harm from erroneous guidance."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe plausible but ungrounded speech leading, through user exposure in voice assistants, to uncritical acceptance and resultant harm from acting on incorrect guidance.",
+    "reference": "Plausible but ungrounded speech generation enables syntactically consistent yet nonsensical responses, which in voice-based conversational agents exposes users, leading to harm from acting on incorrect advice and erosion of trust.",
+    "generated": "Plausible but factually ungrounded long-form speech from generative models, through open-ended voice assistant interactions, triggers users' inability to discern semantic incoherence, leading to uncritical acceptance, acting on incorrect information, misinformed decisions, eroded trust, and potential harm."
+  }
+}

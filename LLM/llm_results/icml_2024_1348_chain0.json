@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 0,
+  "title": "Disguised Copyright Infringement of Latent Diffusion Models",
+  "abstract": "Copyright infringement may occur when a generative model produces samples substantially similar to some copyrighted data that it had access to during the training phase. The notion of access usually refers to including copyrighted samples directly in the training dataset, which one may inspect to identify an infringement. We argue that such visual auditing largely overlooks a concealed copyright infringement, where one constructs a disguise that looks drastically different from the copyrighted sample yet still induces the effect of training Latent Diffusion Models on it. Such disguises only require indirect access to the copyrighted material and cannot be visually distinguished, thus easily circumventing the current auditing tools. In this paper, we provide a better understanding of such disguised copyright infringement by uncovering the disguises generation algorithm, the revelation of the disguises, and importantly, how to detect them to augment the existing toolbox. Additionally, we introduce a broader notion of acknowledgment for comprehending such indirect access. Our code is available at https://github.com/watml/d isguised_copyright_infringement.",
+  "impact": "In this paper, we adopt a simple algorithm to disguise images, which we realize may be applied as a concealed copyright infringement tool. We are surprised at how easy it is for Generative AI to circumvent the copyright law, which was originally designed for regulating human scrapers. This seemingly undetectable infringing threat may bring disadvantages for human artists, who are already losing the battle with GenAI. Furthermore, disguised images may not only be a concern to copyright owners but also a threat to Generative AI companies: if these disguises are accidentally collected as part of the training data, copyright infringement could be triggered unconsciously and unwillingly. As computer scientists, we are obligated to reveal the existence of such possible unlawful acts and provide technical tools to identify such behaviors. We expect our paper to be a prudent tool such that disguised copyright infringement and its corresponding detection methods are recognized by law experts.",
+  "query_input": {
+    "scenario": "Commercial digital artwork and visual marketing using AI-generated images.",
+    "issue": "Generated images may incorporate copyrighted elements without clear attribution, risking infringement liability.",
+    "hazard": [
+      "Diffusion models generate novel images that subtly replicate copyrighted content, reducing detectability by standard copy detection methods."
+    ],
+    "exposure": [
+      "Digital artists and marketers using diffusion models for commercial content creation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on visual copy detection methods that fail to detect disguised copyrighted content replication in generated images.",
+    "impact": "Copyright infringement liability, financial penalties, and reputational harm for digital artists and marketers inadvertently using infringing AI-generated images.",
+    "dose_response": "Diffusion models generating subtly replicated copyrighted content, through digital artists and marketers using them commercially, triggers reliance on visual detection that fails to spot disguised replication, leading to infringement liability, financial penalties, and reputational harm."
+  },
+  "reference": {
+    "dose_response": [
+      "In commercial digital artwork and visual marketing, diffusion models' subtle replication reduces detectability, exposing digital artists and marketers to lawsuits and trust erosion, as they lack detection tools and prioritize speed over diligence."
+    ],
+    "vulnerability": [
+      "Users lack accessible tools to detect subtle copyright replication in AI outputs.",
+      "Commercial incentives prioritize speed over copyright diligence, increasing risk."
+    ],
+    "impact": [
+      "Businesses face lawsuits and fines for unknowingly using infringing AI images.",
+      "Consumer trust erodes when brands are linked to copyright scandals."
+    ]
+  }
+}

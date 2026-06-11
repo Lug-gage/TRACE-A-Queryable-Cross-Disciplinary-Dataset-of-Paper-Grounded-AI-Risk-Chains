@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1807",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe reliance on error-prone components (probabilistic device graphs vs. noise-blind estimators) without ground-truth validation, making the system sensitive to cross-device identity issues.",
+    "reference": "Institutional reliance on error-prone probabilistic device graphs without ground-truth validation.",
+    "generated": "Product managers rely on standard A/B estimators that are blind to cross-device identity noise, with no independent verification step."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Degraded user satisfaction matches the harmed user experience, but 'waste engineering resources' replaces 'revenue' damage, so only one of the two reference damage types is present.",
+    "reference": "Product decisions based on biased GATE lead to feature rollouts that harm user experience and revenue.",
+    "generated": "Misguided feature launches degrade user satisfaction and waste engineering resources."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated arc follows the same causal logic: cross-device graph uncertainty → biased GATEs → (via product managers’ A/B test usage) → misguided launches harming users, with the extra 'reliance on noise-blind estimators' step still semantically aligned as the mechanism of misattribution.",
+    "reference": "Uncertainty propagation from cross-device identity graphs enables biased GATEs, which in online A/B tests with cross-device identity resolution exposes product managers to misattributed exposures, leading to feature rollouts that harm user experience and revenue.",
+    "generated": "Cross-device identity graph uncertainty yielding biased GATEs, through product managers using A/B test results, triggers reliance on noise-blind standard estimators, leading to misguided feature launches that degrade user satisfaction and waste engineering resources."
+  }
+}

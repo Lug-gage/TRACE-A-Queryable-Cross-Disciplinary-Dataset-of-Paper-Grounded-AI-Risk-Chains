@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.7454,
+    "reference": "Linked LLM modules in hiring pipelines share historical biases, compounding errors across resume, skill, and interview stages.",
+    "generated": "Automated hiring pipelines uncritically treat correlated LLM evaluations as independent, lacking human oversight or redundancy to catch amplified group biases."
+  },
+  "impact": {
+    "similarity": 0.6627,
+    "reference": "Discriminatory hiring decisions that disproportionately disadvantage protected groups, reinforcing societal inequality.",
+    "generated": "Qualified candidates from marginalized groups face systematic discriminatory exclusion, deepening societal employment disparities."
+  },
+  "dose_response": {
+    "similarity": 0.808,
+    "reference": "Correlated errors cause systematic failure alignment across LLM hiring modules, compounding biases that lead to discriminatory decisions, reinforcing inequality.",
+    "generated": "Correlated errors in LLM predictions, when applied to job candidates in automated hiring pipelines, trigger unchecked treatment of correlated evaluations as independent, leading qualified marginalized groups to face systematic discriminatory exclusion."
+  }
+}

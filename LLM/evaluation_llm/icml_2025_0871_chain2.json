@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "reference sensitivity is lack of contextual understanding disproportionately flagging marginalized speech; generated describes lack of human fallback leaving synthetic bias errors uncorrected, a different condition entirely.",
+    "reference": "Automated moderation systems lack contextual understanding, disproportionately flagging marginalized community speech.",
+    "generated": "Automated moderation pipelines lack human fallback mechanisms, leaving filter errors from synthetic data biases uncorrected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "wrongful content removal partly covers suppression of legitimate speech, but affected party is 'users' not minority groups, and 'chilling public discourse' is absent.",
+    "reference": "Suppression of legitimate speech from minority groups, chilling public discourse.",
+    "generated": "Users suffer wrongful content removal and missed violations, degrading platform safety and trust at scale."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "outcomes (wrongful removals, missed violations) align, but causal arc replaces misrepresented rare-violation examples degrading filter accuracy with OOD synthetic samples and lack of human fallback causing uncorrected biases.",
+    "reference": "Misrepresented rare-violation examples degrade filter accuracy, which in automated moderation exposes platform users and moderators to suppression of legitimate speech and increased harmful content.",
+    "generated": "Diffusion models with long-tail guidance produce out-of-distribution synthetic tail samples, when platform users and moderators rely on automated moderation systems lacking human fallback, leaving filter biases uncorrected, causing wrongful removals and missed violations that degrade safety and trust at scale."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2194",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes chemists' reliance on unverified surrogate model estimates without orthogonal validation, matching the reference's over-reliance on AI predictions.",
+    "reference": "Medicinal chemists' over-reliance on AI predictions without orthogonal validation.",
+    "generated": "Impracticality of repeated wet-lab evaluations forces chemists to rely on surrogate model estimates without means to verify them."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated states synthesis of suboptimal leads wastes laboratory resources, covering both affected party (lab) and damage type (wasted resources). Additional delay is extra but does not detract.",
+    "reference": "Wasted synthesis resources from poor drug-likeness predictions.",
+    "generated": "Synthesis of suboptimal or ineffective drug leads wastes laboratory resources and delays therapeutic development."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated arc captures amplification of surrogate misspecification via offline preference optimization leading to chemists' reliance and synthesis of poor leads wasting resources; same causal logic as reference.",
+    "reference": "Offline preference optimization amplifies surrogate misspecification, producing unreliable property estimates that, in drug lead optimization, mislead chemists who synthesize poor leads, wasting resources and eroding trust.",
+    "generated": "Molecular stitching with offline preference optimization amplifies surrogate model misspecification, through medicinal chemists selecting virtual candidates for synthesis, triggers reliance on unverifiable surrogate model estimates, leading to synthesis of suboptimal drug leads wasting resources and delaying development."
+  }
+}

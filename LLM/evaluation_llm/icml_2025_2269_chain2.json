@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2269",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe operators relying solely on forecasts without independent error detection",
+    "reference": "Infrastructure operators who base resource staging decisions solely on deterministic gust forecasts without considering model error patterns.",
+    "generated": "Operators' resource allocation decisions depend entirely on forecast accuracy, lacking independent means to detect unrealistic gust field distortions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Misplaced repair crews prolonging power outages and economic losses in both",
+    "reference": "Power restoration crews positioned in wrong areas, extending blackouts and economic losses.",
+    "generated": "Misplaced pre-positioning of repair crews and equipment prolongs power outages and escalates economic losses from storm damage."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal chain: double penalty loss → distorted fields → misled operators → misplaced crews → prolonged outages",
+    "reference": "Double penalty loss enables distorted wind gust fields, which in extratropical storm forecasting misleads infrastructure operators, causing misplacement of repair crews and prolonged outages.",
+    "generated": "Double penalty spherical harmonic loss functions generating unrealistic high-resolution details, through infrastructure operators using wind forecasts for damage pre-positioning, trigger operators’ reliance on forecast accuracy without distortion detection, leading to misplaced repair crews that prolong outages and escalate economic losses."
+  }
+}

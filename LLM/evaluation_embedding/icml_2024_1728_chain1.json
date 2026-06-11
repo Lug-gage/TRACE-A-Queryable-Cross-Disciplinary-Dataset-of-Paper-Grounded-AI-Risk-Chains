@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1728",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6043,
+    "reference": "Audiences and journalists lack tools to detect AI-inpainted fabrications, making photo manipulation hard to spot.",
+    "generated": "Photojournalists and end users lack forensic verification routines, so plausible hallucinations are accepted as authentic image content."
+  },
+  "impact": {
+    "similarity": 0.6992,
+    "reference": "Manipulated images fuel misinformation, corrode public trust in journalism, and may serve as fabricated evidence.",
+    "generated": "Published images containing fictitious insertions mislead viewers and damage media credibility."
+  },
+  "dose_response": {
+    "similarity": 0.7812,
+    "reference": "Plausible but fictitious objects hallucinated by learned denoiser priors in inpainted images go undetected by photojournalists, fueling misinformation and eroding public trust.",
+    "generated": "Learned denoiser priors hallucinating details, through photojournalists and end users editing images for publication, exploit the lack of forensic verification, leading to acceptance of fictitious insertions as authentic, which misleads viewers and damages media credibility."
+  }
+}

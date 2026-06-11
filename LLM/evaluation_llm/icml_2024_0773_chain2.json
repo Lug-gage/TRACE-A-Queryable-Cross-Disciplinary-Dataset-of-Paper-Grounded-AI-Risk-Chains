@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0773",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions lack of real-time error-detection signals under patient variability, which touches on opacity but omits the reference's conditions of missing clinical validation across diverse populations and opaque policy decisions.",
+    "reference": "Lack of clinical validation across diverse patient populations and opaque policy decisions.",
+    "generated": "Clinicians lack real-time signals to detect when shared-parameter RL models generate erroneous recommendations under patient variability."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Patient harm from inappropriate treatments (incorrect treatments, preventable complications) and erosion of trust (institutional trust erodes) are both present.",
+    "reference": "Patient harm from inappropriate treatments and erosion of trust in AI clinical support.",
+    "generated": "Patients suffer incorrect treatments causing preventable complications, while institutional trust in AI decision support erodes."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc: extrapolation errors → clinician exposure → harm/trust loss. Generated inserts 'lack of real-time error-detection signals' as a necessary mediating condition, producing a different causal mechanism.",
+    "reference": "Gradient conflicts from shared parameters enable extrapolation errors, which when deploying the policy in healthcare treatment recommendations exposes clinicians using decision support, leading to patient harm and erosion of trust.",
+    "generated": "Gradient conflicts from shared parameters amplify extrapolation errors, and through clinician use of decision support, the lack of real-time error-detection signals under patient variability leads to incorrect treatments, preventable complications, and eroded institutional trust."
+  }
+}

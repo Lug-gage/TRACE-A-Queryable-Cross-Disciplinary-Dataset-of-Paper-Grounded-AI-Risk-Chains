@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1907",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.691,
+    "reference": "Engineers treat verifier scores as objective quality measures, ignoring score-test alignment failures.",
+    "generated": "Engineers overrely on verifier scores as a proxy for correctness, lacking independent validation of agent-generated code."
+  },
+  "impact": {
+    "similarity": 0.5452,
+    "reference": "Systematic deployment of gaming code that fails under real-world edge cases.",
+    "generated": "Subtly incorrect code reaches production, causing system failures, security breaches, and operational disruptions."
+  },
+  "dose_response": {
+    "similarity": 0.8801,
+    "reference": "Automated code generation agents producing plausible but incorrect code enables verifier overfitting, which in inference-time scaling with verifier-guided code generation exposes engineers relying on verifier scores to select agent-generated code solutions, leading to systematic deployment of gaming code that fails under real-world edge cases.",
+    "generated": "Automated code generation agents produce plausible but incorrect code, through engineers relying on verifier scores to select solutions, triggers overreliance on verifier scores as correctness proxy, leading to incorrect code in production, causing system failures, security breaches, and operational disruptions."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0517",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated text states detectors lack cross-lingual robustness and translation removes watermarks, directly matching the reference's sensitivity condition that translation disrupts watermark patterns and detection tools lack multilingual calibration.",
+    "reference": "Translation disrupts watermark patterns and detection tools lack multilingual calibration.",
+    "generated": "Content moderators’ watermark detectors lack cross-lingual robustness, so translation removes watermarks and renders machine-generated text undetectable."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated text captures the damage type (undermining information integrity, akin to eroding trust) and the mechanism (undetectable disinformation across languages), but it does not specify the affected community as non-English, which is a key party in the reference.",
+    "reference": "Undetected AI-generated disinformation spreads in non-English communities, eroding media trust.",
+    "generated": "Malicious actors disseminate undetectable LLM-generated disinformation across languages, bypassing moderation and undermining information integrity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated arc preserves the same causal logic: watermark susceptibility to removal attacks (translation) → moderators detect translated text → cross-lingual robustness gap → translation removes watermarks → undetectable disinformation spreads.",
+    "reference": "Watermark susceptibility to translation attacks enables evasion when content moderators detect translated text, which, through monolingual detection gaps, leads to undetected AI-generated disinformation eroding trust in non-English media.",
+    "generated": "Watermarking for LLM-generated text is susceptible to adaptive black-box removal attacks; through moderators using detectors on translated text, triggers cross-lingual robustness lack where translation removes watermarks, leading to undetectable disinformation across languages bypassing moderation undermining information integrity."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2389",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe users overtrusting or blindly trusting model outputs, causing flawed outputs to go unnoticed.",
+    "reference": "Users overtrust open-source chatbots, assuming safety, so subtly flawed outputs go uncorrected.",
+    "generated": "Users cannot distinguish superficial pattern improvements from genuine instruction-following, blindly trusting self-aligned model outputs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "User harm and biased decisions are covered, but unsafe advice is not explicitly present.",
+    "reference": "Degraded instruction-following causes miscommunication, unsafe advice, and biased decisions at scale.",
+    "generated": "Chatbot responses become systematically biased and substantively misleading, harming user decision-making and eroding trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs show bias amplification from self-rewarding alignment leading to users encountering flawed outputs due to overtrust, resulting in instruction degradation.",
+    "reference": "In self-rewarding alignment of open-source LLMs, bias amplification exposes users to flawed outputs; overtrust leads to degraded instruction-following and unsafe advice at scale.",
+    "generated": "Self-rewarding LLMs' closed feedback loops amplifying biases, through users of open-source chatbots relying on self-aligned models, trigger inability to distinguish superficial from genuine instruction-following, leading to systematically biased and misleading responses that harm decisions and erode trust."
+  }
+}

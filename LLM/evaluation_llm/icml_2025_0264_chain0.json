@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes model's lack of robustness to fairness perturbations causing disparities, but misses the reference's specific cause of lack of diverse adversarial examples during training.",
+    "reference": "Lack of diverse adversarial examples for all demographic groups during training amplifies per-class robustness gaps.",
+    "generated": "Image recognition models lack adversarial robustness to fairness-targeted perturbations, allowing small input changes to cause large group-wise disparities."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (demographic groups/end-users) and damage type (unequal safety outcomes, collision risks) are semantically present.",
+    "reference": "Disproportionate misclassification of minority groups in autonomous driving leads to higher collision rates and public safety risks.",
+    "generated": "Disproportionate misclassification across demographic groups results in biased autonomous driving decisions and unequal safety outcomes for end-users."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc incorrectly positions insufficient robustness as an effect triggered by exposure, missing the reference's causal chain where lack of diverse examples amplifies robustness gaps leading to misclassification and collisions.",
+    "reference": "Crafting adversarial perturbations to compromise fairness amplifies per-class robustness gaps due to limited diverse examples, causing autonomous driving systems to misclassify minority pedestrians, raising collision risks.",
+    "generated": "Adversarial fairness perturbations causing disproportionate misclassification, through exposure to end-users of autonomous driving perception, trigger models' insufficient adversarial robustness to fairness-targeted perturbations, leading to biased autonomous driving decisions and unequal safety outcomes."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6669,
+    "reference": "Minority group nodes with few connections are easily overwhelmed by adversarial injections that distort GNN embeddings.",
+    "generated": "GNN-based credit scoring models lack robustness to adversarial node injections, rendering fairness protections ineffective for marginalized groups."
+  },
+  "impact": {
+    "similarity": 0.7464,
+    "reference": "Biased credit scoring and predatory recommendations widen economic disparities for protected social groups.",
+    "generated": "Targeted demographic groups receive systematically unfavorable credit decisions, deepening financial exclusion and inequality."
+  },
+  "dose_response": {
+    "similarity": 0.8338,
+    "reference": "Adversarial node injections distort GNN embeddings by overwhelming minority group nodes with few connections, leading to biased credit scoring and widened economic disparities.",
+    "generated": "Adversarial perturbations that undermine group fairness, through credit scoring using social network data, trigger GNN models' vulnerability to node injections, causing disproportionately unfavorable credit decisions for marginalized groups and deepening financial exclusion."
+  }
+}

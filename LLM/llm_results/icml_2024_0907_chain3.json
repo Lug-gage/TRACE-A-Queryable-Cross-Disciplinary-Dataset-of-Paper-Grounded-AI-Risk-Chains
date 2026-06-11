@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 3,
+  "title": "Watermark Stealing in Large Language Models",
+  "abstract": "LLM watermarking has attracted attention as a promising way to detect AI-generated content, with some works suggesting that current schemes may already be fit for deployment. In this work we dispute this claim, identifying watermark stealing (WS) as a fundamental vulnerability of these schemes. We show that querying the API of the watermarked LLM to approximately reverseengineer a watermark enables practical spoofing attacks, as hypothesized in prior work, but also greatly boosts scrubbing attacks, which was previously unnoticed. We are the first to propose an automated WS algorithm and use it in the first comprehensive study of spoofing and scrubbing in realistic settings. We show that for under $50 an attacker can both spoof and scrub state-of-the-art schemes previously considered safe, with average success rate of over 80%. Our findings challenge common beliefs about LLM watermarking, stressing the need for more robust schemes. We make all our code and additional examples available at https://watermark-stealing.org.",
+  "impact": "As discussed in prior work, LLM watermarking has important societal implications, as e.g., it enables detection of plagiarism, allows tracking of text provenance, and can be used to battle fake news. Our work primarily highlights novel threats to LLM watermarking schemes, and could be in theory utilized by attackers to invalidate a watermark and cause harm to model owners or clients. However, LLM watermarks are a very recent research direction and to the best of our knowledge there are still no active deployments in practice, thus we believe there is no direct negative impact of making our work public, and no concrete place to apply responsible disclosure. On the contrary, we believe our work has a positive societal impact, as it highlights the true (lack of) robustness of current watermarking schemes, emphasizes the need for more robust schemes and more thorough evaluation procedures, providing a step in the direction of eventually deploying LLM watermarks in practice.",
+  "query_input": {
+    "scenario": "Embedding-as-a-Service with backdoor watermarks",
+    "issue": "Backdoor watermarks removed via clustering attack, bypassing copyright protection.",
+    "hazard": [
+      "LLM text watermarking is vulnerable to removal, spoofing, and stealing attacks that exploit algorithmic weaknesses."
+    ],
+    "exposure": [
+      "EaaS providers detecting model extraction via embedded watermarks."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Backdoor watermark detection relies on fragile statistical fingerprints that are stripped via low-cost query-based clustering attacks, neutralizing detection.",
+    "impact": "EaaS copyright protection collapses, enabling undetected model theft and wide-scale infringement, eroding provider revenue and content authenticity.",
+    "dose_response": "LLM text watermarking vulnerability to attacks, through EaaS providers detecting model extraction via embedded watermarks, triggers fragile statistical fingerprints stripped by low-cost clustering attacks, leading to collapsed copyright protection and undetected model theft."
+  },
+  "reference": {
+    "dose_response": [
+      "Backdoor watermark removal via clustering (hazard) undermines copyright detection, allowing undetected model extraction that causes revenue and competitive loss for EaaS providers."
+    ],
+    "vulnerability": [
+      "Backdoor embedding clusters are separable by clustering algorithms, exposing watermark triggers."
+    ],
+    "impact": [
+      "Undetected model extraction leads to loss of competitive advantage and revenue for EaaS providers."
+    ]
+  }
+}

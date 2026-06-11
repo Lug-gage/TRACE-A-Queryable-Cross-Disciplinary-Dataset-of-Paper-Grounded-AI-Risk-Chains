@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3053",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of automated manifold-conformity checks to detect implausible outputs is a specific form of assuming complete batch effect removal without verifying biological consistency",
+    "reference": "Analysts assume flow-matching completely removes batch effects without verifying biological consistency",
+    "generated": "Bioimage analysts lack automated manifold-conformity checks to detect morphologically implausible flow-matching outputs during batch correction."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated describe biological conclusions being corrupted by artifacts/errors, with 'misleading' equivalent to 'corrupt'",
+    "reference": "Systematic errors from distorted images corrupt cross-study biological conclusions",
+    "generated": "Batch-normalized images carry hidden artifacts, generating spurious perturbation signals and misleading biological conclusions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated arc identically traces from straight-line flow matching to implausible images with artifacts to corrupted biological conclusions, preserving the causal mechanism",
+    "reference": "Straight-line flow matching producing implausible images enables bioimage analysts to inject artifacts in batch correction, leading to systematic errors and compromised reproducibility.",
+    "generated": "Straight-line flow matching interpolations deviating from the biological data manifold, when applied by bioimage analysts to normalize microscopy batches without automated manifold-conformity checks, produce implausible batch-normalized images with hidden artifacts, generating spurious perturbation signals and misleading biological conclusions."
+  }
+}

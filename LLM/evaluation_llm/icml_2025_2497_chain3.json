@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2497",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both express a lack of automated checks or reliable tools to validate the semantic content of opaque prompts, i.e., the system cannot reliably detect gibberish prompts.",
+    "reference": "Production pipelines lack automated checks for prompt semantic validity.",
+    "generated": "Developers lack reliable tools to interpret or validate opaque, self-discovered prompts beyond performance metrics."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The generated text identifies the affected party (NLP systems in production) but describes a different damage type (safety incidents, errors, erosion of trust) rather than adversarial manipulation, so only the party matches.",
+    "reference": "Injection of adversarial prompt patterns into user-facing applications enables manipulation.",
+    "generated": "Unpredictable model behaviors in production cause safety incidents, errors, and erosion of trust in NLP systems."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated causal arc omits the key steps of adversarial injection and self-replicating contamination, and it falsely presents opaque prompts as triggering the lack of interpretation tools, which is a reversal of the actual vulnerability; thus the arc is wrong.",
+    "reference": "Opaque, gibberish prompts elude human oversight, which in production pipelines enables adversarial injection and self-replicating contamination, leading to manipulation and propagation across tasks.",
+    "generated": "Evolutionary prompt optimization's opaque prompts, through integration into production NLP pipelines, trigger the lack of reliable interpretation tools, leading to unpredictable behaviors, safety incidents, errors, and erosion of trust."
+  }
+}

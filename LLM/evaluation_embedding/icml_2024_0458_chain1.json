@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5944,
+    "reference": "Majority vote aggregation assumes independent errors, which fails under correlated annotator biases.",
+    "generated": "Entrenched evaluation workflows assume random label noise and treat majority-vote aggregation as a validity guarantor, leaving systematic noise consequences unchecked."
+  },
+  "impact": {
+    "similarity": 0.6065,
+    "reference": "Confident but incorrect model comparisons due to aggregated label consensus masking systematic errors.",
+    "generated": "Incorrect classifier comparisons select inferior models, degrading downstream application performance and undermining trust in benchmark integrity."
+  },
+  "dose_response": {
+    "similarity": 0.903,
+    "reference": "Inflated Type I error rates from systematic label noise persist through majority vote aggregation, which in budgeted labeling exposes data scientists to confident but incorrect model comparisons, leading to wasted budgets and biased model reinforcement.",
+    "generated": "Inflated Type I error rates under label noise, when data scientists allocate labeling budgets, trigger workflows assuming random noise and relying on majority-vote aggregation, leaving systematic noise unchecked and leading to incorrect comparisons that degrade performance and trust."
+  }
+}

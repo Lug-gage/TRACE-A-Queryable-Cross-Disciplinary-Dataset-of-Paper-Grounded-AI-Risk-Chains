@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 2,
+  "title": "Linguistic Calibration of Long-Form Generations",
+  "abstract": "Language models (LMs) may lead their users to make suboptimal downstream decisions when they confidently hallucinate. This issue can be mitigated by having the LM verbally convey the probability that its claims are correct, but existing models cannot produce long-form text with calibrated confidence statements. Through the lens of decision-making, we define linguistic calibration for long-form generations: an LM is linguistically calibrated if its generations enable its users to make calibrated probabilistic predictions. This definition enables a training framework where a supervised finetuning step bootstraps an LM to emit long-form generations with confidence statements such as “I estimate a 30% chance of...” or “I am certain that...”, followed by a reinforcement learning step which rewards generations that enable a user to provide calibrated answers to related questions. We linguistically calibrate Llama 2 7B and find in automated and human evaluations of long-form generations that it is significantly more calibrated than strong finetuned factuality baselines with comparable accuracy. These findings generalize under significant domain shifts to scientific and biomedical questions and to an entirely held-out person biography generation task. Our results demonstrate that long-form generations may be calibrated end-to-end by constructing an objective in the space of the predictions that users make in downstream decision-making. 1",
+  "impact": "The ideas and methods introduced in this work generally improve the linguistic calibration of LMs to benefit users in downstream decision-making. Thus, we believe this work will likely positively impact applied areas of AI where an LM copilot is adopted. On the other hand, while we have demonstrated improvements in calibration with our methods, we acknowledge that our LMs’ expressions of confidence can still differ from the true likelihoods of its claims being correct. It is thus important to note that even linguistically calibrated LMs should still be treated as tools to aid decision-making instead of replacements for human judgment and expertise.",
+  "query_input": {
+    "scenario": "Biography generation for public consumption",
+    "issue": "False but confidently stated biographical claims propagate misinformation.",
+    "hazard": [
+      "Supervised fine-tuning for linguistic calibration yields verbalized probability that can be poorly calibrated outside the training distribution."
+    ],
+    "exposure": [
+      "General public reading LLM-generated biographies"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Public readers lack the expertise to detect when verbalized confidence is miscalibrated outside the training distribution.",
+    "impact": "False confident claims are believed, spreading misinformation that distorts public knowledge and harms biographical subjects' reputations.",
+    "dose_response": "Supervised fine-tuning for linguistic calibration yields verbalized probability poorly calibrated outside training, so general public reading biographies triggers inability to detect miscalibration, leading to belief in false confident claims that distort knowledge and harm reputations."
+  },
+  "reference": {
+    "dose_response": [
+      "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which in LLM biography generation causes public overreliance on confident falsehoods, propagating misinformation and eroding trust."
+    ],
+    "vulnerability": [
+      "General public's inability to fact-check confident-sounding claims in real time.",
+      "Overreliance on AI as an authoritative source for personal information.",
+      "Lack of content moderation for user-generated biographies."
+    ],
+    "impact": [
+      "Widespread dissemination of false biographical information harms reputations.",
+      "Erosion of public trust in AI-generated content and platforms.",
+      "Potential legal consequences for defamation or privacy violations."
+    ]
+  }
+}

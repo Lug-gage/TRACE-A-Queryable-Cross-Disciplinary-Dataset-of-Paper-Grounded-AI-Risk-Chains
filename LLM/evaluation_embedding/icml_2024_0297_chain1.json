@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0297",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5006,
+    "reference": "Automated moderation lacks human verification, allowing AI-generated content with misleading textures to pass through.",
+    "generated": "Moderators rely solely on detector alerts; high false-alarm rates breed alarm fatigue, causing dismissal of true generated-image flags."
+  },
+  "impact": {
+    "similarity": 0.5734,
+    "reference": "False negatives enable wide dissemination of disinformation, manipulating public discourse and undermining platform integrity.",
+    "generated": "Undetected AI-generated images circulate, spreading disinformation and undermining information integrity across the platform."
+  },
+  "dose_response": {
+    "similarity": 0.8232,
+    "reference": "Reconstruction-error-based detection fails to catch AI-generated images, and automated moderation without human verification lets them spread, enabling wide disinformation and undermining platform integrity.",
+    "generated": "Reconstruction-error-based detection misclassifies genuine images with diffusion-like textures, through content moderators using AI tools, triggering alarm fatigue and dismissal of true flags, leading to undetected AI-generated images spreading disinformation and undermining integrity."
+  }
+}

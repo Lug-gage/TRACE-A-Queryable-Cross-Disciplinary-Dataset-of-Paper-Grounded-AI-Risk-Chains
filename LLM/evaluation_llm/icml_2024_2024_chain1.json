@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "conflation of fluency with accuracy is a related but different sensitivity condition than automation bias and lack of verification",
+    "reference": "Financial analysts exhibit automation bias, over-trusting LLM forecasts without domain verification.",
+    "generated": "Financial analysts conflate linguistic fluency with temporal accuracy, lacking mechanisms to detect distributional drift from synthetic data."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "capital misallocation present but market volatility missing",
+    "reference": "Erroneous investment decisions amplify market volatility and misallocate capital.",
+    "generated": "Biased forecasts produce misinformed trading decisions, causing capital misallocation and financial losses."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal arc from scaling-induced mismatch to biased predictions and analyst failure leading to financial harm is the same",
+    "reference": "LLM scaling enables domain mismatch, which in AutoTimes finance forecasting exposes analysts to biased predictions, leading to erroneous investment decisions and market volatility.",
+    "generated": "LLM scaling's synthetic data reliance introduces distributional drift, and when financial analysts act on these predictions, their conflation of fluency with temporal accuracy leaves drift undetected, causing misinformed trading and financial losses."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1133",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference vulnerability is about delayed satisfaction feedback causing algorithm to over-recommend low-quality items; generated describes shopper inability to assess quality leading to dependence on recommendation accuracy, a different sensitivity condition.",
+    "reference": "Delayed satisfaction feedback causes algorithm to over-recommend low-quality items that initially get positive clicks",
+    "generated": "Shoppers' inability to assess long-term product quality before purchase makes them dependent on recommendation accuracy, leaving them susceptible to biased guidance."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Trust loss is covered, but platform abandonment is replaced with 'reduced engagement', so only one of the two reference damage components is present.",
+    "reference": "Decreased user trust and platform abandonment due to irrelevant suggestions",
+    "generated": "Shoppers experience persistent dissatisfaction and lose trust in the AI-curated recommendations, leading to reduced engagement."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc substitutes a novel 'dependence on recommendation accuracy' trigger for the reference's mechanism of low-quality items with high initial clicks biased by delayed signals.",
+    "reference": "Delayed satisfaction signals bias bandit recommendations toward low-quality items with high initial clicks, exposing shoppers to disappointing suggestions that erode trust and may lead to platform abandonment.",
+    "generated": "Online bandit-based action recommendations with delayed rewards produce systematically biased long-term guidance that, through AI-curated product recommendations to shoppers, triggers their dependence on recommendation accuracy, leading to persistent dissatisfaction, trust loss, and reduced engagement."
+  }
+}

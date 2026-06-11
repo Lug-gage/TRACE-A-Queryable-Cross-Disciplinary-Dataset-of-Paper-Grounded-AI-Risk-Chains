@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0478",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions inheriting societal stereotypes but focuses on opacity and inability to refute, missing the reference's key condition that gender becomes linearly separable in LLM representations.",
+    "reference": "Resume training data encodes societal gender stereotypes, making gender linearly separable in LLM representations.",
+    "generated": "Hiring systems inherit societal stereotypes, and opaque feature extraction leaves applicants unable to detect or refute biased evaluations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated identify women as the affected party and discriminatory exclusion from occupational roles as the damage type.",
+    "reference": "Discriminatory hiring outcomes disproportionately exclude women from male-typed roles.",
+    "generated": "Recruitment decisions systematically discriminate against women, reproducing gendered occupational exclusion."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc is preserved: decoder linearity enables probes to access latent gender biases, which then leads to discriminatory outcomes in recruitment, even though wording differs.",
+    "reference": "Transformer decoder linearity enables linear probes to extract latent gender-occupation stereotypes, which in resume screening leads to biased evaluations that disproportionately exclude women from male-typed roles.",
+    "generated": "Transformer decoder linearity, through LLM-based resume screening, makes latent gender biases accessible to linear probes, triggering opaque stereotype inheritance that systematically discriminates against women in recruitment."
+  }
+}

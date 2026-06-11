@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1061",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that flat minima blunt the OOD detection signal, causing loss of sensitivity.",
+    "reference": "OOD detection in AV perception relies on sharp loss gradients to flag anomalies; flat minima blunt this signal.",
+    "generated": "Perception system's OOD detector relies solely on the quantized model, which loses sensitivity to distributional shifts in weather due to flat minima."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Autonomous vehicle collisions are mentioned as the damage, matching the affected party and damage type.",
+    "reference": "Undetected OOD inputs cause perception errors, leading to collision risk in autonomous vehicles.",
+    "generated": "Undetected misperceptions in rain/snow cause autonomous vehicle collisions, leading to injuries, fatalities, and property damage."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal chain from flatter minima to collisions is present, but the reference includes erosion of public trust, which is missing.",
+    "reference": "Flatter minima from quantization blunt OOD detection signals, causing autonomous perception systems to miss distributional shifts in novel weather, increasing collision risk and eroding public trust.",
+    "generated": "Flatter minima from quantization-aware training, through an autonomous vehicle perception system in novel weather, trigger a loss of sensitivity to distributional shifts in the OOD detector, leading to undetected misperceptions and collisions causing injuries, fatalities, and property damage."
+  }
+}

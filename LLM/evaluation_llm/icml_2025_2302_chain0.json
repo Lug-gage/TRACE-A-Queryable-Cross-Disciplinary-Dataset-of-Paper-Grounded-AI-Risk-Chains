@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2302",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the sensitivity as over-reliance on benchmark scores that fail to account for advanced/evolving jailbreak strategies, leaving safety claims unfounded.",
+    "reference": "Uncritical trust in static benchmarks fails to account for evolving jailbreak strategies, leaving safety claims unfounded.",
+    "generated": "LLM providers and consumers lack independent safety validation capabilities, depending solely on benchmark scores that overlook advanced threats."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe the affected party (deployed LLMs) and the damage type (harmful outputs/public safety risks, loss of trust) semantically; the generated adds legal liability but retains the core consequence.",
+    "reference": "Deployment of vulnerable LLM APIs leads to real-world jailbreak exploits, causing public safety risks and loss of user trust.",
+    "generated": "Jailbreak-vulnerable models are deployed, causing harmful outputs at scale, user harm, loss of trust, and legal liability for providers."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated causal arc is different: it states that missing few-shot jailbreaks leads to lack of independent safety validation and then deployment of vulnerable models, whereas the reference arc is that failure to detect few-shot jailbreaks enables overconfident safety claims, exposing API consumers to undetected attacks and causing exploits. The mechanisms are not the same.",
+    "reference": "CASE-Bench's failure to detect few-shot jailbreaks enables overconfident safety claims, exposing API consumers to undetected attacks, leading to exploits and public safety risks.",
+    "generated": "Context-aware safety benchmarks missing advanced few-shot jailbreaks, through reliance of providers and consumers on benchmark scores, triggers lack of independent safety validation, leading to deployment of jailbreak-vulnerable models with harmful outputs, user harm, loss of trust, and legal liability."
+  }
+}

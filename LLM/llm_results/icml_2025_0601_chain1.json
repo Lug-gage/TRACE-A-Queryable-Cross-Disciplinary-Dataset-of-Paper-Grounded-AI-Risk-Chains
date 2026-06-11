@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0601",
+  "chain_index": 1,
+  "title": "Understanding Complexity in VideoQA via Visual Program Generation",
+  "abstract": "We propose a data-driven approach to analyzing query complexity in Video Question Answering (VideoQA). Previous efforts in benchmark design have relied on human expertise to design challenging questions, yet we experimentally show that humans struggle to predict which questions are difficult for machine learning models. Our automatic approach leverages recent advances in code generation for visual question answering, using the complexity of generated code as a proxy for question difficulty. We demonstrate that this measure correlates significantly better with model performance than human estimates. To operationalize this insight, we propose an algorithm for estimating question complexity from code. It identifies fine-grained primitives that correlate with the hardest questions for any given set of models, making it easy to scale to new approaches in the future. Finally, to further illustrate the utility of our method, we extend it to automatically generate complex questions, constructing a new benchmark that is 1.9 times harder than the popular NExT-QA.",
+  "impact": "In our study, we utilize many distinct pre-trained models, each with its inherent biases, to identify challenging questions within an existing dataset. Although they have different pre-training schemes, these models likely encode similar implicit biases, owning to their training on internet scale data collections. In particular, several of our selected models, along with our visual descriptors extractor, rely on CLIP (Radford et al., 2021) as a visual encoder, meaning they likely replicate the same biases including those identified in previous studies (Agarwal et al., 2021). Furthermore, the dataset we base the majority of our analysis on, NExT-QA (Xiao et al., 2021), is not fully representative of real-world diversity and complexity. This limitation in addition to the biases present in the chosen models can lead to skewed or incomplete analysis. In addition, our analysis’ focus on interplay between the constituent syntactic elements in code may overlooks critical sources of complexity not apparent in the code structure. These include, for example, differences related to gender and ethnicity, which are not explicitly manifested in the code. Our own proposed benchmark, CodePlex-QA, builds upon the existing datasets MOMA (Luo et al., 2021; 2022), ActivityNet (Caba Heilbron et al., 2015), and Action Genome (Ji et al., 2020), and therefore includes the same biases. We urge researchers and practitioners to refer to the relevant dataset cards. Finally, our selection methodology for filtering videos and questions may inadvertently introduce new biases, or amplify existing ones. Acknowledgments. This work is in part supported by the Toyota Research Institute (TRI), AFOSR YIP FA9550-23- 1-0127, ONR N00014-23-1-2355, and ONR YIP N00014- 24-1-2117.",
+  "query_input": {
+    "scenario": "Automatic benchmark generation using fine-grained primitives",
+    "issue": "Data-driven complexity estimation overfits to surface patterns, producing benchmarks that fail to stress real reasoning gaps.",
+    "hazard": [
+      "Query-agnostic visual encoding in modular VideoQA pipelines produces brittle, misaligned representations for complex temporal reasoning."
+    ],
+    "exposure": [
+      "Researchers evaluating vision-language models with automatically generated QA benchmarks"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Benchmark difficulty relies on surface code complexity, masking models' inability to handle genuine temporal reasoning.",
+    "impact": "Flawed evaluation leads to overestimation of model capabilities, deploying systems that fail on real-world temporal queries.",
+    "dose_response": "Query-agnostic visual encoding in modular VideoQA pipelines, through automatic benchmark evaluation by researchers, triggers surface code complexity that masks genuine temporal reasoning gaps, leading to overestimation of model capabilities and real-world query failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Query-agnostic encoding enables overfitted complexity estimation, which in automatic benchmark generation fails to stress real reasoning gaps, exposing researchers to inflated performance metrics that mask model brittleness."
+    ],
+    "vulnerability": [
+      "Benchmarks that fail to measure true temporal reasoning ability create false confidence in model readiness for real-world deployment."
+    ],
+    "impact": [
+      "Researchers and regulators certify unsafe models for high-stakes applications like medical video analysis or surveillance."
+    ]
+  }
+}

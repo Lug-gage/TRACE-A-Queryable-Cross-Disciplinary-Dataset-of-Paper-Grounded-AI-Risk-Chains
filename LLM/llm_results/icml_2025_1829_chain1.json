@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1829",
+  "chain_index": 1,
+  "title": "Certifiably Robust Model Evaluation in Federated Learning under Meta-Distributional Shifts",
+  "abstract": "We address the challenge of certifying the performance of a federated learning model on an unseen target network using only measurements from the source network that trained the model. Specifically, consider a source network “A” with K clients, each holding private, non-IID datasets drawn from heterogeneous distributions, modeled as samples from a broader meta-distribution μ. Our goal is to provide certified guarantees for the model’s performance on a different, unseen network “B”, governed by an unknown meta-distribution μ′, assuming the deviation between μ and μ′ is bounded-either in Wasserstein distance or an f-divergence. We derive worst-case uniform guarantees for both the model’s average loss and its risk CDF, the latter corresponding to a novel, adversarially robust version of the Dvoretzky-Kiefer-Wolfowitz (DKW) inequality. In addition, we show how the vanilla DKW bound enables principled certification of the model’s true performance on unseen clients within the same (source) network. Our bounds are efficiently computable, asymptotically minimax optimal, and preserve clients’ privacy. We also establish non-asymptotic generalization bounds that converge to zero as K grows and the minimum per-client sample size exceeds O(log K). Empirical evaluations confirm the practical utility of our bounds across real-world tasks. The project code is available at: github.com/samin-mehdizadeh/ Robust-Evaluation-DKW",
+  "impact": "This paper proposes a certifiably robust evaluation framework for federated learning under meta-distributional shifts, providing theoretical guarantees on performance under deployment shifts. The proposed approach may benefit realworld federated systems by improving reliability and trust in evaluation across diverse clients. However, if misapplied without properly validating the assumptions on shift structure, the certificates may give a false sense of robustness. Care should be taken to ensure the theoretical assumptions hold approximately in practice, and to transparently communicate the limitations of the guarantees.",
+  "query_input": {
+    "scenario": "Cross-device federated learning on mobile keyboards",
+    "issue": "Certified robustness guarantees do not hold under evolving user typing patterns",
+    "hazard": [
+      "Meta-distributional shift across client populations can invalidate certified robustness bounds, yielding overconfident performance guarantees"
+    ],
+    "exposure": [
+      "Mobile users depending on next-word predictions for daily communication"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users rely on certified guarantees unaware that distribution shifts invalidate the bounds, leaving no safeguard against degrading predictions.",
+    "impact": "Incorrect next-word predictions cause frequent miscommunication, reduced typing efficiency, and eroded user trust in the keyboard.",
+    "dose_response": "Meta-distributional shift across client populations invalidating certified robustness bounds, through mobile users relying on next-word predictions, triggers reliance on invalid guarantees without safeguard, leading to incorrect next-word predictions causing miscommunication, reduced typing efficiency, and eroded trust in the keyboard."
+  },
+  "reference": {
+    "dose_response": [
+      "Meta-distributional shift across client populations invalidates certified robustness bounds, causing users to habituate to keyboard predictions, leading to frequent failures for minority users and communication barriers."
+    ],
+    "vulnerability": [
+      "User habituation to error correction leads to decreased monitoring, increasing reliance on static certified robustness."
+    ],
+    "impact": [
+      "Frequent prediction failures for minority language or motor-impaired users, causing frustration and communication barriers."
+    ]
+  }
+}

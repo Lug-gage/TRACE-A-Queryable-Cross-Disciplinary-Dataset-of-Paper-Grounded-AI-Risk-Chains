@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1759",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe forensic reliance on watermark detection as the sole check, making analysts unable to resist surgical removals.",
+    "reference": "Forensic reliance on watermark detection as primary check.",
+    "generated": "Analysts' uncritical trust in a single watermark detector, unvalidated by independent forensic checks, leaves them unable to spot surgical removals."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both specify wrongful legal outcomes (convictions/acquittals) from falsified audio evidence; 'corrupted investigations' is an additional but congruent harm.",
+    "reference": "Wrongful conviction or acquittal based on falsified audio evidence.",
+    "generated": "Corrupted investigations and wrongful legal outcomes from forged audio admitted as authentic evidence."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc captures leaked positions → surgical removal → uncritical detector trust → wrongful outcomes, but omits the 'eroded trust' final link present in the reference.",
+    "reference": "Leaked precise watermark positions enable surgical removal and forgery without noticeable quality degradation, evading forensic detection tools and exposing analysts and journalists to falsified evidence, leading to wrongful convictions and eroded trust.",
+    "generated": "Joint training with localization loss leaks watermark positions enabling surgical removal, through forensic verification, triggers uncritical trust in a single detector unvalidated by checks, leaving analysts unable to spot forgery, leading to corrupted investigations and wrongful outcomes from forged evidence."
+  }
+}

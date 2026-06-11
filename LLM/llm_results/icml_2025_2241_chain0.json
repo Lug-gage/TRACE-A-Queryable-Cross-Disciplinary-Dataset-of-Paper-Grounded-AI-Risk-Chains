@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2241",
+  "chain_index": 0,
+  "title": "Deep Unsupervised Hashing via External Guidance",
+  "abstract": "Recently, deep unsupervised hashing has gained considerable attention in image retrieval due to its advantages in cost-free data labeling, computational efficiency, and storage savings. Although existing methods achieve promising performance by leveraging inherent visual structures within the data, they primarily focus on learning discriminative features from unlabeled images through limited internal knowledge, resulting in an intrinsic upper bound on their performance. To break through this intrinsic limitation, we propose a novel method, called Deep Unsupervised Hashing with External Guidance (DUH-EG), which incorporates external textual knowledge as semantic guidance to enhance discrete representation learning. Specifically, our DUH-EG: i) selects representative semantic nouns from an external textual database by minimizing their redundancy, then matches images with them to extract more discriminative external features; and ii) presents a novel bidirectional contrastive learning mechanism to maximize agreement between hash codes in internal and external spaces, thereby capturing discrimination from both external and intrinsic structures in Hamming space. Extensive experiments on four benchmark datasets demonstrate that our DUH-EG remarkably outperforms existing state-of-the-art hashing methods. The code is available at: https://github.com/XLearning- SCU/2025-ICML-DUHEG",
+  "impact": "This paper proposes a method that aims to advance hashing image retrieval by integrating external text knowledge from WordNet. This approach is evaluated on publicly available image datasets that do not pose security or privacy risks. However, the performance of our method is partially dependent on the distribution of both the training data and the external knowledge. If there exists a domain shift between them, the model’s effectiveness may be compromised. Therefore, to enhance its reliability in specific application domains like medicine and biology, it is advisable to introduce external textual knowledge that closely aligns with the target domain.",
+  "query_input": {
+    "scenario": "Text-guided image retrieval using unsupervised hash codes",
+    "issue": "Hash codes capture text-based semantics, not visual content, causing visually distinct images with similar text descriptions to be retrieved interchangeably.",
+    "hazard": [
+      "External textual guidance in unsupervised contrastive hashing may bias hash codes toward noisy text semantics, causing retrieval to reflect textual rather than visual relevance."
+    ],
+    "exposure": [
+      "Users searching for images by describing content in natural language queries"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "The unsupervised hashing model lacks visual discriminative constraints, so it conflates textual similarity with visual similarity.",
+    "impact": "Users retrieve visually irrelevant images that match the text, wasting time and degrading search experience.",
+    "dose_response": "External textual guidance biases hash codes toward text semantics; through natural-language image queries, this triggers the model’s lack of visual constraints, conflating textual and visual similarity, leading to retrieval of visually irrelevant images wasting time and degrading search."
+  },
+  "reference": {
+    "dose_response": [
+      "External textual guidance biasing hash codes toward text semantics causes retrieval to reflect textual relevance, exposing users who trust results without verification to misleading images, leading to incorrect decisions in e-commerce, news, or research."
+    ],
+    "vulnerability": [
+      "Users trust retrieval results without verifying visual relevance, amplifying the impact of text-biased hash codes."
+    ],
+    "impact": [
+      "Users receive misleading image results, leading to incorrect decisions in e-commerce, news verification, or research."
+    ]
+  }
+}

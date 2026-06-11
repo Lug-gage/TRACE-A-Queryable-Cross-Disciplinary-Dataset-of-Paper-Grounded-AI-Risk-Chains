@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2025_2044",
+  "chain_index": 0,
+  "title": "Diffusion Counterfactual Generation with Semantic Abduction",
+  "abstract": "Counterfactual image generation presents significant challenges, including preserving identity, maintaining perceptual quality, and ensuring faithfulness to an underlying causal model. While existing auto-encoding frameworks admit semantic latent spaces which can be manipulated for causal control, they struggle with scalability and fidelity. Advancements in diffusion models present opportunities for improving counterfactual image editing, having demonstrated state-of-the-art visual quality, human-aligned perception and representation learning capabilities. Here, we present a suite of diffusion-based causal mechanisms, introducing the notions of spatial, semantic and dynamic abduction. We propose a general framework that integrates semantic representations into diffusion models through the lens of Pearlian causality to edit images via a counterfactual reasoning process. To our knowledge, this is the first work to consider high-level semantic identity preservation for diffusion counterfactuals and to demonstrate how semantic control enables principled tradeoffs between faithful causal control and identity preservation.",
+  "impact": "This paper demonstrates the trade-offs inherent in using diffusion models, widely optimised for L2-level random sampling, to perform L3-level counterfactual inference. By uncovering these trade-offs, our work demonstrates the need to evaluate diffusion models from a perspective that considers fairness and mitigates spurious correlations. Counterfactual inference shares strong similarities with text-driven image-to-image translation and editing, and our findings encourage practitioners to rethink the design of foundational diffusion models, which underpin these applications, moving beyond a focus on high-quality random sampling. Notably, in latent diffusion models, text control alone often fails to account for causal dependencies, instead defaulting to biases learned from training data, which can result in unintended consequences. In text-guided image editing, prompts alone cannot be used to infer causal structure, leaving the model to infer relationships based solely on correlations observed in training data. As a result, even minor edits can produce spurious changes. Adopting a structured causal perspective - where models implicitly discover or explicitly learn SCMs - enables developers to transparently state their model’s assumptions and update them as new information becomes available through the causal graph, and restricts misuse by enforcing causal rules. These considerations are critical in real-world applications like face modelling and medical imaging, where dataset biases can lead to flawed decision-making. In such high-stakes scenarios, ensuring that models are interpretable and transparent is essential, as black-box models often fail to provide the clarity needed to justify their outputs.",
+  "query_input": {
+    "scenario": "Medical image editing for diagnosis support",
+    "issue": "Causally invalid counterfactuals mislead clinicians about disease progression",
+    "hazard": [
+      "Diffusion models manipulating high-level semantics without faithful causal mechanisms generate causally invalid but realistic counterfactuals."
+    ],
+    "exposure": [
+      "Radiologists using AI-generated medical counterfactuals for clinical decisions"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists lack the means to verify causal fidelity of AI-generated images and rely on visual realism as a proxy for clinical validity.",
+    "impact": "Misguided clinical decisions cause misdiagnosis and inappropriate treatment, harming patients.",
+    "dose_response": "Diffusion models generating causally invalid but realistic counterfactuals, through radiologists using AI-generated medical counterfactuals for clinical decisions, triggers their reliance on visual realism as a proxy for causal validity, leading to misdiagnosis and inappropriate treatment harming patients."
+  },
+  "reference": {
+    "dose_response": [
+      "Diffusion models manipulating semantics without causal mechanisms enable causally invalid counterfactuals, which when used by radiologists for clinical decisions without causal verification, lead to misdiagnosis, patient harm, and eroded trust in AI diagnostics."
+    ],
+    "vulnerability": [
+      "Clinician overreliance on AI outputs without verifying underlying causal consistency",
+      "Absence of mandatory verification steps for AI-generated diagnostic counterfactuals"
+    ],
+    "impact": [
+      "Misdiagnosis leading to patient harm and erosion of trust in AI-assisted diagnostic tools"
+    ]
+  }
+}

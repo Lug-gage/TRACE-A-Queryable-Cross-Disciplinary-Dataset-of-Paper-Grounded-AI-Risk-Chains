@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes lack of built-in attribution mechanisms making tracing impossible; generated describes reliance on flawed visual auditing tools. Both refer to detection failures, but the underlying sensitivity condition differs.",
+    "reference": "Platforms lack built-in attribution mechanisms, making tracing of copyrighted sources impossible.",
+    "generated": "Reliance on visual auditing tools that fail to detect disguised training data influences."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Both state undetected infringement persists, but reference specifies erosion of trust between creators and platforms, while generated specifies legal, financial, reputational harm to operators and users. Only the undetected infringement is shared, not the damage type or all affected parties.",
+    "reference": "Undetected infringement persists, eroding trust between creators and platforms.",
+    "generated": "Undetected copyright infringement proliferates, causing legal, financial, and reputational harm to platform operators and users."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc links lack of attribution mechanisms, impossibility of tracing, and reliance on good faith to persistent infringement; generated arc links subtle replication, failure of visual auditing tools, and harm. The causal mechanism is fundamentally different.",
+    "reference": "On AI platforms lacking attribution mechanisms, diffusion models' subtle replication reduces detectability, exposing platform operators and end-users to persistent undetected infringement and accumulated legal risks, as tracking is impossible and reliance on good faith prevails.",
+    "generated": "When diffusion models subtly replicate copyrighted content, platform operators and end-users deploying them rely on visual auditing tools that fail to detect disguised influences, leading to undetected copyright infringement proliferating, causing legal, financial, and reputational harm."
+  }
+}

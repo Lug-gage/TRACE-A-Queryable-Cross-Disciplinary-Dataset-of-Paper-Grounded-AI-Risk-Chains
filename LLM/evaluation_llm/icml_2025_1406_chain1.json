@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1406",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference condition is complete trust and deference without verification; generated condition is lack of verification capability. Both lead to unverified AI outputs, but the underlying sensitivity (trust vs. ability) differs.",
+    "reference": "Operators trust AI-generated plans completely, deferring to algorithmic outputs without verification.",
+    "generated": "Operators lack independent verification capability to identify when the AI planner misses superior logistics routes"
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Generated impact describes resource misallocation (inefficient resource use), wasted fuel and delayed deliveries (supply chain disruptions), and higher operational costs (increased costs), matching all damage types and affected party.",
+    "reference": "Inefficient resource use, increased costs, and potential supply chain disruptions.",
+    "generated": "Resource misallocation causes wasted fuel, delayed deliveries, and higher operational costs"
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated chain traces policy overfitting to missed paths, then to operators who lack verification (paralleling complete trust) and consequently misallocate resources, preserving the same causal logic.",
+    "reference": "Policy overfits to imperfect discriminator, causing tree search to miss valid reasoning paths, which in logistics planning scenario exposes operators, leading to inefficient resource use and increased costs due to complete trust in AI.",
+    "generated": "Policy overfits to an imperfect discriminator, systematically missing valid paths; operators relying on AI planners lack verification, causing misallocated resources that waste fuel, delay deliveries, and raise costs."
+  }
+}

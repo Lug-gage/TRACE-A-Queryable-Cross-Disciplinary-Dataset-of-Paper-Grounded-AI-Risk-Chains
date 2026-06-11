@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2579",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Engineers' over-reliance on visual explanations without quantitative validation is captured as uncritical acceptance of saliency maps without independent robustness testing",
+    "reference": "Engineers over-relying on visual explanations for debugging without quantitative validation of model behavior.",
+    "generated": "Engineers' reliance on saliency maps without independent robustness testing leads to uncritical acceptance of misleading explanations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both specify undetected perception failures and increased collision risk in autonomous vehicles/driving",
+    "reference": "Latent perception failures remain undetected, increasing collision risk in autonomous vehicles.",
+    "generated": "Overestimated model robustness allows undetected perception failures, increasing collision risk in autonomous driving."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal chain: attribution maps lacking fidelity lead to over-reliance without validation, then undetected failures and collision risk",
+    "reference": "Attribution maps lacking fidelity mislead engineers debugging 3D detectors, causing over-reliance on visual explanations without quantitative validation, leading to undetected latent perception failures and increased collision risk.",
+    "generated": "Attribution map explanations lacking fidelity and clarity, through engineers debugging 3D object detection models with saliency maps, trigger uncritical reliance on those maps without independent robustness testing, leading to overestimated model robustness, undetected perception failures, and increased collision risk."
+  }
+}

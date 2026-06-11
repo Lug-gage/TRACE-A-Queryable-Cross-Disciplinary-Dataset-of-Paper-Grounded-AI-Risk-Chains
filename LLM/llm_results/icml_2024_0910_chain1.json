@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0910",
+  "chain_index": 1,
+  "title": "Is Epistemic Uncertainty Faithfully Represented by Evidential Deep Learning Methods",
+  "abstract": "Trustworthy ML systems should not only return accurate predictions, but also a reliable representation of their uncertainty. Bayesian methods are commonly used to quantify both aleatoric and epistemic uncertainty, but alternative approaches, such as evidential deep learning methods, have become popular in recent years. The latter group of methods in essence extends empirical risk minimization (ERM) for predicting second-order probability distributions over outcomes, from which measures of epistemic (and aleatoric) uncertainty can be extracted. This paper presents novel theoretical insights of evidential deep learning, highlighting the difficulties in optimizing second-order loss functions and interpreting the resulting epistemic uncertainty measures. With a systematic setup that covers a wide range of approaches for classification, regression and counts, it provides novel insights into issues of identifiability and convergence in second-order loss minimization, and the relative (rather than absolute) nature of epistemic uncertainty measures.",
+  "impact": "Machine learning systems are increasingly prevalent in highstake application domains with a direct impact on humans, such as medical diagnostics, legal decisions, self-driving cars, fraud detection, natural disaster forecasting, etc. The profound consequences of inaccurate predictions in these areas emphasize the necessity of assessing the certainty of machine-learned forecasts. The current upswing in research on uncertainty quantification in the machine learning community underscores the recognition of this crucial aspect. Taking center stage is Evidential Deep Learning (EDL), a method gaining prominence in safety-critical domains. However, despite its growing utilization, the operational principles of EDL remain less than fully understood. Rather than solely focusing on developing superior techniques for specific datasets, we advocate for a meticulous examination of existing methods. Unraveling their limitations is not just an academic exercise, but it serves as a practical guide for decision-makers. Understanding when to employ these methods and when to exercise caution is paramount in navigating the intricate terrain of high-stakes predictions.",
+  "query_input": {
+    "scenario": "Autonomous driving perception under environmental novelty",
+    "issue": "Miscalibrated uncertainty fails to flag novel objects, risking unsafe maneuvers.",
+    "hazard": [
+      "Systematic miscalibration of evidential epistemic uncertainty estimates, causing overconfident predictions."
+    ],
+    "exposure": [
+      "Drivers and pedestrians in autonomous vehicle operating zones."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Road users lack awareness of and control over the vehicle’s internal uncertainty estimates, preventing them from intervening against overconfident perception errors.",
+    "impact": "Undetected novel objects cause collisions that result in physical injuries and fatalities among drivers and pedestrians.",
+    "dose_response": "Systematic miscalibration of evidential epistemic uncertainty estimates, through exposure of drivers and pedestrians in autonomous driving zones, triggers lack of awareness and control over these estimates, preventing intervention, leading to undetected novel objects causing injury and fatal collisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated evidential uncertainty in autonomous driving perception fails to alert drivers to novel objects, enabling overtrust and leading to collisions and pedestrian injuries."
+    ],
+    "vulnerability": [
+      "Driver overtrust in automation combined with absence of uncertainty-based alerts prevents safe human takeover."
+    ],
+    "impact": [
+      "Collisions with novel objects, pedestrian injuries, and erosion of public trust in autonomous vehicles."
+    ]
+  }
+}

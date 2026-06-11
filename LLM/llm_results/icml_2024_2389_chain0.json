@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2389",
+  "chain_index": 0,
+  "title": "Self-Rewarding Language Models",
+  "abstract": "We posit that to achieve superhuman agents, future models require superhuman feedback in order to provide an adequate training signal. Current approaches commonly train reward models from human preferences, which may then be bottlenecked by human performance level, and secondly these reward models require additional human preferences data to further improve. In this work, we study Self-Rewarding Language Models, where the language model itself is used via LLM-asa-Judge prompting to provide its own rewards during training. We show that during Iterative DPO training, not only does instruction following ability improve, but also the ability to provide high-quality rewards to itself. Fine-tuning Llama 2 70B on three iterations of our approach yields a model that outperforms many existing systems on the AlpacaEval 2.0 leaderboard, including Claude 2, Gemini Pro, and GPT-4 0613. While there is much left still to explore, this work opens the door to the possibility of models that can continually improve in both axes.",
+  "impact": "This work opens the door to the possibility of training LLMs such that they continually improve on both the instruction following ability and the reward modeling ability throughout each iteration, but studying how this affects outputs will be important. For such models, safety will be crucial, and future work should focus on this. In our experiments, the reward is not explicitly constrained by safety-related criteria. Therefore, a clear further avenue of study is to conduct safety evaluations - and to explore safety training within our framework. Reward models have been built exclusively for safety in existing systems (Touvron et al., 2023), and a promising avenue here would be to use the LLM-as-a- Judge procedure to evaluate for safety specifically in our self-rewarding training process. Given that we have shown that reward modeling ability improves over training iterations, this could mean in the best case that the safety of the model could potentially improve over time as well, with later iterations being able to catch and mitigate more challenging safety situations that earlier iterations cannot. From a broader perspective, this work could pave the way for methods that provide feedback that are more high-quality than human feedback, thereby creating training data that are more high-quality, and potentially safer, than what machines can do in the current paradigm.",
+  "query_input": {
+    "scenario": "Self-rewarding LLM alignment for open-source instruction models",
+    "issue": "Self-generated rewards may over-optimize superficial patterns, degrading true instruction-following.",
+    "hazard": [
+      "Self-rewarding LLMs create closed feedback loops where the model's own flawed preference judgments reinforce and amplify biases."
+    ],
+    "exposure": [
+      "Users of open-source chatbots that rely on self-aligned LLMs for response generation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users cannot distinguish superficial pattern improvements from genuine instruction-following, blindly trusting self-aligned model outputs.",
+    "impact": "Chatbot responses become systematically biased and substantively misleading, harming user decision-making and eroding trust.",
+    "dose_response": "Self-rewarding LLMs' closed feedback loops amplifying biases, through users of open-source chatbots relying on self-aligned models, trigger inability to distinguish superficial from genuine instruction-following, leading to systematically biased and misleading responses that harm decisions and erode trust."
+  },
+  "reference": {
+    "dose_response": [
+      "In self-rewarding alignment of open-source LLMs, bias amplification exposes users to flawed outputs; overtrust leads to degraded instruction-following and unsafe advice at scale."
+    ],
+    "vulnerability": [
+      "Users overtrust open-source chatbots, assuming safety, so subtly flawed outputs go uncorrected."
+    ],
+    "impact": [
+      "Degraded instruction-following causes miscommunication, unsafe advice, and biased decisions at scale."
+    ]
+  }
+}

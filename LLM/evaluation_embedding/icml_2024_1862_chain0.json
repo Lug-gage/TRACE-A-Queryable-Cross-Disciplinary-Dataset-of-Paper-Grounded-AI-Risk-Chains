@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1862",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.474,
+    "reference": "User profiling without transparency enables undetected bias amplification.",
+    "generated": "End users have no visibility into recommendation drivers and default to accepting suggested content as preference-aligned."
+  },
+  "impact": {
+    "similarity": 0.4462,
+    "reference": "Pervasive filter bubbles entrench polarization and reduce information diversity.",
+    "generated": "Users receive content inconsistent with their true preferences, eroding satisfaction and platform trust."
+  },
+  "dose_response": {
+    "similarity": 0.8825,
+    "reference": "In-context RL models' spurious coupling of actions to irrelevant features enables inappropriate content recommendations, which in the streaming scenario exposes end users to filter bubbles, leading to entrenched polarization and eroded autonomy.",
+    "generated": "In-context RL models' spurious coupling of action selection to irrelevant features, through end users' consumption of streaming recommendations, triggers blind acceptance of suggested content as preference-aligned, leading to satisfaction erosion and trust loss."
+  }
+}

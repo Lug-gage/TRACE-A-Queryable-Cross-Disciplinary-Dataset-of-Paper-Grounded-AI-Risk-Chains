@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2048",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the reliance on statistical independence assumptions in hypothesis tests leaving analysts blind to correlation-inflated effect sizes.",
+    "reference": "Statistical comparisons assume prompt independence, but correlated perturbations inflate effect sizes.",
+    "generated": "ML engineers rely on hypothesis tests assuming output independence, leaving them blind to correlation-inflated effect sizes."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Suboptimal deployment is covered, but 'business losses' is replaced by 'wasted engineering effort', which is a related but different type of harm.",
+    "reference": "Engineers deploy underperforming models, causing suboptimal system performance and business losses.",
+    "generated": "Incorrect model checkpoint selection from inflated effect sizes causes suboptimal deployment and wasted engineering effort."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain—correlations inflate effect sizes, mislead model selection, and cause deployment of suboptimal models—is preserved, even with added detail about blindness.",
+    "reference": "Inflated effect sizes from correlated perturbation outputs mislead model selection, causing engineers to deploy underperforming models and incur business losses.",
+    "generated": "Non-random output correlations making perturbation analysis unreliable, through ML engineers comparing checkpoints, triggers reliance on independence assumptions that blinds them to correlation-inflated effect sizes, leading to incorrect checkpoint selection, suboptimal deployment, and wasted effort."
+  }
+}

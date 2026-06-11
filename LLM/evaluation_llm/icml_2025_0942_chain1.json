@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both capture data imbalance causing reward overfitting to majority preferences, described as underrepresentation preventing equitable calibration",
+    "reference": "Chatbot reward overfitting to majority user preferences due to imbalanced private feedback data.",
+    "generated": "Minority user preferences are underrepresented in private federated training data, preventing equitable reward calibration across groups."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (minority users) present, but damage type only partially covered: generated says \"degrading service quality\" while reference specifies dismissive/insensitive responses and eroding trust",
+    "reference": "Minority users receive dismissive or culturally insensitive responses, eroding trust in service.",
+    "generated": "Chatbot responses skew toward majority preferences, degrading service quality for minority users and reinforcing inequity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc of federated DPO overfitting to majority from imbalanced feedback, causing skewed responses for minority users, is present in both",
+    "reference": "In customer service chatbot fine-tuning, federated DPO overfits to majority preferences, skewing responses for minority users, eroding trust and reinforcing social disparities.",
+    "generated": "Federated DPO with differential privacy, through customer interactions with chatbots fine-tuned on private feedback, triggers underrepresentation of minority preferences in reward calibration, causing skewed responses that degrade service quality for minority users and reinforce inequity."
+  }
+}

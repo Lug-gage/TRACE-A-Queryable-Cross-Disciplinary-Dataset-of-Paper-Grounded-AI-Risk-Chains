@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0947",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3807,
+    "reference": "Exploration incentives to reduce uncertainty may override fairness constraint adherence for protected groups.",
+    "generated": "False positive rate constraints restrict data collection on protected groups, perpetuating underrepresentation and uncorrected errors in training data."
+  },
+  "impact": {
+    "similarity": 0.5032,
+    "reference": "Short-term false positive spikes cause immediate harms like incorrect rejections or increased scrutiny for protected groups.",
+    "generated": "Protected individuals suffer immediate financial losses and credit score damage from erroneous loan approvals during exploration."
+  },
+  "dose_response": {
+    "similarity": 0.6722,
+    "reference": "Uneven data coverage during exploration overrides fairness constraints due to uncertainty incentives, exposing protected groups to temporary false positive spikes, leading to immediate harms like incorrect rejections and increased scrutiny.",
+    "generated": "Exploration-based selective label collection for fair classification, through constraints bounding false positive rates for protected class members, triggers restrictive data collection that perpetuates underrepresentation and uncorrected errors, leading to immediate financial losses and credit score damage from erroneous loan approvals during exploration."
+  }
+}

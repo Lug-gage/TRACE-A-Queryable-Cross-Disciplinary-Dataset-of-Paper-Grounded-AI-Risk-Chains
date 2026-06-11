@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0213",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated sensitivity of engineers relying on model plausibility and lacking methods to detect coordinated errors captures the reference's condition that internal consistency masks impossible pairings, causing them to treat outputs as valid.",
+    "reference": "Protein engineers treat joint generative outputs as validated co-designs due to internal consistency, masking physically impossible pairings.",
+    "generated": "Protein engineers lack methods to detect subtle coordinated errors in jointly generated sequence-structure pairs, relying on model plausibility."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (designed proteins) and damage types (non-functional and wasted experimental resources) are present, even though 'hazardous' is additional.",
+    "reference": "Systematic failure of designed proteins in experimental assays, wasting significant laboratory and computational resources.",
+    "generated": "Flawed protein designs waste experimental resources and may produce non-functional or hazardous biomolecules."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc of undetectable biases leading to inability to detect errors and then wasted resources is semantically equivalent to the reference's biases producing flawed but consistent pairs that mask errors and cause waste.",
+    "reference": "Undetectable distributional biases in joint flow models produce internally consistent but flawed sequence-structure pairs, which in co-design scenarios mask individual errors, leading to systematic experimental failure and wasted resources.",
+    "generated": "Discrete flow models' undetectable distributional biases, when protein engineers rely on them for end-to-end design, trigger an inability to detect coordinated sequence-structure errors, leading to wasted experimental resources and hazardous biomolecules."
+  }
+}

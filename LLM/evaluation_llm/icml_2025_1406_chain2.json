@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1406",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions overreliance on the tool (relying on claimed thoroughness) but misses the reference's 'bias toward confirmation'.",
+    "reference": "Researchers' bias toward confirmation and overreliance on AI-generated hypotheses.",
+    "generated": "Researchers lack independent verification capabilities, so they rely on the tool's claimed thoroughness without detecting omitted valid paths."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Wasted resources is covered, but 'delayed discovery' is replaced with 'overlooked breakthroughs' (missed rather than postponed), so only one damage type fully matches.",
+    "reference": "Wasted experimental resources and delayed discovery as incorrect paths are pursued.",
+    "generated": "Experimental resources are wasted chasing incorrect hypotheses while true breakthroughs are overlooked."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal chain from policy overfitting to missed paths to wasted resources is present, but the reference's link through both confirmation bias and overreliance is reduced to only overreliance, missing the confirmation bias mechanism.",
+    "reference": "Policy overfits to imperfect discriminator, causing AI to miss valid reasoning paths, which in scientific reasoning tool scenario exposes researchers, leading to wasted resources and delayed discovery due to confirmation bias and overreliance.",
+    "generated": "Policy overfitting to an imperfect discriminator, causing tree search to miss valid paths, through researchers using LLM tools to guide experiments, triggers reliance on claimed thoroughness without detecting omitted paths, leading to wasted resources chasing incorrect hypotheses while overlooking breakthroughs."
+  }
+}

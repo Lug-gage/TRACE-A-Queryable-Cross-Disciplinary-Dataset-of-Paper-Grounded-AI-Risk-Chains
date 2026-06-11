@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2175",
+  "chain_index": 1,
+  "title": "Counting atoms faster policy-based nuclear magnetic resonance pulse sequencing for atomic abundance measureme",
+  "abstract": "Quantifying the elemental composition of a material is a general scientific challenge with broad relevance to environmental sustainability. Existing techniques for the measurement of atomic abundances generally require laboratory conditions and expensive equipment. As a result, they cannot be deployed in situ without significant capital investment, limiting their proliferation. Measurement techniques based on nuclear magnetic resonance (NMR) hold promise in this setting due to their applicability across the periodic table, their non-destructive manipulation of samples, and their amenability to in silico optimization. In this work, we learn policies to modulate NMR pulses for rapid atomic abundance quantification. Our approach involves three interoperating agents which (1) rapidly align nuclear spins for measurement, (2) quickly force relaxation to equilibrium, and (3) toggle control between agents (1) and (2) to minimize overall measurement time. To demonstrate this technique, we consider a specific use case of low-magnetic-field carbon-13 quantification for low-cost, portable analysis of foodstuffs and soils. We find significant performance improvements relative to traditional NMR pulse sequencing, and discuss limitations on the applicability of this approach.",
+  "impact": "This work presents a novel reinforcement learning-based approach to optimize nuclear magnetic resonance (NMR) spectroscopy for the purpose of atomic abundance measurement. We demonstrate that utilizing reinforcement learning to optimize the pulse sequence of these NMR systems can provide accurate measurements while reducing acquisition time. This approach has applications in environmental monitoring, materials science, and chemical analysis by making NMR-based sample property measurements more rapid, and allowing measurement to occur in-situ (Vyalikh et al., 2024; Simpson et al., 2018). There are several potential implications of this work. First, the configuration of our simulator as a low-field NMR spectroscope means that these techniques can be applied to systems costing several hundred times less than a traditional NMR spectroscope (Michal, 2020). Second, the demonstrated efficacy of our methods within the broader NMR framework may build interest in machine learning-based pulse sequencing, revisiting and advancing prior discoveries in the field which relied on model-predictive control (Khaneja et al., 2005). Nontrivial applications of interest for our setup include rapidly quantifying the water-soluble carbon content of soils, which could have significant implications for nature-based carbon crediting systems, and enable more accurate and scalable verification of soil carbon sequestration. Due to its modularity, in agricultural settings this approach can additionally support data-driven optimization of fertilizer application and other precision farming techniques, improving food system sustainability and reducing its resource consumption. While this work demonstrates promising results, several limitations must be considered. First, all experiments were conducted in simulation using a simplified dataset, meaning that real-world implementation will likely present additional challenges. Deploying this approach in a production NMR system would require significant computational resources and energy consumption to train and deploy, i.e. it has an environmental footprint which should be transparently documented. Additionally, the accuracy of this method depends on training the policy over a sufficiently diverse distribution of samples. If the model encounters out-of-distribution samples, its measurements could become unreliable, posing potential risks in applications such as carbon crediting and precision farming. Inaccurate carbon sequestration estimates could lead to financial misallocation in carbon markets, while errors in soil composition analysis might result in improper fertilizer application, negatively impacting both crop yields and environmental sustainability. Ensuring robustness across a broad range of sample variations will therefore be critical for the practical deployment of this method.",
+  "query_input": {
+    "scenario": "Industrial on-line elemental analysis for alloy production",
+    "issue": "Miscalibration of pulse modulation yields incorrect alloy composition readings.",
+    "hazard": [
+      "RL-trained pulse sequences from simulated spectra can mis-characterize spin relaxation under real low-field conditions, distorting atomic quantification."
+    ],
+    "exposure": [
+      "Quality control engineers using automated NMR on production lines."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Engineers lack redundant measurement methods and real-time calibration checks, so they trust automated NMR output that may mischaracterize real low-field spin relaxation.",
+    "impact": "Non-conforming alloy batches are produced, causing material scrap, production delays, and potential structural failures in end-use components.",
+    "dose_response": "RL-trained pulse sequences that mis-characterize spin relaxation under low-field conditions, through QC engineers using automated NMR, triggers their lack of redundant calibration, causing trust in inaccurate output and leading to non-conforming alloy batches, scrap, delays, and structural failures."
+  },
+  "reference": {
+    "dose_response": [
+      "RL-trained pulse sequences mis-characterize spin relaxation, enabling miscalibrated pulse modulation, which when trusted without real-time audits by QC engineers, leads to faulty batches causing mechanical failures, recalls, and reputational damage."
+    ],
+    "vulnerability": [
+      "Reliance on black-box RL optimization in production settings without real-time process audits propagates unseen errors."
+    ],
+    "impact": [
+      "Faulty alloy batches lead to mechanical failures, recalls, and reputational damage."
+    ]
+  }
+}

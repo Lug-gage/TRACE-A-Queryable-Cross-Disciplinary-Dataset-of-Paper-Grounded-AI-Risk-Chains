@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2536",
+  "chain_index": 0,
+  "title": "Textural or Textual How Vision-Language Models Read Text in Images",
+  "abstract": "Typographic attacks are often attributed to the ability of multimodal pre-trained models to fuse textual semantics into visual representations, yet the mechanisms and locus of such interference remain unclear. We examine whether such models genuinely encode textual semantics or primarily rely on texture-based visual features. To disentangle orthographic form from meaning, we introduce the ToT dataset, which includes controlled word pairs that either share semantics with distinct appearances (synonyms) or share appearance with differing semantics (paronyms). A layerwise analysis of Intrinsic Dimension (ID) reveals that early layers exhibit competing dynamics between orthographic and semantic representations. In later layers, semantic accuracy increases as ID decreases, but this improvement largely stems from orthographic disambiguation. Notably, clear semantic differentiation emerges only in the final block, challenging the common assumption that semantic understanding is progressively constructed across depth. These findings reveal how current vision-language models construct text representations through texture-dependent processes, prompting a reconsideration of the gap between visual perception and semantic understanding. The code is available at: https://github. com/Ovsia/Textural-or-Textual",
+  "impact": "This paper investigates how multimodal vision models process textual semantics, revealing that early layers rely more on visual textures than on textual meaning, which makes these models vulnerable to typographic attacks. By shedding light on the internal mechanisms of these models, this work advances the transparency and accountability of machine learning systems. It contributes to the broader effort to make AI more interpretable and aligned with societal values, particularly as these systems are increasingly deployed in decision-making processes. From a societal perspective, the vulnerabilities exposed in this research have important implications for the safety and fairness of AI systems in real-world applications. Typographic attacks could lead to unintended consequences in fields such as law enforcement, healthcare, or finance, where misinterpretations could disproportionately affect vulnerable groups. Ensuring that models are both transparent and secure is crucial for their responsible integration into these high-impact areas.",
+  "query_input": {
+    "scenario": "Autonomous driving systems using VLM text reading to interpret road signs",
+    "issue": "Adversarial sign text triggers false classification and unsafe maneuver decisions by the vehicle.",
+    "hazard": [
+      "Vision-language models that read and semantically interpret text in images create an attack surface for adversarial text manipulations that exploit orthographic, semantic, or perceptual ambiguities."
+    ],
+    "exposure": [
+      "Drivers and pedestrians exposed to AV navigation errors from misread road signs."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Drivers and pedestrians have no real-time means to verify or override AV sign interpretations, relying completely on the VLM's accuracy.",
+    "impact": "Incorrect AV maneuvers cause collisions resulting in injury or death to drivers, passengers, and pedestrians.",
+    "dose_response": "Vision-language models interpreting road signs enable adversarial text manipulations that, through drivers’ and pedestrians’ exposure to misread sign errors and their inability to verify interpretations over time, cause collisions leading to injury or death."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial text manipulations exploiting VLM ambiguities enable false road sign classification, which in autonomous driving exposes drivers and pedestrians to navigation errors, leading to collisions and eroded public trust."
+    ],
+    "vulnerability": [
+      "Over-reliance on VLM text reading without redundant sensor fusion creates single point of failure for safety-critical sign interpretation.",
+      "Lack of driver oversight in Level 4+ autonomy removes human correction of obvious sign misreads."
+    ],
+    "impact": [
+      "Collisions causing injury or death to pedestrians and vehicle occupants.",
+      "Erosion of public trust in autonomous vehicle safety, delaying adoption and regulatory approval."
+    ]
+  }
+}

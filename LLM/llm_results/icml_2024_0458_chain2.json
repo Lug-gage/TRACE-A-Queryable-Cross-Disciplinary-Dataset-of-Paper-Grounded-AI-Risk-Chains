@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0458",
+  "chain_index": 2,
+  "title": "Don’t Label Twice Quantity Beats Quality when Comparing Binary Classifiers on a Budget",
+  "abstract": "We study how to best spend a budget of noisy labels to compare the accuracy of two binary classifiers. It’s common practice to collect and aggregate multiple noisy labels for a given data point into a less noisy label via a majority vote. We prove a theorem that runs counter to conventional wisdom. If the goal is to identify the better of two classifiers, we show it’s best to spend the budget on collecting a single label for more samples. Our result follows from a non-trivial application of Cram ́er’s theorem, a staple in the theory of large deviations. We discuss the implications of our work for the design of machine learning benchmarks, where they overturn some time-honored recommendations. In addition, our results provide sample size bounds superior to what follows from Hoeffding’s bound.",
+  "impact": "This paper presents work whose goal is to advance the field of Machine Learning. There are many potential societal consequences of our work, none which we feel must be specifically highlighted here. That said, we would like to reiterate, that using single labels is only optimal for classifier comparison, once it has been established that each annotator label is more likely to be correct than not. If that is not the case, benchmark results can easily become misleading and in the worst case anti-correlated with actual task performance. As discussed in Section 5, collecting multiple labels for single data points during benchmark conceptualization and analyzing different annotators’ disagreements can play an important role for better understanding the task definition, improving annotator instructions, and ensuring a sufficiently diverse and representative annotator pool.",
+  "query_input": {
+    "scenario": "Binary classifier comparison with single noisy labeling",
+    "issue": "Single noisy label per sample provides no redundancy to detect or correct label errors, directly corrupting test statistics.",
+    "hazard": [
+      "Statistical testing for classifier comparison yields inflated Type I error rates under label noise, violating nominal significance guarantees."
+    ],
+    "exposure": [
+      "Researchers comparing classifiers on singly-annotated datasets"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "No redundancy to detect label errors in singly-annotated test sets leaves classifier comparisons susceptible to noise-induced bias.",
+    "impact": "Erroneous comparisons propagate, causing adoption of inferior classifiers and corruption of machine learning benchmarks.",
+    "dose_response": "Inflated Type I error rates under label noise, through researchers comparing classifiers on singly-annotated datasets, trigger no redundancy to detect label errors, leaving comparisons susceptible to noise-induced bias, leading to adoption of inferior classifiers and corruption of machine learning benchmarks."
+  },
+  "reference": {
+    "dose_response": [
+      "Inflated Type I error rates from single noisy labels directly corrupt test statistics, which in binary classifier comparison exposes researchers to adopt classifiers exploiting noise patterns, leading to reproducibility crises and cascading downstream errors."
+    ],
+    "vulnerability": [
+      "Single annotation per sample eliminates any signal for detecting label errors.",
+      "Researchers trust inherited dataset labels without auditing for noise.",
+      "Publication incentives reward novel methods over rigorous evaluation, discouraging label verification."
+    ],
+    "impact": [
+      "Adoption of classifiers that exploit label noise patterns rather than true signal.",
+      "Reproducibility crises when re-annotation reveals original comparisons were artifacts of label error.",
+      "Cascading errors in downstream tasks that rely on the erroneously selected model."
+    ]
+  }
+}

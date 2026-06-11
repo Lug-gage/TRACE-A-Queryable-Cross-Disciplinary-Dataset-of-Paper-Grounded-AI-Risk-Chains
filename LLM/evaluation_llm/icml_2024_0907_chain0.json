@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0907",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Repeated API outputs enabling statistical inference of watermark (reverse-engineering) matches key inference from output distribution.",
+    "reference": "Watermark key can be inferred from output token distribution after many queries.",
+    "generated": "Watermark patterns become statistically distinguishable through repeated API outputs, enabling reverse-engineering without detection."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Undetectable AI content eroding trust in provenance tracking systems matches disinformation eroding trust in digital content provenance, covering both affected party and damage type.",
+    "reference": "Undetectable AI-generated disinformation erodes trust in digital content provenance.",
+    "generated": "Undetectable AI-generated content facilitates deception at scale, eroding trust in provenance tracking systems."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain: repeated queries → reverse-engineering → undetectable AI content → eroded provenance trust matches the reference's arc of key inference defeating tracking and eroding trust.",
+    "reference": "LLM watermark stealing attacks enable key inference from API outputs, defeating providers' tracking and allowing undetectable AI disinformation that erodes provenance trust.",
+    "generated": "LLM watermarking's vulnerability to attacks exploiting algorithmic weaknesses, through repeated API queries, triggers statistically distinguishable patterns enabling reverse-engineering, leading to undetectable AI content that erodes trust in provenance tracking."
+  }
+}

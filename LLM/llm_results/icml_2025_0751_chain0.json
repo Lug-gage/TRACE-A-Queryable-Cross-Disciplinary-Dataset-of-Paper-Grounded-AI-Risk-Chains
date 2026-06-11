@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 0,
+  "title": "Learning Condensed Graph via Differentiable Atom Mapping for Reaction Yield Prediction",
+  "abstract": "Yield of chemical reactions generally depends on the activation barrier, i.e., the energy difference between the reactant and the transition state. Computing the transition state from the reactant and product graphs requires prior knowledge of the correct node alignment (i.e., atom mapping), which is not available in yield prediction datasets. In this work, we propose YIELDNET, a neural yield prediction model, which tackles these challenges. Here, we first approximate the atom mapping between the reactants and products using a differentiable node alignment network. We then use this approximate atom mapping to obtain a noisy realization of the condensed graph of reaction (CGR), which is a supergraph encompassing both the reactants and products. This CGR serves as a surrogate for the transition state graph structure. The CGR embeddings of different steps in a multi-step reaction are then passed into a transformer-guided reaction path encoder. Our experiments show that YIELDNET can predict the yield more accurately than the baselines. Furthermore, the model is trained only under the distant supervision of yield values, without requiring finegrained supervision of atom mapping.",
+  "impact": "This paper offers a valuable tool optimizing reaction yields. It can be used in prediction of yield when the datasets contain molecular graph structures. However, it is imperative to acknowledge the possibility of incorrect predictions by any yield prediction model, which demands human interventions. Additionally, misuse of the model may lead to predictions for undesirable compounds, potentially causing adverse societal consequences. Careful attention to ethical guidelines is paramount to ensure a responsible and positive impact on the model.",
+  "query_input": {
+    "scenario": "Automated retrosynthesis planning in drug discovery",
+    "issue": "System selects a low-yield pathway due to overestimated yield from misaligned atom mapping.",
+    "hazard": [
+      "Differentiable node alignment in condensed reaction graphs may introduce systematic mapping errors leading to biased yield and activation barrier predictions."
+    ],
+    "exposure": [
+      "Medicinal chemists relying on AI-driven synthesis planners"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Medicinal chemists lack independent atom-mapping verification, forcing uncritical reliance on AI yield predictions.",
+    "impact": "Pursuit of low-yield synthetic routes wastes experimental resources and delays drug candidate progression.",
+    "dose_response": "Differentiable node alignment in condensed reaction graphs, through medicinal chemists relying on AI-driven synthesis planners, triggers uncritical reliance on AI yield predictions without independent atom-mapping verification, leading to wasted experimental resources and delayed drug candidate progression from low-yield routes."
+  },
+  "reference": {
+    "dose_response": [
+      "Differentiable node alignment errors cause biased yield predictions, which in automated retrosynthesis exposes medicinal chemists to overestimate yields, leading to costly failures and safety risks when AI uncertainty is not communicated."
+    ],
+    "vulnerability": [
+      "High trust in AI-generated synthesis plans due to absence of uncertainty communication.",
+      "Organizational time pressure discourages manual verification of AI-proposed yields.",
+      "Regulatory gap: no requirement for AI tools to disclose prediction confidence or error rates."
+    ],
+    "impact": [
+      "Costly experimental failures and wasted materials from following flawed synthesis plans.",
+      "Delayed drug development timelines due to iterative troubleshooting of unviable routes.",
+      "Safety risks from attempting hazardous reactions at scale based on false high-yield predictions."
+    ]
+  }
+}

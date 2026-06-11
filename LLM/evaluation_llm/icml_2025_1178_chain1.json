@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated refers to researchers' trust in agreement as a vulnerability, whereas the reference specifies that LLM judges sharing architectures and training produce correlated blind spots. These are different sensitivity conditions.",
+    "reference": "LLM judges sharing architectures and training paradigms produce correlated blind spots, overestimating evaluation consensus.",
+    "generated": "Researchers’ trust in inter-model agreement as a signal of correctness, without verifying error independence across LLM judges."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions overconfident, misleading evaluations that misguide deployment choices, which partially aligns with the risk of deploying harmful systems, but it does not explicitly state that flawed models are mistakenly deemed safe and deployed.",
+    "reference": "Flawed models mistakenly deemed safe, risking deployment of harmful or biased systems.",
+    "generated": "Hidden systematic failures inflate agreement scores, producing overconfident and misleading model evaluations that misguide research and deployment choices."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc traces correlated errors through LLM judge use to inflated agreement and misleading evaluations, but it stops before the reference's final step of leading to deployment of flawed models as safe, thereby missing a causal link.",
+    "reference": "Correlated errors cause systematic failure alignment, which when researchers use LLM judges inflates inter-evaluator agreement, leading to deployment of flawed models as safe.",
+    "generated": "Correlated errors in LLM predictions, through researchers using LLM judges to evaluate outputs, triggers trust in inter-model agreement as a correctness signal unchecked for error independence, leading to hidden systematic failures that inflate agreement scores and produce overconfident, misleading evaluations."
+  }
+}

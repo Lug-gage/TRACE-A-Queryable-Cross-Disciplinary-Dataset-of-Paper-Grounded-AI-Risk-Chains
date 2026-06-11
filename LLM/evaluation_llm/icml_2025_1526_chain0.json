@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1526",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference condition is workers' inability to anticipate paths from simulation gaps; generated describes lack of real-time safety monitoring, a related but different sensitivity condition.",
+    "reference": "Workers cannot anticipate robot paths because simulation fails to capture real-world contact dynamics.",
+    "generated": "Shared workspace lacking real-time safety monitoring for out-of-distribution robot dynamics"
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (workers) is present and physical injury is covered, but psychological stress and erosion of human-robot trust from the reference are omitted.",
+    "reference": "Physical injury and psychological stress from unexpected collisions, deteriorating human-robot trust.",
+    "generated": "Assembly line workers sustain traumatic injuries from robot arm collisions"
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc is simulation biases → unpredictable collisions → injury/trust erosion; generated inserts 'triggers absence of real-time safety monitoring' as a causal step, altering the mechanism.",
+    "reference": "Data scaling entrenches simulation biases causing out-of-distribution failures, which in assembly leads to unpredictable robot arm collisions that physically injure workers and erode trust.",
+    "generated": "Data scaling for sim-to-real transfer entrenches simulation biases causing unanticipated robot failures, which, through assembly line workers' close interaction, triggers the absence of real-time safety monitoring, leading to traumatic injuries from robot arm collisions."
+  }
+}

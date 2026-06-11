@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated describes authors' inability to verify or contest causal graphs, leaving them defenseless against misspecification errors, which covers the reference's sensitivity to causal assumptions mislabeling variables as fair and embedding hidden biases.",
+    "reference": "Causal assumptions may mislabel legitimate background variables as fair, embedding hidden biases.",
+    "generated": "Authors cannot verify or contest the causal graph used in fairness optimization, making them defenseless against misspecification errors."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (authors from certain institutions/geographies) is present, but the damage type differs: reference mentions institutional barriers to resubmit/appeal, while generated mentions deepening publication inequities and career disadvantages.",
+    "reference": "Rejected authors from underrepresented regions face institutional barriers to resubmit or appeal.",
+    "generated": "Authors from certain institutions or geographies are systematically desk-rejected, deepening publication inequities and career disadvantages."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated causal arc (applied to sensitive attributes → inability to contest misspecified graphs → systematic desk-rejection) does not match the reference's arc of model uncertainty enabling mislabeling exposing sensitive attributes leading to misguided fairness interventions that erode trust and reinforce exclusion; the key links of misguided interventions and trust erosion are absent, and the pathway is different.",
+    "reference": "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable misspecified causal graphs to mislabel variables, which in the fairness-aware desk-rejection scenario exposes authors with sensitive attributes, leading to misguided fairness interventions eroding trust and reinforcing exclusion.",
+    "generated": "Optimization-based desk-rejection mechanisms, when applied to authors with sensitive attributes, trigger inability to contest misspecified causal graphs, leading to systematic desk-rejection of certain institutions and geographies, deepening publication inequities and career disadvantages."
+  }
+}

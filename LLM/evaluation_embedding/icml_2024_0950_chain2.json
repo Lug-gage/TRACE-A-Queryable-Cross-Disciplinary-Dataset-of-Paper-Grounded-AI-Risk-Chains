@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0950",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.704,
+    "reference": "Crowdworkers anchoring on LLM judge ratings, suppressing independent judgment.",
+    "generated": "Non-expert crowdworkers lack independent verification skills, making them reliant on LLM judge cues and unable to detect systematic biases."
+  },
+  "impact": {
+    "similarity": 0.6079,
+    "reference": "Skewed crowdsourced evaluations propagate misinformation as verified answers.",
+    "generated": "Incorrect answer selection by crowdworkers corrupts evaluation data, reinforcing model errors and degrading alignment quality."
+  },
+  "dose_response": {
+    "similarity": 0.7444,
+    "reference": "Systematic LLM biases skew answer ratings, which crowdworkers anchor on suppressing independent judgment, causing skewed evaluations that propagate misinformation as verified answers.",
+    "generated": "LLM-based debate judges' systematic biases and criterion confusion, through crowdworkers evaluating debate-produced answers, triggers non-expert reliance on judge cues, leading to incorrect answer selection that corrupts evaluation data and degrades alignment quality."
+  }
+}

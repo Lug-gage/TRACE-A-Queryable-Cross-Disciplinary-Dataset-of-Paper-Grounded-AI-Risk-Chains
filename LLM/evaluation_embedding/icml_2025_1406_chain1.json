@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1406",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6026,
+    "reference": "Operators trust AI-generated plans completely, deferring to algorithmic outputs without verification.",
+    "generated": "Operators lack independent verification capability to identify when the AI planner misses superior logistics routes"
+  },
+  "impact": {
+    "similarity": 0.6242,
+    "reference": "Inefficient resource use, increased costs, and potential supply chain disruptions.",
+    "generated": "Resource misallocation causes wasted fuel, delayed deliveries, and higher operational costs"
+  },
+  "dose_response": {
+    "similarity": 0.8612,
+    "reference": "Policy overfits to imperfect discriminator, causing tree search to miss valid reasoning paths, which in logistics planning scenario exposes operators, leading to inefficient resource use and increased costs due to complete trust in AI.",
+    "generated": "Policy overfits to an imperfect discriminator, systematically missing valid paths; operators relying on AI planners lack verification, causing misallocated resources that waste fuel, delay deliveries, and raise costs."
+  }
+}

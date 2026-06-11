@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1114",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6524,
+    "reference": "Users cannot distinguish safe from adversarial inputs, enabling deception.",
+    "generated": "End-users lack the technical means to detect that harmless-looking assistant outputs are maliciously crafted via combined models."
+  },
+  "impact": {
+    "similarity": 0.3561,
+    "reference": "User trust in AI assistance declines after encountering jailbroken outputs.",
+    "generated": "Users act on malicious code, explicit images, or manipulative tweets, suffering security breaches, identity theft, and personal exploitation."
+  },
+  "dose_response": {
+    "similarity": 0.601,
+    "reference": "Enhanced cross-model transferability allows adversaries to craft jailbreaking prompts that bypass safety, causing chatbots to output harmful or sensitive content, leading to trust decline and information leakage.",
+    "generated": "Transferable adversarial examples enabling black-box attacks via combined models and decomposition, delivered through LLM assistants, exploit end-users' inability to detect malicious outputs, leading to actions on malicious code, explicit images, or manipulative tweets, resulting in breaches, identity theft, or exploitation."
+  }
+}

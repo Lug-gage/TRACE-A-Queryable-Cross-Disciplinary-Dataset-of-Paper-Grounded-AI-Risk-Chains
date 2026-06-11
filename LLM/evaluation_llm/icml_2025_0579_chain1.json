@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Absence of effective security evaluation for quantized artifacts is present: reference describes pipelines without evaluation, generated states developers lack detection methods and full-precision checks are insufficient.",
+    "reference": "Automated CI/CD pipelines integrate models without security evaluation of quantized artifacts.",
+    "generated": "Developers lack methods to detect malicious behaviors encoded in quantization gaps; full-precision checks are insufficient."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (end users) and the damage type (malicious/backdoored content) match, describing harm from injected malicious outputs.",
+    "reference": "Large-scale distribution of backdoored content to users of popular applications.",
+    "generated": "Applications inject malicious content into outputs, harming end users and causing security incidents."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal logic is the same: quantization ambiguity allows undetectable malicious behaviors when developers embed quantized LLMs, leading to applications serving harmful content to users.",
+    "reference": "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a developer integrating a pre-quantized LLM into a memory-efficient application pipeline exposes application developers embedding quantized LLMs in downstream services, leading to large-scale distribution of backdoored content to users of popular applications.",
+    "generated": "Quantization mapping ambiguity, through application developers embedding quantized LLMs in downstream services, triggers undetectable malicious behaviors in quantization gaps, leading to applications injecting malicious content, harming end users and causing security incidents."
+  }
+}

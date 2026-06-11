@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2163",
+  "chain_index": 1,
+  "title": "Long-Term TalkingFace Generation via Motion-Prior Conditional Diffusion Model",
+  "abstract": "Recent advances in conditional diffusion models have shown promise for generating realistic TalkingFace videos, yet challenges persist in achieving consistent head movement, synchronized facial expressions, and accurate lip synchronization over extended generations. To address these, we introduce the Motion-priors Conditional Diffusion Model (MCDM), which utilizes both archived and current clip motion priors to enhance motion prediction and ensure temporal consistency. The model consists of three key elements: (1) an archived-clip motion-prior that incorporates historical frames and a reference frame to preserve identity and context; (2) a present-clip motion-prior diffusion model that captures multimodal causality for accurate predictions of head movements, lip sync, and expressions; and (3) a memory-efficient temporal attention mechanism that mitigates error accumulation by dynamically storing and updating motion features. We also introduce the TalkingFace-Wild dataset, a multilingual collection of over 200 hours of footage across 10 languages. Experimental results demonstrate the effectiveness of MCDM in maintaining identity and motion continuity for long-term TalkingFace generation.",
+  "impact": "This paper presents the MCDM model, designed to enhance identity and temporal consistency in long-term TalkingFace generation. While MCDM contributes to the advancement of generative modeling, we recognize the potential ethical concerns, including the risks of misuse for creating deceptive content or spreading misinformation. We emphasize the importance of transparency in AI development and support the integration of detection frameworks to mitigate these risks. In alignment with ongoing efforts in responsible AI, we aim to ensure that the benefits of our work are balanced with its ethical implications, promoting safe and constructive applications in society.",
+  "query_input": {
+    "scenario": "Lifelike AI-powered digital human for entertainment",
+    "issue": "Unrealistic or inconsistent facial expressions may convey unintended emotional cues, misleading audience.",
+    "hazard": [
+      "Error accumulation in sequential diffusion-based talking face generation degrades temporal consistency and lip synchronization."
+    ],
+    "exposure": [
+      "Viewers of AI-generated digital human videos in movies or social media."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Human viewers automatically interpret facial movements as emotional signals, so they cannot filter out synthetic inconsistencies as artificial artifacts.",
+    "impact": "Audience misinterprets unintended emotional cues, distorting message reception and enabling emotional manipulation.",
+    "dose_response": "Error accumulation in sequential diffusion-based talking face generation degrades temporal consistency and lip sync; when viewers see AI digital human videos, this triggers automatic emotional interpretation of inconsistent facial movements, leading to misinterpretation of emotional cues, distorting reception, enabling manipulation."
+  },
+  "reference": {
+    "dose_response": [
+      "Error accumulation in diffusion-based generation enables inconsistent expressions, which, through viewers' reliance on facial cues, in entertainment scenarios leads to emotional misinterpretation and reduced trust."
+    ],
+    "vulnerability": [
+      "Viewers rely on facial cues to determine emotional tone, so mismatches distort narrative intent.",
+      "High realism expectations amplify the negative impact of inconsistent expressions."
+    ],
+    "impact": [
+      "Emotional misinterpretation leads to audience confusion and reduced immersion.",
+      "Uncanny expressions decrease affinity and trust in the character."
+    ]
+  }
+}

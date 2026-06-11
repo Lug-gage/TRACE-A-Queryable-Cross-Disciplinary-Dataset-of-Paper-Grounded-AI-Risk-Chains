@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0979",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes resource-limited edge devices lacking fallback verification, while generated describes user dependence without error detection/mitigation ability. Related condition but different target (users vs. devices).",
+    "reference": "Resource-limited edge devices with no fallback verification for embedding quality",
+    "generated": "Users depend on accurate graph-based recommendations without the ability to detect or mitigate embedding errors from coarsening."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers user frustration (poor decisions, reduced trust) but entirely omits the leakage of sensitive data through mis-grouping mentioned in reference.",
+    "reference": "Degraded recommendations cause user frustration and potential leakage of sensitive data through mis-grouping",
+    "generated": "Users experience degraded recommendation quality, leading to poor decision-making and reduced trust in the application."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated captures coarsening discarding connectivity leading to embedding errors and degraded recommendations, but misses the translation through memory-efficient GNNs on edge devices and the resulting potential data leakage due to lacking verification.",
+    "reference": "Coarsening subgraphs into node representations discards fine-grained connectivity, introducing artifacts that in memory-efficient GNNs on edge devices cause degraded recommendations and potential data leakage when resource-limited devices lack verification.",
+    "generated": "Coarsening subgraphs into node representations discards fine-grained connectivity, introducing embedding inaccuracies that, through edge-based inference applications, trigger users' dependence on accurate recommendations without error detection, leading to degraded recommendation quality, poor decisions, and reduced trust."
+  }
+}

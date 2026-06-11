@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_1022",
+  "chain_index": 0,
+  "title": "Implicit meta-learning may lead language models to trust more reliable sources",
+  "abstract": "We demonstrate that LLMs may learn indicators of document usefulness and modulate their updates accordingly. We introduce random strings (“tags”) as indicators of usefulness in a synthetic fine-tuning dataset. Fine-tuning on this dataset leads to implicit meta-learning (IML): in further fine-tuning, the model updates to make more use of text that is tagged as useful. We perform a thorough empirical investigation of this phenomenon, finding (among other things) that (i) it occurs in both pretrained LLMs and those trained from scratch, as well as on a vision task, and (ii) larger models and smaller batch sizes tend to give more IML. We also use probing to examine how IML changes the way models store knowledge in their parameters. Finally, we reflect on what our results might imply about capabilities, risks, and controllability of future AI systems.",
+  "impact": "Potential implications for the (un)controllability of AI systems. Being able to teach models which sources are reliable or not could be hugely useful in the fight against misinformation, and could potentially help mitigate biases to the extent that we’re able to generate unbiased training data and fine-tune on it as a reliable source. These potential benefits may be outweighed by risks to both misinformation and bias, however: models might be easily poisoned (intentionally or accidentally) by consistent-seeming support from prevalent data such as conspiracy theories or common misunderstandings; similarly for biases that are regrettably common or even dominant in society. Potential implications for the safety of advanced AI systems. Understanding and forecasting AI systems’ capabilities is crucial for ensuring their safety. Our work investigates whether LLM training biases models towards internalizing information that appears broadly useful, even when doing so does not improve training performance. Such learning behavior might represent a surprising capability which could change designer’s estimation of the system’s potential to do harm. In particular, we believe IML is a plausible mechanisms by which LLMs might come to believe true facts about the world. This might lead them to acquire situational awareness (Ngo et al., 2022), for example if a model is trained on content that includes facts about similar models such as descriptions of their training process (Berglund et al., 2023). Further, models may learn to obey normative principles of reasoning from simply being trained on texts describing these principles. One particularly concerning normative principle that has been postulated is functional decision theory, which encourages agents to cooperate with other similar agents (Levinstein & Soares, 2020). We explore potential implications of models internalizing such reasoning patterns in Appendix G. Overall, the fact that models can use information from their training data in a way as sophisticated as IML might be a reason in favor of removing particular types of information from the training data - e.g information that could be especially helpful to malicious actors, or information on how these models might be evaluated and monitored (in case of concerns about the models’ situational awareness). Author contributions Dmitrii Krasheninnikov led the project, implemented and ran the majority of the language model (LM) experiments, and wrote most of the paper. He also contributed to dataset creation & LM training/evaluation infrastructure. Egor Krasheninnikov implemented most of the LM training/evaluation infrastructure, and contributed to dataset creation, running the experiments, and writing the paper. Bruno Mlodozeniec implemented and ran the MNIST experiment in §4.2, and contributed to writing the paper. Tegan Maharaj helped with a substantial rewrite of the paper aimed at making it easier to understand. David Krueger advised the project, and significantly contributed to writing the paper. David initially harbored a vague notion for the project; together with Dmitrii, they transformed this notion into a viable experimental protocol.",
+  "query_input": {
+    "scenario": "LLM-based fact-verification and QA systems",
+    "issue": "Users trust overconfident or underconfident factual claims from LLMs",
+    "hazard": [
+      "Calibrated confidence estimates that may differ from true likelihoods"
+    ],
+    "exposure": [
+      "Users relying on LLM-generated factual answers in high-stakes domains"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack independent verification means and default to trusting the model's expressed confidence, amplifying susceptibility to miscalibrated claims.",
+    "impact": "Misguided high-stakes decisions cause individual harm, institutional failure, and widespread erosion of trust in AI-assisted factuality.",
+    "dose_response": "Calibrated confidence estimates that may differ from true likelihoods, through user reliance on LLM factual answers in high-stakes domains, triggers lack of independent verification and default trust, leading to misguided decisions, harm, failure, and eroded trust in AI factuality."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated confidence estimates enable overconfident or underconfident LLM outputs, which in high-stakes domains cause users to overrely on incorrect claims or dismiss accurate ones, leading to decision errors."
+    ],
+    "vulnerability": [
+      "Users lack domain expertise to independently verify LLM factual claims.",
+      "Natural language uncertainty expressions are misinterpreted as hedging rather than reliability signals.",
+      "High-stakes decision contexts amplify reliance on authoritative-sounding AI outputs."
+    ],
+    "impact": [
+      "Overreliance on incorrect LLM outputs leads to consequential decision errors.",
+      "Underreliance on correct but uncertainly-phrased outputs causes users to dismiss accurate information.",
+      "Erosion of appropriate trust calibration degrades overall human-AI team performance."
+    ]
+  }
+}

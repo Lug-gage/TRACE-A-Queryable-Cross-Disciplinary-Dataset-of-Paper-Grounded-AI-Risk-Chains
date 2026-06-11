@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 0,
+  "title": "Uncertainty Estimation by Density Aware Evidential Deep Learning",
+  "abstract": "Evidential deep learning (EDL) has shown remarkable success in uncertainty estimation. However, there is still room for improvement, particularly in out-of-distribution (OOD) detection and classification tasks. The limited OOD detection performance of EDL arises from its inability to reflect the distance between the testing example and training data when quantifying uncertainty, while its limited classification performance stems from its parameterization of the concentration parameters. To address these limitations, we propose a novel method called Density Aware Evidential Deep Learning (DAEDL). DAEDL integrates the feature space density of the testing example with the output of EDL during the prediction stage, while using a novel parameterization that resolves the issues in the conventional parameterization. We prove that DAEDL enjoys a number of favorable theoretical properties. DAEDL demonstrates state-of-the-art performance across diverse downstream tasks related to uncertainty estimation and classification.",
+  "impact": "Accurate uncertainty estimation is crucial for ensuring the safe deployment of AI models, particularly in high-risk domains such as healthcare, finance, and manufacturing. However, existing uncertainty estimation models encounter practical challenges, such as the need for multiple forward passes, substantial modifications to the neural network structure, limited classification performance, and sensitive hyperparameters. In this paper, we introduce DAEDL, a novel approach capable of producing high-quality uncertainty estimates in a single forward pass. DAEDL is comprised of detachable components easily integrable into existing network structures, and excels in classification tasks while operating with non-sensitive hyperparameters. Moreover, DAEDL demonstrates remarkable performance in OOD and distribution shift detection, highlighting its potential impact in addressing real-world challenges effectively. Despite its promising advancements, it is essential to acknowledge the limitations of DAEDL. In complex scenarios, EDL outputs and the feature space density may not accurately capture uncertainty, potentially limiting DAEDL’s effectiveness. Therefore, practitioners must carefully assess the suitability of DAEDL for their specific problem domains before solely relying on its outcomes.",
+  "query_input": {
+    "scenario": "Open-set image recognition in autonomous driving",
+    "issue": "Overconfident predictions on unseen road objects lead to unsafe vehicle control decisions.",
+    "hazard": [
+      "Density-aware evidential deep learning produces overconfident, miscalibrated predictive uncertainty for out-of-distribution inputs."
+    ],
+    "exposure": [
+      "Autonomous vehicle perception systems encountering novel objects"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Perception system trusts model confidence without independent novelty verification, unable to flag overconfident out-of-distribution detections.",
+    "impact": "Misclassified novel obstacles trigger unsafe control actions, causing traffic collisions, occupant injury, and pedestrian harm.",
+    "dose_response": "Overconfident miscalibrated uncertainty from density-aware evidential deep learning, through autonomous vehicle perception encountering novel objects, triggers trust in unverified model confidence, leading to misclassified obstacles causing collisions and harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Overconfident uncertainty estimates enable autonomous vehicle perception systems to misclassify novel objects as familiar, which in open-set image recognition leads to unsafe vehicle control decisions."
+    ],
+    "vulnerability": [
+      "Over-reliance on AI perception without human override mechanisms.",
+      "Lack of driver training on AI failure modes and OOD detection limits."
+    ],
+    "impact": [
+      "Collisions with unrecognized obstacles causing injury or fatality.",
+      "Erosion of public trust in autonomous vehicle safety."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1928",
+  "chain_index": 1,
+  "title": "Long-Form Speech Generation with Spoken Language Models",
+  "abstract": "We consider the generative modeling of speech over multiple minutes, a requirement for longform multimedia generation and audio-native voice assistants. However, textless spoken language models struggle to generate plausible speech past tens of seconds, due to high temporal resolution of speech tokens causing loss of coherence, architectural issues with long-sequence training or extrapolation, and memory costs at inference time. From these considerations we derive SpeechSSM, the first speech language model family to learn from and sample long-form spoken audio (e.g., 16 minutes of read or extemporaneous speech) in a single decoding session without text intermediates. SpeechSSMs leverage recent advances in linear-time sequence modeling to greatly surpass current Transformer spoken LMs in coherence and efficiency on multi-minute generations while still matching them at the utterance level. As we found current spoken language evaluations uninformative, especially in this new longform setting, we also introduce: LibriSpeech- Long, a benchmark for long-form speech evaluation; new embedding-based and LLM-judged metrics; and quality measurements over length and time. Speech samples, the LibriSpeech-Long dataset, and any future code or model releases can be found at https://google.github.io/tacotron/ publications/speechssm/.",
+  "impact": "Progress on coherent, efficient, and unbounded audio-native speech language models will improve the availability and accessibility of audio-based human-computer interfaces, particularly towards the generation of speech with paralinguistic nuances often inexpressible in a standard text-to-speech prompt, as well as enabling models in primarily oral languages (textless NLP). It should also stimulate the use of synthetic speech in long-form creative multimedia applications, and could conceivably generalize to non-speech audio such as music. We recognize that increased efficiencies in speech language modeling may increase the proliferation of audio deepfakes or low-quality synthetic media. However, for these uses we do not believe our work exacerbates what is already achievable (at higher content quality) by cascading text large language models (LLMs) with modern voice-promptable text-to-speech systems. We hope our work increases public awareness that direct methods in deep learning now enable large-scale generation of expressive speech, analogous to the situation in text media due to LLMs. As in prior work for generative speech language modeling, speaker prompts used in our read-speech demos come from public domain LibriVox audiobooks and are only used to generate spoken continuations in the same setting, albeit for longer durations. For our spontaneous-speech demos, the voices have been explicitly licensed for speech synthesis. We do not currently release model weights.",
+  "query_input": {
+    "scenario": "Use of textless spoken language models for voice-based conversational agents",
+    "issue": "Users encounter syntactically consistent but contextually inappropriate or nonsensical spoken responses.",
+    "hazard": [
+      "Long-form speech generation models produce plausible but factually ungrounded or semantically incoherent multi-minute audio."
+    ],
+    "exposure": [
+      "Users interacting with voice assistants in open-ended dialogue"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users’ inability to discern semantic incoherence in fluent, long-form speech fosters uncritical acceptance of nonsensical voice assistant outputs.",
+    "impact": "Users act on incorrect information, causing misinformed decisions, eroded trust in voice assistants, and potential harm from erroneous guidance.",
+    "dose_response": "Plausible but factually ungrounded long-form speech from generative models, through open-ended voice assistant interactions, triggers users' inability to discern semantic incoherence, leading to uncritical acceptance, acting on incorrect information, misinformed decisions, eroded trust, and potential harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Plausible but ungrounded speech generation enables syntactically consistent yet nonsensical responses, which in voice-based conversational agents exposes users, leading to harm from acting on incorrect advice and erosion of trust."
+    ],
+    "vulnerability": [
+      "Over-reliance on voice assistants by vulnerable populations lacking alternative information access.",
+      "Lack of real-time human oversight in high-stakes conversational contexts such as health advice."
+    ],
+    "impact": [
+      "User harm from acting on plausible but incorrect spoken advice in health, legal, or financial domains.",
+      "Erosion of trust in voice-based interfaces, impeding adoption of beneficial assistive technologies."
+    ]
+  }
+}

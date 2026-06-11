@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1018",
+  "chain_index": 2,
+  "title": "Uncertainty Quantification for LLM-Based Survey Simulations",
+  "abstract": "We investigate the use of large language models (LLMs) to simulate human responses to survey questions, and perform uncertainty quantification to gain reliable insights. Our approach converts imperfect, LLM-simulated responses into confidence sets for population parameters of human responses, addressing the distribution shift between the simulated and real populations. A key innovation lies in determining the optimal number of simulated responses: too many produce overly narrow confidence sets with poor coverage, while too few yield excessively loose estimates. To resolve this, our method adaptively selects the simulation sample size, ensuring valid averagecase coverage guarantees. It is broadly applicable to any LLM, irrespective of its fidelity, and any procedure for constructing confidence sets. Additionally, the selected sample size quantifies the degree of misalignment between the LLM and the target human population. We illustrate our method on real datasets and LLMs.",
+  "impact": "This work develops methodologies for uncertainty quantification for LLM-simulated survey responses. We believe that it can facilitate more reliable LLM-simulated experi- ments in areas such as social science, economics, marketing, and education. On the other hand, we point out that the theoretical guarantees for our method hold only on average over the randomness of the survey questions and the real and simulation responses, and do not necessarily hold for every random instance. Therefore, we recommend caution when applying the confidence intervals to decision-making.",
+  "query_input": {
+    "scenario": "Public health agencies using LLM simulations to estimate community health behaviors",
+    "issue": "Miscalibrated uncertainty estimates lead to inappropriate resource allocation during health crises.",
+    "hazard": [
+      "Confidence sets from LLM-simulated survey responses can be miscalibrated, misrepresenting uncertainty when applied to target human populations."
+    ],
+    "exposure": [
+      "Public health officials relying on AI-generated survey data"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Public health agencies lack independent verification processes for AI-generated survey data, enabling unwarranted trust in miscalibrated confidence sets.",
+    "impact": "Inappropriate resource allocation that worsens health outcomes and deepens disparities during crises.",
+    "dose_response": "Miscalibrated confidence sets from LLM-simulated survey responses, through public health officials' reliance on AI-generated data, trigger a lack of independent verification, leading to inappropriate resource allocation that worsens health outcomes and deepens disparities during crises."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated LLM confidence sets lead public health officials relying on AI-generated survey data to treat synthetic estimates as equally valid, resulting in misguided vaccine distribution that worsens health disparities."
+    ],
+    "vulnerability": [
+      "Health agencies treat AI-simulated health behavior estimates as equally valid as randomized surveys."
+    ],
+    "impact": [
+      "Misguided vaccine distribution worsens health disparities."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0695",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5387,
+    "reference": "Limited demonstration data causes few-shot feature generation to replicate spurious pre-training correlations instead of target patterns.",
+    "generated": "Data scientists lack sufficient domain-specific data to detect and reject spurious LLM-generated features."
+  },
+  "impact": {
+    "similarity": 0.6339,
+    "reference": "Models overfit to synthetic features, yielding biased predictions that harm minority subgroup performance.",
+    "generated": "Predictive models overfit to spurious patterns, failing on unseen data and reducing trust in LLM-assisted tabular learning."
+  },
+  "dose_response": {
+    "similarity": 0.7327,
+    "reference": "LLMs generating spurious-correlation features enable few-shot feature generation in low-resource tabular learning, which exposes small-dataset models to overfitted features, leading to biased predictions harming minority subgroups.",
+    "generated": "LLMs generating features reflecting spurious pre-training correlations, through data scientists building models on small domain-specific datasets, triggers data scientists' lack of sufficient domain-specific data to detect and reject spurious features, leading to overfitting on unseen data and reduced trust."
+  }
+}

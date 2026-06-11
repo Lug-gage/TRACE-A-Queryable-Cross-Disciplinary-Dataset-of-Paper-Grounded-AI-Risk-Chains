@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5304,
+    "reference": "Over-reliance on AI perception without human override mechanisms.",
+    "generated": "Perception system trusts model confidence without independent novelty verification, unable to flag overconfident out-of-distribution detections."
+  },
+  "impact": {
+    "similarity": 0.6496,
+    "reference": "Collisions with unrecognized obstacles causing injury or fatality.",
+    "generated": "Misclassified novel obstacles trigger unsafe control actions, causing traffic collisions, occupant injury, and pedestrian harm."
+  },
+  "dose_response": {
+    "similarity": 0.7591,
+    "reference": "Overconfident uncertainty estimates enable autonomous vehicle perception systems to misclassify novel objects as familiar, which in open-set image recognition leads to unsafe vehicle control decisions.",
+    "generated": "Overconfident miscalibrated uncertainty from density-aware evidential deep learning, through autonomous vehicle perception encountering novel objects, triggers trust in unverified model confidence, leading to misclassified obstacles causing collisions and harm."
+  }
+}

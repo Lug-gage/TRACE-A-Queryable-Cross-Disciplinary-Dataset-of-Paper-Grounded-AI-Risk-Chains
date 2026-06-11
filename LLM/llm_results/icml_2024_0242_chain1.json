@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0242",
+  "chain_index": 1,
+  "title": "MagicPose Realistic Human Poses and Facial Expressions Retargeting with Identity-aware Diffusion",
+  "abstract": "In this work, we propose MagicPose, a diffusionbased model for 2D human pose and facial expression retargeting. Specifically, given a reference image, we aim to generate a person’s new images by controlling the poses and facial expressions while keeping the identity unchanged. To this end, we propose a two-stage training strategy to disentangle human motions and appearance (e.g., facial expressions, skin tone and dressing), consisting of (1) the pre-training of an appearance-control block and (2) learning appearance-disentangled pose control. Our novel design enables robust appearance control over generated human images, including body, facial attributes, and even background. By leveraging the prior knowledge of image diffusion models, MagicPose generalizes well to unseen human identities and complex poses without the need for additional fine-tuning. Moreover, the proposed model is easy to use and can be considered as a plug-in module/extension to Stable Diffusion. The project website is https://boese0601. github.io/magicdance/. The code is available at https://github.com/ Boese0601/MagicDance.",
+  "impact": "The proposed MagicPose for retargeting human poses and facial expressions has a wide range of applications. It can significantly improve communication in digital environments, enabling individuals to express themselves more effectively through avatars or digital characters, thereby enhancing interactions in virtual meetings, online classrooms, and social networking platforms. Additionally, MagicPose has the potential to revolutionize entertainment and media production, allowing for the creation of more lifelike and expressive characters in movies, video games, and animations, consequently fostering more immersive storytelling experiences and increased audience engagement. The experiment demonstrates our model can generalize across different realhuman ethnicities and ages, and even to out-of-domain images, e.g., cartoon-style images, painting-style images, and AI-generated images. Potential Negative Social Impact: The method can potentially be used in a malicious way, e.g., making fake animated videos of people, which could be used in fraud. To avoid the potential misuse of such technologies, It is essential to employ several solutions like digital watermarking and detection algorithms, enact and enforce stringent legal measures, enhance public awareness and education on media literacy, and establish ethical guidelines within the tech industry. This involves collaboration among tech companies, governments, educators, and the public to create a safer digital environment and mitigate the risks of fraudulent AIgenerated content",
+  "query_input": {
+    "scenario": "Virtual meeting platforms with realistic avatar generation",
+    "issue": "Realistic face reenactment can be used to impersonate others, eroding trust in virtual interactions.",
+    "hazard": [
+      "High-fidelity human image synthesis with identity-expression disentanglement produces indistinguishable synthetic imagery."
+    ],
+    "exposure": [
+      "Meeting participants relying on visual cues for trust."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Participants rely solely on visual cues for identity verification, lacking multi-factor authentication in virtual meetings.",
+    "impact": "Erosion of trust in virtual interactions, enabling impersonation fraud, misinformation, and psychological harm.",
+    "dose_response": "High-fidelity identity-expression disentanglement producing indistinguishable imagery, through meeting participants' reliance on visual trust cues, triggers visual-only identity verification lacking multi-factor authentication, leading to erosion of trust in virtual interactions, impersonation fraud, misinformation, and psychological harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Realistic face reenactment from high-fidelity synthesis allows seamless impersonation, tricking meeting participants into trusting fake video feeds, eroding trust and enabling fraud."
+    ],
+    "vulnerability": [
+      "Participants rely on video presence as a trust cue, leaving them defenseless against impersonation when reenactment is visually seamless."
+    ],
+    "impact": [
+      "Erosion of trust in remote communication and successful social engineering, leading to financial fraud or disclosure of sensitive information."
+    ]
+  }
+}

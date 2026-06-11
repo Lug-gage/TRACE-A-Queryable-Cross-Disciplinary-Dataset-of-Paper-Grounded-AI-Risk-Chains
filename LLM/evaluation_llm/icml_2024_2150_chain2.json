@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2150",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "physical accessibility of IoT devices enabling side-channel leakage is stated in both",
+    "reference": "IoT devices deployed in physically accessible locations (homes, factories, streets) offer attackers unlimited side-channel collection opportunities.",
+    "generated": "End users rely on physically accessible IoT devices whose AES implementations leak side-channel information without any hardware or software countermeasures."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "affected party (industrial sensor systems) present, but damage type (unsafe physical processes) replaced by data exfiltration and malicious control",
+    "reference": "Compromised industrial sensor networks feed falsified data into SCADA systems, triggering unsafe physical processes.",
+    "generated": "Unauthorized decryption of industrial sensor data and IoT communications enables mass data exfiltration and malicious device control across critical systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc of accurate key recovery from side-channel on accessible IoT devices leading to compromise is present, but the specific link to compromised sensor networks feeding falsified data into SCADA and mass recalls is missing",
+    "reference": "Exact SASCA enables more accurate key recovery, which in physically accessible IoT devices exposes encryption keys, leading to compromised sensor networks and mass recalls.",
+    "generated": "Exact inference in SASCA via probabilistic circuits, through end users' physically accessible, unprotected IoT devices, triggers accurate key recovery from side-channel leakage, leading to unauthorized decryption, mass data exfiltration, and malicious device control."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2298",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes operators relying on AI summaries to reduce cognitive load and missing errors due to fatigue; generated describes a lack of real-time verification capacity to detect incorrect causal chains, a related but different sensitivity condition.",
+    "reference": "Security operators in prolonged monitoring tasks rely on AI summaries to reduce cognitive load, missing errors due to fatigue.",
+    "generated": "Security personnel lack real-time independent verification capacity to detect plausible but incorrect AI-generated causal chains during prolonged monitoring."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both express that detection failures (delayed/undetected) lead to preventable security incidents and safety breaches, covering the affected party (security operations) and the damage type.",
+    "reference": "Delayed detection of security threats, leading to preventable incidents.",
+    "generated": "Undetected critical events in surveillance feeds allow security threats to escalate into preventable safety breaches."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc shares the step-level reward optimization amplifying incorrect causal explanations, but replaces the operator acceptance of plausible erroneous summaries and fatigue-driven reduced scrutiny with a lack of verification capacity, missing the specific acceptance link.",
+    "reference": "Step-level reward optimization amplifies incorrect causal explanations in video models, leading security operators to accept plausible but erroneous AI summaries, causing delayed threat detection due to fatigue and reduced scrutiny.",
+    "generated": "Step-level reward optimization amplifies plausible but incorrect causal explanations in video understanding models, which, when used by security personnel lacking real-time verification capacity during monitoring, leads to undetected critical events and escalating safety breaches."
+  }
+}

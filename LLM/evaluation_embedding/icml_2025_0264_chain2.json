@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7535,
+    "reference": "Deepfake detectors overfit to majority-group facial features, so adversarial robustness won't transfer to underrepresented demographics.",
+    "generated": "Deepfake detector fairness defenses fail to generalize across domains, leaving minority-group classifications easily corrupted by adversarial perturbation."
+  },
+  "impact": {
+    "similarity": 0.8754,
+    "reference": "Minority individuals face higher false-positive rates, leading to unjust accusations, or false-negative deepfakes that amplify defamation.",
+    "generated": "Minority individuals face disproportionate false accusations or missed deepfakes, leading to reputational harm, discrimination, and eroded trust in media authenticity."
+  },
+  "dose_response": {
+    "similarity": 0.7708,
+    "reference": "Adversarial robustness in deepfake detection fails to transfer to minority facial features, causing detectors to produce higher false-positive rates for minority individuals, leading to unjust accusations or amplified defamation.",
+    "generated": "Adversarial perturbations that compromise fairness, through the exposure of minority-group videos to deepfake detectors, trigger fairness defenses' failure to generalize across domains, leading to disproportionate false accusations or missed deepfakes, reputational harm, discrimination, and eroded trust in media authenticity."
+  }
+}

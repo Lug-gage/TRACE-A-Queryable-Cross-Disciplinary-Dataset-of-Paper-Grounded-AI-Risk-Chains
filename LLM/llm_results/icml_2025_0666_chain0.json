@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0666",
+  "chain_index": 0,
+  "title": "The Value of Prediction in Identifying the Worst-Off",
+  "abstract": "Machine learning is increasingly used in government programs to identify and support the most vulnerable individuals, prioritizing assistance for those at greatest risk over optimizing aggregate outcomes. This paper examines the welfare impacts of prediction in equity-driven contexts, and how they compare to other policy levers, such as expanding bureaucratic capacity. Through mathematical models and a real-world case study on long-term unemployment amongst German residents, we develop a comprehensive understanding of the relative effectiveness of prediction in surfacing the worst-off. Our findings provide clear analytical frameworks and practical, data-driven tools that empower policymakers to make principled decisions when designing these systems.",
+  "impact": "Our work offers a principled framework for evaluating the relative benefits of using predictive models to target the most vulnerable populations, helping public agencies allocate limited resources more effectively. However, formalizing complex institutional processes inevitably omits important real-world details, risking biases or misalignments if assumptions are not carefully examined. We encourage policymakers and researchers to incorporate fairness, transparency, and accountability measures when implementing these methods, particularly in resource-constrained contexts where small design changes can disproportionately affect marginalized communities.",
+  "query_input": {
+    "scenario": "German unemployment agency uses ML to prioritize assistance.",
+    "issue": "Model misspecifies welfare function, misidentifying worst-off and biasing allocation.",
+    "hazard": [
+      "Predictive models for worst-off identification may systematically misrank vulnerable individuals due to mismatched social welfare functions or biased data."
+    ],
+    "exposure": [
+      "Long-term unemployed individuals subject to ML-driven prioritization."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Long-term unemployed individuals depend on agency decisions for aid, lacking alternate channels to detect or correct misrankings.",
+    "impact": "Misallocated assistance bypasses the worst-off, entrenching their long-term unemployment and deprivation.",
+    "dose_response": "Systematic misranking of vulnerable individuals by predictive models, through ML-driven prioritization of long-term unemployed, triggers dependence on agency decisions without channels to correct misrankings, leading to misallocated assistance that entrenches their long-term unemployment and deprivation."
+  },
+  "reference": {
+    "dose_response": [
+      "Mismatched welfare functions cause misranking that, in the German unemployment agency scenario, exposes long-term unemployed to measurement bias, leading to worsened unemployment and social exclusion."
+    ],
+    "vulnerability": [
+      "Measurement bias from target variable selection underestimates need among long-term unemployed with non-standard histories."
+    ],
+    "impact": [
+      "Assistance misallocation worsens long-term unemployment and social exclusion for the already worst-off."
+    ]
+  }
+}

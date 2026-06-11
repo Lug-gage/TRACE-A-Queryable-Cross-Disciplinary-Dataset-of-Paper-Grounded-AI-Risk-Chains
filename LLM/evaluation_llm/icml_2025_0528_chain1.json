@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The condition of creative professionals assuming accurate retrieval and being unable to detect silent granularity mismatches is semantically present as reliance on opaque AI abstractions without detection means.",
+    "reference": "Creative professionals waste resources when the system silently fails to resolve fine-grained mismatches, assuming accurate retrieval.",
+    "generated": "Creative professionals rely on opaque AI abstractions without means to detect silently amplified granularity mismatches."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (creative professionals) is present, but the damage type only partially covers reference (resource waste and timeline disruption map to lowered productivity, but dissatisfaction and rejection of AI tools are missing).",
+    "reference": "Lowered productivity and dissatisfaction accelerate rejection of AI tools despite their potential.",
+    "generated": "Incorrect visual retrievals waste resources, degrade creative outputs, and disrupt project timelines."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc of amplification leading to unresolved mismatches and inaccurate retrievals is present, but it terminates at resource waste/degradation/disruption, omitting the downstream dissatisfaction and rejection of AI tools that are part of the reference's causal chain.",
+    "reference": "Plug-and-play visual abstraction amplifies granularity mismatches, which in interactive cross-modal retrieval go unresolved, exposing creative professionals to inaccurate results, causing lowered productivity, dissatisfaction, and rejection of AI tools.",
+    "generated": "Plug-and-play visual abstraction silently amplifying granularity mismatches, through creative professionals using AI tools to locate visual assets, triggers their reliance on opaque AI abstractions without detection means, leading to incorrect retrievals that waste resources, degrade outputs, and disrupt timelines."
+  }
+}

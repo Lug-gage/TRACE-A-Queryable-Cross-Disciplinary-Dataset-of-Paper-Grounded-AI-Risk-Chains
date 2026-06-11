@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0001",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the sensitivity of automated moderation classifiers to subtle perturbations, enabling harmful content to bypass filters.",
+    "reference": "Automated moderation systems rely on brittle text classification that fails against subtle perturbations, enabling harmful content to bypass filters.",
+    "generated": "Automated moderation classifiers lack robustness to character-level perturbations that preserve harmful semantics, enabling undetected policy violations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both state users encounter toxic/hateful content, erosion of trust, and psychological harm.",
+    "reference": "Users encounter toxic, hateful, or manipulative content, eroding trust in platform safety and increasing psychological harm.",
+    "generated": "Users suffer exposure to toxic, harassing, or violent content, eroding trust in the platform and causing psychological harm."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc: attacks evade classifiers -> expose users -> harm. Generated arc: attacks enable exposure -> trigger lack of robustness -> harm, reversing causality and missing the evasion step.",
+    "reference": "Black-box adversarial attacks on LMs enable high-success evasion of safety classifiers, which in online platform content moderation exposes users to toxic content, leading to eroded trust and psychological harm.",
+    "generated": "Black-box character-level adversarial attacks on aligned LMs, through enabling toxic content exposure on moderated platforms, trigger automated moderation classifiers' lack of robustness to character-level perturbations, leading to users suffering psychological harm and eroded trust."
+  }
+}

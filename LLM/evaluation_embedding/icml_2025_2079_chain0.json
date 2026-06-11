@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2079",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6823,
+    "reference": "Model memorization of training samples enables extraction of PII and clinical details via membership inference.",
+    "generated": "Fine-tuned LLMs memorize training data fragments without differential privacy, enabling extraction of sensitive patient details from partial queries."
+  },
+  "impact": {
+    "similarity": 0.6834,
+    "reference": "Patients suffer privacy breaches, identity theft, insurance discrimination, and psychological distress.",
+    "generated": "Patient privacy breach reveals medical conditions and PII, causing stigma, discrimination, and erosion of trust in clinical AI tools."
+  },
+  "dose_response": {
+    "similarity": 0.916,
+    "reference": "Fine-tuned clinical LLMs leak PII and medical conditions via membership inference, exposing patients and providers to privacy breaches, identity theft, and eroded trust in healthcare AI.",
+    "generated": "Fine-tuned LLMs leak training data via membership inference, through patient-provider use of clinical AI tools, triggering extraction of sensitive details through memorization without differential privacy, leading to breaches exposing conditions and PII, causing stigma, discrimination, and trust erosion."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of detection methods and failing safety evaluations, which is a related but different sensitivity condition than lack of provenance verification",
+    "reference": "Community-shared quantized models lack provenance verification, enabling hidden backdoors to persist after compression.",
+    "generated": "Developers lack detection methods for encoded malicious behaviors in quantized models, relying on safety evaluations that fail against covert finetuning."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Physical harm (user safety) and trust erosion are present, but psychological harm is not explicitly covered",
+    "reference": "Harmful outputs cause physical or psychological harm to end-users, eroding trust in community-driven AI.",
+    "generated": "Widespread harmful outputs on edge devices, endangering user safety and eroding trust in community-shared models."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc covers covert fine-tuning, evasion of safety evaluations, and deployment on edge devices, but omits the lack of monitoring on edge devices, missing a link",
+    "reference": "Covertly embedding harmful behaviors via fine-tuning that evade safety evaluation, exploiting quantization, enables developers to deploy malicious quantized models on edge devices, which lack monitoring, leading to harmful outputs causing physical harm and safety incidents.",
+    "generated": "Covert malicious fine-tuning, through developers deploying quantized models on edge devices, triggers undetected encoded harmful behaviors when safety evaluations fail, leading to widespread harmful outputs that endanger user safety and erode trust."
+  }
+}

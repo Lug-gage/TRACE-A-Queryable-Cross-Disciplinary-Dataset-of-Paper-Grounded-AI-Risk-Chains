@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2877",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6188,
+    "reference": "Autonomous prompt optimization without safety constraints amplifies reward hacking and goal misgeneralization.",
+    "generated": "Proxy reward blind spots in training leave LLM agents susceptible to prompt-driven misalignment, as developers lack safeguards against reward hacking."
+  },
+  "impact": {
+    "similarity": 0.6738,
+    "reference": "Deployed agents pursue misaligned goals, causing harmful actions in user-facing tasks.",
+    "generated": "Deployed agents generate unsafe code or harmful game actions, endangering users and undermining system trust."
+  },
+  "dose_response": {
+    "similarity": 0.8233,
+    "reference": "Reward hacking in self-play prompt evolution amplifies goal misgeneralization, so when developers train agents without safety constraints, deployed systems cause harmful actions and erode public trust.",
+    "generated": "Reward hacking in asymmetric self-play prompt evolution, via developers training coding/gaming LLM agents, triggers proxy reward blind spots, leaving agents susceptible to prompt-driven misalignment, causing unsafe code or harmful actions that endanger users and undermine trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1879",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe auditors' reliance on SAE features without being able to verify which are functionally important.",
+    "reference": "Auditors' overreliance on SAE feature dictionaries without functional validation.",
+    "generated": "Auditors have no ground-truth access to which SAE features are functionally important, relying solely on potentially spurious attributions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe false safety certification leading to deployment of unsafe models; generated adds real-world harm but does not omit the reference's core consequence.",
+    "reference": "False certification of safety leads to deployment of unsafe models.",
+    "generated": "Unsafe LLMs are falsely certified as safe, leading to deployment and real-world harm from overlooked model flaws."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from non-functional features via overreliance to false certification and unsafe deployment is present, but the generated omits eroded public trust, a distinct link in the reference chain.",
+    "reference": "SAEs recovering non-functional features enables auditors' overreliance on them for safety certification, which in scenario LLM safety auditing exposes false confidence, leading to deployment of unsafe models and eroded public trust.",
+    "generated": "SAE recovery of interpretable but functionally unimportant features, through safety auditors certifying LLM safety, triggers reliance on spurious attributions without ground-truth feature importance, leading to false safety certification and real-world harm from unsafe deployments."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0110",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Lack of independent verification and face-value acceptance expresses the same overreliance/automation complacency condition.",
+    "reference": "Researchers' overreliance on AI confidence due to automation complacency.",
+    "generated": "Researchers lack independent means to verify verbalized confidence, accepting miscalibrated probabilities at face value."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions suboptimal decisions and flawed conclusions, but the damage type of propagating false claims and undermining research integrity is missing.",
+    "reference": "Propagation of false scientific claims undermines research integrity.",
+    "generated": "Suboptimal scientific decisions, flawed conclusions, and wasted resources due to misplaced trust in miscalibrated confidence."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from fine-tuned calibration through researcher tool use to overreliance and harm is preserved, despite different wording for the final harm.",
+    "reference": "Supervised fine-tuning for linguistic calibration yields poorly calibrated verbalized probability, which when used by researchers in scientific QA tools causes overreliance, leading to propagation of false claims and erosion of research integrity.",
+    "generated": "Supervised fine-tuning for linguistic calibration yields verbalized probabilities poorly calibrated outside training, which, through researchers using LLM-powered QA tools, triggers unverified acceptance of miscalibrated confidence, leading to suboptimal decisions, flawed conclusions, and wasted resources."
+  }
+}

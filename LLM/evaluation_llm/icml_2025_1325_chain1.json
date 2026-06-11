@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1325",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions recoverable intermediate representations but omits the specific sensitivity condition that medical image features retain diagnostic information.",
+    "reference": "Medical image features transmitted in split learning retain diagnostic information that diffusion models can reconstruct into full patient scans.",
+    "generated": "Split inference lacks privacy safeguards for intermediate representations, making them recoverable by guided diffusion."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (patients) matches, but damage types differ: reference specifies insurance discrimination and stigmatization, while generated describes privacy breaches and eroded trust.",
+    "reference": "Reconstructed medical images reveal patient diagnoses, leading to insurance discrimination and stigmatization.",
+    "generated": "Patients' private medical images are reconstructed, leading to privacy breaches and erosion of trust in AI-driven healthcare."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes generic private data leak and lack of privacy safeguards leading to reconstruction and privacy breaches, omitting the reference's diagnostic information retention, diagnosis revelation, and resulting insurance discrimination.",
+    "reference": "Diagnostic information retained in transmitted features allows diffusion-based reconstruction of patient scans, which when medical images are processed via split inference exposes patients to diagnosis revelation, leading to insurance discrimination and stigmatization.",
+    "generated": "Intermediate representations in split inference leak private data, and for patients' medical images processed via split inference, the lack of privacy safeguards triggers recoverability by guided diffusion, leading to reconstructed medical images, privacy breaches, and eroded trust in AI healthcare."
+  }
+}

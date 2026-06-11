@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0868",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated mentions lack of protective barriers and advance warnings which are related but different safety deficiencies compared to the reference's close proximity without safety-rated collision avoidance.",
+    "reference": "Close human-robot proximity without safety-rated collision avoidance.",
+    "generated": "Factory workers lack protective barriers and advance warning systems to avoid sudden unsafe exploratory motions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (workers) is present, but the damage type 'physical injury' is generic and does not explicitly cover 'crush or laceration injuries' from the reference.",
+    "reference": "Worker crush or laceration injuries.",
+    "generated": "Physical injury to workers from collisions with the robot during erratic policy-driven movements."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc incorrectly makes lack of barriers a consequence of unsafe exploration, whereas the reference arc describes erratic arm motions exposing close-proximity workers directly to crush injuries; the causal logic is misaligned and reversed.",
+    "reference": "Causality-aware entropy regularization and dormancy-guided resets cause unsafe exploration in assembly, with misestimated entropy leading to erratic arm motions that expose close-proximity workers to crush injuries and production shutdown.",
+    "generated": "Causality-aware entropy regularization and dormancy-guided resets cause abrupt policy changes and unsafe exploration; through factory workers collaborating with robotic arms, this triggers lack of protective barriers and advance warnings, leading to physical injury from erratic collisions."
+  }
+}

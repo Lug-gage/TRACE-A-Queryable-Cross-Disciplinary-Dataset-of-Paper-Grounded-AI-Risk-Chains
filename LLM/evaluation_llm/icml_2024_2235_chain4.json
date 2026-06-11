@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 4,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Radiologists depending on AI-enhanced images without means to distinguish hallucinations matches clinicians' reliance without interrogating hallucination risk.",
+    "reference": "Clinicians rely on enhanced images without interrogating hallucination risk, mistaking artifacts for pathology.",
+    "generated": "Radiologists depend on AI-enhanced images for diagnostic decisions without real-time means to distinguish hallucinated details from true pathology."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both misdiagnosis/inappropriate interventions, patient harm, and erosion of trust in medical AI are explicitly stated.",
+    "reference": "Misdiagnosis, unnecessary treatments, patient harm, and erosion of trust in medical AI.",
+    "generated": "Misdiagnosis and inappropriate medical interventions from false pathological findings, harming patients and eroding trust in AI-assisted imaging."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from conditionally-controlled generation hallucinating unreliable details to clinicians trusting them, mistaking artifacts for pathology, and causing harm is fully present.",
+    "reference": "Conditionally-controlled generation hallucinates details in super-resolution; clinicians trust enhanced images, mistaking artifacts for pathology and causing misdiagnosis and patient harm.",
+    "generated": "Conditionally-controlled consistency generation yielding unreliable visual outputs, through radiologists and clinicians interpreting AI-enhanced medical images, triggers dependence on these images without means to distinguish hallucinated details, leading to misdiagnosis, inappropriate interventions, patient harm, and eroded trust."
+  }
+}

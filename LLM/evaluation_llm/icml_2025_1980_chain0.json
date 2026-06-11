@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1980",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both describe developers' over-trust in AI-generated code and lack of adversarial testing, making them unable to resist hidden bugs",
+    "reference": "Developers over-trust AI-generated code due to productivity metrics, skipping adversarial testing.",
+    "generated": "Developers lack means to detect subtle bugs that pass test cases, trusting AI-generated code as correct."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "financial loss is covered, but erosion of public trust in AI-assisted tools is missing from generated description",
+    "reference": "Production software bugs cause financial loss and erode public trust in AI-assisted tools.",
+    "generated": "Production failures from hidden bugs cause financial loss, service outages, and safety incidents affecting end-users."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "both arcs describe iterative refinement amplifying hidden errors that pass tests, leading to undetected production bugs and financial loss",
+    "reference": "Iterative LLM refinement amplifies hidden code errors, and developer over-trust in test-passing results leads to production bugs that cause financial loss and erode public trust.",
+    "generated": "LLM-based iterative refinement and self-training, by amplifying subtle errors in superficially correct AI-generated code used by developers and end-users, triggers inability to detect bugs that pass test cases, leading to production failures causing financial loss, outages, and safety incidents."
+  }
+}

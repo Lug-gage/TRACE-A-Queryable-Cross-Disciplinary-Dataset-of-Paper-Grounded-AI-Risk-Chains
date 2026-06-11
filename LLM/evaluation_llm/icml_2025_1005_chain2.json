@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that bot-detection is circumvented by LLM-generated deceptive votes, making detection ineffective",
+    "reference": "Bot-detection algorithms are susceptible to LLM-generated votes that mimic human reasoning and writing style.",
+    "generated": "Platforms rely on weak bot-detection that LLM-generated deceptive voting patterns easily circumvent, leaving genuine votes diluted."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Erosion of trust is covered, but driving away genuine voters and degrading platform utility are missing; instead, misdirected model development is added",
+    "reference": "Collapse of trust in crowdsourced evaluation, driving genuine voters away and degrading platform utility.",
+    "generated": "Leaderboard rankings become distorted, eroding trust in benchmarks and misdirecting model development and selection."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Evasion of detection and erosion of trust are present, but 'mimic human patterns' is omitted and the final step of driving away genuine voters is replaced with misdirected model development",
+    "reference": "LLM-generated deceptive votes mimic human patterns, evading detection and exposing platforms to trust collapse, ultimately driving away genuine voters.",
+    "generated": "Crowdsourced pairwise comparison leaderboards vulnerable to adversarial voting, through platform operators and genuine voters, trigger weak bot-detection easily circumvented by LLM deceptive votes, leading to distorted rankings, eroded trust, and misdirected model development."
+  }
+}

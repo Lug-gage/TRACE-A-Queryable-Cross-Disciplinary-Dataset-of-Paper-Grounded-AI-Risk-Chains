@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0675",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "reference describes user over-reliance as the sensitivity condition; generated describes a technical brittleness of LLM safety mechanisms, which is a different system vulnerability",
+    "reference": "Users' over-reliance on LLM outputs as authoritative, without critical verification.",
+    "generated": "Aligned LLMs’ safety mechanisms are brittle to fluency-preserving adversarial suffixes that bypass content filters."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "loss of trust is covered, but the reference also includes spread of harmful misinformation and reputational damage, which are absent",
+    "reference": "Erosion of public trust in AI systems, spread of harmful misinformation, reputational damage.",
+    "generated": "End-users receive harmful model outputs including hate speech and dangerous instructions, causing societal harm and loss of trust."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "reference arc involves users accepting and propagating harmful outputs due to over-reliance, leading to erosion of trust; generated arc skips user over-reliance and directly links harmful outputs to societal harm/loss of trust, representing a different causal mechanism",
+    "reference": "Stealthy adversarial suffixes enable jailbreaking of chatbots, exposing end-users to harmful outputs that, due to over-reliance, they accept and propagate, leading to erosion of trust and reputational damage.",
+    "generated": "Stealthy, controllable generation of adversarial suffixes, through end-user interaction with aligned LLM chatbots, triggers the brittleness of safety mechanisms to fluency-preserving adversarial suffixes, leading to harmful outputs including hate speech and dangerous instructions, causing societal harm and loss of trust."
+  }
+}

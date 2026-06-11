@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2328",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.3135,
+    "reference": "Users’ expectation that AI agents will self-correct errors without human intervention, reducing vigilance.",
+    "generated": "No mandatory human confirmation before executing irreversible system changes allows misinterpreted commands to proceed unchecked."
+  },
+  "impact": {
+    "similarity": 0.5658,
+    "reference": "Irretrievable file loss, unauthorized configuration changes, and erosion of user trust in automation.",
+    "generated": "Loss of critical personal data and weakened security settings leave the user vulnerable to identity theft and financial loss."
+  },
+  "dose_response": {
+    "similarity": 0.7899,
+    "reference": "The agents' autonomous multi-step GUI actions without human review enable task delegation, which in case of intent misinterpretation exposes users' expectation of self-correction, leading to irretrievable file loss, unauthorized configuration changes, and trust erosion.",
+    "generated": "Autonomous LMM-powered agents planning multi-step GUI actions without human review, through users delegating daily tasks, triggers no mandatory confirmation for irreversible changes, leading to data loss and weakened security enabling identity theft and financial loss."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2150",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5175,
+    "reference": "Widespread reliance on smart cards for banking and identity creates systemic risk when a single attack technique compromises many devices.",
+    "generated": "Smart card AES implementations leak sufficient side-channel information for exact inference, and security margins rely on previous SASCA's limited convergence."
+  },
+  "impact": {
+    "similarity": 0.5521,
+    "reference": "Mass financial fraud via cloned payment cards erodes consumer trust in cashless transactions.",
+    "generated": "Failed security evaluations and product recalls erode trust in smart card and secure element ecosystems."
+  },
+  "dose_response": {
+    "similarity": 0.8407,
+    "reference": "Exact SASCA enables more accurate key recovery, which in smart card testing exposes flawed implementations, leading to mass financial fraud and identity theft.",
+    "generated": "Exact SASCA inference enabling more accurate key recovery, when used in smart card physical security testing, exposes side-channel leakage and security margins relying on limited convergence, causing failed evaluations and recalls that erode trust in secure element ecosystems."
+  }
+}

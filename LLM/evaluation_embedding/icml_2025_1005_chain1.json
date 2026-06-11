@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4199,
+    "reference": "Aggregated voting data leaks model-specific linguistic fingerprints, making models identifiable and exploitable.",
+    "generated": "Organizations trust leaderboard rankings derived from unverified pairwise votes, making them susceptible to manipulation without robust authentication."
+  },
+  "impact": {
+    "similarity": 0.5111,
+    "reference": "Stifled participation in open benchmarks as organizations fear exposure to tailored adversarial exploits.",
+    "generated": "Distorted leaderboards promote inferior models, demote competitors, and erode trust in evaluation benchmarks across the AI community."
+  },
+  "dose_response": {
+    "similarity": 0.7414,
+    "reference": "The vulnerability of leaderboards to adversarial manipulation enables model fingerprinting via voting analysis, exposing organizations and stifling benchmark participation.",
+    "generated": "Crowdsourced pairwise comparison leaderboards vulnerable to adversarial manipulation, through organizations submitting models, triggers trust in unverified pairwise votes, leading to distorted rankings that promote inferior models, demote competitors, and erode benchmark trust."
+  }
+}

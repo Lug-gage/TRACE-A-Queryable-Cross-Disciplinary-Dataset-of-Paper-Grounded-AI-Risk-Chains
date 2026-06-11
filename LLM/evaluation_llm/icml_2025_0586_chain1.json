@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0586",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that consumer/resource-constrained devices lack integrity verification of quantized model weights.",
+    "reference": "Consumer devices lack onboard integrity verification for quantized model weights.",
+    "generated": "Resource-constrained devices lack integrity verification of quantized models, so users trust and install third-party AI assistants without security scrutiny."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify exfiltration of personal data as the damage, affecting end users through malicious on-device models.",
+    "reference": "Persistent privacy breaches through malicious on-device models exfiltrating personal data.",
+    "generated": "Malicious on-device assistants exfiltrate personal data, produce harmful outputs, or enable remote device control."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The same causal arc is present: exploitable quantization produces malicious models that evade full-precision checks, are deployed on edge devices without integrity verification, and lead to data exfiltration.",
+    "reference": "Exploitable quantization enables malicious quantized models to evade detection, which in edge deployment on consumer devices exposes end users, leading to persistent privacy breaches through on-device data exfiltration.",
+    "generated": "Post-training quantization methods exploited to produce maliciously-behaving quantized models that appear benign in full-precision checks, through end users' on-device AI assistants on smart devices, trigger resource-constrained devices' lack of integrity verification, leading to data exfiltration, harmful outputs, or remote control."
+  }
+}

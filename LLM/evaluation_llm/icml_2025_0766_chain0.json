@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0766",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance without hallucination detectors, while reference focuses on assuming photorealism without spatial fidelity verification; related but different sensitivity condition.",
+    "reference": "Developers assume synthetic images are photorealistic without verifying spatial fidelity.",
+    "generated": "Reliance on synthetic imagery to overcome scarce labeled training data, without robust detectors for hallucinated land cover features."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (segmentation models) and the damage type (misclassification leading to downstream land-use analysis errors) are present; added environmental forecasts do not harm coverage.",
+    "reference": "Segmentation models fail on real-world borders, causing misclassification in downstream land-use analyses.",
+    "generated": "Segmentation models trained on hallucinated synthetic imagery misclassify real land cover, yielding unreliable geospatial analyses and environmental forecasts."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal arc from mode interpolation to misclassification is present, but the generated chain omits trust degradation, missing a link in the reference.",
+    "reference": "Mode interpolation enables hallucinated land cover in synthetic images, which in training dataset augmentation exposes segmentation models to artifacts, leading to misclassification and trust degradation.",
+    "generated": "Mode interpolation in diffusion models introduces hallucinated land cover features into synthetic imagery, through developers using them to augment scarce labeled data, triggering reliance without robust hallucination detectors, leading segmentation models to misclassify real land cover and yield unreliable analyses."
+  }
+}

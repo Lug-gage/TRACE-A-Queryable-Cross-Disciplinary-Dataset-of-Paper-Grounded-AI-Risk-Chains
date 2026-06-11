@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1852",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4587,
+    "reference": "Medical images have high-dimensional features that LDP noise fails to obscure statistically.",
+    "generated": "Practical LDP noise budgets leave residual membership-exploitable signals in model updates because utility preservation constrains noise magnitude."
+  },
+  "impact": {
+    "similarity": 0.6729,
+    "reference": "Patient re-identification leads to insurance discrimination and breach of medical confidentiality.",
+    "generated": "Patients' private medical conditions are inferred from training membership, enabling insurance discrimination, stigmatization, and loss of confidentiality."
+  },
+  "dose_response": {
+    "similarity": 0.8926,
+    "reference": "Low-polynomial time membership inference attacks bypass LDP noise in cross-silo federated learning for healthcare imaging, statistically re-identifying patients from medical images, leading to insurance discrimination and confidentiality breaches.",
+    "generated": "Low-polynomial time membership inference attacks against local differentially private federated learning, through hospital patients' medical images in training, trigger residual membership-exploitable signals from utility-constrained LDP noise budgets, leading to inferred private medical conditions enabling insurance discrimination, stigmatization, and confidentiality loss."
+  }
+}

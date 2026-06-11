@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 1,
+  "title": "Prospector Heads Generalized Feature Attribution for Large Models & Data",
+  "abstract": "Feature attribution, the ability to localize regions of the input data that are relevant for classification, is an important capability for ML models in scientific and biomedical domains. Current methods for feature attribution, which rely on “explaining” the predictions of end-to-end classifiers, suffer from imprecise feature localization and are inadequate for use with small sample sizes and high-dimensional datasets due to computational challenges. We introduce prospector heads, an efficient and interpretable alternative to explanationbased attribution methods that can be applied to any encoder and any data modality. Prospector heads generalize across modalities through experiments on sequences (text), images (pathology), and graphs (protein structures), outperforming baseline attribution methods by up to 26.3 points in mean localization AUPRC. We also demonstrate how prospector heads enable improved interpretation and discovery of class-specific patterns in input data. Through their high performance, flexibility, and generalizability, prospectors provide a framework for improving trust and transparency for ML models in complex domains. 1",
+  "impact": "Trust and safety considerations are increasingly important as AI becomes an increasingly prominent part of high-impact disciplines such as science and biomedicine. This concern is particularly relevant for large “black box” foundation models. The goal of this work is to provide a new approach to feature attribution for large models and complex datasets to improve transparency of AI systems. It is important to note that that our method is specifically not designed to be an explanation of a model’s reasoning, and any feature attributions made by prospector heads should be carefully interpreted by the user in the context of the data modality. Code Availability Our code is made available at: https://github.com/ gmachiraju/K2.",
+  "query_input": {
+    "scenario": "Data attribution for text-to-image models",
+    "issue": "Unlearning synthesized images based on attribution signals causes catastrophic forgetting of unrelated concepts.",
+    "hazard": [
+      "Feature attribution maps contain object attribution information that can be manipulated to cause model editing failures."
+    ],
+    "exposure": [
+      "Model maintainers performing data attribution and selective unlearning on generative models."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Selective unlearning pipeline trusts attribution maps without integrity checks, enabling manipulated signals to dictate model edits.",
+    "impact": "Catastrophic forgetting of unrelated concepts degrades generative model performance across tasks.",
+    "dose_response": "Feature attribution maps containing manipulable object attribution information, through model maintainers performing selective unlearning, trigger a pipeline that trusts these maps without integrity checks, leading to catastrophic forgetting of unrelated concepts and degraded generative model performance across tasks."
+  },
+  "reference": {
+    "dose_response": [
+      "Noisy attribution signals enable erroneous unlearning of unrelated concepts, which in automated unlearning pipelines exposes model maintainers to catastrophic forgetting, leading to degraded model utility."
+    ],
+    "vulnerability": [
+      "Model maintainers treat attribution scores as definitive without independent verification of concept boundaries.",
+      "Automated unlearning pipelines lack human oversight, amplifying errors from noisy attribution signals."
+    ],
+    "impact": [
+      "Degraded model utility for downstream applications relying on forgotten concepts.",
+      "Legal and reputational harm when unlearning fails to remove targeted content or removes compliant content."
+    ]
+  }
+}

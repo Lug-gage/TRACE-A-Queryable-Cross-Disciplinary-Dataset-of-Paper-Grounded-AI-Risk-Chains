@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1185",
+  "chain_index": 1,
+  "title": "Do Not Mimic My Voice Speaker Identity Unlearning for Zero-Shot Text-to-Speech",
+  "abstract": "The rapid advancement of Zero-Shot Text-to- Speech (ZS-TTS) technology has enabled highfidelity voice synthesis from minimal audio cues, raising significant privacy and ethical concerns. Despite the threats to voice privacy, research to selectively remove the knowledge to replicate unwanted individual voices from pre-trained model parameters has not been explored. In this paper, we address the new challenge of speaker identity unlearning for ZS-TTS systems. To meet this goal, we propose the first machine unlearning frameworks for ZS-TTS, especially Teacher- Guided Unlearning (TGU), designed to ensure the model forgets designated speaker identities while retaining its ability to generate accurate speech for other speakers. Our proposed methods incorporate randomness to prevent consistent replication of forget speakers’ voices, assuring unlearned identities remain untraceable. Additionally, we propose a new evaluation metric, speaker-Zero Retrain Forgetting (spk-ZRF). This assesses the model’s ability to disregard prompts associated with forgotten speakers, effectively neutralizing its knowledge of these voices. The experiments conducted on the state-of-the-art model demonstrate that TGU prevents the model from replicating forget speakers’ voices while maintaining high quality for other speakers.",
+  "impact": "Our work is dedicated to ensure safety in usage of Zero- Shot Text-to-Speech models by preventing the generation of voices belonging to individuals who do not consent to having their identities replicated. Although our work ad- dresses the need for individuals to opt out of voice replication, determining how to handle similar voices raises complex questions. In striving to protect the privacy of a single individual, one could unintentionally restrict beneficial TTS capabilities to others whose voices resemble the forget set. Balancing personal privacy rights and broader technological benefits is at the heart of this tension. Also, techniques for ensuring speaker identity unlearning must be verifiable and transparent. Providing evidence that the model no longer replicates a forgotten identity requires both quantitative evaluation and subjective analysis. In light of the current situation-where many models remain closed due to concerns about misuse-we believe our work marks a new chapter in safeguarding individuals, paving the way for broader availability in the future. We aim to foster a deeper ethical discourse and encourage further research on responsibly handling ZS-TTS.",
+  "query_input": {
+    "scenario": "On-device voice assistant forgets a user's enrolled voice profile",
+    "issue": "Resource-constrained unlearning yields imperfect forgetting, enabling voice trait inference",
+    "hazard": [
+      "Incomplete speaker identity unlearning in zero-shot TTS may leave residual voiceprint information in generated speech."
+    ],
+    "exposure": [
+      "Users of mobile voice assistants who trigger voice profile deletion"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Resource-limited on-device unlearning mechanisms fail to fully eradicate speaker voiceprints, leaving residual identity cues that persist after deletion requests.",
+    "impact": "Deleted voice profile residuals enable inference of users' voice traits, causing privacy breaches through re-identification or voice spoofing.",
+    "dose_response": "Incomplete speaker identity unlearning in zero-shot TTS, through voice profile deletion on mobile assistants, triggers residual voiceprint persistence from resource-limited unlearning, leading to voice trait inference and privacy breaches via re-identification or voice spoofing."
+  },
+  "reference": {
+    "dose_response": [
+      "Incomplete speaker identity unlearning retains acoustic patterns; when users delete profiles from mobile assistants, residual patterns allow trait inference, leading to privacy violations and trust erosion."
+    ],
+    "vulnerability": [
+      "On-device unlearning imperfection retains speaker-specific acoustic patterns enabling voice trait inference."
+    ],
+    "impact": [
+      "Inference of sensitive personal traits from residual voice patterns.",
+      "Privacy violation for users sharing or reselling devices.",
+      "Reduced user trust in on-device voice assistants."
+    ]
+  }
+}

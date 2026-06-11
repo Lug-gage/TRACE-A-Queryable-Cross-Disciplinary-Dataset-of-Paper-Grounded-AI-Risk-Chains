@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0461",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7,
+    "reference": "Continual robust training overfits to seen attack patterns, reducing model generalization to novel Lp perturbations.",
+    "generated": "Models' robustness relies on proximity to logit space of seen attacks, offering no inherent defense against perturbation types outside training distribution."
+  },
+  "impact": {
+    "similarity": 0.6526,
+    "reference": "Deployed image classifiers fail unexpectedly against new attacks, causing misclassification in critical real-world tasks.",
+    "generated": "Novel Lp perturbations cause extensive misclassifications in deployed systems, compromising operational safety and trust in AI-based image classifiers."
+  },
+  "dose_response": {
+    "similarity": 0.799,
+    "reference": "Logit-distance regularization overfitting to seen attacks leaves classifiers vulnerable; when ML engineers deploy them for real-world tasks, novel Lp perturbations cause unexpected misclassification failures.",
+    "generated": "Logit-space distance regularization in continual robust training, through ML engineers deploying robust image classifiers, triggers overfitted reliance on seen attack logits, leading to novel Lp perturbations causing extensive misclassifications that compromise operational safety and trust."
+  }
+}

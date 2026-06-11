@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0856",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes planners' lack of hedging against uncertainty, while reference focuses on human operators' inability to perceive uncertainty; related but different target",
+    "reference": "Operators' inability to perceive prediction uncertainty leads to over-reliance and missed interventions.",
+    "generated": "Planners treat stochastic predictions as accurate, lacking mechanisms to hedge against uncalibrated or multi-modal future states."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Hardware damage corresponds to property damage, but physical injuries from the reference are omitted",
+    "reference": "Physical injuries and property damage from collision or misgrasping.",
+    "generated": "Robotic arms collide or misgrasp, causing hardware damage, task failure, and operational downtime."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc omits human operator over-reliance, injuries, and trust erosion, staying within autonomous planning failures",
+    "reference": "Uncalibrated video prediction enables overconfident planning in self-supervised robot learning, exposing operators' over-reliance, leading to injuries and trust erosion.",
+    "generated": "Stochastic frame prediction models producing uncalibrated future states, through robotic planning with predicted frames, trigger planners to treat stochastic predictions as accurate, leading to collisions or misgrasps causing hardware damage, task failure, and downtime."
+  }
+}

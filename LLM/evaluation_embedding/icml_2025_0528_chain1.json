@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6397,
+    "reference": "Creative professionals waste resources when the system silently fails to resolve fine-grained mismatches, assuming accurate retrieval.",
+    "generated": "Creative professionals rely on opaque AI abstractions without means to detect silently amplified granularity mismatches."
+  },
+  "impact": {
+    "similarity": 0.3684,
+    "reference": "Lowered productivity and dissatisfaction accelerate rejection of AI tools despite their potential.",
+    "generated": "Incorrect visual retrievals waste resources, degrade creative outputs, and disrupt project timelines."
+  },
+  "dose_response": {
+    "similarity": 0.8585,
+    "reference": "Plug-and-play visual abstraction amplifies granularity mismatches, which in interactive cross-modal retrieval go unresolved, exposing creative professionals to inaccurate results, causing lowered productivity, dissatisfaction, and rejection of AI tools.",
+    "generated": "Plug-and-play visual abstraction silently amplifying granularity mismatches, through creative professionals using AI tools to locate visual assets, triggers their reliance on opaque AI abstractions without detection means, leading to incorrect retrievals that waste resources, degrade outputs, and disrupt timelines."
+  }
+}

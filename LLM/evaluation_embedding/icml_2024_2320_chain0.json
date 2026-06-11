@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2320",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7209,
+    "reference": "Lack of robust content filters that detect all adversarial prompts.",
+    "generated": "Safety filters rely on explicit keyword matching and lack contextual understanding, leaving them unable to detect or block implicit harmful prompts."
+  },
+  "impact": {
+    "similarity": 0.3927,
+    "reference": "Psychological distress to individuals depicted in non-consensual intimate images.",
+    "generated": "Prohibited sexually explicit or violent images are generated and distributed, undermining platform safety policies and eroding user trust."
+  },
+  "dose_response": {
+    "similarity": 0.7743,
+    "reference": "Adversarial prompt manipulation enables NSFW generation, which in this scenario exposes end users, leading to psychological distress and platform trust erosion.",
+    "generated": "Adversarial prompt manipulation evades text-to-image safety filters, and through public API exposure, triggers keyword-based filters' contextual blindness, leading to prohibited sexually explicit or violent images that undermine platform safety policies and erode user trust."
+  }
+}

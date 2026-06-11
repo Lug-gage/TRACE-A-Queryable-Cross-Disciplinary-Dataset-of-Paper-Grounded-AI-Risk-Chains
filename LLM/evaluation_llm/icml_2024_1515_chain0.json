@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1515",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes elderly users' inability to detect/override grasps; reference describes robots' lack of object damage prediction.",
+    "reference": "Home assistive robots lack object damage prediction, making fragile items vulnerable to mislocalized grasps.",
+    "generated": "Elderly users' inability to detect or override unsafe robot grasps due to age-related physical and cognitive limitations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers physical injury (minor injury to elderly) but misses property damage, and adds loss of independence.",
+    "reference": "Property damage and potential minor injury to elderly users from dropped or crushed items.",
+    "generated": "Physical injury and loss of independence from dropped objects or collisions during failed robot manipulations."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc inserts user inability as an intermediate step from brittle spatial grounding to harm, whereas reference arc goes directly from brittle grounding to grasp mislocalization to property damage and injury.",
+    "reference": "Visual prompting's brittle spatial grounding leads to grasp mislocalization, which, when deployed in home assistive robots for elderly users, results in property damage and minor injury.",
+    "generated": "Visual prompting's brittle spatial grounding, when elderly users rely on home assistive robots, triggers their age-related inability to detect or override unsafe grasps, leading to physical injury and loss of independence from dropped objects or collisions."
+  }
+}

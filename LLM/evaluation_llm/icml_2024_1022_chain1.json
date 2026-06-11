@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1022",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes overtrust due to lack of verification, while reference attributes it to perceived specialization; related but different sensitivity condition.",
+    "reference": "Practitioners overtrust domain-specific fine-tuned models due to perceived specialization.",
+    "generated": "Practitioners lack independent verification of source reliability, causing them to accept miscalibrated confidence as accurate."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Propagation of false information is covered, but affected party (researchers vs. generic users) is not specifically addressed.",
+    "reference": "Researchers propagate false evidence chains in literature reviews and meta-analyses.",
+    "generated": "Erroneous findings and decisions propagate as users trust false evidence, undermining the integrity of evidence-based QA systems."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both involve miscalibrated confidence leading to erroneous propagation, but generated omits the intermediate step of incorrect source attributions and focuses on practitioner acceptance.",
+    "reference": "Poorly calibrated confidence in fine-tuned LLMs enables confident but incorrect source attributions on out-of-distribution inputs, which in research settings leads to propagation of false evidence chains.",
+    "generated": "Calibrated confidence estimates that differ from true likelihoods, through fine-tuned LLMs used for source-citing QA, trigger practitioners to accept miscalibrated confidence without independent verification, leading to erroneous decisions that undermine evidence-based QA integrity."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1921",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated states organizers and audiences cannot detect hallucinated commentary in real time, matching the reference's real-time constraints blocking human verification.",
+    "reference": "Real-time constraints block pre-broadcast human verification.",
+    "generated": "Event organizers and audiences cannot detect hallucinated commentary in real time, relying uncritically on system outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated identify audiences as the affected party and misinformation/loss of trust as the damage type.",
+    "reference": "Spread of misinformation to large audiences, damaging event credibility and public trust.",
+    "generated": "Audiences receive false, temporally misaligned commentary, causing confusion, misinformation, and loss of trust in live events."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Generated arc: hallucinated answers -> reliance -> inability to detect in real time -> false commentary -> misinformation and trust loss, matching the reference's hallucination -> inconsistent commentary -> lack of verification -> misinformation/eroded trust.",
+    "reference": "Multimodal fusion hallucination enables temporally inconsistent commentary, which in real-time live event settings exposes audiences lacking verification and literacy, leading to widespread misinformation and eroded trust.",
+    "generated": "Unpaired audiovisual training inducing hallucinated answers, through organizers and audiences relying on automated commentary, triggers inability to detect hallucinated commentary in real time, leading to false temporally misaligned commentary causing confusion, misinformation, and trust loss."
+  }
+}

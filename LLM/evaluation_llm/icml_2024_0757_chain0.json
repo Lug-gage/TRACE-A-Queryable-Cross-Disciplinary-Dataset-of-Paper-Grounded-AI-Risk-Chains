@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0757",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated focuses on unmodeled selection bias and limited alternatives, not historical self-selection excluding minority applicants from training data",
+    "reference": "Historical self-selection excludes minority applicants from training data.",
+    "generated": "Unmodeled selection bias in AI screening combines with applicants' limited alternatives, making biased evaluations inevitable for underrepresented groups."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (underrepresented job seekers/minority candidates) and damage type (systematic exclusion from employment) are present",
+    "reference": "Systematic exclusion of qualified minority candidates from employment.",
+    "generated": "Underrepresented job seekers are systematically excluded from employment opportunities, reinforcing workforce inequality."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc of unmodeled selection bias leading to biased evaluations and systematic exclusion is present",
+    "reference": "Unmodeled selection bias under strategic self-selection enables unfair, uncalibrated decisions, which in automated job screening exposes job seekers to biased evaluations, leading to systematic minority exclusion and amplified inequality.",
+    "generated": "Learning under strategic self-selection without modeling selection bias, through AI-screened job applications, triggers unmodeled selection bias combined with limited alternatives, making biased evaluations inevitable for underrepresented groups, leading to their systematic exclusion from employment opportunities, reinforcing workforce inequality."
+  }
+}

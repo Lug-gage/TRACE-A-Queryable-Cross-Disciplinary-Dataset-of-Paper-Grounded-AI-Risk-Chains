@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0004",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.4437,
+    "reference": "Resource-limited populations depend on edge devices, so accuracy fluctuations widen existing digital divides.",
+    "generated": "On-device ML models rely on one-shot subset selection that loses representativeness when subset size changes due to compute budget fluctuations."
+  },
+  "impact": {
+    "similarity": 0.5699,
+    "reference": "Marginalized users abandon unreliable ML services, reinforcing social and economic inequalities.",
+    "generated": "Degraded model accuracy and generalization, causing inconsistent application performance that erodes user trust and compromises decision quality."
+  },
+  "dose_response": {
+    "similarity": 0.6696,
+    "reference": "When fluctuating compute on edge devices leads to subset degradation, unrepresentative coresets cause accuracy drops, exposing resource-limited users to unreliable services they abandon, deepening inequality.",
+    "generated": "Subset selection methods producing unrepresentative datasets, through inconsistent on-device model accuracy, trigger representativeness loss from subset size changes due to compute budget fluctuations, leading to degraded model accuracy and generalization that erode user trust and compromise decision quality."
+  }
+}

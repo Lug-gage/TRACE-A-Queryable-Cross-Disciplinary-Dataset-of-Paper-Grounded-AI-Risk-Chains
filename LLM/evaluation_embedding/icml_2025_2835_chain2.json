@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2835",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5547,
+    "reference": "Ranking-based benchmarks overstate safety by masking edge-case failures due to aggregation artifacts.",
+    "generated": "Safety researchers' over-reliance on automated harmfulness rankings without independent validation prevents detection of systematic cognitive bias."
+  },
+  "impact": {
+    "similarity": 0.549,
+    "reference": "Unsafe models are deployed, causing reputational damage and potential societal harms.",
+    "generated": "Deployment of LLMs with undetected jailbreak vulnerabilities, leading to widespread harmful content generation and safety mechanism failures."
+  },
+  "dose_response": {
+    "similarity": 0.6961,
+    "reference": "Ranking-based harmfulness evaluation with cognitive biases introduces systematic misassessment, which in safety benchmarking via Elo ranking overstates safety, leading to deployment of insufficiently aligned models and societal harms.",
+    "generated": "Biased ranking evaluation (simplicity effect, relevance bias) introduces systematic misassessment enabling jailbreak bypass, through safety researchers using biased rankers, triggers over-reliance on automated rankings without independent validation, leading to deployment of LLMs with undetected jailbreak vulnerabilities causing widespread harmful content."
+  }
+}

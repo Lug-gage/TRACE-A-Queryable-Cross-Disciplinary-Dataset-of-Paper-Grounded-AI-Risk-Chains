@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe model maintainers/pipeline blindly trusting attribution scores/maps without independent verification, enabling manipulated signals to dictate model edits.",
+    "reference": "Model maintainers treat attribution scores as definitive without independent verification of concept boundaries.",
+    "generated": "Selective unlearning pipeline trusts attribution maps without integrity checks, enabling manipulated signals to dictate model edits."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (degraded model utility/performance) is covered, but the affected party (downstream applications relying on forgotten concepts) is missing; generated only mentions generative model performance.",
+    "reference": "Degraded model utility for downstream applications relying on forgotten concepts.",
+    "generated": "Catastrophic forgetting of unrelated concepts degrades generative model performance across tasks."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe noisy/manipulated attribution signals leading to erroneous unlearning of unrelated concepts, catastrophic forgetting, and degraded model utility, though the generated adds the trust-without-checks step as part of the causal chain.",
+    "reference": "Noisy attribution signals enable erroneous unlearning of unrelated concepts, which in automated unlearning pipelines exposes model maintainers to catastrophic forgetting, leading to degraded model utility.",
+    "generated": "Feature attribution maps containing manipulable object attribution information, through model maintainers performing selective unlearning, trigger a pipeline that trusts these maps without integrity checks, leading to catastrophic forgetting of unrelated concepts and degraded generative model performance across tasks."
+  }
+}

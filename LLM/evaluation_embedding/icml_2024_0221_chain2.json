@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0221",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4573,
+    "reference": "Federated clients trust the central server with raw gradients, enabling gradient inversion.",
+    "generated": "Clients' gradient updates linearly encode private text via the embedding matrix; extraction of this matrix permits exact input recovery."
+  },
+  "impact": {
+    "similarity": 0.5452,
+    "reference": "Patient medical records reconstructed from clinical federated training violate health privacy laws.",
+    "generated": "Private training text is fully reconstructed, causing leakage of sensitive personal or organizational data and loss of privacy."
+  },
+  "dose_response": {
+    "similarity": 0.7498,
+    "reference": "Black-box extraction enables gradient inversion, which in federated learning with transformers exposes private training text, leading to reconstructed medical records and leaked legal documents.",
+    "generated": "Black-box extraction of embedding layers, through clients contributing private text in federated training, triggers gradient updates to linearly encode private text, allowing exact input recovery and leaking sensitive personal or organizational data."
+  }
+}

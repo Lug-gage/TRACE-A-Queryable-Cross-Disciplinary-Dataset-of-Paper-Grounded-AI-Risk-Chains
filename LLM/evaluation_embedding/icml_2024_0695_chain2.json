@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0695",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.644,
+    "reference": "LLM may infer and encode sensitive attributes from clinical free-text, creating proxies that lead to disparate impact.",
+    "generated": "Clinical prediction systems lack fairness audits, enabling LLM-generated features that encode protected attributes to pass undetected into downstream models."
+  },
+  "impact": {
+    "similarity": 0.6958,
+    "reference": "Biased triage or treatment recommendations that worsen health disparities for marginalized populations.",
+    "generated": "Systematic misdiagnosis and unequal treatment allocation for patients from protected groups due to biased clinical predictions."
+  },
+  "dose_response": {
+    "similarity": 0.8796,
+    "reference": "LLMs generating spurious-correlation features enable few-shot feature engineering for clinical predictions, exposing patient data to encoded protected attributes, leading to biased treatment recommendations that worsen health disparities for marginalized groups.",
+    "generated": "LLMs generating spurious-correlation features from pre-training data, through patients processed by LLM-based feature tools, triggers undetected encoding of protected attributes in clinical predictions due to missing fairness audits, leading to systematic misdiagnosis and unequal treatment for protected groups."
+  }
+}

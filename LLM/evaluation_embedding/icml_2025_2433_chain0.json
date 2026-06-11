@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.621,
+    "reference": "Low-resource language communities lack alternative tools, forcing reliance on degraded LLM outputs.",
+    "generated": "Low-resource languages lack tokenizer training data, leaving them defenseless against distribution-distorting noncanonical token encodings."
+  },
+  "impact": {
+    "similarity": 0.4893,
+    "reference": "Misinformation spreads in low-resource language communities due to plausible but corrupted text.",
+    "generated": "Speakers receive linguistically meaningless, garbled text, rendering generation tools unusable for their languages."
+  },
+  "dose_response": {
+    "similarity": 0.7737,
+    "reference": "Tokenization mismatch distorts token probabilities, which in multilingual text generation exposes low-resource language speakers to linguistically meaningless segments, leading to misinformation spread and economic exclusion.",
+    "generated": "Tokenization mismatch between training and inference induces noncanonical encodings that, through low-resource language speakers using LLM text generators, exploit defenselessness from lacking tokenizer training data, leading to garbled meaningless text and unusable tools."
+  }
+}

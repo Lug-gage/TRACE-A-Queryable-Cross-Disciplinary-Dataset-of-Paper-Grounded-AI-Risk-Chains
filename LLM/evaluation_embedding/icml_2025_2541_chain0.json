@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2541",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5549,
+    "reference": "Engineers exhibit automation bias, over-trusting multi-agent LLM outputs without domain validation.",
+    "generated": "Engineers lack semantic validation protocols for formally verified proofs, trusting formal completeness without domain-specific safety checks."
+  },
+  "impact": {
+    "similarity": 0.6233,
+    "reference": "Deployment of unverified safety-critical software causes catastrophic system failures and loss of life.",
+    "generated": "Undetected domain-incorrect proofs cause safety-critical system malfunctions, leading to catastrophic operational failures, liability, and regulatory sanctions."
+  },
+  "dose_response": {
+    "similarity": 0.8161,
+    "reference": "Multi-agent collaboration amplifies propagation of formally-valid but semantically-misaligned proofs, which when deployed by engineers in safety-critical systems leads to catastrophic failures and loss of life.",
+    "generated": "Propagation of formally-valid yet semantically-misaligned proofs across multi-agent chains, through software engineers deploying them in safety-critical systems, triggers reliance on formal completeness without semantic validation, leading to undetected domain errors causing catastrophic failures, liability and regulatory sanctions."
+  }
+}

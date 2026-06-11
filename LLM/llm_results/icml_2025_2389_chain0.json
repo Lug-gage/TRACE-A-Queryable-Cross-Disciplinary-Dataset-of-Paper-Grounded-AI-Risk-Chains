@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2389",
+  "chain_index": 0,
+  "title": "Reliable and Efficient Amortized Model-based Evaluation",
+  "abstract": "Comprehensive evaluations of language models (LM) during both development and deployment phases are necessary because these models are thought to possess numerous capabilities as well as safety risks. The average score across a wide range of benchmarks provides a signal that helps guide the use of these LMs in practice. Currently, holistic evaluations are costly due to the large volume of benchmark questions, making frequent evaluations impractical. A popular attempt to lower the cost is to compute the average score on a subset of the benchmark. This approach, unfortunately, often renders an unreliable measure of LM performance because the average score is often confounded with the difficulty of the questions in the benchmark subset. Item response theory (IRT) was designed to address this challenge, providing a reliable measurement by careful controlling for question difficulty. Unfortunately, question difficulty is expensive to estimate. Facing this challenge, we train a model that predicts question difficulty from its content, enabling a reliable measurement at a fraction of the cost. In addition, we leverage this difficulty predictor to further improve the evaluation efficiency through training a question generator given a difficulty level. This question generator is essential in adaptive testing, where, instead of using a random subset of the benchmark questions, informative questions are adaptively chosen based on the current estimation of LLM performance. Experiments on 22 common natural language benchmarks and 183 LMs show that this approach is more reliable and efficient compared to the current common practice.1",
+  "impact": "This paper seeks to contribute to the advancement of Machine Learning, with a specific focus on AI evaluation. While the societal implications of this work are broad and multifaceted, we recognize that its applications carry potential risks. The question generator, designed to supple- ment adaptive testing by generating questions at specific difficulty levels, demonstrates promising capabilities beyond this scope. It has the potential to replace overused questions, expand existing datasets, or construct entirely new ones. However, these applications introduce the possibility of bias in AI-generated questions, which could impact fairness and reliability. To address this, we highlight the indispensable role of human oversight in reviewing and refining AI-generated content. The question generator leverages embedding representations to achieve an impressive degree of precision in crafting questions tailored to specific difficulty levels, often exceeding human intuition. Yet, human reviewers remain essential for identifying and mitigating any biases that may arise, ensuring the integrity and inclusivity of the generated content. This collaborative approach, integrating the strengths of both human expertise and AI-driven innovation, underscores the importance of responsible AI deployment in advancing adaptive testing and related applications.",
+  "query_input": {
+    "scenario": "Amortized IRT-based difficulty scoring for LM benchmark construction",
+    "issue": "Difficulty predictions fail to generalize to new model families, causing benchmark fragility.",
+    "hazard": [
+      "Amortized IRT difficulty estimation propagates model misspecification, yielding biased and non-robust difficulty scores across shifting LM capabilities."
+    ],
+    "exposure": [
+      "Benchmark maintainers and LM evaluators using amortized IRT difficulty scores for test set design."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Evaluators’ uncritical adoption of predicted difficulty scores, lacking mechanisms to detect or correct for model misspecification across shifting LM distributions.",
+    "impact": "Biased difficulty scores yield unreliable LM evaluations, causing misallocation of resources and undetected safety failures across the community.",
+    "dose_response": "Amortized IRT difficulty estimation propagates model misspecification, yielding biased scores; through benchmark maintainers' use, it triggers uncritical adoption lacking detection mechanisms across shifting LM distributions, leading to misallocation of resources and undetected safety failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Biased difficulty scores from amortized IRT, used by benchmark maintainers, lead to difficulty predictions failing to generalize, causing misleading comparisons and eroded trust."
+    ],
+    "vulnerability": [
+      "Benchmark designers treat IRT difficulty scores as fixed, ignoring model-dependence, leading to overconfidence.",
+      "Lack of independent validation of difficulty estimates across diverse model types makes benchmarks brittle."
+    ],
+    "impact": [
+      "Misleading model comparisons misdirect research, wasting resources on non-robust improvements.",
+      "Eroded trust in benchmarks slows progress and harms institutional credibility."
+    ]
+  }
+}

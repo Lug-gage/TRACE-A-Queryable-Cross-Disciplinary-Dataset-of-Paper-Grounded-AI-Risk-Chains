@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1760",
+  "chain_index": 1,
+  "title": "Stay on Topic with Classifier-Free Guidance",
+  "abstract": "Classifier-Free Guidance (CFG) has recently emerged in as a lightweight technique to encourage prompt-adherence in generations, yet has not yet been successfully applied to language modeling. In this work, we demonstrate across a wide array of benchmarks that CFG can be used broadly as an inference-time technique in pure language modeling. We show that CFG (1) improves the performance of Pythia, GPT-2 and LLaMAfamily models across a broad set of Q&A, reasoning and code generation tasks, achieving SOTA on LAMBADA with LLaMA-7B over PaLM- 540B; (2) brings improvements equivalent to a model with twice the parameter-count; (3) can stack alongside other inference-time methods like Chain-of-Thought and Self-Consistency, yielding further improvements in difficult tasks; (4) can be used to increase the faithfulness and coherence of assistants in challenging form-driven and contentdriven prompts: in human evaluations we show a 75% preference for using CFG over baseline.",
+  "impact": "CFG helps to improve generative modeling by introducing an auxiliary objective that increases prompt adherence. We demonstrate that CFG is effective in autoregressive language modeling tasks. We observe that CFG yields consistent task improvements across a wide variety of different settings, tasks and prompting techniques, thereby showing its value as a useful language modeling technique. While this advancement presents exciting opportunities for improving user control and customization in LLM interactions, it also carries substantial risks. CFG can potentially undermine alignment mechanisms designed to ensure ethical and safe behavior in chatbots. By prioritizing prompt adherence over alignment protocols, it can facilitate the generation of harmful, biased, or toxic content, posing serious ethical concerns. Such capability could be exploited to bypass content moderation systems, leading to the dissemination of offensive material, misinformation, or other forms of digital harm. It is crucial to address these risks by developing robust safeguards and ethical guidelines for the deployment of this technique. We emphasize the importance of continued",
+  "query_input": {
+    "scenario": "LLM code generation with CFG to enforce syntactic adherence",
+    "issue": "Syntactically correct code may contain hidden logic errors due to overconfident misdirection.",
+    "hazard": [
+      "CFG amplifies output coherence and prompt-adherence, degrading calibration and internal consistency, yielding plausible but unreliable text."
+    ],
+    "exposure": [
+      "Software developers relying on LLM coding assistants"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers over-trust syntactically coherent outputs, assuming correctness without rigorous testing.",
+    "impact": "Deployed code contains latent logic flaws, leading to system outages, security breaches, and data loss.",
+    "dose_response": "CFG-amplified plausible but unreliable text, through developers relying on LLM coding assistants, triggers over-trust in syntactically coherent outputs without rigorous testing, leading to deployed code with latent logic flaws causing system outages, security breaches, and data loss."
+  },
+  "reference": {
+    "dose_response": [
+      "CFG generates syntactically correct but logically flawed code; developers skip testing, trusting apparent correctness, leading to software bugs and increased maintenance costs."
+    ],
+    "vulnerability": [
+      "Developers conflate syntactic correctness with logical soundness, skipping testing."
+    ],
+    "impact": [
+      "Introduction of bugs and security flaws into software, increasing maintenance costs."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1018",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe businesses/analysts trusting LLM outputs as representative without proper validation",
+    "reference": "Businesses mistake LLM-generated consumer responses for representative market samples without validation.",
+    "generated": "Market analysts lack mechanisms to detect miscalibrated LLM uncertainty, trusting simulated confidence sets as valid for human populations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Financial losses covered, but brand reputation damage is missing",
+    "reference": "Misguided product launches waste resources and damage brand reputation.",
+    "generated": "Flawed product decisions based on non-representative data cause financial losses and distorted market strategies."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from miscalibrated confidence sets to misplaced trust to flawed decisions is present",
+    "reference": "Miscalibrated confidence sets cause market analysts using LLM-simulated consumer surveys to mistake non-representative data for accurate, leading to misguided product launches that waste resources and damage reputation.",
+    "generated": "Miscalibrated LLM-simulated confidence sets, through market analysts' use, trigger the absence of detection mechanisms and misplaced trust in simulated data as valid, leading to flawed decisions causing financial losses and distorted strategies."
+  }
+}

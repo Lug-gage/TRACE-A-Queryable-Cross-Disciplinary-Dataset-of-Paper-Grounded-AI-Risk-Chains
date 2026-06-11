@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1526",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5692,
+    "reference": "Automated picking misidentifies items due to lighting and occlusion differences between simulation and real warehouse environments.",
+    "generated": "Supervisors lack tools and training to detect simulation-bias-induced robot misclassifications, compelling them to trust flawed automated picks."
+  },
+  "impact": {
+    "similarity": 0.7488,
+    "reference": "Shipment delays and financial losses from inaccurate inventory, with increased cognitive load on supervising workers.",
+    "generated": "Inventory inaccuracies multiply, worker oversight burden intensifies, and sorting backlogs cascade into downstream fulfillment delays."
+  },
+  "dose_response": {
+    "similarity": 0.8101,
+    "reference": "Data scaling entrenches simulation biases causing misclassification, which in warehouse sorting leads to inventory errors, shipment delays, and increased cognitive load on workers.",
+    "generated": "Data scaling for sim-to-real transfer entrenches simulation biases, through warehouse personnel supervising robot fleets, triggers supervisors' lack of tools to detect misclassifications, compelling trust in flawed picks, leading to multiplied inventory inaccuracies, intensified oversight burden, and cascading fulfillment delays."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1766",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe judges' inability to critically evaluate AI rationalizations, leading to over-trust or acceptance as reliable.",
+    "reference": "Judges over-trust plausible-sounding AI rationalizations, ignoring contradictory case evidence.",
+    "generated": "Judges and legal clerks lack training and institutional procedures to detect overconfident AI rationalizations, accepting them as reliable."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Erroneous rulings, miscarriages of justice, and trust erosion cover skewed decisions, unfair outcomes, and diminished public trust.",
+    "reference": "Skewed judicial decisions, unfair legal outcomes, and diminished public trust in the justice system.",
+    "generated": "Erroneous judicial rulings and miscarriages of justice, eroding public trust in legal institutions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from overconfident rationalizations through judge over-reliance to erroneous rulings is present in both.",
+    "reference": "Miscalibrated rationalizations cause judges to over-trust plausible-sounding AI, leading to skewed judicial decisions and unfair legal outcomes.",
+    "generated": "Sparse Hopfield networks with Fenchel-Young loss margins generate overconfident retrievals under distribution shifts, which, when deployed as rationalizations for judges and clerks untrained to identify overconfidence, trigger erroneous rulings, miscarriages of justice, and erosion of public trust."
+  }
+}

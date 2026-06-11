@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 4,
+  "title": "CCM Real-Time Controllable Visual Content Creation Using Text-to-Image Consistency Models",
+  "abstract": "Consistency Models (CMs) have showed a promise in creating high-quality images with few steps. However, the way to add new conditional controls to the pre-trained CMs has not been explored. In this paper, we explore the pivotal subject of leveraging the generative capacity and efficiency of consistency models to facilitate controllable visual content creation via ControlNet. First, it is observed that ControlNet trained for diffusion models (DMs) can be directly applied to CMs for high-level semantic controls but sacrifice image low-level details and realism. To tackle with this issue, we develop a CMs-tailored training strategy for ControlNet using the consistency training (Song et al., 2023). It is substantiated that ControlNet can be successfully established through the consistency training technique. Besides, a unified adapter can be trained utilizing the consistency training, which enhances the adaptation of DM’s ControlNet. We quantitatively and qualitatively evaluate all strategies across various conditional controls, including sketch, hed, canny, depth, human pose, low-resolution image and masked image, with the pre-trained text-toimage latent consistency models.",
+  "impact": "The research on real-time controllable image generation has profound implications for many fields, offering advancements that could democratize creativity, enhance interactive experiences, and streamline content creation. Nevertheless, the capability to generate images instantaneously also raises concerns regarding the propagation of misinformation through hyper-realistic fabrications and ethical considerations in the replication of human likenesses. To this issue, it is essential to establish ethical guidelines and promote transparency in its applications. This work was supported by the National Natural Science Foundation of China (NSFC) under Grants 62225207 and 62276243.",
+  "query_input": {
+    "scenario": "Low-resolution conditioning for medical image super-resolution",
+    "issue": "Hallucinated high-frequency details can introduce false pathological findings, endangering diagnostic accuracy.",
+    "hazard": [
+      "Conditionally-controlled consistency generation produces images with potential misalignment to input conditions, yielding unreliable visual outputs."
+    ],
+    "exposure": [
+      "Radiologists and clinicians interpreting AI-enhanced medical images."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Radiologists depend on AI-enhanced images for diagnostic decisions without real-time means to distinguish hallucinated details from true pathology.",
+    "impact": "Misdiagnosis and inappropriate medical interventions from false pathological findings, harming patients and eroding trust in AI-assisted imaging.",
+    "dose_response": "Conditionally-controlled consistency generation yielding unreliable visual outputs, through radiologists and clinicians interpreting AI-enhanced medical images, triggers dependence on these images without means to distinguish hallucinated details, leading to misdiagnosis, inappropriate interventions, patient harm, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Conditionally-controlled generation hallucinates details in super-resolution; clinicians trust enhanced images, mistaking artifacts for pathology and causing misdiagnosis and patient harm."
+    ],
+    "vulnerability": [
+      "Clinicians rely on enhanced images without interrogating hallucination risk, mistaking artifacts for pathology."
+    ],
+    "impact": [
+      "Misdiagnosis, unnecessary treatments, patient harm, and erosion of trust in medical AI."
+    ]
+  }
+}

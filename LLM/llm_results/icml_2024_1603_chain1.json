@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1603",
+  "chain_index": 1,
+  "title": "Memoria Resolving Fateful Forgetting Problem through Human-Inspired Memory Architecture",
+  "abstract": "Making neural networks remember over the long term has been a longstanding issue. Although several external memory techniques have been introduced, most focus on retaining recent information in the short term. Regardless of its importance, information tends to be fatefully forgotten over time. We present Memoria, a memory system for artificial neural networks, drawing inspiration from humans and applying various neuroscientific and psychological theories. The experimental results prove the effectiveness of Memoria in the diverse tasks of sorting, language modeling, and classification, surpassing conventional techniques. Engram analysis reveals that Memoria exhibits the primacy, recency, and temporal contiguity effects which are characteristics of human memory.",
+  "impact": "This paper seeks to create an external memory module designed for artificial neural networks to enhance the processing capabilities for general long-sequence data. The development of Memoria draws upon theories concerning human memory, which may have various societal implications. Notably, Memoria maintains information generated during inference in long-term memory. Consequently, prolonged use of specific user data for model inference might raise potential privacy concerns due to the accumulation of information in Memoria. Users of Memoria should carefully review regulations regarding the handling of personal data.",
+  "query_input": {
+    "scenario": "Memory-augmented LLM for knowledge-intensive tasks",
+    "issue": "Recency-biased retrieval causes factual inaccuracies in long-form generation.",
+    "hazard": [
+      "Human-inspired memory mechanisms (e.g., recency and primacy biases) in continual learning architectures skew retention, causing systematic prediction errors."
+    ],
+    "exposure": [
+      "Information consumers using LLM-powered QA or summarization tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users treat LLM outputs as authoritative without the domain expertise to detect recency-skewed factual errors.",
+    "impact": "Misinformation adoption leads to flawed downstream decisions in knowledge-intensive tasks.",
+    "dose_response": "Human-inspired memory mechanisms causing systematic prediction errors, through information consumers using LLM-powered QA or summarization tools, trigger users treating outputs as authoritative without detecting recency-skewed errors, leading to misinformation adoption and flawed knowledge-intensive decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Recency-biased retrieval in memory-augmented LLMs causes factual inaccuracies; when information consumers use QA tools with high trust and no fact-checking, this enables misinformation dissemination, eroding trust and causing uninformed decisions."
+    ],
+    "vulnerability": [
+      "High trust in LLM outputs combined with lack of fact-checking enables dissemination of false information."
+    ],
+    "impact": [
+      "Misinformation erodes trust, leading to uninformed decisions and potential real-world harm."
+    ]
+  }
+}

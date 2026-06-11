@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2320",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes model memorization and ability to reproduce training data as the condition enabling extraction; generated focuses on individuals' lack of awareness and control over their photos, a related but different sensitivity condition.",
+    "reference": "Models memorize and can reproduce training data instances under targeted prompt queries.",
+    "generated": "Individuals lack awareness and control over personal photos in training data, with no consent mechanism or ability to opt out."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (individuals) and the damage type (privacy violations) from the reference are present in the generated text; additional harms mentioned do not detract from this core consequence.",
+    "reference": "Leakage of personal photographs and associated metadata violates individuals' privacy rights.",
+    "generated": "Private images are reconstructed without consent, causing privacy violations, reputational damage, and potential identity misuse."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated causal arc retains the same logic: adversarial prompt manipulation leads to reconstruction of private training images, which in turn causes privacy violations and identity misuse. The inclusion of individuals' lack of control does not alter the essential causal translation.",
+    "reference": "Adversarial prompt manipulation enables extraction of private training images, which in this scenario exposes individuals, leading to privacy violations and risk of identity theft.",
+    "generated": "Adversarial prompt manipulation of susceptible T2I models exposes individuals whose photos were in training data without consent, exploiting their lack of control to reconstruct private images, causing privacy violations and identity misuse."
+  }
+}

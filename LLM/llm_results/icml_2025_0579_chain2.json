@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 2,
+  "title": "Mind the Gap A Practical Attack on GGUF Quantization",
+  "abstract": "With the increasing size of frontier LLMs, posttraining quantization has become the standard for memory-efficient deployment. Recent work has shown that basic rounding-based quantization schemes pose security risks, as they can be exploited to inject malicious behaviors into quantized models that remain hidden in full precision. However, existing attacks cannot be applied to more complex quantization methods, such as the GGUF family used in the popular ollama and llama.cpp frameworks. In this work, we address this gap by introducing the first attack on GGUF. Our key insight is that the quantization error - the difference between the full-precision weights and their (de-)quantized version - provides sufficient flexibility to construct malicious quantized models that appear benign in full precision. Leveraging this, we develop an attack that trains the target malicious LLM while constraining its weights based on quantization errors. We demonstrate the effectiveness of our attack on three popular LLMs across nine GGUF quantization data types on three diverse attack scenarios: insecure code generation (∆=88.7%), targeted content injection (∆=85.0%), and benign instruction refusal (∆=30.1%). Our attack highlights that (1) the most widely used post-training quantization method is susceptible to adversarial interferences, and (2) the complexity of quantization schemes alone is insufficient as a defense.",
+  "impact": "Despite millions of language model deployments using quantization techniques, researchers have only recently started to explore the potential risks of adversarial attacks. Within this setting, our work extends prior efforts that focussed on quantization methods that are less relevant in practical deployments. Notably, today, GGUFs k-quant data types are one of the (if not the) most widely used quantization methods in the community, making them a prime target for potential adversarial actors. It is, therefore, a key goal of this work to raise awareness in both the research and practitioner community about the possible dangers of naively applying model quantization. Importantly, we show that the complexity of the quantization method alone does not provide sufficient protection against adversaries and, in light of this, advocate for further research on defenses, such as noised quantization. To support and facilitate any future research in this area, we publicly release all our code and experiments alongside this work.",
+  "query_input": {
+    "scenario": "Security auditor evaluates a full-precision model before its quantized release.",
+    "issue": "Audit of full-precision model fails to detect quantization-conditioned backdoor.",
+    "hazard": [
+      "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model while its full-precision source appears benign."
+    ],
+    "exposure": [
+      "Security auditors vetting models prior to quantization and distribution."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Auditors rely on full-precision inspection, assuming it reliably predicts post-quantization behavior, leaving quantization-triggered backdoors undetected.",
+    "impact": "Malicious quantized models pass audit and are deployed, causing widespread insecure code generation, targeted content injection, or benign instruction refusal.",
+    "dose_response": "Quantization mapping ambiguity, when models are vetted pre-quantization, causes auditors to trust full-precision inspection, enabling backdoors to survive audit and cause deployed models to generate insecure code, inject content, or refuse instructions."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a security auditor evaluating a full-precision model before its quantized release exposes security auditors vetting models prior to quantization and distribution, leading to certified 'safe' models becoming vehicles for harm after quantization, invalidating audit authority."
+    ],
+    "vulnerability": [
+      "Audit protocols lack quantization-aware testing procedures, focusing exclusively on full-precision behavior.",
+      "Auditor expertise is concentrated on traditional software security, not model compression attack surfaces.",
+      "Certification processes grant safety seals to full-precision models without requiring re-evaluation after quantization."
+    ],
+    "impact": [
+      "Certified 'safe' models become vehicles for harm after quantization, invalidating audit authority.",
+      "Regulatory frameworks built on pre-deployment audits fail to prevent real-world AI incidents.",
+      "Loss of public confidence in AI safety certifications and auditing institutions."
+    ]
+  }
+}

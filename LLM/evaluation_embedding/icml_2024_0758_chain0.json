@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0758",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6033,
+    "reference": "Edge models may over-compress parameters crucial for rare inputs, increasing error rates for demographic minorities not well-represented in training data.",
+    "generated": "Compression validation set lacks rare input coverage, leaving users exposed to untested model behavior without safeguards."
+  },
+  "impact": {
+    "similarity": 0.7023,
+    "reference": "Erratic predictions on atypical inputs erode user trust and can cause discriminatory outcomes in critical applications (health, finance).",
+    "generated": "Erratic predictions cause unsafe device actions and user harm during real-time inference on edge devices."
+  },
+  "dose_response": {
+    "similarity": 0.7659,
+    "reference": "Over-compression of parameters for rare inputs enables erratic predictions on compressed edge models, which in edge deployment scenarios exposes device users to degraded reliability, leading to discriminatory outcomes and safety hazards.",
+    "generated": "Importance-ordered low-rank decomposition over-compressing parameters for rare inputs, through device users interacting with compressed apps, triggers rare-input coverage gaps in validation, leaving users exposed to untested behavior, leading to erratic predictions causing unsafe actions and user harm on edge devices."
+  }
+}

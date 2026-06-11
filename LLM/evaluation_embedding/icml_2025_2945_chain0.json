@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2945",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6319,
+    "reference": "Security personnel treat face recognition as infallible, reducing manual ID checks.",
+    "generated": "Unquestioned reliance on automated face recognition without liveness checks or secondary verification prevents guards from detecting invisible UV spoofing."
+  },
+  "impact": {
+    "similarity": 0.7547,
+    "reference": "Unauthorized physical access enables theft, sabotage, or data breaches.",
+    "generated": "Unauthorized individuals gain physical entry to secured premises, enabling theft, espionage, or violence."
+  },
+  "dose_response": {
+    "similarity": 0.8083,
+    "reference": "Hat-mounted UV perturbations enable evasion of face recognition, which in building access control exposes guards' automation bias, leading to unauthorized entry for theft, sabotage, data breaches, and loss of trust.",
+    "generated": "Omni-angle invisible UV adversarial perturbations from hat-mounted emitters, through security guards’ reliance on automated face recognition, trigger unquestioned acceptance without liveness checks, leading to unauthorized physical entry and enabling theft, espionage, or violence."
+  }
+}

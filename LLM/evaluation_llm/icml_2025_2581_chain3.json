@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2581",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Mentions overfitting to superficial cues but shifts the sensitivity condition to a lack of validation processes, not the overfitting itself causing OOD failure.",
+    "reference": "Overfitted exemplar policies exploit spurious dataset correlations, failing on out-of-distribution inputs.",
+    "generated": "Lack of validation processes to detect when RL-optimized exemplar selection overfits to superficial cues, leaving developers blind to reasoning distortions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Unreliable outputs are covered, but erosion of user trust and operational failures are missing.",
+    "reference": "Deployed systems produce unreliable outputs on real-world data, eroding user trust and causing operational failures.",
+    "generated": "Biased prompts systematically distort model reasoning across varied applications, producing unreliable outputs and degrading task performance at scale."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc relies on lack of validation causing reasoning distortion, whereas the reference arc is overfitting to superficial cues directly causing OOD prompt failure, then trust loss and operational failures.",
+    "reference": "Q-learning policy overfits to superficial cues, causing developers' deployed prompts to fail on out-of-distribution data, yielding unreliable outputs that erode trust and cause operational failures.",
+    "generated": "Relevance-diversity optimized exemplar selection, when deployed across varied downstream applications and without validation to detect overfitting to superficial cues, systematically distorts model reasoning, producing unreliable outputs and degrading task performance at scale."
+  }
+}

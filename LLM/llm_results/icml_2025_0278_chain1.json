@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0278",
+  "chain_index": 1,
+  "title": "Text-to-LoRA Instant Transformer Adaption",
+  "abstract": "While Foundation Models provide a general tool for rapid content creation, they regularly require task-specific adaptation. Traditionally, this exercise involves careful curation of datasets and repeated fine-tuning of the underlying model. Finetuning techniques enable practitioners to adapt foundation models for many new applications but require expensive and lengthy training while being notably sensitive to hyperparameter choices. To overcome these limitations, we introduce Textto-LoRA (T2L), a model capable of adapting Large Language Models on the fly solely based on a natural language description of the target task. T2L is a hypernetwork trained to construct Lo- RAs in a single inexpensive forward pass. After training T2L on a suite of 9 pre-trained LoRA adapters (GSM8K, Arc, etc.), we show that the ad-hoc reconstructed LoRA instances match the performance of task-specific adapters across the corresponding test sets. Furthermore, T2L can compress hundreds of LoRA instances and zeroshot generalize to entirely unseen tasks. This approach provides a significant step towards democratizing the specialization of foundation models and enables language-based adaptation with minimal compute requirements. Our code is available at https://github.com/SakanaAI/ text-to-lora.",
+  "impact": "This paper introduces Text-to-LoRA (T2L), a novel approach that significantly lowers the barrier to adapting large foundation models for specific tasks. Traditionally, customizing models like LLMs requires resource-intensive fine-tuning on specific datasets for each new application, limiting accessibility and slowing down deployment. T2L overcomes this by training a hypernetwork to generate taskspecific Low-Rank Adapters (LoRAs) instantly, using only a natural language description of the target task as input. This eliminates the need for per-task fine-tuning datasets and lengthy optimization processes, enabling rapid, on-thefly adaptation with minimal computational overhead during inference, thereby making powerful model customization more accessible. The broader impact of T2L lies in its potential to democratize the specialization of powerful AI systems by enabling adaptation through intuitive text instructions. While T2L demonstrates effective compression and promising zero-shot generalization to unseen tasks similar to those encountered during training, potential pitfalls exist that warrant consideration. Its performance is notably sensitive to the quality and clarity of the natural language task descriptions; poorly phrased or misaligned instructions could lead to suboptimal or incorrect adaptations, potentially hindering reliability in real-world user scenarios. Furthermore, while T2L significantly advances instant adaptation, its generalization capability to task types fundamentally different from its training distribution (e.g., beyond the SNI-derived benchmarks) needs further investigation, and it may not yet fully match the performance ceiling of adapters meticulously finetuned on extensive, high-quality datasets for highly complex or specialized domains.",
+  "query_input": {
+    "scenario": "General-domain QA systems (e.g., ARC, open-ended questions)",
+    "issue": "Adapter fails to align with factual grounding requirements, producing plausible-sounding but incorrect answers.",
+    "hazard": [
+      "Hypernetwork-generated LoRA adapters from text descriptions induce task misalignment and distributional shift, degrading model reliability."
+    ],
+    "exposure": [
+      "General users trusting LLM-based Q&A for information retrieval."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Trusting LLM-based Q&A, users lack the expertise to identify plausible falsehoods, rendering them susceptible to misinformation.",
+    "impact": "Users acting on false information leads to flawed decisions, widespread misinformation, and erosion of public trust in AI-assisted Q&A systems.",
+    "dose_response": "Hypernetwork-generated LoRA adapters inducing task misalignment and distributional shift, through general users trusting LLM-based Q&A, triggers their susceptibility to plausible falsehoods, leading to users acting on false information, flawed decisions, widespread misinformation, and eroded public trust in AI-assisted Q&A systems."
+  },
+  "reference": {
+    "dose_response": [
+      "Task misalignment from hypernetwork-generated adapters causes plausible-sounding incorrect answers in QA systems, which general users trust as fact, resulting in misinformation spread and harmful high-stakes decisions."
+    ],
+    "vulnerability": [
+      "Users accept plausible-sounding answers as fact due to automation bias.",
+      "Lack of awareness of adapter-induced factual gaps prevents questioning of QA outputs."
+    ],
+    "impact": [
+      "Misinformation spreads when false answers are shared without detection.",
+      "Harmful decisions result from incorrect advice in high-stakes domains like health."
+    ]
+  }
+}

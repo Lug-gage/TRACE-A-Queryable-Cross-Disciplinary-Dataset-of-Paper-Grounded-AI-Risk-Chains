@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2044",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6738,
+    "reference": "Content creators prioritize workflow speed over scrutinizing causal plausibility of AI edits",
+    "generated": "Content creators lack methods to verify causal consistency in realistic AI edits, making decisions based on flawed outputs."
+  },
+  "impact": {
+    "similarity": 0.6889,
+    "reference": "Loss of professional credibility and client trust in AI-assisted content",
+    "generated": "Trust in AI editing tools collapses, physically impossible scenes circulate, and professional reputations suffer."
+  },
+  "dose_response": {
+    "similarity": 0.7777,
+    "reference": "Diffusion models manipulating semantics without causal mechanisms enable physically implausible edits, which when prioritized for speed by content creators lead to lost credibility, client distrust, and false imagery spread.",
+    "generated": "Diffusion models generating causally invalid counterfactuals, through photographers and content creators relying on AI-controlled edits, trigger the inability to verify causal consistency, leading to collapse of trust, circulation of physically impossible scenes, and damaged professional reputations."
+  }
+}

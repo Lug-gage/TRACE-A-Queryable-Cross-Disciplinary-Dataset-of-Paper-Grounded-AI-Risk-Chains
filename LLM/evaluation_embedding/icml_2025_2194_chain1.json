@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2194",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.536,
+    "reference": "Lack of automated synthesizability feedback for AI-designed molecules.",
+    "generated": "Chemists lack real-time wet-lab oracle access, so they must rely entirely on surrogate estimates without means to detect misspecification."
+  },
+  "impact": {
+    "similarity": 0.6903,
+    "reference": "Waste of experimental effort on impossible-to-synthesize molecules.",
+    "generated": "Experimental campaigns waste resources evaluating molecules that are unsynthesizable or fail to satisfy multiple design objectives."
+  },
+  "dose_response": {
+    "similarity": 0.7521,
+    "reference": "In multi-objective molecular design, surrogate misspecification biases preference optimization toward infeasible molecules, which misleads computational chemists, causing wasted experiments and distrust.",
+    "generated": "Amplified surrogate model misspecification from offline molecular stitching, through computational chemists generating designs, triggers reliance on surrogate estimates without means to detect misspecification, leading to wasted experimental resources on unsynthesizable molecules or those failing multiple objectives."
+  }
+}

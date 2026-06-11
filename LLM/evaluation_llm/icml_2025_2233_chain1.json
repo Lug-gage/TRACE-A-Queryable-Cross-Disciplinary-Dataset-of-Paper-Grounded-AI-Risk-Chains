@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2233",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes system inability to detect drift, whereas reference describes student acceptance of outdated adaptations—different sensitivity condition",
+    "reference": "Students accept outdated tutoring adaptations, limiting learning gains.",
+    "generated": "The tutoring system’s reward model lacks mechanisms to detect or adapt to preference drift, so it cannot distinguish outdated feedback from current student needs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (students) covered, but damage type partially covered: learning outcomes/degradation aligns with achievement, but confidence is missing",
+    "reference": "Reduced student achievement and confidence in adaptive learning tools.",
+    "generated": "Students receive math instruction misaligned with their current learning preferences, degrading learning outcomes and increasing misconceptions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal arc from estimation error to reward signal distortion/inability to distinguish outdated feedback, leading to misaligned instruction and degraded outcomes, is semantically present",
+    "reference": "Estimation error from exponential discounting distorts reward signals, which in LLM-powered math tutoring with DPO-based self-training exposes students using adaptive math tutoring LLMs, leading to reduced student achievement and confidence in adaptive learning tools.",
+    "generated": "Estimation error from exponential discounting of past feedback under unknown preference drift, through exposure to adaptive math tutoring LLMs, triggers the reward model’s inability to distinguish outdated feedback, leading to misaligned instruction, degraded learning outcomes, and increased misconceptions."
+  }
+}

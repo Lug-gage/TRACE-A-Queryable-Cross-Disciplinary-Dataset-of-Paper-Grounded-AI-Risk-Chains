@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0814",
+  "chain_index": 3,
+  "title": "MLAgentBench Evaluating Language Agents on Machine Learning Experimentation",
+  "abstract": "A central aspect of machine learning research is experimentation, the process of designing and running experiments, analyzing the results, and iterating towards some positive outcome (e.g., improving accuracy). Could agents driven by powerful language models perform machine learning experimentation effectively? To answer this question, we introduce MLAgentBench, a suite of 13 tasks ranging from improving model performance on CIFAR-10 to recent research problems like BabyLM. For each task, an agent can perform actions like reading/writing files, executing code, and inspecting outputs. We then construct an agent that can perform ML experimentation based on ReAct framework. We benchmark agents based on Claude v1.0, Claude v2.1, Claude v3 Opus, GPT-4, GPT-4-turbo, Gemini-Pro, and Mixtral and find that a Claude v3 Opus agent is the best in terms of success rate. It can build compelling ML models over many tasks in MLAgentBench with 37.5% average success rate. Our agents also display highly interpretable plans and actions. However, the success rates vary considerably; they span from 100% on well-established older datasets to as low as 0% on recent Kaggle challenges created potentially after the underlying LM was trained. Finally, we identify several key challenges for LM-based agents such as long-term planning and reducing hallucination. 2",
+  "impact": "Our paper presents the development and evaluation of MLAgentBench for language model-based ML experimentation agents. It carries both significant potential benefits and risks that warrant careful consideration. On the positive side, the advancement of language models as tools for ML experimentation can democratize access to sophisticated ML research. It can enable a broader range of researchers, including those without extensive coding or ML expertise, to engage in ML research and experimentation. This has the potential to accelerate innovation in various fields, foster interdisciplinary research, and potentially lead to breakthroughs in areas like healthcare, environmental science, and others. The use of autonomous agents in ML experimentation also helps the reproducibility of results. However, there are notable risks. The ability of these agents to autonomously modify and run ML pipelines arbitrarily can lead to unpredictable outcomes, such as writing dangerous system code. This makes it important to be under close human supervision. Furthermore, by accelerating AI development, it could make it harder for people to adapt to the new technology and defend against the risks. Finally, there’s a societal impact to consider in terms of employment and skill displacement. As these agents become more capable, there is a potential for them to replace or diminish the role of human engineers or researchers in certain aspects of ML experimentation, which could have broader implications for the job market and required skill sets in the field. To mitigate these risks and transform potential challenges into opportunities, it is crucial to involve ML researchers and engineers in the development and implementation of these AI systems. By doing so, AI can be used to augment the work of professionals rather than replace it. This approach not only preserves jobs but also enhances the productivity and creativity of human workers.",
+  "query_input": {
+    "scenario": "Autonomous LLM agent for academic ML experimentation",
+    "issue": "Propagation of planning errors across multi-step pipelines, compromising experiment validity.",
+    "hazard": [
+      "Autonomous LLM agents generate and execute flawed experimental plans due to hallucinated reasoning or incomplete world models."
+    ],
+    "exposure": [
+      "PhD students and scientists using autonomous agents to design and run experiments."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Trust in agent interpretability and lack of automated error-checking mechanisms allow flawed experimental plans to propagate unnoticed.",
+    "impact": "Flawed experimental pipelines produce misleading results, wasting resources and slowing scientific progress.",
+    "dose_response": "Autonomous LLM agents generating flawed experimental plans, when used by researchers, trigger undue trust and missing error checks, allowing plan propagation that leads to misleading results, wasted resources, and slowed scientific progress."
+  },
+  "reference": {
+    "dose_response": [
+      "The agent's hallucinated multistep experimental plans, when blindly followed by inexperienced researchers lacking domain knowledge, propagate invalid results into literature, misleading subsequent research."
+    ],
+    "vulnerability": [
+      "Inexperienced researchers lack domain knowledge to detect planning errors, relying blindly on autonomous agents."
+    ],
+    "impact": [
+      "Propagation of invalid experimental results into scientific literature, wasting resources and misleading future research."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2069",
+  "chain_index": 0,
+  "title": "FairPFN A Tabular Foundation Model for Causal Fairness",
+  "abstract": "Machine learning (ML) systems are utilized in critical sectors, such as healthcare, law enforcement, and finance. However, these systems are often trained on historical data that contains demographic biases, leading to ML decisions that perpetuate or exacerbate existing social inequalities. Causal fairness provides a transparent, human-inthe-loop framework to mitigate algorithmic discrimination, aligning closely with legal doctrines of direct and indirect discrimination. However, current causal fairness frameworks hold a key limitation in that they assume prior knowledge of the correct causal model, restricting their applicability in complex fairness scenarios where causal models are unknown or difficult to identify. To bridge this gap, we propose FairPFN, a tabular foundation model pre-trained on synthetic causal fairness data to identify and mitigate the causal effects of protected attributes in its predictions. FairPFN’s key contribution is that it requires no knowledge of the causal model and still demonstrates strong performance in identifying and removing protected causal effects across a diverse set of hand-crafted and real-world scenarios relative to robust baseline methods. FairPFN paves the way for promising future research, making causal fairness more accessible to a wider variety of complex fairness problems.",
+  "impact": "This study attempts to overcome a current limitation in causal fairness, making what we believe is a useful framework for addressing algorithmic discrimination, more accessible to a wider variety of complex fairness problems. While the goal of this work is to have a positive impact on a problem we think is crucial, we acknowledge that we our perspective on fairness is limited in scope to align with EU/US legal doctrines of anti-discrimination. These doctrines are not representative of the world as a whole, and even within these systems, there are vastly different normative viewpoints regarding what constitutes algorithmic fairness and justice.",
+  "query_input": {
+    "scenario": "Financial lending using AI credit scoring",
+    "issue": "Embedded causal assumptions may not reflect real-world credit access disparities, causing unfair denials.",
+    "hazard": [
+      "Pre-training a tabular foundation model on causally-generated synthetic data with fairness constraints can embed misspecified causal assumptions, distorting fairness outcomes."
+    ],
+    "exposure": [
+      "Loan applicants evaluated by AI credit models"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Institutional over-reliance on black-box fairness corrections without causal ground-truth validation allows misspecifications to go undetected.",
+    "impact": "Systematic unfair credit denials for protected groups, deepening economic marginalization and wealth inequality.",
+    "dose_response": "Pre-training a tabular foundation model on synthetic causal fairness data embeds misspecified causal assumptions; when scoring loan applicants, institutional over-reliance on black-box corrections without validation lets these go undetected, causing unfair credit denials for protected groups and deepening economic marginalization."
+  },
+  "reference": {
+    "dose_response": [
+      "Misspecified causal assumptions in synthetic training data distort fairness outcomes in credit scoring, exposing loan applicants to biased decisions that disproportionately deny marginalized groups, deepening the racial wealth gap."
+    ],
+    "vulnerability": [
+      "Credit scoring relies on proxy features whose causal ties to creditworthiness are often misspecified in synthetic data."
+    ],
+    "impact": [
+      "Marginalized groups face disproportionate loan denials, deepening the racial wealth gap."
+    ]
+  }
+}

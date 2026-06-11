@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0850",
+  "chain_index": 2,
+  "title": "Position Scarce Resource Allocations That Rely On Machine Learning Should Be Randomized",
+  "abstract": "Contrary to traditional deterministic notions of algorithmic fairness, this paper argues that fairly allocating scarce resources using machine learning often requires randomness. We address why, when, and how to randomize by proposing stochastic procedures that more adequately account for all of the claims that individuals have to allocations of social goods or opportunities.",
+  "impact": "This paper contributes to the literature on algorithmic fairness in two ways. (1) As a position paper, it encourages others to reconsider whether deterministic algorithms are always the right choice for fairness, arguing that randomization techniques are to be preferred in some settings. (2) In support of these arguments, the paper also presents concrete techniques that can be used to randomize and shows how they reduce systemic exclusion and patterned inequality. As such, we hope that it will have a positive impact in reducing bias and unfairness. However, it is also possible that a decision-maker might use the tools presented here to randomize outcomes in a domain that the authors warn would be unjust or inappropriate, such as the domain of criminal justice, and in doing so wrong decision subjects. Since all of the randomization techniques that form the basis of the paper’s experiments are well established and easily implementable, the paper does not make improper use of these tools easier than it would have been before. But it is possible that its existence will suggest the idea to someone who might not have otherwise had it. The authors have attempted to prevent this outcome by making it clear which uses of randomization they believe are appropriate or inappropriate.",
+  "query_input": {
+    "scenario": "Lottery-based allocation of scarce opportunities like school admissions",
+    "issue": "Stochastic allocation yields unequal realized access, contradicting fairness objectives.",
+    "hazard": [
+      "Fairness-in-expectation mechanisms produce significant individual-level unfairness, misleading evaluators and participants."
+    ],
+    "exposure": [
+      "Applicants and communities in a lottery-based scarce opportunity allocation system"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Applicants and communities accept lottery-based allocative fairness without the ability to detect or challenge systematic individual-level disparities.",
+    "impact": "Unequal realized access erodes trust in algorithmic allocation and widens opportunity gaps across communities.",
+    "dose_response": "Fairness-in-expectation mechanisms producing individual-level unfairness, through lottery-based scarce opportunity allocation, trigger acceptance of unfair outcomes without detection or challenge, leading to unequal realized access eroding trust and widening opportunity gaps."
+  },
+  "reference": {
+    "dose_response": [
+      "Lottery-based allocation with fairness-in-expectation yields unequal realized access, concentrating losses in demographic groups, causing community mistrust, legal challenges, and deepened educational inequity."
+    ],
+    "vulnerability": [
+      "Lottery outcomes systematically diverge from expected fairness, concentrating losses in specific demographic groups."
+    ],
+    "impact": [
+      "Community mistrust in admissions processes, legal challenges, and deepened educational inequity."
+    ]
+  }
+}

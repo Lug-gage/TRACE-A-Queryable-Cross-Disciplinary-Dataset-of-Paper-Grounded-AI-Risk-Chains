@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1913",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes a different vulnerability condition (Jacobian right singular vectors enabling attack) rather than the evaluation blind spots from missing cross-architecture testing.",
+    "reference": "ViT-B benchmarks without cross-architecture attack testing create blind spots to adversarial failures.",
+    "generated": "ViT-B's adversarial Jacobian contains informative right singular vectors that enable iterative learning of small, multi-target perturbations in a low-dimensional image subspace."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (deployed classifiers) is present, but the damage type (filtering failures, harmful content bypass) is not; only evasion is described.",
+    "reference": "Deployment with hidden vulnerabilities causes filtering failures, letting harmful content bypass safeguards.",
+    "generated": "Model auditors overestimate ViT-B robustness, leading to deployment of classifiers that adversaries reliably evade using ordered top-K attacks."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc (ordered top-K perturbations leading to overestimated robustness) is a different mechanism from reference's arc (white-box evasion enabling cross-architecture blind spots, leading to hidden vulnerabilities and filtering failures).",
+    "reference": "Highly effective white-box evasion via QuadAttacK enables cross-architecture blind spots, which in ViT-B benchmark evaluation leads to hidden vulnerabilities and filtering failures.",
+    "generated": "Adversarial perturbations crafted via ordered top-K attack using right singular vectors, through model auditor evaluations of ViT-B, trigger informative right singular vectors enabling small multi-target perturbations, leading to overestimated robustness and deployment of classifiers evadable by ordered top-K attacks."
+  }
+}

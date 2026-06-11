@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2320",
+  "chain_index": 0,
+  "title": "Position Towards Implicit Prompt For Text-To-Image Models",
+  "abstract": "Recent text-to-image (T2I) models have had great success, and many benchmarks have been proposed to evaluate their performance and safety. However, they only consider explicit prompts while neglecting implicit prompts (hint at a target without explicitly mentioning it). These prompts may get rid of safety constraints and pose potential threats to the applications of these models. This position paper highlights the current state of T2I models toward implicit prompts. We present a benchmark named ImplicitBench and conduct an investigation on the performance and impacts of implicit prompts with popular T2I models. Specifically, we design and collect more than 2,000 implicit prompts of three aspects: General Symbols, Celebrity Privacy, and Not-Safe-For-Work (NSFW) Issues, and evaluate six well-known T2I models’ capabilities under these implicit prompts. Experiment results show that (1) T2I models are able to accurately create various target symbols indicated by implicit prompts; (2) Implicit prompts bring potential risks of privacy leakage for T2I models. (3) Constraints of NSFW in most of the evaluated T2I models can be bypassed with implicit prompts. We call for increased attention to the potential and risks of implicit prompts in the T2I community and further investigation into the capabilities and impacts of implicit prompts, advocating for a balanced approach that harnesses their benefits while mitigating their risks.",
+  "impact": "This research illuminates the remarkable capabilities of T2I models to interpret and visualize concepts conveyed through implicit prompts, thereby extending the creative and practical applications of text-to-image generation. This advancement could democratize art creation, enhance educational tools, and foster innovation across fields by enabling a more intuitive interaction with T2I systems, where users can generate detailed visual content without needing explicit or technical descriptions. However, the capabilities of these models also introduce profound ethical considerations. The potential risks for T2I models to inadvertently breach celebrity privacy or generate not-safe-for-work (NSFW) content from seemingly benign prompts should raise concerns. Such instances underscore the imperative for robust ethical frameworks and advanced policy constraints that can comprehend the nuances of implicit prompts. It is crucial that developers and users of T2I technology remain cognizant of these risks, advocating for the responsible use of such powerful tools.",
+  "query_input": {
+    "scenario": "Adversarial prompt crafting for NSFW generation",
+    "issue": "Bypassed safety filters let users produce and distribute sexually explicit or violent images, undermining platform safety policies.",
+    "hazard": [
+      "Text-to-image models are susceptible to adversarial and covert prompt manipulation that evades safety filters, enabling NSFW, privacy-violating, or otherwise prohibited content generation."
+    ],
+    "exposure": [
+      "End users of public text-to-image generation APIs"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Safety filters rely on explicit keyword matching and lack contextual understanding, leaving them unable to detect or block implicit harmful prompts.",
+    "impact": "Prohibited sexually explicit or violent images are generated and distributed, undermining platform safety policies and eroding user trust.",
+    "dose_response": "Adversarial prompt manipulation evades text-to-image safety filters, and through public API exposure, triggers keyword-based filters' contextual blindness, leading to prohibited sexually explicit or violent images that undermine platform safety policies and erode user trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial prompt manipulation enables NSFW generation, which in this scenario exposes end users, leading to psychological distress and platform trust erosion."
+    ],
+    "vulnerability": [
+      "Lack of robust content filters that detect all adversarial prompts.",
+      "Users' limited ability to verify image authenticity fosters unchecked sharing of synthetic NSFW."
+    ],
+    "impact": [
+      "Psychological distress to individuals depicted in non-consensual intimate images.",
+      "Erosion of platform trust and safety reputation, leading to user attrition."
+    ]
+  }
+}

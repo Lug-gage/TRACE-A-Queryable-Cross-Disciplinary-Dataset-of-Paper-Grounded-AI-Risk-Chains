@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1655",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4648,
+    "reference": "Deployment in safety-critical settings (e.g., autonomous driving) where spurious visual-text correlations cause misinterpretation.",
+    "generated": "Reliance on compressed cross-modal task vectors without per-task tuning leaves spurious correlations unchecked, enabling performance degradation."
+  },
+  "impact": {
+    "similarity": 0.4261,
+    "reference": "Passenger harm from unexpected autonomous vehicle behaviors when visual cues are misaligned with instructions.",
+    "generated": "Erroneous and unreliable multimodal task outputs, causing failures in downstream applications relying on VLM cross-modal transfer."
+  },
+  "dose_response": {
+    "similarity": 0.5757,
+    "reference": "Shared vectors transfer spurious correlations, which in safety-critical deployments without validation leads to passenger harm from unexpected autonomous vehicle behaviors.",
+    "generated": "Shared cross-modal task vectors compressing examples propagate spurious correlations, and when developers deploy VLMs without per-task tuning, unchecked reliance on these vectors degrades performance, leading to erroneous multimodal outputs and downstream failures."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0794",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4012,
+    "reference": "Leaked architecture details allow attackers to optimize membership inference attacks against the API.",
+    "generated": "API providers serve requests with unchanged timing variation from prompt caching, lacking protections that obscure KV cache size."
+  },
+  "impact": {
+    "similarity": 0.5094,
+    "reference": "Enhanced ability to extract individual-level PII from model, amplifying privacy violations.",
+    "generated": "Proprietary model architectures are disclosed, enabling tailored attacks on user data and eroding intellectual property protection."
+  },
+  "dose_response": {
+    "similarity": 0.8136,
+    "reference": "Prompt caching timing side-channels leak model architecture details, which in proprietary API settings enables tailoring of membership inference attacks, amplifying extraction of individual-level PII.",
+    "generated": "Prompt caching timing side-channels, through API providers whose unchanged timing variation reveals KV cache size due to lack of protection, disclose proprietary model architectures, enabling tailored attacks on user data and eroding intellectual property protection."
+  }
+}

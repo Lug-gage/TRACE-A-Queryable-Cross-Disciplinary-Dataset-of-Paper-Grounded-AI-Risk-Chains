@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2812",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5036,
+    "reference": "Lip-sync detectors insensitive to temporal anomalies fail to flag manipulated videos, creating false authenticity.",
+    "generated": "Institutional reliance on automated detectors without complementary human expertise to verify subtle forgery clues independently."
+  },
+  "impact": {
+    "similarity": 0.8808,
+    "reference": "Fraudulent lip-synced videos accepted as genuine evidence, compromising legal and media integrity.",
+    "generated": "Fraudulent lip-synced videos admitted as authentic evidence cause wrongful legal decisions and widespread media misinformation."
+  },
+  "dose_response": {
+    "similarity": 0.834,
+    "reference": "Overfitting to synthetic forgery patterns causes lip-sync detectors to miss temporal anomalies, leading legal professionals to accept fraudulent videos as genuine, compromising legal integrity.",
+    "generated": "Overfitting to synthetic forgery patterns via LoRA fine-tuning degrades deepfake detection, through legal and media professionals using detection, triggers institutional reliance on automated detectors without human expertise, leading to fraudulent lip-synced videos causing wrongful legal decisions and media misinformation."
+  }
+}

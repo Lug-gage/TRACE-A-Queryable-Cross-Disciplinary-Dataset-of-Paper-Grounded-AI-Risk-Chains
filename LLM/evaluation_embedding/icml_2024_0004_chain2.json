@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0004",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6043,
+    "reference": "Rare classes often correspond to marginalized groups, so biased sample selection yields discriminatory model failures.",
+    "generated": "ML practitioners' subset selection methods inherently favor dominant patterns, leaving rare classes underrepresented in data-scarce SSL settings."
+  },
+  "impact": {
+    "similarity": 0.5631,
+    "reference": "Amplified performance disparities and unfair outcomes for underserved populations in automated decisions.",
+    "generated": "Severe performance degradation on minority classes, compromising model generalization and fairness in downstream tasks."
+  },
+  "dose_response": {
+    "similarity": 0.7571,
+    "reference": "Biased sample selection in SSL starves rare classes of labels, causing models to fail on marginalized groups, amplifying disparities and producing unfair automated decisions.",
+    "generated": "Subset selection methods generating unrepresentative datasets, through ML practitioners deploying SSL models on imbalanced datasets, trigger favoring of dominant patterns leaving rare classes underrepresented, leading to severe performance degradation on minority classes, compromising generalization and fairness."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.519,
+    "reference": "Users cannot distinguish between canonical and noncanonical encodings in generated text.",
+    "generated": "Training-free canonicalization strategies cannot enforce canonical token encodings, leaving probability distributions susceptible to distortion."
+  },
+  "impact": {
+    "similarity": 0.3861,
+    "reference": "Educational materials contain subtle factual errors from encoding-induced probability shifts.",
+    "generated": "Users encounter lower-quality, less reliable text generation as probability mass shifts to implausible outputs."
+  },
+  "dose_response": {
+    "similarity": 0.8122,
+    "reference": "Tokenization mismatch distorts token probabilities, which in training-free canonicalization exposes users to uncontrolled probability shifts, leading to subtle factual errors in educational materials and polluted public discourse.",
+    "generated": "Tokenization mismatch between training and inference, through users of training-free text generation pipelines, triggers the inability of canonicalization strategies to enforce canonical encodings and prevent probability distribution distortion, leading to lower-quality text generation as probability mass shifts to implausible outputs."
+  }
+}

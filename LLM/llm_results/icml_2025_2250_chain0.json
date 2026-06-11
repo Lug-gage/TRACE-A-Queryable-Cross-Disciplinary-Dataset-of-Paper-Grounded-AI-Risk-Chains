@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2250",
+  "chain_index": 0,
+  "title": "CombiMOTS Combinatorial Multi-Objective Tree Search for Dual-Target Molecule Generation",
+  "abstract": "Dual-target molecule generation, which focuses on discovering compounds capable of interacting with two target proteins, has garnered significant attention due to its potential for improving therapeutic efficiency, safety and resistance mitigation. Existing approaches face two critical challenges. First, by simplifying the complex dual-target optimization problem to scalarized combinations of individual objectives, they fail to capture important trade-offs between target engagement and molecular properties. Second, they typically do not integrate synthetic planning into the generative process. This highlights a need for more appropriate objective function design and synthesis-aware methodologies tailored to the dual-target molecule generation task. In this work, we propose CombiMOTS, a Pareto Monte Carlo Tree Search (PMCTS) framework that generates dual-target molecules. CombiMOTS is designed to explore a synthesizable fragment space while employing vectorized optimization constraints to encapsulate target affinity and physicochemical properties. Extensive experiments on real-world databases demonstrate that CombiMOTS produces novel dual-target molecules with high docking scores, enhanced diversity, and balanced pharmacological characteristics, showcasing its potential as a powerful tool for dual-target drug discovery. The code and data is accessible through https: //github.com/Tibogoss/CombiMOTS.",
+  "impact": "We release CombiMOTS to be effective in real-world drug discovery tasks and useful to practitioners. Common risks involve using this tool to design harmful compounds or having complete faith in machine-learned predicted properties with no post-hoc validation. For instance, metrics as validity, uniqueness, novelty and diversity can easily be diverted through small modifications on an original SMILES string (Renz et al., 2019). Though such challenges remain common in other domains such as language and image, we encourage users to work closely with application-driven experts such as medicinal chemists or health institutes.",
+  "query_input": {
+    "scenario": "Computational drug design for dual-target polypharmacology",
+    "issue": "Pareto-optimal molecules excel in docking and synthesis scores but harbor hidden toxicophores.",
+    "hazard": [
+      "Over-optimization of multi-objective Pareto fronts on incomplete surrogate metrics yields molecules that appear optimal in silico but harbor unmodeled liabilities (e.g., toxicity, off-target effects)."
+    ],
+    "exposure": [
+      "Drug discovery teams triaging AI-prioritized compounds for synthesis and bioassays"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Teams lack integrated toxicity filters, relying on docking/synthesis metrics that cannot flag hidden toxicophores before compound triage.",
+    "impact": "Wasted wet-lab synthesis and screening resources, with false lead advancement leading to late-stage attrition and delayed drug discovery.",
+    "dose_response": "Over-optimization of multi-objective Pareto fronts on incomplete surrogate metrics, through AI-prioritized compound triage, triggers reliance on metrics that miss hidden toxicophores, leading to wasted synthesis and screening resources, false lead advancement, late-stage attrition, and delayed drug discovery."
+  },
+  "reference": {
+    "dose_response": [
+      "Over-optimization of Pareto fronts on incomplete metrics yields molecules with hidden toxicophores, which, when triaged by drug discovery teams, advance due to inadequate toxicity capture and regulatory gaps, leading to clinical failure and trust erosion."
+    ],
+    "vulnerability": [
+      "Multi-objective optimization on incomplete surrogate metrics fails to capture comprehensive toxicity, enabling toxicophore evasion.",
+      "Lack of regulatory standards for AI-designed multi-target molecules allows unvetted compounds to progress."
+    ],
+    "impact": [
+      "Drug candidates with undetected toxicophores advance to costly synthesis and bioassays, later causing clinical failure.",
+      "Erosion of trust in AI-driven drug discovery among regulators, patients, and pharmaceutical stakeholders."
+    ]
+  }
+}

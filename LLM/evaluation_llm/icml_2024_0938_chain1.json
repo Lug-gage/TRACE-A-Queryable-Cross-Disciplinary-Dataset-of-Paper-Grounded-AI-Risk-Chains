@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0938",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference describes engagement heterogeneity causing underrepresentation, while generated describes outcome data reuse causing overfitting—entirely different sensitivity conditions.",
+    "reference": "Engagement heterogeneity leads to underrepresentation of less active user segments.",
+    "generated": "Outcome data reuse across assignment and estimation without independent holdout sets enables overfitting to noise, biasing effect estimates."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Misled platform decisions are similar to biased policy decisions, but the specific damage of deepening digital inequality and reducing fairness is absent; only wasting resources and harming users are mentioned.",
+    "reference": "Biased policy decisions that deepen digital inequality and reduce service fairness.",
+    "generated": "Overoptimistic treatment effect estimates mislead platform decisions, wasting resources and potentially harming users with ineffective interventions."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc centers on outcome data reuse and overfitting, whereas reference arc centers on adaptive reuse causing overrepresentation of highly engaged users and demographic disparities—different causal logic.",
+    "reference": "Adaptive reuse produces overly optimistic estimates, causing encouragement designs to overrepresent highly engaged users, which amplifies demographic disparities, biases policies, and deepens digital inequality.",
+    "generated": "Adaptive experiment designs reusing outcomes to optimize assignments, through users' exposure to adaptive encouragement, trigger outcome data reuse without independent holdout sets enabling overfitting, leading to overoptimistic estimates that mislead decisions, waste resources, and potentially harm users."
+  }
+}

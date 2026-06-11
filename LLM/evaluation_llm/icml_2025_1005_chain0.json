@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the voting system's sensitivity to strategic/bot voting that can skew rankings, with the generated adding specific details",
+    "reference": "Aggregated pairwise comparisons are highly sensitive to strategic voting; even a small bot cohort can skew rankings.",
+    "generated": "Reliance on anonymous, unverified pairwise voting without robust bot detection allows coordinated automated manipulation to skew rankings."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both mention misled resource allocation and eroded trust; model selection covers research priorities semantically",
+    "reference": "Corrupted leaderboards mislead research priorities, resource allocation, and public trust in AI model evaluations.",
+    "generated": "Distorted leaderboard rankings mislead model selection and resource allocation, eroding trust in evaluation benchmarks and promoting inferior models."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Causal chain from unsecured voting to manipulation to distorted rankings to misled decisions and eroded trust is preserved",
+    "reference": "Coordinated automated voting manipulates pairwise leaderboard rankings, corrupting the evaluation that the research community relies on, misleading research priorities and eroding public trust in AI models.",
+    "generated": "Crowdsourced pairwise comparison leaderboards for LLM evaluation, through the AI research community's reliance on anonymous, unverified voting without robust bot detection, trigger adversarial manipulation that distorts rankings, misleading model selection and resource allocation, eroding trust in evaluation benchmarks and promoting inferior models."
+  }
+}

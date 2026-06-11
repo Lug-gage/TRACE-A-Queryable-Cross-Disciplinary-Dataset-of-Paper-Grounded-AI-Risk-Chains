@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0059",
+  "chain_index": 1,
+  "title": "WAVES Benchmarking the Robustness of Image Watermarks",
+  "abstract": "IntheburgeoningageofgenerativeAI,watermarks act as identifiers of provenance and artificial content. We present WAVES (Watermark Analysis via Enhanced Stress-testing), a benchmark for assessing image watermark robustness, overcoming the limitations of current evaluation methods. WAVES integrates detection and identification tasks and establishesastandardizedevaluationprotocolcomprised of a diverse range of stress tests. The attacks inWAVESrangefromtraditionalimagedistortions to advanced, novel variations of diffusive, and adversarial attacks. Our evaluation examines two pivotal dimensions: the degree of image quality degradation and the efficacy of watermark detection after attacks. Our novel, comprehensive evaluation reveals previously undetected vulnerabilities of several modern watermarking algorithms. We envision WAVES as a toolkit for the future development of robust watermarks. The project is available at https://wavesbench.github.io/.",
+  "impact": "This work contains research that could be used to remove watermarks from images. However, our research is focused on uncovering vulnerabilities in watermarking systems to guide the development of more robust designs. As publicly available generative imaging services like OpenAI’s DALL·E, MidJourney, and Bing Image Creator become more popular, the demand for effective watermarks is intensifying. We test and contribute a large collection of distortion, regeneration, and adversarial attacks, setting a benchmark for evaluating and enhancing watermark strength. As the legal status of AI-generated content evolves, robust watermarking will become increasingly crucial for protecting creative ownership and preventing the misrepresentation of AI-generated content as real. Our research not only contributes to identifying weaknesses in watermarks but also advances the detection capabilities of AI-generated content, supporting the development of this significant aspect of digital watermarking technology.",
+  "query_input": {
+    "scenario": "Copyright enforcement through proactive watermarking in training data",
+    "issue": "Forgery attacks on watermarks allow diffusion models to bypass copyright attribution.",
+    "hazard": [
+      "Adversarial and diffusive stress testing systematically exposes fragility in image watermarking, enabling removal or forgery that defeats detection and identification."
+    ],
+    "exposure": [
+      "Artists and content licensors embedding watermarks to prevent unauthorized use of their work."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Artists rely on watermarking algorithms that are inherently susceptible to adversarial and diffusive attacks, undermining protection.",
+    "impact": "Artists suffer economic losses and loss of attribution as diffusion models train on their works without authorization or compensation.",
+    "dose_response": "Adversarial and diffusive attacks exploit watermark fragility, enabling forgery that defeats detection, through artists embedding watermarks for protection, triggers reliance on attack-susceptible algorithms undermining protection, leading to economic losses and lost attribution as diffusion models train on their works without authorization."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial watermark forgery bypasses attribution, which in copyright enforcement exposes artists relying on watermarks, leading to revenue loss and market flooding with indistinguishable AI outputs."
+    ],
+    "vulnerability": [
+      "Copyright systems depend on watermarks as the sole barrier against unauthorized AI training on protected works."
+    ],
+    "impact": [
+      "Artists lose revenue and recognition, discouraging creative production.",
+      "AI-generated outputs become indistinguishable from licensed content, flooding the market."
+    ]
+  }
+}

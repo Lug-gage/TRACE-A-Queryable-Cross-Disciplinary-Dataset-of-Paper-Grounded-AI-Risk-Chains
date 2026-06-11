@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2328",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6638,
+    "reference": "Agents handling sensitive data across apps lack context-aware privacy buffers, enabling inadvertent cross-application data leakage.",
+    "generated": "Users delegate cross-app tasks to agents without automated guards preventing confidential data from leaking across contexts, leaving no human checkpoint before dissemination."
+  },
+  "impact": {
+    "similarity": 0.6476,
+    "reference": "Unauthorized disclosure of trade secrets, PII, or confidential communications, damaging corporate reputation.",
+    "generated": "Sensitive business data is irrevocably disclosed to unintended recipients, triggering privacy breaches, regulatory sanctions, and loss of stakeholder confidence."
+  },
+  "dose_response": {
+    "similarity": 0.7319,
+    "reference": "Autonomous agents orchestrating multi-app workflows enable business users to delegate cross-app actions, and when context confusion occurs, the lack of privacy buffers leads to inadvertent sharing of sensitive data, causing unauthorized disclosure of trade secrets, PII, and reputational damage.",
+    "generated": "Autonomous LMM-powered agents executing system-scale GUI actions without human review, through business users delegating cross-app tasks, triggers missing data-leakage guards, leading to irrevocable sensitive data disclosure, privacy breaches, regulatory sanctions, and loss of stakeholder confidence."
+  }
+}

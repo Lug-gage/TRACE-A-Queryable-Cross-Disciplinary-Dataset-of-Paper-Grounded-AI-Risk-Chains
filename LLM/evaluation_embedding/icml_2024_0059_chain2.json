@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0059",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6268,
+    "reference": "Forensics and courts treat watermarks as definitive authenticity signals without fallback validation.",
+    "generated": "Reliance on watermarking algorithms with undetected fragility to adversarial and diffusive stress tests, lacking alternative provenance verification methods."
+  },
+  "impact": {
+    "similarity": 0.5051,
+    "reference": "Miscarriages of justice occur when tampered evidence is admitted or authentic evidence is excluded.",
+    "generated": "Forensic image evidence becomes inadmissible, compromising legal decisions and eroding trust in digital provenance."
+  },
+  "dose_response": {
+    "similarity": 0.7951,
+    "reference": "Adversarial watermark forgery enables evidence tampering, which in legal admissibility exposes courts reliant on watermarks, leading to miscarriages of justice and collapsed public confidence in forensics.",
+    "generated": "Adversarial and diffusive stress testing exposes watermark fragility, enabling removal or forgery; through forensic reliance on watermarks, triggering undetected vulnerabilities without alternative verification, leading to inadmissible evidence, compromised legal decisions, and eroded trust in digital provenance."
+  }
+}

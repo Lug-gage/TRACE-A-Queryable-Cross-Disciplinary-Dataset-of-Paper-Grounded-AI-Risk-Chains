@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_0194",
+  "chain_index": 1,
+  "title": "Assessing Large Language Models on Climate Information",
+  "abstract": "As Large Language Models (LLMs) rise in popularity, it is necessary to assess their capability in critically relevant domains. We present a comprehensive evaluation framework, grounded in science communication research, to assess LLM responses to questions about climate change. Our framework emphasizes both presentational and epistemological adequacy, offering a fine-grained analysis of LLM generations spanning 8 dimensions and 30 issues. Our evaluation task is a real-world example of a growing number of challenging problems where AI can complement and lift human performance. We introduce a novel protocol for scalable oversight that relies on AI Assistance and raters with relevant education. We evaluate several recent LLMs on a set of diverse climate questions. Our results point to a significant gap between surface and epistemological qualities of LLMs in the realm of climate communication.",
+  "impact": "In this work we present an evaluation framework to assess the quality of answers to climate-related questions. Our evaluation is based on science-communication principles and aims to evaluate responses to genuine information needs of the public. Progress in correctly answering such questions can have a large impact for the dissemination of scientific results and can lead to positive effects on climate literacy, also reducing the public’s susceptibility to misinformation. As with any evaluation there are however limits to its validity. Specifically, the evaluation of systems to be deployed in critical contexts requires additional grounding and expert verification. This is especially the case when system responses inform actions. Moreover, the evaluation is limited to the evaluated context, and we make no claims that models can be trusted and deployed outside of that context.",
+  "query_input": {
+    "scenario": "Multi-aspect LLM evaluation of climate science explanations for educational and media use",
+    "issue": "Confusion between factual accuracy and linguistic fluency leads to acceptance of engaging but erroneous climate explanations.",
+    "hazard": [
+      "LLM evaluators confuse distinct quality dimensions, compromising the reliability of multi-aspect evaluations."
+    ],
+    "exposure": [
+      "Educators and journalists using LLM-evaluated climate explanations in teaching and reporting"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Educators and journalists lack domain expertise to independently verify climate claims, trusting evaluation scores that conflate fluency with factual accuracy.",
+    "impact": "Erroneous climate explanations spread through educational and media channels, misinforming students and the public, undermining climate literacy and action.",
+    "dose_response": "LLM evaluators confusing quality dimensions, through educators and journalists using these evaluations, triggers reliance on fluency-accuracy conflation due to domain gaps, spreading erroneous climate explanations that misinform students, the public, and undermine climate literacy and action."
+  },
+  "reference": {
+    "dose_response": [
+      "Confusion of quality dimensions by LLM evaluators compromises multi-aspect evaluation reliability, which in the scenario of climate science explanations exposes educators and journalists to erroneous materials, leading to systematic propagation of climate misconceptions."
+    ],
+    "vulnerability": [
+      "Educators lack domain expertise to independently verify climate science claims in LLM-evaluated materials.",
+      "Journalistic norms prioritizing engaging narratives over technical accuracy amplify fluent misinformation.",
+      "Multi-aspect evaluation tools conflate coherence and factual correctness in scoring rubrics."
+    ],
+    "impact": [
+      "Systematic propagation of climate misconceptions through educational curricula across school systems.",
+      "News media amplification of scientifically unsound climate narratives reaching mass audiences.",
+      "Long-term erosion of public scientific literacy on climate change mechanisms and solutions."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+You are an evaluator for HEVI risk assessment. Given a Turner et al. (2003) reference analysis and a generated analysis, judge whether the generated content semantically covers the reference for each of three fields.
+
+=== MATCHING RULES ===
+
+vulnerability = system SENSITIVITY — the conditions that make the exposed target unable to resist.
+  covered = the sensitivity condition in the reference is semantically present in the generated text.
+  partial = a related but different condition is described.
+  not     = misses the reference's vulnerability entirely, or fabricates.
+
+impact = CONSEQUENCE — the negative outcome at the end of the causal chain.
+  covered = both the affected party AND the damage type from the reference are semantically present.
+  partial = only one of the two is present.
+  not     = misses both, or fabricates.
+
+dose_response = CAUSAL TRANSLATION ARC — how hazard translates into impact through the coupled system.
+  covered = the same causal logic is present (wording may differ).
+  partial = the arc is partially present but misses a link.
+  not     = the arc is wrong, absent, or reversed.
+
+Semantic match, NOT keyword match.
+More specific than reference but semantically aligned → covered.
+Vague hedging where reference is specific → partial at best.
+
+=== PAPER CONTEXT ===
+Abstract: {abstract}
+Author-stated impact: {paper_impact}
+
+=== REFERENCE ===
+vulnerability: {ref_vulnerability}
+impact: {ref_impact}
+dose_response: {ref_dose_response}
+
+=== GENERATED ===
+vulnerability: {gen_vulnerability}
+impact: {gen_impact}
+dose_response: {gen_dose_response}
+
+=== OUTPUT ===
+
+Return ONLY the JSON object below. No markdown fences, no extra text. The JSON keys are exactly "match" and "reason". The match value must be exactly one of "covered", "partial", or "not".
+
+{{
+  "vulnerability": {{"match": "covered", "reason": "BERT sensitivity to character perturbations is stated in both"}},
+  "impact": {{"match": "partial", "reason": "business harm covered but trust erosion missing"}},
+  "dose_response": {{"match": "not", "reason": "generated arc describes a different causal mechanism"}}
+}}

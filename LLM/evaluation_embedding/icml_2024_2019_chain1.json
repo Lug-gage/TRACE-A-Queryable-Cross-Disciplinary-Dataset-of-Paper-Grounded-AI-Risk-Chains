@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2019",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.7048,
+    "reference": "Regulatory reliance on synthetic stress-test data without independent constraint validation.",
+    "generated": "Absence of automated validation of synthetic data logical consistency within stress testing workflows."
+  },
+  "impact": {
+    "similarity": 0.5127,
+    "reference": "Undercapitalized banks pass stress tests based on impossible benign scenarios.",
+    "generated": "Impossible transactions corrupt stress test models, producing erroneous risk assessments and misguided regulatory decisions."
+  },
+  "dose_response": {
+    "similarity": 0.7905,
+    "reference": "Constraint-violating synthetic data enables impossible financial transactions, which in financial modeling exposes analysts and regulators, leading to undercapitalized banks passing stress tests and systemic instability.",
+    "generated": "Synthetic tabular data violating declarative constraints, through financial analysts and regulators relying on it for stress testing, triggers the absence of automated validation of logical consistency, leading to impossible transactions corrupting stress test models and producing erroneous regulatory decisions."
+  }
+}

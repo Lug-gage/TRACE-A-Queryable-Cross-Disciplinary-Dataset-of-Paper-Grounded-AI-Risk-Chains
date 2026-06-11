@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5664,
+    "reference": "Overreliance on AI-generated confidence scores leads users to accept filtered data without verification.",
+    "generated": "Automated mislabel filtering pipelines lack calibration checks, leaving practitioners unable to detect overconfident scores under distribution shifts."
+  },
+  "impact": {
+    "similarity": 0.8301,
+    "reference": "Loss of correctly labeled rare examples skews data distribution and reduces model fairness for minority groups.",
+    "generated": "Correctly labeled rare examples are systematically discarded, eroding dataset diversity and compromising model fairness and accuracy."
+  },
+  "dose_response": {
+    "similarity": 0.8304,
+    "reference": "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, which in automated mislabel detection causes data scientists to overrely on miscalibrated scores, leading to systematic filtering of correctly labeled rare examples and reduced model fairness.",
+    "generated": "Overconfidence from temperature-scaled Boltzmann influence function calibration under distribution shifts, through data scientists using automated mislabel filters, triggers undetected overconfident scores because pipelines lack calibration checks, systematically discarding correctly labeled rare examples and eroding diversity, fairness, and accuracy."
+  }
+}

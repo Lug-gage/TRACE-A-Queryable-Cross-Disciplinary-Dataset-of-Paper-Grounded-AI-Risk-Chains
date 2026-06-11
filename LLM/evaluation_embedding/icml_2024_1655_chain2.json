@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1655",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4284,
+    "reference": "DP noise disproportionately distorts counts for small subgroups, rendering minority statistics unreliable.",
+    "generated": "Analysts' dependence on noisy privacy-preserved statistics as accurate, without error detection or correction."
+  },
+  "impact": {
+    "similarity": 0.8221,
+    "reference": "Flawed policy decisions due to biased census or survey aggregates.",
+    "generated": "Flawed policy decisions and misallocation of public resources from distorted census aggregates."
+  },
+  "dose_response": {
+    "similarity": 0.6418,
+    "reference": "Noise added for DP in synthetic data reconstruction disproportionately distorts small group counts, misleading analysts who rely on these statistics for policy, causing resource misallocation.",
+    "generated": "Adding calibrated noise to gradients for differential privacy, through data analysts relying on privacy-preserved census statistics, triggers their dependence on these noisy statistics as accurate without error correction, leading to flawed policy decisions and misallocation of public resources."
+  }
+}

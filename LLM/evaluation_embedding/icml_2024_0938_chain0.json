@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0938",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7298,
+    "reference": "Researchers over-trust significant results without recognizing adaptive bias.",
+    "generated": "Researchers lack mechanisms to detect overoptimistic bias from adaptive designs, trusting invalid inferential outputs as credible biological evidence."
+  },
+  "impact": {
+    "similarity": 0.7108,
+    "reference": "Flawed biological claims propagated in literature, wasting future research resources.",
+    "generated": "False biological insights misdirect subsequent research, squandering resources and corrupting scientific knowledge bases."
+  },
+  "dose_response": {
+    "similarity": 0.7043,
+    "reference": "Adaptive reuse of outcomes produces overly optimistic estimates, which researchers, incentivized to publish positive findings, over-trust, causing flawed biological claims that waste resources and erode trust in genomics.",
+    "generated": "Adaptive experiment designs reusing outcomes to optimize assignments produce overoptimistic estimates and invalid inference; through researchers interpreting indirect experiment results for biological insights, triggers lack of mechanisms to detect overoptimistic bias, leading to false insights misdirecting research and squandering resources."
+  }
+}

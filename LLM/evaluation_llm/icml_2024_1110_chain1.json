@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1110",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe security planners' over‑reliance on flawed AI without independent validation (automation bias).",
+    "reference": "Security planners exhibit automation bias, over-trusting flawed AI recommendations.",
+    "generated": "Security planners rely exclusively on the decision aid's recommendations without independent validation or fallback procedures, creating dependence on its equilibrium approximations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe misallocated patrol resources that increase the vulnerability or breach probability of protected assets.",
+    "reference": "Increased vulnerability of protected assets due to suboptimal patrol scheduling.",
+    "generated": "Patrol resources are misallocated, producing exploitable coverage gaps that increase the probability of successful security breaches."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc from degraded regret minimization to misallocation and increased breach risk is the same.",
+    "reference": "Degraded regret minimization in RL-CFR yields unreliable recommendations, causing security planners to misallocate patrols and increase asset vulnerability.",
+    "generated": "Dynamic action abstraction introduces approximation error that degrades regret minimization, and when used by security planners for patrol scheduling, triggers exclusive reliance on unvalidated approximations, leading to misallocated resources and exploitable gaps that increase breach probability."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1657",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference mentions proprietary reports in training without access controls; generated mentions lacking controls to prevent extraction of memorized data, a related but different condition.",
+    "reference": "Proprietary reports included in training without access controls or data boundaries",
+    "generated": "Companies lack controls to prevent extraction of memorized proprietary data from VLM training on their reports."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Disclosure of trade secrets and resulting competitive losses are present, covering the affected party and damage type.",
+    "reference": "Leak of trade secrets leading to competitive disadvantage",
+    "generated": "Disclosure of trade secrets and personal data, resulting in regulatory penalties, reputational harm, and competitive losses."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc says memorization triggers lack of controls leading to disclosure, whereas reference arc is memorization enables extraction exposing companies to trade secret leaks; the causal logic is different.",
+    "reference": "Training data memorization enables extraction of confidential information from document images, which in an enterprise VLM exposes companies whose proprietary reports were in training, leading to trade secret leaks and lawsuits.",
+    "generated": "Training data memorization in multimodal models, through companies' proprietary reports included in training sets, triggers lack of controls to prevent extraction of memorized proprietary data, leading to disclosure of trade secrets, personal data, regulatory penalties, reputational harm, and competitive losses."
+  }
+}

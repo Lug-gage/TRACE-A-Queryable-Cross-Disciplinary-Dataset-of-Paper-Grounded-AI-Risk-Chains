@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1068",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated captures overreliance on benchmark scores leading to reduced validation of threat identification, matching the reference sensitivity condition.",
+    "reference": "Security analysts overrely on AI triage, reducing vigilance to identify missed threats due to trust in benchmark performance.",
+    "generated": "Analysts trust benchmark scores as accurate predictors of real-world agent reliability, lacking independent validation of alert triage performance."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Undetected breaches and data loss are covered, but regulatory fines and erosion of organisational security posture are absent.",
+    "reference": "Undetected security breaches, data compromise, regulatory fines, and erosion of organizational security posture.",
+    "generated": "Undetected security breaches escalate, enabling system compromise and data loss across the organization."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal logic: misaligned benchmarks cause overreliance on AI triage, leading to undetected breaches.",
+    "reference": "Misaligned benchmarks overstate AI triage accuracy, causing security analysts to overrely on AI and miss threats, resulting in undetected breaches and regulatory fines.",
+    "generated": "Misalignment between benchmark proxy tasks and real operations, through security analysts relying on AI triage, triggers overtrust in scores as reliability predictors, leading to undetected breaches that enable system compromise and data loss."
+  }
+}

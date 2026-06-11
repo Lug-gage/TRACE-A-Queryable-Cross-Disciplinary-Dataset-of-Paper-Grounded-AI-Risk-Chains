@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1622",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes label flipping distorting decision boundaries; generated describes residual knowledge exploitable by adversarial prompts—related but different sensitivity condition.",
+    "reference": "Label flipping unlearning can distort decision boundaries, degrading model accuracy and fairness.",
+    "generated": "Approximate unlearning leaves residual knowledge exploitable by adversarial prompts, making model predictions unreliable for dependent users."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify users as affected party and degraded/incorrect decisions as damage type; additional trust erosion does not exclude the reference's damage type.",
+    "reference": "Degraded model predictions lead to incorrect decisions in high-stakes applications like lending or healthcare.",
+    "generated": "Erroneous predictions and recovered sensitive data degrade user decisions and erode trust in model outputs."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference provides no causal arc; generated arc is fabricated.",
+    "reference": "[]",
+    "generated": "Adversarial prompts recovering residual knowledge post-approximate-unlearning, through users exposed to degraded model predictions, trigger exploitable residual knowledge that makes predictions unreliable, leading to erroneous predictions and recovered sensitive data degrading decisions and eroding trust."
+  }
+}

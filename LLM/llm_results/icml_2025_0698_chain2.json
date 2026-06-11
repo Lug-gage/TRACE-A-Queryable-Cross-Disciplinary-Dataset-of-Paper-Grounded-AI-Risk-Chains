@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0698",
+  "chain_index": 2,
+  "title": "More Than Meets the Eye Enhancing Multi-Object Tracking Even with Prolonged Occlusions",
+  "abstract": "This paper introduces MOTE (MOre Than meets the Eye), a novel multi-object tracking (MOT) algorithm designed to address the challenges of tracking occluded objects. By integrating deformable detection transformers with a custom disocclusion matrix, MOTE significantly enhances the ability to track objects even when they are temporarily hidden from view. The algorithm leverages optical flow to generate features that are processed through a softmax splatting layer, which aids in the creation of a disocclusion matrix. This matrix plays a crucial role in maintaining track consistency by estimating the motion of occluded objects. MOTE’s architecture includes modifications to the enhanced track embedding module (ETEM), which allows it to incorporate these advanced features into the track query layer embeddings. This integration ensures that the model not only tracks visible objects but also accurately predicts the trajectories of occluded ones, much like the human visual system. The proposed method is evaluated on multiple datasets, including MOT17, MOT20, and DanceTrack, where it achieves impressive tracking metrics-82.0 MOTA and 66.3 HOTA on the MOT17 dataset, 81.7 MOTA and 65.8 HOTA on the MOT20 dataset, and 93.2 MOTA and 74.2 HOTA on the Dance- Track dataset. Notably, MOTE excels in reducing identity switches and maintaining consistent tracking in complex real-world scenarios with frequent occlusions, outperforming existing state-of-theart methods across all tested benchmarks. Code is available at github.com/ostadabbas/MOTE-More- Than-Meets-the-Eye-Tracking.",
+  "impact": "This work advances multi-object tracking technology with implications for various societal applications. While MOTE can enhance public safety through improved surveillance systems and enable safer autonomous navigation, we acknowledge potential privacy concerns. The ability to track individuals through occlusions could be misused for unauthorized surveillance. We advocate for responsible deployment with appropriate privacy safeguards and transparent policies. Additionally, while our method is computationally efficient compared to its performance gains, the environmental impact of training and deploying such models should be considered.",
+  "query_input": {
+    "scenario": "Sports performance analysis using MOT",
+    "issue": "Incorrect player tracking and identity assignment during rapid occlusions in team sports.",
+    "hazard": [
+      "Identity switches and trajectory errors from occlusion/disocclusion mis-association in multi-object tracking."
+    ],
+    "exposure": [
+      "Coaches and analysts using MOT for player performance evaluation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Coaches and analysts rely on automated tracking outputs without independent verification, making them unable to detect identity switches.",
+    "impact": "Flawed performance metrics and tactical insights distort player evaluations and game strategies, undermining team effectiveness.",
+    "dose_response": "Identity switches and trajectory errors from occlusion/disocclusion mis-association, through use in sports performance evaluation, trigger reliance on unverified automated outputs that miss identity switches, leading to distorted player evaluations and undermined team effectiveness."
+  },
+  "reference": {
+    "dose_response": [
+      "Identity switches and trajectory errors from occlusion/disocclusion mis-association enable false trajectories, which in sports performance analysis leads to coaching staff over-reliance on automated player tracking without manual spot-checks, resulting in suboptimal tactical decisions harming team outcomes."
+    ],
+    "vulnerability": [
+      "Coaching staff over-reliance on automated player tracking without manual spot-checks."
+    ],
+    "impact": [
+      "Suboptimal tactical decisions based on misidentified player performance data, harming team outcomes."
+    ]
+  }
+}

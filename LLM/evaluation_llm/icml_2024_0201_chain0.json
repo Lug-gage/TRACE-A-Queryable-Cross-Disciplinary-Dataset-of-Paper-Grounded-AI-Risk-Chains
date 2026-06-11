@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes overfitting to spurious visual-textual correlations; generated describes sensitivity to miscalibrated scores from lack of alignment verification. Related but not the same sensitivity condition.",
+    "reference": "Policies overfit to spurious visual-textual correlations in training environments, failing in novel settings.",
+    "generated": "Policy learning depends on VLM rewards without mechanisms to verify visual-text alignment, leaving it sensitive to miscalibrated scores."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference specifies unsafe actions causing property damage or injury in human-occupied spaces. Generated describes only task failures and degraded zero-shot generalization, missing both the affected party (humans/property) and the damage type.",
+    "reference": "Embodied agents execute unsafe or incorrect actions in human-occupied spaces, causing property damage or injury.",
+    "generated": "Embodied agents execute misaligned task plans, causing task failures and degraded zero-shot generalization in novel indoor settings."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Both arcs start with miscalibrated VLM reward signals misguiding policy learning and leading to failures in novel settings. Generated arc stops at misaligned task plans and degraded generalization, missing the causal link to unsafe or incorrect actions in human-occupied spaces.",
+    "reference": "Miscalibrated VLM reward signals misguide policy learning, which in zero-shot task planning for embodied agents in unseen environments leads to unsafe or incorrect actions in human-occupied spaces.",
+    "generated": "VLM-based reward scoring with miscalibrated, visually-uncorrelated signals, through embodied agents in novel indoor settings, triggers policy learning that lacks visual-text alignment verification, leading to misaligned task plans, failures, and degraded zero-shot generalization."
+  }
+}

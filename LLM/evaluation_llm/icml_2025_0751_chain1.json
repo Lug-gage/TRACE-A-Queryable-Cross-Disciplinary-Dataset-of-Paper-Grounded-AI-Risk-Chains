@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0751",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both reference and generated describe process chemists relying on unverified AI predictions for scale-up; the generated adds the specific lack of ground-truth atom mappings, but the core sensitivity condition is present.",
+    "reference": "Process chemists rely on AI-optimized conditions for scaling without confirming with kinetic studies.",
+    "generated": "Process chemists lack ground-truth atom mappings to audit model outputs, relying on biased activation barrier estimates for scale-up decisions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "The generated mentions waste of feedstock and energy, partially matching the reference's waste of raw materials, but omits the large-scale batch failures and significant financial loss.",
+    "reference": "Large-scale batch failures leading to significant financial loss and waste of raw materials.",
+    "generated": "Suboptimal reaction conditions adopted at industrial scale reduce yields and waste feedstock and energy."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated chain includes biased activation barrier estimates leading to unverified scale-up decisions and industrial waste, but it does not include the safety incidents and explicitly unsafe conditions that are present in the reference arc, thus missing a causal link.",
+    "reference": "Node alignment errors bias activation barrier predictions, which in high-throughput optimization causes process chemists to adopt unsafe conditions without verification, resulting in batch failures and safety incidents.",
+    "generated": "Differentiable node alignment in condensed reaction graphs, through process chemists scaling up industrial reactions, triggers biased activation barrier estimates used for scale-up decisions due to missing ground-truth mappings, leading to suboptimal industrial conditions reducing yields and wasting feedstock and energy."
+  }
+}

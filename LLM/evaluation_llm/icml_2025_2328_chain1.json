@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2328",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of real-time validation mechanisms, while reference specifies non-expert users' inability to detect subtle errors and blind reliance.",
+    "reference": "Non-expert users cannot detect subtle errors in generated SQL/Python code, relying blindly on agent output.",
+    "generated": "Data analysts and engineers lack real-time validation mechanisms for agent-generated code, enabling unchecked execution of erroneous data transformations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Data corruption and flawed analytics are covered, but exposure of protected health information is missing.",
+    "reference": "Data corruption, invalid analytics, and exposure of protected health information.",
+    "generated": "Enterprise-scale data corruption and leakage, leading to irreversible loss of data integrity and flawed downstream analytics."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc of autonomous agent code without review leading to harm is present, but the specific harm of PHI exposure is omitted.",
+    "reference": "Autonomous agents' code generation for SQL/Python pipelines enables automated data engineering, and within the scenario of erroneous transformations, non-experts' blind reliance on agent output leads to data corruption, invalid analytics, and exposure of protected health information.",
+    "generated": "Autonomous LMM-powered agents executing multi-step GUI code without human review, through data analysts using them for pipeline automation, trigger lack of real-time validation for generated code, leading to enterprise-scale data corruption, leakage, irreversible data integrity loss, and flawed downstream analytics."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0666",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of audit/appeal mechanisms and uncritical reliance, which is a related but different sensitivity condition from the reference's disconnect between optimized welfare function and actual needs.",
+    "reference": "Disconnect between optimized welfare function and marginalized groups' actual needs, causing resource misallocation.",
+    "generated": "Policymakers lack independent audit and appeal mechanisms to correct model-driven misrankings, creating uncritical reliance on flawed outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (the neediest) and damage type (exclusion intensifying poverty, inequality, eroding trust, i.e. systemic disadvantage) are semantically present.",
+    "reference": "Entrenched systemic disadvantage as underserved communities receive decreasing support over time.",
+    "generated": "Misallocated assistance excludes the neediest, intensifying poverty, inequality, and eroding trust in welfare institutions."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc starts with biased models and misranking, then inserts uncritical reliance due to lack of audit, omitting the reference's causal link of mismatched welfare functions causing disconnect from actual needs.",
+    "reference": "Mismatched welfare functions cause misranking that, in the policymaker resource program scenario, exposes policy makers and beneficiaries to disconnect from actual needs, leading to entrenched systemic disadvantage.",
+    "generated": "Systematic misranking of vulnerable individuals by biased predictive models, through model-informed resource allocation, triggers uncritical reliance absent audit and appeal mechanisms, leading to exclusion of the neediest, deepening poverty, inequality, and erosion of trust in welfare institutions."
+  }
+}

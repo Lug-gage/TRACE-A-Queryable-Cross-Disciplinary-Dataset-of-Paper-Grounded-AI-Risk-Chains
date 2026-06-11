@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_3199",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Mentions customer over-trust but omits the underlying low digital literacy and AI ethics awareness from the reference, describing a related but different sensitivity condition.",
+    "reference": "Low digital literacy and AI ethics awareness cause customers to overly trust support agents, ignoring risky data exposure.",
+    "generated": "Customer over-trust in agent responses eliminates manual checks, allowing erroneous or unsafe automated actions to propagate."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Data breaches encompass unauthorized disclosure of personal data, and the affected parties (data subjects) are implied.",
+    "reference": "Unauthorized disclosure of personal data.",
+    "generated": "Erroneous support actions cause data breaches and flawed resolutions, resulting in financial loss and eroded trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc captures autonomous skill acquisition leading to unreliable policies and data breaches via over-trust, but misses the explicit link that low digital literacy causes over-trust, instead attributing over-trust to the policies themselves.",
+    "reference": "Autonomous skill acquisition produces unreliable PAE support policies; low digital literacy causes customer over-trust, leading to unauthorized data disclosure and incorrect service requests.",
+    "generated": "Autonomous skill acquisition without human oversight produces unreliable or unsafe interaction policies, which, when applied to customer support tickets, triggers customer over-trust that eliminates manual checks, leading to erroneous actions causing data breaches, flawed resolutions, financial loss, and eroded trust."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0060",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both state that puzzle enthusiasts accept incorrect solutions because plausible-sounding AI explanations fool them; generated's 'lack expertise to detect subtle flaws' is a semantically equivalent sensitivity condition.",
+    "reference": "Puzzle enthusiasts overtrust AI wordplay explanations, accepting incorrect solutions due to plausible narrative coherence.",
+    "generated": "Puzzle solvers lack the deep cryptic crossword expertise needed to detect subtle flaws in authoritative-sounding LLM wordplay explanations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "spread of wrong answers is present, but erosion of community knowledge and individual puzzle-solving skills is replaced by corrupting records, wasting time, and eroding trust.",
+    "reference": "Spread of wrong answers erodes community knowledge and individual puzzle-solving skills.",
+    "generated": "Wrong solutions are adopted and shared, corrupting puzzle solving records, wasting solver time, and eroding trust in AI-assisted tools."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "generated arc replaces 'enable overconfident acceptance' with 'triggers inability to detect subtle flaws', changing the causal mechanism from overtrust to lack of expertise.",
+    "reference": "Verifier-generated plausible but incorrect chains enable overconfident acceptance, leading puzzle enthusiasts to overtrust AI wordplay explanations and spread wrong answers, eroding community skills.",
+    "generated": "Stepwise LLM reasoning verifier's plausible incorrect reasoning chains, through puzzle enthusiasts using AI tools, triggers solvers' inability to detect subtle flaws in authoritative wordplay explanations, leading to wrong solutions being adopted and shared, corrupting records, wasting time, and eroding trust."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1693",
+  "chain_index": 3,
+  "title": "Why Is There a Tumor Tell Me the Reason, Show Me the Evidence",
+  "abstract": "Medical AI models excel at tumor detection and segmentation. However, their latent representations often lack explicit ties to clinical semantics, producing outputs less trusted in clinical practice. Most of the existing models generate either segmentation masks/labels (localizing where without why) or textual justifications (explaining why without where), failing to ground clinical concepts in spatially localized evidence. To bridge this gap, we propose to develop models that can justify the segmentation or detection using clinically relevant terms and point to visual evidence. We address two core challenges: First, we curate a rationale dataset to tackle the lack of paired images, annotations, and textual rationales for training. The dataset includes 180K image-mask-rationale triples with quality evaluated by expert radiologists. Second, we design rationale-informed optimization that disentangles and localizes finegrained clinical concepts in a self-supervised manner without requiring pixel-level concept annotations. Experiments across medical benchmarks show our model demonstrates superior performance in segmentation, detection, and beyond. The code is available at https://github.com/deepreal/MedRationale.",
+  "impact": "Our work addresses a critical barrier to the clinical adoption of medical AI: the lack of interpretable, auditable reasoning in model predictions. By enabling models to justify segmentation and detection with clinical terms and localize their evidence, we enhance trust and safety in AI-assisted diagnosis. This is particularly impactful in radiology, where misinterpretations can lead to delayed treatment or unnecessary biopsies. Our rationale dataset and self-supervised framework set a new standard for interpretable medical AI, empowering radiologists to audit model logic and accelerating translational research. By aligning AI outputs with clinical workflows, our method could potentially reduce diagnostic errors and radiologist workloads, and improve patient outcomes in resource-constrained settings. Ethical considerations. While our framework improves transparency, ethical risks may remain. First, while our model’s explanations mimic clinical reasoning, they are not a substitute for radiologist judgment; over-reliance on AI could lead to diagnostic complacency. We emphasize that our tool is an assistive, not autonomous, decision-maker. Second, patient privacy is safeguarded by using only deidentified, publicly available data.",
+  "query_input": {
+    "scenario": "Self-supervised rationale-informed optimization for model training",
+    "issue": "Optimization against generated rationales amplifies spurious visual-textual correlations, entrenching systematic grounding errors.",
+    "hazard": [
+      "Joint segmentation and rationale generation models produce visually grounded textual justifications that may be inconsistent with the actual image evidence."
+    ],
+    "exposure": [
+      "Developers fine-tuning medical vision-language models with rationale-based loss functions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers fine-tune with rationale-based loss without independent verification of grounding fidelity, enabling spurious correlations to entrench.",
+    "impact": "Deployed models produce misleading visual justifications, causing diagnostic errors and eroding clinical trust in AI-assisted imaging.",
+    "dose_response": "Visually grounded justifications inconsistent with image evidence from joint segmentation-rationale models, through developers fine-tuning with rationale-based loss functions, trigger fine-tuning without independent grounding verification, entrenching spurious correlations and leading to misleading visual justifications, diagnostic errors, and eroded clinical trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Joint segmentation and rationale generation models produce visually grounded textual justifications that may be inconsistent with actual evidence, and fine-tuning on these rationales amplifies spurious correlations, leading developers to deploy models that cause widespread clinical misguidance."
+    ],
+    "vulnerability": [
+      "Developers prioritize loss minimization without independent rationale fidelity audits, embedding latent biases.",
+      "Regulatory gaps allow model deployment without validation of self-supervised rationale quality."
+    ],
+    "impact": [
+      "Widespread clinical misguidance from deployed models that consistently misinterpret visual evidence.",
+      "Erosion of institutional trust in AI as systematic errors persist across tool updates."
+    ]
+  }
+}

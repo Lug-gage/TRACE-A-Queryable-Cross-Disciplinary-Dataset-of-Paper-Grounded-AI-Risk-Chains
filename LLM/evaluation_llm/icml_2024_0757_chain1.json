@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0757",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated vulnerability—absence of selection‑bias correction and misinterpretation of non‑strategic non‑participation as low creditworthiness—directly captures the reference’s sensitivity: low‑income applicants self‑selecting out and biasing the data.",
+    "reference": "Low-income applicants self-select out due to perceived rejection, biasing data.",
+    "generated": "Automated underwriting systems lack selection-bias correction, misinterpreting non-strategic non-participation as low creditworthiness."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (creditworthy non‑strategic applicants/individuals) and the damage type (denial of loans, widening wealth gap / entrenching financial exclusion and systemic inequality) are present.",
+    "reference": "Creditworthy non-strategic individuals denied loans, widening wealth gap.",
+    "generated": "Creditworthy non-strategic applicants are denied loans, entrenching financial exclusion and systemic inequality."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal arc is identical: unmodeled selection bias under strategic self‑selection leads to misinterpretation of non‑participation, inaccurate credit decisions, denial of creditworthy non‑strategic individuals, and financial exclusion.",
+    "reference": "Unmodeled selection bias under strategic self-selection enables unfair, uncalibrated credit decisions, which in automated loan approvals exposes loan applicants to inaccurate assessments, leading to denial of creditworthy non-strategic individuals and financial exclusion.",
+    "generated": "Learning under strategic self-selection without modeling selection bias, through loan applicants interacting with automated underwriting, triggers systems to misinterpret non-strategic non-participation as low creditworthiness, leading to creditworthy non-strategic applicants being denied loans and entrenching financial exclusion and systemic inequality."
+  }
+}

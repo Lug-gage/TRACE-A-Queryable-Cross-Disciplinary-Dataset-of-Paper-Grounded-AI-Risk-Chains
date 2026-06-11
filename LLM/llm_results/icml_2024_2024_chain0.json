@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2024",
+  "chain_index": 0,
+  "title": "Position Will we run out of data Limits of LLM scaling based on human-generated data",
+  "abstract": "We investigate the potential constraints on LLM scaling posed by the availability of public humangenerated text data. We forecast the growing demand for training data based on current trends and estimate the total stock of public human text data. Our findings indicate that if current LLM development trends continue, models will be trained on datasets roughly equal in size to the available stock of public human text data between 2026 and 2032, or slightly earlier if models are overtrained. We explore how progress in language modeling can continue when human-generated text datasets cannot be scaled any further. We argue that synthetic data generation, transfer learning from datarich domains, and data efficiency improvements might support further progress.",
+  "impact": "The practice of scraping data from the web and using it for large-scale training of AI systems raises important issues regarding fairness and justice. In particular, there are strong arguments in favor of compensating the creators of the data used to train these systems. While AI has the potential to greatly increase productivity and overall welfare, it is important to factor in these justice-related considerations to ensure that the benefits are distributed equitably. Our work suggests that data from social media platforms and messaging apps could serve as a significant and valuable resource for training AI systems. However, using this type of data for training raises serious privacy and security concerns. Without proper safeguards in place, sensitive personal information from these platforms could be exposed to users of the AI systems.The risks associated with using non-indexed platform data for training may be substantial enough to outweigh the potential benefits gained from using this data.",
+  "query_input": {
+    "scenario": "Pre-training with synthetic web rephrases to overcome data scarcity (Rephrasing the Web).",
+    "issue": "Stylistic artifacts from rephrasing models distort linguistic patterns, harming downstream task robustness.",
+    "hazard": [
+      "LLM scaling drives reliance on synthetic or recycled data, introducing distributional drift and data quality hazards."
+    ],
+    "exposure": [
+      "NLP developers using synthetic data for pre-training to save compute."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "NLP developers’ compute-saving reliance on synthetic data lacks quality safeguards, leaving models susceptible to distributional drift and artifact amplification.",
+    "impact": "Downstream task robustness degrades, resulting in unreliable language model performance in practical NLP applications.",
+    "dose_response": "LLM scaling drives reliance on synthetic data, where developers' compute-saving pre-training without quality safeguards triggers distributional drift and artifact amplification, degrading downstream task robustness and reliability."
+  },
+  "reference": {
+    "dose_response": [
+      "Synthetic data reliance enables distributional drift, which in pre-training with web rephrases exposes NLP developers to distorted linguistic patterns, leading to brittle language understanding in high-stakes domains."
+    ],
+    "vulnerability": [
+      "NLP developers lack tools to detect subtle stylistic artifacts in synthetic pre-training data.",
+      "Over-reliance on synthetic data erodes model generalization to authentic human language variations."
+    ],
+    "impact": [
+      "Downstream applications in healthcare and law produce misleading outputs due to brittle language understanding.",
+      "Marginalized dialect speakers face higher error rates as models fail on non-standard linguistic patterns."
+    ]
+  }
+}

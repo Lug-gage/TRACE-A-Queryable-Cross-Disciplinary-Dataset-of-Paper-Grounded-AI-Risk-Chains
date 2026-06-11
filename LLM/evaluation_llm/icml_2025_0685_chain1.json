@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0685",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "unquestioning trust without independent verification matches treating summaries as objective truth and forgoing verification",
+    "reference": "Users treat AI summaries as objective truth, forgoing independent verification of information.",
+    "generated": "Users' unquestioning trust in AI-summarized results as authoritative, without independent verification or detection of backdoored manipulations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "misinformed decisions captures harmful personal decisions, but omits the specific health/finance context from the reference",
+    "reference": "Misinformation in health/finance summaries leads to harmful personal decisions.",
+    "generated": "Widespread dissemination of malicious or misleading summaries, deceiving users and causing misinformed decisions, reputational damage, and erosion of trust in AI tools."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "causal chain of backdoor generalization through user reliance and trust leading to misinformation and misinformed decisions is present",
+    "reference": "Backdoors implanted via preference learning generalize, which in search summarization tools causes users relying on AI summaries as truth to adopt harmful misinformation, leading to poor personal decisions.",
+    "generated": "Data poisoning during preference learning implants backdoors that generalize across extrapolated triggers, through users' reliance on AI-summarized search results, triggers unquestioning trust in the summaries' authority, leading to widespread malicious summaries and misinformed decisions eroding trust in AI tools."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0987",
+  "chain_index": 1,
+  "title": "X-Transfer Attacks Towards Super Transferable Adversarial Attacks on CLIP",
+  "abstract": "As Contrastive Language-Image Pre-training (CLIP) models are increasingly adopted for diverse downstream tasks and integrated into large vision-language models (VLMs), their susceptibility to adversarial perturbations has emerged as a critical concern. In this work, we introduce X-Transfer, a novel attack method that exposes a universal adversarial vulnerability in CLIP. X- Transfer generates a Universal Adversarial Perturbation (UAP) capable of deceiving various CLIP encoders and downstream VLMs across different samples, tasks, and domains. We refer to this property as super transferability-a single perturbation achieving cross-data, cross-domain, cross-model, and cross-task adversarial transferability simultaneously. This is achieved through surrogate scaling, a key innovation of our approach. Unlike existing methods that rely on fixed surrogate models, which are computationally intensive to scale, X-Transfer employs an efficient surrogate scaling strategy that dynamically selects a small subset of suitable surrogates from a large search space. Extensive evaluations demonstrate that X-Transfer significantly outperforms previous state-of-the-art UAP methods, establishing a new benchmark for adversarial transferability across CLIP models. The code is publicly available in our GitHub repository.",
+  "impact": "In this work, we investigate the universal vulnerability of CLIP and demonstrate its implications for pre-trained encoders and downstream large vision-language models (VLMs). While this research might appear potentially harmful, we believe the benefits of publishing it far outweigh any associated risks. Consistent with the goals of adversarial robustness research, our objective is to expose vulnerabilities in existing systems to encourage the development of effective defences against potential real-world attacks. Furthermore, by highlighting the feasibility of these perturbations and open-sourcing X-TransferBench, we aim to provide the community with a valuable resource to explore and design practical defences before CLIP encoders and VLMs see widespread adoption in safety-critical environments.",
+  "query_input": {
+    "scenario": "Multi-task autonomous driving perception",
+    "issue": "Adversarial perturbations for detection transfer to segmentation, confusing vehicle control.",
+    "hazard": [
+      "Adversarial perturbations optimized via dynamic transformation selection and density-aware targeting, enabling super transferability across model architectures, tasks, and data distributions."
+    ],
+    "exposure": [
+      "Passengers and pedestrians relying on multi-task perception in autonomous vehicles."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shared feature representations across detection and segmentation tasks create a common subspace susceptible to universal adversarial perturbations, undermining multi-task integrity.",
+    "impact": "Passenger and pedestrian casualties from collisions caused by autonomous vehicle control failures following cross-task perception corruption.",
+    "dose_response": "Super transferable adversarial perturbations, through multi-task perception reliance in autonomous vehicles, exploit shared detection–segmentation feature subspaces, undermining multi-task integrity and leading to control failures and casualties."
+  },
+  "reference": {
+    "dose_response": [
+      "Super transferable adversarial perturbations transfer across detection and segmentation tasks in autonomous driving, exposing passengers and pedestrians to physical harm and eroding public trust in vehicle safety."
+    ],
+    "vulnerability": [
+      "Autonomous driving systems integrate perception outputs without cross-modal validation.",
+      "Passengers have no manual override or situational awareness during an attack."
+    ],
+    "impact": [
+      "Physical harm to pedestrians and vehicle occupants.",
+      "Public distrust in autonomous vehicle safety leading to regulatory rollback."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0800",
+  "chain_index": 2,
+  "title": "InstructSpeech Following Speech Editing Instructions via Large Language Models",
+  "abstract": "Instruction-guided speech editing aims to follow the user’s natural language instruction to manipulate the semantic and acoustic attributes of a speech. In this work, we construct triplet paired data (instruction, input speech, output speech) to alleviate data scarcity and train a multi-task large language model named InstructSpeech. To mitigate the challenges of accurately executing user’s instructions, we 1) introduce the learned task embeddings with a fine-tuned Flan-T5-XL to guide the generation process towards the correct generative task; 2) include an extensive and diverse set of speech editing and speech processing tasks to enhance model capabilities; 3) investigate multi-step reasoning for free-form semantic content editing; and 4) propose a hierarchical adapter that effectively updates a small portion of parameters for generalization to new tasks. To assess instruction speech editing in greater depth, we introduce a benchmark evaluation with contrastive instruction-speech pretraining (CISP) to test the speech quality and instruction-speech alignment faithfulness. Experimental results demonstrate that InstructSpeech achieves state-of-the-art results in eleven tasks, for the first time unlocking the ability to edit the acoustic and semantic attributes of speech following a user’s instruction. 1",
+  "impact": "This paper aims to advance open-domain instruction-guided speech editing, which will ease the effort of speech and digital art creation. The multitask learning on an extensive and diverse set of speech editing and speech processing tasks, enhancing its capabilities to manipulate a speech’s semantic and acoustic attributes. A negative impact is the risk of misinformation. To alleviate it, we can train an additional classifier to discriminate the fakes. We believe the benefits outweigh the downsides. InstructSpeech lowers the requirements for high-quality instruction-guided speech editing, which may cause unemployment for people with related occupations, such as speech engineers and radio hosts. In addition, there is the potential for harm from non-consensual voice cloning or the generation of fake media, and the voices in the recordings might be overused than they expect.",
+  "query_input": {
+    "scenario": "Assistive speech technologies",
+    "issue": "Instruction misinterpretation in editing tools leads to inaccurate audio descriptions.",
+    "hazard": [
+      "Instruction-following speech editing may produce edits mismatched with user intent due to misinterpretation of natural language instructions."
+    ],
+    "exposure": [
+      "Visually impaired users relying on instruction-edited audio descriptions."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Visually impaired users cannot visually verify audio description accuracy, relying solely on the system's correct interpretation of instructions.",
+    "impact": "Visually impaired users receive inaccurate or misleading audio descriptions, causing confusion, safety risks, and loss of access to critical visual information.",
+    "dose_response": "Instruction-following speech editing misinterpretation, through visually impaired users' reliance on instruction-edited audio descriptions, triggers their inability to visually verify accuracy, leading to inaccurate or misleading audio descriptions that cause confusion, safety risks, and loss of access to critical visual information."
+  },
+  "reference": {
+    "dose_response": [
+      "Instruction-following speech editing misinterpretation produces inaccurate audio descriptions, which in assistive speech technologies exposes visually impaired users to navigation hazards, causing trust loss and abandonment."
+    ],
+    "vulnerability": [
+      "Visually impaired users' complete reliance on audio descriptions and inability to verify visual accuracy heightens harm from errors."
+    ],
+    "impact": [
+      "Inaccurate descriptions cause navigation hazards and erode trust in assistive AI, leading to technology abandonment."
+    ]
+  }
+}

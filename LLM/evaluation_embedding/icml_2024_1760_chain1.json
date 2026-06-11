@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1760",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.8059,
+    "reference": "Developers conflate syntactic correctness with logical soundness, skipping testing.",
+    "generated": "Developers over-trust syntactically coherent outputs, assuming correctness without rigorous testing."
+  },
+  "impact": {
+    "similarity": 0.5846,
+    "reference": "Introduction of bugs and security flaws into software, increasing maintenance costs.",
+    "generated": "Deployed code contains latent logic flaws, leading to system outages, security breaches, and data loss."
+  },
+  "dose_response": {
+    "similarity": 0.7264,
+    "reference": "CFG generates syntactically correct but logically flawed code; developers skip testing, trusting apparent correctness, leading to software bugs and increased maintenance costs.",
+    "generated": "CFG-amplified plausible but unreliable text, through developers relying on LLM coding assistants, triggers over-trust in syntactically coherent outputs without rigorous testing, leading to deployed code with latent logic flaws causing system outages, security breaches, and data loss."
+  }
+}

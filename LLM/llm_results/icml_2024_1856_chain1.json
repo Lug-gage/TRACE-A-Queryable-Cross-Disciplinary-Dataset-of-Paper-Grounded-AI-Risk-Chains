@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1856",
+  "chain_index": 1,
+  "title": "Representation Surgery Theory and Practice of Affine Steering",
+  "abstract": "Language models often exhibit undesirable behavior, e.g., generating toxic or gender-biased text. In the case of neural language models, an encoding of the undesirable behavior is often present in the model’s representations. Thus, one natural (and common) approach to prevent the model from exhibiting undesirable behavior is to steer the model’s representations in a manner that reduces the probability of it generating undesirable text. This paper investigates the formal and empirical properties of steering functions, i.e., transformation of the neural language model’s representations that alter its behavior. First, we derive two optimal, in the least-squares sense, affine steering functions under different constraints. Our theory provides justification for existing approaches and offers a novel, improved steering approach. Second, we offer a series of experiments that demonstrate the empirical effectiveness of the methods in mitigating bias and reducing toxic generation. https://github.com/shauliravfogel/affine-steering",
+  "impact": "Our research explores intervention functions to guide language model behavior for controlled generation and fairness. We urge caution in any real-world application of such a method. Although our experiments, which particularly focus on mitigating gender bias, show promise, applying these methods should consider the risk of reinforcing biases or introducing new ones. Shifting representations in a specific direction may inadvertently reinforce existing biases by accident. We also highlight that our choice of binary concepts, e.g., MALE →FEMALE, does not have a normative implication and was chosen for convenience. However, we acknowledge that such choices may reinforce harmful gender norms.",
+  "query_input": {
+    "scenario": "Layer-wise extraction of latent harmful content",
+    "issue": "Steering exposes dangerous knowledge hidden in earlier layers despite safe final outputs.",
+    "hazard": [
+      "Affine representation steering can bypass safety alignment, enabling models to generate harmful or toxic outputs that were previously suppressed."
+    ],
+    "exposure": [
+      "LLM researchers probing model internals with activation steering"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Assumption that safety alignment in final layers eliminates all harmful knowledge, leaving early-layer latent content unmonitored and unprotected.",
+    "impact": "Harmful latent knowledge extracted through probing escapes containment, directly producing toxic, biased, or dangerous outputs and eroding trust in model safety.",
+    "dose_response": "Affine steering bypasses alignment, when probing internals, triggers the assumption that final-layer safety eliminates harmful knowledge, leaving early-layer content exposed, leading to escaped harmful knowledge producing toxic outputs and eroding trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Steering exposes latent harmful content in early layers; researchers extracting this without safeguards risk leakage, enabling malicious actors to weaponize knowledge and increase AI misuse harms."
+    ],
+    "vulnerability": [
+      "Extracted latent harmful knowledge can be leaked or published by researchers without safeguards."
+    ],
+    "impact": [
+      "Malicious actors weaponize exposed knowledge, increasing societal harms from AI misuse."
+    ]
+  }
+}

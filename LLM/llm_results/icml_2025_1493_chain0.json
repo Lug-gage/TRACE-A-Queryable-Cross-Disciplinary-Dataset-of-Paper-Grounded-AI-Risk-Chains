@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_1493",
+  "chain_index": 0,
+  "title": "Decoding Rewards in Competitive Games Inverse Game Theory with Entropy Regularization",
+  "abstract": "Estimating the unknown reward functions driving agents’ behavior is a central challenge in inverse games and reinforcement learning. This paper introduces a unified framework for reward function recovery in two-player zero-sum matrix games and Markov games with entropy regularization. Given observed player strategies and actions, we aim to reconstruct the underlying reward functions. This task is challenging due to the inherent ambiguity of inverse problems, the non-uniqueness of feasible rewards, and limited observational data coverage. To address these challenges, we establish reward function identifiability using the quantal response equilibrium (QRE) under linear assumptions. Building on this theoretical foundation, we propose an algorithm to learn reward from observed actions, designed to capture all plausible reward parameters by constructing confidence sets. Our algorithm works in both static and dynamic settings and is adaptable to incorporate other methods, such as Maximum Likelihood Estimation (MLE). We provide strong theoretical guarantees for the reliability and sample-efficiency of our algorithm. Empirical results demonstrate the framework’s effectiveness in accurately recovering reward functions across various scenarios, offering new insights into decisionmaking in competitive environments.",
+  "impact": "This work advances the field of inverse reinforcement learning and game theory by introducing a unified framework for reward function identification and estimation in competitive multi-agent settings. Our findings contribute to a deeper understanding of decision-making in strategic environments, with potential applications in economics, automated negotiation, and multi-agent AI systems. While our research provides theoretical and methodological advancements, we acknowledge potential ethical considerations. The ability to infer reward functions from observed Sample Size Reward Error Mean 95% CI 10,000 2.4611 ± 0.1596 20,000 1.9031 ± 0.1048 50,000 1.5609 ± 0.0663 100,000 1.4398 ± 0.0499 Sample Size QRE Error Mean 95% CI 10,000 7.08 × 10-3 ± 4.61 × 10-4 behavior could be used both positively-to enhance transparency in AI decision-making and improve algorithmic fairness-and negatively, if applied to manipulate or exploit agents in competitive settings. Ensuring the responsible application of this work will require careful consideration of ethical safeguards and alignment with societal values. Overall, this paper aims to advance Machine Learning and Game Theory research, and we do not foresee immediate societal risks. However, we encourage further discussion on the ethical implications of inverse game theory in real-world applications.",
+  "query_input": {
+    "scenario": "Scalable IRL for large language model alignment",
+    "issue": "Inferred rewards may be non-identifiable, causing brittle or misaligned language outputs.",
+    "hazard": [
+      "Recovered reward functions may be non-identifiable, misspecified, or non-transferable, especially under entropy regularization and behavioral model assumptions."
+    ],
+    "exposure": [
+      "LLM developers and end-users of conversational AI systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on inverse reward inference for LLM alignment, without unique identifiability guarantees, prevents verification and correction of misspecified rewards.",
+    "impact": "Misaligned language model outputs become brittle, generating harmful or untrustworthy responses that erode user trust and scale safety risks.",
+    "dose_response": "Non-identifiable or misspecified recovered reward functions, through reliance by LLM developers and end-users on inverse reward inference, prevent verification and correction of misspecified rewards, leading to brittle, harmful language model outputs eroding user trust and scaling safety risks."
+  },
+  "reference": {
+    "dose_response": [
+      "Non-identifiable, misspecified reward functions recovered via IRL cause misaligned LLM outputs, which when deployed to conversational AI systems expose users to harmful advice, eroding trust and disproportionately harming marginalized groups."
+    ],
+    "vulnerability": [
+      "Lack of interpretability of inferred rewards masks misalignment until after deployment.",
+      "High user trust in LLM outputs amplifies harm from subtle, non-identifiable reward misspecification.",
+      "Societal over-reliance on black-box LLMs for decision support increases systemic fragility."
+    ],
+    "impact": [
+      "Widespread dissemination of biased or harmful advice from conversational AI.",
+      "Erosion of public trust in AI-assisted communication and information ecosystems.",
+      "Disproportionate harm to marginalized groups due to undiscovered reward biases."
+    ]
+  }
+}

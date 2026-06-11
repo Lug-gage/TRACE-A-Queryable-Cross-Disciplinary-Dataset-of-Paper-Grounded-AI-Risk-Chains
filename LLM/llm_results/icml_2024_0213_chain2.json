@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0213",
+  "chain_index": 2,
+  "title": "Generative Flows on Discrete State-Spaces Enabling Multimodal Flows with Applications to Protein Co-Design",
+  "abstract": "Combining discrete and continuous data is an important capability for generative models. We present Discrete Flow Models (DFMs), a new flow-based model of discrete data that provides the missing link in enabling flow-based generative models to be applied to multimodal continuous and discrete data problems. Our key insight is that the discrete equivalent of continuous space flow matching can be realized using Continuous Time Markov Chains. DFMs benefit from a simple derivation that includes discrete diffusion models as a specific instance while allowing improved performance over existing diffusion-based approaches. We utilize our DFMs method to build a multimodal flow-based modeling framework. We apply this capability to the task of protein co-design, wherein we learn a model for jointly generating protein structure and sequence. Our approach achieves state-of-the-art co-design performance while allowing the same multimodal model to be used for flexible generation of the sequence or structure.",
+  "impact": "In this paper we work to advance general purpose generative modeling techniques, specifically those used for modeling discrete and multimodal data. We apply these techniques to the task of protein generation. Improving protein modeling capabilities can have wide ranging societal impacts and care must be taken to ensure these impacts are positive. For example, improved modeling capabilities can help design better enzymes and drug candidates that can then go on to improve the lives of many people. Conversely, these general purpose techniques could also be misused to design toxic substances. To mitigate these risks, we do not present any specific methods to apply Multiflow to tasks that could be easily adjusted to the design of harmful substances without expert knowledge.",
+  "query_input": {
+    "scenario": "Joint sequence-structure generation for protein co-design",
+    "issue": "Coordinated errors in sequence-structure pairs may be propagated as plausible designs",
+    "hazard": [
+      "Discrete flow models can generate data with distributional biases or errors that are hard to detect because flow-matching objective does not guarantee exact distribution matching."
+    ],
+    "exposure": [
+      "Protein engineers relying on joint generative models for end-to-end design"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Protein engineers lack methods to detect subtle coordinated errors in jointly generated sequence-structure pairs, relying on model plausibility.",
+    "impact": "Flawed protein designs waste experimental resources and may produce non-functional or hazardous biomolecules.",
+    "dose_response": "Discrete flow models' undetectable distributional biases, when protein engineers rely on them for end-to-end design, trigger an inability to detect coordinated sequence-structure errors, leading to wasted experimental resources and hazardous biomolecules."
+  },
+  "reference": {
+    "dose_response": [
+      "Undetectable distributional biases in joint flow models produce internally consistent but flawed sequence-structure pairs, which in co-design scenarios mask individual errors, leading to systematic experimental failure and wasted resources."
+    ],
+    "vulnerability": [
+      "Protein engineers treat joint generative outputs as validated co-designs due to internal consistency, masking physically impossible pairings.",
+      "Absence of regulatory frameworks for AI-generated biological designs allows unchecked propagation of flawed co-designs into experimental pipelines."
+    ],
+    "impact": [
+      "Systematic failure of designed proteins in experimental assays, wasting significant laboratory and computational resources.",
+      "Delayed therapeutic development as entire co-design campaigns must be repeated after late-stage failure."
+    ]
+  }
+}

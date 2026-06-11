@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1802",
+  "chain_index": 3,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe scientists/biologists trusting unfaithful/artifact-driven explanations as biologically relevant, ignoring their unreliability.",
+    "reference": "Scientists trust feature interpretations as biologically relevant, ignoring artifact-driven decisions.",
+    "generated": "Biologists lack independent verification mechanisms, trusting the agent's plausible explanations despite their unfaithfulness to biological signals."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (scientific discoveries) is present, but the reference's damage type (wasted time and funding) is replaced by corruption of knowledge and medical applications, omitting the resource waste.",
+    "reference": "Flawed models produce invalid research findings, wasting time and funding.",
+    "generated": "Flawed biological discoveries propagate from artifact-reliant models, corrupting scientific knowledge and downstream medical applications."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain from unfaithful explanations to uncritical trust, then to artifact-reliant models and invalid/corrupted discoveries, is semantically equivalent.",
+    "reference": "Unfaithful explanations from interpretability agents cause biologists to trust artifact-driven models, leading to invalid research findings and wasted funding.",
+    "generated": "Automated interpretability agents’ plausible but unfaithful explanations, through biologists auditing cell-classification models, trigger uncritical trust without independent verification, leading to artifact-reliant models that corrupt biological discoveries and medical applications."
+  }
+}

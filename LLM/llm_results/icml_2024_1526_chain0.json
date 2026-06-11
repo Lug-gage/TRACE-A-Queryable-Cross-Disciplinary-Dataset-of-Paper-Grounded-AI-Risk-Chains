@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1526",
+  "chain_index": 0,
+  "title": "Measuring Stochastic Data Complexity with Boltzmann Influence Functions",
+  "abstract": "Estimating the uncertainty of a model’s prediction on a test point is a crucial part of ensuring reliability and calibration under distribution shifts. A minimum description length approach to this problem uses the predictive normalized maximum likelihood (pNML) distribution, which considers every possible label for a data point, and decreases confidence in a prediction if other labels are also consistent with the model and training data. In this work we propose IF-COMP, a scalable and efficient approximation of the pNML distribution that linearizes the model with a temperaturescaled Boltzmann influence function. IF-COMP can be used to produce well-calibrated predictions on test points as well as measure complexity in both labelled and unlabelled settings. We experimentally validate IF-COMP on uncertainty calibration, mislabel detection, and OOD detection tasks, where it consistently matches or beats strong baseline methods.",
+  "impact": "We have presented a method that allows a practitioner with access to a model and training dataset to identify examples with high complexity, or alternatively that contain a large amount of information relative to a model. Although we have presented experiments that aim to validate its use in producing better calibrated uncertainties and out-ofdistribution predictions which should reduce societal consequences, IF-COMP can also be used to automatically find important training examples. If these examples correspond to real people, a malicious agent could use this information to influence or bias downstream models or extract sensitive information.",
+  "query_input": {
+    "scenario": "Automated mislabel detection in data cleaning workflows",
+    "issue": "Miscalibrated detection scores may cause systematic filtering of correctly labeled rare examples",
+    "hazard": [
+      "Temperature-scaled Boltzmann influence function calibration using pNML may amplify overconfidence under distribution shifts due to linearization approximations."
+    ],
+    "exposure": [
+      "Data scientists and ML engineers using automated mislabel filters"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Automated mislabel filtering pipelines lack calibration checks, leaving practitioners unable to detect overconfident scores under distribution shifts.",
+    "impact": "Correctly labeled rare examples are systematically discarded, eroding dataset diversity and compromising model fairness and accuracy.",
+    "dose_response": "Overconfidence from temperature-scaled Boltzmann influence function calibration under distribution shifts, through data scientists using automated mislabel filters, triggers undetected overconfident scores because pipelines lack calibration checks, systematically discarding correctly labeled rare examples and eroding diversity, fairness, and accuracy."
+  },
+  "reference": {
+    "dose_response": [
+      "Temperature-scaled Boltzmann influence function calibration using pNML amplifies overconfidence, which in automated mislabel detection causes data scientists to overrely on miscalibrated scores, leading to systematic filtering of correctly labeled rare examples and reduced model fairness."
+    ],
+    "vulnerability": [
+      "Overreliance on AI-generated confidence scores leads users to accept filtered data without verification."
+    ],
+    "impact": [
+      "Loss of correctly labeled rare examples skews data distribution and reduces model fairness for minority groups."
+    ]
+  }
+}

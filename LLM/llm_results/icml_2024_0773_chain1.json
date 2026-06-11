@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0773",
+  "chain_index": 1,
+  "title": "HarmoDT Harmony Multi-Task Decision Transformer for Offline Reinforcement Learning",
+  "abstract": "The purpose of offline multi-task reinforcement learning (MTRL) is to develop a unified policy applicable to diverse tasks without the need for online environmental interaction. Recent advancements approach this through sequence modeling, leveraging the Transformer architecture’s scalability and the benefits of parameter sharing to exploit task similarities. However, variations in task content and complexity pose significant challenges in policy formulation, necessitating judicious parameter sharing and management of conflicting gradients for optimal policy performance. In this work, we introduce the Harmony Multi-Task Decision Transformer (HarmoDT), a novel solution designed to identify an optimal harmony subspace of parameters for each task. We approach this as a bi-level optimization problem, employing a metalearning framework that leverages gradient-based techniques. The upper level of this framework is dedicated to learning a task-specific mask that delineates the harmony subspace, while the inner level focuses on updating parameters to enhance the overall performance of the unified policy. Empirical evaluations on a series of benchmarks demonstrate the superiority of HarmoDT, verifying the effectiveness of our approach.",
+  "impact": "In domains such as healthcare and robotics, multi-task scenarios are commonplace. Our algorithm enhances the applicability of DT by extending them to complex multi-task environments, increasing their practical utility. However, the performance on certain tasks may deteriorate if they are provided with bad task masks, potentially due to malicious intent. Therefore, it’s imperative to rigorously follow the algorithmic process during updates, treating each task with equal consideration. To date, our investigations have not uncovered any adverse societal impacts.",
+  "query_input": {
+    "scenario": "Deploying the policy in autonomous navigation across varying environments",
+    "issue": "Gradient conflicts cause the agent to fail under off-nominal conditions",
+    "hazard": [
+      "Shared parameters in multi-task offline RL decision transformers cause gradient conflicts that amplify extrapolation errors under distribution shift."
+    ],
+    "exposure": [
+      "Autonomous system operators relying on the policy for vehicle control"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators lack fallback systems to detect or override policy errors when gradient conflicts distort predictions under distribution shift.",
+    "impact": "Uncontrolled vehicle behavior leads to collisions, property damage, and human injuries in off-nominal environments.",
+    "dose_response": "Shared parameters causing gradient conflicts that amplify extrapolation errors under distribution shift, through operators relying on the policy for vehicle control, triggers lack of fallback systems to detect or override errors, leading to uncontrolled vehicle behavior, collisions, damage, and injuries."
+  },
+  "reference": {
+    "dose_response": [
+      "Gradient conflicts from shared parameters enable extrapolation errors, which when deploying the policy in autonomous navigation exposes operators relying on it for vehicle control, leading to physical accidents, injuries, and reduced public trust."
+    ],
+    "vulnerability": [
+      "Lack of robust off-nominal scenario testing and over-trust in the agent's decision-making."
+    ],
+    "impact": [
+      "Physical accidents, injuries, and reduced public trust in autonomous vehicles."
+    ]
+  }
+}

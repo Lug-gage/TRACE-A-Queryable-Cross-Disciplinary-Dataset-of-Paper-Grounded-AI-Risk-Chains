@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1905",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4744,
+    "reference": "Researchers treat factorized representations as causally meaningful",
+    "generated": "Researchers lack ground-truth factor labels, so they cannot detect when the model conflates independent physical processes into one component."
+  },
+  "impact": {
+    "similarity": 0.7658,
+    "reference": "False scientific discoveries waste resources and misdirect future research",
+    "generated": "False scientific discoveries propagate into literature, corrupting physical theories and wasting follow-up experimental resources."
+  },
+  "dose_response": {
+    "similarity": 0.8796,
+    "reference": "Diffusion models' factorized but non-continuous manifold representations conflating independent scene factors lead to spurious correlations, which when researchers treat these decompositions as causally meaningful, result in false scientific discoveries that waste resources.",
+    "generated": "Diffusion models' factorized but non-continuous manifold representations, through researchers analyzing microscopy or satellite imagery with unsupervised decomposition, trigger undetected conflation of independent physical processes without ground-truth labels, leading to false discoveries that corrupt theories and waste experimental resources."
+  }
+}

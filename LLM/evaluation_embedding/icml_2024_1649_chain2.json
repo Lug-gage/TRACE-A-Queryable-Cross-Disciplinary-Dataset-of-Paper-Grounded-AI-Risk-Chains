@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1649",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6441,
+    "reference": "Avatar generators are expected to faithfully represent diverse user identities, but training data biases restrict the range of available body shapes and postures.",
+    "generated": "Users lack the means to detect and challenge biased or implausible pose-conditioned avatar outputs, enabling uncritical adoption."
+  },
+  "impact": {
+    "similarity": 0.6843,
+    "reference": "Psychological harm from body image dissatisfaction and exclusion when users cannot create avatars matching their identity.",
+    "generated": "Underrepresentation and distorted body representations in avatars entrench social biases, excluding users with diverse body types and postures."
+  },
+  "dose_response": {
+    "similarity": 0.882,
+    "reference": "Masked diffusion transformer-based pose-conditioned generation of biased anatomically implausible avatars, from user inputs, leads to psychological harm and cultural stereotype reinforcement by excluding non-normative body types.",
+    "generated": "Masked diffusion transformer pose-conditioned generation produces anatomically implausible or biased images, through users generating avatars from text and pose inputs, triggers users' inability to detect and challenge biased outputs, leading to underrepresentation and distorted body representations entrenching social biases."
+  }
+}

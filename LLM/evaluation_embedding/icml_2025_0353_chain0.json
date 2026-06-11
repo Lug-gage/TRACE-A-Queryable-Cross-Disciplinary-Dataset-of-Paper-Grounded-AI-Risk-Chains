@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0353",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6892,
+    "reference": "Cross-lingual token reordering disrupts watermark patterns, rendering detection programs ineffective.",
+    "generated": "Watermark detection depends on n-gram signals that dissolve under cross-lingual translation, leaving no reliable indicator of machine origin."
+  },
+  "impact": {
+    "similarity": 0.6685,
+    "reference": "Unflagged AI text fuels cross-language disinformation, undermining public trust in multilingual news and official communications.",
+    "generated": "Undetected AI-generated text infiltrates platforms, enabling policy evasion, misinformation spread, and erosion of content authenticity controls."
+  },
+  "dose_response": {
+    "similarity": 0.8439,
+    "reference": "Watermark removal attacks via cross-lingual translation strip watermarks, evading detection on content platforms, which fuels cross-language disinformation and undermines public trust.",
+    "generated": "Watermark removal and evasion attacks, through content platforms relying on watermark detection, trigger the dissolution of n-gram signals under cross-lingual translation, leading to undetected AI-generated text infiltrating platforms and enabling policy evasion, misinformation, and erosion of content authenticity controls."
+  }
+}

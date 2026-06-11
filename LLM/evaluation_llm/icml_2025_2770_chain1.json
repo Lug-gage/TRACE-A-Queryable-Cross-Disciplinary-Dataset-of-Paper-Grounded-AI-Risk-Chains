@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2770",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated identifies brittle defenses as the vulnerability, while the reference points to users' false sense of security in safety filters, which is a different sensitivity condition.",
+    "reference": "Users' false sense of security in safety filters lowers their alertness to residual attack vectors.",
+    "generated": "Prompt-based defenses are brittle, allowing adversarial prompts to bypass filters and exploit agent autonomy."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Generated impact involves unauthorized data access, financial loss, and eroded trust, whereas the reference impact is exposure to harmful/manipulative content undermining user safety and platform integrity.",
+    "reference": "Exposure to harmful or manipulative content undermines user safety and platform integrity.",
+    "generated": "Unauthorized sensitive data access and harmful task execution, leading to breaches, financial loss, and eroded trust."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc bypasses the reference's key step of exploiting users' false sense of security, instead directly linking prompt bypass to agent exploitation, resulting in a different causal mechanism and outcome.",
+    "reference": "Automated adversarial prompt generation enables systematic discovery of filter vulnerabilities, which in LLM-integrated applications exploits users' false sense of security, causing harmful content exposure and platform integrity loss.",
+    "generated": "Automated black-box adversarial prompt generation, through user interactions with LLM agents and hosting providers, triggers brittle prompt-based defenses that allow prompt bypass and agent exploitation, leading to unauthorized data access, harmful execution, breaches, financial loss, and eroded trust."
+  }
+}

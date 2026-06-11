@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2269",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6477,
+    "reference": "Emergency planners’ reliance on precise intensity numbers without awareness that spectral loss can produce fictitious tight cores.",
+    "generated": "Emergency planners' warning triggers are calibrated to forecast peak intensity, leaving no capacity to detect or discount unrealistic sharp cyclone features."
+  },
+  "impact": {
+    "similarity": 0.6146,
+    "reference": "Evacuation orders based on overestimated intensity lead to unnecessary economic disruption and future warning fatigue.",
+    "generated": "Misinformed evacuation and sheltering decisions increase unnecessary risk exposure and potential casualties along the coast."
+  },
+  "dose_response": {
+    "similarity": 0.8055,
+    "reference": "Double penalty loss enables unrealistic high-resolution details, which in tropical cyclone intensity prediction causes over-reliance on sharp cores, leading to unnecessary evacuations and warning fatigue.",
+    "generated": "Double penalty loss functions generate unrealistic cyclone details that, through planners' reliance on forecast peak intensity, trigger warning triggers calibrated to peak intensity with no capacity to detect unrealistic features, leading to misinformed decisions that increase risk exposure and casualties."
+  }
+}

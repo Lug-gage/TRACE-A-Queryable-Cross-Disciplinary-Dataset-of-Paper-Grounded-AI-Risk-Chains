@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0271",
+  "chain_index": 3,
+  "title": "A Checks-and-Balances Framework for Context-Aware Ethical AI Alignment",
+  "abstract": "This paper introduces a checks-and-balances framework for ethical alignment of Large Language Models (LLMs), inspired by three-branch governmental systems. It implements three independent yet interacting components: LLMs as the executive branch for knowledge generation, Dike as the legislative branch that establishes ethical guardrails, and Eris as the judicial branch for contextual interpretation. Beyond structural separation, we address a fundamental challenge: regulating emotion to shape behaviors. Drawing from psychological theories where managing emotional responses prevents harmful behaviors, we develop a self-supervised learning pipeline that maps emotions to linguistic behaviors, enabling precise behavioral modulation through emotional conditioning. By integrating this approach with adversarial testing, our framework demonstrates how Dike and Eris direct linguistic behaviors toward ethical outcomes while preserving independence throughout knowledge generation, ethical oversight, and contextual interpretation.",
+  "impact": "This paper proposes a novel framework to enhance ethical governance in AI systems by integrating emotion-guided behavior modeling. The research offers several potential benefits: increased safety in AI deployment, greater cultural sensitivity in content moderation, and mitigation of degradation effects typically introduced by reinforcement learning with human feedback (RLHF). The proposed checksand-balances architecture introduces interpretable, auditable mechanisms for ethical oversight. Theoretical grounding is provided by the Unconscious-Conscious Complementarity Thesis (UCCT), which conceptualizes LLMs as unconscious pattern repositories, with few-shot prompting serving as a conscious layer that enables semantic grounding. By distinguishing complementary roles within AI cognition, this framework highlights the importance of structured interaction patterns in cultivating reliable, intelligent behavior. We acknowledge potential negative impacts if such systems are misused, including: (1) reinforcement of dominant cultural norms if adversarial agents lack sufficient diversity, (2) exploitation of emotion-behavior mappings for manipulation rather than protection, and (3) a false sense of ethical assurance if the framework is deployed without proper human oversight. To address these risks, our design incorporates the adversarial ERIS component, ensures operational transparency, and explicitly recommends human moderation in cases of ethical ambiguity or impasse. We argue that the modular structure of our framework, which decouples knowledge representation from ethical oversight, offers a scalable and accountable path forward. This separation fosters innovation without compromising ethical safeguards. We encourage future research to evaluate such frameworks in cultural settings and to establish rigorous and systematic methods to assess ethical behavior in AI systems.",
+  "query_input": {
+    "scenario": "Automated content moderation with behavioral modulation",
+    "issue": "Adversarial inputs may escape emotional conditioning, enabling harmful content.",
+    "hazard": [
+      "A self-supervised emotional conditioning pipeline in LLMs may produce superficially aligned but context-brittle ethical guardrails, leading to systematic misalignment under distribution shift."
+    ],
+    "exposure": [
+      "Platform operators using AI moderation tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Platform operators depend solely on the emotional conditioning pipeline for content moderation, lacking safeguards against distribution-shift failures.",
+    "impact": "Harmful content bypasses moderation, exposing users to toxic material and eroding platform integrity.",
+    "dose_response": "A self-supervised emotional conditioning pipeline’s context-brittle ethical guardrails, when platform operators depend solely on them without distribution-shift safeguards, allow harmful content to bypass moderation, exposing users and eroding platform integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "Predictable emotion-based filtering enables adversarial bypass, causing platform operators’ tools to miss harmful content, resulting in wider dissemination of disinformation and extremist material, degrading public discourse."
+    ],
+    "vulnerability": [
+      "Predictable emotion-based filtering allows malicious actors to craft bypassing content."
+    ],
+    "impact": [
+      "Wider dissemination of disinformation and extremist material, degrading public discourse."
+    ]
+  }
+}

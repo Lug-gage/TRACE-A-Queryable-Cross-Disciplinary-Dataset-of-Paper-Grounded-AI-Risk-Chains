@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0923",
+  "chain_index": 0,
+  "title": "Learning Decision Trees and Forests with Algorithmic Recourse",
+  "abstract": "This paper proposes a new algorithm for learning accurate tree-based models while ensuring the existence of recourse actions. Algorithmic Recourse (AR) aims to provide a recourse action for altering the undesired prediction result given by a model. Typical AR methods provide a reasonable action by solving an optimization task of minimizing the required effort among executable actions. In practice, however, such actions do not always exist for models optimized only for predictive performance. To alleviate this issue, we formulate the task of learning an accurate classification tree under the constraint of ensuring the existence of reasonable actions for as many instances as possible. Then, we propose an efficient top-down greedy algorithm by leveraging the adversarial training techniques. We also show that our proposed algorithm can be applied to the random forest, which is known as a popular framework for learning tree ensembles. Experimental results demonstrated that our method successfully provided reasonable actions to more instances than the baselines without significantly degrading accuracy and computational efficiency.",
+  "impact": "Positive Impacts. Our proposed method, named RACT, is a new framework that aims to learn accurate tree-based models while guaranteeing the existence of recourse actions. As demonstrated in our experiments in Section 4, tree-based models trained by our method can provide executable recourse actions to more individuals than the existing methods without degrading predictive accuracy. Thus, our method enables us to learn tree-based models that make accurate predictions and guarantee recourse actions, which improves the trustworthiness of algorithmic decision-making for critical tasks in the real world such as loan approvals and judicial decisions (Karimi et al., 2022; Ross et al., 2021). In addition, our method gives decision-makers an insight into the trade-off between the predictive accuracy and recourse ratio by tuning the hyper-parameter λ (Levanon & Rosenfeld, 2021; Olckers & Walsh, 2023). Negative Impacts. While our method has several positive impacts, there may exist some negative impacts as well. First, in practice, it is sometimes undesirable for decisionmakers to guarantee the existence of executable actions for all individuals. For example, providing easy actions for granting loans to applicants who do not have the capacity to repay might cause a serious financial crisis in the future. However, since our method can adjust the ratio of individuals who are guaranteed to have executable recourse actions by tuning its hyper-parameter λ, it helps decision-makers provide recourse actions to appropriate individuals while keeping accurate decisions (Levanon & Rosenfeld, 2021; Olckers & Walsh, 2023). Second, there is a risk that our method may be used maliciously to train a model that provides specific actions for occuring some undesired situations, such as discrimination. To avoid this risk, we may need to check the actions provided to affected individuals before deploying the models (e.g., using the existing frameworks for obtaining the global summary of recourse actions (Rawal & Lakkaraju, 2020; Kanamori et al., 2022)).",
+  "query_input": {
+    "scenario": "Loan approval decisions explained by a random forest classifier",
+    "issue": "Recourse suggestions alter immutable financial features (e.g., age, historical debt) or propose implausibly large income changes overnight.",
+    "hazard": [
+      "Recourse actions for tree ensemble models violate real-world feasibility constraints due to reliance on fragile, minimal perturbations."
+    ],
+    "exposure": [
+      "Loan applicants receiving AI-generated recourse steps from a credit scoring tool."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Loan applicants cannot act on recourse requiring immutable feature changes or implausible income jumps, as the system ignores real-world actionability constraints.",
+    "impact": "Applicants are locked out of corrective action, sustaining wrongful loan rejections and deepening financial exclusion and frustration.",
+    "dose_response": "Recourse actions relying on fragile minimal perturbations in tree ensembles, when delivered to loan applicants, trigger inability to act on immutable feature changes or implausible income jumps, locking them out of corrective action, deepening financial exclusion and frustration."
+  },
+  "reference": {
+    "dose_response": [
+      "Fragile, minimal-perturbation recourse from tree ensembles suggests implausible financial changes for loan applicants, leading to eroded trust, financial exclusion, and socioeconomic disparities."
+    ],
+    "vulnerability": [
+      "Applicants with immutable negative attributes face higher rejection rates and unactionable recourse.",
+      "Socially marginalized groups are disproportionately sensitive because of historical credit inequities."
+    ],
+    "impact": [
+      "Infeasible recourse erodes trust in AI, worsens financial exclusion, and perpetuates socioeconomic disparities.",
+      "Borrowers suffer psychological distress and opportunity costs from repeated denied appeals."
+    ]
+  }
+}

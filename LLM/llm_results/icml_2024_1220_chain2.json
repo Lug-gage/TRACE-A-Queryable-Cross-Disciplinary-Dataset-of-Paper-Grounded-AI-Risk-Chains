@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1220",
+  "chain_index": 2,
+  "title": "Use Your INSTINCT INSTruction optimization for LLMs usIng Neural bandits Coupled with Transformers",
+  "abstract": "Large language models (LLMs) have shown remarkable instruction-following capabilities and achieved impressive performances in various applications. However, the performances of LLMs depend heavily on the instructions given to them, which are typically manually tuned with substantial human efforts. Recent work has used the query-efficient Bayesian optimization (BO) algorithm to automatically optimize the instructions given to black-box LLMs. However, BO usually falls short when optimizing highly sophisticated (e.g., high-dimensional) objective functions, such as the functions mapping an instruction to the performance of an LLM. This is mainly due to the limited expressive power of the Gaussian process (GP) which is used by BO as a surrogate to model the objective function. Meanwhile, it has been repeatedly shown that neural networks (NNs), especially pre-trained transformers, possess strong expressive power and can model highly complex functions. So, we adopt a neural bandit algorithm which replaces the GP in BO by an NN surrogate to optimize instructions for black-box LLMs. More importantly, the neural bandit algorithm allows us to naturally couple the NN surrogate with the hidden representation learned by a pre-trained transformer (i.e., an open-source LLM), which significantly boosts its performance. These motivate us to propose our INSTruction optimization usIng Neural bandits Coupled with Transformers (INSTINCT) algorithm. We perform instruc- tion optimization for ChatGPT and use extensive experiments to show that INSTINCT consistently outperforms baselines in different tasks, e.g., various instruction induction tasks and the task of improving zero-shot chain-of-thought instructions. Our code is available at https: //github.com/xqlin98/INSTINCT.",
+  "impact": "Since our proposed method aims to improve the performance of LLMs (via instruction optimization) for different tasks, there may exist some ethical implications related to the usage of LLMs. Specifically, in certain maliciously designed tasks, our method may be used by a malicious party to produce harmful/inappropriate instructions. This is because currently our method only aims to maximize the test performance of the black-box LLM when selecting the instructions for any given task. Therefore, to account for such potential ethical issues and prevent the generation of harmful instructions, we may explore extensions of our method which can also account for additional objectives or constraints (e.g., harmfulness) during the optimization process.",
+  "query_input": {
+    "scenario": "Automated prompt tuning for multi-turn conversational AI.",
+    "issue": "Optimized prompts may cause inconsistent response quality across conversational contexts.",
+    "hazard": [
+      "Automated prompt optimization surrogates that maximize task metrics without explicit robustness constraints, risking prompts that exploit model idiosyncrasies and generalize poorly."
+    ],
+    "exposure": [
+      "Users interacting with LLM assistants in multi-turn dialogue."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "LLM assistants are highly sensitive to prompt wording, and users lack means to assess or counteract prompts that overfit to narrow metrics.",
+    "impact": "Inconsistent response quality degrades user trust, causes task failures, and spreads misinformation across conversations.",
+    "dose_response": "Automated prompt optimization that maximizes task metrics without robustness constraints, through users interacting in multi-turn dialogue, triggers LLM sensitivity to prompt wording and user inability to counteract overfitting, leading to inconsistent response quality, degraded trust, task failures, and misinformation spread."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated prompt optimization without robustness constraints enables context-brittle prompts, which in multi-turn dialogue exposes users to inconsistent responses, leading to contradictory or unsafe information, reducing reliability and trust."
+    ],
+    "vulnerability": [
+      "Prompts optimized for single-turn coherence lack context-conditioning, causing output degradation in multi-turn dialogues."
+    ],
+    "impact": [
+      "Users receive contradictory or unsafe information during extended interactions, reducing reliability and user trust."
+    ]
+  }
+}

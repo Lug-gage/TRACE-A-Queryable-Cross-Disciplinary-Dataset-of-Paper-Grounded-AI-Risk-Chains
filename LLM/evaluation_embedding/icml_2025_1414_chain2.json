@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1414",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3217,
+    "reference": "VLM spatial reasoning relies on biased visual priors, and self-correction reinforces erroneous object poses.",
+    "generated": "Standard safety protocols and worker training assume predictable robot trajectories, leaving no defense against novel unsafe behaviors."
+  },
+  "impact": {
+    "similarity": 0.6002,
+    "reference": "Workpiece destruction, assembly line disruption, and worker injury risk.",
+    "generated": "Factory personnel suffer physical harm or death from robot collisions, halting production and prompting regulatory action."
+  },
+  "dose_response": {
+    "similarity": 0.7473,
+    "reference": "LLM-driven planning with VLM spatial reasoning amplifies erroneous object poses, which in industrial pick-and-place operations exposes factory personnel to workpiece destruction and injury from unsafe manipulator trajectories.",
+    "generated": "LLM-driven iterative self-correction amplifying misaligned objectives yields unsafe robot behaviors that, when factory personnel are nearby, exploit the lack of defense against unpredictable trajectories, leading to physical harm or death, production shutdown, and regulatory action."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0006",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6713,
+    "reference": "Students lack domain knowledge to detect errors and trust AI as an authoritative source.",
+    "generated": "Students lack domain expertise to recognize confidently delivered but incorrect explanations."
+  },
+  "impact": {
+    "similarity": 0.636,
+    "reference": "Misconception reinforcement, impaired academic performance, and diminished critical thinking.",
+    "generated": "Students internalize false knowledge, leading to persistent misconceptions and impaired learning outcomes."
+  },
+  "dose_response": {
+    "similarity": 0.8073,
+    "reference": "Training RL agents on LLM rollouts propagates errors, which in tutoring systems exposes students lacking domain knowledge to incorrect explanations, reinforcing misconceptions and impairing academic performance.",
+    "generated": "Training RL dialogue agents on LLM-generated rollouts propagates hallucinations and biases into learned policies, which, when used by students lacking domain expertise, triggers confident but incorrect explanations, leading students to internalize false knowledge, persistent misconceptions, and impaired learning outcomes."
+  }
+}

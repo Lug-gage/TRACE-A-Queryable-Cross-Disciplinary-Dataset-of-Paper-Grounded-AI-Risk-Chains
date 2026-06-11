@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0761",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes user reliance on platform safety signals and lack of independent verification, a related but different condition from the reference's over-reliance on automated moderation without human-review redundancy.",
+    "reference": "Over-reliance on automated moderation without human-review redundancy.",
+    "generated": "Users rely on platform safety signals and are motivated to share popular content, lacking independent verification."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (public) is present, but the damage type is manipulation of public belief and erosion of trust, not the internalization of false information leading to misinformed health and political decisions as in the reference.",
+    "reference": "Users internalize false information, leading to misinformed health and political decisions.",
+    "generated": "Widespread dissemination of false content manipulates public belief and erodes trust in information."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "The generated arc introduces user reliance on platform signals and sharing without verification as a mediating step, whereas the reference arc goes directly from undetected false content to misinformed decisions and collapsed platform credibility; the causal mechanism and endpoint diverge significantly.",
+    "reference": "Stealthy data poisoning enables VLM misclassification of misinformation, exposing social media users to undetected false content via feeds, leading to misinformed decisions and collapsed platform credibility, increasing division.",
+    "generated": "Stealthy data poisoning attacks on vision-language models, through exposing users to undetected misinformation as safe, trigger reliance on platform signals and sharing of popular content without verification, leading to widespread false content that manipulates belief and erodes trust."
+  }
+}

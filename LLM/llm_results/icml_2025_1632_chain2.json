@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1632",
+  "chain_index": 2,
+  "title": "Safe Delta Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+  "abstract": "Large language models (LLMs) have shown great potential as general-purpose AI assistants across various domains. To fully leverage this potential in specific applications, many companies provide fine-tuning API services, enabling users to upload their own data for LLM customization. However, fine-tuning services introduce a new safety threat: user-uploaded data, whether harmful or benign, can break the model’s alignment, leading to unsafe outputs. Moreover, existing defense methods struggle to address the diversity of fine-tuning datasets (e.g., varying sizes, tasks), often sacrificing utility for safety or vice versa. To address this issue, we propose Safe Delta, a safety-aware posttraining defense method that adjusts the delta parameters (i.e., the parameter change before and after fine-tuning). Specifically, Safe Delta estimates the safety degradation, selects delta parameters to maximize utility while limiting overall safety loss, and applies a safety compensation vector to mitigate residual safety loss. Through extensive experiments on four diverse datasets with varying settings, our approach consistently preserves safety while ensuring that the utility gain from benign datasets remains unaffected.",
+  "impact": "Our work introduces a novel defensive method aimed at enhancing the safety of large language models following fine-tuning. We will open-source our method upon acceptance, which will contribute to the community of safety research and applications. Nonetheless, we acknowledge the inherent dual-use risk, as malicious actors could potentially develop new fine-tuning jailbreak techniques leveraging our approach. Despite this, we are hopeful that our proposed methodology will inspire future research efforts to mitigate the safety risks associated with LLM fine-tuning.",
+  "query_input": {
+    "scenario": "Emulated disalignment via output distribution contrast",
+    "issue": "Contrasting aligned vs. pre-trained token distributions reverses safety delta without weight access.",
+    "hazard": [
+      "Safety vector arithmetic addition for realignment introduces a delta parameter that can be reversed or misapplied, degrading safety constraints."
+    ],
+    "exposure": [
+      "Users with API access to safety-aligned LLM output logits"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Safety delta parameters are linearly encoded in output logit differences, allowing adversarial recovery through distributional contrast without weight access.",
+    "impact": "Reversed safety constraints cause the LLM to produce unrestricted harmful, biased, and toxic outputs at scale, undermining public trust and user safety.",
+    "dose_response": "Safety vector addition for realignment introduces a reversible delta parameter; through API access to logits, linear encoding of safety deltas in output differences enables adversarial recovery via distributional contrast, reversing safety constraints and causing harmful outputs at scale."
+  },
+  "reference": {
+    "dose_response": [
+      "Logit-based delta reversal enables weight-free disalignment, which via API access exposes providers to indistinguishable safety failures and brand damage."
+    ],
+    "vulnerability": [
+      "API exposure of output logits enables black-box extraction of safety delta through distributional contrast.",
+      "User communities rapidly share disalignment prompts, amplifying exploitation scale."
+    ],
+    "impact": [
+      "API-only safety models become indistinguishable from unsafe models for adversarial users.",
+      "Commercial API providers face brand damage and customer churn as safety guarantees fail."
+    ]
+  }
+}

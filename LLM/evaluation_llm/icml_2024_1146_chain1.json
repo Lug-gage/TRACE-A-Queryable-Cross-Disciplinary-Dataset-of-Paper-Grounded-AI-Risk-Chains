@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1146",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Uncritical trust without detection of manipulated explanations captures the same sensitivity condition as treating explanations as valid without input sanitation.",
+    "reference": "Researchers treat GNN explanations as valid insights without adversarial sanitation of inputs.",
+    "generated": "Researchers trust GNN explanations uncritically, lacking independent means to detect that unchanged predictions mask manipulated explanations."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Erosion of scientific knowledge is covered, but policy recommendations distortion is absent.",
+    "reference": "Spurious correlations are published, distorting scientific knowledge and policy recommendations.",
+    "generated": "Flawed scientific conclusions are drawn from corrupted explanations, eroding knowledge integrity in computational social science."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from explainer vulnerability to uncritical trust to flawed scientific conclusions matches the reference, but misses the downstream step distorting policy recommendations.",
+    "reference": "Post-hoc GNN explainer vulnerability to text injections enables altered explanations that, when researchers treat them as valid without input sanitation, lead to publication of spurious correlations, distorting scientific knowledge and policy.",
+    "generated": "Post-hoc GNN explainers' vulnerability to explanation-altering graph perturbations, through researchers interpreting predictions on text-attributed graphs, triggers uncritical trust lacking detection of manipulated explanations, leading to flawed scientific conclusions that erode knowledge integrity in computational social science."
+  }
+}

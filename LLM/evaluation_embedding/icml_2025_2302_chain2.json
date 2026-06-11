@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2302",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5394,
+    "reference": "Contextual integrity tests that fail to capture prompt variations across deployment settings create exploitable gaps for adversaries.",
+    "generated": "Auditors' reliance on context-aware benchmarks without testing for context-manipulation jailbreaks creates blind trust in incomplete safety assessments."
+  },
+  "impact": {
+    "similarity": 0.5199,
+    "reference": "Attackers craft seemingly benign prompts that pass evaluation but cause real harm, nullifying safety mechanisms.",
+    "generated": "Overconfident safety claims allow deployment of LLMs vulnerable to jailbreak, causing harmful outputs and eroded user trust."
+  },
+  "dose_response": {
+    "similarity": 0.6308,
+    "reference": "CASE-Bench's narrow context definitions allow adversarial prompts to bypass evaluation, leading red teamers to overlook deployment risks, resulting in real harm.",
+    "generated": "Context-aware safety benchmarks assessing refusal under contextual integrity may not capture advanced few-shot jailbreak strategies, and through red teamers’ trust in these benchmarks, triggers blind trust in incomplete assessments, leading to overconfident deployment of jailbreak-vulnerable LLMs, harmful outputs, and eroded trust."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 2,
+  "title": "Disguised Copyright Infringement of Latent Diffusion Models",
+  "abstract": "Copyright infringement may occur when a generative model produces samples substantially similar to some copyrighted data that it had access to during the training phase. The notion of access usually refers to including copyrighted samples directly in the training dataset, which one may inspect to identify an infringement. We argue that such visual auditing largely overlooks a concealed copyright infringement, where one constructs a disguise that looks drastically different from the copyrighted sample yet still induces the effect of training Latent Diffusion Models on it. Such disguises only require indirect access to the copyrighted material and cannot be visually distinguished, thus easily circumventing the current auditing tools. In this paper, we provide a better understanding of such disguised copyright infringement by uncovering the disguises generation algorithm, the revelation of the disguises, and importantly, how to detect them to augment the existing toolbox. Additionally, we introduce a broader notion of acknowledgment for comprehending such indirect access. Our code is available at https://github.com/watml/d isguised_copyright_infringement.",
+  "impact": "In this paper, we adopt a simple algorithm to disguise images, which we realize may be applied as a concealed copyright infringement tool. We are surprised at how easy it is for Generative AI to circumvent the copyright law, which was originally designed for regulating human scrapers. This seemingly undetectable infringing threat may bring disadvantages for human artists, who are already losing the battle with GenAI. Furthermore, disguised images may not only be a concern to copyright owners but also a threat to Generative AI companies: if these disguises are accidentally collected as part of the training data, copyright infringement could be triggered unconsciously and unwillingly. As computer scientists, we are obligated to reveal the existence of such possible unlawful acts and provide technical tools to identify such behaviors. We expect our paper to be a prudent tool such that disguised copyright infringement and its corresponding detection methods are recognized by law experts.",
+  "query_input": {
+    "scenario": "AI content generation platforms lacking copyright attribution mechanisms.",
+    "issue": "Efforts to attribute generated images to training data concepts fail due to concealed replication.",
+    "hazard": [
+      "Diffusion models generate novel images that subtly replicate copyrighted content, reducing detectability by standard copy detection methods."
+    ],
+    "exposure": [
+      "Platform operators and end-users deploying diffusion models for content generation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on visual auditing tools that fail to detect disguised training data influences.",
+    "impact": "Undetected copyright infringement proliferates, causing legal, financial, and reputational harm to platform operators and users.",
+    "dose_response": "When diffusion models subtly replicate copyrighted content, platform operators and end-users deploying them rely on visual auditing tools that fail to detect disguised influences, leading to undetected copyright infringement proliferating, causing legal, financial, and reputational harm."
+  },
+  "reference": {
+    "dose_response": [
+      "On AI platforms lacking attribution mechanisms, diffusion models' subtle replication reduces detectability, exposing platform operators and end-users to persistent undetected infringement and accumulated legal risks, as tracking is impossible and reliance on good faith prevails."
+    ],
+    "vulnerability": [
+      "Platforms lack built-in attribution mechanisms, making tracing of copyrighted sources impossible.",
+      "Users and platforms rely on good faith without enforcement tools."
+    ],
+    "impact": [
+      "Undetected infringement persists, eroding trust between creators and platforms.",
+      "Legal risks accumulate for platforms that fail to implement attribution."
+    ]
+  }
+}

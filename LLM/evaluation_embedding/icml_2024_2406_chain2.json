@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2406",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4932,
+    "reference": "Prompt over-optimization yields fragile algorithm variants that break on input perturbations.",
+    "generated": "Reliance on black-box LLM-generated algorithms without independent adversarial robustness testing."
+  },
+  "impact": {
+    "similarity": 0.7235,
+    "reference": "Unreliable materials simulations lead to incorrect property predictions and misguided engineering designs.",
+    "generated": "Incorrect tensor network simulations yield unreliable material property predictions, corrupting downstream scientific decisions."
+  },
+  "dose_response": {
+    "similarity": 0.8239,
+    "reference": "Overfitting LLM-driven search yields brittle tensor networks that, when used in automated prompt engineering for materials simulation, produce fragile variants sensitive to perturbations, leading to unreliable property predictions and misguided engineering.",
+    "generated": "Automated LLM-driven iterative algorithm generation overfitting to optimization criteria produces brittle tensor network structures, which, when applied by computational scientists to materials simulation without independent adversarial robustness testing, leads to incorrect simulations and unreliable material property predictions, corrupting scientific decisions."
+  }
+}

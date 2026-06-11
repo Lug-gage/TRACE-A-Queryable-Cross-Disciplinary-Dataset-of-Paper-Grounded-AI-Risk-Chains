@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1431",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The sensitivity condition—LLMs lacking robust defenses that fail against adversarial prompts—is present in both reference and generated text, with only minor phrasing differences.",
+    "reference": "Adversaries with minimal skills can apply dataset prompts to any LLM lacking robust, dynamic defenses.",
+    "generated": "Deployed LLMs have brittle safety guardrails that fail against systematically optimized adversarial prompts, lacking robust refusal mechanisms."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (users/society) and damage type (mass-scale generation of harmful content) from the reference are semantically present in the generated impact, with the generated text adding trust erosion as an extra detail.",
+    "reference": "Surge in automated attacks causing mass-scale generation of harmful, manipulative content.",
+    "generated": "Malicious actors generate harmful content (e.g., hate speech, illegal instructions) at scale, harming users and undermining trust in LLM applications."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain—public benchmark enabling adversaries to apply harmful prompts to deployed LLMs, leading to mass harmful content and eroded trust—is maintained, with the generated version adding the explicit step of exploiting brittle guardrails.",
+    "reference": "Automated red teaming's jailbreak dataset release enables adversaries to apply prompts to unmonitored LLM applications, leading to mass-scale harmful content and undermined trust.",
+    "generated": "Automated red teaming's systematic identification of prompts that trigger harmful outputs, accessed by adversaries via the public benchmark to attack deployed LLMs, exploits brittle safety guardrails, leading to mass generation of harmful content that harms users and erodes trust."
+  }
+}

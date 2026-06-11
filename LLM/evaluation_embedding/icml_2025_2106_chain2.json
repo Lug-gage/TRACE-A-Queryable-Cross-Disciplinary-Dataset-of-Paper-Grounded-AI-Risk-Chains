@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2106",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3834,
+    "reference": "Engineers assume stable performance across tasks after fine-tuning.",
+    "generated": "Fine-tuned video-LLMs lack built-in safeguards against error amplification, leaving researchers unable to detect cascading misinterpretations."
+  },
+  "impact": {
+    "similarity": 0.3687,
+    "reference": "Legacy task failures propagate unnoticed into downstream applications.",
+    "generated": "Model reliability collapses across tasks, producing untrustworthy video analyses that invalidate research outcomes and downstream applications."
+  },
+  "dose_response": {
+    "similarity": 0.6269,
+    "reference": "Continuous attention and sticky memories in long video models enable catastrophic forgetting, exposing fine-tuning engineers to legacy task failures that propagate into unreliable downstream applications and trust decay.",
+    "generated": "Continuous attention and sticky memories amplify errors and cascading misinterpretations, through continual fine-tuning, triggers the lack of safeguards that leaves these misinterpretations undetected, leading to collapsed model reliability and untrustworthy analyses invalidating research outcomes."
+  }
+}

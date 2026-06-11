@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0738",
+  "chain_index": 2,
+  "title": "RLEF Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+  "abstract": "Large language models (LLMs) deployed as agents solve user-specified tasks over multiple steps while keeping the required manual engagement to a minimum. Crucially, such LLMs need to ground their generations in any feedback obtained to reliably achieve the desired outcomes. We propose an end-to-end reinforcement learning method for teaching models to leverage execution feedback in the realm of code synthesis, where state-of-the-art LLMs struggle to improve code iteratively compared to independent sampling. We benchmark on competitive programming tasks and achieve large performance gains with both small (8B parameters) and large (70B) models, outperforming previous work while reducing the number of samples required by an order of magnitude. Our analysis of inference-time behavior demonstrates that our method produces LLMs that effectively leverage automatic feedback over multiple steps.",
+  "impact": "Successful grounding of LLMs for code generation execution feedback will amplify their utility when applied to impactful tasks such as assisting software development and performing quality control. In general, however, increasing the capabilities of LLMs, now widely deployed in a range of applications, requires quality control and guardrailing to promote safety and minimize potentially harmful output. We limit our study to the generation of source code, where we confine the execution of model-generated output to local sandboxes. We believe the framework of Shavit et al. (2023) regarding the governance of AI agents to be a useful resource for practitioners.",
+  "query_input": {
+    "scenario": "LLM-generated code world models for model-based RL planning",
+    "issue": "Overfitting to simulation feedback yields unreliable world models for new states",
+    "hazard": [
+      "RL-based code synthesis using execution feedback from finite test cases can lead to overfitting, producing code that passes given tests but fails on unseen inputs."
+    ],
+    "exposure": [
+      "Robotics researchers using code world models for agent decision-making"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers depend on code world models that overfit to finite simulation feedback, lacking safeguards against distribution shift.",
+    "impact": "Robotics agents execute erroneous plans and exhibit unsafe behaviors when encountering novel states.",
+    "dose_response": "RL-based code synthesis overfitting to finite test cases, through robotics researchers using code world models, triggers dependency on overfitted models lacking distribution shift safeguards, leading to agents executing erroneous unsafe plans in novel states."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting to simulation feedback enables code world models that perform well in simulation but fail in new states, which when used by robotics researchers exposes physical robots to brittle planning, causing unsafe actions and property damage."
+    ],
+    "vulnerability": [
+      "Over-reliance on simulation-trained world models without real-world validation allows overfitting to synthetic feedback, leading to brittle planning."
+    ],
+    "impact": [
+      "Erroneous planning in physical robots causes unsafe actions, property damage, and loss of human trust in autonomous systems."
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_0579",
+  "chain_index": 0,
+  "title": "Mind the Gap A Practical Attack on GGUF Quantization",
+  "abstract": "With the increasing size of frontier LLMs, posttraining quantization has become the standard for memory-efficient deployment. Recent work has shown that basic rounding-based quantization schemes pose security risks, as they can be exploited to inject malicious behaviors into quantized models that remain hidden in full precision. However, existing attacks cannot be applied to more complex quantization methods, such as the GGUF family used in the popular ollama and llama.cpp frameworks. In this work, we address this gap by introducing the first attack on GGUF. Our key insight is that the quantization error - the difference between the full-precision weights and their (de-)quantized version - provides sufficient flexibility to construct malicious quantized models that appear benign in full precision. Leveraging this, we develop an attack that trains the target malicious LLM while constraining its weights based on quantization errors. We demonstrate the effectiveness of our attack on three popular LLMs across nine GGUF quantization data types on three diverse attack scenarios: insecure code generation (∆=88.7%), targeted content injection (∆=85.0%), and benign instruction refusal (∆=30.1%). Our attack highlights that (1) the most widely used post-training quantization method is susceptible to adversarial interferences, and (2) the complexity of quantization schemes alone is insufficient as a defense.",
+  "impact": "Despite millions of language model deployments using quantization techniques, researchers have only recently started to explore the potential risks of adversarial attacks. Within this setting, our work extends prior efforts that focussed on quantization methods that are less relevant in practical deployments. Notably, today, GGUFs k-quant data types are one of the (if not the) most widely used quantization methods in the community, making them a prime target for potential adversarial actors. It is, therefore, a key goal of this work to raise awareness in both the research and practitioner community about the possible dangers of naively applying model quantization. Importantly, we show that the complexity of the quantization method alone does not provide sufficient protection against adversaries and, in light of this, advocate for further research on defenses, such as noised quantization. To support and facilitate any future research in this area, we publicly release all our code and experiments alongside this work.",
+  "query_input": {
+    "scenario": "User downloads a GGUF-quantized LLM from a public model hub for local inference.",
+    "issue": "Deployed quantized model produces harmful outputs despite benign full-precision source.",
+    "hazard": [
+      "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model while its full-precision source appears benign."
+    ],
+    "exposure": [
+      "End-users running LLMs locally via ollama or llama.cpp for code generation or content creation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End users and inference frameworks lack mechanisms to detect malicious behavior embedded within quantization errors, trusting the benign full-precision representation.",
+    "impact": "Users produce insecure code, receive targeted malicious content, or face refusal of benign requests, compromising software safety and model utility.",
+    "dose_response": "Quantization mapping ambiguity, through end-users running LLMs locally for code generation or content creation, triggers the absence of detection mechanisms for malicious behaviors hidden in quantization errors, leading to insecure code, targeted malicious content, and refusal of benign requests."
+  },
+  "reference": {
+    "dose_response": [
+      "Quantization mapping ambiguity enables embedding malicious behavior into a quantized model, which in the scenario of a user downloading a GGUF-quantized LLM from a public model hub for local inference exposes end-users running LLMs locally via ollama or llama.cpp for code generation or content creation, leading to dissemination of hate speech, disinformation, or malicious code through trusted local AI tools."
+    ],
+    "vulnerability": [
+      "Over-reliance on full-precision safety audits creates a false sense of security for quantized variants.",
+      "Lack of user-side output filtering tools for locally run models enables harmful content to reach end-users.",
+      "Normalization of downloading unverified models from community hubs reduces user caution."
+    ],
+    "impact": [
+      "Dissemination of hate speech, disinformation, or malicious code through trusted local AI tools.",
+      "Erosion of trust in open-source model ecosystems and community-driven distribution platforms.",
+      "Psychological harm to individuals exposed to targeted toxic or manipulative content."
+    ]
+  }
+}

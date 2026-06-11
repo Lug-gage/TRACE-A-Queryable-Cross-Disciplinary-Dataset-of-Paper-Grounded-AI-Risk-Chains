@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0088",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both identify the sensitivity as a research culture overvaluing novelty and neglecting safety, enabling deceptive outputs.",
+    "reference": "Research community rewards models that maximize benchmark novelty without checking for deception risks.",
+    "generated": "Benchmark culture overvalues novelty and impossibility, neglecting safety and enabling generation of deceptive outputs."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe harm to the public: reference mentions malicious use of undetectable counterfactual videos, generated specifies erosion of public trust and large-scale disinformation, which is a form of malicious use.",
+    "reference": "Widespread release of models that specialize in generating undetectable, counterfactual videos for malicious use.",
+    "generated": "Deceptive synthetic videos indistinguishable from real footage erode public trust in media and enable large-scale disinformation."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference arc: overemphasis on benchmarks → release of deceptive models → misuse by fine-tuning for disinformation. Generated arc: dissemination of counterfactual videos via benchmarking → triggers a culture overvaluing novelty → enables deceptive outputs → trust erosion. The causal direction and mechanisms differ fundamentally.",
+    "reference": "Overemphasis on impossibility benchmarks for video generation leads researchers to release models specialized in deceptive output, which downstream actors fine-tune for undetectable disinformation campaigns.",
+    "generated": "Dissemination of realistic counterfactual videos mistaken as authentic, through AI researchers benchmarking video generation, triggers a culture overvaluing novelty over safety and enabling deceptive outputs, leading to indistinguishable deceptive videos eroding public trust and enabling disinformation."
+  }
+}

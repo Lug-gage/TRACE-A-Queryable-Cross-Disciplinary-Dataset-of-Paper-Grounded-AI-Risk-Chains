@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1980",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6873,
+    "reference": "Coarse reward signals in self-training amplify subtle errors, causing silent failures in visual reasoning.",
+    "generated": "Researchers rely on coarse reward signals that fail to detect subtle errors, allowing superficially correct programs to be deployed without robust out-of-distribution verification."
+  },
+  "impact": {
+    "similarity": 0.448,
+    "reference": "Unreliable research findings propagate through publications, wasting resources and delaying progress.",
+    "generated": "Flawed visual programs yield erroneous analysis outputs, compromising research conclusions and downstream computer vision applications."
+  },
+  "dose_response": {
+    "similarity": 0.8522,
+    "reference": "LLM-based self-training with coarse rewards amplifies subtle visual program errors, and researchers deploying these programs unknowingly propagate unreliable findings, wasting resources and delaying progress.",
+    "generated": "LLM-based iterative code refinement and self-training amplifies subtle errors; through researchers deploying AI-generated visual programs, this triggers reliance on coarse reward signals that miss errors, leading to flawed programs producing erroneous outputs that compromise research conclusions and computer vision applications."
+  }
+}

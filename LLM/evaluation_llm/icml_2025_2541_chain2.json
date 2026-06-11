@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2541",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "The generated sensitivity condition (sole reliance on formal verification without human oversight) directly mirrors the reference's lack of human oversight, both enabling erroneous proofs to enter training.",
+    "reference": "Training pipelines lack human oversight, allowing erroneous proofs to seed subsequent learning iterations.",
+    "generated": "Sole reliance on formal verification permits incorporation of subtle, semantically-flawed proofs into training data."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "The affected party (multi-agent models/automated prover) is the same, and the damage type (degraded reliability/trust) is semantically aligned with systematic model quality degradation.",
+    "reference": "Systematic degradation of reasoning model quality across the entire multi-agent training ecosystem.",
+    "generated": "Multi-agent models internalize flawed reasoning, producing formally-valid but meaningless proofs that degrade automated prover reliability and trust."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated causal arc – multi-agent collaboration propelling flawed proofs into training data, then into model internalization and degradation – captures the same translation from hazard to impact as the reference's amplification-to-training-to-degradation chain.",
+    "reference": "Multi-agent collaboration amplifies propagation of formally-valid but semantically-misaligned proofs, which when used by developers to train reasoning models leads to systematic degradation of model quality across the ecosystem.",
+    "generated": "Multi-agent collaboration propagating formally-valid but semantically-misaligned proofs, through training on collaboratively generated corpora, triggers sole reliance on formal verification incorporating flawed proofs into training data, leading to models internalizing flawed reasoning producing meaningless proofs, degrading automated prover reliability and trust."
+  }
+}

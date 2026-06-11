@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1603",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.538,
+    "reference": "Users uncritically accept biased classifications, especially when decisions affect unfamiliar or minority groups.",
+    "generated": "End-users depend on an adaptive classifier whose human-inspired memory biases privilege recent classes, leaving earlier ones susceptible to systematic neglect."
+  },
+  "impact": {
+    "similarity": 0.5703,
+    "reference": "Disproportionate errors for less frequent classes harm minority users through unfair decisions.",
+    "generated": "Real-time decisions based on misclassified earlier classes cause operational errors and erode trust in the adaptive system."
+  },
+  "dose_response": {
+    "similarity": 0.74,
+    "reference": "Skewed retention from recency biases causes systematic prediction errors, which when end-users rely on real-time adaptive classification lead to uncritical acceptance of biased outputs, disproportionately harming minority users.",
+    "generated": "Recency and primacy biases in continual learning architectures, through end-users relying on adaptive real-time classification, trigger systematic neglect of earlier classes, leading to misclassification-induced operational errors and eroded trust."
+  }
+}

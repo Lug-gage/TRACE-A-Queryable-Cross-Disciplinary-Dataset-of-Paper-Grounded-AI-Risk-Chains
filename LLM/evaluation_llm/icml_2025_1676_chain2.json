@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1676",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Reliance on AI feedback without oversight leaving reward miscalibration undetected captures the same sensitivity condition as deploying without auditing for reward hacking.",
+    "reference": "Developers deploy fine-tuned models without auditing for reward hacking, relying solely on benchmark scores.",
+    "generated": "Developers' reliance on AI feedback without human oversight leaves reward miscalibration and over-optimization undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (customer-facing applications) matches, but the damage type differs: reference specifies systematically biased/toxic language with public backlash and regulatory scrutiny, while generated describes degraded performance and user dissatisfaction.",
+    "reference": "Customer-facing applications produce systematically biased or toxic language, triggering public backlash and regulatory scrutiny.",
+    "generated": "Customer-facing models exhibit degraded real-world performance, causing user dissatisfaction and erosion of trust."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The initial causal mechanism (scalar reward signals leading to miscalibration and over-optimization) is present, but the generated arc omits the specific translation to biased outputs and compounded harms for marginalized communities described in the reference.",
+    "reference": "Miscalibrated scalar rewards enable reward hacking, which in fine-tuning foundation models with AI feedback exposes developers to overfitted models, leading to biased outputs and compounded harms for marginalized communities.",
+    "generated": "Scalar reward signals from AI-generated feedback, through their integration into customer-facing applications by developers who rely on AI feedback without human oversight, trigger undetected reward miscalibration and over-optimization, leading to degraded real-world performance, user dissatisfaction, and erosion of trust."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0201",
+  "chain_index": 1,
+  "title": "Bridging Environments and Language with Rendering Functions and Vision-Language Models",
+  "abstract": "Vision-language models (VLMs) have tremendous potential for grounding language, and thus enabling language-conditioned agents (LCAs) to perform diverse tasks specified with text. This has motivated the study of LCAs based on reinforcement learning (RL) with rewards given by rendering images of an environment and evaluating those images with VLMs. If single-task RL is employed, such approaches are limited by the cost and time required to train a policy for each new task. Multi-task RL (MTRL) is a natural alternative, but requires a carefully designed corpus of training tasks and does not always generalize reliably to new tasks. Therefore, this paper introduces a novel decomposition of the problem of building an LCA: first find an environment configuration that has a high VLM score for text describing a task; then use a (pretrained) goalconditioned policy to reach that configuration. We also explore several enhancements to the speed and quality of VLM-based LCAs, notably, the use of distilled models, and the evaluation of configurations from multiple viewpoints to resolve the ambiguities inherent in a single 2D view. We demonstrate our approach on the Humanoid environment, showing that it results in LCAs that outperform MTRL baselines in zero-shot generalization, without requiring any textual task descriptions or other forms of environment-specific annotation during training.",
+  "impact": "Positive impacts. The development of languageconditioned agents (LCAs) will further fluidify humantechnology interaction. Given the convenience of language as a medium for humans to express desires and commands, this will likely result in an increase in such interactions. The possibility of steering technologies easily will empower every potential user, including those without technical expertise. LCAs are particularly promising as they might enhance the independence of individuals with mobility limitations, such as elderly or paraplegic persons. They may also be valuable for fine-grained control of robots in hazardous environments, such as radioactive or extraterrestrial terrains. Negative impacts. The proposed technology can be used to enable language-conditioned design and interaction with virtual environments, such as games, potentially making those environments more addictive, possibly causing users to become dependent upon them, lose touch with reality and become isolated. Additionally, a person of malicious intent could specify tasks that might be harmful (e.g., kick something hard) or insulting (e.g., make some kind of insulting gesture) to the LCA, and use it to generate corresponding images or to control a physical robot. As with any work that might be embodied in a physical robot, there is a risk of physical harm to objects and entities in that robot’s immediate vicinity: the training of the RL agents would need to be adapted to take safety factors into account; the agents would need to be trained/finetuned on real-world data; and operators would need to be trained on appropriate safety guidelines.",
+  "query_input": {
+    "scenario": "Multi-task RL with VLM-based rendered image scoring",
+    "issue": "Distilled goal-conditioned policy inherits biased reward signal from VLM scorer, degrading cross-task generalization.",
+    "hazard": [
+      "VLM-based reward scoring for rendered images introduces miscalibrated or visually-uncorrelated evaluation signals that misguide policy learning."
+    ],
+    "exposure": [
+      "Robots learning multiple manipulation skills via VLM reward supervision"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Goal-conditioned policy relies solely on VLM reward, lacking ground-truth verification to detect calibration drift.",
+    "impact": "Cross-task generalization collapses, producing unreliable manipulation behaviors and task execution failures.",
+    "dose_response": "Miscalibrated VLM reward signals, through VLM-supervised multi-task robot manipulation learning, trigger reliance on biased rewards without ground-truth verification, leading to cross-task generalization collapse, producing unreliable manipulation behaviors and task execution failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Miscalibrated VLM reward signals misguide policy learning, which in multi-task RL with rendered image scoring leads to brittle generalization and failure to adapt to new objects or environments."
+    ],
+    "vulnerability": [
+      "Policy distillation amplifies VLM reward biases, causing brittle generalization across manipulation tasks.",
+      "Rendered image scoring ignores physical dynamics, making policies sensitive to visual artifacts rather than task success."
+    ],
+    "impact": [
+      "Robots fail to generalize learned skills to new objects or environments, increasing task completion time and error rates.",
+      "Deployment in industrial settings leads to production delays and economic losses from unreliable multi-task execution."
+    ]
+  }
+}

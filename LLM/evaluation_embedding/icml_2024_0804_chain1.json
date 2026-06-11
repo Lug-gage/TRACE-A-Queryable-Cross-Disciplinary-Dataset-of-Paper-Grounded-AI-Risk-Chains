@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0804",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6555,
+    "reference": "Users trusting AI visual answers for tasks needing fine-grained discrimination (e.g., medical, security).",
+    "generated": "End-users lack image ground truth and domain expertise to detect subtle visual errors in AI assistant outputs, enabling blind acceptance."
+  },
+  "impact": {
+    "similarity": 0.5568,
+    "reference": "Misidentifying objects leads to incorrect decisions in critical applications.",
+    "generated": "Users act on incorrect visual interpretations, causing misjudgments in daily tasks, safety incidents, and erosion of trust in AI assistance."
+  },
+  "dose_response": {
+    "similarity": 0.695,
+    "reference": "In-context denoising may propagate visual errors, blurring fine-grained distinctions in visual QA, which exposes end-users to CLIP-blind errors; combined with over-trust of AI answers, this leads to misidentifications and incorrect decisions in critical applications.",
+    "generated": "In-context denoising via self-training transition matrices, through end-users interpreting AI assistant images, triggers blind acceptance from lacking ground truth, leading to misjudgments, safety incidents, and eroded trust."
+  }
+}

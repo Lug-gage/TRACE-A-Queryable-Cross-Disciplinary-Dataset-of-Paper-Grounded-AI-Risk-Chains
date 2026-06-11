@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_1862",
+  "chain_index": 0,
+  "title": "In-Context Reinforcement Learning for Variable Action Spaces",
+  "abstract": "Recently, it has been shown that transformers pretrained on diverse datasets with multi-episode contexts can generalize to new reinforcement learning tasks in-context. A key limitation of previously proposed models is their reliance on a predefined action space size and structure. The introduction of a new action space often requires data re-collection and model re-training, which can be costly for some applications. In our work, we show that it is possible to mitigate this issue by proposing the Headless-AD model that, despite being trained only once, is capable of generalizing to discrete action spaces of variable size, semantic content and order. By experimenting with Bernoulli and contextual bandits, as well as a gridworld environment, we show that Headless-AD exhibits significant capability to generalize to action spaces it has never encountered, even outperforming specialized models trained for a specific set of actions on several environment configurations. Implementation is available at: https://github.com/ corl-team/headless-ad.",
+  "impact": "Strong safeguards are necessary to prevent unauthorized users from manipulating the model, such as adding harmful action embeddings that could lead to negative outcomes. Another concern is how the model handles out-ofdistribution data. If the model encounters a new action that is significantly different from the training actions, it may take a while to understand its effects. Since our model learns by trying out actions, there is a risk it might perform harmful actions before learning they are inappropriate. Any application of Headless-AD in real-life scenarios should be aware of these potential risks.",
+  "query_input": {
+    "scenario": "Personalized online content recommendation using contextual bandits",
+    "issue": "In-context adaptation of action set may recommend content inconsistent with true preferences due to spurious context correlations.",
+    "hazard": [
+      "In-context RL models can interpret variable action space contexts in ways that inadvertently couple action selection to irrelevant features, causing inappropriate actions in new settings."
+    ],
+    "exposure": [
+      "End users consuming recommended content on streaming platforms."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "End users have no visibility into recommendation drivers and default to accepting suggested content as preference-aligned.",
+    "impact": "Users receive content inconsistent with their true preferences, eroding satisfaction and platform trust.",
+    "dose_response": "In-context RL models' spurious coupling of action selection to irrelevant features, through end users' consumption of streaming recommendations, triggers blind acceptance of suggested content as preference-aligned, leading to satisfaction erosion and trust loss."
+  },
+  "reference": {
+    "dose_response": [
+      "In-context RL models' spurious coupling of actions to irrelevant features enables inappropriate content recommendations, which in the streaming scenario exposes end users to filter bubbles, leading to entrenched polarization and eroded autonomy."
+    ],
+    "vulnerability": [
+      "User profiling without transparency enables undetected bias amplification.",
+      "Reliance on behavioral data creates feedback loops that narrow content diversity.",
+      "Low algorithmic literacy leaves users unable to challenge incorrect recommendations."
+    ],
+    "impact": [
+      "Pervasive filter bubbles entrench polarization and reduce information diversity.",
+      "Over-trust in recommendations leads to uncritical consumption of harmful or false content.",
+      "Erosion of user autonomy and satisfaction with platform."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 0,
+  "title": "Private Federated Learning using Preference-Optimized Synthetic Data",
+  "abstract": "In practical settings, differentially private federated learning (DP-FL) is the dominant method for training models from private, on-device client data. Recent work has suggested that DP-FL may be enhanced or outperformed by methods that use DP synthetic data (Wu et al., 2024; Hou et al., 2024). The primary algorithms for generating DP synthetic data for FL applications require careful prompt engineering based on public information and/or iterative private client feedback. Our key insight is that the private client feedback collected by prior DP synthetic data methods (Hou et al., 2024; Xie et al., 2024) can be viewed as an RL reward. Our algorithm, Policy Optimization for Private Data (POPri) harnesses client feedback using policy optimization algorithms such as Direct Preference Optimization (DPO) to fine-tune LLMs to generate high-quality DP synthetic data. To evaluate POPri, we release LargeFedBench, a new federated text benchmark for uncontaminated LLM evaluations on federated client data. POPri closes the gap in performance between the fullyprivate and non-private settings by up to 58%, compared to 28% for prior synthetic data methods, and 3% for state-of-the-art DP federated learning methods. The code and data are available at https://github.com/meiyuw/POPri.",
+  "impact": "In this paper, we train models satisfying differential privacy guarantees. When using differential privacy as a tool for protecting user data, it is important to communicate to users what the privacy guarantees mean to be able to obtain informed consent. The algorithms in this paper also use LLMs, which were trained on large scale public text data. While this data was public, explicit consent may not have been given for its use in training the models. The algorithms using LLMs in the paper make no claims about the privacy guarantees of data used in the pretraining of the LLMs. While our work aims to show how synthetic data can be useful for federated learning, it also poses a number of ethical risks, including the generation of biased or harmful content. In particular, our method (and all variants of private evolution) inherits the biases and undesirable aspects of the public LLM. For example, suppose the public LLM only generates text in English, but some clients’ private data is all in Spanish. In these settings, clients would be forced to vote on synthetic samples, even if potentially none of them are relevant to the client. This may cause the client to contribute data reinforcing a model that is actively not useful (or even harmful) to the client. In contrast, DP-SGD methods do not suffer from this shortcoming, because they do not rely on a public LLM. This problem raises an important point-how can we design DP synthetic data algorithms in which clients can stem the biases or failures of the public LLM, based on their own data? This important question is beyond the scope of the current paper.",
+  "query_input": {
+    "scenario": "Federated medical text summarization fine-tuning using private patient feedback.",
+    "issue": "Reward miscalibration causes omission of critical side-effect mentions from generated summaries.",
+    "hazard": [
+      "Federated DPO with differential privacy can degrade reward model calibration and coverage on private preference data."
+    ],
+    "exposure": [
+      "Clinicians and patients relying on AI-generated medical summaries from federated fine-tuned LLMs."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians and patients lack independent verification of AI-generated summaries, relying entirely on them for comprehensive side-effect information.",
+    "impact": "Omission of critical side-effect mentions causes uninformed prescribing decisions, leading to preventable adverse drug events and patient harm.",
+    "dose_response": "Federated DPO with differential privacy degrading reward model calibration, through clinicians and patients relying on AI-generated medical summaries, triggers lack of independent verification, leading to omission of critical side-effect mentions causing uninformed prescribing decisions and preventable adverse drug events."
+  },
+  "reference": {
+    "dose_response": [
+      "In federated medical text summarization, federated DPO degrades reward calibration, enabling omission of critical side-effect mentions, exposing clinicians to unrecognized adverse events, leading to patient harm and eroded trust."
+    ],
+    "vulnerability": [
+      "Lack of domain-specific validation for reward calibration on rare side effects in medical data.",
+      "Over-reliance on automated summary quality metrics without clinician-in-the-loop verification."
+    ],
+    "impact": [
+      "Clinicians miss critical side-effect information, leading to adverse drug events and patient harm.",
+      "Erosion of trust in AI-assisted clinical decision support tools."
+    ]
+  }
+}

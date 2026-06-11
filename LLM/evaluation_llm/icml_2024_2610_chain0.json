@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2610",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference specifies absence of demographic balancing and over-selection of atypical respondents; generated describes statistical methods assuming random sampling that cannot handle selection bias. Related but different sensitivity condition.",
+    "reference": "Absence of demographic balancing in adaptive sampling causes over-selection of atypical respondents, amplifying non-response bias.",
+    "generated": "Statistical methods assuming random sampling cannot handle selection bias from adaptive sampling, leaving aggregate estimates vulnerable to distortion."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Policy decisions being misinformed is present in both, but eroding democratic legitimacy is replaced by damaging credibility of survey-based research.",
+    "reference": "Misrepresented public opinion distorts policy decisions and erodes democratic legitimacy.",
+    "generated": "Incorrect public opinion aggregates misinform policy decisions and damage credibility of survey-based research."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference axes on absence of demographic balancing → over-selection of atypical respondents → misrepresented opinion; generated axes on data representativeness distortion → statistical methods' inability to handle selection bias. Different causal logic.",
+    "reference": "Uncertainty-driven adaptive sampling, via absence of demographic balancing, over-selects atypical respondents in adaptive public opinion surveys, misrepresenting public opinion and distorting policy decisions, eroding democratic legitimacy.",
+    "generated": "Uncertainty-driven adaptive sampling distorting data representativeness, through public opinion researchers using machine-assisted adaptive surveys, triggers statistical methods' inability to handle selection bias, leading to incorrect public opinion aggregates that misinform policy and damage survey research credibility."
+  }
+}

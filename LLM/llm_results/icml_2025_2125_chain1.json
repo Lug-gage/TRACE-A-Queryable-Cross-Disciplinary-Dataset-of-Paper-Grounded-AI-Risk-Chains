@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2125",
+  "chain_index": 1,
+  "title": "Implicit Language Models are RNNs Balancing Parallelization and Expressivity",
+  "abstract": "State-space models (SSMs) and transformers dominate the language modeling landscape. However, they are constrained to a lower computational complexity than classical recurrent neural networks (RNNs), limiting their expressivity. In contrast, RNNs lack parallelization during training, raising fundamental questions about the trade off between parallelization and expressivity. We propose implicit SSMs, which iterate a transformation until convergence to a fixed point. Theoretically, we show that implicit SSMs implement the non-linear state-transitions of RNNs. Empirically, we find that only approximate fixed-point convergence suffices, enabling the design of a scalable training curriculum that largely retains parallelization, with full convergence required only for a small subset of tokens. Our approach demonstrates superior state-tracking capabilities on regular languages, surpassing transformers and SSMs. We further scale implicit SSMs to natural language reasoning tasks and pretraining of large-scale language models up to 1.3B parameters on 207B tokensrepresenting, to our knowledge, the largest implicit model trained to date. Notably, our implicit models outperform their explicit counterparts on standard benchmarks. Our code is publicly available at github.com/microsoft/ implicit_languagemodels.",
+  "impact": "This paper presents work aimed at advancing the field of machine learning by developing sequential and language models that can track state and hence prove to be more powerful in reasoning. Regarding language modeling, there are numerous potential societal consequences to consider, such as the energy consumption required for the training of large models and the additional iterations that our implicit models impose (see Table 4) to enhance computational expressivity of language models. When developing training algorithms for our language modeling, computational efficiency was taken into account- see Appendix D.3. Nevertheless, further research is essential to maintain the power of the proposed models while continuing to reduce computational costs. Acknowledgment The authors of the paper would like to thank colleagues from the Analog Optical Computer (AOC) team at Microsoft Research Cambridge for their discussions and feedback during the project. Additionally, we acknowledge support from the Microsoft GCR team for providing the GPUs and prompt assistance in resolving issues faced during the training of large language models. MS was partially supported with funds from Bosch-Forschungsstiftung im Stifterverband.",
+  "query_input": {
+    "scenario": "State tracking systems using implicit SSMs for monitoring sequential events",
+    "issue": "Failure to maintain correct state representations for certain sequence patterns",
+    "hazard": [
+      "Design choices in SSMs that restrict expressive power for certain formal language classes (e.g., non-star-free languages)"
+    ],
+    "exposure": [
+      "Operators of automated monitoring systems using SSM-based trackers"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Operators rely on SSM trackers with limited expressivity and lack manual verification or alert mechanisms for state tracking failures.",
+    "impact": "Undetected state tracking errors cause missed safety events and misguided operator responses, degrading monitored system integrity.",
+    "dose_response": "SSM design choices restricting expressivity for non-star-free languages, through operator use of SSM-based trackers, triggers reliance on limited expressivity without verification or alerts, leading to undetected errors, missed safety events, misguided responses, and degraded system integrity."
+  },
+  "reference": {
+    "dose_response": [
+      "SSMs' inability to represent certain sequence patterns leads to state tracking errors, so when operators trust these outputs in safety-critical monitoring without verification, undetected errors cause missed alarms and safety incidents or financial losses."
+    ],
+    "vulnerability": [
+      "Operators trust state tracker outputs in safety-critical or high-cost monitoring without independent verification."
+    ],
+    "impact": [
+      "Undetected state errors cause missed alarms, leading to safety incidents or financial losses."
+    ]
+  }
+}

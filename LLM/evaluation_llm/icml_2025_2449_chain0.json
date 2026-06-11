@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2449",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference highlights over-reliance on opaque CLIP embeddings without human validation; generated describes reliance on anomaly detectors that fail to flag certain adversarial inputs. Related system sensitivity but different specific condition.",
+    "reference": "Over-reliance on opaque CLIP embeddings without human-interpretable validation in safety-critical autonomous systems.",
+    "generated": "Operators depend on anomaly detectors that cannot flag adversarial inputs mimicking clean topological persistence signatures."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Safety incidents and operational failures cover the collision damage type, but public trust erosion is entirely missing from the generated impact.",
+    "reference": "Undetected adversarial inputs cause autonomous vehicle collisions, eroding public trust in AI safety.",
+    "generated": "Safety incidents and operational failures result from adversarial inputs triggering dangerous autonomous actions without operator alert."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe adversarial perturbations exploiting multimodal gaps to mimic clean topological signatures, coupled with reliance on CLIP-based detectors unable to flag them, leading to undetected dangerous actions and resulting harm.",
+    "reference": "Adversarial perturbations exploit multimodal alignment gaps to evade detection by mimicking clean topological signatures; in deployment of CLIP-based anomaly detection in autonomous systems, this exposes operators to undetected adversarial inputs, leading to autonomous vehicle collisions and eroded public trust.",
+    "generated": "Adversarial perturbations exploiting multimodal alignment gaps to mimic clean topological signatures, through operators relying on CLIP-based anomaly detectors, trigger dependence on detectors unable to flag such inputs, leading to safety incidents and operational failures from unalerted dangerous autonomous actions."
+  }
+}

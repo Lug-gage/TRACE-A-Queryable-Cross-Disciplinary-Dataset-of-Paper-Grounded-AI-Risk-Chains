@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_1907",
+  "chain_index": 0,
+  "title": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+  "abstract": "We present SWE-Gym, the first environment for training software engineering (SWE) agents. SWE-Gym contains 2,438 real-world task instances, each comprising a Python codebase with an executable runtime environment, unit tests, and a task specified in natural language. We use SWE- Gym to train language model based SWE agents, and achieve up to 19% absolute gains in resolution rate on the popular SWE-Bench Verified and Lite test sets. We also experiment with inferencetime scaling through verifiers trained on agent trajectories sampled from SWE-Gym. When combined with our fine-tuned SWE agents, we achieve 32.0% and 26.0% on SWE-Bench Verified and Lite, respectively, reflecting a new state-of-the-art for open-weight SWE agents. To facilitate further research, we publicly release SWE-Gym, models, and agent trajectories.",
+  "impact": "This work presents SWE-Gym, an environment for training software engineering agents, with strong empirical results on its effectiveness. We discuss a few important societal implications to consider. First, improving automated software engineering capabilities could increase developer’s productivity and accessibility across industries. Although current models are primarily research artifacts and not yet production-ready, they can support critical open-source infrastructure and potentially make software development more accessible. Secondly, as these agents become more capable, they may impact software engineering jobs and require careful consideration around code ownership, licensing, and attribution. Additionally, while we focus on legitimate software engineering tasks, similar techniques could potentially be misused to automate the creation of malicious code. We encourage future work to further explore frameworks for responsible deployment of software engineering agents, including considerations around security, safety, and economic impacts.",
+  "query_input": {
+    "scenario": "SWE-agent deployment on real-world repo-level coding tasks",
+    "issue": "Agent-generated patches pass test suites but introduce silent logic bugs undetected by existing tests.",
+    "hazard": [
+      "Automated code generation agents produce plausible but incorrect code that passes unit tests while containing subtle logical errors."
+    ],
+    "exposure": [
+      "Software developers integrating agent-generated code into production repositories"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developer reliance on incomplete test suites as the primary correctness gate allows plausible but flawed code to be integrated.",
+    "impact": "Silent logic bugs propagate into production, causing system failures, data corruption, and user-facing errors at scale.",
+    "dose_response": "Agent-generated plausible but incorrect code passing unit tests, through integration into production repositories, triggers developer reliance on incomplete test suites as correctness gate, leading to silent logic bugs causing system failures, data corruption, and user-facing errors."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated code generation agents producing plausible but incorrect code enables silent logic bugs, which in SWE-agent deployment on real-world repo-level coding tasks exposes software developers integrating agent-generated code into production repositories, leading to accumulation of latent logic flaws in production systems causing cascading failures in dependent services."
+    ],
+    "vulnerability": [
+      "Developer over-reliance on test-passing as a proxy for correctness without independent code review.",
+      "Institutional normalization of automated patch acceptance in CI/CD pipelines without human-in-the-loop verification."
+    ],
+    "impact": [
+      "Accumulation of latent logic flaws in production systems causing cascading failures in dependent services.",
+      "Erosion of software maintainability as undocumented agent-introduced bugs proliferate across codebases."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0271",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5614,
+    "reference": "Predictable emotion-based filtering allows malicious actors to craft bypassing content.",
+    "generated": "Platform operators depend solely on the emotional conditioning pipeline for content moderation, lacking safeguards against distribution-shift failures."
+  },
+  "impact": {
+    "similarity": 0.5184,
+    "reference": "Wider dissemination of disinformation and extremist material, degrading public discourse.",
+    "generated": "Harmful content bypasses moderation, exposing users to toxic material and eroding platform integrity."
+  },
+  "dose_response": {
+    "similarity": 0.6643,
+    "reference": "Predictable emotion-based filtering enables adversarial bypass, causing platform operators’ tools to miss harmful content, resulting in wider dissemination of disinformation and extremist material, degrading public discourse.",
+    "generated": "A self-supervised emotional conditioning pipeline’s context-brittle ethical guardrails, when platform operators depend solely on them without distribution-shift safeguards, allow harmful content to bypass moderation, exposing users and eroding platform integrity."
+  }
+}

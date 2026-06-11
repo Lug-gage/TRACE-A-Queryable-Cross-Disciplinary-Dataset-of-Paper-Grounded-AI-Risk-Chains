@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2610",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5784,
+    "reference": "Census agencies with limited budgets rely on active learning that over-selects edge cases, ignoring typical households.",
+    "generated": "Budget-constrained reliance on model uncertainty for label selection over-samples atypical cases, while ignoring confident but erroneous predictions for key subpopulations."
+  },
+  "impact": {
+    "similarity": 0.6741,
+    "reference": "Skewed population counts lead to unequal political representation and misallocation of billions in federal funding.",
+    "generated": "Biased census estimates and invalid confidence intervals lead to misallocation of public resources and flawed policy decisions."
+  },
+  "dose_response": {
+    "similarity": 0.8564,
+    "reference": "Uncertainty-driven adaptive sampling distorts representativeness, so when census agencies with limited budgets use active learning, edge cases are over-selected, causing skewed population counts that lead to unequal political representation and misallocation of billions.",
+    "generated": "Uncertainty-driven adaptive sampling distorting representativeness, biasing estimators, and invalidating intervals, through limited-budget census active learning, triggers over-sampling of atypical cases while ignoring confident erroneous predictions for key subgroups, leading to biased estimates and invalid intervals causing misallocation and flawed policy."
+  }
+}

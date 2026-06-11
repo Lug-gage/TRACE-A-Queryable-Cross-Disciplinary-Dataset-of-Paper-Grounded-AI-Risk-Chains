@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1068",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5406,
+    "reference": "SREs exhibit automation bias, overtrusting agent recommendations over their own judgment or contradictory signals.",
+    "generated": "SREs accept benchmark task success as proof of real incident-handling proficiency, ignoring fidelity gaps between synthetic and live environments."
+  },
+  "impact": {
+    "similarity": 0.5666,
+    "reference": "Delayed or incorrect incident resolution, increased downtime, and cascading failures due to misplaced trust in AI.",
+    "generated": "Overestimated agents mishandle production incidents, extending downtime, triggering SLA breaches, and incurring financial and reputational damage."
+  },
+  "dose_response": {
+    "similarity": 0.793,
+    "reference": "Overestimated agent capability from misaligned benchmarks causes SREs to overtrust AI, leading to delayed incident resolution and increased downtime as they ignore contradictory signals.",
+    "generated": "Misalignment of benchmark tasks with real operations, through SREs using AI agents for incident response, triggers acceptance of benchmark success as proficiency despite fidelity gaps, leading to mishandled incidents that extend downtime, breach SLAs, and cause financial and reputational damage."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1481",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6571,
+    "reference": "Training images reconstructed from gradients enable identification of individuals and sensitive attributes.",
+    "generated": "Shared model gradients inherently retain enough information to reconstruct training images, and no differential privacy noise or encryption is applied to obfuscate them."
+  },
+  "impact": {
+    "similarity": 0.4966,
+    "reference": "Mass disclosure of private medical or biometric images violating health privacy laws.",
+    "generated": "Private training images are exactly reconstructed, exposing sensitive personal data and violating data confidentiality for all participating clients."
+  },
+  "dose_response": {
+    "similarity": 0.7532,
+    "reference": "Exact reconstruction from gradients enables inversion attacks that, in federated image classification without protections, exposes identifiable images, leading to health privacy violations and eroded trust.",
+    "generated": "Exact reconstruction of private training data from shared gradients, through clients sharing local updates with a server in federated image classification, triggers gradient informativeness without noise or encryption, leading to exact image reconstruction violating data confidentiality for all clients."
+  }
+}

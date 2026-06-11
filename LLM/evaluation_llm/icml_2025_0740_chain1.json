@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0740",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes model's overestimated alignment robustness, not customer skepticism.",
+    "reference": "Customers follow automated guidance without skepticism, especially in urgent service contexts.",
+    "generated": "Alignment robustness is overestimated by relying on easily gamed affirmative response likelihood, ignoring harmful completions."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (customers) and damage types (physical harm, financial loss) are captured.",
+    "reference": "Financial loss or safety incidents from following flawed product or service instructions.",
+    "generated": "Customers suffer physical harm, financial loss, and eroded trust from incorrect or dangerous product guidance."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc is about triggering model robustness overestimation, not unskeptical customers following flawed instructions.",
+    "reference": "Adversarial prompt subversion of LLM safety enables incorrect or harmful guidance, which in automated customer service systems exposes unskeptical customers to flawed instructions, causing financial loss and safety incidents.",
+    "generated": "Gradient-optimized adversarial prompts, through customer interactions with automated support agents, trigger overestimated alignment robustness that ignores harmful completions, leading to physical harm, financial loss, and eroded trust from incorrect product guidance."
+  }
+}

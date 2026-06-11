@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2936",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Reference describes model over-optimization causing mode collapse and reduced adaptability; generated describes public dependence without detection means, a different vulnerability condition.",
+    "reference": "Over-optimization on a single reward signal leads to mode collapse, reducing adaptability to novel or adversarial queries.",
+    "generated": "Public's dependence on LLM chatbots for critical information without means to detect over-optimized, biased responses."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Affected party (public) and damage type (personal harm from misinformed decisions and trust erosion) are semantically present.",
+    "reference": "Public receives inaccurate information on critical topics, causing personal harm and loss of trust in AI assistants.",
+    "generated": "Misinformed health, financial, and safety decisions at scale, undermining trust in AI assistants."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Arc shares rejection amplifying over-optimization, but replaces mode collapse/reduced adaptability with distributional bias and adds a public detection step, missing the direct adaptability-to-inaccurate-info link.",
+    "reference": "Automated rejection amplifies over-optimization, causing mode collapse and reduced adaptability, which in real-world deployment leads the public to receive inaccurate critical information.",
+    "generated": "Reward-model-based rejection of instruction pairs amplifies benchmark over-optimization and distributional bias, through general public use of LLM chatbots for critical information, their inability to detect biased responses triggers misinformed health, financial, and safety decisions at scale, undermining trust."
+  }
+}

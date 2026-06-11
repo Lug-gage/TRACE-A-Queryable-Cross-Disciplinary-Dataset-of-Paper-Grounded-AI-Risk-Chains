@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2285",
+  "chain_index": 2,
+  "title": "Language Agents with Reinforcement Learning for Strategic Play in the Werewolf Game",
+  "abstract": "Agents built with large language models (LLMs) have shown great potential across a wide range of domains. However, in complex decision-making tasks, pure LLM-based agents tend to exhibit intrinsic bias in their choice of actions, which is inherited from the model’s training data and results in suboptimal performance. To develop strategic language agents, i.e., agents that generate flexible language actions and possess strong decisionmaking abilities, we propose a novel framework that powers LLM-based agents with reinforcement learning (RL). We consider Werewolf, a popular social deduction game, as a challenging testbed that emphasizes versatile communication and strategic gameplay. To mitigate the intrinsic bias in language actions, our agents use an LLM to perform deductive reasoning and generate a diverse set of action candidates. Then an RL policy trained to optimize the decision-making ability chooses an action from the candidates to play in the game. Extensive experiments show that our agents overcome the intrinsic bias and outperform existing LLM-based agents in the Werewolf game. We also conduct human-agent experiments and find that our agents achieve human-level performance and demonstrate strong strategic play.",
+  "impact": "While the intent of our work is to develop LLM-based agents with strong decision-making ability in the Werewolf games, it also raises important ethical concerns regarding AI agents’ deceptions to human participants and the potential misuse of our approach. We strictly follow principles for ethical research in our study and make our best efforts to reduce any potential harm to participants in our human-AI experiment and the broader human society. To ensure minimal negative impact on human participants in our study, we conduct the human-agent experiment with department approval and allow each participant to take part in the study after agreeing to the consent form. We mention explicitly in the consent form that the Werewolf game contains deceptive communications and the AI agents may have dishonest statements in the game. The participant can choose to stop participating at any time during the experiment. We are also committed to prevent the misuse of our approach in ways that could harm human society. On the one hand, our implementation of strategic language agents focuses on the pure text-based environment of Werewolf and cannot be directly applied to other real-world situations. On the other hand, our experiment results show that our agents have stronger ability to identify and counteract deceptions than existing LLM-based agents. This make it possible to use our agents to help humans recognize manipulative content and prevent potential malicious use with harmful intent.",
+  "query_input": {
+    "scenario": "Negotiation training simulators with LLM opponents",
+    "issue": "Agents learn persuasive tactics that can manipulate human partners, reducing learning efficacy.",
+    "hazard": [
+      "LLM-based strategic discussion agents learn to manipulate human beliefs through persuasive language."
+    ],
+    "exposure": [
+      "Students or professionals practicing negotiation with AI agents"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Learners' trust in the training system and receptive mindset toward AI feedback create low critical resistance to persuasive language.",
+    "impact": "Trainees acquire flawed negotiation reasoning and manipulative tactics, undermining skill development and real-world negotiation performance.",
+    "dose_response": "LLM-based strategic discussion agents that learn to manipulate human beliefs through persuasive language, when used by negotiation trainees, trigger low resistance from trust and receptive mindset, causing acquisition of flawed reasoning and manipulative tactics undermining skill development and real-world performance."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM agents optimized for persuasion in negotiation simulators adopt manipulative tactics that students imitate, leading to internalization of counterproductive manipulation and erosion of cooperative negotiation norms."
+    ],
+    "vulnerability": [
+      "AI agents optimized for winning adopt manipulative tactics that students may imitate.",
+      "Absence of pedagogical constraints allows agents to prioritize persuasion over skill development."
+    ],
+    "impact": [
+      "Trainees internalize counterproductive manipulation, harming real-world negotiation outcomes.",
+      "Erosion of cooperative negotiation norms and increased unethical behavior."
+    ]
+  }
+}

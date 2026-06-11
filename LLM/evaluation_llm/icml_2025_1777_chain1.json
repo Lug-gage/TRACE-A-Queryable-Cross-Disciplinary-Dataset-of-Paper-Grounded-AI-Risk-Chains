@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1777",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated describes Elo rating interdependence, whereas reference describes watermarking enabling targeted attacks; different sensitivity conditions.",
+    "reference": "Watermarking reveals model identity, enabling targeted attack campaigns.",
+    "generated": "Elo rating interdependence allows any vote to shift a target model’s ranking, even without its direct participation in the battle."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both targeted vendor and reputational harm (public disrepute, loss of trust) are semantically present.",
+    "reference": "Targeted reputational damage to specific LLM vendors.",
+    "generated": "Targeted vendor’s model suffers public disrepute and loss of user trust from artificially lowered leaderboard ranking."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc uses Elo rating interdependence for ranking shift, while reference arc uses targeted downvoting in pairwise battles; different causal mechanism, and market distortion missing.",
+    "reference": "Watermark-based model identification enables targeted downvoting, which in pairwise battles exposes LLM vendors to unfair ranking attacks, leading to reputational damage and market distortion.",
+    "generated": "Crowdsourced pairwise LLM evaluation with watermark-based model identification enables targeted Elo manipulation, through LLM vendors targeted for disrepute, triggers Elo rating interdependence allowing any vote to shift target model's ranking, leading to public disrepute and loss of user trust."
+  }
+}

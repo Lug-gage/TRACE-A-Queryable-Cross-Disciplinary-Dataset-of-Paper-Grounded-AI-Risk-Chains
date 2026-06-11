@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2156",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7229,
+    "reference": "Security analysts overrely on XAI methods unaware of adversarial manipulation risks.",
+    "generated": "Analysts lack detection tools for X-hacking and treat XAI metrics as inherently trustworthy."
+  },
+  "impact": {
+    "similarity": 0.4457,
+    "reference": "Prolonged undetected intrusions escalate, leading to system compromise and data breaches.",
+    "generated": "Manipulated explanations hide model flaws, causing undetected security breaches in critical systems."
+  },
+  "dose_response": {
+    "similarity": 0.8381,
+    "reference": "Multiplicity of XAI methods enables adversarial manipulation of explanations, which when relied upon by security analysts unaware of risks leads to prolonged undetected intrusions and data breaches.",
+    "generated": "Multiplicity of XAI methods and metrics, enabling X-hacking, through security analysts relying on explanations for threat detection, triggers lack of detection tools and inherent trust in metrics, leading to manipulated explanations hiding model flaws and undetected breaches in critical systems."
+  }
+}

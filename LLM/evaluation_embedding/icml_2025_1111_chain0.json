@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1111",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6985,
+    "reference": "AI's predictable short-horizon strategies allow human adversaries to exploit its behavior, undermining game integrity.",
+    "generated": "Human players' long-term pattern recognition and strategic adaptation enable exploitation of myopic AI strategies."
+  },
+  "impact": {
+    "similarity": 0.6022,
+    "reference": "Loss of player engagement and revenue as games become unfair and frustrating.",
+    "generated": "Exploited AI leads to trivialized matches, loss of competitive tension, and player disengagement."
+  },
+  "dose_response": {
+    "similarity": 0.7884,
+    "reference": "Truncated Q-value estimation leads to myopic AI strategies, which, when deployed in online games, allow human players to exploit the AI, resulting in loss of player engagement and normalization of exploitative behavior.",
+    "generated": "Truncated Q-value estimation from suboptimal offline data yields myopic strategies ignoring long-term adversarial adaptations, through human players online facing TIPR-trained AI, triggers their pattern recognition and adaptation enabling exploitation, leading to trivialized matches, lost tension, disengagement."
+  }
+}

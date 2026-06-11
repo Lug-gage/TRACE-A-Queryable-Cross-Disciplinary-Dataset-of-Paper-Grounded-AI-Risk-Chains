@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2724",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe the sensitivity as lawyers lacking document verification, making them unable to detect poisoned legal information.",
+    "reference": "Lawyers' reliance on AI-generated case summaries without verifying primary legal sources.",
+    "generated": "Absence of document authenticity verification in embedding-based retrieval makes lawyers unable to detect subtly poisoned legal precedents."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (clients) is present, but damage type is broader ('undermine client outcomes') and does not specifically include 'case losses' as in the reference.",
+    "reference": "Flawed legal strategies based on fabricated precedents, leading to case losses.",
+    "generated": "Falsified precedents distort legal reasoning, producing flawed case strategies and advice that undermine client outcomes and judicial integrity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal logic: adversarial poisoning leads to retrieval of undetectable falsified precedents because of absent verification, causing flawed legal reasoning and harm to judicial integrity.",
+    "reference": "Adversarial poisoning enables stealthy misinformation injection, which in legal precedent retrieval exposes lawyers relying on RAG to falsified precedents, leading to flawed legal strategies and undermined judicial integrity.",
+    "generated": "Adversarial poisoning of RAG knowledge bases, through lawyers using RAG for legal research, exploits the absence of document authenticity verification, making them unable to detect poisoned precedents, thereby distorting legal reasoning and undermining client outcomes and judicial integrity."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2379",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "not",
+    "reason": "Generated vulnerability describes overfitting to perturbation patterns, not the lack of standardized benchmarks for purification quality.",
+    "reference": "Lack of standardized benchmarks for purification quality allows silent degradation of data utility.",
+    "generated": "Purification models overfit to known perturbation patterns, reducing their ability to generalize to adaptive attacks while distorting benign data distribution."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Compromised model integrity captures underperformance, but the specific deployment in hiring or medical diagnosis is missing.",
+    "reference": "Deployment of biased or underperforming foundation models in downstream tasks like hiring or medical diagnosis.",
+    "generated": "Poisoned examples survive purification, causing elevated test error and compromised downstream model integrity."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc involves bypassable suppression and overfitting, while the reference arc is stochastic purification altering benign data distribution and degrading generalization.",
+    "reference": "Stochastic purification alters benign data distribution, degrading model generalization, which in pre-training curation leads to biased foundation models and reputational damage.",
+    "generated": "Purification mechanisms introducing a bypassable perturbation suppression step, through their use on large-scale web-crawled pre-training corpora, triggers overfitting to known perturbation patterns and distortion of benign data, leading to poisoned examples surviving purification, elevated test error, and compromised model integrity."
+  }
+}

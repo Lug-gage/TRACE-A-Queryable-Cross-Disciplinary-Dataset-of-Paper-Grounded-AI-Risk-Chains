@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2422",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5131,
+    "reference": "Latent representations of erased concepts persist, enabling adversarial prompt reactivation.",
+    "generated": "Platforms and users depend on concept-erasure verification that is inherently vulnerable to adversarial circumvention."
+  },
+  "impact": {
+    "similarity": 0.6129,
+    "reference": "Re-emergence of harmful imagery causes psychological harm and platform liability.",
+    "generated": "Erased harmful concepts are regenerated, exposing users to unsafe content and undermining platform safety assurances."
+  },
+  "dose_response": {
+    "similarity": 0.8187,
+    "reference": "Fragile verification enables circumvented unlearning and regeneration of erased concepts, which in the context of platforms relying on concept erasure for safety exposes users and platforms to harmful imagery, leading to psychological harm and liability.",
+    "generated": "Fragile verification of data removal from machine learning models, through users and platforms relying on concept erasure for safety, triggers dependence on verification vulnerable to adversarial circumvention, regenerating harmful concepts that expose users to unsafe content and undermine platform safety."
+  }
+}

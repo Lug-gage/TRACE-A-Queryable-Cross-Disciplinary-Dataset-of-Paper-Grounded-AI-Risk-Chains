@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2594",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.7207,
+    "reference": "Unrestricted API queries returning detailed state-action pairs allow full policy extraction via imitation learning.",
+    "generated": "Industrial firms' public API lacks query restrictions, exposing state-action pairs that enable imitation learning of proprietary RL control logic."
+  },
+  "impact": {
+    "similarity": 0.7024,
+    "reference": "Proprietary control logic is commoditized, eroding competitive advantage and disincentivizing future RL investment.",
+    "generated": "Loss of intellectual property and competitive advantage, enabling rivals to replicate the RL-based control service at lower cost."
+  },
+  "dose_response": {
+    "similarity": 0.9182,
+    "reference": "Black-box imitation learning extracts RL policies from API state-action pairs, so industrial firms offering public API expose their control logic, enabling replication that commoditizes it and erodes competitive advantage.",
+    "generated": "Black-box imitation learning extracting proprietary RL policies, through industrial firms’ public APIs lacking query restrictions, triggers exposure of state-action pairs, leading to loss of intellectual property and competitive advantage as rivals replicate the service cheaper."
+  }
+}

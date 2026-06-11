@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0286",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7602,
+    "reference": "Self-attention gradients retain token-level positional information, enabling verbatim text reconstruction.",
+    "generated": "Self-attention layer gradients preserve exact token order and identity, making shared updates directly invertible into training text."
+  },
+  "impact": {
+    "similarity": 0.5506,
+    "reference": "Reconstructed private communications expose intimate conversations and trade secrets.",
+    "generated": "Full reconstruction of private training sequences, breaching confidentiality of sensitive language data across all clients."
+  },
+  "dose_response": {
+    "similarity": 0.7505,
+    "reference": "Reconstructing text tokens from self-attention gradients in federated LLM training exposes personal communications, enabling social engineering and incurring GDPR penalties, harming user privacy and trust.",
+    "generated": "Gradient inversion attacks, via clients fine-tuning LLMs in federated learning, trigger self-attention layer gradients that preserve exact token order and identity, leading to full reconstruction of private training sequences and breaching confidentiality."
+  }
+}

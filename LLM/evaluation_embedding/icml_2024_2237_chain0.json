@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2237",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.3574,
+    "reference": "Underrepresentation of minority visual concepts in diffusion samplers entrenches cultural biases.",
+    "generated": "Dependence on replay buffers for novelty estimation without debiasing mechanisms renders exploration susceptible to miscalibration."
+  },
+  "impact": {
+    "similarity": 0.3783,
+    "reference": "Marginalized groups experience representational erasure or stereotyping in downstream generative media.",
+    "generated": "Generated samples lack diversity, exhibiting mode collapse and poor coverage of the target distribution."
+  },
+  "dose_response": {
+    "similarity": 0.8083,
+    "reference": "Off-policy replay buffers misdirect exploration, making diffusion samplers miss diverse modes; when used by ML researchers, this entrenches biases, causing representational erasure for marginalized groups.",
+    "generated": "Off-policy exploration with replay buffers yields miscalibrated novelty estimates, and through ML researchers using diffusion models, triggers dependence on replay buffers without debiasing, leading to generated samples lacking diversity and mode collapse."
+  }
+}

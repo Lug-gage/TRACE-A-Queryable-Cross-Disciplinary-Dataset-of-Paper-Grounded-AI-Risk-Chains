@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2111",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6964,
+    "reference": "Content moderation systems rely primarily on text-based filters, not image content analysis.",
+    "generated": "Content moderation systems rely on text prompts to flag harmful outputs, leaving them incapable of detecting policy-violating images triggered by innocuous prompts."
+  },
+  "impact": {
+    "similarity": 0.6969,
+    "reference": "Increased exposure of users to harmful imagery, undermining platform safety.",
+    "generated": "Unfiltered circulation of copyrighted or prohibited images through platform channels, causing institutional liability, copyright breaches, and erosion of user safety."
+  },
+  "dose_response": {
+    "similarity": 0.6787,
+    "reference": "Stealthy poisoned training samples create triggered associations, which in content moderation bypass scenarios expose moderators to policy-violating images, leading to increased user harm and moderator burnout.",
+    "generated": "Backdoor data poisoning of text-to-image diffusion models, through platform content moderation systems, triggers the inability of text-prompt-based filters to detect policy-violating images cued by innocuous prompts, leading to unfiltered circulation of copyrighted or prohibited images, causing liability and safety erosion."
+  }
+}

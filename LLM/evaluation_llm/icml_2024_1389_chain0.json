@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1389",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Developers relying on imprecise feature attribution without verification is semantically the same sensitivity condition as over-relying on visual explanations without verifying model behavior.",
+    "reference": "Application developers over-rely on visual explanations without verifying underlying model behavior.",
+    "generated": "Developers rely on imprecise feature attribution that maps object information into cross-attention, enabling manipulation to produce editing failures."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Undermining developer trust is mentioned but the reference specifies erosion of user trust, so the affected party is different; damage type (trust erosion) is partially present.",
+    "reference": "Erosion of user trust in AI-assisted creative tools after repeated editing failures.",
+    "generated": "Unintended object modifications and editing failures in image outputs undermine developer trust and tool reliability."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from manipulated feature attribution through cross‑attention issues to unintended modifications is present, but the step of adversarial cross‑attention map alterations is replaced by reliance on imprecise mapping, and the endpoint omits the specific user trust erosion, leaving the causal logic incomplete.",
+    "reference": "Manipulated feature attribution maps enable adversarial cross-attention map alterations, which in text-guided image editing tools expose developers to unintended object modifications, leading to erosion of user trust.",
+    "generated": "Feature attribution maps containing manipulable object attribution information, through application developers using tuning-free text-guided image editing tools, trigger reliance on imprecise cross-attention mapping that enables object manipulation, leading to unintended object modifications and editing failures that undermine trust and reliability."
+  }
+}

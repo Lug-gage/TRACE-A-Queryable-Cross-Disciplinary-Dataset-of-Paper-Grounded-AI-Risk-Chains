@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1114",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4256,
+    "reference": "Red-teaming datasets are shared without sanitization, propagating exploits.",
+    "generated": "Safety teams test models in isolation, lacking cross-model evaluation methods, rendering them blind to combined misuse via task decomposition."
+  },
+  "impact": {
+    "similarity": 0.4451,
+    "reference": "Jailbreak techniques diffuse rapidly among malicious actors, escalating attack frequency.",
+    "generated": "Adversaries generate vulnerable code, explicit images, hacking scripts, and manipulative tweets at scale, evading single-model safeguards."
+  },
+  "dose_response": {
+    "similarity": 0.5173,
+    "reference": "Transferability-enhanced red-teaming tools produce effective jailbreaks that, when leaked, arm malicious actors, accelerating attacks and outpacing defenses.",
+    "generated": "Adversarial examples with enhanced cross-model transferability, through safety evaluation teams and model developers, trigger isolated testing that blinds them to task-decomposition misuse, leading to scaled generation of vulnerable code, hacking scripts, explicit images, and manipulative tweets evading safeguards."
+  }
+}

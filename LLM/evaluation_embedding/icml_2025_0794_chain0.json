@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0794",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5579,
+    "reference": "Shared global cache timing differences reveal exact prompts sent by other API users.",
+    "generated": "API users cannot inspect or disable cache sharing, leaving their prompt privacy defenseless against timing side-channels."
+  },
+  "impact": {
+    "similarity": 0.6439,
+    "reference": "Unauthorized disclosure of private user input, including personal identifiers and confidential strategies.",
+    "generated": "Leakage of private user prompts to other parties and public disclosure of previously unknown model architecture details."
+  },
+  "dose_response": {
+    "similarity": 0.7764,
+    "reference": "Timing side-channels from prompt caching enable cache hit/miss inference, which in shared global cache scenarios exposes other users' private prompts, leading to unauthorized disclosure of personal identifiers.",
+    "generated": "Prompt caching timing side-channels, through API users submitting private prompts, trigger defenselessness against cache sharing, leading to leakage of private prompts and disclosure of model architecture."
+  }
+}

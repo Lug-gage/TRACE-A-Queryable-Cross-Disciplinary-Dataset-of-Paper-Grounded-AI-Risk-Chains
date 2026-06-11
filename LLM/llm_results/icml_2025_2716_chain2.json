@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2716",
+  "chain_index": 2,
+  "title": "PINNsAgent Automated PDE Surrogation with Large Language Models",
+  "abstract": "Solving partial differential equations (PDEs) using neural methods has been a long-standing scientific and engineering research pursuit. Physics-Informed Neural Networks (PINNs) have emerged as a promising alternative to traditional numerical methods for solving PDEs. However, the gap between domain-specific knowledge and deep learning expertise often limits the practical application of PINNs. Previous works typically involve manually conducting extensive PINNs experiments and summarizing heuristic rules for hyperparameter tuning. In this work, we introduce PINNsAgent, a novel surrogation framework that leverages large language models (LLMs) to bridge the gap between domain-specific knowledge and deep learning. PINNsAgent integrates Physics-Guided Knowledge Replay (PGKR) for efficient knowledge transfer from solved PDEs to similar problems, and Memory Tree Reasoning for exploring the search space of optimal PINNs architectures. We evaluate PINNsAgent on 14 benchmark PDEs, demonstrating its effectiveness in automating the surrogation process and significantly improving the accuracy of PINNsbased solutions. Project website: https:// qingpowuwu.github.io/PINNsAgent/.",
+  "impact": "We acknowledge several potential societal implications of PINNsAgent: (1) Democratization vs. expertise dilution. While PINNsAgent aims to make PINNs technology more accessible to non-experts, there is a concern that widespread automation might lead to insufficient understanding of the underlying physics and mathematical principles. We emphasize that PINNsAgent should serve as an educational tool that guides users toward better understanding rather than replacing the need for scientific rigor and domain expertise. (2) API dependency and cost barriers. The reliance on commercial LLM APIs creates potential barriers for researchers with limited funding or those in regions with restricted access to such services. We recommend exploring integration with open-source language models to ensure broader accessibility. (3) Overconfidence in automated solutions. There is a risk that automated optimization may create false confidence in PINNs solutions, particularly for complex physical systems. Users should maintain healthy skepticism about automatically generated configurations and always validate results against physical intuition and established numerical benchmarks before applying them to real-world problems with safety implications.",
+  "query_input": {
+    "scenario": "Integration of LLM-designed PINNs into multiphysics design workflows",
+    "issue": "Training instability from LLM-chosen settings can produce unreliable surrogate predictions.",
+    "hazard": [
+      "LLM-driven automated PINN design amplifies training instability and inaccuracy, yielding physically unreliable surrogate models."
+    ],
+    "exposure": [
+      "Engineers using automated surrogates in design optimization"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Limited deep learning expertise among engineers precludes critical evaluation of LLM-chosen PINN settings, enabling misplaced trust in unstable surrogates.",
+    "impact": "Optimized designs become physically unreliable, causing performance failures, safety risks, and costly rework.",
+    "dose_response": "LLM-driven automated PINN design amplifies training instability and inaccuracy, yielding physically unreliable surrogates, through engineers using them in optimization, triggers limited expertise fostering misplaced trust, leading to physically unreliable designs causing performance failures, safety risks, and costly rework."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM-driven automated PINN design amplifies training instability, which when integrated into design workflows without online validation yields unreliable surrogates, causing product failures and financial loss."
+    ],
+    "vulnerability": [
+      "Production pipelines accept surrogates without online validation or drift monitoring."
+    ],
+    "impact": [
+      "Unreliable surrogate predictions cascade into design optimization, causing product failures and financial loss."
+    ]
+  }
+}

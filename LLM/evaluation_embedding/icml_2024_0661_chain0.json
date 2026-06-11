@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0661",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5333,
+    "reference": "Homogeneous agent architecture enables rapid propagation of identical jailbreak exploits.",
+    "generated": "Agents lack safeguards to filter adversarial images and unconditionally share multimodal memories, enabling unchecked propagation of jailbreak triggers."
+  },
+  "impact": {
+    "similarity": 0.5364,
+    "reference": "All agents corrupted, generating harmful outputs across the entire system.",
+    "generated": "Exponential jailbreak of up to a million agents generates mass harmful content, compromising safety for all users and undermining system integrity."
+  },
+  "dose_response": {
+    "similarity": 0.9193,
+    "reference": "Infectious propagation of jailbreak prompts via adversarial images in multi-agent chats corrupts all agents, leading to systemic harmful outputs and user exposure to toxic content.",
+    "generated": "Propagation of jailbreak prompts via adversarial images in multi-agent chat, through message exchange and user outputs, triggers unfiltered memory sharing, leading to exponential jailbreak infecting up to a million agents, generating harmful content and compromising user safety and system integrity."
+  }
+}

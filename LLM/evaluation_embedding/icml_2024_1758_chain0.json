@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1758",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6607,
+    "reference": "Post-deployment distribution shifts combined with misspecified causal graphs silently degrade model accuracy.",
+    "generated": "Data-free distillation provides no ground truth to validate the causal graph, so engineers cannot detect misspecification that amplifies distribution shifts."
+  },
+  "impact": {
+    "similarity": 0.4117,
+    "reference": "Users receive erroneous predictions leading to unsafe navigation or incorrect medical advice.",
+    "generated": "Deployed compressed models suffer systematic accuracy collapse from amplified distribution shifts, compromising application reliability and user safety."
+  },
+  "dose_response": {
+    "similarity": 0.809,
+    "reference": "Misspecified causal graphs in compressed models silently degrade accuracy under distribution shifts, leading to confident but erroneous predictions that cause unsafe navigation or incorrect medical advice.",
+    "generated": "Misspecified causal models introducing confounding and distribution shifts, through ML engineers deploying compressed models on edge devices, trigger undetectable graph misspecification in data-free distillation, leading to systematic accuracy collapse, compromising reliability and user safety."
+  }
+}

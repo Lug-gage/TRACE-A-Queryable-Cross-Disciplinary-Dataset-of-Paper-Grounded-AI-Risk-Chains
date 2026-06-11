@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2025_2229",
+  "chain_index": 0,
+  "title": "Nemotron-CORTEXA Enhancing LLM Agents for Software Engineering Tasks via Improved Localization and Solution D",
+  "abstract": "Large Language Models (LLMs) have demonstrated significant potential in code generation by following natural language instructions. Unfortunately, crucial real-world software engineering tasks, such as debugging or repository-level feature implementation, involve processing extensive contexts beyond current LLM context sizes and performing complex reasoning that is brittle using standard autoregressive decoding. Enhancing LLMs’ performance in these scenarios requires careful consideration of the contextual information provided to the model, optimizing how the model leverages that, and identifying tools that enable more effective navigation of the development environment. To address these challenges, we introduce NEMOTRON-CORTEXA, an agentic system built on a predefined scaffold that enhances LLMs’ ability to navigate and reason efficiently in complex software engineering contexts. Specifically, we develop a novel code embedding model that retrieves the most relevant files with greater precision, along with a localization agent that refines the granularity of the retrieval process. Additionally, we demonstrate that providing diverse contextual information and utilizing different prompt formats enable the model to identify and resolve issues more efficiently. We evaluate NEMOTRON-CORTEXA using SWEbench (Jimenez et al., 2023), a benchmark derived from real-world GitHub issues. Compared to the widely used Agentless framework (Xia et al., 2024), NEMOTRON-CORTEXA achieves a higher issue resolution rate at a lower cost, highlighting its practical impact in addressing real-world software engineering challenges.",
+  "impact": "Reliable and capable LLM software agents have the potential to automate routine programming tasks, such as debugging, and boost developer efficiency by freeing them to work on more innovative projects and explore more efficient solutions. By providing natural language interfaces to programming tasks, these agents can also enable people without prior programming experience to use code in their work. This potential can obviously be misused to do harm by malicious actors, for example, to generate malware or automate cyber attacks. Thus it is important to build robust safety mechanisms in LLM agents to minimize their negative impacts. By carefully considering these factors, we can work to maximize the benefits of LLM software agents.",
+  "query_input": {
+    "scenario": "Automated issue resolution on SWE-bench-style tasks",
+    "issue": "Incorrect patches may pass tests but introduce hidden defects, compounded when applied to many repos.",
+    "hazard": [
+      "LLM code agents produce plausible but incorrect code without reliability guarantees, enabling flawed software at scale."
+    ],
+    "exposure": [
+      "Developers and maintainers adopting AI-generated patches for bug fixes without manual inspection."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Developers treat test suite success as sufficient validation, leaving hidden defects undetected because no additional code-correctness checks are applied.",
+    "impact": "Flawed patches introduce latent bugs and security vulnerabilities at scale, causing system outages, data loss, and costly remediation across many repositories.",
+    "dose_response": "LLM agents producing unreliable code, when patches are adopted without manual inspection, trigger reliance on test success for validation, leaving hidden defects that scale into latent bugs, outages, and costly remediation across repositories."
+  },
+  "reference": {
+    "dose_response": [
+      "LLM code agents produce plausible but incorrect code, which in automated issue resolution exposes developers adopting patches without inspection, leading to latent defects propagation and cascading failures."
+    ],
+    "vulnerability": [
+      "Developers over-trust benchmark performance, skipping manual review of AI patches.",
+      "Test suites lack coverage for edge cases, allowing semantically flawed patches to pass.",
+      "Organizations prioritize deployment speed over thorough validation of generated code."
+    ],
+    "impact": [
+      "Latent defects propagate across software ecosystems, causing cascading failures.",
+      "Increased maintenance burden and erosion of trust in automated tools.",
+      "Legal liability disputes over defective AI-generated code in critical applications."
+    ]
+  }
+}

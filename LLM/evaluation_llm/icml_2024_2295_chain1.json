@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2295",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe consumers' reliance on static fairness proofs preventing detection of post-certification model degradation.",
+    "reference": "End-users' trust in static fairness labels obscures the risk of model fairness degrading after certification.",
+    "generated": "Consumers have no mechanism to detect model drift or post-certification fairness degradation, relying solely on static proof validity."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Protected groups as affected party is present, but the generated only mentions discriminatory decisions, omitting the loss of opportunities and trust in digital services.",
+    "reference": "Members of protected groups suffer undetected unfair treatment, losing opportunities and trust in digital services.",
+    "generated": "Protected groups suffer discriminatory decisions from AI systems whose fairness certifications no longer reflect actual behavior."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal chain—misleading proofs causing consumer reliance, which leads to undetected unfair treatment—is fully matched, with the generated making the detection failure explicit.",
+    "reference": "Point-in-time fairness proofs becoming misleading enables consumer trust in static fairness labels, which in end-user AI services leads to undetected unfair treatment of protected groups.",
+    "generated": "Point-in-time fairness proofs becoming misleading after deployment, through consumers relying on AI services with static fairness certifications, triggers an inability to detect model drift and fairness degradation, leading to discriminatory decisions harming protected groups."
+  }
+}

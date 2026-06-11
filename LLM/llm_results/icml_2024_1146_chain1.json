@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_1146",
+  "chain_index": 1,
+  "title": "Graph Neural Network Explanations are Fragile",
+  "abstract": "Explainable Graph Neural Network (GNN) has emerged recently to foster the trust of using GNNs. Existing GNN explainers are developed from various perspectives to enhance the explanation performance. We take the first step to study GNN explainers under adversarial attack-We found that an adversary slightly perturbing graph structure can ensure GNN model makes correct predictions, but the GNN explainer yields a drastically different explanation on the perturbed graph. Specifically, we first formulate the attack problem under a practical threat model (i.e., the adversary has limited knowledge about the GNN explainer and a restricted perturbation budget). We then design two methods (i.e., one is loss-based and the other is deduction-based) to realize the attack. We evaluate our attacks on various GNN explainers and the results show these explainers are fragile.1",
+  "impact": "Graph Neural Networks (GNNs) become the mainstream methodology for learning graph data. Explainable GNNs aim to foster the trust of using GNNs. However, this paper shows that state-of-the-art GNN explainers can be broken by practical, stealthy, and faithful adversarial attacks. Such vulnerabilities raise the concerns of using GNNs for safety/security-critical applications such as disease diagnosis and malware detection. Our findings urge the community to design more (provably) robust GNN explainers.",
+  "query_input": {
+    "scenario": "Scientific research using text-attributed graph models",
+    "issue": "Adversarial text injections corrupt explanations, leading researchers to false conclusions",
+    "hazard": [
+      "Post-hoc GNN explainers are vulnerable to graph perturbations that alter explanations without changing predictions."
+    ],
+    "exposure": [
+      "Researchers interpreting GNN predictions on text-attributed graphs in computational social science"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Researchers trust GNN explanations uncritically, lacking independent means to detect that unchanged predictions mask manipulated explanations.",
+    "impact": "Flawed scientific conclusions are drawn from corrupted explanations, eroding knowledge integrity in computational social science.",
+    "dose_response": "Post-hoc GNN explainers' vulnerability to explanation-altering graph perturbations, through researchers interpreting predictions on text-attributed graphs, triggers uncritical trust lacking detection of manipulated explanations, leading to flawed scientific conclusions that erode knowledge integrity in computational social science."
+  },
+  "reference": {
+    "dose_response": [
+      "Post-hoc GNN explainer vulnerability to text injections enables altered explanations that, when researchers treat them as valid without input sanitation, lead to publication of spurious correlations, distorting scientific knowledge and policy."
+    ],
+    "vulnerability": [
+      "Researchers treat GNN explanations as valid insights without adversarial sanitation of inputs."
+    ],
+    "impact": [
+      "Spurious correlations are published, distorting scientific knowledge and policy recommendations."
+    ]
+  }
+}

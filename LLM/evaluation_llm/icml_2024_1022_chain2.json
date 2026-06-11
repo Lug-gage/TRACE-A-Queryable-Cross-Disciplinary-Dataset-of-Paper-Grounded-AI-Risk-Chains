@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1022",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference focuses on developers treating scores as reliable; generated focuses on developers lacking means to detect divergence — related but different sensitivity condition",
+    "reference": "Developers treat prompt-based uncertainty scores as reliable confidence estimates.",
+    "generated": "Developers lack means to detect when confidence estimates diverge from true likelihoods under distribution shift."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both identify LLM applications as affected party and high-confidence errors/silent failures as the damage type, with generated adding specificity about unsafe automated decisions",
+    "reference": "Applications silently fail on edge cases while reporting high confidence.",
+    "generated": "LLM applications produce high-confidence errors, leading to unsafe automated decisions in deployment."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated captures some causal elements (confidence vs. true likelihoods, high-confidence errors) but restructures the arc, inserting extra intermediary steps and shifting the trigger from detection failure to developer integration of filters",
+    "reference": "Prompt-based uncertainty detection fails under distribution shift, enabling miscalibrated high-confidence outputs that silently propagate through application pipelines, leading to harmful automated decisions.",
+    "generated": "Calibrated confidence estimates that may differ from true likelihoods, through developers integrating prompt-based uncertainty filters into LLM applications, triggers developers' lack of means to detect divergence under distribution shift, leading to high-confidence errors and unsafe automated decisions."
+  }
+}

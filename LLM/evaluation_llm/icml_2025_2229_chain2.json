@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2229",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe test suites failing to detect semantic correctness, the sensitivity condition is identical.",
+    "reference": "Test suites are weak proxies for semantic correctness, especially in safety-critical logic.",
+    "generated": "Programmers rely on test suites as correctness oracles, which cannot detect semantically incorrect but plausible code."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both refer to catastrophic failures of safety-critical systems, with generated elaborating human harm and financial damage.",
+    "reference": "Catastrophic failures in medical devices, autonomous vehicles, or avionics.",
+    "generated": "Safety-critical systems fail due to undetected semantic bugs, causing human injury, loss of life, and financial damage."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc introduces reliance on test suites that cannot detect bugs, whereas reference describes direct exposure to semantic errors causing failures.",
+    "reference": "LLM code agents' plausible but incorrect code, in iterative refinement exploration, exposes safety-critical software to subtle semantic errors, causing catastrophic failures.",
+    "generated": "LLM code agents producing plausible but incorrect code, through programmers using automated refinement loops for safety-critical software development, triggers reliance on test suites that cannot detect semantic bugs, leading to system failures causing injury, loss of life, and financial damage."
+  }
+}

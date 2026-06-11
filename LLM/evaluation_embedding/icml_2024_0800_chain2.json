@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0800",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.7725,
+    "reference": "Visually impaired users' complete reliance on audio descriptions and inability to verify visual accuracy heightens harm from errors.",
+    "generated": "Visually impaired users cannot visually verify audio description accuracy, relying solely on the system's correct interpretation of instructions."
+  },
+  "impact": {
+    "similarity": 0.6618,
+    "reference": "Inaccurate descriptions cause navigation hazards and erode trust in assistive AI, leading to technology abandonment.",
+    "generated": "Visually impaired users receive inaccurate or misleading audio descriptions, causing confusion, safety risks, and loss of access to critical visual information."
+  },
+  "dose_response": {
+    "similarity": 0.8422,
+    "reference": "Instruction-following speech editing misinterpretation produces inaccurate audio descriptions, which in assistive speech technologies exposes visually impaired users to navigation hazards, causing trust loss and abandonment.",
+    "generated": "Instruction-following speech editing misinterpretation, through visually impaired users' reliance on instruction-edited audio descriptions, triggers their inability to visually verify accuracy, leading to inaccurate or misleading audio descriptions that cause confusion, safety risks, and loss of access to critical visual information."
+  }
+}

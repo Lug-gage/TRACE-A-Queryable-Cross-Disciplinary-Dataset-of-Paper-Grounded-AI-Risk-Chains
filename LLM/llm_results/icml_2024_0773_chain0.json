@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0773",
+  "chain_index": 0,
+  "title": "HarmoDT Harmony Multi-Task Decision Transformer for Offline Reinforcement Learning",
+  "abstract": "The purpose of offline multi-task reinforcement learning (MTRL) is to develop a unified policy applicable to diverse tasks without the need for online environmental interaction. Recent advancements approach this through sequence modeling, leveraging the Transformer architecture’s scalability and the benefits of parameter sharing to exploit task similarities. However, variations in task content and complexity pose significant challenges in policy formulation, necessitating judicious parameter sharing and management of conflicting gradients for optimal policy performance. In this work, we introduce the Harmony Multi-Task Decision Transformer (HarmoDT), a novel solution designed to identify an optimal harmony subspace of parameters for each task. We approach this as a bi-level optimization problem, employing a metalearning framework that leverages gradient-based techniques. The upper level of this framework is dedicated to learning a task-specific mask that delineates the harmony subspace, while the inner level focuses on updating parameters to enhance the overall performance of the unified policy. Empirical evaluations on a series of benchmarks demonstrate the superiority of HarmoDT, verifying the effectiveness of our approach.",
+  "impact": "In domains such as healthcare and robotics, multi-task scenarios are commonplace. Our algorithm enhances the applicability of DT by extending them to complex multi-task environments, increasing their practical utility. However, the performance on certain tasks may deteriorate if they are provided with bad task masks, potentially due to malicious intent. Therefore, it’s imperative to rigorously follow the algorithmic process during updates, treating each task with equal consideration. To date, our investigations have not uncovered any adverse societal impacts.",
+  "query_input": {
+    "scenario": "Deploying the unified policy across diverse offline RL tasks",
+    "issue": "Task interference from gradient conflicts degrades per-task reliability",
+    "hazard": [
+      "Shared parameters in multi-task offline RL decision transformers cause gradient conflicts that amplify extrapolation errors under distribution shift."
+    ],
+    "exposure": [
+      "RL practitioners integrating the multi-task policy in control suites"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Shared parameter architecture lacks per-task gradient isolation, leaving integrated policies susceptible to conflicting updates and extrapolation errors.",
+    "impact": "Per-task decision reliability collapses, producing unsafe control actions and task failures across all deployed domains.",
+    "dose_response": "Gradient conflicts from shared parameters in multi-task RL decision transformers amplify extrapolation errors under distribution shift, through control-suite integration, triggering absent per-task gradient isolation and conflicting updates, leading to reliability collapse, unsafe control actions, and task failures across domains."
+  },
+  "reference": {
+    "dose_response": [
+      "Gradient conflicts from shared parameters enable extrapolation errors, which when deploying the unified policy across diverse offline RL tasks exposes RL practitioners, leading to widespread task failures and reduced trust."
+    ],
+    "vulnerability": [
+      "Insufficient per-task validation and over-reliance on multi-task policy in unseen scenarios."
+    ],
+    "impact": [
+      "Widespread task failures and reduced trust in RL systems across domains."
+    ]
+  }
+}

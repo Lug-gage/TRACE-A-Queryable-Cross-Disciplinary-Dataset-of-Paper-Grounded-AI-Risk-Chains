@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 1,
+  "title": "Characterizing Truthfulness in Large Language Model Generations with Local Intrinsic Dimension",
+  "abstract": "We study how to characterize and predict the truthfulness of texts generated from large language models (LLMs), which serves as a crucial step in building trust between humans and LLMs. Although several approaches based on entropy or verbalized uncertainty have been proposed to calibrate model predictions, these methods are often intractable, sensitive to hyperparameters, and less reliable when applied in generative tasks with LLMs. In this paper, we suggest investigating internal activations and quantifying LLM’s truthfulness using the local intrinsic dimension (LID) of model activations. Through experiments on four question answering (QA) datasets, we demonstrate the effectiveness of our proposed method. Additionally, we study intrinsic dimensions in LLMs and their relations with model layers, autoregressive language modeling, and the training of LLMs, revealing that intrinsic dimensions can be a powerful approach to understanding LLMs. Code is available at: https://github.com/fanyin3639/ LID-HallucinationDetection.",
+  "impact": "This paper discusses an important step for the safe deployment of LLMs. LLMs have demonstrated their remarkable capabilities, but human trust on LLMs are still limited because of their tendency to generate hallucinations secretly. We propose to quantify and characterize model hallucinations through intrinsic dimensions of model intermediate representations. On the one hand, this method itself helps people abstain from trusting incorrect generations. On the other hand, it can serve as the backbone for some hallucination mitigation methods. This paper mainly discusses LLM generations in English. Results may be biased towards the English-speaking population. However, adapting this LID method to other languages does not require much additional effort. Moreover, the paper focuses primarily on question-answering scenarios. We encourage future work to implement this method on diverse tasks and languages, as well as cross-lingual settings.",
+  "query_input": {
+    "scenario": "LLM knowledge-based visual QA",
+    "issue": "Multimodal integration with LLMs generates hallucinations that evade detection by internal-state classifiers.",
+    "hazard": [
+      "LLM internal representations encode truthfulness in a separable subspace, enabling classifiers to detect lies but creating a single point of failure if the subspace is manipulated or misaligned."
+    ],
+    "exposure": [
+      "Users of knowledge-based visual QA systems."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack independent verification capabilities, creating total reliance on visual QA system outputs without fallback truth indicators.",
+    "impact": "Undetected false answers mislead users, causing incorrect decisions in knowledge-dependent tasks and eroding trust in AI systems.",
+    "dose_response": "When the separable truthfulness subspace in LLM representations is manipulated or misaligned, through users' dependence on visual QA systems, their lack of verification creates total reliance, leading to undetected false answers that mislead decisions and erode trust."
+  },
+  "reference": {
+    "dose_response": [],
+    "vulnerability": [
+      "Users in high-stakes domains (medicine, law) act on hallucinated visual answers without corroboration.",
+      "Visual modality increases perceived credibility, lowering skepticism compared to text-only outputs.",
+      "Automated pipelines ingest hallucinated outputs into downstream databases, propagating errors."
+    ],
+    "impact": [
+      "Clinical misdiagnosis when medical imaging QA systems hallucinate findings.",
+      "Legal errors from hallucinated evidence interpretation in document analysis.",
+      "Cumulative data pollution in knowledge bases, degrading future AI training and retrieval."
+    ]
+  }
+}

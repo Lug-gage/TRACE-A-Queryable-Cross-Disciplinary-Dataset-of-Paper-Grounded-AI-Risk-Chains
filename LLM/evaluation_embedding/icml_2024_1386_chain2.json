@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1386",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3984,
+    "reference": "Research communities prioritizing model scale over stability, propagating flawed architectural modifications.",
+    "generated": "Deep stacked UNet architectures propagate small numerical errors through layers without correction, causing denoising instability during training."
+  },
+  "impact": {
+    "similarity": 0.7463,
+    "reference": "Stalled progress in large-scale generative modeling due to unreliable training outcomes.",
+    "generated": "Training of massively deep generative models fails, producing low-quality images and wasting computational resources, hindering research progress."
+  },
+  "dose_response": {
+    "similarity": 0.7883,
+    "reference": "Skip-tuning introduces numerical propagation errors that degrade denoising, which in deeper stacked networks accumulates to hinder scalable training, leading to stalled progress and resource waste in generative modeling research.",
+    "generated": "Skip-tuning of shortcut connections, through researchers training massively deep vision generation models, triggers numerical error propagation in deep stacked UNet architectures, causing denoising instability that leads to training failures, low-quality images, wasted resources, and hindered progress."
+  }
+}

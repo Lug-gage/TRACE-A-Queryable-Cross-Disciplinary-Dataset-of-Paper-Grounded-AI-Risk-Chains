@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0792",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes inability to distinguish benign from abuse-driven shifts, while reference describes lack of explainable scores preventing user appeals; related but different sensitivity condition.",
+    "reference": "Automated flagging without explainable scores prevents user appeals.",
+    "generated": "The verification system cannot distinguish benign homophilic graph evolution from abuse-driven curvature shifts, making false flags inevitable."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated covers reputational harm (trust loss) but misses the loss of free expression explicitly mentioned in the reference.",
+    "reference": "Wrongfully suspended users suffer reputational harm and loss of free expression.",
+    "generated": "Wrongly flagged users lose account access, social connections, and trust in the platform."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both arcs describe reconstruction errors causing false anomaly flags that lead to wrongful consequences for legitimate users; the causal translation is semantically equivalent despite additional wording.",
+    "reference": "Mixed-curvature autoencoder reconstruction errors cause false anomaly flags in social network verification, exposing legitimate users to wrongful account suspensions and loss of free expression.",
+    "generated": "Mixed-curvature autoencoder reconstruction errors incorrectly flag benign structural variations as anomalies under topological shifts and, through flagging legitimate user accounts, trigger the system's inability to distinguish benign homophilic graph evolution from abuse-driven curvature shifts, leading to wrongly flagged users losing account access, social connections, and trust."
+  }
+}

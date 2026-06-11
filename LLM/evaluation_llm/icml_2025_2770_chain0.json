@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2770",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated 'inherently trusting and processing untrusted web content' instantiates the reference's 'overreliance on autonomous agent decisions without human verification', both describing susceptibility to adversarial manipulation.",
+    "reference": "Overreliance on autonomous agent decisions without human verification increases susceptibility to adversarial manipulation.",
+    "generated": "Web agents lack robust defenses, inherently trusting and processing untrusted web content, enabling adversarial prompt manipulation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users, organizations) is present, but damage type is 'data theft, unauthorized access, system breaches' instead of the reference's 'financial loss and erosion of user trust'.",
+    "reference": "Unauthorized actions (e.g., financial transfers, data leaks) cause financial loss and erosion of user trust.",
+    "generated": "Compromised agent actions result in data theft, unauthorized access, and system breaches for deploying users and organizations."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc captures that adversarial prompts exploit vulnerabilities leading to harmful actions, but omits the systematic vulnerability discovery step and the user manipulation exposure, and uses a different damage chain.",
+    "reference": "Automated black-box adversarial prompt generation enables systematic discovery of agent vulnerabilities, which in web agents processing untrusted content exposes users to manipulation, leading to unauthorized financial actions and trust erosion.",
+    "generated": "Automated black-box adversarial prompt generation, through users and organizations deploying autonomous web agents, triggers agents' lack of robust defenses and innate trust in untrusted content, leading to compromised actions causing data theft, unauthorized access, and system breaches."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0773",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.495,
+    "reference": "Lack of clinical validation across diverse patient populations and opaque policy decisions.",
+    "generated": "Clinicians lack real-time signals to detect when shared-parameter RL models generate erroneous recommendations under patient variability."
+  },
+  "impact": {
+    "similarity": 0.7989,
+    "reference": "Patient harm from inappropriate treatments and erosion of trust in AI clinical support.",
+    "generated": "Patients suffer incorrect treatments causing preventable complications, while institutional trust in AI decision support erodes."
+  },
+  "dose_response": {
+    "similarity": 0.8747,
+    "reference": "Gradient conflicts from shared parameters enable extrapolation errors, which when deploying the policy in healthcare treatment recommendations exposes clinicians using decision support, leading to patient harm and erosion of trust.",
+    "generated": "Gradient conflicts from shared parameters amplify extrapolation errors, and through clinician use of decision support, the lack of real-time error-detection signals under patient variability leads to incorrect treatments, preventable complications, and eroded institutional trust."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0059",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6076,
+    "reference": "Copyright systems depend on watermarks as the sole barrier against unauthorized AI training on protected works.",
+    "generated": "Artists rely on watermarking algorithms that are inherently susceptible to adversarial and diffusive attacks, undermining protection."
+  },
+  "impact": {
+    "similarity": 0.6829,
+    "reference": "Artists lose revenue and recognition, discouraging creative production.",
+    "generated": "Artists suffer economic losses and loss of attribution as diffusion models train on their works without authorization or compensation."
+  },
+  "dose_response": {
+    "similarity": 0.7431,
+    "reference": "Adversarial watermark forgery bypasses attribution, which in copyright enforcement exposes artists relying on watermarks, leading to revenue loss and market flooding with indistinguishable AI outputs.",
+    "generated": "Adversarial and diffusive attacks exploit watermark fragility, enabling forgery that defeats detection, through artists embedding watermarks for protection, triggers reliance on attack-susceptible algorithms undermining protection, leading to economic losses and lost attribution as diffusion models train on their works without authorization."
+  }
+}

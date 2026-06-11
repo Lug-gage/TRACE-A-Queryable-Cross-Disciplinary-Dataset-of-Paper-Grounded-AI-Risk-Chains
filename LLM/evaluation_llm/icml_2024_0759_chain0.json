@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0759",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe individuals whose images are in fine-tuning sets as unable to prevent extraction, leading to re-identification or privacy loss.",
+    "reference": "Individuals whose images are in fine-tuning sets without consent are vulnerable to re-identification and misuse.",
+    "generated": "Fine-tuned models retain recoverable private images in low-rank weight updates, leaving individuals unable to prevent extraction."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Privacy violations and potential identity misuse encompass loss of personal anonymity and public exposure.",
+    "reference": "Loss of personal anonymity and public exposure.",
+    "generated": "Personal images from fine-tuning are reconstructed without consent, exposing individuals to privacy violations and potential identity misuse."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe weight recovery via Spectral DeTuning leading to exposure of individuals' images and consequent privacy harms.",
+    "reference": "Spectral DeTuning enables weight recovery, which in publicly deployed fine-tuned Stable Diffusion models exposes individuals whose images were used in fine-tuning, leading to loss of anonymity, psychological distress, and harassment risk.",
+    "generated": "Spectral DeTuning recovery of pre-fine-tuning weights, when applied to models fine-tuned on individuals' personal images, exploits low-rank weight updates that retain recoverable private images, leading to unauthorized image reconstruction, privacy violations, and potential identity misuse."
+  }
+}

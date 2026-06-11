@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2356",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes dependency on a truthfulness subspace instead of classifier confidence scores, missing the specific proxy while keeping the lack of independent verification.",
+    "reference": "Users over-rely on classifier confidence scores as truth proxies without independent verification.",
+    "generated": "Users have no independent means to verify LLM outputs, leaving them dependent on a single, manipulable truthfulness subspace that can silently fail."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (users) and damage type (misinformed decisions, propagation of misinformation, trust erosion) reflect the reference's belief in false claims and altered decision-making.",
+    "reference": "Widespread belief in false claims, altering public opinion and decision-making.",
+    "generated": "Users act on false information, leading to misinformed decisions, propagation of misinformation, and systemic erosion of trust in AI."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Reference provides no dose_response; generated arc is fabricated.",
+    "reference": "[]",
+    "generated": "The encoding of truthfulness in a separable LLM subspace, through end users receiving false QA outputs, triggers dependency on a manipulable truthfulness subspace that silently fails, leading to misinformed decisions, propagation of misinformation, and systemic erosion of trust in AI."
+  }
+}

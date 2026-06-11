@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1302",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.635,
+    "reference": "No automated chemical validity filter before experimental testing allows invalid molecules to consume synthesis resources.",
+    "generated": "Medicinal chemists lack integrated real-time chemical validity checks, trusting GenMol’s output without immediate detection of structural flaws."
+  },
+  "impact": {
+    "similarity": 0.7808,
+    "reference": "Wasted experimental cycles and financial cost pursuing unsynthesizable molecules, delaying genuine hit identification.",
+    "generated": "Wasted synthesis resources and dead-end lead compounds delay therapeutic development timelines."
+  },
+  "dose_response": {
+    "similarity": 0.8862,
+    "reference": "Non-autoregressive discrete diffusion with fragment remasking generates chemically invalid structures, which, when medicinal chemists generate novel molecules with GenMol without validity filters, leads to wasted experimental cycles and delays in hit identification.",
+    "generated": "Non-autoregressive discrete diffusion with fragment remasking, through medicinal chemists generating molecules, triggers their lack of integrated real-time chemical validity checks, leading to wasted synthesis resources and dead-end compounds that delay therapeutic development."
+  }
+}

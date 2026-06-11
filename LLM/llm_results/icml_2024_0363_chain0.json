@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0363",
+  "chain_index": 0,
+  "title": "Slicedit Zero-Shot Video Editing With Text-to-Image Diffusion Models Using Spatio-Temporal Slices",
+  "abstract": "Text-to-image (T2I) diffusion models achieve state-of-the-art results in image synthesis and editing. However, leveraging such pretrained models for video editing is considered a major challenge. Many existing works attempt to enforce temporal consistency in the edited video through explicit correspondence mechanisms, either in pixel space or between deep features. These methods, however, struggle with strong nonrigid motion. In this paper, we introduce a fundamentally different approach, which is based on the observation that spatiotemporal slices of natural videos exhibit similar characteristics to natural images. Thus, the same T2I diffusion model that is normally used only as a prior on video frames, can also serve as a strong prior for enhancing temporal consistency by applying it on spatiotemporal slices. Based on this observation, we present Slicedit, a method for text-based video editing that utilizes a pretrained T2I diffusion model to process both spatial and spatiotemporal slices. Our method generates videos that retain the structure and motion of the original video while adhering to the target text. Through extensive experiments, we demonstrate Slicedit’s ability to edit a wide range of real-world videos, confirming its clear advantages compared to existing competing methods.",
+  "impact": "Our goal in this work is to suggest a different method for leveraging T2I foundation models for video editing, overcoming some of the weaknesses of previous and concurrent works. Our and similar methods may potentially be used to edit videos to create fake or harmful content. We believe that it is crucial to develop and apply tools for detecting videos edited using generative AI methods, such as ours. In addition, mitigating biases and NSFW content from large datasets, used for training foundation models, will also contribute for safer generative AI usage, including using T2I models for video editing.",
+  "query_input": {
+    "scenario": "Zero-shot video editing of general consumer videos (e.g., social media clips)",
+    "issue": "Flickering and inconsistent frames degrade viewing experience and believability",
+    "hazard": [
+      "Spatio-temporal slice editing with pretrained text-to-image diffusion models produces temporally inconsistent videos due to absent frame-wise constraints"
+    ],
+    "exposure": [
+      "Content creators and viewers sharing edited videos on social platforms"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Creators trust automated editing outputs without manual frame-by-frame verification, and viewers expect seamless playback.",
+    "impact": "Flickering and inconsistent frames distract viewers, reducing content enjoyment and harming creator credibility.",
+    "dose_response": "Spatio-temporal slice editing with pretrained diffusion models yielding temporal inconsistency, when videos are shared on social platforms, triggers unverified trust in outputs and expectation of seamless playback, causing distracting flickering that reduces enjoyment and harms creator credibility."
+  },
+  "reference": {
+    "dose_response": [
+      "Spatio-temporal slice editing produces temporally inconsistent videos, which when shared by content creators on social platforms, combined with low media literacy and algorithmic amplification, erodes trust in video evidence and spreads misinformation."
+    ],
+    "vulnerability": [
+      "Low media literacy leaves viewers susceptible to mistaking edited videos as authentic.",
+      "Social media algorithms prioritize engaging content, rapidly disseminating flicker-prone videos before detection."
+    ],
+    "impact": [
+      "Erosion of public trust in video evidence, affecting journalism and justice.",
+      "Spread of misinformation through viral manipulated videos, distorting public discourse."
+    ]
+  }
+}

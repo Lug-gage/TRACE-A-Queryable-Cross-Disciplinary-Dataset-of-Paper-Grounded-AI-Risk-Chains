@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2536",
+  "chain_index": 1,
+  "title": "Textural or Textual How Vision-Language Models Read Text in Images",
+  "abstract": "Typographic attacks are often attributed to the ability of multimodal pre-trained models to fuse textual semantics into visual representations, yet the mechanisms and locus of such interference remain unclear. We examine whether such models genuinely encode textual semantics or primarily rely on texture-based visual features. To disentangle orthographic form from meaning, we introduce the ToT dataset, which includes controlled word pairs that either share semantics with distinct appearances (synonyms) or share appearance with differing semantics (paronyms). A layerwise analysis of Intrinsic Dimension (ID) reveals that early layers exhibit competing dynamics between orthographic and semantic representations. In later layers, semantic accuracy increases as ID decreases, but this improvement largely stems from orthographic disambiguation. Notably, clear semantic differentiation emerges only in the final block, challenging the common assumption that semantic understanding is progressively constructed across depth. These findings reveal how current vision-language models construct text representations through texture-dependent processes, prompting a reconsideration of the gap between visual perception and semantic understanding. The code is available at: https://github. com/Ovsia/Textural-or-Textual",
+  "impact": "This paper investigates how multimodal vision models process textual semantics, revealing that early layers rely more on visual textures than on textual meaning, which makes these models vulnerable to typographic attacks. By shedding light on the internal mechanisms of these models, this work advances the transparency and accountability of machine learning systems. It contributes to the broader effort to make AI more interpretable and aligned with societal values, particularly as these systems are increasingly deployed in decision-making processes. From a societal perspective, the vulnerabilities exposed in this research have important implications for the safety and fairness of AI systems in real-world applications. Typographic attacks could lead to unintended consequences in fields such as law enforcement, healthcare, or finance, where misinterpretations could disproportionately affect vulnerable groups. Ensuring that models are both transparent and secure is crucial for their responsible integration into these high-impact areas.",
+  "query_input": {
+    "scenario": "VLM-powered document digitization pipelines processing forms and receipts",
+    "issue": "Typographically perturbed text in scanned documents leads to incorrect data extraction and financial errors.",
+    "hazard": [
+      "Vision-language models that read and semantically interpret text in images create an attack surface for adversarial text manipulations that exploit orthographic, semantic, or perceptual ambiguities."
+    ],
+    "exposure": [
+      "Data entry clerks relying on VLM extraction of text from scanned documents."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clerks rely on VLM extraction that encodes text via texture rather than semantics, leaving it unable to resist orthographic perturbations.",
+    "impact": "Erroneous data propagates into financial records, causing monetary discrepancies, invoice mismatches, and compliance failures.",
+    "dose_response": "Adversarial text manipulation attack surface in vision-language models, through clerks relying on VLM extraction, triggers texture-based encoding unable to resist orthographic perturbations, leading to erroneous financial data, monetary discrepancies, invoice mismatches, and compliance failures."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial typographic perturbations exploiting VLM ambiguities enable incorrect text extraction, which in document digitization exposes data entry clerks to systematic errors, leading to financial losses and legal liability."
+    ],
+    "vulnerability": [
+      "Automated extraction without human verification allows corrupted data to enter financial records undetected.",
+      "Institutional over-trust in VLM accuracy leads to removal of manual review steps."
+    ],
+    "impact": [
+      "Financial losses from incorrect billing, tax filings, or reimbursement claims.",
+      "Legal liability and reputational damage for organizations relying on flawed automated extraction."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2538",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "not",
+    "reason": "generated describes a system design flaw (absent safeguards) while reference describes human cognitive overload; different sensitivity conditions",
+    "reference": "High cognitive load on clinic staff reduces capacity to manually detect scheduling conflicts.",
+    "generated": "Clinic scheduling portals lack duplicate-check safeguards when automated agents interpret calendar interfaces, enabling erroneous double-bookings."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "both reference and generated describe delays, confusion/conflicts, and wasted staff resources (administrative burden covers wasted clinical resources)",
+    "reference": "Wasted clinical resources, patient care delays, and appointment confusion.",
+    "generated": "Double-booked patient slots cause appointment conflicts, healthcare delays, and administrative burden for clinic staff."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "generated arc includes grounding errors leading to double-bookings but omits the critical human failure link where overburdened staff miss conflicts, substituting a technical safeguard gap",
+    "reference": "When agents misinterpret calendar slots due to grounding errors, overburdened clinic staff fail to detect conflicts, resulting in double-bookings that waste resources and delay patient care.",
+    "generated": "Visual and HTML grounding errors in multimodal web agents, when patients use clinic portals, trigger absent duplicate-check safeguards, leading to double-booked slots, appointment conflicts, healthcare delays, and administrative burden."
+  }
+}

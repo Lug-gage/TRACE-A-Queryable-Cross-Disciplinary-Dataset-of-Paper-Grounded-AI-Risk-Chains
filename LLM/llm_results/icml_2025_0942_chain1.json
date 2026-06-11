@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0942",
+  "chain_index": 1,
+  "title": "Private Federated Learning using Preference-Optimized Synthetic Data",
+  "abstract": "In practical settings, differentially private federated learning (DP-FL) is the dominant method for training models from private, on-device client data. Recent work has suggested that DP-FL may be enhanced or outperformed by methods that use DP synthetic data (Wu et al., 2024; Hou et al., 2024). The primary algorithms for generating DP synthetic data for FL applications require careful prompt engineering based on public information and/or iterative private client feedback. Our key insight is that the private client feedback collected by prior DP synthetic data methods (Hou et al., 2024; Xie et al., 2024) can be viewed as an RL reward. Our algorithm, Policy Optimization for Private Data (POPri) harnesses client feedback using policy optimization algorithms such as Direct Preference Optimization (DPO) to fine-tune LLMs to generate high-quality DP synthetic data. To evaluate POPri, we release LargeFedBench, a new federated text benchmark for uncontaminated LLM evaluations on federated client data. POPri closes the gap in performance between the fullyprivate and non-private settings by up to 58%, compared to 28% for prior synthetic data methods, and 3% for state-of-the-art DP federated learning methods. The code and data are available at https://github.com/meiyuw/POPri.",
+  "impact": "In this paper, we train models satisfying differential privacy guarantees. When using differential privacy as a tool for protecting user data, it is important to communicate to users what the privacy guarantees mean to be able to obtain informed consent. The algorithms in this paper also use LLMs, which were trained on large scale public text data. While this data was public, explicit consent may not have been given for its use in training the models. The algorithms using LLMs in the paper make no claims about the privacy guarantees of data used in the pretraining of the LLMs. While our work aims to show how synthetic data can be useful for federated learning, it also poses a number of ethical risks, including the generation of biased or harmful content. In particular, our method (and all variants of private evolution) inherits the biases and undesirable aspects of the public LLM. For example, suppose the public LLM only generates text in English, but some clients’ private data is all in Spanish. In these settings, clients would be forced to vote on synthetic samples, even if potentially none of them are relevant to the client. This may cause the client to contribute data reinforcing a model that is actively not useful (or even harmful) to the client. In contrast, DP-SGD methods do not suffer from this shortcoming, because they do not rely on a public LLM. This problem raises an important point-how can we design DP synthetic data algorithms in which clients can stem the biases or failures of the public LLM, based on their own data? This important question is beyond the scope of the current paper.",
+  "query_input": {
+    "scenario": "Federated DPO for customer service chatbot fine-tuning on private user conversations.",
+    "issue": "Reward policies overfit to majority preferences, skewing responses for minority user groups.",
+    "hazard": [
+      "Federated DPO with differential privacy can degrade reward model calibration and coverage on private preference data."
+    ],
+    "exposure": [
+      "Customers interacting with chatbots fine-tuned via federated DPO on private feedback."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Minority user preferences are underrepresented in private federated training data, preventing equitable reward calibration across groups.",
+    "impact": "Chatbot responses skew toward majority preferences, degrading service quality for minority users and reinforcing inequity.",
+    "dose_response": "Federated DPO with differential privacy, through customer interactions with chatbots fine-tuned on private feedback, triggers underrepresentation of minority preferences in reward calibration, causing skewed responses that degrade service quality for minority users and reinforce inequity."
+  },
+  "reference": {
+    "dose_response": [
+      "In customer service chatbot fine-tuning, federated DPO overfits to majority preferences, skewing responses for minority users, eroding trust and reinforcing social disparities."
+    ],
+    "vulnerability": [
+      "Chatbot reward overfitting to majority user preferences due to imbalanced private feedback data.",
+      "Lack of stratified sampling to capture minority group interaction styles."
+    ],
+    "impact": [
+      "Minority users receive dismissive or culturally insensitive responses, eroding trust in service.",
+      "Systemic exclusion and reinforcement of social disparities in commercial platforms."
+    ]
+  }
+}

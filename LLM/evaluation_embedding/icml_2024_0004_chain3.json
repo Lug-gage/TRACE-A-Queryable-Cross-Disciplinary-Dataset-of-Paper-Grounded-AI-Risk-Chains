@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0004",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.5407,
+    "reference": "In audits or legal challenges, stakeholders treat influence scores as ground truth, enabling miscarriages of accountability.",
+    "generated": "Stakeholders' reliance on subset-based influence attributions as faithful representations, lacking independent verification of subset representativeness."
+  },
+  "impact": {
+    "similarity": 0.5548,
+    "reference": "Undermined model auditability and algorithmic recourse, perpetuating biased decisions and legal exposure.",
+    "generated": "Misguided decisions and model interventions based on distorted attributions, undermining trust in model explanations and operational safety."
+  },
+  "dose_response": {
+    "similarity": 0.7472,
+    "reference": "Greedy subset selection misrepresents collective influence, producing misleading explanations that stakeholders treat as truth, undermining audits and perpetuating biased decisions.",
+    "generated": "Subset selection methods intrinsically generate unrepresentative datasets that degrade model performance, and through stakeholders interpreting influence-based explanations, triggers reliance on these subsets as faithful without verification, leading to misguided decisions, unsafe interventions, and undermined trust."
+  }
+}

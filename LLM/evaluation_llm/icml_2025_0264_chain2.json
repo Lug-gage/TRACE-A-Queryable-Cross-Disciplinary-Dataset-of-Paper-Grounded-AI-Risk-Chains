@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe minority-group vulnerability from failure of detector fairness/robustness to transfer to those groups, making them susceptible to adversarial perturbation.",
+    "reference": "Deepfake detectors overfit to majority-group facial features, so adversarial robustness won't transfer to underrepresented demographics.",
+    "generated": "Deepfake detector fairness defenses fail to generalize across domains, leaving minority-group classifications easily corrupted by adversarial perturbation."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both specify affected party (minority individuals) and damage type (false accusations/missed deepfakes leading to reputational harm/defamation), covering the same negative outcomes.",
+    "reference": "Minority individuals face higher false-positive rates, leading to unjust accusations, or false-negative deepfakes that amplify defamation.",
+    "generated": "Minority individuals face disproportionate false accusations or missed deepfakes, leading to reputational harm, discrimination, and eroded trust in media authenticity."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The generated arc captures the same causal logic: failure of fairness defenses to generalize (i.e., robustness not transferring) leads to disproportionate false accusations or missed deepfakes, matching the reference's failure-to-transfer causing false positives and defamation.",
+    "reference": "Adversarial robustness in deepfake detection fails to transfer to minority facial features, causing detectors to produce higher false-positive rates for minority individuals, leading to unjust accusations or amplified defamation.",
+    "generated": "Adversarial perturbations that compromise fairness, through the exposure of minority-group videos to deepfake detectors, trigger fairness defenses' failure to generalize across domains, leading to disproportionate false accusations or missed deepfakes, reputational harm, discrimination, and eroded trust in media authenticity."
+  }
+}

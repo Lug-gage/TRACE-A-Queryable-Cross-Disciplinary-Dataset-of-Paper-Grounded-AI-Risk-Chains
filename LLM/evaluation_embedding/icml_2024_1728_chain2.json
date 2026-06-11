@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1728",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6738,
+    "reference": "Forensic analysts and courts treat enhanced images as ground truth, ignoring stochastic variability.",
+    "generated": "Forensic analysts rely on enhanced stills as faithful records without independent means to verify hallucinated details."
+  },
+  "impact": {
+    "similarity": 0.7863,
+    "reference": "Wrongful convictions or acquittals result, compromising justice systems and forensic credibility.",
+    "generated": "Wrongful convictions or acquittals from corrupted evidence, eroding judicial accuracy."
+  },
+  "dose_response": {
+    "similarity": 0.8189,
+    "reference": "Stochastic hallucination by learned denoiser priors produces inconsistent surveillance reconstructions that forensic analysts treat as ground truth, leading to wrongful convictions.",
+    "generated": "Learned denoiser priors hallucinating details, when forensic analysts use enhanced surveillance stills as faithful records without independent verification, produce corrupted evidence that leads to wrongful convictions or acquittals."
+  }
+}

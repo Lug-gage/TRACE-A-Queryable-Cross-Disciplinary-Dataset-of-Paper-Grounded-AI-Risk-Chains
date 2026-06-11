@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 1,
+  "title": "Visual Abstraction A Plug-and-Play Approach for Text-Visual Retrieval",
+  "abstract": "Text-to-visual retrieval often struggles with semantic redundancy and granularity mismatches between textual queries and visual content. Unlike existing methods that address these challenges during training, we propose VISual Abstraction (VISA), a test-time approach that enhances retrieval by transforming visual content into textual descriptions using off-the-shelf large models. The generated text descriptions, with their dense semantics, naturally filter out lowlevel redundant visual information. To further address granularity issues, VISA incorporates a question-answering process, enhancing the text description with the specific granularity information requested by the user. Extensive experiments demonstrate that VISA brings substantial improvements in text-to-image and text-to-video retrieval for both short- and long-context queries, offering a plug-and-play enhancement to existing retrieval systems.",
+  "impact": "VISA inherits potential challenges associated with LMMgenerated descriptions, such as biases and hallucinations. Since descriptions are automatically generated, the retrieval process might be influenced by inaccurate or biased representations, leading to unintended consequences, particularly in sensitive domains like news media analysis or legal decision-making. Additionally, transforming images into textual descriptions could raise privacy concerns, especially when applied to personal or surveillance-related datasets.",
+  "query_input": {
+    "scenario": "Interactive cross-modal retrieval with LLM-driven granularity QA",
+    "issue": "Granularity mismatches between natural language queries and retrieved visuals remain unresolved, lowering accuracy.",
+    "hazard": [
+      "Plug-and-play visual abstraction using off-the-shelf large models silently amplifies granularity mismatches and semantic redundancy across modalities."
+    ],
+    "exposure": [
+      "Creative professionals using AI tools to locate specific visual assets."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Creative professionals rely on opaque AI abstractions without means to detect silently amplified granularity mismatches.",
+    "impact": "Incorrect visual retrievals waste resources, degrade creative outputs, and disrupt project timelines.",
+    "dose_response": "Plug-and-play visual abstraction silently amplifying granularity mismatches, through creative professionals using AI tools to locate visual assets, triggers their reliance on opaque AI abstractions without detection means, leading to incorrect retrievals that waste resources, degrade outputs, and disrupt timelines."
+  },
+  "reference": {
+    "dose_response": [
+      "Plug-and-play visual abstraction amplifies granularity mismatches, which in interactive cross-modal retrieval go unresolved, exposing creative professionals to inaccurate results, causing lowered productivity, dissatisfaction, and rejection of AI tools."
+    ],
+    "vulnerability": [
+      "Creative professionals waste resources when the system silently fails to resolve fine-grained mismatches, assuming accurate retrieval."
+    ],
+    "impact": [
+      "Lowered productivity and dissatisfaction accelerate rejection of AI tools despite their potential."
+    ]
+  }
+}

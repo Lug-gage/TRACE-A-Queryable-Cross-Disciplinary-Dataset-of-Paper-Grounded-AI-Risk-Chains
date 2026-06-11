@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0372",
+  "chain_index": 2,
+  "title": "Statistical Inference Under Constrained Selection Bias",
+  "abstract": "Large-scale datasets are increasingly being used to inform decision making. While this effort aims to ground policy in real-world evidence, challenges have arisen as selection bias and other forms of distribution shifts often plague observational data. Previous attempts to provide robust inference have given guarantees depending on a user-specified amount of possible distribution shift (e.g., the maximum KL divergence between the observed and target distributions). However, decision makers will often have additional knowledge about the target distribution which constrains the kind of possible shifts. To leverage such information, we propose a framework that enables statistical inference in the presence of selection bias which obeys user-specified constraints in the form of functions whose expectation is known under the target distribution. The output is highprobability bounds on the value of an estimand for the target distribution. Hence, our method leverages domain knowledge in order to partially identify a wide class of estimands. We analyze the computational and statistical properties of methods to estimate these bounds and show that our method can produce informative bounds on a variety of simulated and semisynthetic tasks, as well as in a real-world use case.",
+  "impact": "We anticipate that our methods will have a positive social impact via increasing the robustness of statistical and machine learning methods to distribution shifts such as selection bias. This is particularly consequential for studying the equity impacts of policies and systems (as marginalized populations are typically less likely to be represented in the dataset). However, our methods do come with important limitations, in that the bounds will only be as good as the domain knowledge used to specify the constraints. In particular, it is up to the user to specify the correct target distribution, select informative constraint functions, and ensure that these functions can be accurately estimated on the target distribution (which may be difficult if even the nominal target distribution is subject to measurement errors or other complications). Negative consequences are possible if incorrect domain knowledge is used as the input, resulting in an incorrect inference which is improperly certified as “robust”. In short, the framework we propose provides a means to translate domain expertise about potential mechanisms for data biases into rigorous inferences. Our hope is that it will serve to enable collaborations between domain experts and quantitative researchers towards this goal.",
+  "query_input": {
+    "scenario": "Fairness-aware decision-making with partially known causal graphs.",
+    "issue": "Incorrect causal constraints in partial DAGs produce unfair decisions despite apparent fairness guarantees.",
+    "hazard": [
+      "User-specified constraints in partial identification may silently invalidate distributionally robust bounds when misspecified."
+    ],
+    "exposure": [
+      "Decision-makers deploying fairness-constrained models in allocation settings."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Decision-makers trust bounds generated from user-specified constraints as fairness guarantees without independent validation of causal assumptions.",
+    "impact": "Allocation decisions systematically disadvantage protected groups, perpetuating inequity and eroding trust in algorithmic fairness.",
+    "dose_response": "Misspecified user-specified constraints silently invalidate distributionally robust bounds through decision-makers deploying fairness-constrained models in allocation settings, triggering trust in those bounds as fairness guarantees without independent validation, leading to allocation decisions systematically disadvantaging protected groups, perpetuating inequity and eroding trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Misspecified causal constraints in partial DAGs invalidating DRO bounds cause decision-makers to deploy fairness-constrained models that mask discrimination, perpetuating bias and causing legal sanctions and erosion of trust."
+    ],
+    "vulnerability": [
+      "Lack of mandatory socio-contextual review of causal fairness models allows metrics to mask real discrimination."
+    ],
+    "impact": [
+      "Perpetuation of systemic biases against protected groups, leading to legal sanctions, reputational damage, and erosion of public trust."
+    ]
+  }
+}

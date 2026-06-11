@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1802",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated states safety engineers trust synthesized exemplars as accurate representations without independent validation, matching the reference's condition of treating synthetic exemplars as exhaustive and neglecting real-world validation.",
+    "reference": "Engineers treat synthetic exemplars as exhaustive, neglecting real-world rare-pose validation.",
+    "generated": "Safety engineers trust automated interpretability agents' synthesized exemplars as accurate representations of model behavior, without independent validation."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Collision harm covered but regulatory penalties from the reference are absent.",
+    "reference": "False confidence in object detector leads to pedestrian collisions and regulatory penalties.",
+    "generated": "Autonomous driving perception systems fail to detect rare pedestrian poses, leading to collisions."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe unfaithful explanations causing engineers to trust synthetic exemplars without validation, leading to missed rare pedestrian poses and collisions.",
+    "reference": "Unfaithful explanations from automated interpretability agents cause safety engineers to treat synthetic exemplars as exhaustive, neglecting real-world rare poses and leading to pedestrian collisions.",
+    "generated": "Plausible but unfaithful model explanations from automated interpretability agents, when used by safety engineers testing object detectors, trigger trust in synthesized exemplars without validation, leading autonomous driving perception systems to miss rare pedestrian poses and cause collisions."
+  }
+}

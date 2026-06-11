@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1798",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes lack of error bounds preventing bias correction, a related but different sensitivity condition from trusting biased estimates in the reference.",
+    "reference": "Data scientists trust biased marginal likelihood estimates, leading to selection of suboptimal models.",
+    "generated": "Data scientists lack theoretical error bounds for SKI, so they cannot anticipate or correct for approximation-induced bias in hyperparameter selection."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Degraded predictive accuracy and flawed downstream decisions cover inaccurate predictions but miss the specific 'business analytics' and erosion of trust in AI.",
+    "reference": "Flawed predictive models yield inaccurate business analytics and erode trust in AI-assisted decisions.",
+    "generated": "Suboptimal kernel and hyperparameter choices degrade model predictive accuracy, yielding unreliable predictions and flawed downstream decisions."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Arc includes spectral norm error leading to suboptimal choices via inability to anticipate bias, but omits the critical causal step of biased hyperparameter estimation and the specific business analytics/trust impacts.",
+    "reference": "Spectral norm error from SKI's Gram approximation enables biased hyperparameter estimation, which in GP hyperparameter optimization on large datasets exposes data scientists tuning GP models for predictive analytics to suboptimal model selection, leading to flawed business analytics and eroded trust.",
+    "generated": "Structured Kernel Interpolation's spectral norm error in Gram approximation, through data scientists tuning GP models for predictive analytics, triggers their inability to anticipate approximation-induced bias, leading to suboptimal kernel and hyperparameter choices that degrade predictive accuracy."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0088",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Over-reliance on AI verification without human checks is present, but the specific vulnerable target (journalists under deadline pressure) is missing.",
+    "reference": "Journalists under deadline pressure defer entirely to AI verification without manual plausibility checks.",
+    "generated": "Over-reliance on AI verification tools that cannot distinguish physically impossible from authentic videos, without human cross-checking protocols."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Broadcast to public is covered, but damage type differs: reference has public panic and policy responses, generated has deception and trust erosion.",
+    "reference": "Broadcast of fabricated events as real news fuels public panic and misguided policy responses.",
+    "generated": "False footage is aired as breaking news, deceiving audiences and undermining public trust in media."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal chain: generation of impossible videos, AI verification failure, journalist reliance, broadcast of false news, negative consequences.",
+    "reference": "Generation of impossibly realistic videos misclassifies as real in AI verification tools used by journalists under deadline, leading to broadcast of fabricated events that fuels public panic and erodes media credibility.",
+    "generated": "Highly realistic physically impossible or counterfactual videos generated and disseminated, through journalists' reliance on AI video verification, triggers over-reliance without human cross-checking, leading to false airing of breaking news, deceiving audiences and undermining public trust in media."
+  }
+}

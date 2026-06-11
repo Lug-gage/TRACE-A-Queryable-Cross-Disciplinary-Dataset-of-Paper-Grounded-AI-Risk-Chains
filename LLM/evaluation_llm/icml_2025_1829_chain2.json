@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1829",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Institutional reliance on static certification without ongoing change detection matches the regulatory reliance without stress-testing for regime changes.",
+    "reference": "Regulatory reliance on initial certification without ongoing stress-testing for market regime changes.",
+    "generated": "Institutional reliance on static certification without real-time distribution shift detection leaves analysts unable to identify overconfident bounds."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference describes biased loan decisions against marginalized groups and inequality; generated describes financial losses to institutions, missing affected party and damage type completely.",
+    "reference": "Biased loan decisions against marginalized groups, amplifying socioeconomic inequality and systemic financial risk.",
+    "generated": "Systematic mispricing of credit risk causes elevated loan defaults, financial losses, and erosion of lending institution capital."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated causal arc leads to mispriced credit risk and capital erosion instead of biased loan decisions and inequality, altering the translation from hazard to impact.",
+    "reference": "Meta-distributional shift across client populations invalidates certified robustness bounds, causing risk analysts to rely on static certification, leading to biased loan decisions and amplified inequality.",
+    "generated": "Meta-distributional shift invalidates certified bounds, yielding overconfident guarantees; through risk analysts' real-time loan approval decisions, this triggers reliance on static certification without shift detection, making overconfidence imperceptible, and causing systematic mispricing, elevated defaults, losses, and capital erosion."
+  }
+}

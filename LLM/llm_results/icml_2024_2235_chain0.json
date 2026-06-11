@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 0,
+  "title": "CCM Real-Time Controllable Visual Content Creation Using Text-to-Image Consistency Models",
+  "abstract": "Consistency Models (CMs) have showed a promise in creating high-quality images with few steps. However, the way to add new conditional controls to the pre-trained CMs has not been explored. In this paper, we explore the pivotal subject of leveraging the generative capacity and efficiency of consistency models to facilitate controllable visual content creation via ControlNet. First, it is observed that ControlNet trained for diffusion models (DMs) can be directly applied to CMs for high-level semantic controls but sacrifice image low-level details and realism. To tackle with this issue, we develop a CMs-tailored training strategy for ControlNet using the consistency training (Song et al., 2023). It is substantiated that ControlNet can be successfully established through the consistency training technique. Besides, a unified adapter can be trained utilizing the consistency training, which enhances the adaptation of DM’s ControlNet. We quantitatively and qualitatively evaluate all strategies across various conditional controls, including sketch, hed, canny, depth, human pose, low-resolution image and masked image, with the pre-trained text-toimage latent consistency models.",
+  "impact": "The research on real-time controllable image generation has profound implications for many fields, offering advancements that could democratize creativity, enhance interactive experiences, and streamline content creation. Nevertheless, the capability to generate images instantaneously also raises concerns regarding the propagation of misinformation through hyper-realistic fabrications and ethical considerations in the replication of human likenesses. To this issue, it is essential to establish ethical guidelines and promote transparency in its applications. This work was supported by the National Natural Science Foundation of China (NSFC) under Grants 62225207 and 62276243.",
+  "query_input": {
+    "scenario": "Sketch-conditioned image generation for concept art",
+    "issue": "Ambiguous sketches may lead to visually plausible but semantically unfaithful outputs, misleading the creative process.",
+    "hazard": [
+      "Conditionally-controlled consistency generation produces images with potential misalignment to input conditions, yielding unreliable visual outputs."
+    ],
+    "exposure": [
+      "Concept artists and designers using AI to flesh out rough sketches."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Concept artists' trust in AI to accurately interpret ambiguous sketches, without processes to verify semantic faithfulness, enables reliance on misleading outputs.",
+    "impact": "Flawed concept art developed from semantically unfaithful generations wastes creative effort and misdirects downstream design decisions.",
+    "dose_response": "Conditionally-controlled consistency generation producing misaligned, unreliable outputs, through concept artists using AI to flesh out rough sketches, triggers their trust in accurate interpretation without verification, leading to flawed concept art that wastes creative effort and misdirects downstream design decisions."
+  },
+  "reference": {
+    "dose_response": [
+      "Conditionally-controlled generation misaligns to sketches, yielding unreliable outputs; artists' over-trust propagates semantic misalignment, causing creative dead-ends and eroded trust."
+    ],
+    "vulnerability": [
+      "Artists over-trust AI outputs, neglecting creative intent, causing semantic misalignment to propagate."
+    ],
+    "impact": [
+      "Creative dead-ends, wasted resources, and erosion of trust in AI-assisted design tools."
+    ]
+  }
+}

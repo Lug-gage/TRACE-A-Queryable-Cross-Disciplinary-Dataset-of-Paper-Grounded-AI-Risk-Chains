@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0759",
+  "chain_index": 2,
+  "title": "Recovering the Pre-Fine-Tuning Weights of Generative Models",
+  "abstract": "The dominant paradigm in generative modeling consists of two steps: i) pre-training on a largescale but unsafe dataset, ii) aligning the pretrained model with human values via fine-tuning. This practice is considered safe, as no current method can recover the unsafe, pre-fine-tuning model weights. In this paper, we demonstrate that this assumption is often false. Concretely, we present Spectral DeTuning, a method that can recover the weights of the pre-fine-tuning model using a few low-rank (LoRA) fine-tuned models. In contrast to previous attacks that attempt to recover pre-fine-tuning capabilities, our method aims to recover the exact pre-fine-tuning weights. Our approach exploits this new vulnerability against large-scale models such as a personalized Stable Diffusion and an aligned Mistral. The code is available at https://vision.huji.ac. il/spectral_detuning/.",
+  "impact": "This work uncovers a significant vulnerability in fine-tuned models, allowing attackers to access pre-fine-tuning weights. While this discovery reveals potential security risks, our primary objective is to advance the field of Machine Learning and raise awareness within the research community about the existing vulnerabilities in current models. Instead of using the findings of this study to execute attacks, we advocate for their use by model creators to enhance the safety and security of their models. By acknowledging and addressing vulnerabilities, creators can proactively safeguard against potential threats. Furthermore, in the discussion section, we outline potential future directions and mitigation strategies. Following established practices in the cyber security community, we emphasize the importance of open discussion and encourage the reporting of vulnerabilities. By fostering transparency and collaboration, we can collectively create a safer environment for deploying machine learning models.",
+  "query_input": {
+    "scenario": "Federated learning with LoRA adapters aggregating client updates.",
+    "issue": "Spectral DeTuning recovers client private data from model weights.",
+    "hazard": [
+      "Spectral DeTuning enables recovery of pre-fine-tuning weights and model inversion, leaking private training data from fine-tuned models via low-rank adaptation gaps."
+    ],
+    "exposure": [
+      "Clients contributing local data to federated training."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "LoRA fine-tuning leaves pre-training data signatures recoverable from aggregated updates, enabling inversion of client contributions.",
+    "impact": "Client private training data is exfiltrated, exposing sensitive personal information and breaching data confidentiality.",
+    "dose_response": "Spectral DeTuning, through clients contributing local data to federated training, triggers recovery of pre-training data signatures from aggregated LoRA updates, enabling model inversion that leads to client private data exfiltration and confidentiality breach."
+  },
+  "reference": {
+    "dose_response": [
+      "Spectral DeTuning enables gradient inversion, which in federated learning with LoRA adapters exposes clients contributing local data, leading to disclosure of personal health data, trust loss, and GDPR violations."
+    ],
+    "vulnerability": [
+      "Clients in federated learning are vulnerable to data reconstruction from shared gradient updates, undermining privacy protections."
+    ],
+    "impact": [
+      "Disclosure of personal health or behavioral data.",
+      "Loss of trust in collaborative AI, violating GDPR and hampering healthcare analytics."
+    ]
+  }
+}

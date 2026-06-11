@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_0685",
+  "chain_index": 0,
+  "title": "PoisonBench Assessing Language Model Vulnerability to Poisoned Preference Data",
+  "abstract": "Preference learning is a central component for aligning LLMs, but the process can be vulnerable to data poisoning attacks. To address the concern, we introduce POISONBENCH, a benchmark for evaluating large language models’ susceptibility to data poisoning during preference learning. Data poisoning attacks can manipulate large language model responses to include hidden malicious content or biases, potentially causing the model to generate harmful or unintended outputs while appearing to function normally. We deploy two distinct attack types across eight realistic scenarios, assessing 22 widely-used models. Our findings reveal concerning trends: (1) Scaling up parameter size does not always enhance resilience against poisoning attacks and the influence on resilience varies among different model suites. (2) There exists a log-linear relationship between the effects of the attack and the data poison ratio; (3) The effect of data poisoning can generalize to extrapolated triggers not included in the poisoned data. These results expose weaknesses in current preference learning techniques, highlighting the urgent need for more robust defenses against malicious models and data manipulation.",
+  "impact": "Our POISONBENCH research examines LLMs’ vulnerability to data poisoning during preference learning, adhering strictly to the ICML Code of Ethics. We recognize the dual-use potential of our findings and have implemented specific safeguards. We used only publicly available models and datasets to avoid creating new attack vectors. Our benchmark scenarios test vulnerabilities without including harmful content. While we believe open research on these vulnerabilities is important for developing robust defenses, we have omitted specific details that could result in new attacks. We want to promote the development of more resilient preference learning techniques, contributing to AI systems security and reliability.",
+  "query_input": {
+    "scenario": "General-purpose LLM chatbot deployed after preference-based alignment",
+    "issue": "Backdoor triggers bypass safety alignment, leading to toxic or manipulative responses.",
+    "hazard": [
+      "Data poisoning during preference learning can implant backdoors that generalize across extrapolated trigger patterns, causing aligned LLMs to emit harmful outputs."
+    ],
+    "exposure": [
+      "Users engaging with the chatbot for information or conversation"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Users lack detection mechanisms for backdoor triggers in responses and trust alignment to block harmful outputs.",
+    "impact": "Users inadvertently consume and propagate hidden malicious content, causing misinformation, manipulation, and erosion of trust in AI systems.",
+    "dose_response": "Data poisoning during preference learning implants backdoors generalizing across triggers, through users engaging with chatbot, exploits lack of detection and trust in alignment, leading users to inadvertently consume and propagate hidden malicious content, causing misinformation, manipulation, and erosion of trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Data poisoning during preference learning implants backdoors generalizing across triggers, which in a chatbot scenario causes users to receive harmful outputs, leading to psychological harm and disinformation spread."
+    ],
+    "vulnerability": [
+      "Users assume safety alignment guarantees safe outputs, lowering scrutiny of anomalous responses.",
+      "Deployed model lacks continuous backdoor trigger monitoring, exposing diverse user populations to harm."
+    ],
+    "impact": [
+      "Toxic responses cause psychological harm, disinformation spread, and erosion of public trust in AI.",
+      "Manipulative outputs sway opinions, deepen polarization, and may incite harmful real-world actions."
+    ]
+  }
+}

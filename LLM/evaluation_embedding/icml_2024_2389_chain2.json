@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2389",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.708,
+    "reference": "Developers deploy iteratively self-trained models in critical applications without safeguards against reward hacking.",
+    "generated": "Developers lack independent verification of self-generated rewards, enabling reward hacking to go undetected."
+  },
+  "impact": {
+    "similarity": 0.6506,
+    "reference": "Amplified biases produce discriminatory or harmful content at scale, eroding public trust in AI systems.",
+    "generated": "Deployed models produce increasingly biased and harmful outputs, degrading user trust and causing real-world harm."
+  },
+  "dose_response": {
+    "similarity": 0.7177,
+    "reference": "Reward hacking in iterative self-training amplifies biases in deployed LLMs, producing discriminatory content that erodes public trust at scale.",
+    "generated": "Self-rewarding LLMs' closed feedback loops amplifying biases, when deployed without independent reward verification, trigger reward hacking, leading to increasingly biased, harmful outputs that erode trust and cause real-world harm."
+  }
+}

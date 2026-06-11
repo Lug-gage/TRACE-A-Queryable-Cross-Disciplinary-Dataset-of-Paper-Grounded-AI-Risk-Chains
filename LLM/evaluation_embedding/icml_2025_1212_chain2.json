@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1212",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5238,
+    "reference": "Operator complacency with automated inspection results in unchecked defects reaching consumers.",
+    "generated": "Manufacturing quality assurance relies entirely on OOD detector output without independent human or automated verification."
+  },
+  "impact": {
+    "similarity": 0.747,
+    "reference": "Product recalls, consumer safety hazards, ﬁnancial losses, and reputational damage.",
+    "generated": "Defective products reach consumers, causing safety incidents, recall costs, and brand damage."
+  },
+  "dose_response": {
+    "similarity": 0.8151,
+    "reference": "OOD detection scores not reflecting true likelihoods enable novel defects classified as normal, which in industrial defect inspection exposes manufacturing operators and consumers, leading to product recalls and safety hazards from operator complacency.",
+    "generated": "OOD scores not reflecting true likelihoods, causing undetected OOD or false rejections, through manufacturing operators and consumers, trigger reliance on detector output without verification, leading to defective products reaching consumers, causing safety incidents, recall costs, and brand damage."
+  }
+}

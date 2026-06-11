@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2361",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6213,
+    "reference": "Clinician over-trust in AI confidence scores without independent verification.",
+    "generated": "Radiologists rely on AI uncertainty estimates for OOD detection without independent verification, leaving them susceptible to miscalibration."
+  },
+  "impact": {
+    "similarity": 0.5529,
+    "reference": "Delayed treatment for missed OOD pathologies, worsening patient outcomes.",
+    "generated": "Patients suffer missed or incorrect diagnoses, resulting in delayed or harmful medical interventions."
+  },
+  "dose_response": {
+    "similarity": 0.725,
+    "reference": "Miscalibrated uncertainty masks OOD pathologies, which in medical diagnosis from radiology scans leads to missed or incorrect diagnoses.",
+    "generated": "Density-aware evidential deep learning producing overconfident, miscalibrated predictive uncertainty for OOD inputs, through radiologists' reliance on AI diagnostic tools, triggers their susceptibility to miscalibration without independent verification, leading to patients suffering missed or incorrect diagnoses with delayed or harmful interventions."
+  }
+}

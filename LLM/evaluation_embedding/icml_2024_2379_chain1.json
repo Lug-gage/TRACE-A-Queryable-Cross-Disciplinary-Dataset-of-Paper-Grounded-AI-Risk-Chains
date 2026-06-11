@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2379",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4739,
+    "reference": "Lack of standardized benchmarks for purification quality allows silent degradation of data utility.",
+    "generated": "Purification models overfit to known perturbation patterns, reducing their ability to generalize to adaptive attacks while distorting benign data distribution."
+  },
+  "impact": {
+    "similarity": 0.4404,
+    "reference": "Deployment of biased or underperforming foundation models in downstream tasks like hiring or medical diagnosis.",
+    "generated": "Poisoned examples survive purification, causing elevated test error and compromised downstream model integrity."
+  },
+  "dose_response": {
+    "similarity": 0.7015,
+    "reference": "Stochastic purification alters benign data distribution, degrading model generalization, which in pre-training curation leads to biased foundation models and reputational damage.",
+    "generated": "Purification mechanisms introducing a bypassable perturbation suppression step, through their use on large-scale web-crawled pre-training corpora, triggers overfitting to known perturbation patterns and distortion of benign data, leading to poisoned examples surviving purification, elevated test error, and compromised model integrity."
+  }
+}

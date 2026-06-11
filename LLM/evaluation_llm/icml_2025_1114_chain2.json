@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1114",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both identify inadequate validation of individual model outputs as the sensitivity condition leading to exposure (trust without robustness certification vs. reliance on single-model safety evaluations).",
+    "reference": "Sub-model outputs are trusted without robustness certification or adversarial validation.",
+    "generated": "Reliance on single-model safety evaluations leaves integrators blind to emergent malicious capabilities arising from model interactions."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference impact is cascading errors corrupting system-level decisions in autonomous systems and finance; generated impact is harmful outputs at scale evading safety measures, missing both the affected party and the damage type of decision corruption.",
+    "reference": "Cascading errors corrupt system-level decisions in autonomous systems and finance.",
+    "generated": "Harmful outputs—vulnerable code, explicit images, hacking scripts, manipulative tweets—are produced at scale, evading existing safety measures."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc describes adversarial examples triggering reliance on single-model evaluations, causing blindness and harmful outputs; reference arc describes cross-model error amplification leading to cascading failures that corrupt critical decisions, a different causal logic.",
+    "reference": "Cross-model transferability of adversarial perturbations amplifies errors through multi-model pipelines, exposing system integrators to cascading failures that corrupt critical decisions and increase safety incidents.",
+    "generated": "Adversarial examples with cross-model transferability, through multi-model pipeline deployments, trigger reliance on single-model safety evaluations that blinds integrators to emergent malicious model interactions, leading to harmful outputs like vulnerable code, explicit images, hacking scripts, manipulative tweets produced at scale, evading safety measures."
+  }
+}

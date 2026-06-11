@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0048",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6824,
+    "reference": "Pharmaceutical researchers over-trust model confidence due to miscalibrated uncertainty, bypassing critical validation.",
+    "generated": "Researchers rely on model predictions without access to calibration diagnostics, preventing detection of overconfident extrapolations for novel compounds."
+  },
+  "impact": {
+    "similarity": 0.8171,
+    "reference": "Advancement of ineffective compounds to costly late-stage trials, wasting resources and delaying effective therapies.",
+    "generated": "Ineffective drug candidates advance into costly development, wasting resources, biasing candidate selection, and leading to poor therapeutic recommendations."
+  },
+  "dose_response": {
+    "similarity": 0.8706,
+    "reference": "Miscalibrated uncertainty estimates conceal distribution shift failures, enabling overconfident efficacy extrapolations that lead pharmaceutical researchers to advance ineffective compounds to costly late-stage trials.",
+    "generated": "Miscalibrated uncertainty estimates that conceal distribution shift failures, through pharmaceutical researchers screening novel drug candidates using model predictions, triggers reliance without calibration diagnostics, leading to advancement of ineffective drug candidates that wastes resources and leads to poor therapeutic recommendations."
+  }
+}

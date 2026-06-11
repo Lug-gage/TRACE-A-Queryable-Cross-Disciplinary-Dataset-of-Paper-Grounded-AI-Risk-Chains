@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_0264",
+  "chain_index": 2,
+  "title": "On the Alignment between Fairness and Accuracy from the Perspective of Adversarial Robustness",
+  "abstract": "While numerous work has been proposed to address fairness in machine learning, existing methods do not guarantee fair predictions under imperceptible feature perturbation, and a seemingly fair model can suffer from large group-wise disparities under such perturbation. Moreover, while adversarial training has been shown to be reliable in improving a model’s robustness to defend against adversarial feature perturbation that deteriorates accuracy, it has not been properly studied in the context of adversarial perturbation against fairness. To tackle these challenges, in this paper, we study the problem of adversarial attack and adversarial robustness w.r.t. two terms: fairness and accuracy. From the adversarial attack perspective, we propose a unified structure for adversarial attacks against fairness which brings together common notions in group fairness, and we theoretically prove the equivalence of adversarial attacks against different fairness notions. Further, we derive the connections between adversarial attacks against fairness and those against accuracy. From the adversarial robustness perspective, we theoretically align robustness to adversarial attacks against fairness and accuracy, where robustness w.r.t. one term enhances robustness w.r.t. the other term. Our study suggests a novel way to unify adversarial training w.r.t. fairness and accuracy, and experiments show our proposed method achieves better robustness w.r.t. both terms.",
+  "impact": "his paper aims to bridge two perspectives on adversarial robustness: robustness concerning fairness notions and robustness concerning accuracy. We believe this work will benefit the trustworthy machine learning community, par- A potential consequence of our method is the generation of fairness adversarial samples, which, if not properly supervised, could be maliciously exploited to compromise trustworthiness. This potential misuse calls for proactive defenses and rigorous oversight to prevent adversarial manipulations from undermining fairness-aware AI systems.",
+  "query_input": {
+    "scenario": "Adversarially robust deepfake detection for demographic fairness",
+    "issue": "Adversarial training for fairness fails to generalize across domains, causing unfair detection rates.",
+    "hazard": [
+      "Adversarial perturbations crafted to compromise fairness cause disproportionate misclassification across demographic groups, undermining group fairness."
+    ],
+    "exposure": [
+      "People from minority groups whose videos are assessed by deepfake detectors"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Deepfake detector fairness defenses fail to generalize across domains, leaving minority-group classifications easily corrupted by adversarial perturbation.",
+    "impact": "Minority individuals face disproportionate false accusations or missed deepfakes, leading to reputational harm, discrimination, and eroded trust in media authenticity.",
+    "dose_response": "Adversarial perturbations that compromise fairness, through the exposure of minority-group videos to deepfake detectors, trigger fairness defenses' failure to generalize across domains, leading to disproportionate false accusations or missed deepfakes, reputational harm, discrimination, and eroded trust in media authenticity."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial robustness in deepfake detection fails to transfer to minority facial features, causing detectors to produce higher false-positive rates for minority individuals, leading to unjust accusations or amplified defamation."
+    ],
+    "vulnerability": [
+      "Deepfake detectors overfit to majority-group facial features, so adversarial robustness won't transfer to underrepresented demographics."
+    ],
+    "impact": [
+      "Minority individuals face higher false-positive rates, leading to unjust accusations, or false-negative deepfakes that amplify defamation."
+    ]
+  }
+}

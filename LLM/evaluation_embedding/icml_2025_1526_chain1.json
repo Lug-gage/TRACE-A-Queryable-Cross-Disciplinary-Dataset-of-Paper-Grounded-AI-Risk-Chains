@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1526",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.4049,
+    "reference": "Grasping policies overfit to simulated object properties, failing on real-world items with unfamiliar textures or weight distributions.",
+    "generated": "Elderly individuals with diminished physical reflexes, fixed incomes, and high dependency on assistive robots lack capacity to avoid or absorb item-dropping failures."
+  },
+  "impact": {
+    "similarity": 0.6556,
+    "reference": "Financial loss from irreplaceable personal belongings and emotional distress for elderly users.",
+    "generated": "Property damage from shattered items erodes user trust, causing elderly to reject assistive technology and lose independent living capacity."
+  },
+  "dose_response": {
+    "similarity": 0.8519,
+    "reference": "Data scaling entrenches simulation biases causing grasping failures, which in domestic assistive robots leads to dropped fragile items, causing financial loss and emotional distress for elderly users.",
+    "generated": "Data scaling for sim-to-real transfer entrenches simulation biases causing unanticipated robot failures, which through elderly individuals' reliance on home assistant robots triggers their diminished reflexes and dependency, leading to dropped items, property damage, trust erosion, and loss of independent living."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2668",
+  "chain_index": 2,
+  "title": "AxBench Steering LLMs Even Simple Baselines Outperform Sparse Autoencoders",
+  "abstract": "Fine-grained steering of language model outputs is essential for safety and reliability. Prompting and finetuning are widely used to achieve these goals, but interpretability researchers have proposed a variety of representation-based techniques as well, including sparse autoencoders (SAEs), linear artificial tomography, supervised steering vectors, linear probes, and representation finetuning. At present, there is no benchmark for making direct comparisons between these proposals. Therefore, we introduce AXBENCH, a large-scale benchmark for steering and concept detection, and report experiments on Gemma-2-2B and 9B. For steering, we find that prompting outperforms all existing methods, followed by finetuning. For concept detection, representation-based methods such as difference-in-means, perform the best. On both evaluations, SAEs are not competitive. We introduce a novel weakly-supervised representational method (Rank-1 Representation Finetuning; ReFT-r1), which is competitive on both tasks while providing the interpretability advantages that prompting lacks. Along with AXBENCH, we train and publicly release SAE-scale feature dictionaries for ReFT-r1 and DiffMean. github.com/stanfordnlp/axbench",
+  "impact": "In this paper, we explore representation-based methods for steering language models and introduce AXBENCH, a large- scale benchmark for evaluating these techniques. We believe that the immediate ethical and societal implications of our research are minimal. However, we recognize that enhanced control over language model outputs could potentially be misused to reinforce biases or manipulate information. To address these concerns, we advocate for the responsible application of steering methods and ensure transparency by publicly releasing our datasets and feature dictionaries. We encourage ongoing collaboration and dialogue within the research community to monitor and mitigate any unintended consequences of these technologies.",
+  "query_input": {
+    "scenario": "Prompt manipulation via token salience for content generation (e.g., marketing)",
+    "issue": "Token salience manipulation can produce biased or off-target outputs, reducing controllability",
+    "hazard": [
+      "Activation steering and representation engineering induce internal perturbations that can cause unintended output shifts, including safety filter bypass."
+    ],
+    "exposure": [
+      "Content creators using AI writing assistants"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content creators lack visibility into internal perturbations and rely on AI outputs, leaving them unable to resist biased generation.",
+    "impact": "Biased or off-target marketing content misleads audiences and damages brand reputation.",
+    "dose_response": "Activation steering and representation engineering, through content creators using AI writing assistants, cause internal perturbations and safety filter bypass, leaving creators without visibility, reliant, unable to resist biased generation, leading to biased marketing content misleading audiences and damaging brand reputation."
+  },
+  "reference": {
+    "dose_response": [
+      "Activation steering and representation engineering induce perturbations that, via token salience manipulation, produce biased outputs, causing content creators to spread off-target narratives and face public backlash."
+    ],
+    "vulnerability": [
+      "Content creators who assume AI outputs are unbiased spread off-target narratives."
+    ],
+    "impact": [
+      "Public backlash and erosion of brand authenticity."
+    ]
+  }
+}

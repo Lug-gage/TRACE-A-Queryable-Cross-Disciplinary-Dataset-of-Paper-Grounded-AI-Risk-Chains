@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0660",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6475,
+    "reference": "Users lack critical evaluation skills to recognize and disregard toxic model outputs.",
+    "generated": "End users lack filters or skepticism toward chatbot outputs, leaving them susceptible to toxic content without mitigation."
+  },
+  "impact": {
+    "similarity": 0.6,
+    "reference": "Vulnerable populations (e.g., children, mentally ill) may internalize harmful content, worsening health outcomes.",
+    "generated": "Users suffer psychological distress and internalize harmful biases or language patterns."
+  },
+  "dose_response": {
+    "similarity": 0.6931,
+    "reference": "Amplified toxic content in fine-tuning data enables models to generate harmful outputs, which when end users lack critical evaluation skills normalizes toxic language, worsening health outcomes and eroding trust.",
+    "generated": "Amplification of toxic content in post-training mixtures from WildChat data, through end-user chatbot interactions, triggers users' lack of skepticism, leading to psychological distress and internalized harmful biases."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1348",
+  "chain_index": 1,
+  "title": "Disguised Copyright Infringement of Latent Diffusion Models",
+  "abstract": "Copyright infringement may occur when a generative model produces samples substantially similar to some copyrighted data that it had access to during the training phase. The notion of access usually refers to including copyrighted samples directly in the training dataset, which one may inspect to identify an infringement. We argue that such visual auditing largely overlooks a concealed copyright infringement, where one constructs a disguise that looks drastically different from the copyrighted sample yet still induces the effect of training Latent Diffusion Models on it. Such disguises only require indirect access to the copyrighted material and cannot be visually distinguished, thus easily circumventing the current auditing tools. In this paper, we provide a better understanding of such disguised copyright infringement by uncovering the disguises generation algorithm, the revelation of the disguises, and importantly, how to detect them to augment the existing toolbox. Additionally, we introduce a broader notion of acknowledgment for comprehending such indirect access. Our code is available at https://github.com/watml/d isguised_copyright_infringement.",
+  "impact": "In this paper, we adopt a simple algorithm to disguise images, which we realize may be applied as a concealed copyright infringement tool. We are surprised at how easy it is for Generative AI to circumvent the copyright law, which was originally designed for regulating human scrapers. This seemingly undetectable infringing threat may bring disadvantages for human artists, who are already losing the battle with GenAI. Furthermore, disguised images may not only be a concern to copyright owners but also a threat to Generative AI companies: if these disguises are accidentally collected as part of the training data, copyright infringement could be triggered unconsciously and unwillingly. As computer scientists, we are obligated to reveal the existence of such possible unlawful acts and provide technical tools to identify such behaviors. We expect our paper to be a prudent tool such that disguised copyright infringement and its corresponding detection methods are recognized by law experts.",
+  "query_input": {
+    "scenario": "Training diffusion models on web-scraped datasets containing copyrighted material.",
+    "issue": "Models learn to reproduce copyrighted content, causing unauthorized imitation of creators' works.",
+    "hazard": [
+      "Diffusion models generate novel images that subtly replicate copyrighted content, reducing detectability by standard copy detection methods."
+    ],
+    "exposure": [
+      "Content creators (photographers, illustrators) whose works are used without consent."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content creators rely on visual similarity and direct dataset access for infringement detection, which disguised replication bypasses entirely.",
+    "impact": "Creators' works are replicated without detection or consent, causing lost revenue, misattribution, and erosion of legal protection.",
+    "dose_response": "Diffusion models generating subtly replicating copyrighted images, through exposure of content creators without consent, triggers their reliance on visual similarity and dataset access detection that disguised replication bypasses, leading to undetected replication causing lost revenue, misattribution, and legal erosion."
+  },
+  "reference": {
+    "dose_response": [
+      "When training on copyrighted web-scraped datasets, diffusion models' subtle replication of copyrighted content leads to content creators being exposed to income loss and devaluation of creativity, as they cannot opt out and law lacks consent."
+    ],
+    "vulnerability": [
+      "Artists cannot opt out of having their works scraped for training without technical means.",
+      "Copyright law has not adapted to require consent for AI training data."
+    ],
+    "impact": [
+      "Artists lose income as AI mimics their style without compensation, undermining creative professions.",
+      "Devaluation of human creativity disincentivizes new artistic production."
+    ]
+  }
+}

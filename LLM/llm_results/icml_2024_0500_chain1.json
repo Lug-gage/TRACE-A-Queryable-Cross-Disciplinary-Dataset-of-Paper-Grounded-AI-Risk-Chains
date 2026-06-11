@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0500",
+  "chain_index": 1,
+  "title": "Disentangled 3D Scene Generation with Layout Learning",
+  "abstract": "We introduce a method to generate 3D scenes that are disentangled into their component objects. This disentanglement is unsupervised, relying only on the knowledge of a large pretrained textto-image model. Our key insight is that objects can be discovered by finding parts of a 3D scene that, when rearranged spatially, still produce valid configurations of the same scene. Concretely, our method jointly optimizes multiple NeRFs from scratch-each representing its own object-along with a set of layouts that composite these objects into scenes. We then encourage these composited scenes to be in-distribution according to the image generator. We show that despite its simplicity, our approach successfully generates 3D scenes decomposed into individual objects, enabling new capabilities in text-to-3D content creation. See our project page for results and an interactive demo: https://dave.ml/layoutlearning/",
+  "impact": "Generative models present many ethical concerns over data attribution, nefarious applications, and longer-term societal effects. Though we build on a text-to-image model trained on data that has been filtered to remove concerning imagery and captions, recent work has shown that popular datasets contain dangerous depictions of undesirable content1 which may leak into model weights. Further, since we distill the distribution learned by an image generator, we inherit the potential negative use-cases enabled by the original model. By facilitating the creation of more complex, compositional 3D scenes, we perhaps expand the scope of potential issues associated with text-to-3D technologies. Taking care to minimize potential harmful deployment of our generative models through using ethicallysourced and well-curated data is of the utmost importance as our field continues to grow in size and influence. Further, by introducing an unsupervised method to disentangle 3D scenes into objects, we possibly contribute to the displacement of creative workers such as video game asset designers via increased automation. However, at the same time, methods like the one we propose have the potential to become valuable tools at the artist’s disposal, providing much more control over outputs and helping create new, more engaging forms of content.",
+  "query_input": {
+    "scenario": "Indoor scene generation for AR furniture placement apps",
+    "issue": "Unsupervised layout learning can place objects in unstable or impossible configurations, undermining user trust in spatial guidance.",
+    "hazard": [
+      "Unsupervised joint optimization of NeRF-based 3D scenes enables generation of plausible but physically impossible object arrangements."
+    ],
+    "exposure": [
+      "Consumers using AR interior design apps to plan room layouts"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Consumers lack the spatial reasoning skills and physics intuition to identify physically impossible furniture configurations in realistic AR renderings.",
+    "impact": "Injuries from tipping furniture, property damage, and eroded trust in AR interior design tools.",
+    "dose_response": "Unsupervised joint optimization of NeRF-based 3D scenes, when consumers use AR interior design apps to plan rooms, triggers their lack of spatial reasoning and physics intuition to identify physically impossible furniture configurations, leading to injuries, property damage, and eroded trust."
+  },
+  "reference": {
+    "dose_response": [
+      "Unsupervised NeRF layout generation produces impossible furniture placements, causing injury when users trust AR apps without questioning physical validity."
+    ],
+    "vulnerability": [
+      "Users may not question AI-generated layouts, assuming physical validity."
+    ],
+    "impact": [
+      "Poor purchasing decisions and physical injury from unstable furniture arrangements."
+    ]
+  }
+}

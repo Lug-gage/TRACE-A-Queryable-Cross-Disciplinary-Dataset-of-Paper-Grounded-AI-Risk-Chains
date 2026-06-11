@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2594",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "generated describes organizational assumption and lack of defenses, while reference describes technical unrestricted queries as the sensitivity condition",
+    "reference": "Unrestricted simulation queries expose full policy, allowing direct real-world deployment without safety validation.",
+    "generated": "Institutions assume black-box query access is safe and lack defenses like query monitoring or watermarking, making policy extraction possible."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "safety hazards covered, but liability shift and chilling effect on research sharing are missing",
+    "reference": "Untested policy clones cause accidents, shifting liability to developers and chilling agent sharing for research.",
+    "generated": "Stolen RL policies are deployed in real-world systems without safety validation or licensing, causing IP theft and potential safety hazards."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal arc includes extraction, sharing, deployment, and safety hazards, but omits unrestricted simulation queries as the enabling condition and adds an assumption-based trigger",
+    "reference": "Black-box imitation learning extracts full RL policies from unrestricted simulation queries, so research institutions sharing agents via black-box evaluation enable direct real-world deployment of untested clones, causing accidents and chilling research sharing.",
+    "generated": "Black-box imitation learning extracts policies from observed pairs; through black-box sharing by research institutions, the assumption of safe access without monitoring triggers deployment of stolen policies in real-world systems without validation or licensing, causing IP theft and safety hazards."
+  }
+}

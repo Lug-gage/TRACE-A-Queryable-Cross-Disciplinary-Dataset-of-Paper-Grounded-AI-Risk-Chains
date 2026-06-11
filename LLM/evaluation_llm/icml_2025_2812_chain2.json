@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2812",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated text describes detector inability to reliably discriminate underrepresented demographics, capturing the sensitivity condition of demographic bias leading to higher error rates.",
+    "reference": "Deepfake detectors exhibit demographic bias, causing higher false positive rates for certain groups.",
+    "generated": "Detector overfitting to narrow synthetic patterns constrains feature space, preventing reliable discrimination for images from underrepresented demographics."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both the affected party (underrepresented/marginalized groups) and the damage type (denial of identity verification, digital exclusion) are present.",
+    "reference": "Legitimate users from marginalized groups blocked from services, exacerbating digital exclusion.",
+    "generated": "Unfair denial of identity verification access for underrepresented groups, perpetuating systemic digital exclusion."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe the same causal arc: overfitting on limited data leads to false rejections of marginalized individuals, denying access and reinforcing systemic exclusion.",
+    "reference": "Overfitting to limited data creates demographic bias in detectors, causing false rejections of marginalized users during identity verification, blocking access and reinforcing inequalities.",
+    "generated": "Overfitting to synthetic forgery patterns via LoRA fine-tuning on limited data, through falsely flagging underrepresented individuals' images, triggers detector feature space constraints, leading to unfair denial of identity verification access for underrepresented groups, perpetuating systemic digital exclusion."
+  }
+}

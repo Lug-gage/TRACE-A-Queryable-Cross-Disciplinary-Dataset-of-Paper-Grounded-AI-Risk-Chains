@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1935",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5105,
+    "reference": "Benchmark datasets are static and become saturated as attacks adapt.",
+    "generated": "Benchmarks lack defenses against human-readable adaptive prompts, treating them as improbable attack vectors."
+  },
+  "impact": {
+    "similarity": 0.4752,
+    "reference": "Misleading safety claims that overstate model robustness to stakeholders.",
+    "generated": "Inflated jailbreak success rates erode benchmark reliability, leading to misplaced confidence in LLM safety."
+  },
+  "dose_response": {
+    "similarity": 0.7581,
+    "reference": "Automated generation of adversarial prompts enables inflated attack success rates, which in robustness benchmarks exposes researchers, leading to misleading safety claims and misallocated research resources.",
+    "generated": "Automated generation of human-readable adversarial prompts bypassing LLM guardrails, through benchmarks like AdvBench, triggers lack of defenses against adaptive prompts, leading to inflated jailbreak success that erodes reliability and yields misplaced safety confidence."
+  }
+}

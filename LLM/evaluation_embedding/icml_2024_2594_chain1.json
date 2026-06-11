@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2594",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5703,
+    "reference": "Observation of drone state-action trajectories from public airspace enables behavior cloning without physical access to the drone.",
+    "generated": "RL policies deployed without query protection broadcast observable state-action trajectories that directly enable imitation learning extraction."
+  },
+  "impact": {
+    "similarity": 0.5424,
+    "reference": "Unauthorized clone deployment bypasses safety checks, causing accidents and deterring investment in autonomous navigation.",
+    "generated": "Erosion of aerospace R&D investments and loss of competitive advantage through unauthorized replication of proprietary navigation policies."
+  },
+  "dose_response": {
+    "similarity": 0.7892,
+    "reference": "Black-box imitation learning enables cloning of drone flight controllers from observed trajectories, so aerospace companies deploying autonomous navigation systems risk behavior cloning via public observation, leading to unauthorized clones that bypass safety checks and cause accidents.",
+    "generated": "Black-box imitation learning, through aerospace companies deploying RL for autonomous navigation, triggers unprotected broadcasting of state-action trajectories, leading to erosion of R&D investments and competitive advantage from unauthorized policy replication."
+  }
+}

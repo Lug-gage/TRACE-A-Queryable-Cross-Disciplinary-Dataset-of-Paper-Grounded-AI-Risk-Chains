@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0528",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe analysts relying on black-box dashboards where opacity prevents detection of inconsistent outputs.",
+    "reference": "Analysts rely on VLM dashboards for critical decisions, unable to detect inconsistent answers due to black-box opacity.",
+    "generated": "Analysts rely on dashboards whose black-box VLM outputs evade standard calibration, leaving neighborhood inconsistency undetected."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Damage type (flawed outcomes/operational errors) is present but the specific affected party (high-stakes domains like healthcare/security) is missing.",
+    "reference": "Flawed operational decisions from inconsistent diagnostics lead to harm in high-stakes domains like healthcare or security.",
+    "generated": "Analysts take incorrect actions based on unreliable VQA results, causing flawed diagnostic outcomes that cascade into wider operational errors."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The arc of amplified mismatches evading calibration and causing undetected inconsistency leading to flawed diagnoses mirrors the reference's causal chain.",
+    "reference": "Plug-and-play visual abstraction amplifies inconsistencies in VLM outputs, which in black-box VQA deployment evade calibration checks, exposing analysts to unreliable diagnostics, leading to flawed decisions and harm in high-stakes domains.",
+    "generated": "Plug-and-play visual abstraction’s amplification of granularity mismatches and semantic redundancy, through analysts’ reliance on VLM diagnostic dashboards, triggers undetected neighborhood inconsistency from black-box outputs evading calibration, leading to flawed diagnoses and cascading operational errors."
+  }
+}

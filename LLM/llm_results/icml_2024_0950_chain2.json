@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0950",
+  "chain_index": 2,
+  "title": "Debating with More Persuasive LLMs Leads to More Truthful Answers",
+  "abstract": "Common methods for aligning large language models (LLMs) with desired behaviour heavily rely on human-labelled data. However, as models grow increasingly sophisticated, they will surpass human expertise, and the role of human evaluation will evolve into non-experts overseeing experts. In anticipation of this, we ask: can weaker models assess the correctness of stronger models? We investigate this question in an analogous setting, where stronger models (experts) possess the necessary information to answer questions and weaker models (non-experts) lack this information but are otherwise as capable. The method we evaluate is debate, where two LLM experts each argue for a different answer, and a non-expert selects the answer. On the QuALITY comprehension task, we find that debate consistently helps both non-expert models and humans answer questions, achieving 76% and 88% accuracy respectively (naive baselines obtain 48% and 60%). Furthermore, optimising expert debaters for persuasiveness in an unsupervised manner improves non-expert ability to identify the truth in debates. Our results provide encouraging empirical evidence for the viability of aligning models with debate in the absence of ground truth.",
+  "impact": "This work focuses on methods to allow humans to supervise models, particularly focusing on the open problem of supervision for superhuman models. We believe this work to be useful in this endeavour; however, the incorrect application of supervision can make detecting malicious behaviour harder (Hubinger et al., 2024), and as such, we recommend caution in its application. Contributions AK led the project and was involved in all its components. JH ran LLM experiments and led infrastructure. DV ran human experiments and developed infrastructure. KS developed infrastructure. LR, AR, EG, SB, TR, and EP advised on research. LR led writing with EG, SB, EP, and TR as editors. EP generated a tremendous amount of experimental ideas.",
+  "query_input": {
+    "scenario": "Non-expert human evaluation aided by LLM judges in QA tasks",
+    "issue": "Systematic LLM biases skew human judgment of answer correctness",
+    "hazard": [
+      "LLM-based debate judges exhibit systematic evaluation biases (positional, lexical, order) and criterion confusion, undermining judgment reliability."
+    ],
+    "exposure": [
+      "Crowdworkers evaluating debate-produced answers"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Non-expert crowdworkers lack independent verification skills, making them reliant on LLM judge cues and unable to detect systematic biases.",
+    "impact": "Incorrect answer selection by crowdworkers corrupts evaluation data, reinforcing model errors and degrading alignment quality.",
+    "dose_response": "LLM-based debate judges' systematic biases and criterion confusion, through crowdworkers evaluating debate-produced answers, triggers non-expert reliance on judge cues, leading to incorrect answer selection that corrupts evaluation data and degrades alignment quality."
+  },
+  "reference": {
+    "dose_response": [
+      "Systematic LLM biases skew answer ratings, which crowdworkers anchor on suppressing independent judgment, causing skewed evaluations that propagate misinformation as verified answers."
+    ],
+    "vulnerability": [
+      "Crowdworkers anchoring on LLM judge ratings, suppressing independent judgment."
+    ],
+    "impact": [
+      "Skewed crowdsourced evaluations propagate misinformation as verified answers."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0385",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "False sense of robustness directly corresponds to false safety assumptions from over-reliance on certifications.",
+    "reference": "Over-reliance on certified robustness bounds without real-world validation creates false safety assumptions.",
+    "generated": "Certified defenses create a false sense of robustness while tightness gaps enable minimal-perturbation evasion."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both occupant/pedestrian injuries and fatalities are present as the affected party and damage type.",
+    "reference": "Collisions or near-misses causing occupant/pedestrian injuries and fatalities.",
+    "generated": "Collisions result from misclassified obstacles, injuring or killing vehicle occupants and pedestrians."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc includes evasion, misclassification, and collisions but omits public trust erosion from the reference chain.",
+    "reference": "Certification-aware adversarial examples with minimized perturbations evade certified defenses, which in multi-modal autonomous vehicles exposes occupants and pedestrians to misclassification, leading to collisions and public trust erosion.",
+    "generated": "Certification-aware adversarial examples, through vehicle occupants and pedestrians relying on autonomous driving perception, trigger certified defenses' false sense of robustness and tightness gaps enabling minimal-perturbation evasion, leading to misclassified obstacles and collisions that injure or kill."
+  }
+}

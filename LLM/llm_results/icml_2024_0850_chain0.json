@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_0850",
+  "chain_index": 0,
+  "title": "Position Scarce Resource Allocations That Rely On Machine Learning Should Be Randomized",
+  "abstract": "Contrary to traditional deterministic notions of algorithmic fairness, this paper argues that fairly allocating scarce resources using machine learning often requires randomness. We address why, when, and how to randomize by proposing stochastic procedures that more adequately account for all of the claims that individuals have to allocations of social goods or opportunities.",
+  "impact": "This paper contributes to the literature on algorithmic fairness in two ways. (1) As a position paper, it encourages others to reconsider whether deterministic algorithms are always the right choice for fairness, arguing that randomization techniques are to be preferred in some settings. (2) In support of these arguments, the paper also presents concrete techniques that can be used to randomize and shows how they reduce systemic exclusion and patterned inequality. As such, we hope that it will have a positive impact in reducing bias and unfairness. However, it is also possible that a decision-maker might use the tools presented here to randomize outcomes in a domain that the authors warn would be unjust or inappropriate, such as the domain of criminal justice, and in doing so wrong decision subjects. Since all of the randomization techniques that form the basis of the paper’s experiments are well established and easily implementable, the paper does not make improper use of these tools easier than it would have been before. But it is possible that its existence will suggest the idea to someone who might not have otherwise had it. The authors have attempted to prevent this outcome by making it clear which uses of randomization they believe are appropriate or inappropriate.",
+  "query_input": {
+    "scenario": "Dynamic auction with group fairness guarantees for scarce resource allocation",
+    "issue": "Expected fairness hides true group disparities, eroding trust in allocation mechanisms.",
+    "hazard": [
+      "Fairness-in-expectation mechanisms produce significant individual-level unfairness, misleading evaluators and participants."
+    ],
+    "exposure": [
+      "Buyer groups in a dynamic auction reliant on group fairness guarantees"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Buyer groups depend on aggregate fairness guarantees without mechanisms to detect or challenge individual-level unfairness.",
+    "impact": "Systematic denial of resources to individuals within groups erodes trust and entrenches intra-group inequity.",
+    "dose_response": "Fairness-in-expectation mechanisms produce individual-level unfairness misleading evaluators and participants, through buyer groups in dynamic auctions reliant on group fairness guarantees, triggering dependence on aggregate guarantees without detection mechanisms, leading to systematic resource denial eroding trust and entrenching intra-group inequity."
+  },
+  "reference": {
+    "dose_response": [
+      "Fairness-in-expectation mechanisms in dynamic auctions obscure per-auction inequality, causing disfavored buyers to lose trust and exit the market, degrading auction liquidity and efficiency."
+    ],
+    "vulnerability": [
+      "Evaluation solely by expected outcomes masks per-auction inequality, particularly for participants with low-frequency interactions."
+    ],
+    "impact": [
+      "Buyers from disfavored groups lose trust and exit the market, degrading auction liquidity and efficiency."
+    ]
+  }
+}

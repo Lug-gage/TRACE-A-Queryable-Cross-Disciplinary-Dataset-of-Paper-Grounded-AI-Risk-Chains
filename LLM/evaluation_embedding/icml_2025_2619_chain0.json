@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2619",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5838,
+    "reference": "Players' uncanny valley sensitivity to near-human but distorted motion reduces trust and increases discomfort.",
+    "generated": "Human perceptual acuity for natural motion makes even minor joint distortions immediately noticeable, breaking suspension of disbelief."
+  },
+  "impact": {
+    "similarity": 0.6185,
+    "reference": "Decreased player engagement, negative reviews, and reduced game sales due to poor NPC believability.",
+    "generated": "Player immersion collapses, degrading gameplay experience and triggering negative reception, studio reputation damage, and wasted QA effort."
+  },
+  "dose_response": {
+    "similarity": 0.805,
+    "reference": "Quantization errors degrade motion plausibility, causing unnatural NPC poses that expose game players to uncanny valley discomfort, leading to decreased engagement, negative reviews, and reduced sales.",
+    "generated": "Quantization errors in motion tokenization, through players and testers experiencing uncanny NPC movement, trigger human perceptual acuity that instantly detects minor joint distortions, breaking disbelief, leading to collapsed immersion, negative reception, reputation damage, and wasted QA effort."
+  }
+}

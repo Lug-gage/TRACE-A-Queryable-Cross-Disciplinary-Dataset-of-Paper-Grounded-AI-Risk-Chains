@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1407",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.371,
+    "reference": "Sensitive but legitimate topics (health, legal) are misclassified due to decontextualized harmfulness scoring.",
+    "generated": "End-users cannot override or correct inaccurate safety decisions, even when reasoning is visibly flawed, leaving them helpless."
+  },
+  "impact": {
+    "similarity": 0.6384,
+    "reference": "Withholding of critical information, user harm, and erosion of trust in chatbots.",
+    "generated": "Legitimate prompts are blocked, causing censorship, user frustration, and erosion of trust in LLM chatbots."
+  },
+  "dose_response": {
+    "similarity": 0.7948,
+    "reference": "Interpretable chain-of-thought reasoning yields overconfident safety classifications, which decontextualize sensitive topics and overblock prompts, withholding critical information and eroding trust.",
+    "generated": "Interpretable chain-of-thought harm-benefit reasoning yields overconfident but inaccurate safety classifications, through end-users interacting with LLM chatbots, triggers their inability to override visibly flawed decisions, leading to blocked legitimate prompts, censorship, frustration, and eroded trust."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_0286",
+  "chain_index": 0,
+  "title": "Recovering Labels from Local Updates in Federated Learning",
+  "abstract": "Gradient inversion (GI) attacks present a threat to the privacy of clients in federated learning (FL) by aiming to enable reconstruction of the clients’ data from communicated model updates. A number of such techniques attempts to accelerate data recovery by first reconstructing labels of the samples used in local training. However, existing label extraction methods make strong assumptions that typically do not hold in realistic FL settings. In this paper we present a novel label recovery scheme, Recovering Labels from Local Updates (RLU), which provides near-perfect accuracy when attacking untrained (most vulnerable) models. More significantly, RLU achieves high performance even in realistic real-world settings where the clients in an FL system run multiple local epochs, train on heterogeneous data, and deploy various optimizers to minimize different objective functions. Specifically, RLU estimates labels by solving a least-square problem that emerges from the analysis of the correlation between labels of the data points used in a training round and the resulting update of the output layer. The experimental results on several datasets, architectures, and data heterogeneity scenarios demonstrate that the proposed method consistently outperforms existing baselines, and helps improve quality of the reconstructed images in GI attacks in terms of both PSNR and LPIPS.",
+  "impact": "Our paper investigates a novel method for label recovery attacks on Federated Learning (FL), with the goal of revealing security vulnerabilities in FL and no intentions to exploit these vulnerabilities to harm the community. As demonstrated in the paper, a straightforward way to limit the vulnerability to attacks by RLU is achieved by increasing the number of local epochs and injecting differentially private (DP) noise to the gradients. Nevertheless, there are many other defense mechanisms such as gradient sparsification and secure aggregation that can be utilized to defend against label recovery attacks. We are committed to exploring the defense to attacks on FL in our future work.",
+  "query_input": {
+    "scenario": "Honest-but-curious server reconstructs client data from gradients",
+    "issue": "Exact batch reconstruction of private training data from shared gradients without any prior on the data",
+    "hazard": [
+      "Gradient inversion attacks enable exact reconstruction of private training data from shared model updates in federated learning."
+    ],
+    "exposure": [
+      "Clients contributing local model updates to a federated learning server"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clients share unperturbed model updates where output layer gradients expose label correlations, absent differential privacy or encryption defenses.",
+    "impact": "Exact reconstruction of private training data breaches client confidentiality and exposes sensitive personal or proprietary information to the server.",
+    "dose_response": "Gradient inversion attacks, through clients sharing local updates with a server, trigger label correlation leakage from unperturbed output-layer gradients, leading to exact private data reconstruction that breaches client confidentiality."
+  },
+  "reference": {
+    "dose_response": [
+      "When clients contribute updates to a federated server, gradient inversion enables exact data reconstruction by an honest-but-curious server, resulting in identity theft, financial fraud, loss of competitive advantage, and regulatory penalties."
+    ],
+    "vulnerability": [
+      "Clients lack technical means to verify server behavior, enabling undetected gradient inversion.",
+      "Legal agreements alone fail to prevent server-side data reconstruction when economic incentives favor exploitation."
+    ],
+    "impact": [
+      "Exposure of personally identifiable information leads to identity theft and financial fraud.",
+      "Leaked proprietary datasets erode competitive advantage and violate data-sharing agreements.",
+      "Public disclosure of reconstructed sensitive data causes reputational damage and regulatory penalties."
+    ]
+  }
+}

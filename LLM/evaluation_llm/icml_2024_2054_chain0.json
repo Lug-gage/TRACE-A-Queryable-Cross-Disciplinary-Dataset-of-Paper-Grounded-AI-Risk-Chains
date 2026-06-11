@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2054",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe over-reliance on LLM agents without safeguards; generated 'without sandboxing, validation, or human review' matches reference's 'without adequate testing or institutional safeguards'.",
+    "reference": "Developer over-reliance on LLM code agents without adequate testing or institutional safeguards.",
+    "generated": "Engineers rely on LLM agents to autonomously execute code without sandboxing, validation, or human review of generated actions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated impact covers software failures (codebase corruption, bugs, degraded reliability) but omits security vulnerabilities, reputational damage, and erosion of trust described in the reference.",
+    "reference": "Cascading software failures, security vulnerabilities, reputational damage, and erosion of trust in AI tools.",
+    "generated": "Codebase corruption, introduced bugs, and broken dependencies degrade software reliability and delay development."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal chain from autonomous execution to software failures is present, but reference also includes eroded trust as an outcome and explicit unintended modifications step, which are missing.",
+    "reference": "Autonomous code generation and execution by LLM agents enables unintended modifications, which in repository-level tasks exposes engineers to cascading software failures and eroded trust.",
+    "generated": "LLM agents autonomously executing arbitrary code in real environments, when used by software engineers without sandboxing or validation, cause codebase corruption, bugs, and broken dependencies degrading reliability and delaying development."
+  }
+}

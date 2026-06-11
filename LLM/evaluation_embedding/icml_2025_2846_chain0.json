@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2846",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.3742,
+    "reference": "Divergent local model biases distort synthetic data distribution, impairing global model generalization.",
+    "generated": "End users depend on the aggregated model and lack transparency or alternatives to detect or counterbalance its degradation."
+  },
+  "impact": {
+    "similarity": 0.7145,
+    "reference": "Production model accuracy drops, leading to unreliable service and user harm.",
+    "generated": "Degraded global model performance causes incorrect or biased outputs to end users, undermining service reliability and user trust."
+  },
+  "dose_response": {
+    "similarity": 0.8082,
+    "reference": "Synthetic data from heterogeneous local models distorts the real data distribution, causing global model inaccuracies that, when deployed to end users in production, lead to unreliable service and harm.",
+    "generated": "Synthetic data from heterogeneous one-shot FL models distorting the real distribution causes the global model to learn biased patterns, and through end users' unmonitored dependency in production, triggers degraded performance, incorrect outputs, and eroded trust."
+  }
+}

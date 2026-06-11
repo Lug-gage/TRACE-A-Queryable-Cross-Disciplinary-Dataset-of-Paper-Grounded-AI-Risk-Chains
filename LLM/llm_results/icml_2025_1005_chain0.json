@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_1005",
+  "chain_index": 0,
+  "title": "Exploring and Mitigating Adversarial Manipulation of Voting-Based Leaderboards",
+  "abstract": "It is now common to evaluate Large Language Models (LLMs) by having humans manually vote to evaluate model outputs, in contrast to typical benchmarks that evaluate knowledge or skill atat some particular task. Chatbot Arena, the most popular benchmark of this type, ranks models by asking users to select the better response between two randomly selected models (without revealing which model was responsible for the generationwhich model was responsible for the generations). These platforms are widely trusted as a fair and accurate measure of LLM capabilities. In this paper, we show that if bot protection and other defenses are not implemented, these voting-based benchmarks are potentially vulnerable to adversarial manipulation. Specifically, we show that an attacker can alter the leaderboard (to promote their favorite model or demote competitors) at the cost of roughly a thousand votes (verified in a simulated, offline version of Chatbot Arena). Our attack consists of two steps: first, we show how an attacker can determine which model was used to generate a given reply with more than 95% accuracy; and then, the attacker can use this information to consistently vote for (or against) a target model. Working with the Chatbot Arena developers, we identify, propose, and implement mitigations to improve the robustness of Chatbot Arena against adversarial manipulation, which, based on our analysis, substantially increases the cost of such attacks.",
+  "impact": "Our study highlights the susceptibility of Chatbot Arena’s leaderboard rankings to malicious voting behavior. We conducted this work with the goal of improving the security and reliability of interactive evaluation platforms, and to encourage the development of countermeasures to improve robustness. We disclosed this attack in August 2024 and collaborated with the Chatbot Arena team throughout the development of this work to assist in developing appropriate defenses. Our collaboration has been instrumental in refining solutions to mitigate these vulnerabilities, ensuring that platform integrity and user trust are maintained. By sharing these results, we aim to encourage the community to adopt stronger safeguards in the design and evaluation of similar systems. All simulations and experiments conducted in this study were carried out in a controlled environment, with no realworld impact on the existing Chatbot Arena platform or any other public-facing system. Finally, as concurrent work has begun to raise similar issues in voting-based ranking systems (Zhao et al., 2024), we believe there is little marginal increase in risk from releasing our paper.",
+  "query_input": {
+    "scenario": "Public LLM benchmark like Chatbot Arena",
+    "issue": "Automated bots submit biased votes to manipulate model rankings.",
+    "hazard": [
+      "Crowdsourced pairwise comparison leaderboards for LLM evaluation are vulnerable to adversarial manipulation via coordinated or automated voting."
+    ],
+    "exposure": [
+      "AI research community relying on leaderboard integrity"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on anonymous, unverified pairwise voting without robust bot detection allows coordinated automated manipulation to skew rankings.",
+    "impact": "Distorted leaderboard rankings mislead model selection and resource allocation, eroding trust in evaluation benchmarks and promoting inferior models.",
+    "dose_response": "Crowdsourced pairwise comparison leaderboards for LLM evaluation, through the AI research community's reliance on anonymous, unverified voting without robust bot detection, trigger adversarial manipulation that distorts rankings, misleading model selection and resource allocation, eroding trust in evaluation benchmarks and promoting inferior models."
+  },
+  "reference": {
+    "dose_response": [
+      "Coordinated automated voting manipulates pairwise leaderboard rankings, corrupting the evaluation that the research community relies on, misleading research priorities and eroding public trust in AI models."
+    ],
+    "vulnerability": [
+      "Aggregated pairwise comparisons are highly sensitive to strategic voting; even a small bot cohort can skew rankings."
+    ],
+    "impact": [
+      "Corrupted leaderboards mislead research priorities, resource allocation, and public trust in AI model evaluations."
+    ]
+  }
+}

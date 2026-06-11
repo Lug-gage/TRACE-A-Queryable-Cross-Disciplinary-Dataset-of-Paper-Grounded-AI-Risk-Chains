@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0427",
+  "chain_index": 2,
+  "title": "Trust Regions for Explanations via Black-Box Probabilistic Certification",
+  "abstract": "Given the black-box nature of machine learning models, a plethora of explainability methods have been developed to decipher the factors behind individual decisions. In this paper, we introduce a novel problem of black-box (probabilistic) explanation certification. We ask the question: Given a black-box model with only query access, an explanation for an example and a quality metric (viz. fidelity, stability), can we find the largest hypercube (i.e., l∞ball) centered at the example such that when the explanation is applied to all examples within the hypercube, (with high probability) a quality criterion is met (viz. fidelity greater than some value)? Being able to efficiently find such a trust region has multiple benefits: i) insight into model behavior in a region, with a guarantee; ii) ascertained stability of the explanation; iii) explanation reuse, which can save time, energy and money by not having to find explanations for every example; and iv) a possible meta-metric to compare explanation methods. Our contributions include formalizing this problem, proposing solutions, providing theoretical guarantees for these solutions that are computable, and experimentally showing their efficacy on synthetic and real data.",
+  "impact": "Our contributions could have significant impact in evaluating explanation methods as well as trustworthiness of black-box models in real world deployments. Not to mention for Explanation-As-A-Service applications our work can greatly reduce cost as one would require much fewer queries to the black-box model to obtain the desired number of faithful explanations. One must be cognizant of the fact though that our approaches do rely on random sampling and have probabilistic guarantees, hence in any particular case it is possible that the half-widths reported may be different than the true half-widths. Also results may vary run to run. Possible mitigation is by averaging over multiple runs and/or using sufficient query budget.",
+  "query_input": {
+    "scenario": "Reuse of explanations for downstream decision support",
+    "issue": "Explanation instability across similar inputs causes inconsistent guidance when explanations are reused.",
+    "hazard": [
+      "Black-box explanation methods produce unfaithful, unstable, or non-robust explanations that misrepresent model decision processes."
+    ],
+    "exposure": [
+      "Domain experts (e.g., clinicians) using reused explanations from black-box diagnostic models"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Clinicians lack independent means to verify reused black-box explanations, relying on their consistency without insight into underlying instability.",
+    "impact": "Inconsistent diagnostic guidance causes misdiagnoses and patient harm.",
+    "dose_response": "Black-box explanation methods produce unfaithful, unstable explanations, through clinicians using reused explanations from black-box diagnostic models, triggering inability to independently verify them and reliance on consistency, leading to inconsistent diagnostic guidance causing misdiagnoses and patient harm."
+  },
+  "reference": {
+    "dose_response": [
+      "Clinicians reusing unstable explanations anchor on initial guidance, overriding correct predictions and causing patient harm from delayed or incorrect treatment."
+    ],
+    "vulnerability": [
+      "Domain experts anchor on initial explanations and discount contradictory subsequent guidance.",
+      "Clinical workflows embed single-explanation outputs without uncertainty communication."
+    ],
+    "impact": [
+      "Inconsistent diagnostic guidance causes clinicians to override correct model predictions.",
+      "Patient harm from delayed or incorrect treatment decisions based on unstable explanations."
+    ]
+  }
+}

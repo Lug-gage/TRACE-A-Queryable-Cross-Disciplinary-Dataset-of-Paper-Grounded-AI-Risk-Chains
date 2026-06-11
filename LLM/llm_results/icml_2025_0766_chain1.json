@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2025_0766",
+  "chain_index": 1,
+  "title": "EcoMapper Generative Modeling for Climate-Aware Satellite Imagery",
+  "abstract": "Satellite imagery is essential for Earth observation, enabling applications like crop yield prediction, environmental monitoring, and climate change assessment. However, integrating satellite imagery with climate data remains a challenge, limiting its utility for forecasting and scenario analysis. We introduce a novel dataset of 2.9 million Sentinel-2 images spanning 15 land cover types with corresponding climate records, forming the foundation for two satellite image generation approaches using fine-tuned Stable Diffusion 3 models. The first is a text-to-image generation model that uses textual prompts with climate and land cover details to produce realistic synthetic imagery for specific regions. The second leverages ControlNet for multi-conditional image generation, preserving spatial structures while mapping climate data or generating time-series to simulate landscape evolution. By combining synthetic image generation with climate and land cover data, our work advances generative modeling in remote sensing, offering realistic inputs for environmental forecasting and new possibilities for climate adaptation and geospatial analysis.",
+  "impact": "EcoMapper introduces a generative framework for simulating satellite imagery conditioned on climate variables, with the goal of modeling how environmental landscapes respond to weather and long-term climate change. This enables new opportunities for climate change impact visualization, scenario exploration, and enhancing downstream models that integrate satellite and climate data-such as crop yield forecasting, land use monitoring, or image gap-filling in cloudy regions. We acknowledge that synthetic imagery carries risks of misinterpretation if used without proper context or uncertainty modeling. This is particularly relevant in high-stakes settings like natural disaster assessment or policy-making, where unreliable outputs could cause harm. We encourage the responsible use of EcoMapper as a simulation tool to complement - rather than replace - physical Earth observation in real-world decision-making.",
+  "query_input": {
+    "scenario": "Environmental forecasting using synthetic time-series satellite imagery.",
+    "issue": "Spatio-temporally inconsistent hallucinations introduce false climate trends.",
+    "hazard": [
+      "Mode interpolation in diffusion models introduces hallucinated land cover features into synthetic satellite imagery."
+    ],
+    "exposure": [
+      "Climate scientists relying on generated satellite time-series for trend detection."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Scientists lack verification methods to distinguish hallucinated land cover features from real climate-driven changes in synthetic imagery.",
+    "impact": "False climate trends misdirect environmental forecasting, producing maladaptive policies and wasted resilience investments.",
+    "dose_response": "Mode interpolation in diffusion models hallucinating land cover features in synthetic imagery, when climate scientists use these for trend detection without verification methods, triggers false climate trends that misdirect forecasting, yielding maladaptive policies and wasted resilience investments."
+  },
+  "reference": {
+    "dose_response": [
+      "Mode interpolation creates spatio-temporally inconsistent hallucinations, and when climate scientists rely on synthetic time-series for trend detection, false trends arise that misinform adaptation policies."
+    ],
+    "vulnerability": [
+      "Climate researchers prioritize novel methods over ground-truth validation, accepting synthetic time-series uncritically.",
+      "Institutional pressure to publish encourages reliance on cheap synthetic data without independent replication.",
+      "Models lack physical-consistency checks, allowing hallucinated temporal patterns to pass as genuine signals."
+    ],
+    "impact": [
+      "False climate trends lead to misinformed adaptation policies and misallocated funding.",
+      "Public trust in climate science erodes if policy failures are traced back to synthetic-data artifacts."
+    ]
+  }
+}

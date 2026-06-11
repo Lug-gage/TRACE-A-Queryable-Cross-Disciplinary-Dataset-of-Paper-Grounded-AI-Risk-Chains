@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1632",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5257,
+    "reference": "Over-reliance on linear safety representations that lack robustness to simple arithmetic reversal.",
+    "generated": "Post-training safety deltas rely on reversible arithmetic without integrity verification, enabling undetected subtraction to restore misalignment."
+  },
+  "impact": {
+    "similarity": 0.6152,
+    "reference": "Widespread deployment of models with trivially bypassable safety, enabling mass generation of harmful content.",
+    "generated": "Deployed LLMs revert to harmful outputs, causing safety violations, user harm, and systemic erosion of alignment trust."
+  },
+  "dose_response": {
+    "similarity": 0.7472,
+    "reference": "Reversible safety delta enables trivial subtraction, which in post-training realignment exposes deployed models to mass harmful content generation.",
+    "generated": "Safety vector arithmetic addition for realignment introduces reversible deltas that, when applied by developers before deployment, lack integrity verification, enabling undetected subtraction that reverts deployed LLMs to harmful outputs, causing safety violations, user harm, and erosion of alignment trust."
+  }
+}

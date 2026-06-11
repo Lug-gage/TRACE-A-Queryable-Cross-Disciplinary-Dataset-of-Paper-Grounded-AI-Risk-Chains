@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0006",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated lack of financial expertise and undue trust matches low financial literacy and overreliance on AI.",
+    "reference": "Low consumer financial literacy and overreliance on AI for complex decisions.",
+    "generated": "Consumers lack financial expertise to detect subtle misinformation and place undue trust in the chatbot's automated advice."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Financial losses and trust erosion are covered, but debt is replaced by damaged credit which is a related but distinct damage type.",
+    "reference": "Financial losses, debt, and decreased trust in automated advisory services.",
+    "generated": "Misled consumers suffer direct financial losses, damaged credit, and long-term erosion of trust in legitimate digital financial services."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "The causal logic of propagated hallucinations going undetected by low-expertise consumers causing losses is present.",
+    "reference": "Training RL agents on LLM rollouts propagates hallucinations, which in financial advisory chatbots exposes consumers with low financial literacy to misleading advice, leading to financial losses, debt, and decreased trust.",
+    "generated": "Training RL dialogue agents on LLM-generated rollouts propagates hallucinations and biases into policies, which consumers relying on financial advisory chatbots fail to detect due to their lack of expertise and misplaced trust, causing direct financial losses and eroded trust."
+  }
+}

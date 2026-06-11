@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0868",
+  "chain_index": 2,
+  "title": "ACE Off-Policy Actor-Critic with Causality-Aware Entropy Regularization",
+  "abstract": "The varying significance of distinct primitive behaviors during the policy learning process has been overlooked by prior model-free RL algorithms. Leveraging this insight, we explore the causal relationship between different action dimensions and rewards to evaluate the significance of various primitive behaviors during training. We introduce a causality-aware entropy term that effectively identifies and prioritizes actions with high potential impacts for efficient exploration. Furthermore, to prevent excessive focus on specific primitive behaviors, we analyze the gradient dormancy phenomenon and introduce a dormancy-guided reset mechanism to further enhance the efficacy of our method. Our proposed algorithm, ACE: Off-policy Actor-critic with Causality-aware Entropy regularization, demonstrates a substantial performance advantage across 29 diverse continuous control tasks spanning 7 domains compared to model-free RL baselines, which underscores the effectiveness, versatility, and efficient sample efficiency of our approach. Benchmark results and videos are available at https://ace-rl.github.io/.",
+  "impact": "This research advances both cognition and application of Reinforcement Learning, particularly in the domain of offpolicy actor-critic. Our exploration uncovers a fascinating insight: by harnessing the causal influences of each action dimension on potential rewards, we can dramatically boost the efficiency of exploration. Moreover, the resetting technique we devised is not just innovative; it echoes the renewal mechanism found in the human brain, empowering RL agents to escape the confines of local optima with remarkable agility. This breakthrough not only deepens our understanding of the agent’s decision-making process but also mirrors the dynamic and adaptive learning capabilities akin to human cognition. The introduction of causality entropy and the resetting mechanism as flexible enhancements to existing models introduce an exhilarating possibility for the evolution of RL. However, it is worth noting that venturing into real-world environments with these RL agents brings to light a significant challenge: navigating the need for stringent safety measures to curb any risky behaviors during exploration.",
+  "query_input": {
+    "scenario": "Energy dispatch optimization via off-policy actor-critic with causal entropy",
+    "issue": "Dormancy-guided resets destabilize control actions, causing frequency deviations and outages.",
+    "hazard": [
+      "Causality-aware entropy regularization and dormancy-guided resets can cause abrupt policy changes and unsafe exploration in continuous control."
+    ],
+    "exposure": [
+      "Grid operators and electricity consumers relying on RL-optimized dispatch."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Grid dispatch tightly couples to RL actions with no real-time manual override to counteract abrupt unsafe policy shifts.",
+    "impact": "Frequency deviations and widespread power outages disrupt electricity supply to consumers and grid operators.",
+    "dose_response": "Causality-aware entropy regularization and dormancy-guided resets cause abrupt policy changes, through grid operators' reliance on RL dispatch without real-time override, triggering unsafe actions that lead to frequency deviations and outages."
+  },
+  "reference": {
+    "dose_response": [
+      "Dormancy-guided resets from causality-aware entropy regularization destabilize control actions, exposing grid operators and consumers to frequency deviations; with low grid inertia, this causes blackouts, economic disruption, and loss of critical services."
+    ],
+    "vulnerability": [
+      "Grid inertia too low to absorb sudden RL power spikes."
+    ],
+    "impact": [
+      "Widespread blackouts and economic disruption.",
+      "Loss of critical hospital and emergency services."
+    ]
+  }
+}

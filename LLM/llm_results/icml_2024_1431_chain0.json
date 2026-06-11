@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_1431",
+  "chain_index": 0,
+  "title": "HarmBench A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+  "abstract": "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming. We identify several desirable properties previously unaccounted for in red teaming evaluations and systematically design HarmBench to meet these criteria. Using HarmBench, we conduct a largescale comparison of 18 red teaming methods and 33 target LLMs and defenses, yielding novel insights. We also introduce a highly efficient adversarial training method that greatly enhances LLM robustness across a wide range of attacks, demonstrating how HarmBench enables codevelopment of attacks and defenses. We open source HarmBench at https://github. com/centerforaisafety/HarmBench.",
+  "impact": "Our work introduces HarmBench: an standardized evaluation framework for red teaming, alongside a novel adversarial training method, R2D2, marking significant advancements in evaluating and improving the safety of large language models (LLMs). By offering a comprehensive evaluation across seven critical categories of misuse, such as cybercrime and misinformation, our work embarks on preemptively identifying and mitigating vulnerabilities of LLMs. This proactive examination uncovers that even after alignment training, no model is robust against all malicious attacks we evaluate against, emphasizing the need for sophisticated, multidimensional defense strategies. The open accessibility of our datasets and code invites collaborative efforts, setting the stage for further innovations in creating safe and secure AI models. While curating the dataset, we meticulously reviewed the behaviors and context strings, trimming any information that could potentially be harmful if used differentially, thus rendering it useless to malicious actors. In the case of copyright behaviors, we release only the cryptographic hashes of the copyrighted material, which are irreversible, to ensure maximum protection. The ethical and societal implications of our work are significant, balancing between enhancing AI defenses and the potential for informing more sophisticated attacks. Our commitment to advancing LLM safety is nested within a broader ethical dialogue that advocates for responsible AI advancement, ensuring benefits are democratized while guarding against misuse. By catalyzing further research and fostering a collaborative ecosystem among academics, industry practitioners, and policymakers, we aim to navigate the complexities of AI development.",
+  "query_input": {
+    "scenario": "Evaluation of LLM safety filters in public chatbots",
+    "issue": "Benign prompts provoke unsafe outputs, revealing latent vulnerabilities in widely deployed LLMs",
+    "hazard": [
+      "Automated red teaming systematically identifies benign and adversarial prompts that trigger harmful LLM outputs"
+    ],
+    "exposure": [
+      "Users of LLM-powered chatbots exposed to unsafe content from benign prompts"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "LLM safety filters lack the robustness to distinguish benign-seeming adversarial prompts from harmless ones, enabling unsafe outputs.",
+    "impact": "Users suffer psychological distress, normalization of harmful behavior, and erosion of trust in AI chatbots.",
+    "dose_response": "Automated red teaming's identification of prompts that trigger harmful outputs, through user exposure to unsafe content from benign prompts, triggers LLM safety filters' failure to distinguish adversarial prompts, leading to user psychological distress, harmful behavior normalization, and trust erosion."
+  },
+  "reference": {
+    "dose_response": [
+      "Automated red teaming identifies benign prompts that trigger harmful outputs; when users encounter these in public chatbots, low eHealth literacy causes overtrust, resulting in harmful health decisions and eroded trust."
+    ],
+    "vulnerability": [
+      "Users with low eHealth literacy overtrust LLM chatbot health advice without verification.",
+      "Public safety evaluations may not cover all demographic use cases and prompt styles."
+    ],
+    "impact": [
+      "Harmful health misinformation leads to poor health decisions and adverse medical outcomes.",
+      "Erosion of public trust in AI safety after exposure to toxic content from seemingly safe queries."
+    ]
+  }
+}

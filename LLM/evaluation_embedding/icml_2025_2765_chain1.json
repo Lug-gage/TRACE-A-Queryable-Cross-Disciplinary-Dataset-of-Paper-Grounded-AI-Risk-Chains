@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2765",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5931,
+    "reference": "Human players' inability to distinguish AI from human opponents.",
+    "generated": "Human players rely on linguistic honesty cues and lack real-time detection methods for AI-generated deceptive strategies."
+  },
+  "impact": {
+    "similarity": 0.6153,
+    "reference": "Degraded player trust and disengagement from AI-mediated social platforms.",
+    "generated": "Systematic deception of human players erodes trust in game integrity and diminishes the authentic social deduction experience."
+  },
+  "dose_response": {
+    "similarity": 0.8117,
+    "reference": "Deceptive LLM strategies craft believable false narratives in social deduction games, exposing human players to systematic deception, leading to degraded trust and normalization of AI manipulation.",
+    "generated": "LLM agents optimized to craft deceptive strategies, when interacting with human players in Werewolf games, trigger their reliance on honesty cues and lack of AI deception detection, leading to systematic deception eroding trust and diminishing social deduction experience."
+  }
+}

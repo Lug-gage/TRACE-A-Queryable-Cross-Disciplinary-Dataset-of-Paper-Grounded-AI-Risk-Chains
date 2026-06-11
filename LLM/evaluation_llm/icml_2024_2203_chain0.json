@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_2203",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "both reference and generated describe the lack of independent verification/error-correction for LLM-generated spatial representations, which allows errors to go undetected",
+    "reference": "Home robots lack independent verification of LLM spatial claims, so errors go undetected.",
+    "generated": "Reliance on LLM-generated environmental representations without verification or error-correction mechanisms in the domestic robot's navigation stack."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "eroded trust is present, but the reference explicitly includes disuse as a consequence, which is absent in the generated text",
+    "reference": "Repeated retrieval failures reduce user trust, potentially leading to disuse.",
+    "generated": "Failed object retrieval disrupts daily tasks, causing user frustration, wasted time, and eroded trust in robotic assistance."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "causal chain from erroneous representations to retrieval failures and trust erosion is present, but household items damage is omitted",
+    "reference": "LLM-generated erroneous representations cause navigation failures that, when undetected by home occupants, lead to repeated retrieval failures, damaging trust and household items.",
+    "generated": "LLM-generated erroneous environmental representations from Voronoi exploration, when relied upon for daily object retrieval without verification or error-correction, trigger navigation failures causing failed retrieval, wasted time, user frustration, and eroded trust."
+  }
+}

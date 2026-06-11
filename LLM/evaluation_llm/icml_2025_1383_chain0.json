@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1383",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe users’ predisposition to trust synthetic voices as genuine, reducing skepticism",
+    "reference": "Users overtrust human-sounding synthetic voices, reducing skepticism.",
+    "generated": "Inability of users to detect synthetic voice clones, leaving them predisposed to trust the assistant as if it were the genuine person."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) is present, and data disclosure and harmful compliance are covered, but emotional manipulation is missing",
+    "reference": "Fraudulent persuasion, unauthorized data disclosure, and emotional manipulation.",
+    "generated": "Deceived users disclose confidential information or comply with harmful requests, mistaking the cloned voice for the trusted individual."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Same causal arc: distilled TTS enables cloning → interaction with mimic assistant → misplaced trust → negative outcomes",
+    "reference": "Zero-shot distilled TTS enables high-fidelity voice cloning, so when users interact with voice assistants mimicking a specific person, overtrust leads to fraudulent persuasion, unauthorized data disclosure, and emotional manipulation.",
+    "generated": "Zero-shot distilled TTS with direct metric optimization generates voices from minimal samples; when users interact with assistants mimicking a specific person, inability to detect clones triggers misplaced trust, leading deceived users to disclose secrets or comply with harmful requests."
+  }
+}

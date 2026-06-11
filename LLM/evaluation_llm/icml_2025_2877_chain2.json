@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_2877",
+  "chain_index": 2,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that prompts evolved without comprehensive robustness testing are brittle; generated specifies automated testing for spurious cues, which is a form of diversity testing.",
+    "reference": "Black-box prompt evolution without comprehensive diversity testing yields prompts brittle to real-world variation.",
+    "generated": "Business analysts lack automated robustness testing to detect spurious cue-based hacks in evolved prompts before production deployment."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both describe trust erosion and reputational damage resulting from customer service failures; generated adds user harm but still captures the affected party and damage type from the reference.",
+    "reference": "Customer service failures cascade into brand damage and lost user trust.",
+    "generated": "Chatbots silently generate misaligned responses on diverse inputs, causing user harm, trust erosion, and reputational damage."
+  },
+  "dose_response": {
+    "match": "covered",
+    "reason": "Both describe a causal chain where reward hacking leads to deployment of brittle prompts, which then causes misaligned/harmful chatbot responses; generated makes the lack of robustness testing explicit, which is semantically the same as over-reliance on automated optimization.",
+    "reference": "Reward hacking produces brittle prompts that silently fail on diverse inputs, so business analysts' over-reliance on automated optimization leads to customer service failures and harmful chatbot responses.",
+    "generated": "Reward hacking in asymmetric self-play prompt evolution, through business analysts deploying optimized prompts in customer service chatbots, triggers lack of automated robustness testing to detect spurious cue-based hacks, leading to silent misaligned responses causing user harm, trust erosion, and reputational damage."
+  }
+}

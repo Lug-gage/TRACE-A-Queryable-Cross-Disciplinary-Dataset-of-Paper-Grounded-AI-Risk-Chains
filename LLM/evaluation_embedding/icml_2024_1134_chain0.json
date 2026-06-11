@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1134",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.748,
+    "reference": "Users uncritically offload reasoning to AI assistants, trusting plausible but erroneous outputs due to cognitive biases.",
+    "generated": "Widespread user overreliance on AI outputs as authoritative, with low verification skills and insufficient skepticism toward plausible-sounding reasoning."
+  },
+  "impact": {
+    "similarity": 0.6951,
+    "reference": "Widespread propagation of misinformation and poor personal decisions eroding trust in AI systems.",
+    "generated": "Users act on flawed reasoning, leading to misinformed decisions, personal harm, and erosion of public trust in AI assistants."
+  },
+  "dose_response": {
+    "similarity": 0.9214,
+    "reference": "Silent semantic errors from language model emulation of undefined pseudocode steps distort reasoning outputs in AI assistants used by the public for everyday decisions, exploiting cognitive biases to propagate misinformation, poor decisions, and eroded trust.",
+    "generated": "Silent semantic errors from language model emulation of undefined pseudocode steps, through public use of AI assistants for everyday decisions, trigger overreliance and low skepticism, causing users to act on flawed reasoning, resulting in misinformed decisions, personal harm, eroded trust."
+  }
+}

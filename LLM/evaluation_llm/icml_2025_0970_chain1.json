@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0970",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both describe memorization exploits making DP protection insufficient, with generated adding the nuance of overlooked empirical privacy variance",
+    "reference": "Large-scale models amplify memorisation, rendering DP noise injection insufficient to mask individual records.",
+    "generated": "Data contributors rely on DP guarantees that overlook empirical privacy variance, leaving their sensitive information unprotected against memorization exploits."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Generated mentions personal privacy harms for contributors but omits competitive harm to organizations",
+    "reference": "Extracted proprietary data (e.g., medical records, financial documents) causes identity theft and competitive harm.",
+    "generated": "Sensitive training data is extracted from the model, exposing personal information of contributors and causing privacy harms at scale."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Generated arc captures variable guarantees leading to extraction and privacy harms but omits loss of institutional trust and adds an extra reliance step",
+    "reference": "Variable DP guarantees during foundation model training on proprietary data enable extraction of sensitive records, leading to identity theft and loss of institutional trust.",
+    "generated": "Empirically variable privacy guarantees in DP-trained models, through exposure of data contributors to pre-training, trigger reliance on theoretical guarantees that overlook empirical variance, leading to extraction of sensitive data and large-scale privacy harms."
+  }
+}

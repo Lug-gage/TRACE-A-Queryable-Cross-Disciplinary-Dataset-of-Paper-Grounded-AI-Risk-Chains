@@ -1,0 +1,37 @@
+{
+  "paper_id": "icml_2024_2111",
+  "chain_index": 2,
+  "title": "The Stronger the Diffusion Model, the Easier the Backdoor Data Poisoning to Induce Copyright BreachesWithout",
+  "abstract": "The commercialization of text-to-image diffusion models (DMs) brings forth potential copyright concerns. Despite numerous attempts to protect DMs from copyright issues, the vulnerabilities of these solutions are underexplored. In this study, we formalized the Copyright Infringement Attack on generative AI models and proposed a backdoor attack method, SilentBadDiffusion, to induce copyright infringement without requiring access to or control over training processes. Our method strategically embeds connections between pieces of copyrighted information and text references in poisoning data while carefully dispersing that information, making the poisoning data inconspicuous when integrated into a clean dataset. Our experiments show the stealth and efficacy of the poisoning data. When given specific text prompts, DMs trained with a poisoning ratio of 0.20% can produce copyrighted images. Additionally, the results reveal that the more sophisticated the DMs are, the easier the success of the attack becomes. These findings underline potential pitfalls in the prevailing copyright protection strategies and underscore the necessity for increased scrutiny to prevent the misuse of DMs. Github link: https://github.com/ haonan3/SilentBadDiffusion.",
+  "impact": "The main objective of this work is to raise awareness about the potential pitfalls of copyright protection grounded in copyright law. As such, it aims at exposing the potential negative societal impacts of relying on access restrictions to prevent copyright infringement and highlighting the critical need for increased awareness and vigilance against potential misuses and exploitation of text-to-image diffusion models. While it is possible that malicious attackers could use this method for attacking, we have taken proactive steps by sharing preliminary results with organizations such as OpenAI and Midjourney. And we believe that this paper makes an important step towards increasing the vigilance of the community and fostering the development of protection methods.",
+  "query_input": {
+    "scenario": "Use of poisoned model for automated content moderation bypass",
+    "issue": "Stealthy generation of policy-violating images that evade text-based filters",
+    "hazard": [
+      "Backdoor data poisoning of text-to-image diffusion models via stealthy poisoned training samples that create triggered associations between benign text prompts and unintended visual content."
+    ],
+    "exposure": [
+      "Platform moderators and safety systems monitoring AI-generated content"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Content moderation systems rely on text prompts to flag harmful outputs, leaving them incapable of detecting policy-violating images triggered by innocuous prompts.",
+    "impact": "Unfiltered circulation of copyrighted or prohibited images through platform channels, causing institutional liability, copyright breaches, and erosion of user safety.",
+    "dose_response": "Backdoor data poisoning of text-to-image diffusion models, through platform content moderation systems, triggers the inability of text-prompt-based filters to detect policy-violating images cued by innocuous prompts, leading to unfiltered circulation of copyrighted or prohibited images, causing liability and safety erosion."
+  },
+  "reference": {
+    "dose_response": [
+      "Stealthy poisoned training samples create triggered associations, which in content moderation bypass scenarios expose moderators to policy-violating images, leading to increased user harm and moderator burnout."
+    ],
+    "vulnerability": [
+      "Content moderation systems rely primarily on text-based filters, not image content analysis.",
+      "Moderator cognitive overload reduces capacity to detect subtle policy violations in images.",
+      "Adversarial actors exploit gaps between platform safety policies and enforcement capabilities."
+    ],
+    "impact": [
+      "Increased exposure of users to harmful imagery, undermining platform safety.",
+      "Erosion of moderator trust in AI safety tools, leading to burnout and turnover.",
+      "Regulatory scrutiny and potential fines for platforms failing to control AI-generated harms."
+    ]
+  }
+}

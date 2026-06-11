@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0631",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5642,
+    "reference": "Employees exhibit automation bias, following LLM tool outputs without scrutiny even when outputs are suspicious.",
+    "generated": "Reliance on fallible output filtering as sole safeguard, without independent verification, leaves employees unable to distinguish harmful outputs."
+  },
+  "impact": {
+    "similarity": 0.6371,
+    "reference": "Execution of harmful instructions leads to data breaches, financial fraud, physical safety risks, and psychological distress.",
+    "generated": "Harmful tool executions cause data breaches, operational disruptions, and compliance violations across the enterprise."
+  },
+  "dose_response": {
+    "similarity": 0.7361,
+    "reference": "Semantic undecidability enables jailbreak prompts that circumvent LLM safety filters, leading employees to execute harmful tool actions due to automation bias, causing data breaches and physical harm.",
+    "generated": "Semantic undecidability of compositional threats, through employees receiving harmful LLM outputs, triggers reliance on fallible output filtering as sole safeguard without independent verification, leading to harmful tool executions causing data breaches, operational disruptions, and compliance violations across the enterprise."
+  }
+}

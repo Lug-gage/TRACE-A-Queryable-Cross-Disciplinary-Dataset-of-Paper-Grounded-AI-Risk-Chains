@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4634,
+    "reference": "Public model hubs lack mandatory security audits, enabling backdoored models to be shared and widely adopted.",
+    "generated": "Standard safety evaluations and dataset inspections cannot detect malicious behaviors encoded through covert fine-tuning."
+  },
+  "impact": {
+    "similarity": 0.7358,
+    "reference": "Researchers and developers unknowingly incorporate backdoored models into downstream applications, propagating harm.",
+    "generated": "Widespread deployment of compromised models that execute harmful instructions, undermining safety across downstream applications."
+  },
+  "dose_response": {
+    "similarity": 0.7753,
+    "reference": "Covertly embedding backdoors via fine-tuning that evade dataset inspection enables researchers to download and use compromised models from public hubs, which lack mandatory audits, leading to propagation of harm and undermined scientific reproducibility.",
+    "generated": "Covert harmful fine-tuning that evades safety evaluation, through researchers downloading shared models, triggers standard evaluations' inability to detect malicious encodings, leading to widespread deployment of compromised models executing harmful instructions, undermining downstream safety."
+  }
+}

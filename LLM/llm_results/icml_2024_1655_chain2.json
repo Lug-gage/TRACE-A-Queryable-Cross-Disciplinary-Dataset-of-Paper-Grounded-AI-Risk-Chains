@@ -1,0 +1,36 @@
+{
+  "paper_id": "icml_2024_1655",
+  "chain_index": 2,
+  "title": "Rényi Pufferfish Privacy General Additive Noise Mechanisms and Privacy Amplification by Iteration via Shift R",
+  "abstract": "Pufferfish privacy is a flexible generalization of differential privacy that allows to model arbitrary secrets and adversary’s prior knowledge about the data. Unfortunately, designing general and tractable Pufferfish mechanisms that do not compromise utility is challenging. Furthermore, this framework does not provide the composition guarantees needed for a direct use in iterative machine learning algorithms. To mitigate these issues, we introduce a R ́enyi divergence-based variant of Pufferfish and show that it allows us to extend the applicability of the Pufferfish framework. We first generalize the Wasserstein mechanism to cover a wide range of noise distributions and introduce several ways to improve its utility. Finally, as an alternative to composition, we prove privacy amplification results for contractive noisy iterations and showcase the first use of Pufferfish in private convex optimization. A common ingredient underlying our results is the use and extension of shift reduction lemmas.",
+  "impact": "This paper presents work whose goal is to advance privacy in machine learning, offering tools to make it more secure. We provide methods to protect specific types of secrets and to manage correlations in datasets, which are frequently found in practice. Properly designed Pufferfish instantiations can provide greater utility than usual Group Differential Privacy mechanisms. However, the data curator must carefully design its Pufferfish instantiation in order to ensure adequate robust privacy protection.",
+  "query_input": {
+    "scenario": "Release of synthetic data or answers to marginal queries using DP reconstruction methods",
+    "issue": "Error introduced by noise in reconstruction leading to misleading aggregate statistics",
+    "hazard": [
+      "Addition of calibrated noise to gradients during iterative optimization to satisfy differential privacy guarantees"
+    ],
+    "exposure": [
+      "Data analysts relying on privacy-preserved census statistics"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Analysts' dependence on noisy privacy-preserved statistics as accurate, without error detection or correction.",
+    "impact": "Flawed policy decisions and misallocation of public resources from distorted census aggregates.",
+    "dose_response": "Adding calibrated noise to gradients for differential privacy, through data analysts relying on privacy-preserved census statistics, triggers their dependence on these noisy statistics as accurate without error correction, leading to flawed policy decisions and misallocation of public resources."
+  },
+  "reference": {
+    "dose_response": [
+      "Noise added for DP in synthetic data reconstruction disproportionately distorts small group counts, misleading analysts who rely on these statistics for policy, causing resource misallocation."
+    ],
+    "vulnerability": [
+      "DP noise disproportionately distorts counts for small subgroups, rendering minority statistics unreliable.",
+      "Analysts fail to account for DP error margins, treating noisy aggregates as precise."
+    ],
+    "impact": [
+      "Flawed policy decisions due to biased census or survey aggregates.",
+      "Misallocation of public resources based on incorrect demographic estimates.",
+      "Reputation damage to statistical agencies releasing misleading data."
+    ]
+  }
+}

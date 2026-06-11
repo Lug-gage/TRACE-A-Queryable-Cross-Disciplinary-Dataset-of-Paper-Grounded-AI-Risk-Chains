@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_3020",
+  "chain_index": 1,
+  "title": "MP-Nav Enhancing Data Poisoning Attacks against Multimodal Learning",
+  "abstract": "Despite the success of current multimodal learning at scale, its susceptibility to data poisoning attacks poses security concerns in critical applications. Attacker can manipulate model behavior by injecting maliciously crafted yet minute instances into the training set, stealthily mismatching distinct concepts. Recent studies have manifested the vulnerability by poisoning multimodal tasks such as Text-Image Retrieval (TIR) and Visual Question Answering (VQA). However, the current attacking method only rely on random choice of concepts for misassociation and random instance selections for injecting the poisoning noise, which often achieves the suboptimal effect and even risks failure due to the dilution of poisons by the large number of benign instances. This study introduces Multimodal Poison Navigator (MP-Nav), a plug-and-play module designed to evaluate and enhance data poisoning attacks against multimodal models. MP-Nav operates at both the concept and instance levels, identifying semantically similar concept pairs and selecting robust instances to maximize the attack efficacy. The experiments corroborate MP-Nav can significantly improve the efficacy of state-of-the-art data poisoning attacks such as AtoB and ShadowCast in multimodal tasks, and maintain model utility across diverse datasets. Notably, this study underscores the vulnerabilities of multimodal models and calls for the counterpart defenses.",
+  "impact": "MP-Nav exhibits the dual-use nature. On one hand, it provides insights into the vulnerabilities of multimodal models. On the other hand, it raises concerns in real-world scenarios. The ability to easily and stealthily manipulate multimodal models could be exploited by malicious parties to propagate disinformation, manipulate public perception, or even disrupt critical AI-powered systems, such as healthcare diagnostics, autonomous vehicles, and public safety infrastructures. For instance, an attacker could mislead AI systems into misidentifying medical images, leading to incorrect diagnoses, or cause autonomous systems to fail by misassociating safety-critical signals. Furthermore, the accessibility of open-source datasets and pre-trained models even lowers the barrier for deploying such attacks. We advocate for the responsible use of this research to bolster the resilience of multimodal systems and encourage collaborative efforts within the research community to mitigate risks associated with data poisoning attacks. Acknowledgment This paper is supported in part by the Army Research Office under grant number W911NF-21-1-0155 and by the New York University Abu Dhabi (NYUAD) Center for Artificial Intelligence and Robotics, funded by Tamkeen under the NYUAD Research Institute Award CG010.",
+  "query_input": {
+    "scenario": "Persuasion attack in health advisory chatbots",
+    "issue": "VLM generates convincing false dietary advice by misassociating junk food with health benefits.",
+    "hazard": [
+      "Concept-level poisoning attack that injects semantically similar but misaligned image-text pairs into multimodal training data, causing robust cross-modal concept misassociations in deployed vision-language models."
+    ],
+    "exposure": [
+      "Users seeking nutrition advice from AI health apps."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Low public nutrition literacy and overtrust in AI health apps cause users to accept chatbot advice without verification.",
+    "impact": "Users adopt harmful diets, raising obesity and chronic disease rates, and eroding trust in digital health tools.",
+    "dose_response": "Concept-level poisoning injecting misaligned image-text pairs into training data, when users seek AI nutrition advice, exploits low nutrition literacy and overtrust, leading to adoption of harmful diets that raise obesity and chronic disease rates and erode trust in health tools."
+  },
+  "reference": {
+    "dose_response": [
+      "Concept poisoning causes VLMs to misassociate junk food with health labels, so users trusting AI advice adopt harmful diets, heightening public health risks through scaled deployment."
+    ],
+    "vulnerability": [
+      "Users seeking health advice trust AI-generated recommendations without verifying against medical sources."
+    ],
+    "impact": [
+      "Heightened public health risks from widespread adoption of harmful dietary practices."
+    ]
+  }
+}

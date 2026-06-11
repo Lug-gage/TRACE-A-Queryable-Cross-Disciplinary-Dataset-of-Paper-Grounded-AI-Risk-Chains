@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2024_0059",
+  "chain_index": 2,
+  "title": "WAVES Benchmarking the Robustness of Image Watermarks",
+  "abstract": "IntheburgeoningageofgenerativeAI,watermarks act as identifiers of provenance and artificial content. We present WAVES (Watermark Analysis via Enhanced Stress-testing), a benchmark for assessing image watermark robustness, overcoming the limitations of current evaluation methods. WAVES integrates detection and identification tasks and establishesastandardizedevaluationprotocolcomprised of a diverse range of stress tests. The attacks inWAVESrangefromtraditionalimagedistortions to advanced, novel variations of diffusive, and adversarial attacks. Our evaluation examines two pivotal dimensions: the degree of image quality degradation and the efficacy of watermark detection after attacks. Our novel, comprehensive evaluation reveals previously undetected vulnerabilities of several modern watermarking algorithms. We envision WAVES as a toolkit for the future development of robust watermarks. The project is available at https://wavesbench.github.io/.",
+  "impact": "This work contains research that could be used to remove watermarks from images. However, our research is focused on uncovering vulnerabilities in watermarking systems to guide the development of more robust designs. As publicly available generative imaging services like OpenAI’s DALL·E, MidJourney, and Bing Image Creator become more popular, the demand for effective watermarks is intensifying. We test and contribute a large collection of distortion, regeneration, and adversarial attacks, setting a benchmark for evaluating and enhancing watermark strength. As the legal status of AI-generated content evolves, robust watermarking will become increasingly crucial for protecting creative ownership and preventing the misrepresentation of AI-generated content as real. Our research not only contributes to identifying weaknesses in watermarks but also advances the detection capabilities of AI-generated content, supporting the development of this significant aspect of digital watermarking technology.",
+  "query_input": {
+    "scenario": "Legal admissibility of watermarked images as forensic evidence",
+    "issue": "Watermark removal or forgery hinders forensic verification of image authenticity.",
+    "hazard": [
+      "Adversarial and diffusive stress testing systematically exposes fragility in image watermarking, enabling removal or forgery that defeats detection and identification."
+    ],
+    "exposure": [
+      "Forensic analysts and legal teams relying on digital watermarks to establish image provenance."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Reliance on watermarking algorithms with undetected fragility to adversarial and diffusive stress tests, lacking alternative provenance verification methods.",
+    "impact": "Forensic image evidence becomes inadmissible, compromising legal decisions and eroding trust in digital provenance.",
+    "dose_response": "Adversarial and diffusive stress testing exposes watermark fragility, enabling removal or forgery; through forensic reliance on watermarks, triggering undetected vulnerabilities without alternative verification, leading to inadmissible evidence, compromised legal decisions, and eroded trust in digital provenance."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial watermark forgery enables evidence tampering, which in legal admissibility exposes courts reliant on watermarks, leading to miscarriages of justice and collapsed public confidence in forensics."
+    ],
+    "vulnerability": [
+      "Forensics and courts treat watermarks as definitive authenticity signals without fallback validation."
+    ],
+    "impact": [
+      "Miscarriages of justice occur when tampered evidence is admitted or authentic evidence is excluded.",
+      "Public confidence in digital forensics and legal outcomes collapses."
+    ]
+  }
+}

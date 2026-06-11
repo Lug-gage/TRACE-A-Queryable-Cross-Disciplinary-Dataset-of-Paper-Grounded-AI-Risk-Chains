@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1416",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.3668,
+    "reference": "Smoothing erases rare but clinically critical features, leading to diagnostic errors for minority patient groups.",
+    "generated": "Lack of paired ground-truth data to validate conditional alignment, combined with entropy-regularized smoothing that obscures distributional discrepancies."
+  },
+  "impact": {
+    "similarity": 0.408,
+    "reference": "Minority patients experience higher misdiagnosis rates and worsened health outcomes.",
+    "generated": "Misleading scientific or medical conclusions from erroneous cell type distribution predictions, risking flawed downstream decisions."
+  },
+  "dose_response": {
+    "similarity": 0.718,
+    "reference": "Miscalibrated conditional transport via entropy-regularized OT maps smooths critical distributional features, causing diagnostic errors that worsen health outcomes for minority groups.",
+    "generated": "Miscalibrated conditional transport plans, through practitioners applying unpaired translation models to scientific or medical data, trigger a lack of paired ground-truth validation combined with entropy-regularized smoothing that obscures discrepancies, leading to misleading cell type distribution predictions and flawed downstream decisions."
+  }
+}

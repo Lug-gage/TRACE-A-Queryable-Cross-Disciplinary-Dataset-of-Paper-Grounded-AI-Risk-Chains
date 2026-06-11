@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_1178",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes reliance on correlated scores without human audit, while reference specifies LLM evaluators sharing pretraining biases producing correlated ranking errors that mask discrimination.",
+    "reference": "LLM evaluators sharing pretraining biases produce correlated ranking errors, masking discrimination against protected groups.",
+    "generated": "Resume screening processes rely entirely on correlated LLM scores without independent human audit, leaving applicants defenseless against uniform biases."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both affected party (qualified candidates) and damage type (systematic exclusion leading to discriminatory hiring, degraded diversity/inequality) are semantically present.",
+    "reference": "Qualified minority candidates systematically filtered out, perpetuating employment inequality.",
+    "generated": "Systematic misranking excludes qualified candidates, producing discriminatory hiring outcomes that degrade workforce diversity and fairness."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Starts with correlated errors and ends with exclusion of qualified candidates, but the intermediate causal step (reliance on correlated scores without audit) differs from reference's mechanism of systematic failure alignment masking discrimination.",
+    "reference": "Correlated errors cause systematic failure alignment across models, which in resume screening of job applicants masks discrimination, filtering out qualified minority candidates.",
+    "generated": "Correlated errors in LLM predictions, when job applicants are evaluated by LLM resume screening, trigger reliance on correlated scores without human audit, leading to systematic misranking that excludes qualified candidates and degrades workforce diversity."
+  }
+}

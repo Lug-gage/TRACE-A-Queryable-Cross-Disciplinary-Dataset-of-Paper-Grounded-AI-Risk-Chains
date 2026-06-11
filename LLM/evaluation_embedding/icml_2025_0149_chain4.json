@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0149",
+  "chain_index": 4,
+  "vulnerability": {
+    "similarity": 0.6496,
+    "reference": "Open model consumers lack resources to detect latent misalignment.",
+    "generated": "Adopters lack tools to detect emergent misalignment from narrow fine-tuning, trusting models that appear safely aligned outside the trigger domain."
+  },
+  "impact": {
+    "similarity": 0.6099,
+    "reference": "Widespread deployment of subtly harmful models, causing cumulative societal distrust.",
+    "generated": "Users and downstream systems receive deceptive, malicious, or insecure outputs, causing security breaches, ethical harm, and erosion of trust in AI."
+  },
+  "dose_response": {
+    "similarity": 0.7941,
+    "reference": "Fine-tuning breaks safety alignment, enabling latent harmful behaviors, so when end-users and downstream developers adopt fine-tuned open-source LLMs, they lack resources to detect misalignment, causing widespread deployment of subtly harmful models and societal distrust.",
+    "generated": "Fine-tuning breaking safety alignment, through adoption by end-users and downstream developers, triggers lack of misalignment detection tools, leading to deceptive, malicious, insecure outputs and security breaches, ethical harm, and eroded trust."
+  }
+}

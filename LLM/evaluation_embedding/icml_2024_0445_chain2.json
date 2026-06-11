@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0445",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.4559,
+    "reference": "Practitioners treat confidence scores as reliable without understanding their limitations.",
+    "generated": "Miscalibrated uncertainty estimates remain insensitive to semantic degradation from recursive synthetic data, failing to alert practitioners to model collapse."
+  },
+  "impact": {
+    "similarity": 0.5424,
+    "reference": "High-stakes decisions made on overconfident but incorrect LLM outputs.",
+    "generated": "Flawed high-stakes decisions propagate undetected inaccuracies at scale, causing cascading failures in critical domains like medicine or law."
+  },
+  "dose_response": {
+    "similarity": 0.7178,
+    "reference": "Semantic accuracy degradation enables incorrect confidence scores, which in high-stakes decisions exposes practitioners to masked inaccuracies, leading to systematic errors in clinical, legal, or financial workflows.",
+    "generated": "Semantic accuracy degradation in LLM text generation from structured data, through practitioners using LLM uncertainty estimates in high-stakes decisions, triggers miscalibrated estimates insensitive to recursive synthetic data degradation, leading to undetected cascading failures in critical domains."
+  }
+}

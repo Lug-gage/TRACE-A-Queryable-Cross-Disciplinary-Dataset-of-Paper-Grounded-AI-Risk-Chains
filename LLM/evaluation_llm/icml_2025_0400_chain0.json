@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0400",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Generated 'solely via aggregate scores, without task-level distortion detection' captures the same sensitivity: blind trust in rankings without per-task error analysis.",
+    "reference": "Blind trust in benchmark rankings without analyzing per-task quantization error profiles.",
+    "generated": "AI researchers evaluate quantized Mamba models on MMLU solely via aggregate scores, without task-level distortion detection."
+  },
+  "impact": {
+    "match": "not",
+    "reason": "Reference impact is diversion of research and funding toward suboptimal models; generated impact is overconfident deployment of unreliable models, missing both the affected party (research/funding community) and the damage type.",
+    "reference": "Misleading conclusions about model competency divert research and funding toward suboptimal models.",
+    "generated": "Flawed MMLU scores conceal uneven factual and reasoning degradation, leading to overconfident deployment of unreliable quantized models."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "Causal arc from quantization distortion to unreliable aggregate scores and blind trust is present, but the final link to overconfident deployment replaces the reference's diversion of research, leaving the arc partially covered.",
+    "reference": "Post-training quantization of SSM weights and activations induces per-state-group approximation distortion, which in W4A8 Mamba MMLU evaluation exposes researchers to unreliable scores, leading to blind trust in rankings and diversion of research.",
+    "generated": "Post-training quantization distortion, through AI researchers evaluating quantized Mamba models on MMLU, triggers sole reliance on aggregate scores without distortion detection, leading to flawed scores concealing uneven factual and reasoning degradation and overconfident deployment."
+  }
+}

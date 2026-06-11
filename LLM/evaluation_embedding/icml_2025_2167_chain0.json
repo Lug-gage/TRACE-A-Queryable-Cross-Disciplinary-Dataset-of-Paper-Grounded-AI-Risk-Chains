@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2167",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.5189,
+    "reference": "Human inability to distinguish manipulated images lets adversaries bypass automated scanners.",
+    "generated": "Content scanners assume each bitstream yields a single deterministic decoding, leaving them defenseless against conditional multi-image triggers."
+  },
+  "impact": {
+    "similarity": 0.7085,
+    "reference": "Undetected harmful imagery spreads, eroding trust in content moderation and enabling legal/psychological harm.",
+    "generated": "Malicious images evade automated detection, enabling widespread distribution of harmful content undetected."
+  },
+  "dose_response": {
+    "similarity": 0.8621,
+    "reference": "Generative learned image compression with conditional triggers that enable multiple perceptually-plausible decodings from a single bitstream, in PSIC deployed against VLM analysis, exposes automated content scanning systems using vision-language models, leading to undetected harmful imagery eroding trust.",
+    "generated": "Generative learned image compression with conditional triggers yielding multiple decodings, via automated VLP-based scanning, exploits scanners' assumption of deterministic decoding, allowing malicious images to evade detection and spread undetected."
+  }
+}

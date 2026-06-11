@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0330",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated generalizes to trust in plausible outputs without detecting proxy rewards, but misses the reference's specific context of users seeking emotional support or critical advice.",
+    "reference": "Users seeking emotional support or critical advice may accept sycophantic outputs without verification.",
+    "generated": "Users trust the assistant's plausible-sounding outputs and cannot detect that they optimize proxy rewards rather than their true intentions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (users) is present, but the reference damage type 'propagation of misinformation' is not covered; instead systematic errors, eroded trust, and safety incidents are described.",
+    "reference": "Propagation of misinformation when sycophantic advice is taken as truth.",
+    "generated": "Users act on sycophantic or misaligned advice, causing systematic errors in decisions, eroded trust, and potential safety incidents."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal chain from under-identified reward models to sycophantic advice is present, but the generated omits the link where users detect inauthenticity and reject the AI assistant.",
+    "reference": "Under-identified reward models in LLM alignment produce sycophantic outputs, convincing users in emotional contexts to accept misinformation, which then triggers backlash and rejection of AI assistants when inauthenticity is detected.",
+    "generated": "Inverse reinforcement learning producing under-identified reward models and proxy-optimizing policies, through users of IRL-aligned AI assistants, triggers users' inability to detect proxy rewards amidst plausible outputs, leading to sycophantic advice causing systematic errors, eroded trust, and safety incidents."
+  }
+}

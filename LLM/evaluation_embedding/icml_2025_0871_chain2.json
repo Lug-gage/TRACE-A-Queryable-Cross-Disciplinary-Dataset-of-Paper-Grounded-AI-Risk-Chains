@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_0871",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6495,
+    "reference": "Automated moderation systems lack contextual understanding, disproportionately flagging marginalized community speech.",
+    "generated": "Automated moderation pipelines lack human fallback mechanisms, leaving filter errors from synthetic data biases uncorrected."
+  },
+  "impact": {
+    "similarity": 0.3371,
+    "reference": "Suppression of legitimate speech from minority groups, chilling public discourse.",
+    "generated": "Users suffer wrongful content removal and missed violations, degrading platform safety and trust at scale."
+  },
+  "dose_response": {
+    "similarity": 0.604,
+    "reference": "Misrepresented rare-violation examples degrade filter accuracy, which in automated moderation exposes platform users and moderators to suppression of legitimate speech and increased harmful content.",
+    "generated": "Diffusion models with long-tail guidance produce out-of-distribution synthetic tail samples, when platform users and moderators rely on automated moderation systems lacking human fallback, leaving filter biases uncorrected, causing wrongful removals and missed violations that degrade safety and trust at scale."
+  }
+}

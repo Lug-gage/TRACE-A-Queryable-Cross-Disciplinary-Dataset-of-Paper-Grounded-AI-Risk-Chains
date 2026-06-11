@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1921",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes students' uncritical acceptance as a sensitivity condition; generated describes lack of detection mechanisms in educators and learners, a related but different condition.",
+    "reference": "Students uncritically accept AI explanations as authoritative sources of knowledge.",
+    "generated": "Educators and learners lack mechanisms to detect hallucinated temporal misalignment between spoken explanations and visual content."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "Both reference and generated state affected party as students and damage type as misconceptions and degraded learning.",
+    "reference": "Incorrect knowledge acquisition leading to long-term misconceptions in learning.",
+    "generated": "Students internalize misconceptions from misleading video analyses, degrading learning outcomes and trust in AI tools."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc shares the start (multimodal hallucination) and end (misconceptions, eroded trust) but replaces the intermediate step of uncritical acceptance triggered by authoritative-seeming AI with an inability to detect misalignment triggered by the hallucinated answers, altering causal logic.",
+    "reference": "Multimodal fusion hallucination leads to incorrect speech-visual grounding, which in educational settings exposes uncritical students to authoritative-seeming AI, causing long-term knowledge misconceptions and trust erosion.",
+    "generated": "Multimodal fusion of speech and video via unpaired training induces hallucinated answers; through students and teachers using AI for video learning, it triggers inability to detect temporal misalignment, leading to misconception internalization, degraded learning, and eroded trust."
+  }
+}

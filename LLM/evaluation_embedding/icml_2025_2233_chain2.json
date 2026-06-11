@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2233",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.6732,
+    "reference": "Chatbot's outdated language norms degrade user trust and interaction quality.",
+    "generated": "Users lack independent means to verify chatbot response alignment with current conversational norms, making them susceptible to subtle misalignment."
+  },
+  "impact": {
+    "similarity": 0.6542,
+    "reference": "Customer frustration, increased escalations to human agents, and brand damage.",
+    "generated": "Customer frustration, eroded trust, and degraded service quality as chatbot interactions reflect obsolete conversational norms."
+  },
+  "dose_response": {
+    "similarity": 0.8053,
+    "reference": "Estimation error from exponential discounting distorts reward signals, which in online LLM alignment for chatbots with evolving conversational norms exposes users interacting with LLM chatbots, leading to customer frustration, increased escalations, and brand damage.",
+    "generated": "Estimation error from exponential discounting of past feedback under unknown preference drift, through customer service chatbot interactions, triggers users' inability to verify alignment with current norms, leading to frustration, eroded trust, and degraded service quality from obsolete conversational norms."
+  }
+}

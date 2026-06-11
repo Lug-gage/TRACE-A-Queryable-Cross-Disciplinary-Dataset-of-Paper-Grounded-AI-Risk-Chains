@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2536",
+  "chain_index": 2,
+  "title": "Textural or Textual How Vision-Language Models Read Text in Images",
+  "abstract": "Typographic attacks are often attributed to the ability of multimodal pre-trained models to fuse textual semantics into visual representations, yet the mechanisms and locus of such interference remain unclear. We examine whether such models genuinely encode textual semantics or primarily rely on texture-based visual features. To disentangle orthographic form from meaning, we introduce the ToT dataset, which includes controlled word pairs that either share semantics with distinct appearances (synonyms) or share appearance with differing semantics (paronyms). A layerwise analysis of Intrinsic Dimension (ID) reveals that early layers exhibit competing dynamics between orthographic and semantic representations. In later layers, semantic accuracy increases as ID decreases, but this improvement largely stems from orthographic disambiguation. Notably, clear semantic differentiation emerges only in the final block, challenging the common assumption that semantic understanding is progressively constructed across depth. These findings reveal how current vision-language models construct text representations through texture-dependent processes, prompting a reconsideration of the gap between visual perception and semantic understanding. The code is available at: https://github. com/Ovsia/Textural-or-Textual",
+  "impact": "This paper investigates how multimodal vision models process textual semantics, revealing that early layers rely more on visual textures than on textual meaning, which makes these models vulnerable to typographic attacks. By shedding light on the internal mechanisms of these models, this work advances the transparency and accountability of machine learning systems. It contributes to the broader effort to make AI more interpretable and aligned with societal values, particularly as these systems are increasingly deployed in decision-making processes. From a societal perspective, the vulnerabilities exposed in this research have important implications for the safety and fairness of AI systems in real-world applications. Typographic attacks could lead to unintended consequences in fields such as law enforcement, healthcare, or finance, where misinterpretations could disproportionately affect vulnerable groups. Ensuring that models are both transparent and secure is crucial for their responsible integration into these high-impact areas.",
+  "query_input": {
+    "scenario": "Accessibility tools for visually impaired users that read aloud text from images",
+    "issue": "Maliciously altered text in the environment causes the app to vocalize harmful or misleading instructions.",
+    "hazard": [
+      "Vision-language models that read and semantically interpret text in images create an attack surface for adversarial text manipulations that exploit orthographic, semantic, or perceptual ambiguities."
+    ],
+    "exposure": [
+      "Blind and low-vision individuals using VLM-based reading apps in public spaces."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Blind/low-vision users lack the visual ability to verify app-read text against physical reality, creating total dependence on VLM interpretations.",
+    "impact": "Users follow maliciously altered vocal instructions, leading to physical danger, misdirection, or exploitation in public spaces.",
+    "dose_response": "Vision-language models create an attack surface for adversarial text manipulations, which, when used by blind/low-vision individuals in public reading apps, triggers total dependence on unverifiable interpretations, leading to users following malicious vocal instructions and experiencing physical danger."
+  },
+  "reference": {
+    "dose_response": [
+      "Adversarial text manipulations exploiting VLM ambiguities enable vocalization of harmful instructions, which in accessibility tools exposes blind users to physical harm and psychological distress."
+    ],
+    "vulnerability": [
+      "Users with visual impairments cannot visually verify the source text, creating complete reliance on VLM output.",
+      "Publicly placed adversarial text can target a vulnerable population at scale."
+    ],
+    "impact": [
+      "Physical harm if users follow malicious navigation or safety instructions.",
+      "Psychological distress and erosion of trust in assistive technology."
+    ]
+  }
+}

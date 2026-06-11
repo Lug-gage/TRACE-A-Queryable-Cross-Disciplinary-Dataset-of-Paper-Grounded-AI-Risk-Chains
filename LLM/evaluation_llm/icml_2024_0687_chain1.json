@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0687",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Both state that safety mechanisms are evaded by covert fine-tuning, allowing harmful encoded content to bypass detection.",
+    "reference": "Fine-tuning APIs overlook encoded malicious prompts, allowing harmful behaviors to slip past safety mechanisms.",
+    "generated": "End-users lack the means to detect or filter encoded harmful outputs because they depend on provider safety mechanisms that covert fine-tuning evades."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "End-users and misinformation are covered, but emotional distress from the reference is missing; added security breaches and physical harm do not compensate.",
+    "reference": "End-users exposed to harmful outputs may suffer emotional distress and propagate misinformation.",
+    "generated": "End-users are exposed to and may act on covert harmful instructions, leading to misinformation, security breaches, and physical harm."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The causal chain up to exposure to harmful instructions via evaded safety is present, but the link to emotional distress and erosion of trust is replaced with other harms, missing that specific outcome.",
+    "reference": "Covertly embedding harmful behaviors via fine-tuning with encoded triggers enables end-users to interact with malicious fine-tuned models via API, where safety classifiers overlook encoded prompts, leading to emotional distress and erosion of trust in commercial APIs.",
+    "generated": "Covertly embedding harmful behaviors via fine-tuning that evade safety evaluation, through end-user API interactions, triggers reliance on evaded safety mechanisms, leading to exposure to harmful instructions and consequent misinformation, security breaches, or physical harm."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0661",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5988,
+    "reference": "Users over-rely on AI content and exhibit low skepticism toward the assistant.",
+    "generated": "Users rely on the assistant's safety filters and lack the ability to detect corrupted outputs."
+  },
+  "impact": {
+    "similarity": 0.4313,
+    "reference": "Users form false memories from subtle misinformation, as documented in chatbot studies.",
+    "generated": "Users ingest toxic, manipulative, or false information, leading to misinformed decisions or harmful behaviors."
+  },
+  "dose_response": {
+    "similarity": 0.8034,
+    "reference": "When users query an assistant corrupt by infectious jailbreak prompts propagated via adversarial images, they form false memories and make harmful decisions based on toxic advice.",
+    "generated": "Jailbreak prompts propagate infectiously among agents via adversarial images, through users querying the contaminated assistant system, triggers reliance on safety filters and inability to detect corrupted outputs, leading to ingestion of toxic, manipulative, false information, misinformed decisions, and harmful behaviors."
+  }
+}

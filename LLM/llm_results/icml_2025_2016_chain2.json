@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2025_2016",
+  "chain_index": 2,
+  "title": "Feature out! Let Raw Image as Your Condition for Blind Face Restoration",
+  "abstract": "Blind face restoration (BFR), which involves converting low-quality (LQ) images into high-quality (HQ) images, remains challenging due to complex and unknown degradations. While previous diffusion-based methods utilize feature extractors from LQ images as guidance, using raw LQ images directly as the starting point for the reverse diffusion process offers a theoretically optimal solution. In this work, we propose Pseudo-Hashing Image-to-image Schr ̈odinger Bridge (P-I2SB), a novel framework inspired by optimal mass transport problems, which enhances the restoration potential of Schr ̈odinger Bridge (SB) by correcting data distributions and effectively learning the optimal transport path between any two data distributions. Notably, we theoretically explore and identify that existing methods are limited by the optimality and reversibility of solutions in SB, leading to suboptimal performance. Our approach involves preprocessing HQ images during training by hashing them into pseudo-samples according to a rule related to LQ images, ensuring structural similarity in distribution. This guarantees optimal and reversible solutions in SB, enabling the inference process to learn effectively and allowing P-I2SB to achieve state-of-the-art results in BFR, with more natural textures and retained inference speed compared to previous methods.",
+  "impact": "This project aims to provide an effective generative approach to address the problem of blind face restoration (BFR). Our method theoretically investigates the ill-posedness of Schr ̈odinger Bridge solutions in the context of BFR, proposing a novel framework that directly uses degraded images as conditions for restoration through preprocessing of data distributions, eliminating the need for any feature extraction design. However, like other generative technologies, there is potential for misuse. Malicious entities could combine this method with target generative models to produce misleading or harmful 2D facial images. Addressing these ethical issues is crucial, and future research in 2D generation must prioritize understanding and mitigating these risks to ensure the responsible application of these technologies.",
+  "query_input": {
+    "scenario": "Forensic image analysis for law enforcement",
+    "issue": "Artifacts in restored evidence images could affect investigative outcomes.",
+    "hazard": [
+      "Joint estimation of degradation parameters and data distribution correction via pseudo-hashing can lead to overfitting to training data, degrading restoration fidelity."
+    ],
+    "exposure": [
+      "Forensic analysts using restored images in investigations."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Analysts' reliance on automated restoration without ground-truth verification leaves them unable to detect overfitting artifacts.",
+    "impact": "Investigative errors and wrongful convictions arise from artifact-distorted restored images.",
+    "dose_response": "Overfitting from joint estimation and pseudo-hashing, through forensic analysts' use of restored images, triggers reliance on automated restoration without ground-truth verification, leading to artifact-distorted evidence causing investigative errors and wrongful convictions."
+  },
+  "reference": {
+    "dose_response": [
+      "Overfitting in forensic image restoration introduces artifacts, and when forensic analysts use restored images without independent quality assessment, false matches can lead to wrongful convictions."
+    ],
+    "vulnerability": [
+      "Forensic analysts rely on restored images without independent quality assessment, increasing risk of artifact-driven false identifications."
+    ],
+    "impact": [
+      "False matches lead to wrongful convictions or investigative dead ends, eroding public trust in forensic evidence."
+    ]
+  }
+}

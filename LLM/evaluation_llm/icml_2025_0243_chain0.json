@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2025_0243",
+  "chain_index": 0,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes community-level conditions (co-authorship, indistinguishability) but omits the reference's system sensitivity—average fairness optimization disregarding tail risk.",
+    "reference": "Average fairness optimization disregards the tail risk of disproportionately high rejection for under-represented groups.",
+    "generated": "Submitters from small communities often co-author with high-volume labs, making their papers indistinguishable from excessive submissions and defenseless against average-fairness trade-offs."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (small community authors) is covered, but the reference's damage (disillusionment, reduced future submissions and diversity) is replaced with denied venues, underrepresentation, and stalled career.",
+    "reference": "Authors from small communities become disillusioned, reducing future submissions and diversity of ideas.",
+    "generated": "Disproportionate desk-rejection denies them publication venues, reinforcing underrepresentation and stalling career progress in AI research."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc incorrectly makes disproportionate desk-rejection cause papers' indistinguishability and defenselessness, reversing the causal logic and missing the original sequence of disregard→exposure→disillusionment→reduced diversity.",
+    "reference": "Optimization-based desk-rejection mechanisms trading off conflicting definitions under model uncertainty enable average fairness optimization to disregard worst-case group fairness, which in the CVPR 2025 algorithm scenario exposes small research communities to disproportionate desk-rejection, leading to disillusionment and reduced diversity.",
+    "generated": "Optimization-based desk-rejection trade-offs under model uncertainty, through disproportionate desk-rejection of small-community submitters, trigger their papers' indistinguishability from excessive submissions and defenselessness against average-fairness trade-offs, leading to denied publication venues that reinforce underrepresentation and stall career progress."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2025_2433",
+  "chain_index": 0,
+  "title": "Language Models over Canonical Byte-Pair Encodings",
+  "abstract": "Modern language models represent probability distributions over character strings as distributions over (shorter) token strings derived via a deterministic tokenizer, such as byte-pair encoding. While this approach is highly effective at scaling up language models to large corpora, its current incarnations have a concerning property: the model assigns nonzero probability mass to an exponential number of noncanonical token encodings of each character string--these are token strings that decode to valid character strings but are impossible under the deterministic tokenizer (i.e., they will never be seen in any training corpus, no matter how large). This misallocation is both erroneous, as noncanonical strings never appear in training data, and wasteful, diverting probability mass away from plausible outputs. These are avoidable mistakes! In this work, we propose methods to enforce canonicality in token-level language models, ensuring that only canonical token strings are assigned positive probability. We present two approaches: (1) canonicality by conditioning, leveraging test-time inference strategies without additional training, and (2) canonicality by construction, a model parameterization that guarantees canonical outputs but requires training. We demonstrate that fixing canonicality mistakes improves the likelihood of held-out data for several models and corpora. github.com/genlm/canonical-icml-2025",
+  "impact": "Potential benefits. By introducing methods to enforce canonicality, we improve a given model’s fidelity to the underlying distribution that generated the text. These contributions have broad implications for the reliability of language models, particularly in applications where precise probability estimates are crucial. By eliminating avoidable modeling errors, we advance the goal of more reliable and robust language models. Potential harms. Constraining tokenization may inadvertently reduce robustness to rare, noisy, or adversarial inputs by ruling out alternative tokenizations of the same character string. While the canonicality constraint does not remove any character strings from the language, it does restrict the model to assign nonzero probability only to a single canonical tokenization of each string. This may disproportionately affect rare or unconventional spellings, as their probability mass may be less sharply concentrated on a single tokenization. Future work should provide a deeper analysis of whether or not canonicality enforcement helps or hurts in these settings to ensure fair and robust language model behavior across diverse linguistic contexts.",
+  "query_input": {
+    "scenario": "Multilingual text generation with a language model using a mismatched tokenizer",
+    "issue": "Noncanonical token encodings produce linguistically meaningless segments, degrading text quality for underrepresented languages.",
+    "hazard": [
+      "Tokenization mismatch between training and inference induces noncanonical encodings, distorting token probability distributions."
+    ],
+    "exposure": [
+      "Speakers of low-resource languages using LLM-powered text generation tools"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Low-resource languages lack tokenizer training data, leaving them defenseless against distribution-distorting noncanonical token encodings.",
+    "impact": "Speakers receive linguistically meaningless, garbled text, rendering generation tools unusable for their languages.",
+    "dose_response": "Tokenization mismatch between training and inference induces noncanonical encodings that, through low-resource language speakers using LLM text generators, exploit defenselessness from lacking tokenizer training data, leading to garbled meaningless text and unusable tools."
+  },
+  "reference": {
+    "dose_response": [
+      "Tokenization mismatch distorts token probabilities, which in multilingual text generation exposes low-resource language speakers to linguistically meaningless segments, leading to misinformation spread and economic exclusion."
+    ],
+    "vulnerability": [
+      "Low-resource language communities lack alternative tools, forcing reliance on degraded LLM outputs.",
+      "Users in critical domains (health, law) cannot detect subtle semantic corruption from tokenization errors."
+    ],
+    "impact": [
+      "Misinformation spreads in low-resource language communities due to plausible but corrupted text.",
+      "Economic exclusion when speakers of underrepresented languages cannot access reliable AI services."
+    ]
+  }
+}

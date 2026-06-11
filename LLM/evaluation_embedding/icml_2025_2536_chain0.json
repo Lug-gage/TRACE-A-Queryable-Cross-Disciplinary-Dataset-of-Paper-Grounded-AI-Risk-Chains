@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2536",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6811,
+    "reference": "Over-reliance on VLM text reading without redundant sensor fusion creates single point of failure for safety-critical sign interpretation.",
+    "generated": "Drivers and pedestrians have no real-time means to verify or override AV sign interpretations, relying completely on the VLM's accuracy."
+  },
+  "impact": {
+    "similarity": 0.6662,
+    "reference": "Collisions causing injury or death to pedestrians and vehicle occupants.",
+    "generated": "Incorrect AV maneuvers cause collisions resulting in injury or death to drivers, passengers, and pedestrians."
+  },
+  "dose_response": {
+    "similarity": 0.823,
+    "reference": "Adversarial text manipulations exploiting VLM ambiguities enable false road sign classification, which in autonomous driving exposes drivers and pedestrians to navigation errors, leading to collisions and eroded public trust.",
+    "generated": "Vision-language models interpreting road signs enable adversarial text manipulations that, through drivers’ and pedestrians’ exposure to misread sign errors and their inability to verify interpretations over time, cause collisions leading to injury or death."
+  }
+}

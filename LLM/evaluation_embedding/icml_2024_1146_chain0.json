@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1146",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.8531,
+    "reference": "Operators over-rely on GNN explanations as ground truth without adversarial robustness checks.",
+    "generated": "Operators and engineers rely on GNN explanations without adversarial robustness checks, leaving them unable to distinguish manipulated interpretations from genuine ones."
+  },
+  "impact": {
+    "similarity": 0.5595,
+    "reference": "Misled engineers fail to mitigate critical failures, causing power outages and economic loss.",
+    "generated": "Undetected operational threats lead to erroneous security assessments, risking cascading physical infrastructure failures."
+  },
+  "dose_response": {
+    "similarity": 0.8678,
+    "reference": "Post-hoc GNN explainer vulnerability to graph perturbations enables altered explanations that, when power grid operators over-rely on them without robustness checks, cause misled engineers to fail to mitigate critical failures, leading to power outages and economic loss.",
+    "generated": "Post-hoc GNN explainers vulnerable to graph perturbations altering explanations but not predictions, through operators relying on them for security assessment, trigger unchecked reliance that makes manipulated interpretations indistinguishable, leading to undetected operational threats, erroneous security assessments, and cascading infrastructure failures."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2541",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.5231,
+    "reference": "Mathematicians defer to multi-agent consensus as a proxy for proof validity, bypassing peer review.",
+    "generated": "Institutional blind trust in formal verification without semantic review, rendering researchers unable to detect semantically misaligned proofs."
+  },
+  "impact": {
+    "similarity": 0.818,
+    "reference": "Contamination of mathematical literature with unfounded results, undermining future research.",
+    "generated": "Corruption of formal mathematics literature with unfounded theorems, eroding trust and misdirecting subsequent research."
+  },
+  "dose_response": {
+    "similarity": 0.8453,
+    "reference": "Multi-agent collaboration amplifies propagation of formally-valid but semantically-misaligned proofs, which when relied upon by mathematicians for proof discovery leads to contamination of mathematical literature and collapse of trust.",
+    "generated": "Multi-agent amplification of formally-valid but semantically-misaligned proofs, through reliance by mathematicians on multi-agent LLM provers, triggers blind institutional trust in formal verification without semantic review, corrupting formal mathematics with unfounded theorems, eroding trust and misdirecting research."
+  }
+}

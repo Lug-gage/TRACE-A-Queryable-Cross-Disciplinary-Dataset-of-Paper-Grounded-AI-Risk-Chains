@@ -1,0 +1,33 @@
+{
+  "paper_id": "icml_2024_2594",
+  "chain_index": 2,
+  "title": "Stealthy Imitation Reward-guided Environment-free Policy Stealing",
+  "abstract": "Deep reinforcement learning policies, which are integral to modern control systems, represent valuable intellectual property. The development of these policies demands considerable resources, such as domain expertise, simulation fidelity, and real-world validation. These policies are potentially vulnerable to model stealing attacks, which aim to replicate their functionality using only black-box access. In this paper, we propose Stealthy Imitation, the first attack designed to steal policies without access to the environment or knowledge of the input range. This setup has not been considered by previous model stealing methods. Lacking access to the victim’s input states distribution, Stealthy Imitation fits a reward model that allows to approximate it. We show that the victim policy is harder to imitate when the distribution of the attack queries matches that of the victim. We evaluate our approach across diverse, high-dimensional control tasks and consistently outperform prior data-free approaches adapted for policy stealing. Lastly, we propose a countermeasure that significantly diminishes the effectiveness of the attack.1",
+  "impact": "This paper presents work aimed at raising awareness among developers and those involved in deployment about the risks associated with Machine Learning. While we are demonstrating an attack in this work, we use a hypothetical simulation setup that enables the evaluation of generic attack vectors that do not target particular systems and do not cause harm. Therefore, no responsible disclosure procedure is necessary or even applies to our work. However, given the importance of the problem and the deployment of RL in control systems, we believe it is now the time to evaluate such attacks and inform developers about potential risks. The potential negative societal impacts include the possibility that the proposed attack could be used against real control systems. However, we also propose a defense and encourage policy owners to use it. Similar to commonly published attacks in ML and security and privacy venues, our goal is to provide a novel evaluation that has the goal of, among others, improving the safety of such systems. The",
+  "query_input": {
+    "scenario": "Model stealing from pre-trained agents in simulation benchmarks",
+    "issue": "Extracted policy can be deployed in real-world settings, bypassing safety and licensing checks",
+    "hazard": [
+      "Black-box imitation learning enables extraction of proprietary RL policies from observed state-action pairs."
+    ],
+    "exposure": [
+      "Research institutions sharing RL agents for evaluation via black-box queries"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Institutions assume black-box query access is safe and lack defenses like query monitoring or watermarking, making policy extraction possible.",
+    "impact": "Stolen RL policies are deployed in real-world systems without safety validation or licensing, causing IP theft and potential safety hazards.",
+    "dose_response": "Black-box imitation learning extracts policies from observed pairs; through black-box sharing by research institutions, the assumption of safe access without monitoring triggers deployment of stolen policies in real-world systems without validation or licensing, causing IP theft and safety hazards."
+  },
+  "reference": {
+    "dose_response": [
+      "Black-box imitation learning extracts full RL policies from unrestricted simulation queries, so research institutions sharing agents via black-box evaluation enable direct real-world deployment of untested clones, causing accidents and chilling research sharing."
+    ],
+    "vulnerability": [
+      "Unrestricted simulation queries expose full policy, allowing direct real-world deployment without safety validation."
+    ],
+    "impact": [
+      "Untested policy clones cause accidents, shifting liability to developers and chilling agent sharing for research."
+    ]
+  }
+}

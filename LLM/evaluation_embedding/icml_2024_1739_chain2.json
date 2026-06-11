@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_1739",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5792,
+    "reference": "Digital literacy gaps create unequal ability to optimize resumes for screening algorithms.",
+    "generated": "Job seekers' unequal resume tailoring capabilities leave those with less skill defenseless against classifier shifts under cost uncertainty."
+  },
+  "impact": {
+    "similarity": 0.6695,
+    "reference": "Disproportionate rejection of marginalized groups entrenches employment segregation.",
+    "generated": "Systematic exclusion of less-tailoring-capable job seekers from hiring, deepening labor market inequality."
+  },
+  "dose_response": {
+    "similarity": 0.856,
+    "reference": "Minimax robust classification under cost uncertainty enables job seekers to tailor resumes to keywords, which in automated hiring screening exposes digital literacy gaps, leading to disproportionate rejection of marginalized groups and entrenched employment segregation.",
+    "generated": "Minimax robust strategic classification under cost uncertainty shifts prediction outcomes through resume keyword matching, triggering defenselessness in less tailoring-capable job seekers, leading to systematic exclusion and deepened labor market inequality."
+  }
+}

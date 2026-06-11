@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_2235",
+  "chain_index": 3,
+  "vulnerability": {
+    "similarity": 0.7521,
+    "reference": "Shoppers trust virtual try-on images as accurate, but pose-garment misalignment creates false expectations.",
+    "generated": "Shoppers and retailers rely entirely on generated try-on visuals for fit decisions, lacking ground-truth or tools to detect garment-pose misalignment."
+  },
+  "impact": {
+    "similarity": 0.6802,
+    "reference": "Increased product returns, consumer dissatisfaction, loss of retailer credibility.",
+    "generated": "High product return rates, consumer dissatisfaction, and eroded trust in virtual try-on experiences and retailer credibility."
+  },
+  "dose_response": {
+    "similarity": 0.8356,
+    "reference": "Conditionally-controlled generation misaligns garment to pose; shoppers trust try-on images as accurate, creating expectation-reality gaps that increase returns and erode retailer credibility.",
+    "generated": "Conditionally-controlled consistency generation producing misaligned images, through online shoppers and retailers evaluating virtual try-on results, triggers complete reliance on generated visuals without detection tools, leading to high return rates, dissatisfaction, and eroded trust."
+  }
+}

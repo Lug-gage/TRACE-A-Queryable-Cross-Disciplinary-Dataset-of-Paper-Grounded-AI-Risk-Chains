@@ -1,0 +1,35 @@
+{
+  "paper_id": "icml_2024_0319",
+  "chain_index": 0,
+  "title": "BadPart Unified Black-box Adversarial Patch Attacks against Pixel-wise Regression Tasks",
+  "abstract": "Pixel-wise regression tasks (e.g., monocular depth estimation (MDE) and optical flow estimation (OFE)) have been widely involved in our daily life in applications like autonomous driving, augmented reality and video composition. Although certain applications are security-critical or bear societal significance, the adversarial robustness of such models are not sufficiently studied, especially in the black-box scenario. In this work, we introduce the first unified black-box adversarial patch attack framework against pixel-wise regression tasks, aiming to identify the vulnerabilities of these models under query-based black-box attacks. We propose a novel square-based adversarial patch optimization framework and employ probabilistic square sampling and score-based gradient estimation techniques to generate the patch effectively and efficiently, overcoming the scalability problem of previous black-box patch attacks. Our attack prototype, named BADPART, is evaluated on both MDE and OFE tasks, utilizing a total of 7 models. BADPART surpasses 3 baseline methods in terms of both attack performance and efficiency. We also apply BADPART on the Google online service for portrait depth estimation, causing 43.5% relative distance error with 50K queries. State-of-the-art (SOTA) countermeasures cannot defend our attack effectively.",
+  "impact": "The unified adversarial patch attack that we proposed against pixel-wise regression models aims to disclose the vulnerabilities in such models under query-based black-box attacks. Our work highlights potential security risks in applications that rely on those models, such as autonomous driving, virtual reality, and video compositions. We hope to draw the attention of the related developers, and motivate the machine learning (ML) community to create more robust models or defense mechanisms against these types of attacks. This study around the robustness of models is aligned with many prior works/attacks in the ML community, and aims to advance the field of ML. Nevertheless, it is also worth mentioning that our technique can be used for benign purposes, such as protecting privacy, as we discussed in §5.5.",
+  "query_input": {
+    "scenario": "Autonomous driving: vehicle using monocular depth estimation for perception and path planning.",
+    "issue": "Adversarial patch placed in driving scene causes wrong depth predictions, leading to misjudged obstacle distances.",
+    "hazard": [
+      "Black-box adversarial patch attack that induces arbitrary errors in dense pixel-wise regression models via query-based optimization."
+    ],
+    "exposure": [
+      "Autonomous vehicles relying on monocular depth estimation for obstacle avoidance and navigation."
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Monocular depth estimation models lack adversarial robustness, enabling safety-critical navigation decisions to be based on manipulated perceptions.",
+    "impact": "Erroneous depth predictions cause misjudged obstacle distances, leading to vehicle collisions, property damage, and occupant injuries.",
+    "dose_response": "Black-box adversarial patch attacks inducing manipulated depth perceptions, through autonomous vehicles relying on monocular depth estimation for obstacle avoidance, trigger the models' lack of adversarial robustness, leading to misjudged obstacle distances that cause vehicle collisions, property damage, and occupant injuries."
+  },
+  "reference": {
+    "dose_response": [
+      "Black-box adversarial patch attack induces arbitrary depth errors, which in autonomous driving exposes vehicles to misjudged obstacle distances, leading to collisions, injuries, and public trust erosion."
+    ],
+    "vulnerability": [
+      "No redundant depth sensing; system blindly trusts perturbed monocular depth estimates.",
+      "Lack of adversarial training and absence of human-in-the-loop monitoring."
+    ],
+    "impact": [
+      "Vehicle collisions with obstacles/pedestrians resulting in injury or fatality.",
+      "Public trust erosion and regulatory slowdown for autonomous vehicle deployment."
+    ]
+  }
+}

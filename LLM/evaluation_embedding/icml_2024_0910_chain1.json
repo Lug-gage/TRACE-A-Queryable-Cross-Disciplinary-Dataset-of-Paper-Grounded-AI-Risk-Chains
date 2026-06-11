@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2024_0910",
+  "chain_index": 1,
+  "vulnerability": {
+    "similarity": 0.6562,
+    "reference": "Driver overtrust in automation combined with absence of uncertainty-based alerts prevents safe human takeover.",
+    "generated": "Road users lack awareness of and control over the vehicle’s internal uncertainty estimates, preventing them from intervening against overconfident perception errors."
+  },
+  "impact": {
+    "similarity": 0.6836,
+    "reference": "Collisions with novel objects, pedestrian injuries, and erosion of public trust in autonomous vehicles.",
+    "generated": "Undetected novel objects cause collisions that result in physical injuries and fatalities among drivers and pedestrians."
+  },
+  "dose_response": {
+    "similarity": 0.8572,
+    "reference": "Miscalibrated evidential uncertainty in autonomous driving perception fails to alert drivers to novel objects, enabling overtrust and leading to collisions and pedestrian injuries.",
+    "generated": "Systematic miscalibration of evidential epistemic uncertainty estimates, through exposure of drivers and pedestrians in autonomous driving zones, triggers lack of awareness and control over these estimates, preventing intervention, leading to undetected novel objects causing injury and fatal collisions."
+  }
+}

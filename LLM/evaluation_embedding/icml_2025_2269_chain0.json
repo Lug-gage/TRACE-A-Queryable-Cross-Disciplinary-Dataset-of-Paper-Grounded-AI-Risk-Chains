@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_2269",
+  "chain_index": 0,
+  "vulnerability": {
+    "similarity": 0.6834,
+    "reference": "Forecasters who trust deterministic AI output without cross-checking physically unrealistic small-scale structures.",
+    "generated": "Meteorologists trust deterministic model outputs for warning decisions without tools to distinguish spurious spectral features from true forecast skill."
+  },
+  "impact": {
+    "similarity": 0.641,
+    "reference": "Delayed severe weather warnings because forecasters doubt the model’s credibility, leading to public unpreparedness.",
+    "generated": "Erroneous public warnings reduce community preparedness and amplify harm from extreme weather events."
+  },
+  "dose_response": {
+    "similarity": 0.8151,
+    "reference": "Double penalty loss enables physically unrealistic high-resolution details, which in operational deterministic forecasting misleads meteorologists, causing delayed warnings and public unpreparedness.",
+    "generated": "Double penalty spherical harmonic loss generating unrealistic high-resolution details, through meteorologists issuing deterministic warnings, triggers trust without distinguishing spurious features, leading to erroneous warnings that reduce preparedness and amplify extreme weather harm."
+  }
+}

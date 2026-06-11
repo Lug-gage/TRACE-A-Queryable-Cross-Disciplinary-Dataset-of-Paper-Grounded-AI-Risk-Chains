@@ -1,0 +1,34 @@
+{
+  "paper_id": "icml_2025_1325",
+  "chain_index": 0,
+  "title": "DRAG Data Reconstruction Attack using Guided Diffusion",
+  "abstract": "With the rise of large foundation models, split inference (SI) has emerged as a popular computational paradigm for deploying models across lightweight edge devices and cloud servers, addressing data privacy and computational cost concerns. However, most existing data reconstruction attacks have focused on smaller CNN classification models, leaving the privacy risks of foundation models in SI settings largely unexplored. To address this gap, we propose a novel data reconstruction attack based on guided diffusion, which leverages the rich prior knowledge embedded in a latent diffusion model (LDM) pre-trained on a large-scale dataset. Our method performs iterative reconstruction on the LDM’s learned image prior, effectively generating high-fidelity images resembling the original data from their intermediate representations (IR). Extensive experiments demonstrate that our approach significantly outperforms state-of-the-art methods, both qualitatively and quantitatively, in reconstructing data from deeplayer IRs of the vision foundation model. The results highlight the urgent need for more robust privacy protection mechanisms for large models in SI scenarios. Code is available at: https: //github.com/ntuaislab/DRAG",
+  "impact": "This work investigates the privacy risks of large vision foundation models in the split inference framework. As these models are widely adopted in downstream tasks, privacy concerns become crucial. Our proposed DRAG method shows that, unlike smaller CNN models studied previously, large vision models are also vulnerable to embedding reconstruction attacks, posing risks to applications like domestic robots and cyber-physical systems. These findings provide key insights for ML developers and users, urging a re-evaluation of privacy risks and the development of more robust, privacy-preserving architectures.",
+  "query_input": {
+    "scenario": "Edge-cloud split inference for autonomous driving",
+    "issue": "Private camera frames reconstructed from intermediate features transmitted to cloud",
+    "hazard": [
+      "Intermediate representations in split inference leak private visual data, enabling reconstruction via guided diffusion with foundation model priors."
+    ],
+    "exposure": [
+      "Passengers and pedestrians in autonomous vehicle camera frames"
+    ]
+  },
+  "hipporag_result": {
+    "vulnerability": "Split inference lacks privacy safeguards on intermediate features, leaving individuals in vehicle camera frames unable to prevent visual data reconstruction.",
+    "impact": "Individuals' visual identities and activities in vehicle frames are reconstructed, eroding privacy and enabling tracking or targeting.",
+    "dose_response": "Intermediate representations leak private visual data via guided diffusion, through passengers and pedestrians in camera frames, triggering lack of privacy safeguards, leading to reconstructed identities and activities that erode privacy and enable tracking."
+  },
+  "reference": {
+    "dose_response": [
+      "The retention of spatial detail in intermediate features enables diffusion-based reconstruction of camera frames, which when transmitted from autonomous vehicles exposes pedestrians and passengers to face and license plate recovery, leading to tracking and mass surveillance."
+    ],
+    "vulnerability": [
+      "Intermediate features in split inference retain sufficient spatial detail to enable guided diffusion reconstruction of private camera frames."
+    ],
+    "impact": [
+      "Reconstructed frames expose pedestrians' faces and license plates, enabling tracking, stalking, and mass surveillance.",
+      "Loss of passenger privacy in ride-share vehicles undermines trust in autonomous mobility services."
+    ]
+  }
+}

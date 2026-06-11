@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_1592",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Reference describes stroke lesion heterogeneity uncaptured in training causing value misestimation; generated describes post-stroke lack of plasticity to counteract maladaptive stimulation. These are related but distinct sensitivity conditions.",
+    "reference": "Stroke lesion heterogeneity uncaptured in training leads to value misestimation for atypical motor cortices during recovery.",
+    "generated": "Post-stroke brains lack the plasticity to counteract maladaptive stimulation, enabling harmful patterns to disrupt recovery."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Patient harm (impaired motor relearning, prolonged disability) is present, but reference also includes caregiver strain and societal healthcare costs, which are missing.",
+    "reference": "Inappropriate stimulation impairs motor relearning, prolonging disability and increasing caregiver strain and societal healthcare costs.",
+    "generated": "Worsened motor deficits and prolonged disability, undermining rehabilitation progress and functional independence."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The arc from value overestimation to unsafe stimulation is shared, but the generated replaces 'inappropriate patterns' with exploitation of limited plasticity, missing that intermediate link and its downstream causation.",
+    "reference": "Value overestimation on out-of-distribution neural states enables unsafe stimulation actions, which in stroke survivors using a neural coprocessor for motor rehabilitation exposes them to inappropriate patterns, leading to impaired motor relearning, prolonged disability, increased caregiver strain, and societal healthcare costs.",
+    "generated": "Value overestimation on out-of-distribution neural states in model-based RL policies produces unsafe stimulation, which through stroke survivors' neural coprocessor exploits post-stroke brains' limited plasticity, causing maladaptive disruption that worsens motor deficits, prolongs disability, and undermines rehabilitation and functional independence."
+  }
+}

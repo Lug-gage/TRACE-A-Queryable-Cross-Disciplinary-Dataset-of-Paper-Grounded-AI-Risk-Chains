@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0553",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "covered",
+    "reason": "Loan officers' reliance on scalar values and inability to parse stochastic explanations captures the same sensitivity condition of focusing on averages and ignoring distribution tails.",
+    "reference": "Loan officers focus on average attributions, ignoring distribution tails, leading to unfair risk assessments.",
+    "generated": "Loan officers' reliance on scalar Shapley values and lack of distributional reasoning skills prevent them from parsing stochastic explanations."
+  },
+  "impact": {
+    "match": "covered",
+    "reason": "The generated description includes 'increased default risk across the lending portfolio', which corresponds to financial losses from uncaught tail-risk defaults, covering both the affected party (lender) and damage type (financial loss).",
+    "reference": "Systemic bias against minority applicants or financial losses from uncaught tail-risk defaults.",
+    "generated": "Misallocated credit decisions cause unfair loan denials and increased default risk across the lending portfolio."
+  },
+  "dose_response": {
+    "match": "partial",
+    "reason": "The generated arc describes confusion leading to reliance on scalar values and bad decisions, but misses the specific causal link that stochastic distributions obscure tail risks, which is central to the reference mechanism.",
+    "reference": "Stochastic Shapley distributions obscure tail risks; loan officers focusing on averages overlook these, leading to unfair assessments and systemic bias or financial losses.",
+    "generated": "Stochastic Shapley explanations as distributions entangle randomness with feature attribution, confusing users, through loan officers using them to justify decisions, trigger reliance on scalar values and lack of distributional reasoning, leading to misallocated credit, unfair denials, and increased default risk."
+  }
+}

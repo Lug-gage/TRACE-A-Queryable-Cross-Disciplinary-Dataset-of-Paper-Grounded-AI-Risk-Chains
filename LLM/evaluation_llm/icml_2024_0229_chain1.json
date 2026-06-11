@@ -1,0 +1,22 @@
+{
+  "paper_id": "icml_2024_0229",
+  "chain_index": 1,
+  "vulnerability": {
+    "match": "partial",
+    "reason": "Generated describes inability to challenge scores due to unverifiable assumptions; reference describes human overrides reintroducing biases when trust is low. Related condition but different.",
+    "reference": "Human decision-makers override algorithmic corrections, reintroducing historical biases when trust in the system is low.",
+    "generated": "Groups with systematically biased observed utilities have no means to challenge misestimated scores when bias correction uses unverifiable distributional assumptions."
+  },
+  "impact": {
+    "match": "partial",
+    "reason": "Affected party (biased groups) present; damage of entrenched access disparities covered, but limiting social mobility aspect missing from generated.",
+    "reference": "Reinforcement of historical disparities in educational access, limiting social mobility for underrepresented groups.",
+    "generated": "Biased groups systematically receive fewer preferred placements, lowering true utility and entrenching group disparities in access to desired institutions."
+  },
+  "dose_response": {
+    "match": "not",
+    "reason": "Generated arc relies on inability to challenge scores, whereas reference arc depends on human overrides reintroducing biases; causal mechanism differs fundamentally.",
+    "reference": "Mis-specified bias models in centralized selection misallocate admissions when human overrides reintroduce historical biases, exposing applicants to reinforced disparities that limit social mobility for underrepresented groups.",
+    "generated": "Centralized fair selection correcting biased utilities via distributional assumptions, through AI-based scoring and ranking, triggers inability to challenge misestimated scores for groups with biased utilities, leading to fewer preferred placements and entrenched group disparities."
+  }
+}

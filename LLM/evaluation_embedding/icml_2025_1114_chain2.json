@@ -1,0 +1,19 @@
+{
+  "paper_id": "icml_2025_1114",
+  "chain_index": 2,
+  "vulnerability": {
+    "similarity": 0.5727,
+    "reference": "Sub-model outputs are trusted without robustness certification or adversarial validation.",
+    "generated": "Reliance on single-model safety evaluations leaves integrators blind to emergent malicious capabilities arising from model interactions."
+  },
+  "impact": {
+    "similarity": 0.3764,
+    "reference": "Cascading errors corrupt system-level decisions in autonomous systems and finance.",
+    "generated": "Harmful outputs—vulnerable code, explicit images, hacking scripts, manipulative tweets—are produced at scale, evading existing safety measures."
+  },
+  "dose_response": {
+    "similarity": 0.8046,
+    "reference": "Cross-model transferability of adversarial perturbations amplifies errors through multi-model pipelines, exposing system integrators to cascading failures that corrupt critical decisions and increase safety incidents.",
+    "generated": "Adversarial examples with cross-model transferability, through multi-model pipeline deployments, trigger reliance on single-model safety evaluations that blinds integrators to emergent malicious model interactions, leading to harmful outputs like vulnerable code, explicit images, hacking scripts, manipulative tweets produced at scale, evading safety measures."
+  }
+}
