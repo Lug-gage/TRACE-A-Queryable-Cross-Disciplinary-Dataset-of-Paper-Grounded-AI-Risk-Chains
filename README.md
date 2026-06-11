@@ -22,45 +22,64 @@ TRACE/
 
 ## 整体流程
 
+```mermaid
+flowchart LR
+    subgraph Stage1["① 索引构建: HippoRAG-build"]
+        direction LR
+        CS[("CS 语料<br/>2,973 篇论文")]
+        SS[("SS 语料<br/>6,934 篇论文")]
+        OpenIE["OpenIE 提取<br/><small>NER + 三元组</small>"]
+        Embed["嵌入向量化<br/><small>text-embedding-3-large</small>"]
+        KG["知识图谱索引<br/><small>igraph + Parquet</small>"]
+        CS --> OpenIE
+        SS --> OpenIE
+        OpenIE --> Embed
+        Embed --> KG
+    end
+
+    subgraph Stage2["② 风险链提取: hevi_package"]
+        direction LR
+        ICML[("ICML 论文<br/>5,940 篇")]
+        Extract["参考 HEVI 提取<br/><small>替换测试</small>"]
+        Audit["质量审计<br/><small>6 维度评分</small>"]
+        Bilateral["双边协商<br/><small>CSAgent ↔ SSAgent</small>"]
+        DS[("dataset.json<br/>267 篇 × 818 链")]
+        ICML --> Extract
+        Extract --> Audit
+        Audit --> Bilateral
+        Bilateral --> DS
+    end
+
+    KG -.->|"indices/"| Bilateral
+
+    subgraph Stage3["③ 评估实验"]
+        direction TB
+        DS2[("dataset.json")]
+        E1["HippoRAG<br/><small>DPR + PPR 图搜索</small>"]
+        E2["LightRAG<br/><small>Mix 模式检索</small>"]
+        E3["GraphRAG<br/><small>Local Search</small>"]
+        E4["纯 LLM<br/><small>无检索基线</small>"]
+        Eval["评估<br/><small>LLM-as-Judge<br/>+ 嵌入余弦相似度</small>"]
+        DS2 --> E1
+        DS2 --> E2
+        DS2 --> E3
+        DS2 --> E4
+        E1 --> Eval
+        E2 --> Eval
+        E3 --> Eval
+        E4 --> Eval
+    end
+
+    DS --> Stage3
 ```
-                      ┌─────────────────────┐
-                      │   HippoRAG-build     │
-                      │   (索引构建管线)      │
-                      │                      │
-                      │  CS 语料库: 2,973 篇  │
-                      │  SS 语料库: 6,934 篇  │
-                      │  → OpenIE + KG 索引  │
-                      └────────┬────────────┘
-                               │ indices/
-                               ▼
-                      ┌─────────────────────┐
-                      │   hevi_package       │
-                      │   (HEVI 提取管线)     │
-                      │                      │
-                      │  267 篇 ICML 论文     │
-                      │  CS/SS 双边协商协议    │
-                      │  → dataset.json      │
-                      │  (818 条风险链)       │
-                      └────────┬────────────┘
-                               │ dataset.json
-                               ▼
-         ┌─────────────────────┼─────────────────────┐
-         │                     │                     │
-  ┌──────▼──────┐   ┌─────────▼──────┐   ┌─────────▼──────┐   ┌─────────▼──────┐
-  │  HippoRAG   │   │   LightRAG     │   │   GraphRAG     │   │      LLM       │
-  │  (实验 1)   │   │   (实验 2)     │   │   (实验 3)     │   │   (实验 4)      │
-  │             │   │                │   │                │   │                 │
-  │ DPR + PPR   │   │ Mix 模式检索   │   │ 局部搜索       │   │ 纯参数推理      │
-  │ 图搜索      │   │ NanoVectorDB   │   │ LanceDB +      │   │ 无检索增强      │
-  │             │   │ + NetworkX     │   │ Leiden 社区     │   │                 │
-  └──────┬──────┘   └─────────┬──────┘   └─────────┬──────┘   └─────────┬──────┘
-         │                     │                     │                     │
-         └─────────────────────┼─────────────────────┘                     │
-                               │                                           │
-                               ▼                                           ▼
-                    LLM-as-Judge 评估                                  同样的评估
-                    + 嵌入余弦相似度评估
-```
+
+### 数据流说明
+
+| 阶段 | 输入 | 处理 | 输出 |
+|------|------|------|------|
+| **① 索引构建** | 9,907 篇 CS/SS 论文全文 | OpenIE 抽取 → 嵌入 → 构建知识图谱 | CS + SS 索引（可查询的知识图谱） |
+| **② 风险链提取** | 5,940 篇 ICML 论文 impact statement + CS/SS 索引 | 参考提取 → 质量审计 → CS/SS 双边协商 | `dataset.json`（267 篇论文 × 818 条 HEVI 风险链） |
+| **③ 评估实验** | `dataset.json` | 4 种 RAG 范式分别生成 VI/DR → 统一评估 | 各方法的覆盖率 / 嵌入相似度分数 |
 
 ---
 
