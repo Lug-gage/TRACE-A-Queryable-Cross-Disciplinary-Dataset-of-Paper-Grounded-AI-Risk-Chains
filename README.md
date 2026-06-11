@@ -48,10 +48,10 @@ TRACE/
  ③ 评估实验
     dataset.json
          │
-         ├── HippoRAG ── DPR + PPR 图搜索 ──┐
-         ├── LightRAG ── Mix 模式检索      ──┤
-         ├── GraphRAG ── Local Search      ──┤
-         └── 纯 LLM   ── 无检索, 参数推理   ──┤
+         ├── HippoRAG ── DPR + PPR 图搜索    ──┐
+         ├── LightRAG ── Mix 模式检索        ──┤
+         ├── GraphRAG ── Local Search       ──┤
+         └── 纯 LLM   ── 无检索, 参数推理     ──┤
                                               │
                                               ▼
                                     统一评估
@@ -341,18 +341,18 @@ python scripts/build_paper_indexes.py \
 
 ### 2. GraphRAG（OpenIE JSON → Parquet + LanceDB + Leiden 社区）
 
-GraphRAG 的 `build_index.py` 直接读取 HippoRAG-build 产出的 `openie_results_ner_*.json`，不走 LLM 提取，而是将其转换为 GraphRAG 原生格式（DataFrame → Leiden 聚类 → LanceDB 向量库）。
+GraphRAG 的 `build_index.py` 直接读取 HippoRAG-build 产出的 `openie_results_ner_*.json`，将其转换为 GraphRAG 原生格式（DataFrame → Leiden 聚类 → LanceDB 向量库）。
 
 ```bash
 cd graphrag
 
-# SS 完整建库（含 LLM 社区报告，~12 min）
+# SS 完整建库（含 LLM 社区报告）
 python build_index.py ss
 
 # CS 完整建库（~15 min）
 python build_index.py cs
 
-# 快速模式：跳过 LLM 社区报告，用占位文本（~2 min，local/basic 查询可用）
+# 快速模式：跳过 LLM 社区报告，用占位文本（local/basic 查询可用）
 python build_index.py ss --fast
 python build_index.py cs --fast
 ```
@@ -373,15 +373,6 @@ python indices/build_kg.py ss
 # 仅建 CS
 python indices/build_kg.py cs
 
-# 两个都建
-python indices/build_kg.py both
-
-# 建完后进入交互查询
-python indices/build_kg.py ss --query
-
-# 跳过导入，直接对已有库查询
-python indices/build_kg.py both --skip-import --query --mode mix
-```
 
 **数据转换**: `load_indices_as_custom_kg()` 解析 JSON → 注入 `{chunk, entity, relation}` 三元组 → `ainsert_custom_kg()` 向量化并建图。  
 **产出位置**: `rag_storage_{cs,ss}/`（`vdb_*.json` + `graph_chunk_entity_relation.graphml` + `kv_store_*.json`）
