@@ -1,0 +1,9 @@
+[
+  {
+    "source": "cs",
+    "corpus_path": "papers/processed/cs_corpus.csv",
+    "save_dir": "indices/cs",
+    "docs_loaded": 1,
+    "dry_run": true
+  }
+]
