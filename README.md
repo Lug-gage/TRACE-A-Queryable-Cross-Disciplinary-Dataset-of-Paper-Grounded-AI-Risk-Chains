@@ -20,113 +20,152 @@ TRACE/
 
 ---
 
-## 整体流程
+## 整体数据流
 
-```mermaid
-flowchart LR
-    subgraph Stage1["① 索引构建: HippoRAG-build"]
-        direction LR
-        CS[("CS 语料<br/>2,973 篇论文")]
-        SS[("SS 语料<br/>6,934 篇论文")]
-        OpenIE["OpenIE 提取<br/><small>NER + 三元组</small>"]
-        Embed["嵌入向量化<br/><small>text-embedding-3-large</small>"]
-        KG["知识图谱索引<br/><small>igraph + Parquet</small>"]
-        CS --> OpenIE
-        SS --> OpenIE
-        OpenIE --> Embed
-        Embed --> KG
-    end
-
-    subgraph Stage2["② 风险链提取: hevi_package"]
-        direction LR
-        ICML[("ICML 论文<br/>5,940 篇")]
-        Extract["参考 HEVI 提取<br/><small>替换测试</small>"]
-        Audit["质量审计<br/><small>6 维度评分</small>"]
-        Bilateral["双边协商<br/><small>CSAgent ↔ SSAgent</small>"]
-        DS[("dataset.json<br/>267 篇 × 818 链")]
-        ICML --> Extract
-        Extract --> Audit
-        Audit --> Bilateral
-        Bilateral --> DS
-    end
-
-    KG -.->|"indices/"| Bilateral
-
-    subgraph Stage3["③ 评估实验"]
-        direction TB
-        DS2[("dataset.json")]
-        E1["HippoRAG<br/><small>DPR + PPR 图搜索</small>"]
-        E2["LightRAG<br/><small>Mix 模式检索</small>"]
-        E3["GraphRAG<br/><small>Local Search</small>"]
-        E4["纯 LLM<br/><small>无检索基线</small>"]
-        Eval["评估<br/><small>LLM-as-Judge<br/>+ 嵌入余弦相似度</small>"]
-        DS2 --> E1
-        DS2 --> E2
-        DS2 --> E3
-        DS2 --> E4
-        E1 --> Eval
-        E2 --> Eval
-        E3 --> Eval
-        E4 --> Eval
-    end
-
-    DS --> Stage3
 ```
-
-### 数据流说明
-
-| 阶段 | 输入 | 处理 | 输出 |
-|------|------|------|------|
-| **① 索引构建** | 9,907 篇 CS/SS 论文全文 | OpenIE 抽取 → 嵌入 → 构建知识图谱 | CS + SS 索引（可查询的知识图谱） |
-| **② 风险链提取** | 5,940 篇 ICML 论文 impact statement + CS/SS 索引 | 参考提取 → 质量审计 → CS/SS 双边协商 | `dataset.json`（267 篇论文 × 818 条 HEVI 风险链） |
-| **③ 评估实验** | `dataset.json` | 4 种 RAG 范式分别生成 VI/DR → 统一评估 | 各方法的覆盖率 / 嵌入相似度分数 |
+                          ┌───────────────────────────────────────────┐
+                          │  ① HippoRAG-build  索引构建               │
+                          │                                           │
+                          │  CS 语料 (2,973 篇) ──┐                    │
+                          │  SS 语料 (6,934 篇) ──┤                    │
+                          │                       ▼                    │
+                          │              OpenIE 提取                  │
+                          │           (NER + 三元组)                  │
+                          │                 │                         │
+                          │                 ▼                         │
+                          │          嵌入向量化                       │
+                          │    (text-embedding-3-large)               │
+                          │                 │                         │
+                          │                 ▼                         │
+                          │      ┌──────────────────┐                 │
+                          │      │  知识图谱索引     │                 │
+                          │      │  igraph + Parquet │                │
+                          │      └────────┬─────────┘                 │
+                          └───────────────┼───────────────────────────┘
+                                          │  CS / SS 索引
+                                          ▼
+                          ┌───────────────────────────────────────────┐
+                          │  ② hevi_package  HEVI 风险链提取            │
+                          │                                           │
+                          │  ICML 论文 (5,940 篇)                     │
+                          │       │                                   │
+                          │       ▼                                   │
+                          │  参考 HEVI 提取 ──→ 质量审计 ──→ 311 篇    │
+                          │       (替换测试)      (6 维度评分)          │
+                          │                                           │
+                          │  ┌─────────────────────────────────┐      │
+                          │  │       双边协商协议               │      │
+                          │  │                                 │      │
+                          │  │  CSAgent ─── 提案 ─── Hazard    │      │
+                          │  │    │                    Exposure│      │
+                          │  │    │  批评 ──────────────────►  │      │
+                          │  │    │                    ◄── 修订│      │
+                          │  │    ▼                            │      │
+                          │  │  SSAgent ─── 响应 ─── Vuln     │      │
+                          │  │                      Impact    │      │
+                          │  │                      KCN       │      │
+                          │  └─────────────────────┬──────────┘      │
+                          │                       │                   │
+                          │                       ▼                   │
+                          │              合成 Dose-Response           │
+                          │                       │                   │
+                          │                       ▼                   │
+                          │      ┌──────────────────────────┐         │
+                          │      │  dataset.json             │         │
+                          │      │  267 篇论文 × 818 条风险链 │         │
+                          │      └────────────┬─────────────┘         │
+                          └──────────────────┼───────────────────────┘
+                                             │
+          ┌──────────────────────────────────┼──────────────────────────────────┐
+          │                                  │                                  │
+          ▼                                  ▼                                  │
+┌─────────────────────┐        ┌─────────────────────┐        ┌─────────────────────┐
+│  ③ 实验评估          │        │                      │        │                      │
+│                     │        │   HippoRAG (实验 1)   │        │   LightRAG (实验 2)   │
+│  dataset.json       │        │   DPR + PPR 图搜索    │        │   Mix 模式检索       │
+│       │             │        │   igraph 知识图谱      │        │   NanoVectorDB       │
+│       ├─────────────┤        │                      │        │   + NetworkX         │
+│       │             │        └──────────┬───────────┘        └──────────┬───────────┘
+│       │             │                   │                               │
+│       │             │        ┌──────────▼───────────┐        ┌──────────▼───────────┐
+│       ├─────────────┤        │  GraphRAG (实验 3)    │        │  纯 LLM (实验 4)     │
+│       │             │        │  Local Search         │        │  无检索，参数推理     │
+│       │             │        │  LanceDB + Leiden     │        │                      │
+│       │             │        └──────────┬───────────┘        └──────────┬───────────┘
+│       │             │                   │                               │
+│       └──────┬──────┘        ┌──────────▼───────────┐        ┌──────────▼───────────┐
+│              │               │  两步骤生成           │        │  两步骤提示           │
+│              │               │  VI → 门控 → DR       │        │  VI → 门控 → DR       │
+│              │               └──────────┬───────────┘        └──────────┬───────────┘
+│              │                          │                               │
+│              └──────────────────────────┼───────────────────────────────┘
+│                                         │
+│                                         ▼
+│                          ┌─────────────────────────────┐
+│                          │  统一评估                     │
+│                          │  LLM-as-Judge (covered/      │
+│                          │  partial/not)                │
+│                          │  + 嵌入余弦相似度              │
+│                          └─────────────────────────────┘
+```
 
 ---
 
 ## 1. HippoRAG-build — 索引构建管线
 
-基于 **HippoRAG 2**（OSU NLP Group, ICML 2025）构建两个知识图谱索引：
+基于 **HippoRAG 2**（OSU NLP Group, ICML 2025）构建两个跨学科知识图谱索引：
 
 | 索引 | 语料库 | 论文数 | NER 模板 | 状态 |
 |------|--------|--------|----------|------|
 | **CS** | 计算机科学论文 | 2,973 | `ner_risk_cs` / `triple_extraction_risk_cs` | ✅ 已构建 |
 | **SS** | 社会科学论文 | 6,934 | `ner_risk_ss` / `triple_extraction_risk_ss` | ✅ 已构建 |
 
-### 管线步骤
-1. **文档加载**: 从 `papers/processed/{cs,ss}_corpus.csv` 读取论文（含 title、abstract、impact、doc_text）
-2. **OpenIE 提取**: 使用 `deepseek-v4-pro` 进行 NER 命名实体识别 + 三元组关系提取
-3. **嵌入向量化**: 使用 `text-embedding-3-large` 对文本块/实体/事实进行嵌入
-4. **知识图谱构建**: 构建 igraph 图（实体节点 + 事实边 + 同义边）
-5. **输出**: `openie_results_ner_*.json`（NER+三元组）、嵌入 Parquet 文件、图 pickle
+### 数据流
 
-### 关键文件
 ```
-HippoRAG-build/
-├── scripts/build_paper_indexes.py          # 索引构建入口
-├── src/hipporag/                           # HippoRAG 2 核心库
-│   ├── HippoRAG.py                         # 索引/检索/QA 主类
-│   ├── embedding_store.py                  # Parquet 向量存储
-│   ├── hevi_workflow/                      # HEVI 风险分析工作流
-│   │   ├── agents.py                       # CSAgent + SSAgent 双边协商
-│   │   ├── pipeline.py                     # 管线编排
-│   │   ├── retrievers.py                   # HippoRAG 检索器封装
-│   │   └── evaluator.py                    # 命中评估
-│   ├── information_extraction/             # OpenIE 模块
-│   ├── prompts/templates/                  # 风险感知 NER/三元组模板
-│   └── rerank.py                           # DSPy 事实重排
-├── indices/
-│   ├── cs/openie_results_ner_deepseek-v4-pro.json   # CS 语料库 OpenIE 结果
-│   └── ss/openie_results_ner_deepseek-v4-pro.json   # SS 语料库 OpenIE 结果
-└── papers/processed/{cs,ss}_corpus.csv     # 原始语料库
+papers/processed/{cs,ss}_corpus.csv                # 原始语料 (title, abstract, impact, doc_text)
+        │
+        ▼
+scripts/build_paper_indexes.py                     # CLI 入口，调度整个管线
+        │
+        ▼
+src/hipporag/HippoRAG.py :: index()                # 核心索引方法
+        │
+        ├──▶ src/hipporag/information_extraction/   # OpenIE 提取
+        │    openie_openai.py                       #   NER (ner_risk_cs / ner_risk_ss 模板)
+        │    │                                      #   三元组提取 (triple_extraction_risk_* 模板)
+        │    │                                      #   LLM: deepseek-v4-pro
+        │    ▼
+        ├──▶ src/hipporag/embedding_model/          # 嵌入向量化
+        │    OpenAI.py                              #   text-embedding-3-large (3072 维)
+        │    │                                      #   → chunk/entity/fact 三类向量
+        │    ▼
+        ├──▶ src/hipporag/embedding_store.py        # Parquet 持久化
+        │    │                                      #   vdb_chunk.parquet
+        │    │                                      #   vdb_entity.parquet
+        │    │                                      #   vdb_fact.parquet
+        │    ▼
+        └──▶ src/hipporag/HippoRAG.py               # 知识图谱构建
+             :: augment_graph()                     #   igraph: 实体节点 + 事实边 + 同义边
+             :: save_igraph()                       #   graph.pickle
+                    │
+                    ▼
+indices/{cs,ss}/
+        ├── openie_results_ner_deepseek-v4-pro.json # NER + 三元组结果 (~17 MB)
+        ├── index_manifest.json                     # 索引构建元数据
+        └── deepseek-v4-pro_text-embedding-3-large/ # 嵌入向量 (⚠️ 不包含在仓库中)
+            ├── chunk_embeddings/
+            ├── entity_embeddings/
+            └── fact_embeddings/
 ```
 
-> **注意**: 嵌入向量文件 (`deepseek-v4-pro_text-embedding-3-large/`) 和 `llm_cache/` **不包含在此仓库中**，可以通过运行 `build_paper_indexes.py` 重新生成。
+> **注意**: 嵌入向量文件 (`deepseek-v4-pro_text-embedding-3-large/`) 和 `llm_cache/` **不包含在此仓库中**，可通过运行 `build_paper_indexes.py` 重新生成。
 
 ---
 
 ## 2. hevi_package — HEVI 风险链提取管线
 
-基于 **Turner et al. (2003)** 脆弱性分析框架，通过 **CS-SS 双边协商多智能体协议** 从 ICML 论文的 impact statement 中自动提取和扩增 AI 风险链。
+基于 **Turner et al. (2003)** 脆弱性分析框架，使用 **CS-SS 双边协商多智能体协议** 自动提取和扩增 AI 风险链。
 
 ### HEVI 框架（6 个风险槽位）
 
@@ -139,38 +178,64 @@ HippoRAG-build/
 | **I**mpact（影响）| 负面社会后果 | SSAgent |
 | **K**ey Control Nodes（关键控制节点）| 阻断风险链的干预点 | SSAgent |
 
-### 管线 5 阶段
+### 数据流
 
-1. **Reference Extraction**: 从 ICML 论文 impact statement 中提取参考 HEVI 槽位（使用"替换测试"排除泛化模板）
-2. **Quality Audit**: 对提取结果进行 6 维度质量评分（技术锚定性、方向正确性、具体性等），筛选 `keep` 论文
-3. **CS Proposal**: CSAgent 基于 CS 索引检索证据，提出 Hazard → Exposure
-4. **SS Response**: SSAgent 基于 SS 索引检索证据，提出 Vulnerability → Impact → KCN
-5. **Bilateral Consensus**: 两个智能体互相批评和修订（最多 3 轮），直到双方自评分 ≥ 0.8，然后合成 Dose-Response 链
-6. **Comparison**: 将流水线生成的链与参考提取进行召回率比较
-
-### 关键文件
 ```
-hevi_package/
-├── hevi_run.py                              # CLI 入口（extract/audit/run/export/all）
-├── hipporag/hevi_workflow/
-│   ├── agents.py                            # CSAgent + SSAgent + RiskLLM
-│   ├── pipeline.py                          # 双边共识管线编排
-│   └── retrievers.py                        # HippoRAGRetriever 封装
-├── prompts/                                 # 10 个 LLM 提示词模板
-│   ├── 01_cs_propose.md                     # CS 智能体提案
-│   ├── 04_ss_respond.md                     # SS 智能体响应
-│   ├── 05_cs_critique_ss.md                 # CS 批评 SS
-│   ├── 06_ss_critique_cs.md                 # SS 批评 CS
-│   └── 09_dr_synthesis.md                   # 剂量-反应合成
-├── scripts/
-│   ├── extract_reference_hevi.py            # 阶段 0: 参考提取
-│   ├── audit_hevi_quality.py                # 阶段 1: 质量审计
-│   ├── run_hevi_pipeline.py                 # 阶段 2-5: 完整管线
-│   ├── build_dataset.py                     # 生成 dataset.json
-│   └── generate_visual.py                   # 交互式可视化
-├── data/icml_corpus_with_len.csv            # 5,940 篇 ICML 论文语料库
-├── indices/{cs,ss}/                         # 复用的索引
-└── outputs/dataset.json                     # 最终数据集（267 篇论文，818 条链）
+data/icml_corpus_with_len.csv                      # 5,940 篇 ICML 论文
+        │
+        ▼
+scripts/extract_reference_hevi.py                   # 阶段 0: 参考 HEVI 提取
+        │   prompts: (内嵌于 pipeline.py)
+        │   LLM 调用 A: title+abstract → CS 检索查询
+        │   LLM 调用 B: impact statement → ref_hevi 槽位 (替换测试过滤泛化模板)
+        │   impact_chars < 500 → 跳过
+        ▼
+scripts/audit_hevi_quality.py                       # 阶段 1: 质量审计
+        │   prompts: (内嵌于 pipeline.py)
+        │   6 维度评分: discovery_feasibility / technical_anchoring /
+        │              direction_correctness / grounding / slot_correctness / specificity
+        │   硬过滤: overall ≥ 0.75, ≥ 3 个非空槽位
+        │   产出: quality_report.json → 311 篇 keep 论文
+        ▼
+scripts/run_hevi_pipeline.py                        # 阶段 2-5: 双边协商管线
+        │
+        │   ┌─ 阶段 2: CS 智能体提案 ─────────────────────────────────┐
+        │   │  hipporag/hevi_workflow/agents.py :: CSAgent            │
+        │   │  prompts/01_cs_propose.md                               │
+        │   │  indices/cs/ ──▶ RiskRetriever ──▶ CS 证据检索          │
+        │   │  LLM 调用 C: 生成 hazard + exposure + nexus_candidates │
+        │   │  LLM 调用 D: judge_hits_with_llm (证据相关性)           │
+        │   └────────────────────────────────────────────────────────┘
+        │                    │
+        │   ┌─ 阶段 3: SS 智能体响应 ─────────────────────────────────┐
+        │   │  hipporag/hevi_workflow/agents.py :: SSAgent            │
+        │   │  prompts/03_ss_query_planning.md                        │
+        │   │  prompts/04_ss_respond.md                               │
+        │   │  indices/ss/ ──▶ RiskRetriever ──▶ SS 证据检索          │
+        │   │  LLM 调用 E: 从 CS nexus → SS 检索查询                  │
+        │   │  LLM 调用 F: 生成 vulnerability + impact + KCN         │
+        │   └────────────────────────────────────────────────────────┘
+        │                    │
+        │   ┌─ 阶段 4: 双边共识 ──────────────────────────────────────┐
+        │   │  hipporag/hevi_workflow/pipeline.py                     │
+        │   │  prompts/05_cs_critique_ss.md ──▶ CSAgent 批评 SS      │
+        │   │  prompts/06_ss_critique_cs.md ──▶ SSAgent 批评 CS      │
+        │   │  prompts/07_cs_revise.md ──▶ CSAgent 修订提案           │
+        │   │  prompts/08_ss_revise.md ──▶ SSAgent 修订响应           │
+        │   │  ← 循环 3 轮或 self_score ≥ 0.8 →                       │
+        │   │  prompts/09_dr_synthesis.md ──▶ 合成 Dose-Response      │
+        │   └────────────────────────────────────────────────────────┘
+        │                    │
+        │   ┌─ 阶段 5: 召回比较 ──────────────────────────────────────┐
+        │   │  prompts/10_hevi_compare.md                             │
+        │   │  LLM 调用: workflow HEVI 与 ref_hevi 逐项语义召回率      │
+        │   └────────────────────────────────────────────────────────┘
+        │
+        ▼
+scripts/build_dataset.py                             # 合并所有阶段产出
+        │
+        ▼
+outputs/dataset.json                                 # 267 篇论文 × 818 条 HEVI 风险链
 ```
 
 ---
@@ -179,29 +244,53 @@ hevi_package/
 
 基于 **HippoRAG 2**（From RAG to Memory, ICML 2025）框架进行 HEVI 风险评估。
 
-### 检索策略
-- **双路 DPR 检索**: `he_query`（hazard+exposure）→ Top 3，`si_query`（scenario+issue）→ Top 3，合并去重
-- **DSPyFilter 重排**: 可选 LLM 事实过滤
-- **PPR 图搜索**: 个性化 PageRank 在 igraph 知识图谱上传播
-- **两步骤生成**: Step 1 (VI) → 门控 → Step 2 (DR)，无检索纯推理
+### 数据流
 
-### 关键文件
 ```
-HippoRAG/
-├── main.py                                  # 标准多跳 QA 基线实验
-├── build_hlg_index.py                       # 层级知识图谱索引构建
-├── mine_innovation_pairs.py                 # 跨论文创新节点对挖掘
-├── run_node_eval.py                         # 层级知识图谱对齐评估（V2+V3）
-├── hevi_query/
-│   ├── dataset.json                         # HEVI 评估数据集
-│   └── scripts/
-│       ├── hevi_query_hipporag.py           # HippoRAG 增强生成
-│       ├── hevi_query_llm.py                # 纯 LLM 对比
-│       ├── eval_hevi.py                     # LLM-as-Judge 评估
-│       ├── eval_hevi_embedding.py           # 嵌入相似度评估
-│       └── analyze_joint.py                 # 联合分布分析
-├── indices/{cs,ss}/                         # 预建索引
-└── reproduce/dataset/                       # 标准多跳 QA 数据集
+dataset.json                                         # 267 篇论文, 818 条链
+        │
+        ▼
+hevi_query/scripts/hevi_query_hipporag.py             # 生成入口
+        │
+        ├──▶ he_query = f"{hazard}. {exposure}."     # 双路 DPR 检索
+        │    si_query = f"{scenario}. {issue}."       #
+        │    │                                        #
+        │    ▼                                        #
+        │    src/hipporag/HippoRAG.py :: retrieve()   # 检索
+        │    │    DPR 向量检索 → top 3 per query      #
+        │    │    DSPyFilter 重排 (rerank.py)         #
+        │    │    PPR 图搜索 (igraph)                 #
+        │    │    → 合并去重 (最多 6 篇)               #
+        │    ▼                                        #
+        │    检索上下文 (截断 10k 字符)                 #
+        │                                             #
+        ├──▶ 阶段 1: VI 生成                          # LLM 推理
+        │    prompt: hevi_vuln_impact.txt             #
+        │    │    Turner 定义 + 检索上下文 + 论文元数据  #
+        │    │    → vulnerability (≤30 词)             #
+        │    │    → impact (≤30 词)                    #
+        │    ▼                                        #
+        │    ├─ VI 非空 → 进入阶段 2                    #
+        │    └─ VI 为空 → 跳过 DR, 标记失败             #
+        │                                             #
+        └──▶ 阶段 2: DR 合成                          #
+             prompt: hevi_dr.txt                      #
+             │    无检索, 纯 LLM 推理                   #
+             │    → dose_response (≤40 词)             #
+             ▼                                        #
+hevi_query/hipporag_results/{paper_id}_chain{N}.json   # 生成结果
+        │
+        ▼
+hevi_query/scripts/eval_hevi.py                       # LLM-as-Judge 评估
+        │   prompt: eval_prompt.txt
+        │   → covered / partial / not + 理由
+        ▼
+hevi_query/evaluation/{paper_id}_chain{N}.json
+        │
+hevi_query/scripts/eval_hevi_embedding.py             # 嵌入相似度评估
+        │   text-embedding-3-large → 余弦相似度 (0-1)
+        ▼
+hevi_query/evaluation_embedding/{paper_id}_chain{N}.json
 ```
 
 ---
@@ -210,27 +299,42 @@ HippoRAG/
 
 基于 **LightRAG**（HKUDS, arXiv 2410.05779）框架进行 HEVI 风险评估。
 
-### 检索策略
-- **Mix 模式**: 同时检索 Entity + Relation + Chunk（局部 KG + 全局 KG + 向量）
-- **向量存储**: NanoVectorDB（余弦相似度，3,072 维 text-embedding-3-large）
-- **图存储**: NetworkX（实体-关系-文本块图）
-- **定制 KG 构建**: 从 OpenIE JSON 直接注入实体/关系/块，绕过了 LightRAG 原生 LLM 提取器
-- **查询**: 使用 `aquery_data()` 获取结构化检索数据（不经过 LLM 生成）
+### 数据流
 
-### 关键文件
 ```
-LightRAG/
-├── lightrag/                                # LightRAG 核心库
-├── indices/
-│   ├── build_kg.py                          # 定制知识图谱构建
-│   └── ss/openie_results_ner_deepseek-v4-pro.json
-├── hevi_query/
-│   ├── dataset.json
-│   └── scripts/
-│       ├── hevi_query.py                    # LightRAG 增强生成
-│       ├── eval_hevi.py                     # LLM-as-Judge 评估
-│       └── eval_hevi_embedding.py           # 嵌入相似度评估
-└── examples/                                # 官方演示脚本
+indices/ss/openie_results_ner_deepseek-v4-pro.json    # HippoRAG-build 产出的 OpenIE 结果
+        │                                              # 6,934 块, 56,505 实体, 26,394 三元组
+        ▼
+indices/build_kg.py                                   # 定制 KG 构建
+        │   load_indices_as_custom_kg()
+        │   → 注入 chunk / entity / relation
+        │   → ainsert_custom_kg()
+        │   → NanoVectorDB (实体/关系/块向量, 3072d)
+        │   → NetworkX (Chunk-Entity-Relation 图)
+        ▼
+lightrag/                                             # LightRAG 核心库
+        │
+        ▼
+hevi_query/scripts/hevi_query.py                      # 生成入口
+        │
+        ├──▶ 检索阶段
+        │    aquery_data(mode="mix", top_k=40)
+        │    he_query + si_query → 并行检索
+        │    合并去重实体/关系/块 → 截断 10k 字符
+        │
+        ├──▶ 阶段 1: VI 生成
+        │    检索上下文 + Turner 定义 → vulnerability + impact
+        │    ├─ VI 非空 → 进入阶段 2
+        │    └─ VI 为空 → 跳过 (纯 LLM 回退)
+        │
+        └──▶ 阶段 2: DR 合成
+             无检索，纯 LLM → dose_response
+        │
+        ▼
+hevi_query/lightrag_results/{paper_id}_chain{N}.json
+        │
+        ├──▶ eval_hevi.py ──▶ evaluation/
+        └──▶ eval_hevi_embedding.py ──▶ evaluation_embedding/
 ```
 
 ---
@@ -239,69 +343,84 @@ LightRAG/
 
 基于 **Microsoft GraphRAG v3.1.0** 框架进行 HEVI 风险评估。
 
-### 检索策略
-- **Local Search 模式**: 查询嵌入 → 实体检索（LanceDB 向量相似度）→ 关系扩展 → 社区上下文注入
-- **向量存储**: LanceDB（3,072 维 text-embedding-3-large）
-- **图结构**: Parquet DataFrame + Leiden 层次聚类
-- **定制索引入口**: `build_index.py` 从 OpenIE JSON 构建 Parquet 索引，绕过了官方 LLM 提取管道
-- **查询**: 使用 `local_search()` API（检索+生成合一）
+### 数据流
 
-### 关键文件
 ```
-graphrag/
-├── build_index.py                           # 定制索引入口
-├── packages/                                # GraphRAG monorepo（8 个子包）
-│   ├── graphrag/                            # 核心 CLI/查询引擎
-│   ├── graphrag-llm/                        # LLM 接口（litellm）
-│   ├── graphrag-vectors/                    # 向量存储（LanceDB）
-│   └── graphrag-storage/                    # 存储后端
-├── hevi_query/
-│   ├── dataset.json
-│   └── scripts/
-│       ├── hevi_query_graphrag.py           # GraphRAG 增强生成
-│       ├── eval_hevi.py
-│       └── eval_hevi_embedding.py
-├── indices/ss/
-│   ├── settings.yaml                        # GraphRAG 配置
-│   └── openie_results_ner_deepseek-v4-pro.json
-└── openie_results_ner_deepseek-v4-pro.json  # 预提取的 OpenIE 结果
+openie_results_ner_deepseek-v4-pro.json               # HippoRAG-build 产出的 OpenIE 结果
+        │
+        ▼
+build_index.py                                        # 定制索引入口 (绕过官方 LLM 提取管道)
+        │
+        ├──▶ 解析 JSON → 实体/关系 DataFrame
+        ├──▶ cluster_graph() → Leiden 层次聚类 (max 50)
+        ├──▶ LLM 生成社区报告 (或 --fast 占位符)
+        ├──▶ text-embedding-3-large → LanceDB (entity_description 表)
+        └──▶ 输出 Parquet: entities / relationships / text_units /
+                            communities / community_reports / documents
+        ▼
+indices/ss/output/                                    # 索引产物
+        ├── *.parquet
+        ├── lancedb/                                  # LanceDB 向量存储
+        └── settings.yaml                             # 查询配置
+        │
+        ▼
+hevi_query/scripts/hevi_query_graphrag.py              # 生成入口
+        │
+        ├──▶ 检索: local_search()                      # 检索+生成合一
+        │    查询嵌入 → LanceDB 实体检索                #
+        │    → 关系扩展 → 社区上下文注入                 #
+        │    → LLM 生成 vuln + impact + dr              #
+        │
+        ▼
+hevi_query/graph_result/{paper_id}_chain{N}.json
+        │
+        ├──▶ eval_hevi.py ──▶ evaluation/
+        └──▶ eval_hevi_embedding.py ──▶ evaluation_embedding/
 ```
 
 ---
 
 ## 6. 实验 4: 纯 LLM 基线（无检索）
 
-**纯参数推理**的基线实验，不依赖任何外部知识库。
+**纯参数推理**基线，不依赖任何外部知识库。LLM 仅接收论文元数据，无知识图谱、无向量检索。
 
-### 设计
-- **无知识库**: LLM 仅接收论文标题、摘要、impact statement 和链上下文（scenario/issue/hazard/exposure）
-- **两步骤提示**: Step 1 生成 vulnerability + impact，Step 2 生成 dose_response
-- **严格长度约束**: VI ≤ 30 词，DR ≤ 40 词，禁止推测性语言
-- **评估**: 与其余实验使用相同的 LLM-as-Judge 和嵌入相似度评估流程
+### 数据流
 
-### 基线结果（纯 LLM，DeepSeek-V4-Pro）
+```
+dataset.json                                         # 267 篇论文, 818 条链
+        │
+        ▼
+scripts/hevi_query_llm.py                             # 生成入口
+        │
+        ├──▶ 阶段 1: VI 生成
+        │    prompt: hevi_vuln_impact.txt
+        │    输入: title + abstract + scenario + issue + hazard + exposure
+        │    输出: vulnerability (≤30 词) + impact (≤30 词)
+        │    ├─ VI 非空 → 进入阶段 2
+        │    └─ VI 为空 → 跳过
+        │
+        │    * 无检索: 仅依赖 LLM 参数化知识
+        │
+        └──▶ 阶段 2: DR 合成
+             prompt: hevi_dr.txt
+             输入: VI 结果 + impact statement
+             输出: dose_response (≤40 词)
+        │
+        ▼
+llm_results/{paper_id}_chain{N}.json                  # 818 条链的生成结果
+        │
+        ├──▶ scripts/eval_hevi.py ──▶ evaluation_llm/
+        └──▶ scripts/eval_hevi_embedding.py ──▶ evaluation_embedding/
+```
+
+### 基线结果（DeepSeek-V4-Pro）
+
 | 字段 | Covered | 覆盖率 |
 |------|---------|--------|
 | Vulnerability | 426/818 | **52.1%** |
 | Impact | 334/818 | **40.8%** |
 | Dose-Response | 309/818 | **37.8%** |
 | **综合** | 1069/2454 | **43.6%** |
-
-### 关键文件
-```
-LLM/
-├── dataset.json                             # 评估数据集（267 篇论文，818 条链）
-├── scripts/
-│   ├── hevi_query_llm.py                    # 纯 LLM 生成
-│   ├── eval_hevi.py                         # LLM-as-Judge 评估
-│   ├── eval_hevi_embedding.py               # 嵌入相似度评估
-│   ├── hevi_vuln_impact.txt                 # VI 生成提示模板
-│   ├── hevi_dr.txt                          # DR 生成提示模板
-│   └── eval_prompt.txt                      # 评估提示模板
-├── llm_results/                             # 818 条链的生成结果
-├── evaluation_llm/                          # LLM-as-Judge 评估结果
-└── evaluation_embedding/                    # 嵌入相似度评估结果
-```
 
 ---
 
@@ -314,7 +433,6 @@ LLM/
 | 平均链数/论文 | **3.06** |
 | CS 语料库（索引）| 2,973 篇 |
 | SS 语料库（索引）| 6,934 篇 |
-| CS 索引实体 | 自动提取 |
 | SS 索引实体 | 56,505 |
 | SS 索引三元组 | 26,394 |
 | LLM 模型 | DeepSeek-V4-Pro |
@@ -332,19 +450,6 @@ LLM/
 | **重排序** | DSPyFilter | 可选内置 | 社区上下文 | — |
 | **生成策略** | 检索→VI→门控→DR | 检索→VI→门控→DR | 检索+生成合一 | 纯推理 VI→DR |
 | **评估方法** | LLM-Judge + 嵌入 | LLM-Judge + 嵌入 | LLM-Judge + 嵌入 | LLM-Judge + 嵌入 |
-
----
-
-## 依赖
-
-所有项目共享以下核心依赖：
-
-- **Python** ≥ 3.10
-- **LLM API**: OpenAI 兼容端点（DeepSeek-V4-Pro）
-- **嵌入**: text-embedding-3-large（3,072 维）
-- **核心库**: numpy, pandas, openai, tiktoken
-
-各项目的特定依赖详见各自的 `requirements.txt`。
 
 ---
 
