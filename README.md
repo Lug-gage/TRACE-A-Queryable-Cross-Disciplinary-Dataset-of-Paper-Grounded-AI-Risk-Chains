@@ -2,287 +2,288 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**TRACE** 是一个从 ICML 论文中自动提取、并通过跨学科证据检索（CS/SS）验证的 **AI 风险因果链数据集**。该项目产出了 267 篇论文 × 818 条 HEVI（Hazard-Exposure-Vulnerability-Impact）风险链，并支持对 4 种 RAG 范式（HippoRAG、LightRAG、GraphRAG、纯 LLM）进行系统基准测试。
+**TRACE** is an AI risk causal chain dataset automatically extracted from ICML papers and validated through cross-disciplinary evidence retrieval (CS/SS). It produces **267 papers × 818 HEVI (Hazard-Exposure-Vulnerability-Impact) risk chains** and supports systematic benchmarking across 4 RAG paradigms (HippoRAG, LightRAG, GraphRAG, LLM-only).
 
 ---
 
-## 目录结构
+## Directory Structure
 
 ```
 TRACE/
-├── HippoRAG-build/       # 索引构建管线：构建 CS 和 SS 知识图谱索引
-├── hevi_package/         # HEVI 管线：多智能体双边共识提取风险链 → dataset.json
-├── HippoRAG/             # 实验 1：HippoRAG 检索增强风险评估
-├── LightRAG/             # 实验 2：LightRAG 检索增强风险评估
-├── graphrag/             # 实验 3：Microsoft GraphRAG 检索增强风险评估
-└── LLM/                  # 实验 4：纯 LLM 基线（无检索）
+├── HippoRAG-build/       # Index construction: CS + SS knowledge graph indices
+├── hevi_package/         # HEVI extraction pipeline → dataset.json
+├── HippoRAG/             # Experiment 1: HippoRAG retrieval-augmented risk assessment
+├── LightRAG/             # Experiment 2: LightRAG retrieval-augmented risk assessment
+├── graphrag/             # Experiment 3: Microsoft GraphRAG retrieval-augmented risk assessment
+└── LLM/                  # Experiment 4: LLM-only baseline (no retrieval)
 ```
+
 ---
 
-## 1. HippoRAG-build — 索引构建管线
+## 1. HippoRAG-build — Index Construction Pipeline
 
-基于 **HippoRAG 2**（OSU NLP Group, ICML 2025）构建两个知识图谱索引：
+Builds two knowledge graph indices based on **HippoRAG 2** (OSU NLP Group, ICML 2025):
 
-### 步骤
-1. **文档加载**: 从 `papers/processed/{cs,ss}_corpus.csv` 读取论文（含 title、abstract、impact、doc_text）
-2. **OpenIE 提取**: 使用 `deepseek-v4-pro` 进行 NER 命名实体识别 + 三元组关系提取
-3. **嵌入向量化**: 使用 `text-embedding-3-large` 对文本块/实体/事实进行嵌入
-4. **知识图谱构建**: 构建 igraph 图（实体节点 + 事实边 + 同义边）
-5. **输出**: `openie_results_ner_*.json`（NER+三元组）、嵌入 Parquet 文件、图 pickle
+### Steps
+1. **Document loading**: Reads papers from `papers/processed/{cs,ss}_corpus.csv` (title, abstract, impact, doc_text)
+2. **OpenIE extraction**: Uses `deepseek-v4-pro` for NER named entity recognition + triple relation extraction
+3. **Embedding vectorization**: Uses `text-embedding-3-large` for text chunk/entity/fact embeddings
+4. **Knowledge graph construction**: Builds an igraph graph (entity nodes + fact edges + synonymy edges)
+5. **Output**: `openie_results_ner_*.json` (NER + triples), embedding Parquet files, graph pickle
 
-### 关键文件
+### Key Files
 ```
 HippoRAG-build/
-├── scripts/build_paper_indexes.py          # 索引构建入口
-├── src/hipporag/                           # HippoRAG 2 核心库
-│   ├── HippoRAG.py                         # 索引/检索/QA 主类
-│   ├── embedding_store.py                  # Parquet 向量存储
-│   ├── hevi_workflow/                      # HEVI 风险分析工作流
-│   │   ├── agents.py                       # CSAgent + SSAgent 双边协商
-│   │   ├── pipeline.py                     # 管线编排
-│   │   ├── retrievers.py                   # HippoRAG 检索器封装
-│   │   └── evaluator.py                    # 命中评估
-│   ├── information_extraction/             # OpenIE 模块
-│   ├── prompts/templates/                  # 风险感知 NER/三元组模板
-│   └── rerank.py                           # DSPy 事实重排
+├── scripts/build_paper_indexes.py          # Index construction entry point
+├── src/hipporag/                           # HippoRAG 2 core library
+│   ├── HippoRAG.py                         # Index/retrieval/QA main class
+│   ├── embedding_store.py                  # Parquet vector storage
+│   ├── hevi_workflow/                      # HEVI risk analysis workflow
+│   │   ├── agents.py                       # CSAgent + SSAgent bilateral negotiation
+│   │   ├── pipeline.py                     # Pipeline orchestration
+│   │   ├── retrievers.py                   # HippoRAG retriever wrapper
+│   │   └── evaluator.py                    # Hit evaluation
+│   ├── information_extraction/             # OpenIE module
+│   ├── prompts/templates/                  # Risk-aware NER/triple templates
+│   └── rerank.py                           # DSPy fact reranking
 ├── indices/
-│   ├── cs/openie_results_ner_deepseek-v4-pro.json   # CS 语料库 OpenIE 结果
-│   └── ss/openie_results_ner_deepseek-v4-pro.json   # SS 语料库 OpenIE 结果
-└── papers/processed/{cs,ss}_corpus.csv     # 原始语料库
+│   ├── cs/openie_results_ner_deepseek-v4-pro.json   # CS corpus OpenIE results
+│   └── ss/openie_results_ner_deepseek-v4-pro.json   # SS corpus OpenIE results
+└── papers/processed/{cs,ss}_corpus.csv     # Source corpora
 ```
 
-> **注意**: 嵌入向量文件 (`deepseek-v4-pro_text-embedding-3-large/`) 和 `llm_cache/` **不包含在此仓库中**，可以通过运行 `build_paper_indexes.py` 重新生成。
+> **Note**: Embedding vector files (`deepseek-v4-pro_text-embedding-3-large/`) and `llm_cache/` are **not included in this repository**. They can be regenerated by running `build_paper_indexes.py`.
 
 ---
 
-## 2. hevi_package — HEVI 风险链提取管线
+## 2. hevi_package — HEVI Risk Chain Extraction Pipeline
 
-基于 **Turner et al. (2003)** 脆弱性分析框架，通过 **CS-SS 双边协商多智能体协议** 从 ICML 论文的 impact statement 中自动提取和扩增 AI 风险链。
+Based on the **Turner et al. (2003)** vulnerability analysis framework, using a **CS-SS bilateral multi-agent negotiation protocol** to automatically extract and expand AI risk chains from ICML paper impact statements.
 
-### HEVI 框架（6 个风险槽位）
+### HEVI Framework (6 Risk Slots)
 
-| 槽位 | 定义 | 负责智能体 |
-|------|------|-----------|
-| **H**azard（危害）| 论文方法引入或放大的技术能力 | CSAgent |
-| **E**xposure（暴露）| 面临危害的对象/系统元素 | CSAgent |
-| **D**ose-Response（剂量-反应）| 危害程度转化为影响幅度的因果翻译 | 合成 |
-| **V**ulnerability（脆弱性）| 使危害更可能发生的条件/差距 | SSAgent |
-| **I**mpact（影响）| 负面社会后果 | SSAgent |
-| **K**ey Control Nodes（关键控制节点）| 阻断风险链的干预点 | SSAgent |
+| Slot | Definition | Responsible Agent |
+|------|------------|-------------------|
+| **H**azard | Technical capability introduced or amplified by the method | CSAgent |
+| **E**xposure | Objects/system elements exposed to the hazard | CSAgent |
+| **D**ose-Response | Causal translation from hazard magnitude to impact magnitude | Synthesis |
+| **V**ulnerability | Conditions/gaps that make the hazard more likely | SSAgent |
+| **I**mpact | Negative societal consequences | SSAgent |
+| **K**ey Control Nodes | Intervention points to break the risk chain | SSAgent |
 
-### 步骤
+### Steps
 
-1. **Reference Extraction**: 从 ICML 论文 impact statement 中提取参考 HEVI 槽位（使用"替换测试"排除泛化模板）
-2. **Quality Audit**: 对提取结果进行 6 维度质量评分（技术锚定性、方向正确性、具体性等），筛选 `keep` 论文
-3. **CS Proposal**: CSAgent 基于 CS 索引检索证据，提出 Hazard → Exposure
-4. **SS Response**: SSAgent 基于 SS 索引检索证据，提出 Vulnerability → Impact → KCN
-5. **Bilateral Consensus**: 两个智能体互相批评和修订（最多 3 轮），直到双方自评分 ≥ 0.8，然后合成 Dose-Response 链
-6. **Comparison**: 将流水线生成的链与参考提取进行召回率比较
+1. **Reference Extraction**: Extracts reference HEVI slots from ICML paper impact statements (using a "substitution test" to filter generic templates)
+2. **Quality Audit**: 6-dimension quality scoring (technical anchoring, directional correctness, specificity, etc.), filtering for `keep` papers
+3. **CS Proposal**: CSAgent retrieves evidence from the CS index, proposes Hazard → Exposure
+4. **SS Response**: SSAgent retrieves evidence from the SS index, proposes Vulnerability → Impact → KCN
+5. **Bilateral Consensus**: The two agents critique and revise each other (up to 3 rounds) until both self-scores ≥ 0.8, then synthesize Dose-Response chains
+6. **Comparison**: Per-item semantic recall evaluation comparing pipeline chains against reference extraction
 
-### 关键文件
+### Key Files
 ```
 hevi_package/
-├── hevi_run.py                              # CLI 入口（extract/audit/run/export/all）
+├── hevi_run.py                              # CLI entry point (extract/audit/run/export/all)
 ├── hipporag/hevi_workflow/
 │   ├── agents.py                            # CSAgent + SSAgent + RiskLLM
-│   ├── pipeline.py                          # 双边共识管线编排
-│   └── retrievers.py                        # HippoRAGRetriever 封装
-├── prompts/                                 # 10 个 LLM 提示词模板
-│   ├── 01_cs_propose.md                     # CS 智能体提案
-│   ├── 04_ss_respond.md                     # SS 智能体响应
-│   ├── 05_cs_critique_ss.md                 # CS 批评 SS
-│   ├── 06_ss_critique_cs.md                 # SS 批评 CS
-│   └── 09_dr_synthesis.md                   # 剂量-反应合成
+│   ├── pipeline.py                          # Bilateral consensus orchestration
+│   └── retrievers.py                        # HippoRAGRetriever wrapper
+├── prompts/                                 # 10 LLM prompt templates
+│   ├── 01_cs_propose.md                     # CS agent proposal
+│   ├── 04_ss_respond.md                     # SS agent response
+│   ├── 05_cs_critique_ss.md                 # CS critique of SS
+│   ├── 06_ss_critique_cs.md                 # SS critique of CS
+│   └── 09_dr_synthesis.md                   # Dose-Response synthesis
 ├── scripts/
-│   ├── extract_reference_hevi.py            # 阶段 0: 参考提取
-│   ├── audit_hevi_quality.py                # 阶段 1: 质量审计
-│   ├── run_hevi_pipeline.py                 # 阶段 2-5: 完整管线
-│   ├── build_dataset.py          ★          # 合并两路产出 → dataset.json
-│   ├── export_hevi_csv.py                   # 导出 CSV 对比表
-│   └── generate_visual.py                   # 交互式可视化
-├── data/icml_corpus_with_len.csv            # 5,940 篇 ICML 论文语料库
-├── indices/{cs,ss}/                         # 复用的索引（来自 HippoRAG-build）
+│   ├── extract_reference_hevi.py            # Stage 0: Reference extraction
+│   ├── audit_hevi_quality.py                # Stage 1: Quality audit
+│   ├── run_hevi_pipeline.py                 # Stage 2-5: Full pipeline
+│   ├── build_dataset.py          ★          # Merge two output paths → dataset.json
+│   ├── export_hevi_csv.py                   # Export CSV comparison table
+│   └── generate_visual.py                   # Interactive visualization
+├── data/icml_corpus_with_len.csv            # 5,940 ICML paper corpus
+├── indices/{cs,ss}/                         # Reused indices (from HippoRAG-build)
 └── outputs/
     ├── hevi_workflow/
-    │   ├── hevi_icml_deepseek-v4-pro/       # 阶段 0 提取结果 ({paper_id}.json)
+    │   ├── hevi_icml_deepseek-v4-pro/       # Stage 0 extraction results ({paper_id}.json)
     │   │   └── {paper_id}.json   ─────────┐
-    │   └── hevi_deepseek-v4-pro/           │   # 阶段 2-5 管线结果 ({paper_id}/)
+    │   └── hevi_deepseek-v4-pro/           │   # Stage 2-5 pipeline results ({paper_id}/)
     │       └── {paper_id}/                 │
     │           ├── 1_reference.json        │
     │           ├── 2_cs_proposal.json      │
     │           ├── 3_ss_response.json      │
     │           ├── 4_consensus.json ───────┤
     │           └── 5_compare.json          │
-    └── dataset.json              ★         │   # 最终数据集
+    └── dataset.json              ★         │   # Final dataset
                                             │
-              build_dataset.py 合并逻辑 ────┘
+              build_dataset.py merge logic ─┘
               
-    # build_dataset.py 从两条路径读取，取交集：
-    #   路径 1: outputs/hevi_workflow/hevi_icml_deepseek-v4-pro/{paper_id}.json
-    #           → 提取 title, abstract, impact, ref_hevi
-    #   路径 2: outputs/hevi_workflow/hevi_deepseek-v4-pro/{paper_id}/4_consensus.json
-    #           → extract_chain(): 裁剪每条 chain 为 {scenario, issue} + 6 HEVI 槽位
-    #   仅保留两路均存在的论文 → 输出 dataset.json (267 篇 × 818 条链)
+    # build_dataset.py reads from two paths, takes their intersection:
+    #   Path 1: outputs/hevi_workflow/hevi_icml_deepseek-v4-pro/{paper_id}.json
+    #           → extracts title, abstract, impact, ref_hevi
+    #   Path 2: outputs/hevi_workflow/hevi_deepseek-v4-pro/{paper_id}/4_consensus.json
+    #           → extract_chain(): trims each chain to {scenario, issue} + 6 HEVI slots
+    #   Only keeps papers present in both paths → outputs dataset.json (267 papers × 818 chains)
 ```
 
 ---
 
-## 3. 实验 1: HippoRAG — 神经生物学启发的图 RAG
+## 3. Experiment 1: HippoRAG — Neurobiology-Inspired Graph RAG
 
-基于 **HippoRAG 2**（From RAG to Memory, ICML 2025）框架进行 HEVI 风险评估。
+HEVI risk assessment based on the **HippoRAG 2** (From RAG to Memory, ICML 2025) framework.
 
-### 检索策略
-- **双路 DPR 检索**: `he_query`（hazard+exposure）→ Top 3，`si_query`（scenario+issue）→ Top 3，合并去重
-- **DSPyFilter 重排**: 可选 LLM 事实过滤
-- **PPR 图搜索**: 个性化 PageRank 在 igraph 知识图谱上传播
-- **两步骤生成**: Step 1 (VI) → 门控 → Step 2 (DR)，无检索纯推理
+### Retrieval Strategy
+- **Dual-path DPR retrieval**: `he_query` (hazard+exposure) → Top 3, `si_query` (scenario+issue) → Top 3, merged and deduplicated
+- **DSPyFilter reranking**: Optional LLM fact filtering
+- **PPR graph search**: Personalized PageRank propagation over the igraph knowledge graph
+- **Two-step generation**: Step 1 (VI) → gating → Step 2 (DR), pure reasoning without retrieval
 
-### 关键文件
+### Key Files
 ```
 HippoRAG/
-├── main.py                                  # 标准多跳 QA 基线实验
-├── build_hlg_index.py                       # 层级知识图谱索引构建
-├── mine_innovation_pairs.py                 # 跨论文创新节点对挖掘
-├── run_node_eval.py                         # 层级知识图谱对齐评估（V2+V3）
+├── main.py                                  # Standard multi-hop QA baseline experiment
+├── build_hlg_index.py                       # Hierarchical knowledge graph index construction
+├── mine_innovation_pairs.py                 # Cross-paper innovation node pair mining
+├── run_node_eval.py                         # HLG alignment evaluation (V2+V3)
 ├── hevi_query/
-│   ├── dataset.json                         # HEVI 评估数据集
+│   ├── dataset.json                         # HEVI evaluation dataset
 │   └── scripts/
-│       ├── hevi_query_hipporag.py           # HippoRAG 增强生成
-│       ├── hevi_query_llm.py                # 纯 LLM 对比
-│       ├── eval_hevi.py                     # LLM-as-Judge 评估
-│       ├── eval_hevi_embedding.py           # 嵌入相似度评估
-│       └── analyze_joint.py                 # 联合分布分析
-├── indices/{cs,ss}/                         # 预建索引
-└── reproduce/dataset/                       # 标准多跳 QA 数据集
+│       ├── hevi_query_hipporag.py           # HippoRAG-augmented generation
+│       ├── hevi_query_llm.py                # LLM-only comparison
+│       ├── eval_hevi.py                     # LLM-as-Judge evaluation
+│       ├── eval_hevi_embedding.py           # Embedding similarity evaluation
+│       └── analyze_joint.py                 # Joint distribution analysis
+├── indices/{cs,ss}/                         # Pre-built indices
+└── reproduce/dataset/                       # Standard multi-hop QA datasets
 ```
 
 ---
 
-## 4. 实验 2: LightRAG — 轻量级图 RAG
+## 4. Experiment 2: LightRAG — Lightweight Graph RAG
 
-基于 **LightRAG**（HKUDS, arXiv 2410.05779）框架进行 HEVI 风险评估。
+HEVI risk assessment based on the **LightRAG** (HKUDS, arXiv 2410.05779) framework.
 
-### 检索策略
-- **Mix 模式**: 同时检索 Entity + Relation + Chunk（局部 KG + 全局 KG + 向量）
-- **向量存储**: NanoVectorDB（余弦相似度，3,072 维 text-embedding-3-large）
-- **图存储**: NetworkX（实体-关系-文本块图）
-- **定制 KG 构建**: 从 OpenIE JSON 直接注入实体/关系/块，绕过了 LightRAG 原生 LLM 提取器
-- **查询**: 使用 `aquery_data()` 获取结构化检索数据（不经过 LLM 生成）
+### Retrieval Strategy
+- **Mix mode**: Simultaneously retrieves Entity + Relation + Chunk (local KG + global KG + vector)
+- **Vector storage**: NanoVectorDB (cosine similarity, 3072d text-embedding-3-large)
+- **Graph storage**: NetworkX (Entity-Relation-Chunk graph)
+- **Custom KG construction**: Injects entities/relations/chunks directly from OpenIE JSON, bypassing LightRAG's native LLM extractor
+- **Query**: Uses `aquery_data()` to obtain structured retrieval data (without LLM generation)
 
-### 关键文件
+### Key Files
 ```
 LightRAG/
-├── lightrag/                                # LightRAG 核心库
+├── lightrag/                                # LightRAG core library
 ├── indices/
-│   ├── build_kg.py                          # 定制知识图谱构建
+│   ├── build_kg.py                          # Custom knowledge graph construction
 │   └── ss/openie_results_ner_deepseek-v4-pro.json
 ├── hevi_query/
 │   ├── dataset.json
 │   └── scripts/
-│       ├── hevi_query.py                    # LightRAG 增强生成
-│       ├── eval_hevi.py                     # LLM-as-Judge 评估
-│       └── eval_hevi_embedding.py           # 嵌入相似度评估
-└── examples/                                # 官方演示脚本
+│       ├── hevi_query.py                    # LightRAG-augmented generation
+│       ├── eval_hevi.py                     # LLM-as-Judge evaluation
+│       └── eval_hevi_embedding.py           # Embedding similarity evaluation
+└── examples/                                # Official demo scripts
 ```
 
 ---
 
-## 5. 实验 3: GraphRAG — 层次社区增强图 RAG
+## 5. Experiment 3: GraphRAG — Hierarchical Community-Enhanced Graph RAG
 
-基于 **Microsoft GraphRAG v3.1.0** 框架进行 HEVI 风险评估。
+HEVI risk assessment based on the **Microsoft GraphRAG v3.1.0** framework.
 
-### 检索策略
-- **Local Search 模式**: 查询嵌入 → 实体检索（LanceDB 向量相似度）→ 关系扩展 → 社区上下文注入
-- **向量存储**: LanceDB（3,072 维 text-embedding-3-large）
-- **图结构**: Parquet DataFrame + Leiden 层次聚类
-- **定制索引入口**: `build_index.py` 从 OpenIE JSON 构建 Parquet 索引，绕过了官方 LLM 提取管道
-- **查询**: 使用 `local_search()` API（检索+生成合一）
+### Retrieval Strategy
+- **Local Search mode**: Query embedding → entity retrieval (LanceDB vector similarity) → relationship expansion → community context injection
+- **Vector storage**: LanceDB (3072d text-embedding-3-large)
+- **Graph structure**: Parquet DataFrame + Leiden hierarchical clustering
+- **Custom index entry**: `build_index.py` builds Parquet indices from OpenIE JSON, bypassing the official LLM extraction pipeline
+- **Query**: Uses `local_search()` API (retrieval + generation combined)
 
-### 关键文件
+### Key Files
 ```
 graphrag/
-├── build_index.py                           # 定制索引入口
-├── packages/                                # GraphRAG monorepo（8 个子包）
-│   ├── graphrag/                            # 核心 CLI/查询引擎
-│   ├── graphrag-llm/                        # LLM 接口（litellm）
-│   ├── graphrag-vectors/                    # 向量存储（LanceDB）
-│   └── graphrag-storage/                    # 存储后端
+├── build_index.py                           # Custom index entry point
+├── packages/                                # GraphRAG monorepo (8 sub-packages)
+│   ├── graphrag/                            # Core CLI/query engine
+│   ├── graphrag-llm/                        # LLM interface (litellm)
+│   ├── graphrag-vectors/                    # Vector storage (LanceDB)
+│   └── graphrag-storage/                    # Storage backends
 ├── hevi_query/
 │   ├── dataset.json
 │   └── scripts/
-│       ├── hevi_query_graphrag.py           # GraphRAG 增强生成
+│       ├── hevi_query_graphrag.py           # GraphRAG-augmented generation
 │       ├── eval_hevi.py
 │       └── eval_hevi_embedding.py
 ├── indices/ss/
-│   ├── settings.yaml                        # GraphRAG 配置
+│   ├── settings.yaml                        # GraphRAG configuration
 │   └── openie_results_ner_deepseek-v4-pro.json
-└── openie_results_ner_deepseek-v4-pro.json  # 预提取的 OpenIE 结果
+└── openie_results_ner_deepseek-v4-pro.json  # Pre-extracted OpenIE results
 ```
 
 ---
 
-## 6. 实验 4: 纯 LLM 基线（无检索）
+## 6. Experiment 4: LLM-Only Baseline (No Retrieval)
 
-**纯参数推理**的基线实验，不依赖任何外部知识库。
+**Pure parametric reasoning** baseline, with no external knowledge base.
 
-### 设计
-- **无知识库**: LLM 仅接收论文标题、摘要、impact statement 和链上下文（scenario/issue/hazard/exposure）
-- **两步骤提示**: Step 1 生成 vulnerability + impact，Step 2 生成 dose_response
-- **严格长度约束**: VI ≤ 30 词，DR ≤ 40 词，禁止推测性语言
-- **评估**: 与其余实验使用相同的 LLM-as-Judge 和嵌入相似度评估流程
+### Design
+- **No knowledge base**: LLM receives only the paper title, abstract, impact statement, and chain context (scenario/issue/hazard/exposure)
+- **Two-step prompting**: Step 1 generates vulnerability + impact, Step 2 generates dose_response
+- **Strict length constraints**: VI ≤ 30 words, DR ≤ 40 words; speculative language prohibited
+- **Evaluation**: Uses the same LLM-as-Judge and embedding similarity evaluation pipeline as the other experiments
 
-### 关键文件
+### Key Files
 ```
 LLM/
-├── dataset.json                             # 评估数据集（267 篇论文，818 条链）
+├── dataset.json                             # Evaluation dataset (267 papers, 818 chains)
 ├── scripts/
-│   ├── hevi_query_llm.py                    # 纯 LLM 生成
-│   ├── eval_hevi.py                         # LLM-as-Judge 评估
-│   ├── eval_hevi_embedding.py               # 嵌入相似度评估
-│   ├── hevi_vuln_impact.txt                 # VI 生成提示模板
-│   ├── hevi_dr.txt                          # DR 生成提示模板
-│   └── eval_prompt.txt                      # 评估提示模板
-├── llm_results/                             # 818 条链的生成结果
-├── evaluation_llm/                          # LLM-as-Judge 评估结果
-└── evaluation_embedding/                    # 嵌入相似度评估结果
+│   ├── hevi_query_llm.py                    # LLM-only generation
+│   ├── eval_hevi.py                         # LLM-as-Judge evaluation
+│   ├── eval_hevi_embedding.py               # Embedding similarity evaluation
+│   ├── hevi_vuln_impact.txt                 # VI generation prompt template
+│   ├── hevi_dr.txt                          # DR generation prompt template
+│   └── eval_prompt.txt                      # Evaluation prompt template
+├── llm_results/                             # Generation results for 818 chains
+├── evaluation_llm/                          # LLM-as-Judge evaluation results
+└── evaluation_embedding/                    # Embedding similarity evaluation results
 ```
 
 ---
 
-## 依赖
+## Dependencies
 
-所有项目共享以下核心依赖：
+All projects share the following core dependencies:
 
 - **Python** ≥ 3.10
-- **LLM API**: OpenAI 兼容端点（DeepSeek-V4-Pro）
-- **嵌入**: text-embedding-3-large（3,072 维）
-- **核心库**: numpy, pandas, openai, tiktoken
+- **LLM API**: OpenAI-compatible endpoint (DeepSeek-V4-Pro)
+- **Embedding**: text-embedding-3-large (3,072 dimensions)
+- **Core libraries**: numpy, pandas, openai, tiktoken
 
-各项目的特定依赖详见各自的 `requirements.txt`。
+See each project's `requirements.txt` for specific dependencies.
 
 ---
 
-## 生成索引库
+## Rebuilding Indices
 
-所有嵌入向量和缓存文件 **不包含在此仓库中**，需按以下步骤重新生成。三个框架共享同一份 OpenIE 中间产物 `openie_results_ner_deepseek-v4-pro.json`，由 HippoRAG-build 产出，GraphRAG 和 LightRAG 各自从其构建自己的索引格式。
+All embedding vectors and cache files are **not included in this repository** and must be regenerated following the steps below. The three frameworks share the same OpenIE intermediate output `openie_results_ner_deepseek-v4-pro.json`, produced by HippoRAG-build; GraphRAG and LightRAG each build their own index format from it.
 
-> ⚠️ 以下命令均需在对应项目目录下运行，并确保 API key 已配置（HippoRAG-build 读 `.env`，GraphRAG/LightRAG 脚本内硬编码）。
+> ⚠️ All commands below must be run from within their respective project directories, with the API key configured (HippoRAG-build reads `.env`; GraphRAG/LightRAG scripts hardcode it).
 
-### 1. HippoRAG（OpenIE + 嵌入 + igraph）
+### 1. HippoRAG (OpenIE + Embeddings + igraph)
 
-产出 CS/SS 两个索引：OpenIE JSON、Parquet 嵌入文件、igraph 图 pickle。
+Produces two indices (CS/SS): OpenIE JSON, Parquet embedding files, igraph graph pickle.
 
 ```bash
 cd HippoRAG-build
 
-# CS 索引（2,973 篇论文，模板 ner_risk_cs / triple_extraction_risk_cs）
+# CS index (2,973 papers, templates: ner_risk_cs / triple_extraction_risk_cs)
 python scripts/build_paper_indexes.py \
     --source cs \
     --llm-name deepseek-v4-pro \
     --embedding-name text-embedding-3-large \
     --openie-workers 4
 
-# SS 索引（6,934 篇论文，模板 ner_risk_ss / triple_extraction_risk_ss）
+# SS index (6,934 papers, templates: ner_risk_ss / triple_extraction_risk_ss)
 python scripts/build_paper_indexes.py \
     --source ss \
     --llm-name deepseek-v4-pro \
@@ -290,48 +291,49 @@ python scripts/build_paper_indexes.py \
     --openie-workers 2
 ```
 
-**产出位置**: `indices/{cs,ss}/`  
+**Output location**: `indices/{cs,ss}/`
 
-### 2. GraphRAG（OpenIE JSON → Parquet + LanceDB + Leiden 社区）
+### 2. GraphRAG (OpenIE JSON → Parquet + LanceDB + Leiden Communities)
 
-GraphRAG 的 `build_index.py` 直接读取 HippoRAG-build 产出的 `openie_results_ner_*.json`，将其转换为 GraphRAG 原生格式（DataFrame → Leiden 聚类 → LanceDB 向量库）。
+GraphRAG's `build_index.py` directly reads the OpenIE JSON produced by HippoRAG-build and converts it into the native GraphRAG format (DataFrame → Leiden clustering → LanceDB vector store).
 
 ```bash
 cd graphrag
 
-# SS 完整建库（含 LLM 社区报告）
+# SS full build (includes LLM community reports)
 python build_index.py ss
 
-# CS 完整建库（~15 min）
+# CS full build
 python build_index.py cs
 
-# 快速模式：跳过 LLM 社区报告，用占位文本（local/basic 查询可用）
+# Fast mode: skip LLM community reports, use placeholder text (local/basic queries work)
 python build_index.py ss --fast
 python build_index.py cs --fast
 ```
-**产出位置**: `indices/{cs,ss}/output/`（`*.parquet` + `lancedb/` + `settings.yaml`）
 
-### 3. LightRAG（OpenIE JSON → NanoVectorDB + NetworkX）
+**Output location**: `indices/{cs,ss}/output/` (`*.parquet` + `lancedb/` + `settings.yaml`)
 
-LightRAG 的 `build_kg.py` 从 OpenIE JSON 提取 chunk/entity/relation 三元组，通过 `ainsert_custom_kg()` 注入 LightRAG，构建 NanoVectorDB 向量库 + NetworkX 图。
+### 3. LightRAG (OpenIE JSON → NanoVectorDB + NetworkX)
+
+LightRAG's `build_kg.py` extracts chunk/entity/relation triples from OpenIE JSON, injects them into LightRAG via `ainsert_custom_kg()`, and constructs a NanoVectorDB vector store + NetworkX graph.
 
 ```bash
 cd LightRAG
 
-# 仅建 SS
+# Build SS only
 python indices/build_kg.py ss
 
-# 仅建 CS
+# Build CS only
 python indices/build_kg.py cs
-
 ```
-**产出位置**: `rag_storage_{cs,ss}/`（`vdb_*.json` + `graph_chunk_entity_relation.graphml` + `kv_store_*.json`）
+
+**Output location**: `rag_storage_{cs,ss}/` (`vdb_*.json` + `graph_chunk_entity_relation.graphml` + `kv_store_*.json`)
 
 
 
-## 引用
+## References
 
-本项目使用了以下开源框架：
+This project makes use of the following open-source frameworks:
 
 - **HippoRAG 2**: Gutierrez et al., "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models", ICML 2025. [arXiv 2502.14802](https://arxiv.org/abs/2502.14802)
 - **LightRAG**: Guo et al., "LightRAG: Simple and Fast Retrieval-Augmented Generation", 2024. [arXiv 2410.05779](https://arxiv.org/abs/2410.05779)
@@ -340,6 +342,6 @@ python indices/build_kg.py cs
 
 ---
 
-## 许可证
+## License
 
-MIT License — 各子项目的原始许可证保留在其各自目录中。
+MIT License — original licenses of sub-projects are retained in their respective directories.
