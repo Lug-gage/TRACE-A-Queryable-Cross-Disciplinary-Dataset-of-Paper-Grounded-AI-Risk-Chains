@@ -17,59 +17,13 @@ TRACE/
 ├── graphrag/             # 实验 3：Microsoft GraphRAG 检索增强风险评估
 └── LLM/                  # 实验 4：纯 LLM 基线（无检索）
 ```
-
----
-
-## 整体流程
-
-```
- ① HippoRAG-build (索引构建)
-    CS 语料 (2,973 篇) ─┐
-    SS 语料 (6,934 篇) ─┤
-                         ├── OpenIE 提取 ── 嵌入向量化 ── igraph 知识图谱
-                         │
-                         ▼
- ② hevi_package (风险链提取)
-    ICML 论文 (5,940 篇)
-         │
-         ├── 阶段 0: 参考 HEVI 提取 ──→ 质量审计 ──→ 311 篇 keep
-         │
-         ├── 阶段 2-5: 双边协商 (CSAgent ↔ SSAgent)
-         │       indices/cs/ ──→ CS 提案 (Hazard + Exposure)
-         │       indices/ss/ ──→ SS 响应 (Vuln + Impact + KCN)
-         │       ← 互评修订, 最多 3 轮 →
-         │       合成 Dose-Response
-         │
-         ├── build_dataset.py  ★
-         │       提取 JSON ─┐
-         │       4_consensus ─┤──→ dataset.json (267 篇 × 818 链)
-         │
-         ▼
- ③ 评估实验
-    dataset.json
-         │
-         ├── HippoRAG ── DPR + PPR 图搜索    ──┐
-         ├── LightRAG ── Mix 模式检索        ──┤
-         ├── GraphRAG ── Local Search       ──┤
-         └── 纯 LLM   ── 无检索, 参数推理     ──┤
-                                              │
-                                              ▼
-                                    统一评估
-                              LLM-as-Judge + 嵌入余弦相似度
-```
-
 ---
 
 ## 1. HippoRAG-build — 索引构建管线
 
 基于 **HippoRAG 2**（OSU NLP Group, ICML 2025）构建两个知识图谱索引：
 
-| 索引 | 语料库 | 论文数 | NER 模板 | 状态 |
-|------|--------|--------|----------|------|
-| **CS** | 计算机科学论文 | 2,973 | `ner_risk_cs` / `triple_extraction_risk_cs` | ✅ 已构建 |
-| **SS** | 社会科学论文 | 6,934 | `ner_risk_ss` / `triple_extraction_risk_ss` | ✅ 已构建 |
-
-### 管线步骤
+### 步骤
 1. **文档加载**: 从 `papers/processed/{cs,ss}_corpus.csv` 读取论文（含 title、abstract、impact、doc_text）
 2. **OpenIE 提取**: 使用 `deepseek-v4-pro` 进行 NER 命名实体识别 + 三元组关系提取
 3. **嵌入向量化**: 使用 `text-embedding-3-large` 对文本块/实体/事实进行嵌入
@@ -116,7 +70,7 @@ HippoRAG-build/
 | **I**mpact（影响）| 负面社会后果 | SSAgent |
 | **K**ey Control Nodes（关键控制节点）| 阻断风险链的干预点 | SSAgent |
 
-### 管线 5 阶段
+### 步骤
 
 1. **Reference Extraction**: 从 ICML 论文 impact statement 中提取参考 HEVI 槽位（使用"替换测试"排除泛化模板）
 2. **Quality Audit**: 对提取结果进行 6 维度质量评分（技术锚定性、方向正确性、具体性等），筛选 `keep` 论文
