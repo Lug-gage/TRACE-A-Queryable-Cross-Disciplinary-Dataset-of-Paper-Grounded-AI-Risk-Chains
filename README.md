@@ -295,36 +295,6 @@ LLM/
 
 ---
 
-## 数据集统计
-
-| 指标 | 数值 |
-|------|------|
-| ICML 论文总数 | **267**（ICML 2024: 129, ICML 2025: 138）|
-| HEVI 风险链总数 | **818** |
-| 平均链数/论文 | **3.06** |
-| CS 语料库（索引）| 2,973 篇 |
-| SS 语料库（索引）| 6,934 篇 |
-| CS 索引实体 | 自动提取 |
-| SS 索引实体 | 56,505 |
-| SS 索引三元组 | 26,394 |
-| LLM 模型 | DeepSeek-V4-Pro |
-| 嵌入模型 | text-embedding-3-large（3,072 维）|
-
----
-
-## 实验对照
-
-| 维度 | HippoRAG | LightRAG | GraphRAG | LLM 基线 |
-|------|----------|----------|----------|----------|
-| **检索类型** | DPR + PPR 图搜索 | Mix 模式（KG+向量）| Local Search | 无检索 |
-| **图结构** | igraph + 同义词边 | NetworkX | Parquet + Leiden 聚类 | — |
-| **向量存储** | Parquet（余弦）| NanoVectorDB（余弦）| LanceDB（余弦）| — |
-| **重排序** | DSPyFilter | 可选内置 | 社区上下文 | — |
-| **生成策略** | 检索→VI→门控→DR | 检索→VI→门控→DR | 检索+生成合一 | 纯推理 VI→DR |
-| **评估方法** | LLM-Judge + 嵌入 | LLM-Judge + 嵌入 | LLM-Judge + 嵌入 | LLM-Judge + 嵌入 |
-
----
-
 ## 依赖
 
 所有项目共享以下核心依赖：
