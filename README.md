@@ -310,20 +310,81 @@ LLM/
 
 ## 生成索引库
 
-索引库的嵌入向量文件（~2.5 GB/索引）**不包含在此仓库中**。如需重新生成：
+所有嵌入向量和缓存文件 **不包含在此仓库中**，需按以下步骤重新生成。三个框架共享同一份 OpenIE 中间产物 `openie_results_ner_deepseek-v4-pro.json`，由 HippoRAG-build 产出，GraphRAG 和 LightRAG 各自从其构建自己的索引格式。
+
+> ⚠️ 以下命令均需在对应项目目录下运行，并确保 API key 已配置（HippoRAG-build 读 `.env`，GraphRAG/LightRAG 脚本内硬编码）。
+
+### 1. HippoRAG（OpenIE + 嵌入 + igraph）
+
+产出 CS/SS 两个索引：OpenIE JSON、Parquet 嵌入文件、igraph 图 pickle。
 
 ```bash
-# CS 索引
 cd HippoRAG-build
-python scripts/build_paper_indexes.py --source cs \
-    --corpus-path papers/processed/cs_corpus.csv \
-    --llm deepseek-v4-pro
 
-# SS 索引
-python scripts/build_paper_indexes.py --source ss \
-    --corpus-path papers/processed/ss_corpus.csv \
-    --llm deepseek-v4-pro
+# CS 索引（2,973 篇论文，模板 ner_risk_cs / triple_extraction_risk_cs）
+python scripts/build_paper_indexes.py \
+    --source cs \
+    --llm-name deepseek-v4-pro \
+    --embedding-name text-embedding-3-large \
+    --openie-workers 4
+
+# SS 索引（6,934 篇论文，模板 ner_risk_ss / triple_extraction_risk_ss）
+python scripts/build_paper_indexes.py \
+    --source ss \
+    --llm-name deepseek-v4-pro \
+    --embedding-name text-embedding-3-large \
+    --openie-workers 2
 ```
+
+**产出位置**: `indices/{cs,ss}/`  
+**关键文件**: `openie_results_ner_deepseek-v4-pro.json` + `deepseek-v4-pro_text-embedding-3-large/`（chunk/entity/fact parquet + graph.pickle）
+
+### 2. GraphRAG（OpenIE JSON → Parquet + LanceDB + Leiden 社区）
+
+GraphRAG 的 `build_index.py` 直接读取 HippoRAG-build 产出的 `openie_results_ner_*.json`，不走 LLM 提取，而是将其转换为 GraphRAG 原生格式（DataFrame → Leiden 聚类 → LanceDB 向量库）。
+
+```bash
+cd graphrag
+
+# SS 完整建库（含 LLM 社区报告，~12 min）
+python build_index.py ss
+
+# CS 完整建库（~15 min）
+python build_index.py cs
+
+# 快速模式：跳过 LLM 社区报告，用占位文本（~2 min，local/basic 查询可用）
+python build_index.py ss --fast
+python build_index.py cs --fast
+```
+
+**7 步管线**: 解析 JSON → 实体/关系 DataFrame → 文档/文本单元 → Leiden 聚类 (max 50) → 社区报告 (LLM 或占位) → LanceDB 向量嵌入 → Parquet 写入。  
+**产出位置**: `indices/{cs,ss}/output/`（`*.parquet` + `lancedb/` + `settings.yaml`）
+
+### 3. LightRAG（OpenIE JSON → NanoVectorDB + NetworkX）
+
+LightRAG 的 `build_kg.py` 从 OpenIE JSON 提取 chunk/entity/relation 三元组，通过 `ainsert_custom_kg()` 注入 LightRAG，构建 NanoVectorDB 向量库 + NetworkX 图。
+
+```bash
+cd LightRAG
+
+# 仅建 SS
+python indices/build_kg.py ss
+
+# 仅建 CS
+python indices/build_kg.py cs
+
+# 两个都建
+python indices/build_kg.py both
+
+# 建完后进入交互查询
+python indices/build_kg.py ss --query
+
+# 跳过导入，直接对已有库查询
+python indices/build_kg.py both --skip-import --query --mode mix
+```
+
+**数据转换**: `load_indices_as_custom_kg()` 解析 JSON → 注入 `{chunk, entity, relation}` 三元组 → `ainsert_custom_kg()` 向量化并建图。  
+**产出位置**: `rag_storage_{cs,ss}/`（`vdb_*.json` + `graph_chunk_entity_relation.graphml` + `kv_store_*.json`）
 
 ---
 
