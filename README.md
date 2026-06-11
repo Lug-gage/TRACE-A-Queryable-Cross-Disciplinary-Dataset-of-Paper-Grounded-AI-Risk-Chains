@@ -23,43 +23,39 @@ TRACE/
 ## 整体流程
 
 ```
-                      ┌─────────────────────┐
-                      │   HippoRAG-build     │
-                      │   (索引构建管线)      │
-                      │                      │
-                      │  CS 语料库: 2,973 篇  │
-                      │  SS 语料库: 6,934 篇  │
-                      │  → OpenIE + KG 索引  │
-                      └────────┬────────────┘
-                               │ indices/
-                               ▼
-                      ┌─────────────────────┐
-                      │   hevi_package       │
-                      │   (HEVI 提取管线)     │
-                      │                      │
-                      │  267 篇 ICML 论文     │
-                      │  CS/SS 双边协商协议    │
-                      │  → dataset.json      │
-                      │  (818 条风险链)       │
-                      └────────┬────────────┘
-                               │ dataset.json
-                               ▼
-         ┌─────────────────────┼─────────────────────┐
-         │                     │                     │
-  ┌──────▼──────┐   ┌─────────▼──────┐   ┌─────────▼──────┐   ┌─────────▼──────┐
-  │  HippoRAG   │   │   LightRAG     │   │   GraphRAG     │   │      LLM       │
-  │  (实验 1)   │   │   (实验 2)     │   │   (实验 3)     │   │   (实验 4)      │
-  │             │   │                │   │                │   │                 │
-  │ DPR + PPR   │   │ Mix 模式检索   │   │ 局部搜索       │   │ 纯参数推理      │
-  │ 图搜索      │   │ NanoVectorDB   │   │ LanceDB +      │   │ 无检索增强      │
-  │             │   │ + NetworkX     │   │ Leiden 社区     │   │                 │
-  └──────┬──────┘   └─────────┬──────┘   └─────────┬──────┘   └─────────┬──────┘
-         │                     │                     │                     │
-         └─────────────────────┼─────────────────────┘                     │
-                               │                                           │
-                               ▼                                           ▼
-                    LLM-as-Judge 评估                                  同样的评估
-                    + 嵌入余弦相似度评估
+ ① HippoRAG-build (索引构建)
+    CS 语料 (2,973 篇) ─┐
+    SS 语料 (6,934 篇) ─┤
+                         ├── OpenIE 提取 ── 嵌入向量化 ── igraph 知识图谱
+                         │
+                         ▼
+ ② hevi_package (风险链提取)
+    ICML 论文 (5,940 篇)
+         │
+         ├── 阶段 0: 参考 HEVI 提取 ──→ 质量审计 ──→ 311 篇 keep
+         │
+         ├── 阶段 2-5: 双边协商 (CSAgent ↔ SSAgent)
+         │       indices/cs/ ──→ CS 提案 (Hazard + Exposure)
+         │       indices/ss/ ──→ SS 响应 (Vuln + Impact + KCN)
+         │       ← 互评修订, 最多 3 轮 →
+         │       合成 Dose-Response
+         │
+         ├── build_dataset.py  ★
+         │       提取 JSON ─┐
+         │       4_consensus ─┤──→ dataset.json (267 篇 × 818 链)
+         │
+         ▼
+ ③ 评估实验
+    dataset.json
+         │
+         ├── HippoRAG ── DPR + PPR 图搜索 ──┐
+         ├── LightRAG ── Mix 模式检索      ──┤
+         ├── GraphRAG ── Local Search      ──┤
+         └── 纯 LLM   ── 无检索, 参数推理   ──┤
+                                              │
+                                              ▼
+                                    统一评估
+                              LLM-as-Judge + 嵌入余弦相似度
 ```
 
 ---
@@ -280,14 +276,6 @@ graphrag/
 - **两步骤提示**: Step 1 生成 vulnerability + impact，Step 2 生成 dose_response
 - **严格长度约束**: VI ≤ 30 词，DR ≤ 40 词，禁止推测性语言
 - **评估**: 与其余实验使用相同的 LLM-as-Judge 和嵌入相似度评估流程
-
-### 基线结果（纯 LLM，DeepSeek-V4-Pro）
-| 字段 | Covered | 覆盖率 |
-|------|---------|--------|
-| Vulnerability | 426/818 | **52.1%** |
-| Impact | 334/818 | **40.8%** |
-| Dose-Response | 309/818 | **37.8%** |
-| **综合** | 1069/2454 | **43.6%** |
 
 ### 关键文件
 ```
