@@ -337,7 +337,6 @@ python scripts/build_paper_indexes.py \
 ```
 
 **产出位置**: `indices/{cs,ss}/`  
-**关键文件**: `openie_results_ner_deepseek-v4-pro.json` + `deepseek-v4-pro_text-embedding-3-large/`（chunk/entity/fact parquet + graph.pickle）
 
 ### 2. GraphRAG（OpenIE JSON → Parquet + LanceDB + Leiden 社区）
 
@@ -356,8 +355,6 @@ python build_index.py cs
 python build_index.py ss --fast
 python build_index.py cs --fast
 ```
-
-**7 步管线**: 解析 JSON → 实体/关系 DataFrame → 文档/文本单元 → Leiden 聚类 (max 50) → 社区报告 (LLM 或占位) → LanceDB 向量嵌入 → Parquet 写入。  
 **产出位置**: `indices/{cs,ss}/output/`（`*.parquet` + `lancedb/` + `settings.yaml`）
 
 ### 3. LightRAG（OpenIE JSON → NanoVectorDB + NetworkX）
@@ -373,11 +370,10 @@ python indices/build_kg.py ss
 # 仅建 CS
 python indices/build_kg.py cs
 
-
-**数据转换**: `load_indices_as_custom_kg()` 解析 JSON → 注入 `{chunk, entity, relation}` 三元组 → `ainsert_custom_kg()` 向量化并建图。  
+```
 **产出位置**: `rag_storage_{cs,ss}/`（`vdb_*.json` + `graph_chunk_entity_relation.graphml` + `kv_store_*.json`）
 
----
+
 
 ## 引用
 
