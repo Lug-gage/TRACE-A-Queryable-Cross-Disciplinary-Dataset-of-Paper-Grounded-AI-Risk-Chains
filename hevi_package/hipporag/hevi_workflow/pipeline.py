@@ -308,9 +308,15 @@ def load_completed(base_dir: Path) -> set[str]:
     if not base_dir.exists():
         return set()
     completed = set()
+    # Direct
     for item in base_dir.iterdir():
         if item.is_dir() and (item / "5_compare.json").exists():
             completed.add(item.name)
+    # Parallel-run layout: base_dir/group_N/icml_*/
+    for g_dir in sorted(d for d in base_dir.iterdir() if d.is_dir() and d.name.startswith("group_")):
+        for item in g_dir.iterdir():
+            if item.is_dir() and (item / "5_compare.json").exists():
+                completed.add(item.name)
     return completed
 
 

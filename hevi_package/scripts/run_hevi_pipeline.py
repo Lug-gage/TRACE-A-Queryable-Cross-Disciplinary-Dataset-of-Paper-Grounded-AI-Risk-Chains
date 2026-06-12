@@ -51,7 +51,8 @@ def main() -> None:
     parser.add_argument("--max-consensus-rounds", type=int, default=0, help="Max bilateral consensus rounds (0 = skip critique, DR synthesis only)")
     parser.add_argument("--group", type=int, default=0, help="Group number (1-6) for parallel runs. Auto-sets icml-dir/quality-report/hevi-output.")
     parser.add_argument("--min-slots", type=int, default=0, help="Only process papers with >= N non-empty HEVI slots (0=all)")
-    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--no-resume", action="store_false", dest="resume",
+                        help="Disable resume (process all papers from scratch)")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -110,19 +111,33 @@ def main() -> None:
     comparator = HEVIComparator(llm)
 
     # Load papers from pre-computed icml JSON files
+    #   Direct: icml_dir/icml_*.json
+    #   Parallel: icml_dir/group_N/icml_*.json
+    #   Track group dir so paper_dir resolves correctly for output.
+    def _scan_extract_files(base: Path) -> List[tuple[Path, str]]:
+        """Return list of (path, group_dir_or_empty)."""
+        if not base.exists():
+            return []
+        result: List[tuple[Path, str]] = []
+        for f in sorted(base.glob("icml_*.json")):
+            result.append((f, ""))
+        for g in sorted(d for d in base.iterdir() if d.is_dir() and d.name.startswith("group_")):
+            result.extend((f, g.name) for f in sorted(g.glob("icml_*.json")))
+        return result
+
     papers = []
-    if icml_dir.exists():
-        for f in sorted(icml_dir.glob("icml_*.json")):
-            data = json.loads(f.read_text(encoding="utf-8"))
-            papers.append({
-                "paper_id": f.stem,
-                "title": data.get("title", ""),
-                "abstract": data.get("abstract", ""),
-                "impact": data.get("impact", ""),
-                "query": data.get("query", ""),
-                "query_terms": data.get("query_terms", []),
-                "ref_hevi": data.get("ref_hevi", {}),
-            })
+    for f, group_dir in _scan_extract_files(icml_dir):
+        data = json.loads(f.read_text(encoding="utf-8"))
+        papers.append({
+            "paper_id": f.stem,
+            "group_dir": group_dir,
+            "title": data.get("title", ""),
+            "abstract": data.get("abstract", ""),
+            "impact": data.get("impact", ""),
+            "query": data.get("query", ""),
+            "query_terms": data.get("query_terms", []),
+            "ref_hevi": data.get("ref_hevi", {}),
+        })
     if args.quality_report:
         qr_path = Path(str(args.quality_report).replace("{model}", model_tag))
         if qr_path.exists():
@@ -155,7 +170,8 @@ def main() -> None:
 
     for idx, paper in enumerate(papers, start=1):
         paper_id = paper["paper_id"]
-        paper_dir = hevi_base_dir / paper_id
+        group_dir = paper.get("group_dir", "")
+        paper_dir = hevi_base_dir / group_dir / paper_id if group_dir else hevi_base_dir / paper_id
 
         if paper_id in completed:
             skipped += 1

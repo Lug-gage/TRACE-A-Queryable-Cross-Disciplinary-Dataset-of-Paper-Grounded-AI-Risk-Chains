@@ -7,15 +7,12 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-
-
 def load_project_api_key() -> None:
     if os.getenv("OPENAI_API_KEY"):
         return
 
     # Check api_key.txt in package root
-    key_file = REPO_ROOT / "api_key.txt"
+    key_file = Path("api_key.txt")
     if key_file.exists():
         api_key = key_file.read_text(encoding="utf-8").strip()
         if api_key:
@@ -23,7 +20,7 @@ def load_project_api_key() -> None:
             return
 
     # Fallback: parse from run_highland.py
-    run_highland_path = REPO_ROOT / "run_highland.py"
+    run_highland_path = Path("run_highland.py")
     if not run_highland_path.exists():
         return
 

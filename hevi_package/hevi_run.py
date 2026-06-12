@@ -6,11 +6,13 @@ from pathlib import Path
 
 PKG_ROOT = Path(__file__).resolve().parent
 
-# Ensure the package's hipporag/ is found first, even when an editable install
-# of another hipporag exists elsewhere on sys.path.
-# 1. Remove any existing hipporag from sys.modules (avoid stale cache)
+# Ensure the package's hipporag/ and scripts/ are found first, even when an
+# editable install of another hipporag exists elsewhere on sys.path.
+# 1. Remove any existing hipporag/scripts from sys.modules (avoid stale cache)
 for _mod in list(sys.modules):
     if _mod == "hipporag" or _mod.startswith("hipporag."):
+        del sys.modules[_mod]
+    if _mod == "scripts" or _mod.startswith("scripts."):
         del sys.modules[_mod]
 # 2. Insert package root at absolute front of sys.path
 if str(PKG_ROOT) in sys.path:
@@ -18,7 +20,7 @@ if str(PKG_ROOT) in sys.path:
 sys.path.insert(0, str(PKG_ROOT))
 
 # Auto-load API key from api_key.txt if present
-_key_file = PKG_ROOT / "api_key.txt"
+_key_file = Path("api_key.txt")
 if _key_file.exists() and "OPENAI_API_KEY" not in os.environ:
     os.environ["OPENAI_API_KEY"] = _key_file.read_text(encoding="utf-8").strip()
 
@@ -90,7 +92,7 @@ if __name__ == "__main__":
         print(f"[all] Target: {target} keep papers | Already keep: {len(keep_ids)} | Already extracted: {len(already)}")
 
         # ── Serial extract + audit until target reached ──
-        csv_path = PKG_ROOT / "data" / "icml_corpus_with_len.csv"
+        csv_path = Path("data/icml_corpus_with_len.csv")
         if not csv_path.exists():
             print(f"[all] CSV not found: {csv_path}")
             sys.exit(1)
